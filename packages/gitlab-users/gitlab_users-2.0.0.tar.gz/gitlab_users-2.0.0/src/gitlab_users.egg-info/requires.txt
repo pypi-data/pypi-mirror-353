@@ -1,0 +1,9 @@
+python-gitlab>=5.0.0
+
+[dev]
+ruff
+black
+pytest
+pytest-cov
+build
+pre-commit
