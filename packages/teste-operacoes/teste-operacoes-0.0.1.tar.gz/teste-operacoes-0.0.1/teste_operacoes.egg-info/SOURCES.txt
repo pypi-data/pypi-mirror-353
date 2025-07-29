@@ -1,0 +1,8 @@
+README.md
+setup.py
+teste_operacoes.egg-info/PKG-INFO
+teste_operacoes.egg-info/SOURCES.txt
+teste_operacoes.egg-info/dependency_links.txt
+teste_operacoes.egg-info/top_level.txt
+teste_operacoes_lib/__init__.py
+teste_operacoes_lib/operacoes.py
