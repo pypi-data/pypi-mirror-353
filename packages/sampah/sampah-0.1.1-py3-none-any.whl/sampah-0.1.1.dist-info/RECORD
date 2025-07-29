@@ -1,0 +1,10 @@
+sampah/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sampah/cli.py,sha256=wUF_en_VICWoPCeUMlp_i-kmvcYZoGVX_ePvjoHIuVQ,127
+sampah/web.py,sha256=uHCiu0YeJQPtDBp1cD_7bosTqJFmg5qUxbLtsmWhKdQ,421
+sampah/static/style.css,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sampah/templates/index.html,sha256=v-D9fTyH8EQXsEGDA2Tq20Dvuuqdx-SgoxJ0T9eu99w,43219
+sampah-0.1.1.dist-info/METADATA,sha256=Z5f66RB5STgzaHjrCk_IXEetCVq3rr7DmuIIAovT8o0,1110
+sampah-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sampah-0.1.1.dist-info/entry_points.txt,sha256=DaXFwVXtYC9H40Q4E-94lxayMyRfRExr8jK4Bg5UmYk,43
+sampah-0.1.1.dist-info/top_level.txt,sha256=u1z9wZP_dcHZK5lbNvw2UtgDHNn_rv6pnsO57pW3A80,7
+sampah-0.1.1.dist-info/RECORD,,

@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: sampah
+Version: 0.1.1
+Summary: Short description of your package
+Home-page: https://github.com/yourusername/SAMPAH
+Author: Amirul Sadikin
+Author-email: ai.amirul.sadikin@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+🅰️ SAMPAH – Smart Annotation Management Platform for Adaptive Handling
+✅ Why this works:
+
+    Smart Annotation Management – core of your tool
+
+    Platform – it's a web-based system
+
+    Adaptive Handling – captures the idea of multidirection, flexibility, and extensibility
+
+🔁 “Adaptive Handling” implies:
+
+    multiple object types
+
+    different labeling needs (bbox, polygons, classification)
+
+    orientation, direction, or temporal change (like in video)
