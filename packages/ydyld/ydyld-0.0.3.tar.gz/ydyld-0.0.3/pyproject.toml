@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ydyld"
+version = "0.0.3"
+description = "Low-level Mach-O/dyld introspection tool"
+authors = [{ name = "zokrezyl" }]
+requires-python = ">=3.8"
