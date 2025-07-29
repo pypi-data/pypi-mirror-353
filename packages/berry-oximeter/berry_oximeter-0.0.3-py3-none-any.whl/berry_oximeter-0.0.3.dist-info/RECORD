@@ -1,0 +1,9 @@
+berry_oximeter/__init__.py,sha256=dG0hK3_LqMGcPKr0Po1QdB6gdpb8fXG5jFyCkyJx_g8,520
+berry_oximeter/exceptions.py,sha256=I6UhazPL2L4HIc13Q7wYXNOO1tXpT_cwLN27xYgcEw0,501
+berry_oximeter/models.py,sha256=CowYU27EV9qCJhp8Eb13beGw_9eN-Int9Swhl1vGCzU,1810
+berry_oximeter/oximeter.py,sha256=9NF69Uh68nlQ_aexkHuVbdaRXsqxcFPGNMm3Ye9DD8I,12094
+berry_oximeter/parser.py,sha256=-6EajFmpa2F8cTadA9_wu1bVYqhMKBfQIRsm6KSor98,3598
+berry_oximeter/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+berry_oximeter-0.0.3.dist-info/METADATA,sha256=_An66r-FsiswABCzQ1p92SDxsHuxheQglUr9-I4kO-E,9886
+berry_oximeter-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+berry_oximeter-0.0.3.dist-info/RECORD,,
