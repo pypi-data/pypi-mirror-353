@@ -1,0 +1,92 @@
+Thank you for the update.  
+With your new changes, **the usage pattern of your library's singleton service has changed**.
+
+Now, before calling `OpenFgaServiceSingleton.get_service()`, you need to **set the configuration** via `OpenFgaServiceSingleton.config = <YourConfigInstance>`.  
+No configuration argument is accepted in `get_service()` anymore.
+
+---
+
+## ⏩ Updated Basic Setup & Usage
+
+### Step 1. Set configuration and initialize
+
+```python
+from your_library import OpenFgaConfig, OpenFgaServiceSingleton
+
+# 1. Create configuration as before
+fga_config = OpenFgaConfig(
+    store_name="my-store",
+    model_version="1",
+    model_obj={},  # your FGA model dict
+    api_url="http://localhost:8080",  # or your FGA API endpoint
+    redis_host="localhost",
+    redis_password=None,
+    redis_port="6379",
+)
+
+# 2. Set configuration on the singleton class BEFORE get_service()
+OpenFgaServiceSingleton.config = fga_config
+
+# 3. Now get the service
+service = OpenFgaServiceSingleton.get_service()
+
+# 4. Continue as before
+await service.setup_store()
+await service.setup_auth_model()
+auth_model = await service.read_auth_model()
+print(auth_model)
+```
+
+---
+
+### Example Usage: List objects
+
+```python
+# Get the (already initialized) singleton service
+fga = OpenFgaServiceSingleton.get_service()
+
+# List object IDs of type 'doc' where 'user:alice' has 'reader' access
+object_ids = await fga.list_objects("user:alice", "reader", "doc")
+print(object_ids)
+```
+
+---
+
+## 🔍 What changed?
+
+- You **MUST** set `OpenFgaServiceSingleton.config = <YourConfig>` before you try to instantiate the service.
+- If `get_service()` is called before `.config` is set, you get an Exception:
+  > "OpenFgaConfig must be set before getting the service instance."
+- Passing config in `get_service(config)` is **no longer supported**.
+
+---
+
+## 📦 Reusable Example
+
+```python
+from your_library import OpenFgaConfig, OpenFgaServiceSingleton
+
+fga_config = OpenFgaConfig(
+    store_name="my-store",
+    model_version="1",
+    model_obj={},
+    api_url="http://localhost:8080"
+)
+OpenFgaServiceSingleton.config = fga_config
+
+service = OpenFgaServiceSingleton.get_service()
+await service.setup_store()
+await service.setup_auth_model()
+auth_model = await service.read_auth_model()
+
+object_ids = await service.list_objects("user:alice", "reader", "doc")
+print(object_ids)
+```
+
+---
+
+**Be sure to always set `.config` before `.get_service()`!**
+
+---
+
+Let me know if you would like an updated full documentation, code template, or anything else!
