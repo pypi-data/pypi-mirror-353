@@ -1,0 +1,11 @@
+# dev
+pytest>=7.0.0
+pytest-cov>=4.0.0
+hatchling>=1.18.0
+build>=1.0.0
+twine>=4.0.0
+
+# prod
+oss2==2.18.6
+pandas==2.2.3
+pyyaml==6.0.2

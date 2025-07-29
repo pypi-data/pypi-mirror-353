@@ -1,0 +1,46 @@
+apps:
+  - name: onebp
+    description: 万相无界
+    params:
+      _date_ranges: [ "LAST_3_DAYS" ]
+      _effectEqual: [ 1,15 ]
+      data_type: "daily"
+      query_params: [ "effectEqual","splitType","startTime","endTime" ]
+      splitType: "day"
+    pages:
+      - name: content-live
+        description: 超级直播
+        params:
+          query_params: [ "effectEqual","splitType","startTime","endTime" ]
+          upload_file_name: "超级直播_{brand_code}_{effectEqual}_daily_{sync_date}_{suffix}.csv"
+        modules:
+          - name: onebp.content.summary
+      - name: content-shortVideo
+        description: 超级短视频
+        params:
+          query_params: [ "effectEqual","splitType","unifyType","startTime","endTime" ]
+          unifyType: "zhai"
+          upload_file_name: "超级短视频_{brand_code}_{effectEqual}_daily_{sync_date}_{suffix}.csv"
+        modules:
+          - name: onebp.content.summary
+      - name: content-union
+        description: 短直联动
+        params:
+          query_params: [ "effectEqual","splitType","startTime","endTime" ]
+          upload_file_name: "短直联动_{brand_code}_{effectEqual}_daily_{sync_date}_{suffix}.csv"
+        modules:
+          - name: onebp.content.summary
+      - name: download
+account_list:
+  - account_id: xxx
+    account_name: xxx
+    brand_code: xxx
+oss:
+  - name: oss1
+    params:
+      endpoint: xxx
+      bucket: xxx
+  - name: oss2
+    params:
+      endpoint: xxx
+      bucket: xxx

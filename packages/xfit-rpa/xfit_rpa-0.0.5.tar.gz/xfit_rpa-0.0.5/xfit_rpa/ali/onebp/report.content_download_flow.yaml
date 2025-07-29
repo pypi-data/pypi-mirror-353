@@ -1,0 +1,20 @@
+name: "Login Page Flow"
+type: "sequence"
+steps:
+  - name: "标准推广数据汇总"
+    selector: { type: xpath, value: '//div[contains(@mx-view, "onebp/views/pages/report/sum-card")]' }
+    action: container
+    children:
+      - name: "显示模式"
+        selector: { type: xpath, value: './/span[contains(text(), "显示模式")]/following-sibling::div' }
+        action: container
+        children:
+          - name: "切换表格"
+            selector: { type: xpath, value: './/div[contains(text(), "表格")]' }
+            action: click
+      - name: "点击下载报表"
+        selector: { type: xpath, value: './/button/span[contains(text(), "下载报表")]' }
+        action: { type: click }
+  - name: "下载报表对话框"
+    selector: { type: xpath, value: './/div[contains(@data-daynamic-view, "onebp/views/pages/report/download-dialog")]' }
+    action: container
