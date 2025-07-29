@@ -1,0 +1,15 @@
+CFileIoDumpDealBase.py,sha256=4un7dzPGwQYNalchhBZDyX_OfryDxFoPvRh3XyEzS9E,7499
+CFileIoDumpDealFlarum.py,sha256=7qxwPxz48ineF9DR7frltDorcZPIZjxo8Fg78kR1WHQ,8123
+CFlarumBase.py,sha256=UuO3u7sYuqFVTxVvtGkjlQ_H3-30xCtR2zj9uWDibO8,8138
+CFlarumJson.py,sha256=j0W--r9M_mImic9yUUBIHqnMDCIrGSz1uDhKj8HiaxQ,9136
+CFlarumOper.py,sha256=kGOP-9TdwXbE0rvf4duV9yN84BMHbrq1pODz83wgfIQ,18092
+calc_match_time.py,sha256=FESX5eNDssQeKG5V0HHQT-Q254WNpvfehkLvIW-5mzo,5814
+control_cron.py,sha256=8SrBeTW6jbaqa27uPXNFlgoIOFAx_Z_waCG1PMVlQjQ,3526
+flarum_api.py,sha256=Idv9ApVyYGX7P85WowRa2ZkA9Smna1150f4cp6qirpM,23242
+flarum_func.py,sha256=NV-Nhp9IpskH6BC96BNPZDH-cp3WmLOkzihsNEq8Guc,1901
+try_pyflarum.py,sha256=4udktD4byzdtiJ54fnnM2gXepmyj-aTDgbVglNl2mCY,2501
+fileiodumpdeal-0.1.46.dist-info/METADATA,sha256=KQF0S1I11imDrdOO3Dd1Qo8DViAaxUfp4foEw61Qows,1256
+fileiodumpdeal-0.1.46.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fileiodumpdeal-0.1.46.dist-info/entry_points.txt,sha256=MZgZ_HTKplh6mLzesfU_fW93km6vZRb8Yu3rRkkl0ig,82
+fileiodumpdeal-0.1.46.dist-info/top_level.txt,sha256=QgHVgMvQORpLV5TXe1TtmxTcU61pQDFZB6I0EGgj_70,143
+fileiodumpdeal-0.1.46.dist-info/RECORD,,
