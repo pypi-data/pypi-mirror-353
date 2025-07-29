@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: rotutils
+Version: 0.1.0
+Summary: The package to make transform quaternion angle, euler angle, and rotation matrix
+Author-email: SoYu <dg.min0246@gmail.com>
+Maintainer-email: SoYu <dg.min0246@gmail.com>
+License: MIT license
+Project-URL: bugs, https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues
+Project-URL: changelog, https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/blob/master/changelog.md
+Project-URL: homepage, https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: typer
+Requires-Dist: numpy>=1.20
+Requires-Dist: scipy>=1.7
+Provides-Extra: dev
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
+
+========
+rotutils
+========
+
+
+.. image:: https://img.shields.io/pypi/v/rotutils.svg
+        :target: https://pypi.python.org/pypi/rotutils
+
+.. image:: https://readthedocs.org/projects/rotutils/badge/?version=latest
+        :target: https://github.com/7cmdehdrb/rotutils/blob/master/DOCUMENT.md
+        :alt: Documentation Status
+
+
+
+The package to make transform quaternion angle, euler angle, and rotation matrix
+
+
+* Free software: MIT license
+* Documentation: https://github.com/7cmdehdrb/rotutils/blob/master/DOCUMENT.md
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
