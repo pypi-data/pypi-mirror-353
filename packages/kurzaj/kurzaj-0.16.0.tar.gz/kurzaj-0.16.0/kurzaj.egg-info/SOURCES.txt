@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+furry/__init__.py
+furry/main.py
+kurzaj/__init__.py
+kurzaj/capybara.jpg
+kurzaj/main.py
+kurzaj.egg-info/PKG-INFO
+kurzaj.egg-info/SOURCES.txt
+kurzaj.egg-info/dependency_links.txt
+kurzaj.egg-info/requires.txt
+kurzaj.egg-info/top_level.txt
+kurzajutils/__init__.py
+kurzajutils/main.py
