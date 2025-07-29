@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=78.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsf_prometheus_exporter"
+authors = [
+  { name="IBM Spectrum Computing", email="spectrum_lsf_support@ca.ibm.com" }
+]
+description = "LSF Prometheus Exporter"
+readme = "README.md"
+version = "1.0.1"
+keywords = ["HPC, LSF, IBM"]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Operating System :: OS Independent",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: System Administrators"
+]
+dependencies = [
+  "prometheus_client>=0.21.1",
+  "psutil>=6.1.1"
+]
+
+[project.scripts]
+lsf_prometheus_exporter = "lsf_prometheus_exporter:main"
+
+[tool.setuptools.packages]
+find = {}

@@ -1,0 +1,2 @@
+[console_scripts]
+lsf_prometheus_exporter = lsf_prometheus_exporter:main
