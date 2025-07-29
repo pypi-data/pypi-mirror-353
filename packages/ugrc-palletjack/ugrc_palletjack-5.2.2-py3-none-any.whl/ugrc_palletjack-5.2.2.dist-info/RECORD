@@ -1,0 +1,14 @@
+palletjack/__init__.py,sha256=sJfIIo04YIDz9nWezt0OM2c6EHwSy8w14eL6RPwMgl8,606
+palletjack/errors.py,sha256=MZ7hBzEEYEz4k9jBoWQSjciNds_Au1pCLNlHmISCvyg,237
+palletjack/extract.py,sha256=widRTS5-LFcEzkySgN68BJXVFyhzRAgk_VB67-K8b4w,46535
+palletjack/load.py,sha256=Fkk0FbgWrbCKjC0JiUPLUm1A38DPhMWjT6ajFg3OcBI,39390
+palletjack/transform.py,sha256=8Km0p4Y-QHc7FvqcR0atyk5WXvBKeJ81DRGhc7IZdt4,11330
+palletjack/utils.py,sha256=eLdA64rC7EOMcV-3TjG0YbHvqVMr-nbrEsqjFDqep-0,40927
+palletjack/version.py,sha256=9KG1_UrglepR_QrDJyXvjvBH1k1Pco-aQWu7OLGAzDY,288
+ugrc_palletjack-5.2.2.dist-info/licenses/LICENSE,sha256=jxvpvqK42axhZ3jBYDbWRArH69YTI2_nweOEt6HsaA4,1061
+ugrc_palletjack-5.2.2.dist-info/METADATA,sha256=YNypqmlN5Jy4FkpkiEqrn9EcKHVjVfFxNhg4lw26J0M,7863
+ugrc_palletjack-5.2.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ugrc_palletjack-5.2.2.dist-info/entry_points.txt,sha256=cFWyeY6OevmfY_K4dFUWYP1jLojLlB9IyKwUVy5nDxY,58
+ugrc_palletjack-5.2.2.dist-info/top_level.txt,sha256=YNUveproyFeyOcUwfDVZzW8eHQC69PHFPPTIPRWxUv0,11
+ugrc_palletjack-5.2.2.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ugrc_palletjack-5.2.2.dist-info/RECORD,,
