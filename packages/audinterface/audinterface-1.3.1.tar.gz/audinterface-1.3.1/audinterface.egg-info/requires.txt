@@ -1,0 +1,5 @@
+audeer>=2.1.1
+audformat<2.0.0,>=1.0.1
+audiofile>=1.3.0
+audmath>=1.4.1
+audresample<2.0.0,>=1.1.0
