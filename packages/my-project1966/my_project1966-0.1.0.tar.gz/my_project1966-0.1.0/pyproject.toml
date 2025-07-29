@@ -1,0 +1,22 @@
+[project]
+name = "my-project1966"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Vika",email = "89128288149qweasd@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "my_project1966", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
