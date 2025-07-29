@@ -1,0 +1,15 @@
+console_tests/score_error_test.py,sha256=flB4CPGhGOUqERT6XRYv5QzY8Dm1OAloMttNunMYb5w,1803
+evaluators/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+evaluators/confidence.py,sha256=GT_GH2mP8SSsfq-42N8GW-hV-DVnzpWhzB-TqssLnjc,4371
+metrics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+metrics/comparison.py,sha256=FY9JBz4jAnG_t5XnuM3Qesvb4so39V7qWUZDyQcFr-U,2564
+metrics/scorers.py,sha256=kzqvcaf9TgIjkDp7AIYDd16MnV6QTt3oi9vpq9Nlgbw,530
+metrics/teste.py,sha256=2ClV9L75DsZEDt0sci683fy2p9O5Q1o6uONBfy0I7TY,304
+scikit_autoeval-0.0.1.dist-info/licenses/LICENSE,sha256=ynxcWTUWzOw2dLmdqojrZF1rTDMpXahYkykloK1rNjE,1545
+tests/confidence_threshold_eval_test.py,sha256=iuF4GjuGDhv0FVee5pUCRduLGCJhgX4Pm4jo7ESB91k,1797
+tests/estimate_test.py,sha256=FuVJYjfj0D0JXj7zL9D5hE7zuRxhja2ocedYPL6PlRs,1401
+tests/score_error_test.py,sha256=abRouou8Dm4TQWb1Yacdd65diCygUYCiyWdgsIpI4oc,2474
+scikit_autoeval-0.0.1.dist-info/METADATA,sha256=IXY_Lv3I0fFNdi80BF7YytOFRruQs6gilvifAavGYHo,559
+scikit_autoeval-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scikit_autoeval-0.0.1.dist-info/top_level.txt,sha256=ze51g4eTdVumfPoW1Hg_O2XUd5Wx_DWfBwgkzdwMNWI,39
+scikit_autoeval-0.0.1.dist-info/RECORD,,
