@@ -1,0 +1,3 @@
+[console_scripts]
+youtube-trimmer = youtube_trimmer.cli:main
+youtube-trimmer-mcp = youtube_trimmer.mcp_server:main
