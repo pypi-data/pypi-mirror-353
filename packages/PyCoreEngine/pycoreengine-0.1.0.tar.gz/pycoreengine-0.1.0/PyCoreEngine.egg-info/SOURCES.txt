@@ -1,0 +1,7 @@
+README.md
+setup.py
+PyCoreEngine.egg-info/PKG-INFO
+PyCoreEngine.egg-info/SOURCES.txt
+PyCoreEngine.egg-info/dependency_links.txt
+PyCoreEngine.egg-info/requires.txt
+PyCoreEngine.egg-info/top_level.txt

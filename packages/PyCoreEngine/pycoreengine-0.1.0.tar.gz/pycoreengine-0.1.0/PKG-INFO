@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: PyCoreEngine
+Version: 0.1.0
+Summary: A simple game engine built with PyGame
+Home-page: https://github.com/yourusername/pyengine
+Author: onepackage
+Author-email: umyashinderu@example.com
+Keywords: game-engine pygame
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pygame>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PyEngine
+
+A simple game engine built with PyGame
