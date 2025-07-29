@@ -1,0 +1,7 @@
+mcp_server_ogp/__init__.py,sha256=dI_VRZv2hZhhmeW3FTzIepQyxabqzgz86TwamTpBQ1A,2187
+mcp_server_ogp/__main__.py,sha256=aaVZCPyv7-ah7hLBQVrzPypXRPEowab7e956GyHk-CI,49
+mcp_server_ogp/server.py,sha256=G4vRRWKoaWI1Fs3fJq-9tTKfJo7bNJEuiwmxyhpvQPI,7793
+mcp_server_ogp-0.1.1.dist-info/METADATA,sha256=cVkwx0kecd_1sDia1QU3HIIRY4_sNhdIgAzEzCq8v-g,3324
+mcp_server_ogp-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_server_ogp-0.1.1.dist-info/entry_points.txt,sha256=-CoOmbwdE8fZQNI98QAToEdcFSZx6ysC6McCnuGtb1E,55
+mcp_server_ogp-0.1.1.dist-info/RECORD,,
