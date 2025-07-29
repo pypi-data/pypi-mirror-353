@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: ximalaya
+Version: 1.3.2
+Summary: Python package for Ximalaya services.
+Keywords: ximalaya,api,service
+Author-Email: Garrett HE <garrett.he@outlook.com>
+License: BSD-3-Clause
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: homepage, https://github.com/garrett-he/python-ximalaya
+Project-URL: repository, https://github.com/garrett-he/python-ximalaya.git
+Project-URL: changelog, https://github.com/garrett-he/python-ximalaya/blob/main/CHANGELOG.md
+Requires-Python: >=3.10
+Requires-Dist: jsonpath-ng>=1.7.0
+Requires-Dist: requests>=2.32.3
+Requires-Dist: pydantic>=2.11.5
+Description-Content-Type: text/markdown
+
+# python-ximalaya
+
+Python package for Ximalaya services.
+
+## License
+
+Copyright (C) 2024 Garrett HE <garrett.he@outlook.com>
+
+The BSD 3-Clause License, see [LICENSE](./LICENSE).
