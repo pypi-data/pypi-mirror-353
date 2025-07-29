@@ -1,0 +1,4 @@
+lxml>=5.4.0
+defusedxml
+requests
+xmlschema
