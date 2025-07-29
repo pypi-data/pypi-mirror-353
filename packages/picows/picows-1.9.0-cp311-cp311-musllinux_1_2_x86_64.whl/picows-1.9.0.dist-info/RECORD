@@ -1,0 +1,12 @@
+picows/picows.pyx,sha256=p07uDgUwitThzdH1YHkFT_imnQPdK5aRVNw6HPfuQD8,78202
+picows/picows.pxd,sha256=X_EK9GAdMkxcveXmBLFlq9adyPQEDNTMhNFjt725eps,4270
+picows/__init__.py,sha256=HNn_7SZTx1zyJCssNfCJKLDXn3RI_de81Wpgbfcalto,623
+picows/picows.pyi,sha256=hd-oEoxpEahQziDxtStbB-nyEMxUJlYbBJAGQJK1kQc,5837
+picows/picows.cpython-311-x86_64-linux-musl.so,sha256=oo9oTduF7IseSPCVu5-zdzFuH5iKiqi2JNyK2t6hMJo,3496904
+picows/picows_compat.h,sha256=Yi7LVX3I_AyX2z759qvYoXCo2AmR8u4elkms-hdAyig,3586
+picows/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+picows-1.9.0.dist-info/top_level.txt,sha256=hUbNrhLiUJGRlf0OcYhDotazR5iQ87-5WHc8Qasz0pQ,7
+picows-1.9.0.dist-info/RECORD,,
+picows-1.9.0.dist-info/METADATA,sha256=voyvXey8ZKuG_ds4Xb5RhRv59P4Cg5kzcj3FXC4v0Z4,8284
+picows-1.9.0.dist-info/WHEEL,sha256=kA_iIvT-cxTFNl4I8QDfFHN1DAyqZDYakVXCaObxeLo,112
+picows-1.9.0.dist-info/licenses/LICENSE,sha256=1Nzi2NQ9y-QstuqB_i9UJJFbx0Q9C9RExn8li2GKI3A,1105
