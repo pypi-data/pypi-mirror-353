@@ -1,0 +1,11 @@
+envprofile/__init__.py,sha256=28fOLrq558NiXvxceTDuILj3zSOHfiOYfIzZ5NANtPE,139
+envprofile/__main__.py,sha256=gVpvWBRVMcRGpf7sGnYpS80SXSlxOV6RC1XuoKDNccM,207
+envprofile/cli.py,sha256=qGZJgZ-6_eU9LLC4Pv4xuHnTqwDBFyNFlhe2GFXZUp0,6578
+envprofile/core.py,sha256=WnjgYADBQ8gjx7GNgPLSDAwWU4sREju-JfGo4PysrIA,4803
+envprofile/main.py,sha256=U6QuLZvMlivKw8_Q1zNQc3H2tycKe9c4moDq9JvdxPM,217
+envprofile-0.1.0.dist-info/licenses/LICENSE,sha256=dkA61CyaOemoiTCG37devUbpkyC47Iok15qIcUe7w7k,1075
+envprofile-0.1.0.dist-info/METADATA,sha256=d35hyW2Nx7cYbFks4FMQ2vzPxwwaQB7F7R4GuYkENkE,5347
+envprofile-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+envprofile-0.1.0.dist-info/entry_points.txt,sha256=nLI3AJlX9owMVIoBdzanFjGEoKUZsWU1YdWzqdagUdY,51
+envprofile-0.1.0.dist-info/top_level.txt,sha256=7e3Jb5HRbOiOEQoRHoADss2XrsHohW0_bz4WSGtelU8,11
+envprofile-0.1.0.dist-info/RECORD,,
