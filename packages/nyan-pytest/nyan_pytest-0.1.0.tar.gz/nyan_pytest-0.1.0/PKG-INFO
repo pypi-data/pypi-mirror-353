@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: nyan_pytest
+Version: 0.1.0
+Summary: A nyan-cat inspired test reporter for pytest
+Author: Nyan Cat Pytest Team
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Pytest
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pytest>=6.0.0
+
+# Nyan Pytest
+
+A nyan-cat inspired pytest runner that displays test results with a colorful nyan cat animation.
+
+## Installation
+
+```bash
+pip install nyan-pytest
+```
+
+## Usage
+
+Run pytest with the `--nyan` option:
+
+```bash
+pytest --nyan
+```
+
+### Options
+
+- `--nyan` - Use the nyan cat reporter alongside the default reporter
+- `--nyan-only` - Use only the nyan cat reporter
+
+## Features
+
+- Colorful nyan cat animation during test execution
+- Rainbow trail that grows with test progress
+- Test statistics display
+- Support for both interactive and non-interactive terminals
+
+## License
+
+MIT

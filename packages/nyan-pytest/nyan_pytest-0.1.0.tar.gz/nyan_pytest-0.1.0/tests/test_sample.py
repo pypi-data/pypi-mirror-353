@@ -1,0 +1,26 @@
+"""Sample tests to demonstrate the nyan-cat reporter."""
+
+def test_addition():
+    """Test addition."""
+    assert 1 + 1 == 2
+
+def test_subtraction():
+    """Test subtraction."""
+    assert 2 - 1 == 1
+
+def test_multiplication():
+    """Test multiplication."""
+    assert 2 * 2 == 4
+
+def test_division():
+    """Test division."""
+    assert 4 / 2 == 2
+
+def test_failing():
+    """A failing test to demonstrate reporter handling failures."""
+    assert 1 == 2, "This test is designed to fail"
+
+def test_skipped():
+    """A skipped test to demonstrate reporter handling skips."""
+    import pytest
+    pytest.skip("Skipping this test to demonstrate reporter handling skips")
