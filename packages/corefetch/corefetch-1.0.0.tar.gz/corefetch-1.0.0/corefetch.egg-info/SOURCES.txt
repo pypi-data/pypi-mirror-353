@@ -1,0 +1,10 @@
+LICENSE
+README.md
+corefetch.py
+setup.py
+corefetch.egg-info/PKG-INFO
+corefetch.egg-info/SOURCES.txt
+corefetch.egg-info/dependency_links.txt
+corefetch.egg-info/entry_points.txt
+corefetch.egg-info/requires.txt
+corefetch.egg-info/top_level.txt
