@@ -1,0 +1,2 @@
+[console_scripts]
+simple-repo-asyncsqla = simple_repo_asyncsqla:main
