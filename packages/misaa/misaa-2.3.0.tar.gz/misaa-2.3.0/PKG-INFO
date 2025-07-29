@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: misaa
+Version: 2.3.0
+Summary: Recherche OSINT rapide de pseudo.
+Author: kuroh
+Requires-Python: >=3.7
+Requires-Dist: requests
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
