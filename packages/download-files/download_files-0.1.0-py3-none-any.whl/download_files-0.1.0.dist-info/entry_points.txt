@@ -1,0 +1,3 @@
+[console_scripts]
+download-files = download_files.main:app
+download_files = download_files.main:app
