@@ -1,0 +1,2 @@
+[console_scripts]
+fgb_opram_gui = fgb_opram.gui:main
