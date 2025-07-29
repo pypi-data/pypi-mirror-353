@@ -1,0 +1,26 @@
+
+
+
+[project]
+name = "ftir-OMNIC-map-reader"
+version = "1.0.0"
+#dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = ["FTIR", "Hyperspectral"]
+authors = [
+  { name = "Henry Towbin", email = "24940778+whtowbin@users.noreply.github.com" },
+]
+
+dependencies = [
+    "matplotlib>=3.10.1",
+    "numpy >= 1.26",
+    "xarray>=2024.6",
+]
+
+[project.urls]
+Documentation = "https://github.com/whtowbin/FTIR_OMNIC_MAP_Reader#readme"
+Source = "https://github.com/whtowbin/FTIR_OMNIC_MAP_Reader"
+
