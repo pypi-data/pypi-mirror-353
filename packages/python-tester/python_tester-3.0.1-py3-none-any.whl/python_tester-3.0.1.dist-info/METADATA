@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: python-tester
+Version: 3.0.1
+Summary: Add your description here
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: colorama>=0.4.6
