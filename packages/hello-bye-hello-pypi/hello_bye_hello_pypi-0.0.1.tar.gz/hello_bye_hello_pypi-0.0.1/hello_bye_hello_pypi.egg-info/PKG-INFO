@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: hello-bye-hello-pypi
+Version: 0.0.1
+Summary: A short description of your package.
+Home-page: https://github.com/yourusername/hello-pypi
+Author: Your Name
+Author-email: Your Name <your@email.com>
+License: MIT License
+        
+        Copyright (c) 2025 Your Name
+Project-URL: Homepage, https://github.com/yourusername/hello-bye-hello-pypi
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# hello-pypi
+
+This is a test package for uploading to PyPI. It contains a simple function to say hello.
