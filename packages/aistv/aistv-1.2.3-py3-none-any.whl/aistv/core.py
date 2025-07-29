@@ -1,0 +1,137 @@
+import requests
+import os
+import json
+import time
+from datetime import datetime
+
+SYSTEM_PROMPT = "Tôi là AI STV, một trợ lý ảo phát triển bởi Trọng Phúc"
+USAGE_LOG = "ip_usage.json"
+TOKENS_FILE = "files.txt"
+MAX_REQUESTS_PER_DAY = 20
+SPAM_DELAY_SECONDS = 5
+
+def get_user_ip():
+    try:
+        return requests.get("https://api.ipify.org?format=json", timeout=5).json()["ip"]
+    except:
+        return "unknown"
+
+def load_tokens():
+    if not os.path.exists(TOKENS_FILE):
+        return []
+    with open(TOKENS_FILE, "r") as f:
+        return [line.strip() for line in f if line.strip()]
+
+def save_usage(data):
+    with open(USAGE_LOG, "w") as f:
+        json.dump(data, f)
+
+def load_usage():
+    if os.path.exists(USAGE_LOG):
+        with open(USAGE_LOG, "r") as f:
+            return json.load(f)
+    return {}
+
+def validate_token(token):
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+    }
+    try:
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers=headers,
+            json={
+                "model": "nousresearch/deephermes-3-mistral-24b-preview:free",
+                "messages": [{"role": "system", "content": SYSTEM_PROMPT}],
+                "max_tokens": 5,
+            },
+            timeout=10,
+        )
+        return response.status_code == 200
+    except:
+        return False
+class STVBot:
+    def __init__(self, system_prompt=SYSTEM_PROMPT):
+        self.api_url = "https://openrouter.ai/api/v1/chat/completions"
+        self.system_prompt = system_prompt
+        self.model = "nousresearch/deephermes-3-mistral-24b-preview:free"
+        self.history = [{"role": "system", "content": system_prompt}]
+        self.user_ip = get_user_ip()
+        self.usage_data = load_usage()
+        self.tokens = load_tokens()
+        self.last_call_times = {}
+
+        today = str(datetime.today().date())
+        if self.user_ip not in self.usage_data or self.usage_data[self.user_ip]["last_reset"] != today:
+            self.usage_data[self.user_ip] = {"count": 0, "last_reset": today}
+            save_usage(self.usage_data)
+
+        self.token = self._get_valid_token()
+        if not self.token:
+            raise Exception("❌ Không tìm thấy token hợp lệ trong files.txt")
+
+    def _get_valid_token(self):
+        for token in self.tokens:
+            if validate_token(token):
+                return token
+        return None
+
+    def chat(self, prompt):
+        now = time.time()
+        last_call = self.last_call_times.get(self.user_ip, 0)
+
+        if now - last_call < SPAM_DELAY_SECONDS:
+            return "⏳ Vui lòng chờ vài giây trước khi gửi yêu cầu tiếp theo."
+
+        usage = self.usage_data[self.user_ip]
+        if usage["count"] >= MAX_REQUESTS_PER_DAY:
+            return (
+                "⚠️ Bạn đã vượt quá giới hạn 20 lượt/ngày.\n"
+                "Hãy quay lại vào ngày mai hoặc dùng token riêng để tiếp tục."
+            )
+
+        if not self.token:
+            return "❌ Không có token hợp lệ để sử dụng."
+
+        self.last_call_times[self.user_ip] = now
+        self.history.append({"role": "user", "content": prompt})
+
+        headers = {
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://openrouter.ai",
+            "X-Title": "STV Chat"
+        }
+
+        body = {
+            "model": self.model,
+            "messages": self.history,
+            "max_tokens": 300,
+            "temperature": 0.7
+        }
+
+        try:
+            res = requests.post(self.api_url, headers=headers, json=body, timeout=15)
+            if res.status_code != 200:
+                # Xoá token lỗi khỏi danh sách
+                if self.token in self.tokens:
+                    self.tokens.remove(self.token)
+                    with open(TOKENS_FILE, "w") as f:
+                        for t in self.tokens:
+                            f.write(t + "\n")
+                return "❌ Token hiện tại không hợp lệ và đã bị xoá. Vui lòng thử lại."
+
+            data = res.json()
+            reply = data["choices"][0]["message"]["content"]
+            self.history.append({"role": "assistant", "content": reply})
+            self.usage_data[self.user_ip]["count"] += 1
+            save_usage(self.usage_data)
+
+            return reply.strip()
+
+        except Exception as e:
+            return f"⚠️ Lỗi khi kết nối API: {e}"
+
+    def ask(self, message):
+        return self.chat(message)
