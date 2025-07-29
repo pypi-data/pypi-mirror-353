@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+jv_pypi_project/__init__.py
+jv_pypi_project.egg-info/PKG-INFO
+jv_pypi_project.egg-info/SOURCES.txt
+jv_pypi_project.egg-info/dependency_links.txt
+jv_pypi_project.egg-info/requires.txt
+jv_pypi_project.egg-info/top_level.txt
+jv_pypi_project/bye/__init__.py
+jv_pypi_project/hello/__init__.py
