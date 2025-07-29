@@ -1,0 +1,9 @@
+typer
+psutil>=5.8.0
+rich
+
+[dev]
+coverage
+mypy
+pytest
+ruff

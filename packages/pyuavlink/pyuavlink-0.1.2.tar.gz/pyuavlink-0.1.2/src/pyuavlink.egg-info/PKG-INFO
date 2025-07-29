@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: pyuavlink
+Version: 0.1.2
+Summary: A Python library for UAV-to-UAV communication over V2X/D2D, optimized for dynamic networks and ns-3-dev integration.
+Author-email: Jing Xiang Yu <yujx.res@gmail.com>
+Maintainer-email: Jing Xiang Yu <yujx.res@gmail.com>
+License-Expression: GPL-3.0-or-later
+Project-URL: bugs, https://github.com/YUJX19/pyuavlink/issues
+Project-URL: changelog, https://github.com/YUJX19/pyuavlink/blob/master/changelog.md
+Project-URL: homepage, https://github.com/YUJX19/pyuavlink
+Requires-Python: <3.11,>=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: typer
+Requires-Dist: psutil>=5.8.0
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
+
+=========
+pyUAVLink
+=========
+
+
+
+.. image:: https://img.shields.io/pypi/v/pyuavlink.svg
+   :target: https://pypi.org/project/pyuavlink/
+   :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/pypi/l/pyuavlink.svg
+   :target: https://pypi.org/project/pyuavlink/
+   :alt: License
+
+.. image:: https://img.shields.io/pypi/pyversions/pyuavlink.svg
+   :target: https://pypi.org/project/pyuavlink/
+   :alt: Supported Python versions
+
+
+
+
+**pyUAVLink** is a Python binding and simulation controller for UAV networking protocols, built on top of ns-3 via a custom shared memory interface.
+
+It enables real-time UAV-to-UAV (U2U) communication simulations with machine learning integration. This package acts as a bridge between Python and C++ (ns-3), making it possible to apply neural networks (e.g., LSTM) to network behavior prediction.
+
+
+
+Features
+--------
+
+- Simulation control via `UAVLinkSimulation`
+- Shared memory communication with a customized ns-3-dev module
+- Real-time MCS prediction integration via LSTM
