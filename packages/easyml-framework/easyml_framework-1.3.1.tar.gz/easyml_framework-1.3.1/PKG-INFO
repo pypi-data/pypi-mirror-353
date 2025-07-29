@@ -1,0 +1,211 @@
+Metadata-Version: 2.4
+Name: easyml-framework
+Version: 1.3.1
+Summary: Framework ML ultra-simple avec cache intelligent, ensemble learning et monitoring automatique
+Home-page: https://github.com/jeremy-dev/easyml-framework
+Author: Jeremy Dev
+Author-email: jeremy.dev@example.com
+Project-URL: Bug Reports, https://github.com/jeremy-dev/easyml-framework/issues
+Project-URL: Source, https://github.com/jeremy-dev/easyml-framework
+Project-URL: Documentation, https://github.com/jeremy-dev/easyml-framework/blob/main/README.md
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: pandas>=1.2.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: joblib>=1.0.0
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: pyyaml>=5.4.0
+Requires-Dist: requests>=2.25.0
+Provides-Extra: deep
+Requires-Dist: tensorflow>=2.8.0; extra == "deep"
+Requires-Dist: torch>=1.10.0; extra == "deep"
+Provides-Extra: nlp
+Requires-Dist: nltk>=3.6; extra == "nlp"
+Requires-Dist: spacy>=3.2.0; extra == "nlp"
+Provides-Extra: viz
+Requires-Dist: plotly>=5.0.0; extra == "viz"
+Requires-Dist: bokeh>=2.3.0; extra == "viz"
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# �� EasyML Framework
+
+Framework Machine Learning automatisé pour Python - Simple et efficace
+
+## ✨ Ce qui fonctionne vraiment
+
+- **🤖 AutoClassifier** - Classification automatique avec 10 algorithmes
+- **📊 AutoRegressor** - Régression automatique  
+- **🎯 AutoEnsemble** - Ensemble learning intelligent
+- **🧹 Preprocessing** - Nettoyage automatique des données
+- **⚡ Optimisation** - Hyperparamètres automatiques
+- **💾 Sauvegarde** - Modèles persistants
+
+## 🛠️ Installation
+
+```bash
+pip install easyml-framework
+```
+
+## 🚀 Utilisation Rapide
+
+### Classification Automatique
+
+```python
+import easyml as ez
+import pandas as pd
+from sklearn.datasets import load_iris
+
+# Données
+iris = load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df['target'] = iris.target
+
+# Modèle automatique
+model = ez.AutoClassifier()
+model.fit(df, target='target')
+
+# Résultats
+scores = model.evaluate()
+print(f"Accuracy: {scores['accuracy']}")
+print(f"Meilleur modèle: {scores['best_model']}")
+
+# Prédiction
+sample = df.drop('target', axis=1).iloc[:1]
+prediction = model.predict(sample)
+```
+
+### Ensemble Learning
+
+```python
+# Ensemble automatique
+ensemble = ez.AutoEnsemble()
+ensemble.fit(df, target='target')
+
+# Évaluation
+scores = ensemble.evaluate()
+print(f"Ensemble Accuracy: {scores['accuracy']}")
+```
+
+## 🔧 Algorithmes Supportés
+
+**Classification :**
+- RandomForest, GradientBoosting
+- XGBoost, LightGBM (si installés)
+- LogisticRegression, SVM
+- KNeighbors, ExtraTrees
+- AdaBoost, NaiveBayes
+
+**Régression :**
+- RandomForest, GradientBoosting
+- LinearRegression, Ridge, Lasso
+- ElasticNet, SVR, KNeighbors
+
+## 📊 Fonctionnalités Avancées
+
+- **Optimisation automatique** des hyperparamètres
+- **Cross-validation** intégrée
+- **Sélection du meilleur modèle** automatique
+- **Preprocessing intelligent** (valeurs manquantes, encoding)
+- **Cache des résultats** pour performances
+- **Monitoring automatique** des modèles
+
+## 🎯 Performances Réelles
+
+- **10 algorithmes** testés automatiquement
+- **Optimisation hyperparamètres** avec RandomizedSearch
+- **Cross-validation** 5-fold par défaut
+- **Accuracy typique** : 90-96% sur datasets standard
+- **Vitesse** : Quelques secondes à minutes selon la taille
+
+## 💾 Sauvegarde et Chargement
+
+```python
+# Sauvegarder
+model.save('mon_modele.pkl')
+
+# Charger
+nouveau_model = ez.AutoClassifier()
+nouveau_model.load('mon_modele.pkl')
+```
+
+## 📈 Interface CLI
+
+```bash
+# Classification rapide
+easyml --auto-classify data.csv --target label
+
+# Régression rapide  
+easyml --auto-regress data.csv --target price
+
+# Aide
+easyml --help
+```
+
+## 🔧 Exemple Complet
+
+```python
+import easyml as ez
+import pandas as pd
+
+# Vos données
+df = pd.read_csv('data.csv')
+
+# Classification automatique
+classifier = ez.AutoClassifier()
+classifier.fit(df, target='label')
+
+# Voir les résultats
+results = classifier.evaluate()
+print(f"Meilleur modèle: {results['best_model']}")
+print(f"Accuracy: {results['accuracy']}")
+
+# Tous les scores des modèles testés
+for model, score in results['model_scores'].items():
+    print(f"{model}: {score:.3f}")
+
+# Prédiction sur nouvelles données
+new_data = pd.read_csv('new_data.csv')
+predictions = classifier.predict(new_data)
+```
+
+## 📄 Licence
+
+MIT License - voir [LICENSE](LICENSE)
+
+## 🚀 Comment Publier une Mise à Jour
+
+1. Modifier la version dans `setup.py` et `easyml/__init__.py`
+2. Reconstruire : `python setup.py sdist bdist_wheel`
+3. Publier : `twine upload dist/*` 
