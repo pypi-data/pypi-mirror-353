@@ -1,0 +1,10 @@
+scapy<3.0.0,>=2.6.1
+colorama<1.0.0,>=0.4.6
+iniconfig<3.0.0,>=2.1.0
+packaging<26.0,>=25.0
+pexpect<5.0.0,>=4.9.0
+pluggy<2.0.0,>=1.5.0
+Strip<1.0.0,>=0.0.1.dev14
+
+[dev]
+pytest==8.3.5
