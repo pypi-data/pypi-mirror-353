@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pycamp/__init__.py
+pycamp/cli.py
+pycamp_cli.egg-info/PKG-INFO
+pycamp_cli.egg-info/SOURCES.txt
+pycamp_cli.egg-info/dependency_links.txt
+pycamp_cli.egg-info/entry_points.txt
+pycamp_cli.egg-info/requires.txt
+pycamp_cli.egg-info/top_level.txt
