@@ -1,0 +1,16 @@
+bioframe
+biopython
+# bowtie2
+click
+cooler
+funcy
+hicstuff
+matplotlib
+numpy
+pandas
+pysam
+# pybedtools
+# samtools
+scipy
+scikit-learn
+statsmodels
