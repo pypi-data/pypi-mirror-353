@@ -1,0 +1,135 @@
+Metadata-Version: 2.4
+Name: wildflow-splat
+Version: 0.1.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Rust
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Multimedia :: Graphics :: 3D Modeling
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: indicatif>=0.17.0
+Requires-Dist: maturin>=1.0 ; extra == 'dev'
+Requires-Dist: pytest>=7.0 ; extra == 'dev'
+Provides-Extra: dev
+License-File: LICENSE
+Summary: Fast PLY point cloud processing for 3D Gaussian splatting workflows
+Keywords: ply,point-cloud,3d-gaussian-splatting,colmap,photogrammetry,computer-vision
+Author-email: Wildflow AI <info@wildflow.ai>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: repository, https://github.com/wildflowai/wildflow-splat
+Project-URL: documentation, https://docs.wildflow.ai
+
+# wildflow-splat
+
+Fast PLY point cloud processing with Python bindings. Convert photogrammetry outputs into spatial patches for 3D Gaussian splatting workflows.
+
+## Installation
+
+```bash
+pip install wildflow-splat
+```
+
+## Quick Start
+
+```python
+from wildflow import splat
+
+# Load PLY file and create configuration
+config = splat.Config("model.ply")
+config.sample_percentage = 50.0  # Process 50% of points
+
+# Define spatial patch
+patch = splat.Patch("section_1.bin")
+patch.min_x = -100.0
+patch.max_x = 100.0
+config.add_patch(patch)
+
+# Process point cloud
+results = splat.split_point_cloud(config)
+print(f"Processed {results['total_points_written']} points")
+```
+
+## Features
+
+- **High-performance Rust backend** with Python bindings
+- **Multi-threaded processing** for large datasets
+- **Spatial partitioning** with configurable bounds
+- **COLMAP-compatible output** for 3D reconstruction pipelines
+- **Progress bars** with interrupt handling
+- **JSON configuration** support
+
+## API Reference
+
+### Config
+
+```python
+config = splat.Config("input.ply")
+config.sample_percentage = 75.0  # 0-100%
+config.min_z = -50.0            # Z-axis filtering
+config.max_z = 10.0
+```
+
+### Patch
+
+```python
+patch = splat.Patch("output.bin")
+patch.min_x = -200.0  # Spatial bounds
+patch.max_x = 200.0
+patch.min_y = -200.0
+patch.max_y = 200.0
+```
+
+### Processing
+
+```python
+results = splat.split_point_cloud(config)
+# Returns: {'points_loaded': int, 'total_points_written': int, 'patches_written': int}
+```
+
+## Configuration Files
+
+Load settings from JSON:
+
+```python
+config = splat.Config.from_file("config.json")
+```
+
+Example config.json:
+
+```json
+{
+  "input_file": "model.ply",
+  "sample_percentage": 100.0,
+  "minZ": -10.0,
+  "maxZ": 50.0,
+  "patches": [
+    {
+      "output_file": "patch_1.bin",
+      "minX": -100.0,
+      "maxX": 100.0,
+      "minY": -100.0,
+      "maxY": 100.0
+    }
+  ]
+}
+```
+
+## Requirements
+
+- Python 3.8+
+- Rust (for building from source)
+
+## License
+
+MIT License
+
