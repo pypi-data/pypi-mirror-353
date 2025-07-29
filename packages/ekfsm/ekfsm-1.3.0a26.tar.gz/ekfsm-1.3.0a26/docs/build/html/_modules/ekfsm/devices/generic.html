@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.devices.generic &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.devices.generic</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.devices.generic</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">munch</span><span class="w"> </span><span class="kn">import</span> <span class="n">Munch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.sysfs</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysFSDevice</span><span class="p">,</span> <span class="n">sysfs_root</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfigError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+
+<div class="viewcode-block" id="Device">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Device</span><span class="p">(</span><span class="n">SysTree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A generic device.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="s2">&quot;Device&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">abort</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">abort</span><span class="o">=</span><span class="n">abort</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device_args</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Device: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">children</span>
+
+        <span class="c1"># needs to be set during init because root will be changed after tree is complete</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+
+        <span class="c1"># i2c initialization</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;sysfs_device&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="p">:</span> <span class="n">SysFSDevice</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># post init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_provides_attrs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;provides&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">provides</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">(</span><span class="n">Munch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_provides_attrs</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provides</span><span class="p">:</span> <span class="n">Munch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Munch</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">fields</span> <span class="ow">in</span> <span class="n">provides</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">provides</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">(</span><span class="n">Munch</span><span class="p">(</span><span class="n">fields</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">provides</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">Munch</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">fields</span><span class="p">]</span>
+
+                <span class="k">while</span> <span class="n">fields</span><span class="p">:</span>
+                    <span class="n">iface</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">iface</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                        <span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iface</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">func</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iface</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: No function given for interface </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+                            <span class="p">)</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+                            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Function </span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s2"> for interface </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> not implemented.&quot;</span>
+                            <span class="p">)</span>
+                        <span class="n">provides</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)})</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iface</span><span class="p">):</span>
+                            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Function </span><span class="si">{</span><span class="n">iface</span><span class="si">}</span><span class="s2"> for provider </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> not implemented.&quot;</span>
+                            <span class="p">)</span>
+                        <span class="n">provides</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">iface</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iface</span><span class="p">)})</span>
+
+        <span class="k">return</span> <span class="n">provides</span>
+
+<div class="viewcode-block" id="Device.read_sysfs_attr_bytes">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.read_sysfs_attr_bytes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_sysfs_attr_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a sysfs attribute as bytes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        attr</span>
+<span class="sd">            The sysfs attribute to read.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        content: bytes</span>
+<span class="sd">            The contents of the sysfs attribute as bytes.</span>
+<span class="sd">        None:</span>
+<span class="sd">            If the sysfs device is not set or the attribute does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">read_attr_bytes</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Device.read_sysfs_attr_utf8">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.read_sysfs_attr_utf8">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_sysfs_attr_utf8</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a sysfs attribute as UTF-8 string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        attr</span>
+<span class="sd">            The sysfs attribute to read.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        content: str</span>
+<span class="sd">            The contents of the sysfs attribute as UTF-8 string.</span>
+<span class="sd">        None:</span>
+<span class="sd">            If the sysfs device is not set or the attribute does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Device.write_sysfs_attr">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.write_sysfs_attr">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_sysfs_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to a sysfs attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        attr</span>
+<span class="sd">            The sysfs attribute to write to.</span>
+<span class="sd">        data</span>
+<span class="sd">            The data to write to the sysfs attribute.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">write_attr</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hw_module</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HwModule&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get or set the HwModule instance that this device belongs to.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        hw_module: optional</span>
+<span class="sd">            The HwModule instance to set.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HwModule</span>
+<span class="sd">            The HwModule instance that this device belongs to.</span>
+<span class="sd">        None</span>
+<span class="sd">            If used as a setter.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hw_module</span><span class="p">,</span> <span class="n">HwModule</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hw_module</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Device is not a child of HwModule&quot;</span><span class="p">)</span>
+
+    <span class="nd">@hw_module</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hw_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hw_module</span><span class="p">:</span> <span class="s2">&quot;HwModule&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hw_module</span> <span class="o">=</span> <span class="n">hw_module</span>
+
+<div class="viewcode-block" id="Device.get_i2c_chip_addr">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.get_i2c_chip_addr">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_i2c_chip_addr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="n">chip_addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">device_args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;addr&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">chip_addr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Chip address not provided in board definition&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="s2">&quot;sysfs_device&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># our device is the top level device of the slot</span>
+            <span class="c1"># compute chip address from board yaml and slot attributes</span>
+            <span class="n">slot_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">slot</span><span class="o">.</span><span class="n">attributes</span>
+
+            <span class="k">if</span> <span class="n">slot_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Slot attributes not provided in system configuration&quot;</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">is_master</span><span class="p">:</span>
+                <span class="c1"># slot coding is only used for non-master devices</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">slot_attributes</span><span class="p">,</span> <span class="s2">&quot;slot_coding&quot;</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Slot coding not provided in slot attributes&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="n">slot_coding_mask</span> <span class="o">=</span> <span class="mh">0xFF</span>
+
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">slot_attributes</span><span class="p">,</span> <span class="s2">&quot;slot_coding_mask&quot;</span><span class="p">):</span>
+                    <span class="n">slot_coding_mask</span> <span class="o">=</span> <span class="n">slot_attributes</span><span class="o">.</span><span class="n">slot_coding_mask</span>
+
+                <span class="n">chip_addr</span> <span class="o">|=</span> <span class="n">slot_attributes</span><span class="o">.</span><span class="n">slot_coding</span> <span class="o">&amp;</span> <span class="n">slot_coding_mask</span>
+
+        <span class="k">return</span> <span class="n">chip_addr</span></div>
+
+
+<div class="viewcode-block" id="Device.get_i2c_sysfs_device">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.get_i2c_sysfs_device">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_i2c_sysfs_device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SysFSDevice</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+        <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span>
+        <span class="k">assert</span> <span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="c1"># if parent is a HwModule, we can get the i2c bus from the master device</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">HwModule</span><span class="p">):</span>
+            <span class="n">i2c_bus_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_master_i2c_bus</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># otherwise the parent must be a MuxChannel</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.devices.mux</span><span class="w"> </span><span class="kn">import</span> <span class="n">MuxChannel</span>
+
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">MuxChannel</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">parent</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">i2c_bus_path</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span>
+
+        <span class="c1"># search for device with addr</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">i2c_bus_path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">entry</span> <span class="o">/</span> <span class="s2">&quot;new_device&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>  <span class="c1"># skip bus entries</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="n">entry</span> <span class="o">/</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+            <span class="p">):</span>
+                <span class="c1"># for PRP devices, address is contained in firmware_node/description</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">entry</span> <span class="o">/</span> <span class="s2">&quot;firmware_node&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span>
+                    <span class="n">entry</span> <span class="o">/</span> <span class="s2">&quot;firmware_node&quot;</span> <span class="o">/</span> <span class="s2">&quot;description&quot;</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="p">(</span><span class="n">entry</span> <span class="o">/</span> <span class="s2">&quot;firmware_node/description&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="p">)</span>
+                    <span class="n">got_addr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">description</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; - &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">got_addr</span> <span class="o">==</span> <span class="n">addr</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">SysFSDevice</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+                <span class="c1"># for non-PRP devices, address is contained in the directory name (e.g. 2-0018)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">got_addr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">got_addr</span> <span class="o">==</span> <span class="n">addr</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">SysFSDevice</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Device with address 0x</span><span class="si">{</span><span class="n">addr</span><span class="si">:</span><span class="s2">x</span><span class="si">}</span><span class="s2"> not found in </span><span class="si">{</span><span class="n">i2c_bus_path</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_master_i2c_get_config</span><span class="p">(</span><span class="n">master</span><span class="p">:</span> <span class="s2">&quot;HwModule&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">master</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bus_masters&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">master</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;bus_masters&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;i2c&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">master</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;bus_masters&quot;</span><span class="p">][</span><span class="s2">&quot;i2c&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="s2">&quot;Master definition incomplete&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_master_i2c_bus</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">is_master</span><span class="p">:</span>
+            <span class="c1"># we are the master</span>
+            <span class="n">master</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span>
+            <span class="n">master_key</span> <span class="o">=</span> <span class="s2">&quot;MASTER_LOCAL_DEFAULT&quot;</span>
+            <span class="n">override_master_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">device_args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;i2c_master&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">override_master_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">master_key</span> <span class="o">=</span> <span class="n">override_master_key</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># another board is the master</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">slot</span><span class="o">.</span><span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Master board not found in slot attributes&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">master</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">slot</span><span class="o">.</span><span class="n">master</span>
+            <span class="n">master_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">slot</span><span class="o">.</span><span class="n">slot_type</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="n">i2c_masters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_master_i2c_get_config</span><span class="p">(</span><span class="n">master</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i2c_masters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">dir</span> <span class="o">=</span> <span class="n">sysfs_root</span><span class="p">()</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">i2c_masters</span><span class="p">[</span><span class="n">master_key</span><span class="p">])</span>
+            <span class="n">bus_dirs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;i2c-*&quot;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bus_dirs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">bus_dirs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">bus_dirs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Multiple master i2c buses found for </span><span class="si">{</span><span class="n">master_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No master i2c bus found for </span><span class="si">{</span><span class="n">master_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Master i2c bus not found for </span><span class="si">{</span><span class="n">master_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Device.get_i2c_bus_number">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.generic.Device.get_i2c_bus_number">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_i2c_bus_number</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the I2C bus number of the device. Works for devices that do not have a sysfs_device attribute.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.devices.mux</span><span class="w"> </span><span class="kn">import</span> <span class="n">MuxChannel</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MuxChannel</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: MuxChannel does not have a bus number&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: Must have a parent to get bus number&quot;</span><span class="p">)</span>
+            <span class="n">parent_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parent_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span>
+        <span class="k">if</span> <span class="n">parent_path</span><span class="o">.</span><span class="n">is_symlink</span><span class="p">():</span>
+            <span class="n">parent_path</span> <span class="o">=</span> <span class="n">parent_path</span><span class="o">.</span><span class="n">readlink</span><span class="p">()</span>
+        <span class="n">bus_number</span> <span class="o">=</span> <span class="n">parent_path</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">bus_number</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">sysfs_path</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">; sysfs_path: </span><span class="si">{</span><span class="n">sysfs_path</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
