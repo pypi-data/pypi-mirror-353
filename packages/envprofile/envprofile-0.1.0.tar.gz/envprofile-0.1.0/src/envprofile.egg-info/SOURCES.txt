@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/envprofile/__init__.py
+src/envprofile/__main__.py
+src/envprofile/cli.py
+src/envprofile/core.py
+src/envprofile/main.py
+src/envprofile.egg-info/PKG-INFO
+src/envprofile.egg-info/SOURCES.txt
+src/envprofile.egg-info/dependency_links.txt
+src/envprofile.egg-info/entry_points.txt
+src/envprofile.egg-info/requires.txt
+src/envprofile.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_core.py
+tests/test_integration.py

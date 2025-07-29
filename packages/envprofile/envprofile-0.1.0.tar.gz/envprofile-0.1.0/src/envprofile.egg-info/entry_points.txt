@@ -1,0 +1,2 @@
+[console_scripts]
+envprofile = envprofile.cli:main
