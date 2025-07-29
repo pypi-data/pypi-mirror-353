@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+pydeepseek/__init__.py
+pydeepseek/core.py
+pydeepseek.egg-info/PKG-INFO
+pydeepseek.egg-info/SOURCES.txt
+pydeepseek.egg-info/dependency_links.txt
+pydeepseek.egg-info/requires.txt
+pydeepseek.egg-info/top_level.txt
