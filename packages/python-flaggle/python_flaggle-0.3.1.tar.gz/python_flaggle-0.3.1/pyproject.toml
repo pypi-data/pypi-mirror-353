@@ -1,0 +1,63 @@
+[project]
+name = "python_flaggle"
+version = "0.3.1"
+description = "python-flaggle is a Python library for feature flag management."
+keywords = ["feature flags", "feature toggles", "feature management", "python"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+readme = "README.md"
+urls.Repo = "https://github.com/Flaggle/flaggle-python"
+authors = [{ name = "Asaph Diniz", email = "contato@asaph.dev.br" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["requests (>=2.32.3,<3.0.0)"]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.11"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+pytest-sugar = "^1.0.0"
+
+
+[tool.poetry.group.build.dependencies]
+poethepoet = "^0.34.0"
+flake8 = "^7.2.0"
+twine = "^6.1.0"
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.run]
+omit = [".venv/*", "tests/*"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry_bumpversion.file."python_flaggle/__init__.py"]
