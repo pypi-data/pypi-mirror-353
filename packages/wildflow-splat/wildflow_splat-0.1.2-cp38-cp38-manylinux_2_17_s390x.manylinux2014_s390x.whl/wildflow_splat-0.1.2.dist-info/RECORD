@@ -1,0 +1,8 @@
+wildflow/__init__.py,sha256=i04S59RWbSOX7QPLpfa8H-EN7K96crdSMumbncC-J_o,136
+wildflow/splat/__init__.py,sha256=7AvwGqgDtyrBRlRhrDz9ohMNSi8NyBaICaw3UEg-dqE,224
+wildflow/splat/_core.cpython-38-s390x-linux-gnu.so,sha256=pjYfQdmqCO5XxPt2ihKaAl3hUpnKcBJgcsoq9wQkllc,1257976
+wildflow/splat/split.py,sha256=j7aZSZp-5YNuZAEbJcft-ROAe8NmW63DuBFzBxX1PgQ,1208
+wildflow_splat-0.1.2.dist-info/METADATA,sha256=nP4QEVFEYznBqlEg-ALJ0_EKDp-7u8QjfC7_XDNUxs4,4753
+wildflow_splat-0.1.2.dist-info/WHEEL,sha256=uEVS-5tISNqbwVDKpVFqBA_qRntuQ113KWPqbD0DDWo,125
+wildflow_splat-0.1.2.dist-info/licenses/LICENSE,sha256=xcv6AgoAgqNmEv_eRUbnTk1o_Gok546y2KGHXhp_dA8,1087
+wildflow_splat-0.1.2.dist-info/RECORD,,
