@@ -1,0 +1,7 @@
+setup.py
+SajadXS/SajadXS.py
+SajadXS/__init__.py
+SajadXS.egg-info/PKG-INFO
+SajadXS.egg-info/SOURCES.txt
+SajadXS.egg-info/dependency_links.txt
+SajadXS.egg-info/top_level.txt

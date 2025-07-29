@@ -1,0 +1,2 @@
+from setuptools import setup,find_packages
+setup(version='1.5',name='SajadXS',author='SajadXS',description='Composable HTTP middleware for requests',packages=find_packages(),classifiers=['Programming Language :: Python :: 3'])
