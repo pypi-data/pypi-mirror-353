@@ -1,0 +1,19 @@
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/cobotar/protocol/gen
+plugins:
+  - remote: buf.build/protocolbuffers/go
+    out: messages
+    opt: paths=source_relative
+  - remote: buf.build/protocolbuffers/python
+    out: src/cobotar_protocol
+#  - remote: buf.build/protocolbuffers/csharp
+#    out: unity
+  - remote: buf.build/community/pseudomuto-doc:v1.5.1
+    out: documentation
+    opt: markdown,README.md
+inputs:
+  - directory: proto

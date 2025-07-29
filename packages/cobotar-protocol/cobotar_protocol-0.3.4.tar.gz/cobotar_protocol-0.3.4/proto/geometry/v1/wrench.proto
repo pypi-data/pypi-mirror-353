@@ -1,0 +1,11 @@
+syntax = "proto3";
+package geometry.v1;
+
+import "geometry/v1/vector3.proto";
+
+option go_package = "github.com/cobotar/protocol/messages/geometry";
+
+message Wrench {
+  Vector3 force = 1;
+  Vector3 torque = 2;
+}
