@@ -1,0 +1,14 @@
+chemrxiv/__init__.py,sha256=xXcAJyMPXuRv00-yxQzkHVr4mNSBJiMmf1wyWrkKZyU,172
+chemrxiv/author.py,sha256=x3mPlXTbMHZVlSQl_OeWJWnw0hSlcZbuXHx02dI83oA,809
+chemrxiv/category.py,sha256=yPUX_YmoOUSst-O_f-aOUawgv03KT3UZLpnOBLkOA-o,1423
+chemrxiv/client.py,sha256=TzlqiTZB0pEYJcPXgwfh2boQF87ne6MY9NFn1AuOeAw,7563
+chemrxiv/exceptions.py,sha256=fwGIKMAwBaCD_stP3dRE8VOpSe2xAIPcw0QJUQw648Y,1178
+chemrxiv/filter.py,sha256=eNRdEINdF5ktKueCBW517gQY3hbLWnKupnqTNmqT2hg,32
+chemrxiv/license.py,sha256=GlrOhOqzidyVO_QOoTRjTrMIQk9s59my8WDFMuAp0X0,1174
+chemrxiv/result.py,sha256=B-fEjemFD_JTkdt_3PiSgJNY1MWqTN47MBFRK2OOwFQ,10037
+chemrxiv/search.py,sha256=tJA4PBUfGMvlDpOjgwh2Faiz3Cp5z9ykyJRm8qDKgwE,2872
+chemrxiv/sort.py,sha256=QzQLmM6wo8GoctqDmMUDYtokc7pVPKwvdikMZmiIbkU,614
+chemrxiv-0.1.0.dist-info/METADATA,sha256=evYjIVIpUgADw7GtRWaWXropGqMOKukXSaXJYqOCxzI,8961
+chemrxiv-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+chemrxiv-0.1.0.dist-info/licenses/LICENSE,sha256=ZPmSmQO5m14A2uXJf5Rda70DzWOeZwXp5xHTE_F56Oc,1077
+chemrxiv-0.1.0.dist-info/RECORD,,
