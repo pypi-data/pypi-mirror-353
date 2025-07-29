@@ -1,0 +1,9 @@
+pyminiply/__init__.py,sha256=UzQsdbUTR30s25XLBvILhpXnnOWqeknupHlVzX4Sp8U,316
+pyminiply/_wrapper.pyd,sha256=WG2giFJiZoKcA5oFT0MkrVycx5_iAAyHfa_cp6jz9o8,98816
+pyminiply/_wrapper.pyi,sha256=vU6knol69mdUiZI_gotfskJpJGizqCREndf2pKzo6OU,327
+pyminiply/py.typed,sha256=mDShSrm8qg9qjacQc2F-rI8ATllqP6EdgHuEYxuCXZ0,7
+pyminiply/reader.py,sha256=jQLWskSRsNaRKAm1y1ddUgjFHqYyt-tSSe1F1S8MIEQ,8877
+pyminiply-0.2.3.dist-info/METADATA,sha256=JKXTSsRf6lL4JLdlBjGhBx4mef7mRlUx2T9w1J51K-g,8274
+pyminiply-0.2.3.dist-info/WHEEL,sha256=9y7ongB9C9SKxcdQbfZEuRQ0kgbFdtXA-x9tA6LgmEA,106
+pyminiply-0.2.3.dist-info/licenses/LICENSE,sha256=nZFtVSy9Q0wgMyFW1QV5PDmTdSywHDeid6SLqoBZmWI,1090
+pyminiply-0.2.3.dist-info/RECORD,,
