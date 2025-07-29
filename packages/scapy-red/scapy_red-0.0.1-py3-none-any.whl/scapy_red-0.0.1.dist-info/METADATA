@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: scapy-red
+Version: 0.0.1
+Summary: Scapy RED
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Requires-Python: <4,>=3.7
