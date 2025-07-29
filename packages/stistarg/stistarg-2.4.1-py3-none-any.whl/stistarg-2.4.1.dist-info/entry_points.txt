@@ -1,0 +1,2 @@
+[console_scripts]
+stistarg = stistarg.main:parse
