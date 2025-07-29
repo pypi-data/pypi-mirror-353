@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+deferrable/__init__.py
+deferrable/decorator.py
+deferrable/tools.py
+deferrable_py.egg-info/PKG-INFO
+deferrable_py.egg-info/SOURCES.txt
+deferrable_py.egg-info/dependency_links.txt
+deferrable_py.egg-info/requires.txt
+deferrable_py.egg-info/top_level.txt
+tests/test_async.py
+tests/test_sync.py
