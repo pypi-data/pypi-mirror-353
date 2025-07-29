@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: llmpy_models
+Version: 0.0.3
+Summary: Automatically generated LLM models for llmpy-lib
+Author-email: Angelo Zangari <angelo.zangari10@gmail.com>
+License-File: LICENSE.txt
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+Make sure the update.sh script is executable:
+`chmod +x scripts/update.sh`
