@@ -1,0 +1,15 @@
+matplotlib
+networkx
+gcodeparser
+python-fcl
+numpy>=1.21
+numpy-quaternion
+scipy
+colorama
+
+[dev]
+pytest
+
+[docs]
+sphinx>=3.1
+pydata-sphinx-theme
