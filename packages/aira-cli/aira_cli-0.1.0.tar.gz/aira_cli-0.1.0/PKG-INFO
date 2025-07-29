@@ -1,0 +1,87 @@
+Metadata-Version: 2.1
+Name: aira_cli
+Version: 0.1.0
+Summary: AIRA CLI for managing a home server and the AIRA AI Platform
+Home-page: https://github.com/yourusername/aira_cli
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# AIRA CLI
+
+AIRA CLI is a command-line interface for managing a home server and the AIRA AI Platform. It provides a set of commands to manage system resources, Docker containers, network settings, storage, configurations, and setup.
+
+## Installation
+
+To install the AIRA CLI, run:
+
+```sh
+pip install aira_cli
+```
+
+## Usage
+
+### System Commands
+
+- `aira system info`: Display system information.
+- `aira system status`: Check system status.
+- `aira system update check`: Check for system updates.
+- `aira system update apply`: Apply system updates.
+- `aira system update history`: View update history.
+- `aira system reboot`: Reboot the system.
+- `aira system shutdown`: Shutdown the system.
+- `aira system healthcheck`: Perform system health check.
+- `aira system disk`: Check disk usage.
+
+### Docker Commands
+
+- `aira docker ps`: List running containers.
+- `aira docker images`: List Docker images.
+- `aira docker logs <container>`: View container logs.
+- `aira docker start <container>`: Start a container.
+- `aira docker stop <container>`: Stop a container.
+- `aira docker restart <container>`: Restart a container.
+- `aira docker compose up`: Start or rebuild and start services.
+- `aira docker compose down`: Stop and remove services.
+- `aira docker compose build`: Build or rebuild services.
+- `aira docker compose ps`: List services.
+- `aira docker cleanup`: Remove unused Docker resources.
+
+### Network Commands
+
+- `aira network status`: Display network status.
+- `aira network firewall list`: List firewall rules.
+- `aira network firewall allow <port>`: Allow incoming traffic.
+- `aira network firewall deny <port>`: Deny incoming traffic.
+- `aira network firewall block <ip_address>`: Block traffic from an IP address.
+- `aira network firewall unblock <ip_address>`: Unblock traffic from an IP address.
+- `aira network firewall reset`: Reset firewall rules.
+- `aira network dns add-host <hostname> <ip_address>`: Add a host entry.
+- `aira network dns remove-host <hostname>`: Remove a host entry.
+- `aira network dns show-hosts`: Show host entries.
+- `aira network dns configure-resolver <nameservers>`: Configure DNS resolver.
+
+### Storage Commands
+
+- `aira storage usage`: Show disk space usage.
+- `aira storage logs show-sizes`: Show log sizes.
+- `aira storage logs clean`: Clean old logs.
+- `aira storage backup create`: Create a backup.
+- `aira storage backup list`: List backups.
+- `aira storage backup restore <backup_name>`: Restore from a backup.
+
+### Config Commands
+
+- `aira config set <key> <value>`: Set a configuration value.
+- `aira config get <key>`: Get a configuration value.
+- `aira config defaults`: Apply default configurations.
+
+### Setup Commands
+
+- `aira setup pre-check`: Run pre-checks.
+- `aira setup apply-deps`: Install dependencies.
+- `aira setup install-aira`: Install AIRA.
