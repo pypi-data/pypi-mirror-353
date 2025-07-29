@@ -1,0 +1,12 @@
+mono_connect/__init__.py,sha256=EAlgBrFd2mGe6Ky0Rm9UaKzS-kFt04qQ7c4H6Xe9Et4,56
+mono_connect/client.py,sha256=5baSZMfwd4uCinQ9w8pNzN1MNz0WNBcGJhJkDVxqY3o,4736
+mono_customer/__init__.py,sha256=LXc3HuHO_pUQtOzAvmX9A_UeqQkJoeRiP2Vq58nCVA0,58
+mono_customer/client.py,sha256=39DUQaexG7WdFU5p8JAnfizc-3pB455tZM604KqPEfs,2251
+mono_directpay/__init__.py,sha256=0qBUuiQ4kOvfxYBtBPnr5MDp6FQANZ0uGhxIie6Pp9U,60
+mono_directpay/client.py,sha256=XMNoyZfYIlqGEYz08Vxbr63GAbxUuC7s_VwGG-rm7po,5453
+mono_lookup/__init__.py,sha256=t7nK1z6L-35NDGorIeg3A7KkDDVui7Lasg3b3MDcu2U,54
+mono_lookup/client.py,sha256=APIDJThEbWWZGNc3w-tNS8ygdk1lLdFOI42ouLCViio,5826
+mono_connect-0.1.0.dist-info/METADATA,sha256=uvjid4_BnCaKzKIyiGrwgQfIVzBTqofIdaMPnH2bFgw,6485
+mono_connect-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mono_connect-0.1.0.dist-info/top_level.txt,sha256=-aMqByQXFxj7den92gYfTiYue2ChXNrJoTvPivzdEQw,54
+mono_connect-0.1.0.dist-info/RECORD,,
