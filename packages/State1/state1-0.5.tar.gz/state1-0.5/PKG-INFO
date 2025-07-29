@@ -1,0 +1,275 @@
+Metadata-Version: 2.4
+Name: state1
+Version: 0.5
+Summary: A unified framework for building AI agents with low-code.
+Author-email: Udit Akhouri <researchudit@gmail.com>, Exthalpy Technologies <udit@exthalpy.com>
+Project-URL: Homepage, https://github.com/Exthalpy/state1
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai
+Requires-Dist: requests
+Requires-Dist: duckduckgo-search
+Requires-Dist: sentence-transformers
+Requires-Dist: chromadb
+Requires-Dist: PyPDF2
+Requires-Dist: python-docx
+Requires-Dist: termcolor
+Requires-Dist: bcrypt
+Dynamic: license-file
+
+# state1
+
+**state1** is a unified, open-source Python framework for building powerful, extensible AI agents with minimal setup. It brings together LLMs, web search, RAG, chain-of-thought, multi-agent orchestration, persistent memory, authentication, and real-world actions—all in a single, low-code/no-code package.
+
+---
+
+## 🚀 Why state1?
+
+- **One package, all the tools:** No more juggling multiple libraries for LLMs, RAG, web search, actions, and orchestration.
+- **Low-code/no-code:** Build, run, and extend agents with just a few lines of Python or even from the CLI.
+- **Real-world ready:** Agents can send emails, fetch APIs, search the web, and more—driven by LLM function calling.
+- **Multi-agent orchestration:** Compose teams of agents for research, summarization, fact-checking, and more.
+- **Persistent, editable agents:** Every agent is saved as a JSON file—edit configs, add tools, or share agents with others.
+- **Open-source and extensible:** Add your own actions, agent types, workflows, and UI.
+
+---
+
+## 📦 Installation
+
+```bash
+pip install state1
+```
+
+---
+
+## 🖥️ Quickstart: Terminal CLI (Install & Play!)
+
+After installing, just run:
+
+```bash
+terminal-chat
+```
+
+- **No need to copy scripts or set up anything extra!**
+- Create, list, and switch between agents interactively
+- All agent configs are saved in the `agents/` directory (edit them directly for advanced options)
+- Works on any OS with Python 3.8+
+
+**Example session:**
+```
+$ terminal-chat
+Created default agent with ID: ...
+Type /help for commands.
+[Agent ...] You: /new
+Agent name: ResearchBot
+Provider (openai/openrouter) [openai]: openai
+API key: ...
+...
+```
+
+---
+
+## 🧑‍💻 Quickstart: Your First Agent in Python
+
+```python
+from state1 import Agent
+
+agent = Agent(
+    name="Demo Agent",
+    description="An example AI agent",
+    context="You are a helpful assistant.",
+    provider="openai",  # or "openrouter"
+    api_key="YOUR_OPENAI_API_KEY",
+    model="gpt-3.5-turbo",
+    websearch=True,   # Enable web search context
+    rag=True,         # Enable document RAG
+    cot=True          # Enable chain-of-thought reasoning
+)
+
+agent.chat_loop()  # Start an interactive chat in the terminal
+```
+
+---
+
+## 🧩 Features
+
+### 1. **Unified Agent Creation**
+- LLMs: OpenAI, OpenRouter (Gemini, Claude, etc.)
+- Web search: DuckDuckGo integration
+- RAG: Ingest and retrieve from text, PDF, DOCX using ChromaDB and sentence-transformers
+- Chain-of-thought: Step-by-step reasoning with custom instructions
+- Memory: Persistent chat history per user/agent
+- Authentication: Email/password login with local SQLite DB
+
+### 2. **Real-World Actions (Tool Use)**
+- **SendEmailAction:** Send emails via SMTP (Gmail, Outlook, etc.)
+- **FetchAPIAction:** Fetch data from any API (weather, GitHub, etc.)
+- **LLM function calling:** Actions are exposed as JSON schemas for natural invocation by the LLM
+
+### 3. **Multi-Agent Orchestration**
+- **Orchestrator** class supports:
+  - Parallel, sequential, voting/consensus, and manager/worker workflows
+  - Auto-creation of specialist agents (researcher, summarizer, fact checker, analyser, manager)
+  - Chain-of-thought enabled for all agents
+
+### 4. **Extensible and Open**
+- Add your own actions by subclassing `Action`
+- Register new tools, agent types, and workflows
+- Edit agent JSON files to add new capabilities
+
+---
+
+## 🧪 Example Scripts
+
+### **1. Actions Demo**
+
+```python
+from state1 import Agent
+from state1.actions import SendEmailAction, FetchAPIAction
+
+agent = Agent(
+    name="ActionDemo Agent",
+    provider="openai",
+    api_key="YOUR_OPENAI_API_KEY",
+    model="gpt-4o",
+    smtp_config={
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 465,
+        "sender_email": "your@email.com",
+        "sender_password": "your_app_password"
+    },
+    apis={
+        "github": {"url": "https://api.github.com"},
+        "weather": {"url": "https://wttr.in"}
+    }
+)
+agent.register_action(SendEmailAction())
+agent.register_action(FetchAPIAction())
+agent.chat_loop()
+```
+
+### **2. RAG Demo**
+
+```python
+from state1 import Agent
+
+agent = Agent(
+    name="RAG Agent",
+    provider="openai",
+    api_key="YOUR_OPENAI_API_KEY",
+    model="gpt-3.5-turbo",
+    rag=True
+)
+agent.add_document("example.pdf")
+agent.chat_loop()
+```
+
+### **3. Orchestrator Demo**
+
+```python
+from state1.orchestrator import Orchestrator
+
+orchestrator = Orchestrator(
+    orchestra=True,
+    api_key="YOUR_OPENAI_API_KEY",
+    model="gpt-3.5-turbo",
+    workflow_mode="manager"
+)
+orchestrator.chat_loop()
+```
+
+### **4. Auth & Memory Demo**
+
+```python
+from state1 import Agent
+
+agent = Agent(
+    name="AuthTest Agent",
+    provider="openai",
+    api_key="YOUR_OPENAI_API_KEY",
+    model="gpt-3.5-turbo",
+    auth=True,   # enables email/password authentication and DB
+    memory=True  # enables persistent memory per user
+)
+agent.chat_loop()
+```
+
+---
+
+## 🛠️ Advanced: Adding Your Own Actions
+
+Create a new action by subclassing `Action`:
+
+```python
+from state1.actions import Action
+
+class MyCustomAction(Action):
+    name = "my_action"
+    description = "Describe what this action does."
+
+    def run(self, **kwargs):
+        # Your logic here
+        return "Action result!"
+
+# Register with your agent
+agent.register_action(MyCustomAction())
+```
+
+---
+
+## 📝 Agent JSON File Reference
+
+You can edit any agent's JSON file in the `agents/` directory to add or change fields:
+
+- `name`, `description`, `context`
+- `provider`, `api_key`, `model`
+- `websearch`, `rag`, `cot`, `auth`, `memory`
+- `smtp_config` (for email actions)
+- `apis` (for API actions)
+- ...and more!
+
+---
+
+## 🔒 Security & Credentials
+
+- **Never commit your API keys or passwords to public repos.**
+- For email actions, use app passwords (e.g., Gmail app password).
+- Agent files are local and editable, but protect your `agents/` directory if needed.
+
+---
+
+## 🧠 Philosophy
+
+- **Unify**: All major agent features in one package.
+- **Extensible**: Add new tools, actions, and workflows easily.
+- **No lock-in**: All configs are plain JSON, easy to edit, export, or share.
+- **Open-source**: MIT licensed, community contributions welcome!
+
+---
+
+## 📚 Roadmap
+
+- More built-in actions (Slack, calendar, file management, etc.)
+- LLM-driven tool selection and chaining
+- Web UI and API endpoints
+- Analytics, monitoring, and agent dashboards
+- Community-contributed agent templates
+
+---
+
+## 🏁 Get Started
+
+1. `pip install state1`
+2. Run `terminal-chat`
+3. Create, edit, and chat with agents—your AI team, your way!
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+**state1** — The unified, open-source AI agent framework for everyone. 
