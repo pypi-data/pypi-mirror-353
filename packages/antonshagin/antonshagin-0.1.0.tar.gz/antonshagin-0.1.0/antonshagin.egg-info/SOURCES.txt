@@ -1,0 +1,5 @@
+setup.py
+antonshagin.egg-info/PKG-INFO
+antonshagin.egg-info/SOURCES.txt
+antonshagin.egg-info/dependency_links.txt
+antonshagin.egg-info/top_level.txt
