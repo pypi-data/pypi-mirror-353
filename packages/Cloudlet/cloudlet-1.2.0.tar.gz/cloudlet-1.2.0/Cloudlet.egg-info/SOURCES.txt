@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+cloudlet.py
+pyproject.toml
+setup.py
+Cloudlet.egg-info/PKG-INFO
+Cloudlet.egg-info/SOURCES.txt
+Cloudlet.egg-info/dependency_links.txt
+Cloudlet.egg-info/entry_points.txt
+Cloudlet.egg-info/requires.txt
+Cloudlet.egg-info/top_level.txt
+static/favicon.ico
+static/css/bootstrap.min.css
+static/js/app.js
+templates/index.html
+templates/login.html

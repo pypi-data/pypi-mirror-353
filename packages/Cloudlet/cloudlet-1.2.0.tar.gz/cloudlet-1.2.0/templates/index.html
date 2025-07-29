@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>☁️ Cloudlet File Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional: nicer icons & spacing */
+        .folder-icon {
+            color: #0d6efd;
+            margin-right: 6px;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "›";
+            padding: 0 6px;
+            color: #6c757d;
+        }
+        table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        :root {
+        --footer-bg-light: #f8f9fa;
+        --footer-bg-dark: #212529;
+        --footer-text-light: #212529;
+        --footer-text-dark: #f8f9fa;
+    }
+
+    body.dark-mode {
+        background-color: #121212;
+        color: #f1f1f1;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        z-index: 1000;
+        background-color: var(--footer-bg-light);
+        color: var(--footer-text-light);
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode footer {
+        background-color: var(--footer-bg-dark);
+        color: var(--footer-text-dark);
+        border-top: 1px solid #444;
+    }
+
+    .dark-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1100;
+    }
+    </style>
+</head>
+<body>
+
+
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>☁️ Cloudlet - File Server</h1>
+        <div>
+            <span class="me-3">Logged in as: <strong>{{ user }}</strong></span>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-sm">Logout</a>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div>
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }} py-1 px-2 my-1">{{ msg }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Breadcrumb navigation -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item {% if not breadcrumbs %}active{% endif %}">
+          {% if not breadcrumbs %}
+            Root
+          {% else %}
+            <a href="{{ url_for('index') }}">Root</a>
+          {% endif %}
+        </li>
+        {% for crumb_name, crumb_path in breadcrumbs %}
+            {% if loop.last %}
+                <li class="breadcrumb-item active" aria-current="page">{{ crumb_name }}</li>
+            {% else %}
+                <li class="breadcrumb-item"><a href="{{ url_for('index', path=crumb_path) }}">{{ crumb_name }}</a></li>
+            {% endif %}
+        {% endfor %}
+      </ol>
+    </nav>
+
+    <!-- Upload form -->
+    <form method="POST" enctype="multipart/form-data" class="mb-4">
+        <div class="input-group">
+            <input type="file" name="file" class="form-control" required>
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </div>
+    </form>
+
+    <!-- Files and folders table -->
+    <table class="table table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Download</th>
+                {% if is_admin %}
+                <th>Delete</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for entry in files %}
+            <tr>
+                <td>
+                  {% if entry.is_dir %}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="folder-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M9.828 4a3 3 0 0 1 2.121.879l2.829 2.829a3 3 0 0 1 .879 2.121v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.828z"/>
+                    </svg>
+                    <a href="{{ url_for('index', path=path + '/' + entry.name if path else entry.name) }}">{{ entry.name }}/</a>
+                  {% else %}
+                    {{ entry.name }}
+                  {% endif %}
+                </td>
+                <td>
+                  {% if not entry.is_dir %}
+                    {{ (entry.size / 1024) | round(2) }} KB
+                  {% else %}
+                    -
+                  {% endif %}
+                </td>
+                <td>
+                  {% if not entry.is_dir %}
+                    <a href="{{ url_for('files', filename=path + '/' + entry.name if path else entry.name) }}" class="btn btn-sm btn-outline-primary" download>Download</a>
+                  {% else %}
+                    -
+                  {% endif %}
+                </td>
+                {% if is_admin %}
+                <td>
+                  {% if not entry.is_dir %}
+                    <form method="POST" action="{{ url_for('delete_file', filename=path + '/' + entry.name if path else entry.name) }}" onsubmit="return confirm('Delete file {{ entry.name }}?');">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                  {% else %}
+                    -
+                  {% endif %}
+                </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr><td colspan="{{ 4 if is_admin else 3 }}" class="text-center">No files or folders found</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Auto dismiss alerts after 5 seconds
+  window.setTimeout(() => {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+      alert.style.transition = 'opacity 0.5s ease';
+      alert.style.opacity = '0';
+      setTimeout(() => alert.remove(), 500);
+    });
+  }, 5000);
+</script>
+
+
+<footer style="position: fixed; bottom: 0; width: 100%; text-align: center; padding: 10px 0; background: #f8f9fa; border-top: 1px solid #ddd; z-index: 1000;">
+  Made with ❤️ in Romania
+</footer>
+
+</body>
+</html>
