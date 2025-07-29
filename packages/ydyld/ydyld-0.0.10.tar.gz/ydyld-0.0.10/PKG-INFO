@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ydyld
+Version: 0.0.10
+Summary: Low-level Mach-O/dyld introspection tool
+Author: zokrezyl
+Project-URL: Homepage, https://github.com/zokrezyl/ydyld
+Project-URL: Repository, https://github.com/zokrezyl/ydyld
+Project-URL: Issues, https://github.com/zokrezyl/ydyld/issues
+Requires-Python: >=3.8

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ydyld"
+version = "0.0.10"
+description = "Low-level Mach-O/dyld introspection tool"
+authors = [{ name = "zokrezyl" }]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/zokrezyl/ydyld"
+Repository = "https://github.com/zokrezyl/ydyld"
+Issues = "https://github.com/zokrezyl/ydyld/issues"
