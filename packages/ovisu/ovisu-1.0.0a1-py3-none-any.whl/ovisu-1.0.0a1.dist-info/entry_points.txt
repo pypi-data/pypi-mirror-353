@@ -1,0 +1,3 @@
+[console_scripts]
+visu=visu.main:cli
+
