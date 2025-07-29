@@ -1,0 +1,9 @@
+*.ps1
+*.pyc
+demos/config.json
+demos/flask_app/config.py
+*.log
+*.pdf
+*.ipynb
+*.json
+dist/
