@@ -1,0 +1,15 @@
+requests
+websockets
+httpx
+oauthlib
+authlib
+backoff
+
+[dev]
+pre-commit
+
+[test]
+pytest>=6.0
+coverage
+pytest-cov
+requests_mock
