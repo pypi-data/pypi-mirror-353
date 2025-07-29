@@ -1,0 +1,6 @@
+tensor_disentangler/__init__.py,sha256=I8f0O0skcR3Iq1mOJLoRQn_NZBi6sENqHDUJm4uV8v8,26
+tensor_disentangler/disentangle.py,sha256=lbXDyNgYQ_nx7JEd6qS2aaT3FC98pDGJBbdtjVX5BuE,18320
+tensor_disentangler-0.0.1.dist-info/METADATA,sha256=XU_9JfL_eh__RODeyiyaxaYfP9dPd1CWlBv-P2uN5Wk,2507
+tensor_disentangler-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tensor_disentangler-0.0.1.dist-info/licenses/LICENSE,sha256=NPjNe0VIaPahJ_QxMiSFXKITxFygdHeP1wxEX4cD12I,1086
+tensor_disentangler-0.0.1.dist-info/RECORD,,
