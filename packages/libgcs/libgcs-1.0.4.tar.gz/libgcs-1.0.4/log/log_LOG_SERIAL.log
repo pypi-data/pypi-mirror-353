@@ -1,0 +1,1943 @@
+25-May-25 17:15:15	[WARNING]	In root	[LOG_SERIAL] Device not found!
+25-May-25 17:15:19	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 17:16:02	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+25-May-25 17:18:52	[WARNING]	In root	[LOG_SERIAL] Device not found!
+25-May-25 17:19:11	[WARNING]	In root	[LOG_SERIAL] Device not found!
+25-May-25 17:19:24	[WARNING]	In root	[LOG_SERIAL] Device not found!
+25-May-25 17:19:29	[ERROR]	In root	[LOG_SERIAL] Unexpected Error! Can't connect port "/dev/ttyACM1" or the port is already connected.
+Traceback (most recent call last):
+  File "/home/vt/Projects/libgcs/.venv/lib64/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vt/Projects/libgcs/src/libgcs/serial.py", line 68, in connect
+    self.__device = serial.Serial(self.__name, baudrate=self.__baud, timeout=2)
+  File "/home/vt/Projects/libgcs/.venv/lib64/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/home/vt/Projects/libgcs/.venv/lib64/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM1: [Errno 2] No such file or directory: '/dev/ttyACM1'
+25-May-25 17:21:08	[WARNING]	In root	[LOG_SERIAL] Device not found!
+25-May-25 17:21:12	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 17:21:28	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+25-May-25 17:21:32	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+25-May-25 17:21:36	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+25-May-25 17:21:36	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 17:23:34	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+25-May-25 17:23:38	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+25-May-25 17:23:39	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 17:47:37	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 17:51:06	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:06:14	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:06:48	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+25-May-25 18:06:48	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+25-May-25 18:06:48	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:12:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:21:13	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:28:57	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+25-May-25 18:30:37	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:27:35	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:27:35	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:27:50	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:27:50	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:28:17	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:28:17	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:29:49	[WARNING]	In root	[LOG_SERIAL] Device not found!
+27-May-25 12:29:49	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:29:59	[INFO]	In root	[[SERIAL_THREAD]] Thread is stopped and destroyed!
+27-May-25 12:30:30	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:30:30	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:30:31	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+27-May-25 12:30:31	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:30:41	[INFO]	In root	[[SERIAL_THREAD]] Thread is stopped and destroyed!
+27-May-25 12:30:44	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:30:44	[INFO]	In root	[[SERIAL_THREAD]] Thread is started!
+27-May-25 12:30:55	[INFO]	In root	[[SERIAL_THREAD]] Thread is stopped and destroyed!
+27-May-25 12:48:06	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:48:06	[INFO]	In root	[SERIAL_THREAD] Thread is started!
+27-May-25 12:48:09	[INFO]	In root	[SERIAL_THREAD] Thread is stopped and destroyed!
+27-May-25 12:48:30	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:48:30	[INFO]	In root	[SERIAL_THREAD] Thread is started!
+27-May-25 12:48:32	[INFO]	In root	[SERIAL_THREAD] Thread is stopped and destroyed!
+27-May-25 12:49:32	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:49:32	[INFO]	In root	[SERIAL_THREAD] Thread is started!
+27-May-25 12:49:40	[INFO]	In root	[SERIAL_THREAD] Thread is stopped and destroyed!
+27-May-25 12:49:56	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:49:56	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:49:58	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:53:18	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:53:18	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:53:18	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:53:26	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:53:29	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:53:29	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:53:32	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:54:58	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:55:00	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:55:00	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:55:02	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:55:57	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:56:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:56:34	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:56:37	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:56:38	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:56:47	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:56:47	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:56:49	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:56:54	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:58:23	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:58:23	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:58:25	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:58:37	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:58:43	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:58:43	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:58:45	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:58:57	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 12:58:59	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 12:58:59	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 12:59:02	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 12:59:04	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:01:00	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:01:00	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:01:02	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:01:16	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:01:33	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:01:33	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:01:35	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:01:44	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:03:16	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:03:16	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:03:25	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:03:31	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:03:31	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:03:36	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:03:36	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:03:48	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:04:14	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:04:14	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:04:18	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:04:18	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:04:27	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:05:04	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:04	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:05:07	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:07	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:08	[CRITICAL]	In root	[LOG_SERIAL] The port has not been initialized.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:11	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:05:12	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:05:19	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:06:27	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:27	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:06:30	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:30	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:31	[WARNING]	In root	[LOG_SERIAL] "/dev/ttyACM0" has already been disconnected!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:34	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] Clearing connection from "/dev/ttyACM0" before connecting "/dev/ttyACM0".
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] "/dev/ttyACM0" has been successfully closed!
+27-May-25 13:06:35	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:06:48	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
+27-May-25 13:07:11	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:07:11	[INFO]	In root	[LOG_SERIAL] Thread is started!
+27-May-25 13:07:20	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+27-May-25 13:07:24	[WARNING]	In root	[LOG_SERIAL] Attempting to reconnect "/dev/ttyACM0"...
+27-May-25 13:07:24	[INFO]	In root	[LOG_SERIAL] Device "/dev/ttyACM0" is successfully connected with baud rate 115200.
+27-May-25 13:07:27	[INFO]	In root	[LOG_SERIAL] Thread is stopped and destroyed!
