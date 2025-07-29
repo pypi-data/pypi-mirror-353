@@ -1,0 +1,2 @@
+[console_scripts]
+pullapprove = pullapprove.cli:cli
