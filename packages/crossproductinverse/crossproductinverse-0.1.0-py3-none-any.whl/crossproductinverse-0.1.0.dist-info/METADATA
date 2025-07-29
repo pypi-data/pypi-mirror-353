@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: crossproductinverse
+Version: 0.1.0
+Summary: Compute the inverse of the cross-product for 3D vectors.
+Home-page: https://github.com/yourusername/CrossProductInverse
+Author: Leon Deligny
+Author-email: leon.deligny@icloud.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+This module computes the inverse of the cross-product.
+
+## Motivations
+
+This is specific to 3D vector algebra.
+
+ In Fluid Dynamics, we have access to the moment of a force at a specific point (M_P = OP \cross F). This calculation is crucial when determining the center of pressure (CoP), a pivotal concept for understanding the distribution of forces on an object submerged in a fluid. To accurately pinpoint the CoP, we often need to "reverse" this process, effectively requiring an inverse functionality for the cross product.
+
+## Installation
+
+First, set up your conda environment:
+
+```sh
+cd /PathTo/CrossProductInverse
+conda env create -f environment.yml
+```
+
+## Package
+
+You can also directly install the package from PyPI:
+
+```sh
+pip install crossproductinverse
+```
