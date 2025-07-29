@@ -1,0 +1,16 @@
+inventaire/__init__.py,sha256=WuR-nPq3zMUv37M1QUPWLo-oSt-Cq_z7zVEm4KwXhzI,149
+inventaire/inventaire.py,sha256=zsXXbAx8zZy_hg54cPTCdN8nNgaFAIaP30hdtkDb1ow,1193
+inventaire/session.py,sha256=GKhKymkWfbZ1RWlGBvHiKZlgAECOcpNzFhLaXdFOYl0,4989
+inventaire/server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+inventaire/server/helpers.py,sha256=R9yBVkJp4TZRaMQO8R6nURG380yqszBA6SnJZIZ5gLc,2090
+inventaire/server/server_api.py,sha256=MyIjP48aZ3ZkmCYbDVnEaxaTuzIbViVzW2elMkckae4,1361
+inventaire/server/endpoints/__init__.py,sha256=5WtTEXr78fc1fEQ1KmDfxoy5hu4O-gJGr5CdCBUY2yE,369
+inventaire/server/endpoints/endpoints.py,sha256=bq71zsRfw7HAwiFRTeqyic2aWUZs4Po9uBaaX7amNDs,27820
+inventaire/server/endpoints/paths.py,sha256=3n2EGH1agDB5EC67edlvdsEbcPcAjuBElUuvQYhQZuA,3029
+inventaire/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+inventaire/utils/common.py,sha256=OMC6tWGaKdr7w-X1AcjvI0FtLBKF414MaVf9I2AFhgs,1154
+inventaire_python_api-0.1.6.dist-info/LICENSE,sha256=0a4n55Sz3fjUWdKbBfdbY3HHSFZF-ABsPduSr_RnDXo,11354
+inventaire_python_api-0.1.6.dist-info/METADATA,sha256=I5sam_TBKY8MVrbkIn1-KIIXmHCd37DB_cFfwG_-q6s,2863
+inventaire_python_api-0.1.6.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+inventaire_python_api-0.1.6.dist-info/top_level.txt,sha256=8gwH4RwT6kRTmXRJsmA2yTd3e8-Y1COa05LTqlxFhKw,11
+inventaire_python_api-0.1.6.dist-info/RECORD,,
