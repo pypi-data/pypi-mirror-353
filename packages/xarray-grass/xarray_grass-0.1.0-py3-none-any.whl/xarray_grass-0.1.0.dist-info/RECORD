@@ -1,0 +1,9 @@
+xarray_grass/__init__.py,sha256=VTTvZVn1s6uQfR51jRddWgtsqK_vH44HCxc35c1TVeQ,329
+xarray_grass/grass_interface.py,sha256=u0pOlEO6GmyjSwC5qK09_L3x2irHOYrBZSgLx1gNNWA,13021
+xarray_grass/xarray_grass.py,sha256=BB-WxJi-wUnewyNl5NN9UNPeYYlI_qlsEhB3FikN_ls,14310
+xarray_grass-0.1.0.dist-info/licenses/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+xarray_grass-0.1.0.dist-info/METADATA,sha256=TJUx1zr6TldCxESBtqpK72jQsazpIl0sqE0dZ2kNi3c,3057
+xarray_grass-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xarray_grass-0.1.0.dist-info/entry_points.txt,sha256=-EFrLEQ3nocNwMZ5GeWWWdslZOOO8f2wht-fWB08HLo,82
+xarray_grass-0.1.0.dist-info/top_level.txt,sha256=2yBPeYG8YM1ctpGPLp_RPBxe6QnGkL7fyUozt0sbJ-M,13
+xarray_grass-0.1.0.dist-info/RECORD,,
