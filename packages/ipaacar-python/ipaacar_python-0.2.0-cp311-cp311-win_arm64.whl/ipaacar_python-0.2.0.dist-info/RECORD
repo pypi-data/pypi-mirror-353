@@ -1,0 +1,9 @@
+ipaacar/components.cp311-win_arm64.pyd,sha256=pIBzd9GgfQe0jzK605rVc4K_frXJsQ-b_HIunSc5E6M,3276800
+ipaacar/components.pyi,sha256=rSAcf4JaHWJUBmAwou4G2Bx6kyauIJBO6EAEDlifvXI,3300
+ipaacar/handler.py,sha256=vjsmK_b1hfGyqPpqWQtMIizThydLJ_wknt3QYzYOLMk,659
+ipaacar/legacy.py,sha256=C2xN1BsIxeL3Tg_PKItYFHtywpIA114XkEoVNiHhrBw,5868
+ipaacar/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ipaacar_python-0.2.0.dist-info/METADATA,sha256=leifjRid7Q0U2oCXDShZR5OF7JWv9VYtEqBEoMyHG5I,4547
+ipaacar_python-0.2.0.dist-info/WHEEL,sha256=Jix8H6DgUo29k_n9WxOZONDh_aMjAyOh_2H3dt2M3k4,96
+ipaacar_python-0.2.0.dist-info/licenses/LICENSE,sha256=tg8u43eJxnDktcioUiv4pCEoyagbGn8KHkuxVC3zROk,35073
+ipaacar_python-0.2.0.dist-info/RECORD,,
