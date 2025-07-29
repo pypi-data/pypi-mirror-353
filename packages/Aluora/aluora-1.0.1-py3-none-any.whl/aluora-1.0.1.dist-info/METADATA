@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: Aluora
+Version: 1.0.1
+Summary: Librería para detectar alucinaciones
+Home-page: https://github.com/Pedro-Sarmiento
+Author: Pedro Sarmiento
+Author-email: pedro.sarmiento102@alu.ulpgc.es
+License: MIT
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
