@@ -1,0 +1,25 @@
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+include pyproject.toml
+
+# Include all source files
+recursive-include src *.py
+
+# Include documentation
+include DOCKER_SETUP.md
+recursive-include docs *
+
+# Exclude unnecessary files
+exclude .DS_Store
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude __pycache__
+exclude .git*
+exclude .coverage
+exclude .pytest_cache
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store 

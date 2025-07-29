@@ -1,0 +1,17 @@
+DOCKER_SETUP.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+src/youtube_trimmer/__init__.py
+src/youtube_trimmer/cli.py
+src/youtube_trimmer/core.py
+src/youtube_trimmer/mcp_server.py
+src/youtube_trimmer_mcp.egg-info/PKG-INFO
+src/youtube_trimmer_mcp.egg-info/SOURCES.txt
+src/youtube_trimmer_mcp.egg-info/dependency_links.txt
+src/youtube_trimmer_mcp.egg-info/entry_points.txt
+src/youtube_trimmer_mcp.egg-info/requires.txt
+src/youtube_trimmer_mcp.egg-info/top_level.txt

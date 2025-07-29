@@ -1,0 +1,117 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-trimmer-mcp"
+version = "1.0.3"
+description = "Download and trim YouTube videos with MCP (Model Context Protocol) server support"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Manuel Gomez", email = "manuel@example.com"}
+]
+maintainers = [
+    {name = "Manuel Gomez", email = "manuel@example.com"}
+]
+keywords = [
+    "youtube", 
+    "video", 
+    "trimmer", 
+    "mcp", 
+    "model-context-protocol", 
+    "ai", 
+    "llm", 
+    "ffmpeg",
+    "yt-dlp"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9", 
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Environment :: Console",
+]
+
+# Core dependencies
+dependencies = [
+    "yt-dlp>=2023.3.4",
+    "mcp>=1.0.0",
+]
+
+# Optional dependencies for different use cases
+[project.optional-dependencies]
+# MCP server dependencies (this is actually redundant since mcp is in core deps, but keeping for clarity)
+mcp = ["mcp>=1.0.0"]
+
+# Development dependencies
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "isort>=5.12",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+# All optional dependencies
+all = [
+    "mcp>=1.0.0",
+]
+
+# CLI entry points
+[project.scripts]
+youtube-trimmer = "youtube_trimmer.cli:main"
+youtube-trimmer-mcp = "youtube_trimmer.mcp_server:main"
+
+# Project URLs
+[project.urls]
+Homepage = "https://github.com/manuelgomez/youtube-trimmer-mcp"
+Documentation = "https://github.com/manuelgomez/youtube-trimmer-mcp#readme"
+Repository = "https://github.com/manuelgomez/youtube-trimmer-mcp.git"
+"Bug Tracker" = "https://github.com/manuelgomez/youtube-trimmer-mcp/issues"
+Changelog = "https://github.com/manuelgomez/youtube-trimmer-mcp/releases"
+
+# Setuptools specific configuration
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Black configuration
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+# isort configuration
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120
+
+# MyPy configuration
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+# Pytest configuration
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+asyncio_mode = "auto" 
