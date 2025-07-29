@@ -1,0 +1,12 @@
+MANIFEST.in
+setup.py
+awesomeff.egg-info/PKG-INFO
+awesomeff.egg-info/SOURCES.txt
+awesomeff.egg-info/dependency_links.txt
+awesomeff.egg-info/top_level.txt
+my_awesome_package/__init__.py
+my_awesome_package/bin/.aider.chat.history.md
+my_awesome_package/bin/.aider.input.history
+my_awesome_package/bin/__init__.py
+my_awesome_package/bin/ffmpeg
+my_awesome_package/bin/ffprobe

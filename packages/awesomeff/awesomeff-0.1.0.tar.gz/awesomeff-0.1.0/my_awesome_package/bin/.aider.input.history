@@ -1,0 +1,45 @@
+
+# 2025-06-04 13:45:51.107359
++n
+
+# 2025-06-04 13:46:14.630269
++make these prebuilt binaries into a package that i can upload to PyPI
+
+# 2025-06-04 13:46:33.148363
++/run python3 setup.py sdist bdist_wheel
+
+# 2025-06-04 13:46:33.148410
++/run python3 setup.py sdist bdist_wheel
+
+# 2025-06-04 13:46:33.622713
++/run twine upload dist/*
+
+# 2025-06-04 13:46:33.622772
++/run twine upload dist/*
+
+# 2025-06-04 13:47:23.211102
++D
+
+# 2025-06-04 13:47:26.034118
++skil
+
+# 2025-06-04 13:47:27.782728
++skip
+
+# 2025-06-04 13:47:47.086592
++package these prebuilt binaries so i can upload them to PyPI
+
+# 2025-06-04 13:48:00.873053
++/run python3 setup.py sdist bdist_wheel
+
+# 2025-06-04 13:48:00.873121
++/run python3 setup.py sdist bdist_wheel
+
+# 2025-06-04 13:48:01.333692
++/run twine upload dist/*
+
+# 2025-06-04 13:48:01.333764
++/run twine upload dist/*
+
+# 2025-06-04 13:48:10.170322
++yeah
