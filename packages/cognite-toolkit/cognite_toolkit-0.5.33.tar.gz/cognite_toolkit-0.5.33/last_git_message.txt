@@ -1,0 +1,23 @@
+Use pydantic for transformation validation (#1606)
+
+# Description
+
+Start using the newly created `TransformationYAML` for validation in the
+`cdf build` command.
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Improved
+
+- In the `cdf build` command improved feedback if transformations
+configurations is not following the specifications.
+
+## templates
+
+No changes.
