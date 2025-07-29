@@ -1,0 +1,222 @@
+Metadata-Version: 2.4
+Name: easyml-framework
+Version: 1.3.0
+Summary: Framework ML ultra-simple avec cache intelligent, ensemble learning et monitoring automatique
+Home-page: https://github.com/jeremy-dev/easyml-framework
+Author: Jeremy Dev
+Author-email: jeremy.dev@example.com
+Project-URL: Bug Reports, https://github.com/jeremy-dev/easyml-framework/issues
+Project-URL: Source, https://github.com/jeremy-dev/easyml-framework
+Project-URL: Documentation, https://github.com/jeremy-dev/easyml-framework/blob/main/README.md
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: pandas>=1.2.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: joblib>=1.0.0
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: pyyaml>=5.4.0
+Requires-Dist: requests>=2.25.0
+Provides-Extra: deep
+Requires-Dist: tensorflow>=2.8.0; extra == "deep"
+Requires-Dist: torch>=1.10.0; extra == "deep"
+Provides-Extra: nlp
+Requires-Dist: nltk>=3.6; extra == "nlp"
+Requires-Dist: spacy>=3.2.0; extra == "nlp"
+Provides-Extra: viz
+Requires-Dist: plotly>=5.0.0; extra == "viz"
+Requires-Dist: bokeh>=2.3.0; extra == "viz"
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🚀 EasyML Framework
+
+Un framework Machine Learning simplifié et complet pour Python qui rend l'IA accessible à tous.
+
+## ✨ Fonctionnalités
+
+- **🔧 AutoML** - Machine Learning automatisé en quelques lignes
+- **📊 Preprocessing** - Nettoyage et préparation de données intelligent
+- **🤖 Modèles** - Classification, régression, clustering, NLP
+- **📈 Visualisation** - Graphiques et métriques automatiques
+- **🚀 Déploiement** - Export de modèles prêts pour la production
+- **⚡ Performance** - Optimisations automatiques et parallélisation
+
+## 🛠️ Installation
+
+```bash
+# Installation de base
+pip install easyml-framework
+
+# Installation complète avec toutes les dépendances
+pip install easyml-framework[deep,nlp,viz]
+
+# Installation en mode développement
+pip install easyml-framework[dev]
+```
+
+## 🚀 Démarrage Rapide
+
+### Classification Automatique
+
+```python
+import easyml as ez
+
+# Charger vos données
+model = ez.AutoClassifier()
+model.fit('data.csv', target='label')
+
+# Prédictions automatiques
+predictions = model.predict('new_data.csv')
+
+# Évaluation complète
+model.evaluate()
+```
+
+### Preprocessing Intelligent
+
+```python
+# Nettoyage automatique
+cleaner = ez.DataCleaner()
+clean_data = cleaner.transform('messy_data.csv')
+
+# Feature engineering
+features = ez.FeatureEngine()
+enhanced_data = features.generate_features(clean_data)
+```
+
+### Visualisation Automatique
+
+```python
+# Analyse exploratoire automatique
+ez.explore_data('data.csv')
+
+# Visualisation de modèle
+model.plot_results()
+model.plot_feature_importance()
+```
+
+## 📚 Exemples Complets
+
+### Prédiction de Prix Immobilier
+
+```python
+import easyml as ez
+
+# 1. Chargement et exploration
+data = ez.load_data('houses.csv')
+ez.explore_data(data)
+
+# 2. Preprocessing automatique
+cleaner = ez.DataCleaner(auto_encode=True, handle_missing='smart')
+data_clean = cleaner.fit_transform(data)
+
+# 3. Modèle de régression
+model = ez.AutoRegressor(optimization='auto', cv_folds=5)
+model.fit(data_clean, target='price')
+
+# 4. Évaluation et export
+results = model.evaluate()
+model.save('house_price_model.pkl')
+```
+
+### Classification de Sentiment
+
+```python
+import easyml as ez
+
+# NLP automatique
+nlp_model = ez.TextClassifier()
+nlp_model.fit('reviews.csv', text_column='comment', target='sentiment')
+
+# Prédiction sur nouveau texte
+sentiment = nlp_model.predict("Ce produit est fantastique!")
+print(f"Sentiment: {sentiment}")  # Positif
+```
+
+## 🔧 API Complète
+
+### Classes Principales
+
+- **`ez.AutoClassifier()`** - Classification automatique
+- **`ez.AutoRegressor()`** - Régression automatique
+- **`ez.TextClassifier()`** - Classification de texte
+- **`ez.TimeSeriesPredictor()`** - Prédiction temporelle
+- **`ez.ClusterAnalyzer()`** - Analyse de clustering
+- **`ez.DataCleaner()`** - Nettoyage de données
+- **`ez.FeatureEngine()`** - Feature engineering
+
+### Utilitaires
+
+- **`ez.load_data()`** - Chargement intelligent de données
+- **`ez.explore_data()`** - Analyse exploratoire automatique
+- **`ez.compare_models()`** - Comparaison de modèles
+- **`ez.deploy_model()`** - Déploiement en API
+
+## 📊 Métriques et Visualisations
+
+EasyML génère automatiquement :
+
+- Matrices de confusion
+- Courbes ROC et AUC
+- Feature importance
+- Courbes d'apprentissage
+- Analyse de résidus
+- Métriques de performance complètes
+
+## 🚀 Installation et Tests
+
+```bash
+# Cloner le repository
+git clone https://github.com/easyml/easyml-framework.git
+cd easyml-framework
+
+# Installation en mode développement
+pip install -e .[dev]
+
+# Lancer les tests
+pytest tests/
+
+# Lancer les exemples
+python examples/classification_example.py
+```
+
+## 📄 Licence
+
+MIT License - voir [LICENSE](LICENSE)
+
+## 🚀 Comment Publier une Mise à Jour
+
+1. Modifier la version dans `setup.py` et `easyml/__init__.py`
+2. Reconstruire : `python setup.py sdist bdist_wheel`
+3. Publier : `twine upload dist/*` 

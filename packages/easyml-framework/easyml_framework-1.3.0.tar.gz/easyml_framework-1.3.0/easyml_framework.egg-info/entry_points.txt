@@ -1,0 +1,2 @@
+[console_scripts]
+easyml = easyml.cli:main
