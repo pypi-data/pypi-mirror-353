@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=40.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "streamlit-tetrascience-ui"
+version = "0.1.0"
+readme = "README.md"
+keywords = ["streamlit", "tetrascience", "ui", "components"]
+description = "Tetrascience UI components for Streamlit"
+authors = [{ name = "Vulcan at Tetrascience", email = "dev@vulcan.agency" }]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "streamlit",
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+homepage = "https://github.com/vulcancreative/tetrascience-python"
+repository = "https://github.com/vulcancreative/tetrascience-python"
