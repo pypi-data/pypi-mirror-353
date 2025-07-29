@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: leximetry
+Version: 0.0.1
+Summary: Measure your words
+Project-URL: Repository, https://github.com/jlevy/leximetry
+Author-email: Joshua Levy <joshua@cal.berkeley.edu>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: <4.0,>=3.11
+Requires-Dist: chopdiff>=0.2.1
+Requires-Dist: clideps>=0.1.7
+Requires-Dist: colour>=0.1.5
+Requires-Dist: flowmark>=0.4.6
+Requires-Dist: prettyfmt>=0.4.0
+Requires-Dist: pydantic-ai-slim[anthropic,gemini,openai]>=0.2.12
+Requires-Dist: rich>=14.0.0
+Requires-Dist: strif>=3.0.1
+Description-Content-Type: text/markdown
+
+# Leximetry: Qualitative Metrics for Prose
+
+This is a new experimental approach to summarizing some qualitative metrics of writing.
+
+See [leximetry.md](src/leximetry/docs/leximetry.md) for more on how it works.
+
+## Usage
+
+Install with `uv tool install --upgrade leximetry`. [Using uv](installation.md) is
+highly recommended.
+
+## Example
+
+<div align="center">
+
+<img width="713" alt="Example run of leximetry" src="https://github.com/user-attachments/assets/633d1c1b-4918-4f67-9f7a-472e08fb984a" />
+
+</div>
+
+* * *
+
+## Project Docs
+
+For how to install uv and Python, see [installation.md](installation.md).
+
+For development workflows, see [development.md](development.md).
+
+For instructions on publishing to PyPI, see [publishing.md](publishing.md).
+
+* * *
+
+*This project was built from
+[simple-modern-uv](https://github.com/jlevy/simple-modern-uv).*
