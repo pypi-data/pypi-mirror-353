@@ -1,0 +1,151 @@
+Metadata-Version: 2.4
+Name: autospice
+Version: 0.1.2
+Summary: SPICE: Sparse and Interpretable Cognitive Equations
+Author-email: Daniel Weinhardt <daniel.weinhardt@uni-osnabrueck.de>
+Maintainer-email: Muhip Tezcan <itezcan@uni-osnabrueck.de>
+License: MIT License
+        
+        Copyright (c) 2025 Daniel Weinhardt
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Issues, https://github.com/whyhardt/SPICE/issues
+Project-URL: Repository, https://github.com/whyhardt/SPICE
+Keywords: cognitive-science,reinforcement-learning,machine-learning,rnn,dynamical-systems,sindy
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: arviz<0.21.0,>=0.20.0
+Requires-Dist: jax<0.5.0,>=0.4.35
+Requires-Dist: matplotlib<4.0.0,>=3.10.0
+Requires-Dist: numpy<2.0.0,>=1.21.0
+Requires-Dist: numpyro<0.16.0,>=0.15.0
+Requires-Dist: pandas<3.0.0,>=2.2.0
+Requires-Dist: pymc<6.0.0,>=5.21.0
+Requires-Dist: pyro_ppl<2.0.0,>=1.9.0
+Requires-Dist: pysindy<2.0.0,>=1.7.0
+Requires-Dist: scikit-learn<2.0.0,>=1.0.0
+Requires-Dist: scipy<2.0.0,>=1.15.0
+Requires-Dist: seaborn<0.14.0,>=0.13.0
+Requires-Dist: theano<2.0.0,>=1.0.5
+Requires-Dist: torch<3.0.0,>=2.0.0
+Requires-Dist: tqdm>=4.65.0
+Requires-Dist: optuna<5.0.0,>=4.3.0
+Requires-Dist: dill<0.5.0,>=0.4.0
+Requires-Dist: pytest>=7.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Dynamic: license-file
+
+# Computational Discovery of Sparse and Interpretable Cognitive Equations (SPICE)
+
+![SPICE Logo](https://github.com/whyhardt/SPICE/blob/main/figures/spice_logo.png?raw=true)
+
+SPICE is a framework for automating scientific practice in cognitive science and is based on a two cornerstones:
+
+1. A task-specific RNN is trained to predict human behavior and thus learn implicitly latent cognitive mechanisms.
+
+2. Sparse Identification of nonlinear Dynamics (SINDy; an equation discovery algorithm) is used to obtain mathematically interpretable equations for the learned cognitive mechanisms.
+
+The resulting model with the neural-network architecture but with equations instead of RNN modules is called SPICE model. An overview is given in Figure 1.
+
+This README file gives an overview on how to install and run SPICE as a scikit-learn estimator. To learn how to use SPICE in more comprehensive scenarios, you can go to [tutorials](tutorials).
+
+![Figure 1 - SPICE Overview](https://github.com/whyhardt/SPICE/blob/main/figures/spice_overview.jpg?raw=true "Figure 1: SPICE overview")
+
+## Installation
+
+You can install SPICE using pip:
+
+```bash
+pip install autospice
+```
+
+or, you can clone this repository and install it locally from the root folder:
+
+```bash
+pip install -e .
+```
+
+## Features
+
+- Scikit-learn compatible estimator interface
+- Customizable network architecture for identifying complex cognitive mechanisms
+- Participant embeddings for identifying individual differences
+- Precoded models for simple Rescorla-Wagner, forgetting mechanism, choise perseveration and parcitipant embeddings
+
+## Quick Start
+
+```python
+from spice.estimator import SpiceEstimator
+import numpy as np
+
+# Create and configure the model
+spice_estimator = SpiceEstimator(
+    hidden_size=8,
+    epochs=128,
+    n_actions=2,
+    n_participants=10,
+    learning_rate=1e-2,
+    sindy_optim_threshold=0.03,
+    verbose=True
+)
+
+# Generate example data
+conditions = np.random.rand(10, 100, 5)  # (n_participants, n_trials, n_features)
+targets = np.random.randint(0, 2, size=(10, 100, 2))  # (n_participants, n_trials, n_actions)
+
+# Fit the model
+spice_estimator.fit(conditions, targets)
+
+# Make predictions
+pred_rnn, pred_sindy = model.predict(conditions)
+
+# Get learned features
+features = model.get_sindy_features()
+```
+
+## Requirements
+
+See `requirements.txt` for a complete list of dependencies.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Citation
+
+If you use this package in your research, please cite:
+
+```bibtex
+@software{spice2025,
+  title = {SPICE: Sparse and Interpretable Cognitive Equations},
+  year = {2025},
+  author = {Weinhardt, Daniel},
+  url = {https://github.com/whyhardt/SPICE}
+}
+```
