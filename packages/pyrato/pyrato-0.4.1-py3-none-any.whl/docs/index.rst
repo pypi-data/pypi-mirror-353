@@ -1,0 +1,4 @@
+pyrato
+======
+
+.. include:: header.rst
