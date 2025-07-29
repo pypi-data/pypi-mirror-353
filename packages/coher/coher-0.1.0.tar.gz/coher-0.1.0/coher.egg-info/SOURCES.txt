@@ -1,0 +1,7 @@
+setup.py
+coher.egg-info/PKG-INFO
+coher.egg-info/SOURCES.txt
+coher.egg-info/dependency_links.txt
+coher.egg-info/top_level.txt
+genism/__init__.py
+genism/core.py
