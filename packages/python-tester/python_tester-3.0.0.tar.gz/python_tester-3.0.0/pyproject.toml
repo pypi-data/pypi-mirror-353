@@ -1,0 +1,30 @@
+[project]
+name = "python_tester"
+version = "3.0.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["colorama>=0.4.6"]
+
+
+[tool.uv]
+package = true
+
+[tool.uv.build-backend]
+module-name = "tester"
+source-exclude = ["tests*"]
+
+[project.scripts]
+tester = "tester.run_tests:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["tester*"]
+exclude = ["tests*"]
+
+[dependency-groups]
+dev = ["coverage>=7.8.2", "ruff>=0.11.11", "tox>=4.26.0"]
