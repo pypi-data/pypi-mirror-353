@@ -1,0 +1,10 @@
+cartopy
+cdo
+cf-xarray
+cftime
+iris
+metpy
+netcdf4
+pint
+xarray
+pyyaml
