@@ -1,0 +1,18 @@
+[project]
+name = "kexporter"
+version = "0.1.2"
+description = "Export Discord channels to HTML, preserving visual layout"
+readme = "README.md"
+authors = [
+  { name="Kushh", email="kushy.lade@gmail.com" }
+]
+license = {file = "LICENSE"}
+dependencies = [
+  "discord.py>=2.5.2",
+  "jinja2>=3.1.6"
+]
+keywords = ["discord", "html", "export"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
