@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+sqlglot_vertica/__init__.py
+sqlglot_vertica/vertica.py
+tests/test_vertica.py
+vertica_sqlglot_dialect.egg-info/PKG-INFO
+vertica_sqlglot_dialect.egg-info/SOURCES.txt
+vertica_sqlglot_dialect.egg-info/dependency_links.txt
+vertica_sqlglot_dialect.egg-info/requires.txt
+vertica_sqlglot_dialect.egg-info/top_level.txt
