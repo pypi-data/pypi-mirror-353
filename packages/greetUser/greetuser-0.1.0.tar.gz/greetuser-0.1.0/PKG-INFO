@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: greetUser
+Version: 0.1.0
+Summary: A simple greeting message package
+Author: Vijay Choudhary
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: requires-python
+Dynamic: summary
+
+This package provides a simple function to greet users with a welcome message.
