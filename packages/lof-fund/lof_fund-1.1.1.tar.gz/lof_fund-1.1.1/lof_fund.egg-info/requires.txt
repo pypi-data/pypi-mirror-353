@@ -1,0 +1,6 @@
+chinesecalendar
+schedule
+requests
+pandas
+akshare
+beautifulsoup4
