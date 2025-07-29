@@ -1,0 +1,11 @@
+numpy>=1.26
+scipy>=1.12
+typer[all]>=0.12
+requests>=2.32
+sympy>=1.14
+graphql-core>=3.2
+
+[dev]
+pytest>=8
+ruff>=0.4
+mypy>=1.10
