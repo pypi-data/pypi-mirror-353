@@ -1,0 +1,9 @@
+correlation_py-0.2.0.dist-info/METADATA,sha256=3KI5Ab4Mq_KO5mo5_1wTcKuzC_JktJ-x2_KsUgUmMdY,675
+correlation_py-0.2.0.dist-info/WHEEL,sha256=VePhbLDe48Mdi56j-I6lgdOkOHhyd95O3kzobbQK1f0,127
+correlation_py-0.2.0.dist-info/licenses/LICENSE,sha256=zNiaTp0kEksFsyqvD7PDV6ZZQvJWONENnpsF2Lt2ZDk,1069
+correlation_py/__init__.py,sha256=upMREvsZZYsOCiPBJiNkILNcuOl3Q_ThRYqVDHIckKY,246
+correlation_py/_internal.cpython-39-x86_64-linux-gnu.so,sha256=RhWUZuzWz-WpbRpWfIKV5FybDKFAwiXkVKDyeExu0fI,9521880
+correlation_py/correlation.py,sha256=NRWjB2QGj13g_S6RayoHZAppbGDjfHe4g_nlWjQINIg,1827
+correlation_py/result.py,sha256=BS3_omBVEr3R73EGnqIJN6shsqdJlTuQ49zkZ0XB2cs,1438
+correlation_py/utils.py,sha256=fHCUp6j4dBjdzLEL2KOlxsa42fgekzhdzE5E72Hn-l8,7901
+correlation_py-0.2.0.dist-info/RECORD,,
