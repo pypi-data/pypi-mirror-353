@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: mammos-units
+Version: 0.3.0
+Summary: Magnetic units package built on top of Astropy units
+Project-URL: Homepage, https://mammos-project.github.io
+Project-URL: Documentation, https://mammos-project.github.io/mammos
+Project-URL: Repository, https://github.com/MaMMoS-project/mammos-units
+Project-URL: Issues, https://github.com/MaMMoS-project/mammos-units/issues
+Project-URL: Changelog, https://mammos-project.github.io/mammos/changelog
+Author-email: Sam Holt <samjrholt@gmail.com>, Hans Fangohr <hans.fangohr@mpsd.mpg.de>, Swapneel Amit Pathak <swapneel-amit.pathak@mpsd.mpg.de>, Martin Lang <martin.lang@mpsd.mpg.de>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.11
+Requires-Dist: astropy>=7.0.0
