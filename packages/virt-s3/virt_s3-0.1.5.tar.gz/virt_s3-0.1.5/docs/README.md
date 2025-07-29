@@ -1,0 +1,148 @@
+# Virt-S3 🪣
+
+A Virtualitics utility package to handle file I/O with Object Storage Systems like AWS S3 and Minio. 
+
+With versatility in mind, `virt-s3` was designed to be a relatively lightweight package that can either used independently or in conjunction with the larger Virtualitics AI platform. The `virt-s3` module includes two primary submodules `s3` and `fs` that implement each API function of the `virt-s3` module specific to the target system: either S3/S3-like systems or local file systems.
+
+We hope that you can use it, break it, and even help us improve it!
+
+## Table of Contents
+1. [Prerequisites](#Prerequisites)
+2. [Example Usage](#Example-Usage)
+3. [Architecture](#Architecture)
+4. [Getting Started](#Getting-Started)
+5. [Documentation](#Code-Documentation)
+
+
+## Prerequisites
+- Requires python>=3.11
+- Local File System features currently only support posix `/` pathing (Linux, Mac, etc.)
+    * Support for Windows `\` pathing **[Coming Soon]**
+
+
+## Example Usage
+
+### Creating a Bucket
+```python
+import virt_s3
+
+# ENV variable `Local_FS` = '1' or '0' (local file system or S3)
+params = virt_s3.get_default_params()
+
+# use context manager to manage session scope
+with virt_s3.SessionManager(params=params) as session:
+    virt_s3.create_bucket('test-bucket', params=params, client=session)
+```
+
+### Uploading a File
+```python
+import virt_s3
+import pandas as pd
+
+# ENV variable `Local_FS` = '1' or '0' (local file system or S3)
+params = virt_s3.get_default_params()
+
+# path to locally saved csv file
+fpath = "/tmp/data.csv"
+
+# use context manager to manage session scope
+with virt_s3.SessionManager(params=params) as session:
+    s3_key = f"fixture/data/data.csv"
+    virt_s3.upload_data(fpath, s3_key, params=params, client=session)
+```
+
+### Reading a File
+```python
+import virt_s3
+import pandas as pd
+
+# ENV variable `Local_FS` = '1' or '0' (Local file system or S3)
+params = virt_s3.get_default_params()
+
+# use context manager to manage session scope
+with virt_s3.SessionManager(params=params) as session:
+    data = virt_s3.get_file(saved_key, bytes_io=True, params=params, client=session)
+    df = pd.read_csv(data)
+```
+
+## Architecture
+
+`virt-S3` can be run on a local machine or from within a docker container. Additionally, it includes a variety of ways to interact with Object Storage Systems like AWS S3 and Minio in different hosting environments along with support for local file system access on host machine within docker container.
+
+This versatility along with its lightweight set of dependencies allows `virt-s3` to be easily installed and used in various types of environments.
+
+
+## Getting Started
+1. Create a fresh virtual environment with python >= 3.11
+
+2. Install the necessary dependencies
+
+Basic Install (No Extras)
+```bash
+$ pip install virt-s3
+```
+
+Install with Single Extra
+```bash
+$ pip install "virt-s3[s3]"
+```
+
+Install with Multiple Extras
+```bash
+$ pip install "virt-s3[s3,dataframe,image]"
+```
+
+- **The Following Extras are Available:**
+    * **s3** = installs dependencies required to interact with object stores like Minio/S3 (primarily relying on `boto3`)
+    * **dataframe** = installs dependencies required for using `numpy`, `pandas`, and `pyarrow` dataframe/parquet operations
+    * **image** = installs dependencies required to utilize image operations (e.g. get file as an image)
+
+- **e.g.** If you want to use `virt_s3`, but can't install `pandas` or `pyarrow` in your restricted environment, then you can simply install `virt_s3` without the `dataframe` extra dependencies. You won't be able to use `virt_s3.extras.CSVFileValidator`, `virt_s3.extras.ParquetFileValidator`, `read_parquet_file_df`, and `write_parquet_file_df` but these are also not necessarily core functions of the library (therefore extras).
+
+3. Make sure the following environment variables are set
+
+```.env
+## Local File System Environment Variables
+LOCAL_FS_USER=<your username>
+LOCAL_FS=0   # use the local fs mirror or s3/minio: 1 = True, 0 = False
+LOCAL_FS_ROOT_DIR=</path/to/your/data/dir/>
+
+## S3 Environment Variables
+S3_URL=<your s3/minio url>  # e.g. http://mock-s3:9000 or http://localhost:9000
+S3_DEFAULT_BUCKET=test-buck<your bucket name>
+AWS_SECRET_ACCESS_KEY=<your aws secret access key>
+AWS_ACCESS_KEY_ID=<your aws access key id>
+AWS_REGION=<your aws region>  # e.g. us-east-1
+```
+
+- Note: `S3_URL` can be replaced with a localhost url (e.g. http://localhost:9000) if not being run within a docker container
+
+4. Run the above [example usage](#Example-Usage)
+
+## Code Documentation
+
+- [Full Module Table of Contents](modules.md)
+- [Full Module API Specs](virt_s3.md)
+
+| API |  Description  |
+|-----|---------------|
+|[`get_default_params()`](virt_s3.md#virt_s3get_default_params)| Function to get default parameters to use for all functions (default behavior is based off of ENV variables) |
+|[`get_session_client()`](virt_s3.md#virt_s3get_session_client)| Function to get session client based on passed in `S3Params` or `LocalFSParams`|
+|[`create_bucket()`](virt_s3.md#virt_s3create_bucket)| Function to create a Bucket to read and write from |
+|[`get_file_chunked()`](virt_s3.md#virt_s3get_file_chunked)| Function to get a file using a chunking loop. This can be useful when trying to retrieve very large files |
+|[`get_file()`](virt_s3.md#virt_s3get_file)| Function to retrieve specified file as either in-memory data object or store directly to file |
+|[`get_image()`](virt_s3.md#virt_s3get_image)| Function to get image from Bucket |
+|[`get_files_generator()`](virt_s3.md#virt_s3get_files_generator)| Generator function to quickly loop through reading a list of keys or file paths |
+|[`get_files_batch()`](virt_s3.md#virt_s3get_files_batch)| Function to get list of file paths or key paths in batch |
+|[`list_dirs()`](virt_s3.md#virt_s3list_dirs)| Function to list valid 'folders' within Bucket |
+|[`get_valid_file_paths()`](virt_s3.md#virt_s3get_valid_file_paths)| Function to get list of valid file paths or keys within particular directory of Bucket |
+|[`file_exists()`](virt_s3.md#virt_s3file_exists)| Function to see if key or file path exists in Bucket |
+|[`upload_data()`](virt_s3.md#virt_s3upload_data)| Function to upload in-memory data (e.g. bytes, BytesIO), file path, or folder path to Bucket |
+|[`delete_file()`](virt_s3.md#virt_s3delete_file)| Function to delete a file from Bucket |
+|[`delete_files_by_dir()`](virt_s3.md#virt_s3delete_files_by_dir)| Function to delete all files and subdirectories, etc. in a given folder within a Bucket |
+|[`archive_zip_as_buffer()`](virt_s3.md#virt_s3archive_zip_as_buffer)| Function to create a zip archive from dictionary of expected archive filepaths and data bytes|
+|[`archive_tar_as_buffer()`](virt_s3.md#virt_s3archive_tar_as_buffer)| Function to create a tar or tar.gz archive from dictionary of expected archive filepaths and data bytes|
+|[`extract_archive_file()`](virt_s3.md#virt_s3extract_archive_file) | Function to extract zip, tar, or tar.gz file contents into Bucket |
+|[`read_parquet_file_df()`](virt_s3.md#virt_s3read_parquet_file_df)| Convenience function to read parquet file as pandas DataFrame |
+|[`write_parquet_file_df()`](virt_s3.md#virt_s3write_parquet_file_df)| Convenience function to write pandas DataFrame to parquet file |
+
