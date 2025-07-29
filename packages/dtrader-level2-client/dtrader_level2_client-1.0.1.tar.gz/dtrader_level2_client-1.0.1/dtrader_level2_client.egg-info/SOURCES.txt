@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+__init__.py
+client.py
+pyproject.toml
+requirements.txt
+setup.py
+dtrader_level2_client.egg-info/PKG-INFO
+dtrader_level2_client.egg-info/SOURCES.txt
+dtrader_level2_client.egg-info/dependency_links.txt
+dtrader_level2_client.egg-info/not-zip-safe
+dtrader_level2_client.egg-info/requires.txt
+dtrader_level2_client.egg-info/top_level.txt
+examples/basic_example.py
+examples/online_package_demo.py
+examples/quick_start.py
