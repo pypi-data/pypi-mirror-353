@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.py
+awesomeff2/__init__.py
+awesomeff2.egg-info/PKG-INFO
+awesomeff2.egg-info/SOURCES.txt
+awesomeff2.egg-info/dependency_links.txt
+awesomeff2.egg-info/top_level.txt
+awesomeff2/bin/__init__.py
+awesomeff2/bin/ffmpeg
+awesomeff2/bin/ffprobe
