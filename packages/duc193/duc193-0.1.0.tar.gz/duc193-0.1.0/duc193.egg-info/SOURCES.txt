@@ -1,0 +1,8 @@
+README.md
+setup.py
+duc193/__init__.py
+duc193/installer.py
+duc193.egg-info/PKG-INFO
+duc193.egg-info/SOURCES.txt
+duc193.egg-info/dependency_links.txt
+duc193.egg-info/top_level.txt

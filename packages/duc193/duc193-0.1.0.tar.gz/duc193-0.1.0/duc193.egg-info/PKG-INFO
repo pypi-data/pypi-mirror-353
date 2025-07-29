@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: duc193
+Version: 0.1.0
+Summary: Cho em con mã nè . . .
+Home-page: https://github.com/derive206
+Author: Duc193
+Author-email: actaccaribe2006@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+## Cài đặt
+
+```bash
+pip install duc193
+
