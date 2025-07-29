@@ -1,0 +1,13 @@
+mcga/__init__.py,sha256=4Fv8H4D_AliBbci1mInTelcHZGraHMUXf2HRDvVLx1Q,1242
+mcga/core.py,sha256=WIR-3vdZyQTbPhhOOf4oU-suMeyo1hCN5B0tt4gJaT8,5612
+mcga/detection.py,sha256=Ve4CZ2LeajCnwfLwapQEyn2ISmtRXXNPmTesOlLSnBw,2431
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=dn9VoQmCJhKwhkVYyP_nlKTB8h8r6SOx9rX4NytJ-aM,1125
+tests/test_core.py,sha256=5jPBKtf6J3Y4P1Ahi2Ji4XOMs-Ral9ZSFoKnvZic3UM,9204
+tests/test_detection.py,sha256=3PhtJeZ44W3cNaioXgM5h6GP-JjcyluTtsCOrCoGogg,10397
+tests/test_performance.py,sha256=iv6Igcip_bgTSnKcV94XrcIPx26BJuRXpjtS1ce3Lsk,8302
+mcga-1.4.5.dist-info/METADATA,sha256=Nz9VLdoPk2myz4jDoD876SYvwMuSqTSaaAfHplZ-Gnc,1369
+mcga-1.4.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcga-1.4.5.dist-info/entry_points.txt,sha256=50yVN6khfj59wvBXE_GUuPFfhqF3S6q29U-ehfZd4KY,40
+mcga-1.4.5.dist-info/top_level.txt,sha256=Nl3FFX4vEU6tTRFaJY985AOvqOGi5B72fw-tYPc9uxk,11
+mcga-1.4.5.dist-info/RECORD,,
