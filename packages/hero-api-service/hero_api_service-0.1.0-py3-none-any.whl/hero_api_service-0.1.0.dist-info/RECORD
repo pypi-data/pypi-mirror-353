@@ -1,0 +1,9 @@
+hero_api_service/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hero_api_service/hero_api.py,sha256=Nt2jgBaEwKG_s-IZeq0jIy3jkAl6dFAZA2oZnDIaNWI,6046
+hero_api_service/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hero_api_service/models/hero_api_error_model.py,sha256=0qlr0aNPXMtabp3t4dV9l4y_3KQuOyVjJLOvsNAVHaU,124
+hero_api_service/models/hero_api_list_model.py,sha256=oYgddt0wfF9vn1f7v4WRsggWgrLvzqlz4CmjnCDMQaE,190
+hero_api_service/models/hero_api_model.py,sha256=9jc2GU_yf9vikKFsAIIAfy2azYGywShIsqeLXFCAvf0,166
+hero_api_service-0.1.0.dist-info/METADATA,sha256=YeGWPDL0fQxJv5Bp2CK2jdECdAMxt3mnw31AdxPNSOs,236
+hero_api_service-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hero_api_service-0.1.0.dist-info/RECORD,,
