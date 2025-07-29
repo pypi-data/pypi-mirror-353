@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: krait-kit
+Version: 25.6.0
+Summary: A versatile Python package for managing and organizing various utilities and tools, including logging, packaging, path handling, and signaled properties.
+Author-email: Adrian Valentin Panaintescu <adrian.cert@gmail.com>
+Maintainer-email: Adrian Valentin Panaintescu <adrian.cert@gmail.com>, Vlad Craciun <craciun.vlad@yahoo.ie>
+License-Expression: MIT
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.8
+Requires-Dist: importlib-metadata>=8.5
+Requires-Dist: pyyaml>=6.0.2
+Provides-Extra: all
+Description-Content-Type: text/markdown
+
+# krait-toolkit
+
+Yet another tool kit

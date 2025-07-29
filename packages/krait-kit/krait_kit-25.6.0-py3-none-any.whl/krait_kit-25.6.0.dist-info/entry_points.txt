@@ -1,0 +1,5 @@
+[krait.transcoder]
+json = msgspec.json
+msgspec = msgspec.msgspec
+toml = msgspec.toml
+yaml = msgspec.yaml
