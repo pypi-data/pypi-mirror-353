@@ -1,0 +1,11 @@
+co2_emissions_ml/__init__.py,sha256=vnnimsrpEzUJ5SqudrV_GMZ_Cw7WacZDkeljNVucd_c,327
+co2_emissions_ml/evaluation.py,sha256=-kicMyTwxVAwAOcNJJ3B6zs9A0BdNmd5U11pDdtJaiM,981
+co2_emissions_ml/models.py,sha256=ISjf0H49eOFTk4UXVqqosBIKcciWcnly8H2hePpvJhQ,5266
+co2_emissions_ml/pipeline.py,sha256=Dur7p1HGBLuYFxNClB4jn0-2mXwsP4rq0iLorvrOhtM,4595
+co2_emissions_ml/preprocessing.py,sha256=K9-ukZJKN0os3Vo4P_wXBTSIzfzE8dAs_SoxXxFY_R0,1277
+co2_emissions_ml-1.0.1.dist-info/licenses/LICENSE,sha256=g4uEubmadLfTC-kt8AuAI4X2Z3vVU5zbZfeWGK5pUWE,1122
+co2_emissions_ml-1.0.1.dist-info/METADATA,sha256=jZPr2MehuBqkV-bN7HE2QzpwHc7gTCzRjP2uq6WIJZA,5994
+co2_emissions_ml-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+co2_emissions_ml-1.0.1.dist-info/entry_points.txt,sha256=eRPMWFhL57G0qAUmmS7bkafwAtOSXXA1DFY3CHkCcNE,59
+co2_emissions_ml-1.0.1.dist-info/top_level.txt,sha256=fzSbfRM83ZD20dldDxn-00ChKaSjLJsOOgJkZtnFACU,17
+co2_emissions_ml-1.0.1.dist-info/RECORD,,
