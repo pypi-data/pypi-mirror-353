@@ -1,0 +1,17 @@
+.gitignore
+.pre-commit-config.yaml
+CHANGELOG.md
+LICENSE
+README.md
+example.ipynb
+pyproject.toml
+.github/workflows/ci.yml
+tqdm_pandas/__init__.py
+tqdm_pandas/_version.py
+tqdm_pandas/patcher.py
+tqdm_pandas/reader.py
+tqdm_pandas.egg-info/PKG-INFO
+tqdm_pandas.egg-info/SOURCES.txt
+tqdm_pandas.egg-info/dependency_links.txt
+tqdm_pandas.egg-info/requires.txt
+tqdm_pandas.egg-info/top_level.txt

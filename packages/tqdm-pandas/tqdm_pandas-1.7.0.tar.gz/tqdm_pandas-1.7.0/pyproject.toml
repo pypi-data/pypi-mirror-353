@@ -1,0 +1,48 @@
+[project]
+name = "tqdm-pandas"
+dynamic = ["version"]  # Version comes from git tags
+description = "Progress bar for pandas file reading operations"
+authors = [
+    {name = "IshaanJolly", email = "ijolly1997@gmail.com"}
+]
+keywords = ["pandas", "progress", "tqdm"]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=1.0.0",
+    "tqdm>=4.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tqdm_pandas*"]
+
+[tool.setuptools_scm]
+write_to = "tqdm_pandas/_version.py"
+
+[tool.semantic_release]
+# No version_toml or version_variables needed!
+# semantic-release will just create tags, setuptools_scm reads them
+branch = "main"
+upload_to_vcs_release = true
+changelog_file = "CHANGELOG.md"
+commit_parser = "angular"
+logging_use_named_masks = false
+
+[tool.semantic_release.remote]
+name = "origin"
+type = "github"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["build", "chore", "ci", "docs", "feat", "fix", "perf", "style", "refactor", "test"]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
