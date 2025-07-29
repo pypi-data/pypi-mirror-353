@@ -1,0 +1,13 @@
+mailscript/__init__.py,sha256=6pBtDr9EjHCXzlNglJonJsbtxcqMaZJlbw1C_5yxzMQ,313
+mailscript/__main__.py,sha256=q71BJSFy7lz2-5njFsWPS7lZV3TOKMZOjq_GbRRWVSs,8365
+mailscript/mailer.py,sha256=oY3yBR7aVrg7aD6hH2wOPLArQMfJa1q2G3Qg39y7My4,12823
+mailscript/templates/__init__.py,sha256=igVi2XbTYgoxADyiGQvCLURyWLPOsgLEhzLs3Ue7XWg,136
+mailscript/templates/renderer.py,sha256=xjW26-wsiR0i1KMtVfCh6Ww47GaIzEZ176CwUxq2QrE,2937
+mailscript-0.1.0.dist-info/licenses/LICENSE,sha256=5hheGKKLkoRh1k4wpVVPiVV-BjOeddhkguBg7NRTeds,1094
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_mailer.py,sha256=Q3LtZqpP3YyxBHFYVKH8UyYVBVZubwWNoC1BLCp18A0,2547
+tests/test_renderer.py,sha256=9ybtOxqjPhnK7nqjrtnJAGKQghBWPn1eEiljDdtdSPo,1628
+mailscript-0.1.0.dist-info/METADATA,sha256=D2u31dRI4W-4fq7b-einvjGSkvDojVa24tPr8q_C-YQ,5504
+mailscript-0.1.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+mailscript-0.1.0.dist-info/top_level.txt,sha256=Dn-SXaMzSzJ8IBZsYNGZRwNNC9cwM7Cz8vX7F99XWEc,17
+mailscript-0.1.0.dist-info/RECORD,,
