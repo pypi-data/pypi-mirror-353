@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+git_ctx/__init__.py
+git_ctx/cli.py
+gitcontext.egg-info/PKG-INFO
+gitcontext.egg-info/SOURCES.txt
+gitcontext.egg-info/dependency_links.txt
+gitcontext.egg-info/entry_points.txt
+gitcontext.egg-info/requires.txt
+gitcontext.egg-info/top_level.txt
+tests/test_cli.py
