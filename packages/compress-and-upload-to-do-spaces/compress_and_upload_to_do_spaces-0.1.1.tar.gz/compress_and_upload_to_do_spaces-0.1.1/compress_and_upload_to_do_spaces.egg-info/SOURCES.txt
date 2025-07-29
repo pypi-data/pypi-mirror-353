@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+compress_and_upload_to_do_spaces/__init__.py
+compress_and_upload_to_do_spaces/upload_service.py
+compress_and_upload_to_do_spaces.egg-info/PKG-INFO
+compress_and_upload_to_do_spaces.egg-info/SOURCES.txt
+compress_and_upload_to_do_spaces.egg-info/dependency_links.txt
+compress_and_upload_to_do_spaces.egg-info/requires.txt
+compress_and_upload_to_do_spaces.egg-info/top_level.txt
