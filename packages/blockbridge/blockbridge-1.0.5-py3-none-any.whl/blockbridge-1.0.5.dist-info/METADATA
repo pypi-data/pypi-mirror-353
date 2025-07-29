@@ -1,0 +1,234 @@
+Metadata-Version: 2.4
+Name: blockbridge
+Version: 1.0.5
+Summary: A resilient, multi-cloud storage library for GCS, S3, Azure, R2, Wasabi, and more.
+Home-page: https://github.com/acx1729/blockbridge
+Author: Anil Gaddam
+Author-email: anil@gadd.am
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Filesystems
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: google-cloud-storage>=2.0.0
+Requires-Dist: boto3>=1.20.0
+Requires-Dist: azure-storage-blob>=12.8.0
+Requires-Dist: azure-identity>=1.7.0
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# BlockBridge: The Multi-Cloud Storage & Operations SDK
+
+![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-production_ready-brightgreen.svg)
+
+BlockBridge provides a powerful, unified Python library for seamless interaction with and data transfer between major cloud object storage providers. It offers a single, consistent API for **GCS**, **AWS S3**, **Azure Blob Storage**, **Cloudflare R2**, **Wasabi**, and other self-hosted S3-compatible services like **MinIO**.
+
+It is built with resiliency, data integrity, and high-performance concurrency in mind, making it the ideal toolkit for building sophisticated multi-cloud applications and executing large-scale data management tasks.
+
+## Core Features
+
+-   **Unified API**: A single, intuitive `BlockBridge` class provides simple, OS-like commands (`copy`, `move`, `sync`, `list_objects`) that work across all supported storage backends.
+-   **Truly Multi-Cloud**: First-class, dedicated clients for AWS S3, Google Cloud Storage, Azure Blob Storage, Cloudflare R2, and Wasabi.
+-   **High-Level Operations**: Powerful, one-line commands for complex workflows:
+    -   `clone_bucket()`: Transactional, safe bucket replication with a staging area and post-flight verification.
+    -   `sync()`: High-performance, "rsync-style" synchronization with stateful manifest support for incredible efficiency on recurring tasks.
+-   **Resiliency & Automatic Retries**: Automatically retries network operations with exponential backoff to handle transient failures.
+-   **Data Integrity**: Optional MD5 checksum validation guarantees files are not corrupted during transit.
+-   **High-Performance Concurrency**: All prefix operations (copy, move, clone, sync) use a configurable thread pool to transfer multiple objects in parallel.
+-   **Advanced Versioning Support**: Intelligently handles versioned objects during `clone` and `sync` operations.
+
+---
+
+## Project Layout Explained
+
+The library is organized with a strong separation of concerns to ensure it is modular, scalable, and easy to maintain.
+
+```
+blockbridge/
+├── README.md
+├── setup.py
+├── __init__.py           # Exposes the primary BlockBridge facade and exceptions
+├── base.py               # Defines the "Universal Storage Interface" contract (ABC)
+├── exceptions.py         # Custom library exceptions for clear error handling
+├── facade.py             # Contains the primary `BlockBridge` class
+├── utils.py              # Low-level helpers (retry logic, checksums)
+│
+├── providers/            # <-- All specific, named provider client code
+│   ├── __init__.py
+│   ├── aws.py
+│   ├── azure.py
+│   ├── cloudflare.py
+│   ├── gcs.py
+│   └── wasabi.py
+│
+└── operations/           # <-- High-level, multi-cloud operational logic
+    ├── __init__.py
+    ├── clone.py          # Contains the CloneManager logic
+    └── sync.py           # Contains the SyncManager (rsync-style) logic
+```
+
+-   **`facade.py`**: This is the main entry point. The `BlockBridge` class provides the simple, public-facing API.
+-   **`base.py`**: The abstract interface that guarantees every provider client has the same methods.
+-   **`providers/`**: Contains the "drivers"—code that translates the universal commands into native SDK calls for each specific cloud.
+-   **`operations/`**: Contains the "orchestrators"—classes that perform the complex, multi-step workflows like `clone` and `sync`, used internally by the facade.
+
+---
+
+## Installation
+
+```bash
+# From the parent directory containing the 'blockbridge' folder:
+pip install -e ./blockbridge
+```
+The `-e` flag installs the package in "editable" mode, recommended for development.
+
+## Configuration & Credentials
+
+**BlockBridge is unopinionated about how you manage secrets.** The library clients do not read `.env` files themselves. Your application is responsible for loading credentials (from environment variables, a secrets manager, etc.) and passing them to the appropriate `BlockBridge` method via the `source_creds` and `dest_creds` dictionaries.
+
+If a `creds` dictionary is not provided for an operation, the clients fall back to their SDK's standard discovery methods:
+
+-   **AWS S3**: `~/.aws/credentials`, environment variables, or IAM roles.
+-   **GCS (Native)**: Application Default Credentials (e.g., `gcloud auth application-default login`), `GOOGLE_APPLICATION_CREDENTIALS` env var, or IAM roles.
+-   **Azure Blob**: `DefaultAzureCredential` (e.g., `az login`, Managed Identity) or `AZURE_STORAGE_CONNECTION_STRING` env var.
+
+---
+
+## Core Usage Guide
+
+The easiest way to use the library is through the primary `BlockBridge` facade.
+
+### 1. Simple Operations & High-Level Transfers
+
+```python
+import os
+from blockbridge import BlockBridge, exceptions
+
+# The main operator for all tasks
+bb = BlockBridge()
+
+# --- Example 1: List objects in a GCS bucket (using default credentials) ---
+gcs_uri = "gs://my-gcp-data-bucket/incoming/"
+try:
+    print(f"Objects in {gcs_uri}:")
+    for obj in bb.list_objects(gcs_uri):
+        print(f"- {obj}")
+except exceptions.StorageException as e:
+    print(f"Error: {e}")
+
+# --- Example 2: Move a folder from Wasabi to Azure with specific credentials ---
+# Your application loads the credentials needed for the operation
+wasabi_creds = {
+    "region_name": os.getenv("WASABI_REGION"),
+    "access_key_id": os.getenv("WASABI_ACCESS_KEY_ID"),
+    "secret_access_key": os.getenv("WASABI_SECRET_ACCESS_KEY")
+}
+azure_creds = {
+    "connection_string": os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+}
+
+source_folder = "s3://wasabi-hot-data/project-x/"
+target_folder = "[https://myazureaccount.blob.core.windows.net/archive/project-x/](https://myazureaccount.blob.core.windows.net/archive/project-x/)"
+
+try:
+    bb.move(
+        source_folder,
+        target_folder,
+        source_creds=wasabi_creds,
+        dest_creds=azure_creds,
+        concurrency=16, # Use 16 parallel transfers
+        validate_checksum=True
+    )
+    print("Successfully moved folder to Azure.")
+except Exception as e:
+    print(f"Error during move: {e}")
+
+```
+
+### 2. Advanced Operations: `clone` and `sync`
+
+#### **Cloning a Cloudflare R2 Bucket to a new GCS Bucket**
+
+This example uses the powerful `clone_bucket` operation, which requires the destination to be empty as a safety measure.
+
+```python
+from blockbridge import BlockBridge, exceptions
+
+bb = BlockBridge()
+
+source_r2_bucket = "s3://cloudflare-r2-source-bucket/"
+dest_gcs_bucket = "gs://gcs-clone-destination/"
+
+r2_creds = {
+    "account_id": os.getenv("R2_ACCOUNT_ID"),
+    "access_key_id": os.getenv("R2_ACCESS_KEY_ID"),
+    "secret_access_key": os.getenv("R2_SECRET_ACCESS_KEY")
+}
+# GCS destination will use Application Default Credentials (no creds dict needed)
+
+try:
+    bb.clone_bucket(
+        source_r2_bucket,
+        dest_gcs_bucket,
+        source_creds=r2_creds,
+        concurrency=20,
+        max_objects=50000 # Safety limit
+    )
+    print("Bucket clone successful!")
+except exceptions.DestinationNotEmptyError as e:
+    print(f"SAFETY ERROR: {e}")
+except Exception as e:
+    print(f"An error occurred during clone: {e}")
+```
+
+#### **Syncing an AWS S3 prefix to a Wasabi backup (Stateful Sync)**
+
+This performs an intelligent, high-speed sync. On the second run, it will be incredibly fast as it uses a state manifest instead of re-listing the destination.
+
+```python
+from blockbridge import BlockBridge
+
+bb = BlockBridge()
+
+source_s3_prefix = "s3://aws-production-data/live-reports/"
+dest_wasabi_prefix = "s3://wasabi-backup-reports/live/"
+
+# AWS client will use default credentials. Wasabi needs explicit credentials.
+wasabi_creds = {
+    "region_name": os.getenv("WASABI_REGION"),
+    "access_key_id": os.getenv("WASABI_ACCESS_KEY_ID"),
+    "secret_access_key": os.getenv("WASABI_SECRET_ACCESS_KEY")
+}
+
+try:
+    bb.sync(
+        source_s3_prefix,
+        dest_wasabi_prefix,
+        dest_creds=wasabi_creds,
+        delete=True,     # Deletes files from Wasabi if they are removed from S3
+        stateful=True,   # Enables ultra-fast recurring syncs
+        concurrency=10
+    )
+    print("Sync to Wasabi complete.")
+except Exception as e:
+    print(f"An error occurred during sync: {e}")
+```
