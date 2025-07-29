@@ -1,0 +1,14 @@
+"""
+Visceral MCP Server
+
+A Model Context Protocol server for Visceral survey and workspace management.
+"""
+
+__version__ = "0.1.2"
+__author__ = "Anshuman"
+__email__ = "info@visceral.ai"
+__description__ = "MCP server for Visceral survey and workspace management"
+
+from .app import main
+
+__all__ = ["main"]
