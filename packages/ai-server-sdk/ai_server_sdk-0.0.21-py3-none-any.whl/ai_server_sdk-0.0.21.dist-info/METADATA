@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: ai-server-sdk
+Version: 0.0.21
+Summary: Utility package to connect to AI Server instances.
+Author: Thomas Trankle, Maher Khalil, Ryan Weiler
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: pandas
+Requires-Dist: jsonpickle
+Provides-Extra: full
+Requires-Dist: langchain; extra == "full"
+Requires-Dist: langchain-community; extra == "full"
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+AI Server SDK - Python client SDK to connect to the AI Server.
