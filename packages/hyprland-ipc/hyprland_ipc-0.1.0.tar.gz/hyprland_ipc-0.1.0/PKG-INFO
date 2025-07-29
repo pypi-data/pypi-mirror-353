@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: hyprland-ipc
+Version: 0.1.0
+Summary: A modern, type-safe IPC client for Hyprland's UNIX sockets.
+Project-URL: Documentation, https://github.com/peppapig450/hyprland-ipc#readme
+Project-URL: Homepage, https://github.com/peppapig450/hyprland-ipc
+Project-URL: Issues, https://github.com/peppapig450/hyprland-ipc/issues
+Project-URL: Source, https://github.com/peppapig450/hyprland-ipc
+Author-email: peppapig450 <peppapig450@pm.me>
+License-Expression: MIT
+License-File: LICENSE.txt
+License-File: LICENSES/MIT.txt
+Keywords: hyprland,ipc,socket,wayland
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: Desktop Environment :: Window Managers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+<!--
+SPDX-FileCopyrightText: 2025-present peppapig450 <peppapig450@pm.me>
+
+SPDX-License-Identifier: MIT
+-->
+
+# hyprland-ipc
+
+[![Test and Coverage](https://github.com/peppapig450/hyprland-ipc/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/peppapig450/hyprland-ipc/actions/workflows/test-coverage.yml)
+[![codecov](https://codecov.io/gh/peppapig450/hyprland-ipc/branch/main/graph/badge.svg)](https://codecov.io/gh/peppapig450/hyprland-ipc)
+[![PyPI - Version](https://img.shields.io/pypi/v/hyprland-ipc.svg)](https://pypi.org/project/hyprland-ipc)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hyprland-ipc.svg)](https://pypi.org/project/hyprland-ipc)
+
+-----
+
+## Table of Contents
+
+- [hyprland-ipc](#hyprland-ipc)
+  - [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+
+## Installation
+
+```console
+pip install hyprland-ipc
+```
+
+This package requires Python 3.12 or newer.
+
+## Usage
+
+```python
+from hyprland_ipc import HyprlandIPC
+
+# Discover socket paths from the environment
+ipc = HyprlandIPC.from_env()
+
+# Print two events then exit
+for i, event in enumerate(ipc.events()):
+    print(event)
+    if i == 1:
+        break
+```
+
+## License
+
+`hyprland-ipc` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

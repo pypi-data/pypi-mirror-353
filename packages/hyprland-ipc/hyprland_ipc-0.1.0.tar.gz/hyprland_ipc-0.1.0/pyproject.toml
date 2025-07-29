@@ -1,0 +1,191 @@
+# SPDX-FileCopyrightText: 2025-present peppapig450 <peppapig450@pm.me>
+#
+# SPDX-License-Identifier: MIT
+
+[project]
+name = "hyprland-ipc"
+version = "0.1.0"
+description = "A modern, type-safe IPC client for Hyprland's UNIX sockets."
+readme.file = "README.md"
+readme.content-type = "text/markdown"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE.txt", "LICENSES/*.txt"]
+keywords = ["hyprland", "ipc", "wayland", "socket"]
+authors = [
+  { name = "peppapig450", email = "peppapig450@pm.me" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: Desktop Environment",
+  "Topic :: Desktop Environment :: Window Managers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed"
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/peppapig450/hyprland-ipc#readme"
+Homepage = "https://github.com/peppapig450/hyprland-ipc"
+Issues = "https://github.com/peppapig450/hyprland-ipc/issues"
+Source = "https://github.com/peppapig450/hyprland-ipc"
+
+[tool.coverage.run]
+source_pkgs = ["hyprland_ipc", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/hyprland_ipc/__about__.py",
+]
+
+[tool.coverage.paths]
+hyprland_ipc = ["src/hyprland_ipc", "*/hyprland-ipc/src/hyprland_ipc"]
+tests = ["tests", "*/hyprland-ipc/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "reuse>=5.0.2",
+    "ruff>=0.11.11",
+]
+release = [
+    "twine>=6.1.0",
+]
+
+[tool.ruff]
+src = ["src"]
+target-version = "py312"
+line-length = 100
+exclude = ["__pycache__", ".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # Pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "N",    # pep8-naming
+    "D",    # pydocstyle
+    "UP",   # pyupgrade
+    "S",    # flake8-bandit (security)
+    "B",    # flake8-bugbear (best practices)
+    "A",    # flake8-builtins
+    "C4",   # flake8-comprehensions
+    "T20",  # flake8-print
+    "PL",   # pylint
+    "RUF",  # Ruff-specific rules
+]
+ignore = [
+    "D100",  # Missing docstring in public module
+    "D104",  # Missing docstring in public package
+    # Add or remove ignores as you prefer
+]
+
+# Pydocstyle options
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["hyprland_ipc"]
+force-single-line = false
+combine-as-imports = true
+lines-after-imports = 2
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = []
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore print statements and doctest errors in tests
+"tests/*" = ["T201", "D103", "D401", "S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+files = "src/hyprland_ipc"
+strict = true
+# strict includes: check_untyped_defs, disallow_untyped_defs, warn_unused_ignores, disallow_any_generics, warn_return_any, etc.
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_return_any = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+show_error_codes = true
+pretty = true
+ignore_missing_imports = true
+namespace_packages = true
+exclude = [
+    "tests/",
+    "build/",
+    "dist/",
+    ".*venv/",
+    "__pycache__/",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+
+# Default cli flags: show extra summary info, quiet dots output, short tracebacks
+addopts="-ra -q --tb=short --strict-markers"
+
+testpaths = ["tests"]
+
+# Naming conventions
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+markers = [
+  "unit:      mark a test as a unit test",
+  "integration: mark a test as an integration test",
+  "slow:      mark a test as slow",
+]
+
+# Treat all DeprecationWarnings as errors, ignore import warnings
+filterwarnings = [
+  "error::DeprecationWarning",
+  "ignore::pytest.PytestWarning",
+]
+
+log_cli = true
+log_cli_level = "INFO"
+
+[tool.hatch.build]
+exclude = [
+  "/.github",
+  "/.gitignore",
+  "/.pre-commit-config.yaml",
+  "/mypy.ini",
+  "/uv.lock",
+  "/uv.lock.license",
+]
