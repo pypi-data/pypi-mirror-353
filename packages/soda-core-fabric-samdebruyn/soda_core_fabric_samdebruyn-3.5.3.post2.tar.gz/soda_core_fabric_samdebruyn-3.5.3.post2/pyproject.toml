@@ -1,0 +1,15 @@
+[project]
+name = "soda-core-fabric-samdebruyn"
+version = "3.5.3.post2"
+authors = [
+    { name = "Sam Debruyn", email = "sam@debruyn.dev" }
+]
+requires-python = ">=3.9"
+dependencies = ["soda-core-sqlserver-samdebruyn==3.5.3.post2"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+license-files = []
