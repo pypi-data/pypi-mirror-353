@@ -1,0 +1,9 @@
+README.md
+setup.py
+oraczenhq/__init__.py
+oraczenhq_authorization.egg-info/PKG-INFO
+oraczenhq_authorization.egg-info/SOURCES.txt
+oraczenhq_authorization.egg-info/dependency_links.txt
+oraczenhq_authorization.egg-info/namespace_packages.txt
+oraczenhq_authorization.egg-info/requires.txt
+oraczenhq_authorization.egg-info/top_level.txt
