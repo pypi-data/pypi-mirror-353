@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+hidden_text/__init__.py
+hidden_text/unix_impl.py
+hidden_text/windows_impl.py
+hidden_text.egg-info/PKG-INFO
+hidden_text.egg-info/SOURCES.txt
+hidden_text.egg-info/dependency_links.txt
+hidden_text.egg-info/top_level.txt
