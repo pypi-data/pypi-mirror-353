@@ -1,0 +1,118 @@
+Metadata-Version: 2.4
+Name: prevision
+Version: 0.0.1
+Summary: A Visualization Tool for Computations of Probabilistic Term Rewriting
+Author-email: David Weber <david.pascal.weber@example.com>
+License: MIT License
+        
+        Copyright (c) 2025 David Weber
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.12
+Requires-Dist: graphviz==0.20.3
+Requires-Dist: pydot==3.0.4
+Description-Content-Type: text/markdown
+
+## PReVision
+A **P**robabilistic Term **Re**write System **Vis**ualizat**ion** tool.
+## Description
+PReVision parses a probabilistic Term Rewrite System as specified [here](https://termination-portal.org/wiki/Probabilistic_Rewriting) and evaluates the corresponding computation tree in various ways, and gives a visualization of the evaluation.
+## Features
+PReVision offers a range of features for evaluating and visualizing probabilistic term rewrite systems. All features include visualization support (DOT file or PNG images), with results saved in a specified folder.
+### Visualization
+- **Full computation tree generation**: Does neither resolve probabilities nor non-determinism.
+- **Layer-by-layer evaluation**: Resolve non-determinism for a specified i-th layer resulting in possibly multiple trees.
+- **Probability-resolved evaluation**: Resolve probabilities for a specified i-th layer resulting in possibly multiple trees.
+- **Random path computation**: Resolve both non-determinism and probabilities generating a pseudo-random path of the computation tree.
+### Evaluation
+- **Multiple evaluation strategies**: Use various evaluation strategies, including outermost, innermost, and leftmost/rightmost redex selection.
+- Derscribe Evaluationstrategies + example
+
+## Dependencies
+pydot-3.0.4
+- graphviz
+## Installation
+```bash
+# will be specified later
+```
+## Usage
+
+```bash
+usage: prevision [-h] [-p | -q] [-d | -b] [-t <int>] [-s <str>] [-f <str>] [-o <path>] <path> <term>
+
+PReVision: A Probabilistic Term Rewrite System Visualization tool.
+
+positional arguments:
+  <path>                      path to the input file (txt)
+  <term>                      starting term from which the computation tree is expanded
+
+options:
+  -h, --help                  show this help message and exit
+  -p, --probabilistic         shows probabilistic paths in the tree (default)
+  -q, --non-probabilistic     resolves probabilistic paths by creating new trees for each
+  -d, --deterministic         resolves non-deterministic paths by creating new trees for each
+  -b, --non-deterministic     shows non-deterministic paths in the tree (default)
+  -t <int>, --depth <int>     the maximum depth of the computation tree (default: 3)
+  -s <str>, --strategy <str>  evaluation strategy to filter reducible expressions (default: 'full')
+  -f <str>, --format <str>    the output format (default: 'png')
+  -o <path>, --output <path>  output directory for results (default: './')
+
+notes:
+  - the following options are mutually exclusive:
+    * '--deterministic' (-d) and '--non-deterministic' (-b)
+    * '--probabilistic' (-p) and '--non-probabilistic' (-q)
+  - available evaluation strategies:
+    * 'full'    computes the entire computation tree
+    * 'o'       evaluates all outermost reducible expressions at each step
+    * 'i'       evaluates all innermost reducible expressions at each step
+    * 'lo'      evaluates only the leftmost outermost reducible expression
+    * 'ro'      evaluates only the rightmost outermost reducible expression
+    * 'li'      evaluates only the leftmost innermost reducible expression
+    * 'ri'      evaluates only the rightmost innermost reducible expression
+  - available formats:
+    * ['canon', 'cmap', 'cmapx', 'cmapx_np', 'dia', 'dot', 'fig', 'gd',
+       'gd2', 'gif', 'hpgl', 'imap', 'imap_np', 'ismap', 'jpe', 'jpeg',
+       'jpg', 'mif', 'mp', 'pcl', 'pdf', 'pic', 'plain', 'plain-ext',
+       'png', 'ps', 'ps2', 'svg', 'svgz', 'vml', 'vmlz', 'vrml', 'vtx',
+       'wbmp', 'xdot', 'xlib']
+  - example:
+    * prevision -pd -t 3 -o './results' -s 'lo' input_file.txt (s (s x))
+    * description:
+        Resolves non-determinisms by building (potentially) multiple
+        deterministic trees. Shows probabilistic paths. Only
+        evaluates the leftmost outermost redex. The generated trees have a
+        maximum depth of 3. Results will be saved in the './results'
+        directory as PNG images.
+```
+## License
+- will be specified later
+## Contact
+Reach us:
+### David Weber, Author
+Email: [david.pascal.weber@rwth-aachen.de](mailto:david.pascal.weber@rwth-aachen.de)
+GitHub: [davidpweber](https://github.com/davidpweber)
+### Jan-Christoph Kassing, Supervisor
+Email: [kassing@cs.rwth-aachen.de](mailto:kassing@cs.rwth-aachen.de)
+GitHub: ?
+
+---
