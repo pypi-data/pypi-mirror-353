@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: cats-test-manu-python-advanced
+Version: 0.1.0
+Summary: 
+Author: m.mendizabal
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: click (>=8.2.1,<9.0.0)
+Requires-Dist: ipdb (>=0.13.13,<0.14.0)
+Requires-Dist: setuptools (>=80.9.0,<81.0.0)
+Description-Content-Type: text/markdown
+
+# Gaticos
+
+**Gaticos** es una utilidad de línea de comandos (CLI) para mostrar frases aleatorias de gatos en la terminal, acompañadas de arte ASCII. Es ideal para alegrar tu día con un toque felino y funciona en cualquier sistema compatible con Python 3.12+.
+
+## Instalación
+
+Puedes instalar el paquete usando Poetry, pip o directamente desde el repositorio/clon local:
+
+```bash
+pip install .
+# o usando poetry
+poetry install
+```
+
+## Uso rápido
+
+Muestra un "miau" en la terminal:
+
+```bash
+gaticos --count 3
+```
+
+Muestra una frase aleatoria de gato con arte ASCII:
+
+```bash
+gaticos animame
+```
+
+## Comandos disponibles
+
+- `gaticos --count N`: Imprime N veces "Miau!" en la terminal.
+- `gaticos animame`: Muestra una frase aleatoria de gato decorada con arte ASCII.
+
+## Ejemplo de salida
+
+```
+$ gaticos animame
+        ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿Frase aleatoria⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+        ...
+```
+
+## Requisitos
+
+- Python >= 3.12
+- click >= 8.2.1
+
+## Autor
+
+- mendicoder@gmail.com
+
+## Licencia
+
+MIT
+
