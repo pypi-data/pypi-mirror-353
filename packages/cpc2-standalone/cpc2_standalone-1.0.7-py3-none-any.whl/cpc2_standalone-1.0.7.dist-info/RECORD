@@ -1,0 +1,11 @@
+bin/CPC2.py,sha256=sW2UwRbNnL_jLOG4JpB8pqwJbofj8g8Tp-mZ1cvVncI,13468
+bin/CPC2_output_peptide.py,sha256=sruQnehjSInXCQ00L5sYF7SMvbiP6QialL2TQP9Ho1w,13177
+bin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bin/compress.py,sha256=ZdwJhcvaIT6Y38PC5MoCWwstzO_vOICl8WzDVXMS5bs,564
+bin/seqio.py,sha256=Grp4eE5dVwQZNuaFMcraFr6zRnak_LZ4kulfAko-CY8,5145
+cpc2_standalone-1.0.7.dist-info/licenses/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+cpc2_standalone-1.0.7.dist-info/METADATA,sha256=d6987fwmixJC7VJ98y1PnwObckvRHM1OBq1NiZO0cfY,4781
+cpc2_standalone-1.0.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cpc2_standalone-1.0.7.dist-info/entry_points.txt,sha256=zjOwxQ7DQ64tC_yM9EOcdzIR024nesHASLgDPIgWBKE,98
+cpc2_standalone-1.0.7.dist-info/top_level.txt,sha256=R96X4WkWzS2JXVjmQGzznHrsb0spoRTVPx0dimUsYls,4
+cpc2_standalone-1.0.7.dist-info/RECORD,,
