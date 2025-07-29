@@ -1,0 +1,341 @@
+Metadata-Version: 2.4
+Name: automagik-tools
+Version: 0.3.0
+Summary: A monorepo package for MCP tools with dynamic loading capabilities
+Author-email: Cezar Vasconcelos <cezar@namastex.ai>
+License: MIT
+Project-URL: Homepage, https://github.com/namastexlabs/automagik-tools
+Project-URL: Documentation, https://github.com/namastexlabs/automagik-tools/README.md
+Project-URL: Repository, https://github.com/namastexlabs/automagik-tools
+Project-URL: Issues, https://github.com/namastexlabs/automagik-tools/issues
+Keywords: mcp,tools,ai,agents,fastmcp,whatsapp,discord,notion
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Office/Business
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastmcp>=2.5.0
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn>=0.24.0
+Requires-Dist: pydantic>=2.10.0
+Requires-Dist: pydantic-settings>=2.5.0
+Requires-Dist: typer>=0.15.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: importlib-metadata>=6.0.0
+Requires-Dist: watchdog>=3.0.0
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: twine>=6.1.0
+Requires-Dist: psutil>=7.0.0
+Requires-Dist: agno>=1.5.8
+Requires-Dist: openai>=1.84.0
+Provides-Extra: evolution-api
+Requires-Dist: httpx>=0.28.1; extra == "evolution-api"
+Requires-Dist: python-dotenv>=1.1.0; extra == "evolution-api"
+Provides-Extra: automagik
+Requires-Dist: httpx>=0.28.1; extra == "automagik"
+Requires-Dist: python-dotenv>=1.1.0; extra == "automagik"
+Requires-Dist: agno>=0.1.0; extra == "automagik"
+Requires-Dist: openai>=1.0.0; extra == "automagik"
+Provides-Extra: automagik-enhanced
+Requires-Dist: httpx>=0.28.1; extra == "automagik-enhanced"
+Requires-Dist: python-dotenv>=1.1.0; extra == "automagik-enhanced"
+Requires-Dist: agno>=0.1.0; extra == "automagik-enhanced"
+Requires-Dist: openai>=1.0.0; extra == "automagik-enhanced"
+Requires-Dist: markdown>=3.0.0; extra == "automagik-enhanced"
+Provides-Extra: discord
+Requires-Dist: discord.py>=2.3.0; extra == "discord"
+Requires-Dist: python-dotenv>=1.1.0; extra == "discord"
+Provides-Extra: notion
+Requires-Dist: notion-client>=2.0.0; extra == "notion"
+Requires-Dist: python-dotenv>=1.1.0; extra == "notion"
+Provides-Extra: github
+Requires-Dist: pygithub>=2.1.0; extra == "github"
+Requires-Dist: python-dotenv>=1.1.0; extra == "github"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit>=3.0.0; extra == "dev"
+Provides-Extra: all
+Requires-Dist: automagik-tools[automagik,discord,evolution-api,github,notion]; extra == "all"
+Dynamic: license-file
+
+<p align="center">
+  <img src=".github/images/automagik_logo.png" alt="AutoMagik Tools Logo" width="600"/>
+</p>
+
+# 🪄 AutoMagik Tools
+
+## Turn Any API into an AI-Ready Tool in Seconds™
+
+Drop any OpenAPI URL → Get a live, auto-updating MCP server. When the API updates, your tool updates automagikally. No code, no maintenance.
+
+Born from our daily work at [Namastex Labs](https://www.linkedin.com/company/namastexlabs), AutoMagik Tools makes **every API on the internet instantly accessible to AI agents**.
+
+## 🚀 Dynamic OpenAPI → MCP
+
+Turn any API into an MCP tool instantly:
+
+```bash
+# Just point to any OpenAPI URL - here's Discord as an example
+uvx automagik-tools serve \
+  --openapi-url https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json \
+  --transport sse --port 8001
+```
+
+**Works with ANY OpenAPI spec:**
+- 🔄 Auto-updates when the API changes
+- 🚀 Zero code, just paste the URL
+- 🌐 Discord, Stripe, GitHub, Slack, or your internal APIs
+
+## 🌟 Featured Tool: AutoMagik
+
+> **AI orchestration that speaks human** - Production-ready platform for complex AI workflows
+
+```bash
+uvx automagik-tools serve --tool automagik --transport sse --port 8000
+```
+
+💬 Natural Language • ✨ Spark (spawn agent hives) • 🔄 Task Scheduling • 🏗️ Framework Agnostic (PydanticAI, LangGraph, CrewAI) • 🤝 Dev Friendly
+
+## 🚀 Quick Start
+
+### Copy this into Claude/Cursor to get Discord AI powers:
+
+```json
+{
+  "mcpServers": {
+    "discord": {
+      "command": "uvx",
+      "args": [
+        "automagik-tools@latest",
+        "serve",
+        "--openapi-url",
+        "https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "DISCORD_TOKEN": "YOUR_BOT_TOKEN"
+      }
+    }
+  }
+}
+```
+
+**Where to paste:**
+- **Claude Desktop**: Settings → Developer → Edit Config
+- **Cursor**: `~/.cursor/mcp.json`
+
+### Or test instantly via command line:
+
+```bash
+# Discord API
+uvx automagik-tools serve \
+  --openapi-url https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json \
+  --transport sse --port 8001
+
+# AutoMagik AI orchestration
+uvx automagik-tools serve --tool automagik --transport sse --port 8000
+```
+
+## 📋 Real-World Examples
+
+### AutoMagik Configuration (for Claude/Cursor)
+```json
+{
+  "mcpServers": {
+    "automagik": {
+      "command": "uvx",
+      "args": [
+        "automagik-tools@latest",
+        "serve",
+        "--tool",
+        "automagik",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "AUTOMAGIK_AGENTS_API_KEY": "YOUR_API_KEY",
+        "AUTOMAGIK_AGENTS_BASE_URL": "http://localhost:8881",
+        "AUTOMAGIK_AGENTS_OPENAPI_URL": "http://localhost:8881/api/v1/openapi.json"
+      }
+    }
+  }
+}
+```
+
+Now in Claude/Cursor you can say:
+- "Use AutoMagik to analyze these 10 CSV files and find patterns"
+- "Set up a workflow that monitors my GitHub repos and creates weekly summaries"
+- "Process these customer feedback emails and categorize them by sentiment"
+
+
+### More OpenAPI Examples
+```bash
+# Stripe Payments
+uvx automagik-tools serve \
+  --openapi-url https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json \
+  --api-key $STRIPE_API_KEY
+
+# GitHub API  
+uvx automagik-tools serve \
+  --openapi-url https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json \
+  --api-key $GITHUB_TOKEN
+
+# Your Internal API
+uvx automagik-tools serve \
+  --openapi-url https://api.yourcompany.com/openapi.json \
+  --api-key $YOUR_API_KEY
+```
+
+## 🛠️ Built-in Tools
+
+### AutoMagik 🤖
+AI orchestration that speaks human:
+
+```bash
+# Quick test with SSE
+uvx automagik-tools serve --tool automagik --transport sse --port 8000
+```
+
+**What you can do:**
+- ✨ Use Spark to spawn hives of agents in seconds
+- 🔄 Schedule recurring AI tasks and automations
+- 💬 Natural language task descriptions
+- 🏗️ Works with any AI framework
+
+### Evolution API (WhatsApp) 📱
+Complete WhatsApp automation:
+- Send/receive messages
+- Media support (images, documents)
+- Group management
+- Status updates
+
+## 🎯 Why We Built This
+
+We got tired of the same painful process every time we needed to connect our AI agents to a new API:
+
+**The Problem We Faced:**
+- Hours spent writing boilerplate MCP tool definitions
+- Constant maintenance when APIs changed
+- Friction between "let's try this API" and actually using it
+- No easy path from prototype to production-ready tool
+
+**Our Solution:**
+1. **Instant prototyping**: Drop an OpenAPI URL, get a working tool in seconds
+2. **Zero friction**: Test new APIs immediately without writing code
+3. **Deploy as code**: Start with the generated tool, then customize as needed
+4. **Refine over time**: Extract the generated code and tailor it to your specific needs
+
+**The best part**: When the API provider updates their OpenAPI spec, your tool automagikally gets the new endpoints. Perfect for the exploration phase before you lock down your production implementation.
+
+<details>
+<summary><b>🛠️ Developer Documentation</b></summary>
+
+## Development Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/namastexlabs/automagik-tools
+cd automagik-tools
+
+# Install with all dev dependencies
+make install
+
+# Run tests
+make test
+
+# Create a new tool
+make new-tool
+```
+
+## Creating Tools from OpenAPI
+
+```bash
+# Method 1: Dynamic (no files created)
+uvx automagik-tools serve --openapi-url https://api.example.com/openapi.json
+
+# Method 2: Generate persistent tool
+uvx automagik-tools tool --url https://api.example.com/openapi.json --name my-api
+uvx automagik-tools serve --tool my-api
+```
+
+## Adding Your Own Tools
+
+1. Create a folder in `automagik_tools/tools/your_tool/`
+2. Add `__init__.py` with FastMCP server
+3. That's it - auto-discovered!
+
+See our [Tool Creation Guide](docs/TOOL_CREATION_GUIDE.md) for details.
+
+## Available Commands
+
+```bash
+# Core commands
+automagik-tools list                    # List all available tools
+automagik-tools serve                   # Serve a tool or OpenAPI spec
+automagik-tools serve-all               # Serve all tools on one server
+automagik-tools mcp-config <tool>       # Generate MCP config
+automagik-tools info <tool>             # Show tool details
+automagik-tools version                 # Show version
+
+# Development commands  
+make install                            # Install dev environment
+make test                               # Run all tests
+make lint                               # Check code style
+make format                             # Auto-format code
+make build                              # Build package
+make docker-build                       # Build Docker images
+```
+
+</details>
+
+## 🚀 The Future: Smart Tools™ (Coming Q2 2025)
+
+Imagine describing what you want in plain English and having AI automatically:
+- Find the right API
+- Understand its documentation
+- Make the correct calls
+- Handle authentication
+- Process responses
+
+**"Hey, get me all unread messages from Slack and create tasks in Notion"** → Done. No configuration needed.
+
+## 🤝 Contributing
+
+We love contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE)
+
+## 🙏 Credits
+
+Built with ❤️ by [Namastex Labs](https://www.linkedin.com/company/namastexlabs)
+
+Special thanks to:
+- [Anthropic](https://anthropic.com) for MCP
+- [FastMCP](https://github.com/jlowin/fastmcp) for the awesome framework
+- Our amazing community of contributors
+
+---
+
+<p align="center">
+  <b>Transform any API into an AI-ready tool in seconds.</b><br>
+  <a href="https://github.com/namastexlabs/automagik-tools">Star us on GitHub</a> • 
+  <a href="https://discord.gg/automagik">Join our Discord</a> • 
+  <a href="https://twitter.com/namastexlabs">Follow on Twitter</a>
+</p>
