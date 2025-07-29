@@ -1,0 +1,16 @@
+[package]
+name = "mac_validator"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "mac_validator"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module", "abi3-py39"] }
+mac_address = "1.1.4"
+chrono = "0.4"
+aes-gcm = "0.10"
+base64 = "0.21"
+rand = "0.8" 
