@@ -1,0 +1,45 @@
+[project]
+name = "variant"
+version = "0.0.98"
+description = "annotate variant"
+authors = [{ name = "Chang Ye", email = "yech1990@gmail.com" }]
+requires-python = ">=3.11"
+license = "MIT"
+readme = "README.md"
+
+keywords = ["bioinformatics", "variant", "mutation", "RNA modification"]
+dependencies = [
+  "rich-click>=1.8.2",
+  "xopen>=2.0.2",
+  "pysam>=0.22.0",
+  "pyensembl>=2.2.4",
+  "biopython>=1.85",
+  "pyarrow>=19.0",
+  "varcode",
+]
+
+[project.urls]
+Repository = "https://github.com/yech1990/variant"
+
+[project.scripts]
+variant-effect = "variant.cli:effect"
+variant = "variant.cli:cli"
+
+[dependency-groups]
+dev = [
+    "cibuildwheel>=2.23.3",
+    "pytest~=5.2",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["variant"]
+ext-modules = [
+    {name = "variant.seqpy", sources = ["variant/seqpy.c"]}
+]
+
+[tool.cibuildwheel]
+build = "cp311-* cp312-* cp313-*"
