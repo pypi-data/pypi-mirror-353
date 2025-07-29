@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: 3-py
+Version: 2.0.0
+Summary: `.gitignore`-aware tree tool written in Python
+Home-page: https://github.com/excitoon/3
+Author: Vladimir Chebotarev
+Author-email: vladimir.chebotarev@gmail.com
+License: MIT
+Project-URL: Documentation, https://github.com/excitoon/3/blob/master/README.md
+Project-URL: Source, https://github.com/excitoon/3
+Project-URL: Tracker, https://github.com/excitoon/3/issues
+Keywords: git,gitignore,tree
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: gitignorefile
+
+# `3`
+
+[![Black](https://github.com/excitoon/3/actions/workflows/black.yml/badge.svg)](https://github.com/excitoon/3/actions/workflows/black.yml)
+[![Linux](https://github.com/excitoon/3/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/excitoon/3/actions/workflows/ubuntu.yml)
+[![OS X](https://github.com/excitoon/3/actions/workflows/macos.yml/badge.svg)](https://github.com/excitoon/3/actions/workflows/macos.yml)
+[![Windows](https://github.com/excitoon/3/actions/workflows/windows.yml/badge.svg)](https://github.com/excitoon/3/actions/workflows/windows.yml)
+[![PyPI](https://badge.fury.io/py/3-py.svg)](https://badge.fury.io/py/3-py)
+
+`.gitignore`-aware tree tool written in Python.
+
+Example:
+
+```
+3
+```
+
+Output:
+
+![](examples/3.png)
+
+## Install
+
+```
+pip3 install 3-py
+```
+
+### Compatibility
+
+If you are on Windows, install `colorama` in order to watch some colors.
