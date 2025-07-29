@@ -1,0 +1,20 @@
+id: HDRC300
+name: "HITRON HDRC-300"
+slot_type: CPCI_S0_PSU
+children:
+    - device_type: PmBus
+      name: "PMBUS"
+      addr: 0x18
+      slot_coding_mask: 0x07
+      provides:
+        inventory:
+          - vendor
+          - model
+          - revision
+          - serial
+        main:
+          - voltage: in1_input
+          - current: curr1_input
+        sby:
+          - voltage: in2_input
+          - current: curr2_input
