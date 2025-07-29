@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: douyin-tiktok-scraper250605
+Version: 0.0.4
+Summary: A fast and asynchronous Douyin/TikTok data scraper and API
+License-Expression: Apache-2.0
+Project-URL: Homepage, https://github.com/Evil0ctal/Douyin_TikTok_Download_API
+Project-URL: Bug Tracker, https://github.com/Evil0ctal/Douyin_TikTok_Download_API/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiofiles==23.2.1
+Requires-Dist: annotated-types==0.6.0
+Requires-Dist: anyio==4.3.0
+Requires-Dist: browser-cookie3==0.19.1
+Requires-Dist: certifi==2024.2.2
+Requires-Dist: click==8.1.7
+Requires-Dist: colorama==0.4.6
+Requires-Dist: fastapi==0.110.2
+Requires-Dist: h11==0.14.0
+Requires-Dist: httpcore==1.0.5
+Requires-Dist: httpx==0.27.0
+Requires-Dist: idna==3.7
+Requires-Dist: importlib_resources==6.4.0
+Requires-Dist: lz4==4.3.3
+Requires-Dist: markdown-it-py==3.0.0
+Requires-Dist: mdurl==0.1.2
+Requires-Dist: numpy
+Requires-Dist: pycryptodomex==3.20.0
+Requires-Dist: pydantic==2.7.0
+Requires-Dist: pydantic_core==2.18.1
+Requires-Dist: pyfiglet==1.0.0
+Requires-Dist: Pygments==2.17.2
+Requires-Dist: pypng==0.20220715.0
+Requires-Dist: pywebio==1.8.3
+Requires-Dist: pywebio-battery==0.6.0
+Requires-Dist: PyYAML==6.0.1
+Requires-Dist: qrcode==7.4.2
+Requires-Dist: rich==13.7.1
+Requires-Dist: sniffio==1.3.1
+Requires-Dist: starlette==0.37.2
+Requires-Dist: tornado==6.4
+Requires-Dist: typing_extensions==4.11.0
+Requires-Dist: ua-parser==0.18.0
+Requires-Dist: user-agents==2.2.0
+Requires-Dist: uvicorn==0.29.0
+Requires-Dist: websockets==12.0
+Requires-Dist: gmssl==3.2.2
+Requires-Dist: tenacity~=9.0.0
+Provides-Extra: web
+Requires-Dist: pywebio; extra == "web"
+Provides-Extra: api
+Requires-Dist: fastapi; extra == "api"
+Requires-Dist: uvicorn; extra == "api"
+Dynamic: license-file
