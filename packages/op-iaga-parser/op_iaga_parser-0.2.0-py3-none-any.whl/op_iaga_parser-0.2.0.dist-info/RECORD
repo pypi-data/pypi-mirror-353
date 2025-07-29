@@ -1,0 +1,11 @@
+op_iaga_parser-0.2.0.dist-info/licenses/LICENSE,sha256=vORP0RaAMs4guHT5SfLIJHB50JrwWVg3ctIVqBzXxcM,1084
+op_parser/__init__.py,sha256=MERajOZIHwk11mdGL2sUfNv1t8_IjORWz5gjUbNhSIo,263
+op_parser/downloader.py,sha256=xuTPptI4FBq_H6FGr7Ak7zE4X79inn4BFYVZhuqJDS4,4833
+op_parser/iaga_downloader.py,sha256=pLJE4TPT2QJdeXUZCbnuwXjAG2PPD5HDlASCXJAA3Ng,3420
+op_parser/iaga_parser.py,sha256=OhjAZ4doJ_FnH1yFhTRoxI5ssZ7-pJa1dN7XWiTKnjU,1307
+op_parser/op_parser.py,sha256=kaFDLQCfkyf6aK7SJeNvy9oUMTpeJxozEGXbDmcqeu8,3167
+op_parser/utils.py,sha256=bALsDleNLSPhUFOCKvCC8CVs27JRtX0xGQh_iLAkq0w,1454
+op_iaga_parser-0.2.0.dist-info/METADATA,sha256=VwCeC6iPZfZLq_t6CmmI75SXssaWIUz-OJtYi08nYAM,4714
+op_iaga_parser-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+op_iaga_parser-0.2.0.dist-info/top_level.txt,sha256=lL3zix7bb1SFAKp79GD2YgH-dLGhP5hcHHWyFwAwAng,10
+op_iaga_parser-0.2.0.dist-info/RECORD,,
