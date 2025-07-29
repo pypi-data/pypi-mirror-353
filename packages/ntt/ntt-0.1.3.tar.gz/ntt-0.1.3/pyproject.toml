@@ -1,0 +1,55 @@
+[build-system]
+requires = [ "flit_core >=3.2,<4" ]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "ntt"
+dynamic = [ "version", "description" ]
+readme = "README.md"
+authors = [
+    {name = "Romain Vuillemot", email = "romain.vuillemot@gmail.com"},
+]
+maintainers = [
+    {name = "Romain Vuillemot", email = "romain.vuillemot@gmail.com"},
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries"
+]
+requires-python = ">=3.7"
+# eyed3, pydub are used by pyAudioAnalysis, but not installed as dependencies
+dependencies = ["requests", "opencv-python", "ffmpeg-python", "moviepy",
+    "scipy", "python-dotenv", "matplotlib", "pyAudioAnalysis", "eyed3", "pydub","librosa"]
+
+[project.urls]
+GitHub = "https://github.com/centralelyon/ntt/"
+Documentation = "https://ntt.readthedocs.io/"
+Issues = "https://github.com/centralelyon/ntt/issues"
+CI = "https://app.circleci.com/pipelines/github/centralelyon/ntt"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pytest",
+    "flit",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "pydata-sphinx-theme",
+    "sphinx-design",
+    "nbsphinx",
+    "nbsphinx-link",
+    "ipywidgets",
+    "sphinxcontrib-mermaid",
+    "sphinx-copybutton",
+]
+
+[tool.flit.sdist]
+exclude = [".circleci", ".vscode", ".gitignore", ".readthedocs.yaml"]
