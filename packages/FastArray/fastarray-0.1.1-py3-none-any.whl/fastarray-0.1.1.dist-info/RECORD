@@ -1,0 +1,10 @@
+fastarray/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastarray/indicies.py,sha256=kZXEoVXbchudUOabXFyK2nZK4tj8nYqvPJjYNl_qCQw,420
+fastarray/io.py,sha256=J7h9BvS-3FF_xuIkY6O1KkDzqm8bjwRZ0w8zYdS0WbM,1376
+fastarray/tensor.py,sha256=J-A6gf_p_wsR7N3tnLeEboQK3nClxcuXd_an25p2siY,476
+fastarray/transform.py,sha256=YC8PMSBGIFEjlY8K8CN25rKQObpDeB8pud8tsnhGkWk,478
+fastarray-0.1.1.dist-info/licenses/LICENSE,sha256=gn-rnT1wRezLsVomW9tvh29mVKohd0Qdf7BZFsBCEBY,1094
+fastarray-0.1.1.dist-info/METADATA,sha256=3FEaD9Gvpt69P6naL4IxJ7-DRY2Yom19Mj8rYOSpaOA,1385
+fastarray-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastarray-0.1.1.dist-info/top_level.txt,sha256=GKPGxxSLb_bktkw5YWCRezJGd06Wo88s9rSxG0BNM1o,10
+fastarray-0.1.1.dist-info/RECORD,,

@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: FastArray
+Version: 0.1.1
+Summary: A lightweight Python package for preprocessing geospatial optical imagery for machine learning
+Author-email: "Isah Abdul-Azeez." <isahabdul16@gmail.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: xarray
+Requires-Dist: aiofiles
+Requires-Dist: matplotlib
+Requires-Dist: torch
+Requires-Dist: rioxarray
+Requires-Dist: pyproj
+Requires-Dist: shapely
+Dynamic: license-file
+
+# fastarray
+
+**fastarray** is a fast, lightweight Python package for preprocessing geospatial optical imagery (e.g., Sentinel-2) to prepare it for machine learning workflows. It simplifies operations like index computation (NDVI, NDWI, etc.), reprojection, patching, and transformation into PyTorch-ready tensors—while preserving geospatial coordinates.
+
+---
+
+## 🚀 Features
+
+- ✅ Compute vegetation and water indices (NDVI, NDWI, etc.)
+- ✅ Read raster data into coordinate-aware arrays
+- ✅ Clip and reproject rasters using geometries (e.g., GeoJSON or Shapely)
+- ✅ Split imagery into fixed-size patches
+- ✅ Convert to PyTorch tensors for ML pipelines
+- ✅ Fully Pythonic (no heavy GDAL/C++ dependencies)
+- ✅ Fast and async-friendly where possible
+
+---
+
+## 📦 Installation
+
+```bash
+pip install fastarray
+
