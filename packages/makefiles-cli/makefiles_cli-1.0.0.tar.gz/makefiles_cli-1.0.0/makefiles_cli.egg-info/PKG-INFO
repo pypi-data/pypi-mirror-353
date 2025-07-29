@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: makefiles-cli
+Version: 1.0.0
+Summary: A lightweight Python utility for file creation and template generation from XDG_TEMPLATES_DIR
+License-Expression: GPL-3.0-only
+Project-URL: Homepage, https://github.com/Rid1FZ/makefiles-cli
+Keywords: makefiles,mkfiles,mkfile,makefiles-cli,mkfile-cli
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Environment :: Console
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# makefiles-cli - Command line interface for XDG_TEMPLATES_DIR
+
+`makefiles-cli` is a simple commandline tool to create files and templates. It can create one or more empty files or any template defined in `XDG_TEMPLATES_DIR`. It also has support for [fzf](https://github.com/junegunn/fzf) to make it easier to find template.
+
+## Usage
+
+Create empty files:
+
+```bash
+mkfile example1 example2
+```
+
+List all available templates:
+
+```bash
+mkfile --list
+```
+
+Create template from any template defined in `XDG_TEMPLATES_DIR`:
+
+```bash
+mkfile script.py --template="pyscript.py"
+```
+
+Create template using `fzf` as picker to pick template interactively:
+
+```bash
+mkfile script.py --template --picker="fzf"
+```
+
+Run `mkfile --help` for all the available options.
+
+## Installation
+
+_Requirements_:
+
+- python3 (python3.10 or greater)
+- pip
+
+You can install `makefiles-cli` directly from **PyPI** using `pip`:
+
+```bash
+pip install makefiles-cli
+```
+
+Or if you love to stay on bleeding edge, install directly from github:
+
+```bash
+pip install git+https://github.com/Rid1FZ/makefiles-cli
+```
