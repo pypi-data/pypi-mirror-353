@@ -1,0 +1,11 @@
+setup.py
+QuakeCLIP.egg-info/PKG-INFO
+QuakeCLIP.egg-info/SOURCES.txt
+QuakeCLIP.egg-info/dependency_links.txt
+QuakeCLIP.egg-info/requires.txt
+QuakeCLIP.egg-info/top_level.txt
+QuakeClip.egg-info/PKG-INFO
+QuakeClip.egg-info/SOURCES.txt
+QuakeClip.egg-info/dependency_links.txt
+QuakeClip.egg-info/requires.txt
+QuakeClip.egg-info/top_level.txt
