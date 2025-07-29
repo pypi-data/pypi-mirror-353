@@ -1,0 +1,8 @@
+garminconnect-0.2.27.dist-info/METADATA,sha256=SYDlOWQApmHCkC1O19u_4lT41mHjM98WVC_TdHYrySM,7060
+garminconnect-0.2.27.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+garminconnect-0.2.27.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+garminconnect-0.2.27.dist-info/licenses/LICENSE,sha256=pLgCBbmPyaFx-oofSZcs9GGAzOgSigm0KLIG_bL5NYU,1074
+garminconnect/__init__.py,sha256=RB0p6aKGHW-DyLX1AfiHEps3-zjXKA2mhECuY4RJsyA,54805
+garminconnect/fit.py,sha256=ya5n69HoHaHAZn7aD_NdAf-RuI82YvYKsjtQPLcfGTk,13038
+garminconnect/graphql_queries.txt,sha256=_wQEBwfK5FpcSfTPLLBEIdLYPUz23qS1r59dIHeLLsE,1238782
+garminconnect-0.2.27.dist-info/RECORD,,
