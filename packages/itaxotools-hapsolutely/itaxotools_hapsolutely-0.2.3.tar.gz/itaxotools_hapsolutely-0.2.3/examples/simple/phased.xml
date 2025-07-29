@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<root>
+
+	<individuals>
+		<individual id="specimen1"/>
+		<individual id="specimen2"/>
+		<individual id="specimen3"/>
+		<individual id="specimen4"/>
+		<individual id="specimen5"/>
+		<individual id="specimen6"/>
+		<individual id="specimen7"/>
+	</individuals>
+
+	<spartitions>
+		<spartition label="three_species">
+			<subsets>
+				<subset label="verrucosa">
+					<individual ref="specimen1"/>
+					<individual ref="specimen2"/>
+					<individual ref="specimen3"/>
+				</subset>
+				<subset label="mysteriosa">
+					<individual ref="specimen4"/>
+					<individual ref="specimen5"/>
+				</subset>
+				<subset label="enigmatica">
+					<individual ref="specimen6"/>
+					<individual ref="specimen7"/>
+				</subset>
+			</subsets>
+		</spartition>
+
+		<spartition label="two_species">
+			<subsets>
+				<subset label="verrucosa">
+					<individual ref="specimen1"/>
+					<individual ref="specimen2"/>
+					<individual ref="specimen3"/>
+				</subset>
+				<subset label="mysterigmatica">
+					<individual ref="specimen4"/>
+					<individual ref="specimen5"/>
+					<individual ref="specimen6"/>
+					<individual ref="specimen7"/>
+				</subset>
+			</subsets>
+		</spartition>
+
+	</spartitions>
+
+</root>

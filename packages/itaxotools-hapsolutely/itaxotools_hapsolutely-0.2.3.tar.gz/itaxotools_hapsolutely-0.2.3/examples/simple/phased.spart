@@ -1,0 +1,15 @@
+begin spart;
+Project_name = phased.tsv;
+Date = 2023-08-19T12:00:00;
+N_spartitions = 2 : three_species / two_species;
+N_individuals = 14 / 14;
+N_subsets = 3 / 2;
+Individual_assignment =
+specimen1 : 1 / 1
+specimen2 : 1 / 1
+specimen3 : 1 / 1
+specimen4 : 2 / 2
+specimen5 : 2 / 2
+specimen6 : 3 / 2
+specimen7 : 3 / 2;
+end;

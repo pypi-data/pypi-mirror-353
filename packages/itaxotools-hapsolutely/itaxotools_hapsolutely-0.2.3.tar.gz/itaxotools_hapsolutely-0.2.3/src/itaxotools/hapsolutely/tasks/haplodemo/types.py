@@ -1,0 +1,51 @@
+# -----------------------------------------------------------------------------
+# Hapsolutely - Reconstruct haplotypes and produce genealogy graphs
+# Copyright (C) 2023  Patmanidis Stefanos
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# -----------------------------------------------------------------------------
+
+from enum import Enum
+from typing import NamedTuple
+
+from itaxotools.haplodemo.types import HaploGraph, HaploTreeNode
+
+
+class Results(NamedTuple):
+    haplo_tree: HaploTreeNode
+    haplo_graph: HaploGraph
+    spartitions: dict[str, dict[str, str]]
+    spartition: str | None
+    seconds_taken: float
+
+
+class NetworkAlgorithm(Enum):
+    Fitchi = "Fitchi", "Haplotype genealogies based on Fitch distances"
+    TCS = "TCS", "Templeton, Crandall, and Sing network"
+    TSW = "TSW", "Tight span walker (from PopArt)"
+    MSN = "MSN", "Minimum spanning network"
+    MJN = "MJN", "Median joining network"
+
+    def __init__(self, label, description):
+        self.label = label
+        self.description = description
+
+
+class TreeContructionMethod(Enum):
+    MP = "MP", "Maximum Parsimony (slow)"
+    NJ = "NJ", "Neighbour Joining (fast)"
+
+    def __init__(self, label, description):
+        self.label = label
+        self.description = description
