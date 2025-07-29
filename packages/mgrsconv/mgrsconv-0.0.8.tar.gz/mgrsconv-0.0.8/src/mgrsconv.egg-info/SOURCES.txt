@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+src/mgrsconv.egg-info/PKG-INFO
+src/mgrsconv.egg-info/SOURCES.txt
+src/mgrsconv.egg-info/dependency_links.txt
+src/mgrsconv.egg-info/top_level.txt
