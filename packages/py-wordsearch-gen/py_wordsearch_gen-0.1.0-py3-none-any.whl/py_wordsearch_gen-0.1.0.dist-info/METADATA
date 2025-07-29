@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: py-wordsearch-gen
+Version: 0.1.0
+Summary: Command line tool to generate fun to play word searches.
+Author-email: Dan Shernicoff <dan@brassnet.biz>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-Expression: MIT
+License-File: LICENSE.md
+Requires-Dist: ruff>=0.9.4
+Project-URL: Home, https://github.com/brass75/wordsearch
+
+# wordsearch
+Word Search Generator
+
