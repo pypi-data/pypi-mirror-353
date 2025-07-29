@@ -1,0 +1,5 @@
+[console_scripts]
+llmtask=taskguard.cli:main
+taskguard=taskguard.cli:main
+tg=taskguard.cli:main
+
