@@ -1,0 +1,15 @@
+[project]
+name = "ai-fleet"
+worktree_root = "/Users/ia/.ai_fleet/worktrees"
+
+[agent]
+default = "claude"
+claude_flags = "--dangerously-skip-permissions"
+
+[setup]
+credential_files = []
+commands = []
+quick = false
+
+[tmux]
+prefix = "ai_"
