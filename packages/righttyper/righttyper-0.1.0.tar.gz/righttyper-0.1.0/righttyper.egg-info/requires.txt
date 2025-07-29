@@ -1,0 +1,17 @@
+libcst>=1.2.0
+click>=8.1.7
+rich>=13.7.1
+wcmatch>=10.0
+typeshed_client
+
+[shapes]
+jaxtyping
+
+[tests]
+pytest
+mypy
+numpy
+ml_dtypes
+jax
+jaxtyping
+torch

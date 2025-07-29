@@ -1,0 +1,85 @@
+[tool.black]
+line-length = 100
+
+[tool.isort]
+known_first_party = ["righttyper"]
+
+# required for compatibility with black:
+profile = "black"
+
+# To maintain consistency with other settings
+line_length = 100
+
+[tool.mypy]
+# See https://mypy.readthedocs.io/en/latest/config_file.html for more mypy options.
+
+# Enables the type-checker on the interior of functions without type annotations.
+check_untyped_defs = true
+
+# Displaying specific error codes makes it easier to silence specific errors
+# See also https://mypy.readthedocs.io/en/latest/error_codes.html
+show_error_codes = true
+
+# Show source code snippets and location markers in error messages
+pretty = true
+
+# Suppresses errors about packages which do not implement type-hint sharing.
+# See also https://mypy.readthedocs.io/en/latest/running_mypy.html#missing-imports.
+ignore_missing_imports = true
+
+[build-system]
+requires = [
+    "setuptools>=61.0",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.righttyper_setup]
+# dev builds dynamically add to the version, so it must be defined
+# seperately; setup.py puts it together.
+version = "0.1.0"
+
+[project]
+name = "righttyper"
+dynamic = ["version"]
+authors = [
+  { name="Emery Berger", email="emerydb@amazon.com" },
+  { name="Juan Altmayer Pizzorno", email="jpizzorno@umass.edu" },
+]
+dependencies = [
+    "libcst >= 1.2.0",
+    "click >= 8.1.7",
+    "rich >= 13.7.1",
+    "wcmatch >= 10.0",
+    "typeshed_client"
+]
+	 
+description = "A fast runtime type hint assistant for Python code."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest",
+    "mypy",
+    "numpy",
+    "ml_dtypes",
+    "jax",
+    "jaxtyping",
+    "torch",
+]
+shapes = [
+    "jaxtyping"
+]
+
+[project.scripts]
+righttyper = "righttyper.righttyper:main"
+
+[tool.pytest.ini_options]
+markers = [
+    'dont_run_mypy'
+]
