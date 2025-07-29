@@ -1,0 +1,6 @@
+bio_grumpy-1.0.0.dist-info/METADATA,sha256=SkYDyLXQ_DPT18hhng0YduGAoBfsBzuYaNMxN37pm7g,2516
+bio_grumpy-1.0.0.dist-info/WHEEL,sha256=tvMehAuwYswG9dMmwHb6RW7O-9AAAcnneXQ2akCAgrw,96
+bio_grumpy-1.0.0.dist-info/licenses/LICENSE,sha256=Pf0ypDqnbVqbHMEodzdqGgMFApbOmHAz4OoWFl2UFcQ,5818
+grumpy/__init__.py,sha256=uyjDBBTOg7b1gfRUk93S3-Ga3DQCugIPopC8_NBp9CY,107
+grumpy/grumpy.cp310-win_amd64.pyd,sha256=el8cOFHDESqb4Si0niRbNbdSUQKpmDJPTr2LK-Q54Gk,1531392
+bio_grumpy-1.0.0.dist-info/RECORD,,
