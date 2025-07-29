@@ -1,0 +1,41 @@
+[project]
+name = "gitcontext"
+version = "0.1.0"
+description = "Context-aware git CLI for multi-project research repos with worktree, squash, and fzf support."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "AxOr", email = "axiomsandorbits@gmail.com" }]
+requires-python = ">=3.8"
+
+dependencies = [
+  "click>=8.0",
+]
+
+[project.scripts]
+git-ctx = "git_ctx.cli:cli"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "ruff>=0.1.0",
+  "black>=23.0",
+  "pre-commit>=3.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+select = ["E", "F", "W"]
+ignore = ["E501"]  # ignore long lines
+src = ["git_ctx"]
+
+[project.urls]
+Homepage = "https://github.com/axor-ai/git-ctx"
+Repository = "https://github.com/axor-ai/git-ctx"
+Issues = "https://github.com/axor-ai/git-ctx/issues"
