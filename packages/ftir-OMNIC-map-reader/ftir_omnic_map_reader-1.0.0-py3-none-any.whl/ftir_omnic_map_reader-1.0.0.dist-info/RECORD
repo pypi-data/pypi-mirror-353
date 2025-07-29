@@ -1,0 +1,12 @@
+ftir_map/LoadOmnicArrayMAP.py,sha256=vH6TS2rZRY-7bsHwggHt411r33398bk6FvEdFJMxVWA,14980
+ftir_map/LoadOmnicMAP.py,sha256=GKQBGxrg1RmUj6QB4Rj42Uk4U7cX84wxHZk_d34_EGg,3260
+ftir_map/PyMca_Array_OmnicMap.py,sha256=bwMGfGrX9yh37y2B8x25siCobj2EUpKzG4E7hsjG2f4,15280
+ftir_map/PyMca_OmnicMap.py,sha256=nrHKYzvnibco6zBsVCOAM-509Ua-W52U84koK7ML7jY,12894
+ftir_map/__about__.py,sha256=AexAb1vxUNhrYbhUOrV9fVoR6wEX40LohMHDQgjh7QA,152
+ftir_map/__init__.py,sha256=mISLwIp5Kx-o_HCnFc3GM3RfXDrgJe0_IF_CQg3-UG4,130
+ftir_map/testpoint.py,sha256=eavs30mJFLDfhtN0IQGL2WOXY1z8Q0tUBE73gkpO9lk,1395
+ftir_omnic_map_reader-1.0.0.dist-info/licenses/LICENSE.txt,sha256=KGUy89CwmneGG2-cwaCtTi-GuBWH8VpKChoDmMcZaVM,1122
+ftir_omnic_map_reader-1.0.0.dist-info/METADATA,sha256=oU_TN025Eym7qXvtg51UBYAc_NltSZJE0-dWsbFdRsk,4334
+ftir_omnic_map_reader-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ftir_omnic_map_reader-1.0.0.dist-info/top_level.txt,sha256=IebgyLQVfeKy3mrRwVw-M5Hc1Zwbfst-oiu1DLYLbjE,9
+ftir_omnic_map_reader-1.0.0.dist-info/RECORD,,
