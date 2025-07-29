@@ -1,0 +1,16 @@
+[
+    "https://w3id.org/ro/crate/1.1/context",
+            {"@vocab": "http://schema.org/", "ldac": "https://w3id.org/ldac/terms#"},
+            {
+                "register": "http://w3id.org/meta-share/meta-share/register",
+                "birthDateEstimateStart": "#birthDateEstimateStart",
+                "birthDateEstimateEnd": "#birthDateEstimateEnd",
+                "arrivalDate": "#arrivalDate",
+                "arrivalDateEstimateStart": "#arrivalDateEstimateStart",
+                "arrivalDateEstimateEnd": "#arrivalDateEstimateEnd",
+                "bornInAustralia": "#bornInAustralia",
+                "yearsLivedInAustralia": "#yearsLivedInAustralia",
+                "socialClass": "#socialClass",
+                "textType": "#textType"
+            }
+        ]

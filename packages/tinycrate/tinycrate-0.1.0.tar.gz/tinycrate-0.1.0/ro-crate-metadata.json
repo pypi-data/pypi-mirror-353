@@ -1,0 +1,37 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "name": "Minimal crate",
+      "description": "Minimal crate",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
+      },
+      "datePublished": 2025,
+      "@id": "./",
+      "@type": "Dataset"
+    },
+    {
+      "name": "\nAttribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)\"\n",
+      "description": "LICENSE_DESCRIPTION",
+      "identifier": "LICENSE_IDENTIFIER",
+      "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+      "@type": "CreativeWork"
+    },
+    {
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork"
+    },
+    {
+      "foo": "bar",
+      "@id": "#ds01",
+      "@type": "Dataset"
+    }
+  ]
+}
