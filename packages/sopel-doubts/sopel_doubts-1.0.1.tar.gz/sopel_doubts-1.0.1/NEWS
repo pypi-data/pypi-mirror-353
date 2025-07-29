@@ -1,0 +1,15 @@
+## Changelog
+
+### 1.0.1
+
+Bugfix release, adding lowercase `𝕩` as a recognized character.
+
+
+### 1.0.0
+
+First release of `sopel-doubts` on PyPI.
+
+Repackaging of public domain work from the [ActionSack Git][asak-doubts-source],
+where upstream has been marked as archived.
+
+[//]: # (NB: asak-doubts-source is defined in the README.md file)
