@@ -1,0 +1,16 @@
+yt-dlp>=2023.3.4
+mcp>=1.0.0
+
+[all]
+mcp>=1.0.0
+
+[dev]
+pytest>=7.0
+pytest-asyncio>=0.21.0
+black>=23.0
+isort>=5.12
+flake8>=6.0
+mypy>=1.0
+
+[mcp]
+mcp>=1.0.0
