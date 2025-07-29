@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: image-to-excel-mcp
+Version: 0.1.0
+Summary: Convert table images to Excel files using MCP protocol and Qwen-VL model.
+Author-email: workQ <qihao967@gmail.com>
+Requires-Python: <3.13,>=3.9
+Requires-Dist: fastmcp
+Requires-Dist: openai>=1.0.0
+Requires-Dist: Pillow
+Requires-Dist: pandas
+Requires-Dist: python-dotenv
+Requires-Dist: uvicorn
+Requires-Dist: starlette
+Requires-Dist: anyio

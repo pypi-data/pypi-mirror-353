@@ -1,0 +1,8 @@
+fastmcp
+openai>=1.0.0
+Pillow
+pandas
+python-dotenv
+uvicorn
+starlette
+anyio
