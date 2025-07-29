@@ -1,0 +1,12 @@
+trdicom/__init__.py,sha256=z6AXKIOZrXx0W7gMxCb1m5yfONqYFSqkttdw7UOlbZI,73
+trdicom/scp.py,sha256=JlE2AjY1ICW6LYzwLywDTncaDRNOEipMtgT91c4EZGQ,749
+trdicom/scu.py,sha256=eu8JvW99rfO0-rODknUi0eoo9QYA66cKP4SbjqcyHhc,1846
+trdicom/core/__init__.py,sha256=gDLfIEO1RN9vERuK7ApUCQLh981jTBUgbtbxzeQA3sk,150
+trdicom/core/base.py,sha256=8rHBfnA3yRX_Mha1TSlzmxSWE9uu2_XHAiqsFz849-0,2195
+trdicom/core/scp.py,sha256=NYut0jY7nvSjtDfkENt8f2fTKwqDxfjnSSaTzqd-NeY,753
+trdicom/core/scu.py,sha256=iKgzxUCLSOka07_sr38Xd-epipqrVcfe-mJ_IKemejg,1852
+trdicom-1.0.3.dist-info/licenses/LICENSE,sha256=GzHS9pi6vw_oGwKIGxAPch8iuVrHazOilEsYL7AlPK0,1085
+trdicom-1.0.3.dist-info/METADATA,sha256=Jo-rJcii0NNKT3IhuPXmQqUAVtupQJqF5schmFa2xxk,573
+trdicom-1.0.3.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+trdicom-1.0.3.dist-info/top_level.txt,sha256=UgDNmR8V7S_wB-hH0AX3xr8Yjlw7OjKNoAhfP57eDrs,8
+trdicom-1.0.3.dist-info/RECORD,,
