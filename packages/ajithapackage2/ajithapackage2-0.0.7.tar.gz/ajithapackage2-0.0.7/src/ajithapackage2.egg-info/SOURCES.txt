@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/ajithapackage2/__init__.py
+src/ajithapackage2/py.typed
+src/ajithapackage2.egg-info/PKG-INFO
+src/ajithapackage2.egg-info/SOURCES.txt
+src/ajithapackage2.egg-info/dependency_links.txt
+src/ajithapackage2.egg-info/requires.txt
+src/ajithapackage2.egg-info/top_level.txt
+src/ajithapackage2/_jsii/__init__.py
+src/ajithapackage2/_jsii/ajithapackage2@0.0.7.jsii.tgz
