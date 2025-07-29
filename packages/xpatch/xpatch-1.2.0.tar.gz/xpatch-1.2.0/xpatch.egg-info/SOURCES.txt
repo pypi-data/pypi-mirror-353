@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_xpatch.py
+xpatch/__main__.py
+xpatch/cliskel.py
+xpatch.egg-info/PKG-INFO
+xpatch.egg-info/SOURCES.txt
+xpatch.egg-info/dependency_links.txt
+xpatch.egg-info/entry_points.txt
+xpatch.egg-info/requires.txt
+xpatch.egg-info/top_level.txt
