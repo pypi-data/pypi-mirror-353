@@ -1,0 +1,9 @@
+spdx_checker.cpython-312-darwin.so,sha256=vZzAK6Xo3Lpj8dUThrFXzqb0rGd6RBOE3rhrnaELlcU,1455504
+builder.py,sha256=zgGnTWOcQZ6NAfJwMeQEG31dgT2XAtlAn7VGq9lCFHM,3746
+spdx_checker.cpython-312-darwin.so.o,sha256=NJ4mSS9pX_YWfKtqHY9-rZ3vpy7SQ8gXCn14ZfLa_hE,2341080
+spdx_checker.dylibs/Python,sha256=POlqArdXdDeilwUzclqjakWJwLJ-XWgGoVPUzbeSSak,16238064
+spdx_checker-0.1.7.dist-info/RECORD,,
+spdx_checker-0.1.7.dist-info/WHEEL,sha256=VrhWOWJdu4wN9IKhAFBqWPMo6yuww-SFg9GbWc0qbmI,136
+spdx_checker-0.1.7.dist-info/top_level.txt,sha256=0CKwo5BsnFVH1L_s6lYyGScwWHuA6KQlGNPddOwxQ6k,21
+spdx_checker-0.1.7.dist-info/METADATA,sha256=wpfztxQZvOdr0i9xk1dnyXjZ43SNnmH4Jgdx1dW-3Qo,984
+spdx_checker-0.1.7.dist-info/licenses/LICENSE,sha256=3Z6usZRRE9Iq4bA3UAarnC8cLpvF655eNYvSJsjIoP8,1063
