@@ -1,0 +1,58 @@
+optimization:
+  # Optimizer: "auto", "distributed", "local", "optuna", "bayesian"
+  optimizer: optuna
+
+  # Временной лимит по работе оптимизатора в секундах
+  optimizer_timeout: 7200
+
+  # Количество итераций оптимизатора гиперпараметров моделей
+  n_iterations: auto
+
+  # Итоговое количество итераций оптимизатора гиперпараметров моделей
+  n_iterations_used:
+
+
+boostaroota:
+  boostaroota_type:
+
+  # min feat after Boostaroota
+  min_n_features_to_stop: 60
+
+  # min feat to start Boostaroota
+  min_n_features_to_start: 100
+
+  # Не более итераций BR
+  max_boostaroota_stage_iters: 3
+
+permuation:
+  # Порог для отбора перестановками
+  permutation_threshold: 0.001
+  permutation_top_n:
+
+gini_selection:
+  # Порог для отбора признаков по метрике Джини
+  gini_threshold: 0.0
+  gini_selector_abs_difference: 10.0
+  gini_selector_rel_difference: 30.0
+  gini_selector_valid_sample: valid
+
+psi_selection:
+  # Порог для отбора признаков по метрике PSI
+
+  psi_threshold: 0.1
+  psi_sample:  valid
+
+
+corr_selection:
+  # Порог для отбора признаков по корреляции
+  corr_threshold: 10
+  corr_coef: 0.7
+
+batch_selection:
+  bootstrap_samples: 200
+
+  # Критерий остановки для batch_selection
+  stop_criteria: model_score
+
+  # valid, test, oot
+  sample_for_validation: valid

@@ -1,0 +1,40 @@
+# @package _global_
+
+pipeline:
+  task: timeseries
+  eval_metric: mse
+  loss_function: mse
+
+  task_specific:
+    ts_transforms:
+      - _target_: etna.transforms.DensityOutliersTransform
+        in_column: target
+        distance_coef: 3.0
+      - _target_: etna.transforms.TimeSeriesImputerTransform
+        in_column: target
+        strategy: forward_fill
+      - _target_: etna.transforms.TrendTransform
+        in_column: target
+        out_column: target_trend
+      - _target_: etna.transforms.LagTransform
+        in_column: target
+        lags: ${range_list:30, 45}
+        out_column: target_lag
+      - _target_: etna.transforms.DateFlagsTransform
+        week_number_in_month: True
+        out_column: date_flag
+      - _target_: etna.transforms.FourierTransform
+        period: 360.25
+        order: 6
+        out_column: fourier
+      - _target_: etna.transforms.MeanTransform
+        in_column: target_lag_30
+        window: 7
+        out_column: mean_target_lag_30
+      - _target_: dreamml.features.feature_enrichment.timeseries_transforms.RusHolidayTransform
+        in_column: timestamp
+        types: ['is_holiday', 'is_weekend', 'is_pre_holiday']
+
+data:
+  splitting:
+    shuffle: False

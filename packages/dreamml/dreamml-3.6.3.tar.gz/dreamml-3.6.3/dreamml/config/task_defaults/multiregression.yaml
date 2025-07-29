@@ -1,0 +1,11 @@
+# @package _global_
+
+pipeline:
+  task: multiregression
+  loss_function: multirmse
+
+models:
+  catboost:
+    params:
+      loss_function: multirmse
+      eval_metric: multirmse

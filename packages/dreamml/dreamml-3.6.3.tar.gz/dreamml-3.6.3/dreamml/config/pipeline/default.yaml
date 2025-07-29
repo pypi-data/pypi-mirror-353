@@ -1,0 +1,153 @@
+defaults:
+  - _self_
+  - reproducibility: default
+  - saving: default
+
+device: auto
+
+# Отображение результатов обучения
+verbose: False
+
+# Для multilabel через OneVsRestClassifierWrapper
+parallelism: -1
+
+# Дир. с экспериментом для запуска с чекпоинта
+check_point_path:
+
+# ID разрабатываемой модели
+model_id: dml
+task: ???
+subtask: # set automatically
+eval_metric: ???
+loss_function: ???
+metric_params:
+  labels:
+
+# Схема валидации модели: "auto", "hold-out", "cv"
+validation_type: auto
+
+# Список этапов пайплайна
+stage_list: []
+
+# Список используемых моделей
+model_list: []
+
+# Список этапов предобработки текста
+text_preprocessing_params:
+    "depersonalizer": False
+    "text_cleaner": False
+    "digit_eraser": False
+    "punct_eraser": False
+    "word_pipeline":
+        "word_normalizer": False
+        "word_standard_stopwords": False
+        "word_additional_stopwords": False
+        "word_synonyms": False
+
+preprocessing:
+  # Регрессия
+  min_percentile: 1
+  max_percentile: 99
+  log_target:  False
+
+# Multitarget report parameters
+show_save_paths: False
+samples_to_plot: ["train", "valid", "test", "OOT"]
+plot_multi_graphs: True
+max_classes_plot: 5
+
+vectorization:
+  vectorization_algos: []
+  tfidf:
+    params:
+      model_path: None
+      concat_text_features: True
+      vector_size: None
+
+  word2vec:
+    params:
+      model_path: None
+      concat_text_features: True
+      vector_size: None
+
+  fasttext:
+    params:
+      model_path: None
+      concat_text_features: True
+      vector_size: None
+
+  glove:
+    params:
+      model_path: None
+      concat_text_features: True
+      vector_size: None
+
+  bow:
+    params:
+      model_path: None
+      concat_text_features: True
+      vector_size: None
+
+other_models_feature_threshold: 100
+
+use_oot_potential: False
+alt_mode:
+  use_lama: False
+  lama_time: 1200
+  use_etna: False
+  use_whitebox_automl: False
+
+task_specific:
+  time_series:
+    # Горизонт прогнозирования
+    horizon: 5
+
+    # Трансформации ETNA для обогащения датасета фичами
+    # Параметры для обогащения временных рядов c учетом переименования: target_name = 'target'
+    ts_transforms: []
+
+    # Путь до датасета с экзогенными данными
+    path_to_exog_data:
+
+    # Экзогенные столбцы в датасете exog_data
+    known_future: all
+
+    # Гранулярность временного столбца
+    time_column_frequency: D
+
+  topic_modeling:
+    num_topics: 10
+    lda_passes: 10
+    alpha: 1e-2
+    eta: 1e-2
+    num_models: 3
+    iterations: 10
+    n_neighbors: 15
+    n_components: 2
+    min_dist: 0.1
+    metric_umap: euclidean
+    umap_epochs: 10
+
+    min_cluster_size: 5
+    max_cluster_size: 150
+    min_samples: 5
+    metric_hdbscan: euclidean
+    cluster_selection_method: eom
+    prediction_data: True
+
+  multilabel:
+    target_with_nan_values: False
+
+    # Multitarget report parameters
+    show_save_paths: False
+    samples_to_plot: ["train", "valid", "test", "OOT"]
+    plot_multi_graphs: True
+    max_classes_plot: 5
+
+bentoml_service:
+  resources:
+    cpu: 2
+    gpu:
+    gpu_type:
+  traffic:
+    timeout: 10

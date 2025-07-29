@@ -1,0 +1,273 @@
+# Количество деревьев для обучения моделей
+n_estimators: 5000
+
+# Гиперпараметры моделей и сетки оптимизатора
+xgboost:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    seed: ${pipeline.reproducibility.random_seed}
+    verbose: ${pipeline.verbose}
+    n_estimators: ${models.n_estimators}
+    enable_categorical: ${xgboost_enable_categorical:}
+    booster: gbtree
+    early_stopping_rounds: ${early_stopping_rounds_from_n_estimators:}
+    device: ${xgboost_device:}
+    tree_method: hist
+
+  optimization_bounds:
+    max_depth: ${tuple:2, 11}
+    min_child_weight: ${tuple:1, 100}
+    scale_pos_weight: ${tuple:1, 100}
+    subsample: ${tuple:0.5, 0.9}
+    colsample_bytree: ${tuple:0.5, 0.9}
+    gamma: ${tuple:1e-8, 5}
+    reg_alpha: ${tuple:1e-8, 10}
+    reg_lambda: ${tuple:1e-8, 10}
+    learning_rate: ${tuple:1e-6, 0.3}
+
+lightgbm:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    seed: ${pipeline.reproducibility.random_seed}
+    verbose: ${pipeline.verbose}
+    n_estimators: ${models.n_estimators}
+    n_jobs: ${pipeline.parallelism}
+    device: cpu
+
+  optimization_bounds:
+    max_depth: ${tuple:2, 11}
+    num_leaves: ${tuple:16, 128}
+    min_child_samples: ${tuple:5, 5000} # Изменяется в зависимости от размера датасета в optimization_stage.py
+    reg_alpha: ${tuple:0.1, 20}
+    reg_lambda: ${tuple:0.1, 20}
+    learning_rate: ${tuple:1e-6, 0.3}
+
+catboost:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    random_seed: ${pipeline.reproducibility.random_seed}
+    verbose: ${pipeline.verbose}
+    n_estimators: ${models.n_estimators}
+    early_stopping_rounds: ${early_stopping_rounds_from_n_estimators:}
+    task_type: ${catboost_device:}
+
+
+  optimization_bounds:
+    max_depth: ${tuple:2, 11}
+    l2_leaf_reg: ${tuple:1, 100}
+    learning_rate: ${tuple:1e-6, 0.3}
+    # colsample_bylevel: ${tuple:0.6, 0.9} # не работает на gpu, параметр убирается в ConfigStorage
+    min_child_samples: ${tuple:5, 5000} # Изменяется в зависимости от размера датасета в optimization_stage.py
+    grow_policy: ${tuple:SymmetricTree, Depthwise, Lossguide}
+    bootstrap_type: ${tuple:No, Bayesian, Bernoulli} # MSV не работает на gpu, параметр убирается в ConfigStorage
+
+pyboost:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    seed: ${pipeline.reproducibility.random_seed}
+    verbose: ${pipeline.verbose}
+    ntrees: ${models.n_estimators}
+    es: ${early_stopping_rounds_from_n_estimators:}
+
+  optimization_bounds:
+    max_depth: ${tuple:2, 11}
+    lr: ${pyboost_lr_optimization_bounds:1e-6, 0.3}
+    lambda_l2: ${tuple:1e-5, 100}
+    min_data_in_leaf: ${tuple:5, 5000} # Изменяется в зависимости от размера датасета в optimization_stage.py
+    colsample: ${tuple:0.5, 1.0}
+    subsample: ${tuple:0.5, 1.0}
+    max_bin: ${tuple:2, 255}
+    min_data_in_bin: ${tuple:1, 10}
+
+boostaroota:
+  params:
+    metric: auc
+    clf: # SKlearn learner, default: XGBoost
+    cutoff: 4 # Adjustment to removal cutoff from the feature importance
+    iters: 30 # The number of learner (XGBoost) iterations per BR iteration
+    max_rounds: 100 # The number of BostARoota iterations (maximum)
+    # Minimum share of features for removing to start next iter
+    # (0.1 = if >=10% features were dropped start next round)
+    delta: 0.1
+    silent: False
+    shap_flag: False
+
+prophet:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    n_iterations: 100
+    time_column_frequency: ${pipeline.task_specific.time_series.time_column_frequency}
+    split_by_group: ${data.splitting.split_by_group}
+    group_column: ${data.columns.group_column}
+    horizon: ${pipeline.task_specific.time_series.horizon}
+
+linear_reg:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+
+log_reg:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    random_state: ${pipeline.reproducibility.random_seed}
+    C: 9.0
+    class_weight: balanced
+    max_iter: 2000
+    n_jobs: ${pipeline.parallelism}
+    penalty: l1
+    solver: saga
+
+  optimization_bounds:
+    penalty: ${tuple:l1, l2}
+    C: ${tuple:0.1, 20.0}
+
+lda:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    random_state: ${pipeline.reproducibility.random_seed}
+    num_topics: ${pipeline.task_specific.topic_modeling.num_topics}
+    passes: ${pipeline.task_specific.topic_modeling.lda_passes}
+    alpha: ${pipeline.task_specific.topic_modeling.alpha}
+    eta: ${pipeline.task_specific.topic_modeling.eta}
+
+  optimization_bounds:
+    num_topics: ${tuple:2, 15}
+    alpha: ${tuple:1e-2, 1}
+    eta: ${tuple:1e-2, 1}
+
+ensembelda:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    random_state: ${pipeline.reproducibility.random_seed}
+    num_topics: ${pipeline.task_specific.topic_modeling.num_topics}
+    passes: ${pipeline.task_specific.topic_modeling.lda_passes}
+    num_models: ${pipeline.task_specific.topic_modeling.num_models}
+    iterations: ${pipeline.task_specific.topic_modeling.iterations}
+
+  optimization_bounds:
+    num_topics: ${tuple:2, 20}
+    num_models: ${tuple:2, 20}
+    iterations: ${tuple:1, 50}
+
+bertopic:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    random_state: ${pipeline.reproducibility.random_seed}
+    n_neighbors: ${pipeline.task_specific.topic_modeling.n_neighbors}
+    n_components: ${pipeline.task_specific.topic_modeling.n_components}
+    min_dist: ${pipeline.task_specific.topic_modeling.min_dist}
+    metric_umap: ${pipeline.task_specific.topic_modeling.metric_umap}
+    umap_epochs: ${pipeline.task_specific.topic_modeling.umap_epochs}
+    min_cluster_size: ${pipeline.task_specific.topic_modeling.min_cluster_size}
+    max_cluster_size: ${pipeline.task_specific.topic_modeling.max_cluster_size}
+    min_samples: ${pipeline.task_specific.topic_modeling.min_samples}
+    metric_hdbscan: ${pipeline.task_specific.topic_modeling.metric_hdbscan}
+    cluster_selection_method: ${pipeline.task_specific.topic_modeling.cluster_selection_method}
+    prediction_data: ${pipeline.task_specific.topic_modeling.prediction_data}
+
+bert:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    model_path:
+    freeze_layers: False
+    learning_rate: 2e-5
+    epochs: 50
+    batch_size: 32
+    sampler_type: weighted_random
+    optimizer_type: adamw
+    scheduler_type: linear
+    max_length: 300
+    dropout_rate: 0.1
+    weight_decay: 0.01
+    early_stopping_patience: 3
+    clip_grad_norm: 1.5
+    gradient_accumulation_steps: 1
+    save_best_only: True
+    save_model_path: "./best_model.pt"
+    load_best_model_at_end: True
+    lora_config: None
+    device: ${pipeline.device}
+
+  optimization_bounds:
+    learning_rate: ${tuple:2e-5, 5e-4}
+    weight_decay: ${tuple:2e-5, 1e-2}
+    sampler_type: ${tuple:weighted_random, random}
+    scheduler_type: ${tuple:linear, cosine, reduce_on_plateau}
+
+nbeats_revin:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    split_by_group: ${data.splitting.split_by_group}
+    group_column: ${data.columns.group_column}
+    horizon: ${pipeline.task_specific.time_series.horizon}
+    device: ${pipeline.device}
+    n_epochs: 100
+    nb_blocks_per_stack: 3
+    hidden_layer_units: 128
+    batch_size: 10
+    learning_rate: 1e-3
+    backcast_length: 90
+    sequence: 10
+    th_ad: 1
+
+ae:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    latent_dim: 32
+    learning_rate: 2e-4
+    epochs: 8
+    batch_size: 32
+    sampler_type: weighted_random
+    optimizer_type: adamw
+    scheduler_type: linear
+    weight_decay: 2e-5
+    random_state: ${pipeline.reproducibility.random_seed}
+    device: ${pipeline.device}
+    normalization_flag: True
+
+vae:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: ${pipeline.eval_metric}
+    latent_dim: 32
+    learning_rate: 2e-4
+    epochs: 8
+    batch_size: 32
+    sampler_type: weighted_random
+    optimizer_type: adamw
+    scheduler_type: linear
+    weight_decay: 2e-5
+    random_state: ${pipeline.reproducibility.random_seed}
+    device: ${pipeline.device}
+    normalization_flag: True
+
+iforest:
+  params:
+    objective: ${pipeline.loss_function}
+    eval_metric: avg_anomaly_score
+    n_estimators: 100
+    random_state: ${pipeline.reproducibility.random_seed}
+    n_jobs: ${pipeline.parallelism}
+    bootstrap: False
+    max_features: 1.0
+    contamination: auto
+    max_samples: auto
+    normalization_flag: True
+
+  optimization_bounds:
+    n_estimators: ${tuple:50, 300}
+    max_samples: ${tuple:0.5, 1.0}
+    max_features: ${tuple:0.1, 1.0}
+    contamination: ${tuple:0.01, 0.2}

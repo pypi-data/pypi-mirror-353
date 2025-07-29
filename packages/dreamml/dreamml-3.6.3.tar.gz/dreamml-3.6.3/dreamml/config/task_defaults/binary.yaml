@@ -1,0 +1,10 @@
+# @package _global_
+
+pipeline:
+  task: binary
+  eval_metric: gini
+  loss_function: logloss
+
+data:
+  splitting:
+    stratify: True

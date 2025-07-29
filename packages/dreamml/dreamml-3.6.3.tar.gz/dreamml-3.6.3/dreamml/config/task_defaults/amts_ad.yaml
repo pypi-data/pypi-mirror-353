@@ -1,0 +1,10 @@
+# @package _global_
+
+pipeline:
+  task: amts_ad
+  eval_metric: mse
+  loss_function: mse
+
+data:
+  splitting:
+    shuffle: False
