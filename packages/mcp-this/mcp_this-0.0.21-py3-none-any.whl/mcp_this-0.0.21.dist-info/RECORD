@@ -1,0 +1,13 @@
+mcp_this/__init__.py,sha256=3Uy2swOzO5SDWDHSNJMtt9DwSy36WvUEla01bUZH_Us,100
+mcp_this/__main__.py,sha256=88Q6Tj_pq-tGKTqX9UvlQH00ULyu15r74Ol7T9MjO6E,4046
+mcp_this/mcp_server.py,sha256=6j648ldo-Wmdpz4dVAWoBf0TnaRDcVgKqcEdV6KT_xc,11453
+mcp_this/prompts.py,sha256=_MKh6dqOiJrqG2cAvgVRNgYcak7FWIFcLwNNkDiK_7Q,4843
+mcp_this/tools.py,sha256=K8zfuYEWTwKWwB_DmihioKkKwpQ14sbU16KUv6CIJOI,11316
+mcp_this/configs/default.yaml,sha256=lYbiW3lyv2OfjcsDQrxAdNfp41R3BDQGXU2QefTJp8A,13478
+mcp_this/configs/editing.yaml,sha256=kK9KZjQV2sYHsky35vB1NEK8gI9BgkP2u2cLBvqQIOg,5043
+mcp_this/configs/github.yaml,sha256=lvqKCzkcyuTCxNHhBKUIQlv46o28JX9gpbBwhm__mlY,10958
+mcp_this-0.0.21.dist-info/METADATA,sha256=ig3jJ2mCuBf4JqEZffSFHdc9gt49E-GBqfxTJA6MIAc,21562
+mcp_this-0.0.21.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_this-0.0.21.dist-info/entry_points.txt,sha256=nolARXpOBtpxctfA_b3bNit1cn-S34vPcjRW50PHIvc,52
+mcp_this-0.0.21.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+mcp_this-0.0.21.dist-info/RECORD,,
