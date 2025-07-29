@@ -1,0 +1,38 @@
+[project]
+name = "otel-lean-tracer"
+version = "0.0.1"
+description = "OpenTelemetry-compatible tracing library that adds Lean Production KPIs to LLM/Agent execution traces"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "opentelemetry-api>=1.25.0",
+    "opentelemetry-sdk>=1.25.0",
+    "opentelemetry-exporter-otlp>=1.25.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "--import-mode=importlib",
+    "--cov=otel_lean_tracer",
+    "--cov-report=term-missing",
+]
+
+[dependency-groups]
+dev = [
+    "agents-sdk-models>=0.0.22",
+    "pytest>=8.4.0",
+    "pytest-asyncio>=1.0.0",
+    "pytest-cov>=6.1.1",
+]
