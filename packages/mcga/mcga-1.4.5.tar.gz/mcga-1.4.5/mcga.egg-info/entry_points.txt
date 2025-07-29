@@ -1,0 +1,2 @@
+[console_scripts]
+mcga = mcga:demo_mcga

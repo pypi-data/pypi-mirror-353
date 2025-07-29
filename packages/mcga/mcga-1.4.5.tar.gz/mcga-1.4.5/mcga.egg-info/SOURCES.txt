@@ -1,0 +1,15 @@
+README.md
+setup.py
+mcga/__init__.py
+mcga/core.py
+mcga/detection.py
+mcga.egg-info/PKG-INFO
+mcga.egg-info/SOURCES.txt
+mcga.egg-info/dependency_links.txt
+mcga.egg-info/entry_points.txt
+mcga.egg-info/top_level.txt
+tests/__init__.py
+tests/conftest.py
+tests/test_core.py
+tests/test_detection.py
+tests/test_performance.py
