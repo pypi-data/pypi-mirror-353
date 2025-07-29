@@ -1,0 +1,11 @@
+karakeep_python_api/__init__.py,sha256=qk3MeIIvnCNAyYzJrv8dMKVXvA4ejLU3mhB3xFzdLDY,606
+karakeep_python_api/__main__.py,sha256=X1GXwRvAAw8qFmMm2MKdmPNYkmlmEUUQalJX9kWxrS0,32402
+karakeep_python_api/datatypes.py,sha256=vcDqS8r_LRMLqrIvHZIqkvUSiucprz58jOAeC82QwHY,3415
+karakeep_python_api/karakeep_api.py,sha256=nvpynAk4S5G1-sjf0T4sl9kYjHyV12bQobd8fiMLVlg,85276
+karakeep_python_api/openapi_reference.json,sha256=9bvTkzHbgtUg-xg6T6zF3bSdxBMW1Rn5nC-l2jH6FoQ,80553
+karakeep_python_api-1.1.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+karakeep_python_api-1.1.0.dist-info/METADATA,sha256=bGJws2bLSvGXZwi6mFlpnh0NhVBXtjsSDZqybwgyQ8E,15732
+karakeep_python_api-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+karakeep_python_api-1.1.0.dist-info/entry_points.txt,sha256=n0leQp_IX2NivoWuUcaR9ZHwAvl_6yt-NcHWuCJyxNo,62
+karakeep_python_api-1.1.0.dist-info/top_level.txt,sha256=X3VKqh9YAbPQp144db0Ko2C5Q2y6-nwpPgtnuCiSDmU,20
+karakeep_python_api-1.1.0.dist-info/RECORD,,
