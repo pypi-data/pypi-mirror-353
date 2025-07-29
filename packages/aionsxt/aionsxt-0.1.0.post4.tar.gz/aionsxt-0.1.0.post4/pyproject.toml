@@ -1,0 +1,34 @@
+[build-system]
+requires = [ "setuptools>=42", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aionsxt"
+version = "0.1.0.post4"
+description = "Python asyncio package for VMware NSX"
+authors = [{ name = "Antoine Richado", email = "fordian68@gmail.com" }]
+readme = { file = "README.md", content-type = "text/markdown" }
+
+classifiers = [
+    "Programming Language :: Python :: 3", 
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "aiofiles==24.1.0",
+    "aiohttp==3.11.7",
+    "asyncio==3.4.3",
+    "colorama==0.4.6",
+    "types-colorama==0.4.15.20240311",
+    "types-requests==2.32.0.20241016",
+    "typing==3.7.4.3",
+    "typing_extensions==4.12.2",
+    "urllib3==2.2.3",
+]
+
+[tool.setuptools]
+include-package-data = true
+packages = ["aionsxt"]
+
+[tool.setuptools.package-data]
+aionsx = ["config_ini/*"]
