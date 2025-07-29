@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: chaitin-rpa
+Version: 0.0.1
+Summary: 
+Author: faith
+Author-email: jamienibtong@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: curl-cffi (>=0.10.0,<0.11.0)
+Requires-Dist: sqlalchemy[aiosqlite] (>=2.0.41,<3.0.0)
+Requires-Dist: xlsxwriter (>=3.2.3,<4.0.0)
+Description-Content-Type: text/markdown
+
+### hello world
+

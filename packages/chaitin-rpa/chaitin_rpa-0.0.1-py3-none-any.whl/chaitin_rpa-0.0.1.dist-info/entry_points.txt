@@ -1,0 +1,3 @@
+[console_scripts]
+chaitin-rpa=chaitin_rpa.cli:run
+

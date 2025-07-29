@@ -1,0 +1,14 @@
+chaitin_rpa/__init__.py,sha256=99wQKOeM1oON6SrJDFvZqRk-I5Mel_gMgjEwnC3qxBs,73
+chaitin_rpa/api/cards.py,sha256=SEW6E5TJ0gUNtUK1SiWLRHFTSgfJ4B9Eqv1blxW7oHs,4913
+chaitin_rpa/api/chaitin.py,sha256=Y-c7UftWgsTmY4wHzldNxJLZzsbMsyZCR8U7w5JCQHk,9392
+chaitin_rpa/api/feishu.py,sha256=AHbfK36xzyD4zfgQYfcRnxvpFA_7th_mW0mSFwUHrb0,2885
+chaitin_rpa/cli.py,sha256=HxBXnZ5D6Mt2CKxrKRSLXvtquRukQc6c3qE43txB40k,7850
+chaitin_rpa/config.py,sha256=DqfUTJCeC3GS2PshJ-THfgC0aiNB2jE2QGzkYp_ClVc,1244
+chaitin_rpa/database.py,sha256=FnlWmqq-vPT-Oxzcai3TJ5UVdB_cJnGhm6Bsz79VqcM,323
+chaitin_rpa/log.py,sha256=8cIVkEG7uAZS7IDkGfM5Fz7Hd8oag6UA5ofFOTL34n4,164
+chaitin_rpa/tables.py,sha256=nQ-suxBeIJaEqU_x3b0ldciY1HNr9IjCiUOo6K0H4mo,2267
+chaitin_rpa/utils.py,sha256=w1YApv1XD1utwJukJVA84zmxvYbVOzTtBKfQxFdQgaY,2783
+chaitin_rpa-0.0.1.dist-info/METADATA,sha256=W4CXOGG5g21t1Xvxm-FM-ajPlvU-DLNe3ejcnVQq5xU,444
+chaitin_rpa-0.0.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+chaitin_rpa-0.0.1.dist-info/entry_points.txt,sha256=zsSxJ-Kt-xTKXTVKlsoPDa0JYSAb2f2ji25E7TP3QMQ,51
+chaitin_rpa-0.0.1.dist-info/RECORD,,
