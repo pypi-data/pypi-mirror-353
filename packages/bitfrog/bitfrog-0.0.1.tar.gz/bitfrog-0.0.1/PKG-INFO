@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: bitfrog
+Version: 0.0.1
+Summary: A Python API for bitfrog notifications.
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Author-email: Kai Albertson <kaialbertson@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# bitfrog-python
+> *A python api for bitfrog notifications*
+
+## Installation
+```
+pip install bitfrog
+```
+
+## Usage
+
+```python
+print("hello world")
+```
