@@ -1,0 +1,188 @@
+Metadata-Version: 2.4
+Name: memoryllm
+Version: 0.1.1
+Summary: Persistent Memory Management for Large Language Models
+Author-email: Laurent-Philippe Albou <lpalbou@gmail.com>
+Maintainer-email: Laurent-Philippe Albou <lpalbou@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/lpalbou/memoryllm
+Project-URL: Documentation, https://memoryllm.readthedocs.io
+Project-URL: Repository, https://github.com/lpalbou/memoryllm
+Project-URL: Issues, https://github.com/lpalbou/memoryllm/issues
+Project-URL: Changelog, https://github.com/lpalbou/memoryllm/blob/main/CHANGELOG.md
+Keywords: llm,memory,ai,chatbot,conversation,context,persistence
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing-extensions>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Provides-Extra: vector
+Requires-Dist: chromadb>=0.4.0; extra == "vector"
+Requires-Dist: sentence-transformers>=2.0.0; extra == "vector"
+Provides-Extra: full
+Requires-Dist: chromadb>=0.4.0; extra == "full"
+Requires-Dist: sentence-transformers>=2.0.0; extra == "full"
+Requires-Dist: sqlalchemy>=1.4.0; extra == "full"
+Requires-Dist: pydantic>=2.0.0; extra == "full"
+Dynamic: license-file
+
+# MemoryLLM
+
+**The Persistent Memory Problem for Large Language Models**
+
+[![PyPI version](https://badge.fury.io/py/memoryllm.svg)](https://badge.fury.io/py/memoryllm)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+THIS PACKAGE IS A PLACEHOLDER FOR A WORK IN PROGRESS. DO NOT PAY TOO MUCH ATTENTION FOR NOW.
+
+## Overview
+
+MemoryLLM is a Python library designed to solve one of the most significant limitations of Large Language Models: the lack of persistent memory across conversations and over time. While LLMs excel at understanding and generating text within a single conversation, they typically lose all context once the session ends, forcing users to start from scratch each time.
+
+## The Problem
+
+Large Language Models face several memory-related challenges:
+
+- **Session Isolation**: Each new conversation starts with zero context
+- **Context Window Limitations**: Long conversations hit token limits, losing early context
+- **No Learning Persistence**: Insights and preferences from previous interactions are lost
+- **Inefficient Repetition**: Users must re-explain context, preferences, and background information
+- **Lack of Continuity**: No ability to build upon previous conversations or maintain ongoing projects
+
+## The Solution
+
+MemoryLLM provides a comprehensive memory layer for LLM applications, enabling:
+
+### 🧠 **Persistent Context Storage**
+- Store and retrieve conversation history across sessions
+- Maintain user preferences, insights, and learned patterns
+- Preserve project context and ongoing work
+
+### 🔍 **Intelligent Memory Retrieval**
+- Semantic search through historical conversations
+- Context-aware memory selection based on current topics
+- Automatic relevance scoring and filtering
+
+### 🔗 **Seamless Integration**
+- Framework-agnostic design works with any LLM provider
+- Simple API that integrates with existing applications
+- Minimal code changes required for existing projects
+
+### 📊 **Memory Management**
+- Configurable memory retention policies
+- Automatic memory compression and summarization
+- Privacy controls and data lifecycle management
+
+## Key Features
+
+- **Multi-Modal Memory**: Store text, code, documents, and structured data
+- **Vector-Based Search**: Semantic similarity search for contextual retrieval
+- **Memory Hierarchies**: Organize memories by importance, recency, and relevance
+- **Privacy-First**: Local storage options with encryption support
+- **Scalable Architecture**: From simple file storage to enterprise databases
+- **Memory Analytics**: Insights into memory usage and effectiveness
+
+## Quick Start
+
+```python
+from memoryllm import MemoryManager, ConversationMemory
+
+# Initialize memory manager
+memory = MemoryManager(storage_path="./memories")
+
+# Store conversation context
+memory.store_conversation(
+    conversation_id="project_alpha",
+    messages=[...],
+    metadata={"project": "alpha", "user": "developer"}
+)
+
+# Retrieve relevant context for new conversation
+relevant_context = memory.retrieve_context(
+    query="How should I implement the authentication system?",
+    conversation_id="project_alpha",
+    max_results=5
+)
+
+# Continue conversation with persistent memory
+llm_response = your_llm.chat(
+    messages=relevant_context + new_messages
+)
+```
+
+## Use Cases
+
+### 🤖 **AI Assistants**
+- Maintain user preferences and communication styles
+- Remember ongoing projects and their status
+- Build upon previous problem-solving sessions
+
+### 💻 **Code Development**
+- Preserve codebase context and architectural decisions
+- Remember debugging sessions and solutions
+- Maintain coding standards and patterns
+
+### 📚 **Knowledge Management**
+- Store and retrieve research findings
+- Build cumulative understanding of complex topics
+- Connect related concepts across conversations
+
+### 🎯 **Personalized Applications**
+- Learn user behavior and preferences
+- Adapt responses based on historical interactions
+- Provide consistent experience across sessions
+
+## Architecture
+
+MemoryLLM is built with modularity and flexibility in mind:
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Application   │    │   MemoryLLM     │    │    Storage      │
+│                 │◄──►│                 │◄──►│                 │
+│  Your LLM App   │    │ Memory Manager  │    │ Vector DB/Files │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### Storage Backends
+- **Local Files**: Simple JSON/pickle storage for development
+- **SQLite**: Structured storage with SQL queries
+- **Vector Databases**: Chroma, Pinecone, Weaviate support
+- **Cloud Storage**: S3, GCS, Azure Blob integration
+
+### Memory Types
+- **Episodic Memory**: Specific conversation episodes
+- **Semantic Memory**: Extracted knowledge and concepts  
+- **Procedural Memory**: Learned processes and workflows
+- **Meta Memory**: Memory about memory usage patterns
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Laurent-Philippe Albou**  
+*June 5th, 2025*
+
+---
+
+*MemoryLLM: Because every conversation should build upon the last one.*
