@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: fastdla
+Version: 0.8.2
+Summary: Fast calculation of dynamical Lie algebra
+Project-URL: Homepage, https://github.com/yiiyama/fastdla
+Project-URL: Issues, https://github.com/yiiyama/fastdla/issues
+Project-URL: Documentation, https://fastdla.readthedocs.io/en/latest/index.html
+Author-email: Yutaro Iiyama <iiyama@icepp.s.u-tokyo.ac.jp>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: jax
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: scipy
+Description-Content-Type: text/markdown
+
+# fastdla
+
+Fast Lie closure (aka dynamical Lie algebra) calculation using JAX / Numba with algorithms described
+in [arXiv:2506.01120](https://arxiv.org/abs/2506.01120).
+
+## Installation
+
+```pip install fastdla```
+
+## Example usage
+
+The following lines of code calculates the DLA for a 10-qubit Hardware efficient ansatz defined in [Larocca et al. Quantum 6 (2022)](https://quantum-journal.org/papers/q-2022-09-29-824/):
+
+```
+from fastdla import lie_closure
+from fastdla.generators.hea import hea_generators
+
+generators = hea_generators(num_qubits=10)
+dla = lie_closure(generators)
+```
+
+## Documentation
+
+[Read the Docs](https://fastdla.readthedocs.io/en/latest/)

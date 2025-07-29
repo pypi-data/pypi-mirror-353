@@ -1,0 +1,7 @@
+*.pyc
+*.h5
+dist/
+build/
+docs/source/generated
+docs/build
+*-checkpoint.rst
