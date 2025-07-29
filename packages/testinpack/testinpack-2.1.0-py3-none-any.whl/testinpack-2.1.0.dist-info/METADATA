@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: testinpack
+Version: 2.1.0
+Summary: testinpack
+Author-email: "भाग्य ज्योति (Bhagya Jyoti)" <BhagyaJyoti@tutamail.com>
+License: Apache License Version 2.0
+Project-URL: Homepage, https://github.com/BhagyaJyoti22006/testinpack
+Project-URL: Repository, https://github.com/BhagyaJyoti22006/testinpack
+Project-URL: Issues, https://github.com/BhagyaJyoti22006/testinpack/issues
+Keywords: test
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# testinpack
+
