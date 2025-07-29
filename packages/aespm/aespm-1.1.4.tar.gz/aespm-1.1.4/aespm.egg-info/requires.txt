@@ -1,0 +1,6 @@
+numpy<2.0
+scipy
+matplotlib
+igor2
+paramiko
+Pyro5
