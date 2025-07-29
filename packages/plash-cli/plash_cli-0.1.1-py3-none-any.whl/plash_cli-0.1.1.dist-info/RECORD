@@ -1,0 +1,10 @@
+plash_cli/__init__.py,sha256=rnObPjuBcEStqSO0S6gsdS_ot8ITOQjVj_-P1LUUYpg,22
+plash_cli/_bash_magic.py,sha256=GaH4Gg4k-uGJ-ZzqZcuBuzDZxzpMA7sVuaSNmrDhkeQ,835
+plash_cli/_modidx.py,sha256=26vaLis3ed_CT5vi-FE3628TU3bPb1Jl5OG9q294Z40,2091
+plash_cli/core.py,sha256=yocGAiFbuSQkG5_sNxGwYCfkiIRYqV6aAAPQ8qWjSIg,10279
+plash_cli-0.1.1.dist-info/licenses/LICENSE,sha256=xV8xoN4VOL0uw9X8RSs2IMuD_Ss_a9yAbtGNeBWZwnw,11337
+plash_cli-0.1.1.dist-info/METADATA,sha256=Hd5m6CTkvD95dfLo8HffFtgGPUtewPKqMnML2J_-RLg,5182
+plash_cli-0.1.1.dist-info/WHEEL,sha256=Nw36Djuh_5VDukK0H78QzOX-_FQEo6V37m3nkm96gtU,91
+plash_cli-0.1.1.dist-info/entry_points.txt,sha256=pTSoqr9yANuhEczjE6K4brMva37N25jcLCTUjPV3-qY,343
+plash_cli-0.1.1.dist-info/top_level.txt,sha256=KRy2pFL3vlo03-M-Ujpzil7JlV6N9SpU8iNod61Tj0w,10
+plash_cli-0.1.1.dist-info/RECORD,,
