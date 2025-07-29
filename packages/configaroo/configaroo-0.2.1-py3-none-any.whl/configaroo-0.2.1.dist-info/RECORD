@@ -1,0 +1,12 @@
+configaroo/__init__.py,sha256=-rsRqALc9-loy4qWJQHYE6QG0rZ1gwYjIUPy72DbsZg,371
+configaroo/configuration.py,sha256=a39w6uHJMrc8pDbHZJX0dr8DVZ6gMFbFSLUlEPCMCdw,7779
+configaroo/exceptions.py,sha256=1h-6hV7VqqKaRFnu539pjsO0ESSNDibt2kUeF7jAM2M,374
+configaroo/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+configaroo/loaders/__init__.py,sha256=-6GAR4g7vYW7Zagq9Ev479kpkfY7kbvDl4JPXd4wQQ0,756
+configaroo/loaders/json.py,sha256=6gs_ZegUEe70vb6uSJfKBos7UjfuJnyWgPE_kjDQISw,258
+configaroo/loaders/toml.py,sha256=ZVbHutZ7V-Z_jf2aHjV18jwaqCXumlr06j48rojHcBM,264
+configaroo-0.2.1.dist-info/licenses/LICENSE,sha256=2cbzsB4lU8qOO8fO1XVNJD7XPxzPhaWXm6U9DenSc0s,1089
+configaroo-0.2.1.dist-info/METADATA,sha256=0Od55T9MEvRBhi4JHllAU2S0U9NBl0T99yA2Axsf0wk,1789
+configaroo-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+configaroo-0.2.1.dist-info/top_level.txt,sha256=JVYICl1cWSjvSOZuZMYm976z9lnZaWtHVRSt373QCxg,11
+configaroo-0.2.1.dist-info/RECORD,,
