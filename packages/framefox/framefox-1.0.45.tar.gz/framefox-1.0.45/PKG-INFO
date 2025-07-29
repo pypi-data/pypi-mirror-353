@@ -1,0 +1,79 @@
+Metadata-Version: 2.4
+Name: framefox
+Version: 1.0.45
+Summary: Framework de développement modulaire
+Author-email: BOUMAZA Rayen <boumaza.rayen@outlook.fr>, LEUROND Raphaël <leurond.raphael@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sqlmodel>=0.0.22
+Requires-Dist: typer>=0.15.1
+Requires-Dist: fastapi<1.0.0,>=0.115.7
+Requires-Dist: uvicorn>=0.34.0
+Requires-Dist: starlette>=0.45.3
+Requires-Dist: python-multipart>=0.0.20
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: ruamel.yaml>=0.18.10
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: pyYAML>=6.0.2
+Requires-Dist: colorlog>=6.9.0
+Requires-Dist: jinja2>=3.1.4
+Requires-Dist: rich>=13.9.4
+Requires-Dist: pydantic-settings>=2.7.1
+Requires-Dist: click>=8.1.8
+Requires-Dist: passlib>=1.7.4
+Requires-Dist: pyjwt>=2.10.1
+Requires-Dist: bcrypt>=4.0.1
+Requires-Dist: pymysql>=1.1.1
+Requires-Dist: psycopg2-binary>=2.9.10
+Requires-Dist: alembic>=1.14.1
+Requires-Dist: pytest>=8.3.4
+Requires-Dist: cryptography>=44.0.2
+Requires-Dist: aiosmtplib>=4.0.0
+Requires-Dist: pika>=1.3.2
+Requires-Dist: psutil>=7.0.0
+Dynamic: license-file
+
+![Framefox](./docs/images/framefox.png?raw=true "Framefox")
+
+# Swift, smart, and a bit foxy!
+
+Framefox is a modern Python web framework designed to make web development enjoyable and productive.
+
+## Documentation 
+Our comprehensive documentation is available [here](https://soma-smart.github.io/doc-framefox/) 📖
+
+## Features
+
+- **Object-oriented framework**: Built with an object-oriented approach, providing a structured and organized way to build your web applications
+- **Simplified development**: Designed to simplify the development of robust, modular, and maintainable applications
+- **Clear MVC architecture**: Emphasizes a clear Model-View-Controller (MVC) architecture for better code organization and separation of concerns
+- **Productivity-driven philosophy**: Focuses on enhancing developer productivity with its intuitive structure and features
+
+Key features include an interactive terminal, a powerful routing system, advanced configuration management, pre-configured authentication and registration, ORM database management, and much more.
+
+Dive into the documentation to discover how Framefox can transform your Python development experience.
+
+## Contributing
+
+We welcome contributions! Please read our [Contributing Guide](./CONTRIBUTING.md) to get started.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Authors
+
+- **BOUMAZA Rayen** - [@RayenBou](https://github.com/RayenBou)
+- **LEUROND Raphaël** - [@Vasulvius](https://github.com/Vasulvius)
+
+---
+
+**Swift, smart, and a bit foxy!** - Framefox makes Python web development enjoyable and productive.
