@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mosmetro_test_package2"
+version = "0.1.0"
+description = "Тестовый пакет-зависимость"
+authors = ["Large Pemp <qwe@qwe.qwe>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "src" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
