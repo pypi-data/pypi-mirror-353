@@ -1,0 +1,8 @@
+openai_image_gen_edit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+openai_image_gen_edit/app.py,sha256=Gs0Qicw8xsGf0Ow4E3MfKrjDIYOAtoeKsRGnhaWpyO8,7745
+openai_image_gen_edit/cli.py,sha256=ncu7xnrr1Tic5DxycJDqK5aE1wEko3-LHgzrd4oSSzw,544
+openai_image_gen_edit-0.0.6.dist-info/METADATA,sha256=5-Gq9m3Yywo-NFMAidajefQFoZfNTH5dtbWNSCFG918,1906
+openai_image_gen_edit-0.0.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+openai_image_gen_edit-0.0.6.dist-info/entry_points.txt,sha256=BKZE_-v0A6Ga_x9La1f1JnZ9EcahMl2qH7vShWz-LpA,72
+openai_image_gen_edit-0.0.6.dist-info/licenses/LICENSE,sha256=-gmHtA8FbTNdVEWtsrzAcJ31RJ6b53_KL6MKbp2Sowo,1495
+openai_image_gen_edit-0.0.6.dist-info/RECORD,,
