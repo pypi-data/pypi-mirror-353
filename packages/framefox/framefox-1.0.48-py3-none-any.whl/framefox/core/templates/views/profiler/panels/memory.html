@@ -1,0 +1,258 @@
+<div class="profiler-panel">
+  <h2>Memory Usage Analysis</h2>
+
+  <div class="panel-section">
+    <div class="memory-status {{ data.status }}">
+      <h3>
+        <span class="status-icon">
+          {% if data.status == "high" %}⚠️{% elif data.status == "error" %}❌{%
+          else %}✅{% endif %}
+        </span>
+        Memory Status: {{ data.status|title }}
+      </h3>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <h3>System Memory</h3>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div
+          class="metric-value {{ 'high' if data.memory_usage_mb > 500 else 'normal' }}"
+        >
+          {{ data.memory_usage_mb }} MB
+        </div>
+        <div class="metric-label">Process Memory (RSS)</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.memory_percent }}%</div>
+        <div class="metric-label">System Usage</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.python_current_mb }} MB</div>
+        <div class="metric-label">Python Current</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.python_peak_mb }} MB</div>
+        <div class="metric-label">Python Peak</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <h3>Template Rendering</h3>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div
+          class="metric-value {{ 'high' if data.template_memory_mb > 10 else 'normal' }}"
+        >
+          {{ data.template_memory_mb }} MB
+        </div>
+        <div class="metric-label">Template Memory</div>
+      </div>
+
+      <div class="metric-card">
+        <div
+          class="metric-value {{ 'slow' if data.template_render_time_ms > 100 else 'normal' }}"
+        >
+          {{ data.template_render_time_ms }} ms
+        </div>
+        <div class="metric-label">Render Time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <h3>Python Objects</h3>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">
+          {{ data.gc_objects_count | format_number }}
+        </div>
+        <div class="metric-label">Total Objects</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.gc_generation_0 }}</div>
+        <div class="metric-label">GC Gen 0</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.gc_generation_1 }}</div>
+        <div class="metric-label">GC Gen 1</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-value">{{ data.gc_generation_2 }}</div>
+        <div class="metric-label">GC Gen 2</div>
+      </div>
+    </div>
+  </div>
+
+  {% if data.status == "high" or data.template_memory_mb > 10 %}
+  <div class="panel-section">
+    <h3>💡 Recommendations</h3>
+    <div class="recommendations">
+      {% if data.memory_usage_mb > 500 %}
+      <div class="recommendation warning">
+        <strong>High Memory Usage:</strong> Consider implementing memory cleanup
+        or reducing data loading.
+      </div>
+      {% endif %} {% if data.template_memory_mb > 10 %}
+      <div class="recommendation warning">
+        <strong>Template Memory:</strong> Template rendering used {{
+        data.template_memory_mb }}MB. Consider reducing context size.
+      </div>
+      {% endif %} {% if data.template_render_time_ms > 100 %}
+      <div class="recommendation info">
+        <strong>Template Performance:</strong> Rendering took {{
+        data.template_render_time_ms }}ms. Consider template optimization.
+      </div>
+      {% endif %} {% if data.gc_objects_count > 100000 %}
+      <div class="recommendation info">
+        <strong>Object Count:</strong> High number of Python objects ({{
+        data.gc_objects_count | format_number }}). Consider periodic cleanup.
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+  .profiler-panel {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .panel-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+
+  .panel-section h3 {
+    margin: 0 0 15px 0;
+    color: #343a40;
+    font-weight: 600;
+  }
+
+  /* Status */
+  .memory-status {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+
+  .memory-status.normal {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+  }
+
+  .memory-status.high {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+  }
+
+  .memory-status.error {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+  }
+
+  .status-icon {
+    font-size: 1.2em;
+    margin-right: 8px;
+  }
+
+  /* Metrics Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .metric-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+  }
+
+  .metric-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .metric-value.normal {
+    color: #28a745;
+  }
+
+  .metric-value.high {
+    color: #ffc107;
+  }
+
+  .metric-value.slow {
+    color: #fd7e14;
+  }
+
+  .metric-label {
+    font-size: 0.9em;
+    color: #6c757d;
+    font-weight: 500;
+  }
+
+  /* Recommendations */
+  .recommendations {
+    space-y: 10px;
+  }
+
+  .recommendation {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .recommendation.warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+  }
+
+  .recommendation.info {
+    background-color: #d1ecf1;
+    border: 1px solid #b8daff;
+    color: #0c5460;
+  }
+
+  .recommendation strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .metric-card {
+      padding: 15px;
+    }
+
+    .metric-value {
+      font-size: 1.4em;
+    }
+  }
+</style>
