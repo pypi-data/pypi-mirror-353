@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+mcptiny/__init__.py
+mcptiny/main.py
+mcptiny.egg-info/PKG-INFO
+mcptiny.egg-info/SOURCES.txt
+mcptiny.egg-info/dependency_links.txt
+mcptiny.egg-info/entry_points.txt
+mcptiny.egg-info/requires.txt
+mcptiny.egg-info/top_level.txt

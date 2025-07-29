@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcptiny"
+version = "0.1.0"
+description = "A tiny MCP server example"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "Livingstone", email = "livingstone.guo@hotmail.com"}
+]
+dependencies = [
+    "fastmcp>=0.1.0",
+]
+
+[project.scripts]
+mcptiny = "mcptiny.main:main"

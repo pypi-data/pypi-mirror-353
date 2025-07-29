@@ -1,0 +1,2 @@
+[console_scripts]
+mcptiny = mcptiny.main:main
