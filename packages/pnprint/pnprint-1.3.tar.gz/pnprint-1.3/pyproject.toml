@@ -1,0 +1,17 @@
+[project]
+name = "pnprint"
+version = "1.3"
+description = "format and color serialized data strings to make them more human readable"
+authors = [{name = "jimy-byerley", email = "jimy.byerley@gmail.com"}]
+license = "GNU LGPL v3"
+readme = "readme.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
