@@ -1,0 +1,61 @@
+[project]
+name = "aiopjlink-kw"
+version = "1.0.5"
+description = "Asyncio PJLink library (Class 1 and Class 2)"
+readme = "README.md"
+keywords = [
+    "projector",
+    "pjlink",
+    "asyncio",
+]
+authors = [
+    { name = "HE Inventions LTD", email = "support@heinventions.com" },
+    { name = "Uladzimir Kazakevich", email = "kwull@kwull.com" },
+]
+dependencies = []
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: AsyncIO",
+]
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://pypi.org/project/aiopjlink-kw/"
+Repository = "https://github.com/kwull/aiopjlink"
+"Bug Tracker" = "https://github.com/kwull/aiopjlink/issues"
+
+[project.optional-dependencies]
+
+[build-system]
+requires = [
+    "pdm-pep517>=1.0.0",
+]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "flake8>=5.0.4",
+    "coverage>=6.4.3",
+]
+
+[tool.pdm.scripts]
+lint = "python -m flake8 aiopjlink test"
+test = "python -m unittest discover -v"
+coverage = "coverage run -m unittest discover -v"
+coverage_report = "coverage report"
+coverage_html = "coverage html"
+p_on = "python -m aiopjlink.cli 192.168.68.124 on"
+p_off = "python -m aiopjlink.cli 192.168.68.124 off"
+p_errors = "python -m aiopjlink.cli 192.168.68.124 errors"
+p2_power = "python -m aiopjlink.cli2 power_status"
+
+[tool.pdm.scripts.test_d]
+cmd = "python -m unittest discover -v"
+
+[tool.pdm.scripts.test_d.env]
+AIOPJLINK_PRINT_DEBUG_COMMS = "True"
