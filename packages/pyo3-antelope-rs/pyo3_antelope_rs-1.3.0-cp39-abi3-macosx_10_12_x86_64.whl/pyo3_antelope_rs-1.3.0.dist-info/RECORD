@@ -1,0 +1,8 @@
+pyo3_antelope_rs-1.3.0.dist-info/METADATA,sha256=g50Ldgl-DREzntdMpQ_HbRMVZDtkgNoxgqDlLKP-I9M,372
+pyo3_antelope_rs-1.3.0.dist-info/WHEEL,sha256=LVKiu9bgLUJICf_rdtmZa1cUv-Xgh7w2DRRx_2zV2Fs,104
+antelope_rs/__init__.py,sha256=_xR-YQJyFLkML0M4oPSBFnDpFqlfsYCsXQV-Jjm9Tpg,3356
+antelope_rs/abi.py,sha256=jfXuCzsuaF7PhpJXZRMMDY32zXiMu1ZJmXgmwjzZD6w,10780
+antelope_rs/codec.py,sha256=gJ7jKqRGCAuz3KZwjOkrvOdYYrm8EORjHc1YnTpLWKQ,969
+antelope_rs/testing.py,sha256=j5xq44JGPSO-j1AMN2ViplEewkqec3q1abW5fvWbO6Q,13510
+antelope_rs/_lowlevel.abi3.so,sha256=VdYxutKP52RgR-D7vvEib5bM8oXPaB___lTNtQ16bcY,2170212
+pyo3_antelope_rs-1.3.0.dist-info/RECORD,,
