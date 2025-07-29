@@ -1,0 +1,17 @@
+LICENSE
+README.rst
+pyproject.toml
+django_todo/__init__.py
+django_todo/admin.py
+django_todo/apps.py
+django_todo/models.py
+django_todo/serializers.py
+django_todo/tests.py
+django_todo/views.py
+django_todo/migrations/0001_initial.py
+django_todo/migrations/__init__.py
+gbrown_django_todo.egg-info/PKG-INFO
+gbrown_django_todo.egg-info/SOURCES.txt
+gbrown_django_todo.egg-info/dependency_links.txt
+gbrown_django_todo.egg-info/requires.txt
+gbrown_django_todo.egg-info/top_level.txt
