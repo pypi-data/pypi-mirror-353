@@ -1,0 +1,30 @@
+[CDF-24590] 👨‍👩‍👦 Prefer parent over grandparent (#1599)
+
+# Description
+
+This issue casus the following when dumping a model from one Project and
+redeploying it to another:
+
+![image](https://github.com/user-attachments/assets/4564c724-2834-415c-99a1-89b79cd66732)
+
+
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- When running `cdf dump datamodel` of a data model deployed through the
+UI, Toolkit now orders the implements of the views from grandparent,
+parent, and so on. This is in case the grandparent has a direct relation
+property that the parent overwrites with a new source, the parent source
+is used instead of the grandparent source for a child view.
+
+## templates
+
+No changes.
