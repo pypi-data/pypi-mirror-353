@@ -1,0 +1,3 @@
+[console_scripts]
+desec-dyndns=desec_dnsupdater.desec_dyndns:update
+
