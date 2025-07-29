@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: fprime-ci
+Version: 0.0.1a1
+Summary: F Prime CI Tooling suite
+Author-email: Michael Starch <Michael.D.Starch@jpl.nasa.gov>, Thomas Boyer-Chammard <Thomas.Boyer.Chammard@jpl.nasa.gov>, "Kevin F. Ortega" <Kevin.F.Ortega@jpl.nasa.gov>
+Project-URL: Homepage, https://fprime.jpl.nasa.gov
+Project-URL: Documentation, https://fprime.jpl.nasa.gov/docs
+Project-URL: Repository, https://github.com/fprime-community/fprime-ci
+Keywords: fprime,embedded,nasa,flight,software
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial>=3.5
+Requires-Dist: pluggy>=1.5.0
+Requires-Dist: requests>=2.32.3
+Requires-Dist: PyYAML==6.0.2
+Requires-Dist: fprime-gds>=4.0.0a2
+
+# ci-tools
+
+Tools to help with Continuous Integration (CI).
+
+This is **prototype** code.  There should be no expectation of support to be given nor received.
+
+Use at your own risk.

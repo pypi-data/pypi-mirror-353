@@ -1,0 +1,3 @@
+[console_scripts]
+fprime-ci = fprime_ci.__main__:main
+fprime-ci-power = fprime_ci.power:main
