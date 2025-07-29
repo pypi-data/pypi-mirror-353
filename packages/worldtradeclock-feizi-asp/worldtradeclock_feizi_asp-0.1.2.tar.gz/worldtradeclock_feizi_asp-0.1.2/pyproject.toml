@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worldtradeclock-feizi-asp"
+version = "0.1.2"
+description = "World financial market open/close & volume tracker"
+authors = [{name="Taimaz", email="your@email.com"}]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pytz",
+    "pandas",
+    "requests",
+    "arabic-reshaper",
+    "python-bidi"
+]
+license = { file="LICENSE" }
