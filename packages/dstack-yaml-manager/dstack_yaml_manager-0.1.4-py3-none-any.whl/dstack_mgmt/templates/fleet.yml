@@ -1,0 +1,23 @@
+type: fleet
+name: my-fleet
+
+# Nodes configuration
+nodes: 2
+
+# Resources per node
+resources:
+  cpu: 4
+  memory: 8GB
+  disk: 50GB
+  # Uncomment for GPU support
+  # gpu: 1
+
+# Placement policy
+# placement:
+#   - us-east-1
+#   - eu-west-1
+
+# SSH configuration
+# ssh_config:
+#   user: ubuntu
+#   identity_file: ~/.ssh/id_rsa
