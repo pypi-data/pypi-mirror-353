@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: mathpyt
+Version: 0.1.0
+Summary: Math Library
+Home-page: https://github.com/yourusername/mathpyt
+Author: Aleksandr
+Author-email: example@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: sympy>=1.8.0
+Requires-Dist: networkx>=2.6.0
+Requires-Dist: pycryptodome>=3.10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# MathPyt
+
+Библиотека с шаблонами кода для экзамена по математике и программированию.
+
+## Установка
+
+```bash
+pip install mathpyt
+```
+
+## Использование
+
+```python
+from mathpyt import <нужный_модуль>
+
+# Пример использования модуля
+```
+
+## Содержание
+
+Библиотека содержит 27 файлов с различными шаблонами кода для решения задач. 
