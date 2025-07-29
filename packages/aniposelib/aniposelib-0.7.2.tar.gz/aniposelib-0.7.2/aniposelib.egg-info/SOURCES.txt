@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+aniposelib/__init__.py
+aniposelib/boards.py
+aniposelib/cameras.py
+aniposelib/utils.py
+aniposelib.egg-info/PKG-INFO
+aniposelib.egg-info/SOURCES.txt
+aniposelib.egg-info/dependency_links.txt
+aniposelib.egg-info/requires.txt
+aniposelib.egg-info/top_level.txt
