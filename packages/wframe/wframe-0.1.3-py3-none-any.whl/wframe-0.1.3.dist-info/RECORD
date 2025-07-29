@@ -1,0 +1,11 @@
+wframe/__init__.py,sha256=_behrMs4H4a0pW_-fUinLherNnaHygHqOSGD__7XSnE,165
+wframe/cli.py,sha256=t62XkwzCyslSDzh2zS1ilTIyAEkZYp1sLi4OFP32PHc,1359
+wframe/framework.py,sha256=-_ZIdMnqVivuvg4EzSB77Dy6DmCsxAjNckXCx_OWzgs,9294
+wframe/models.py,sha256=Ntimls6TcgJyKTRTpudL-sRsBdoRTTFhfCov5jSj12M,1301
+wframe/security.py,sha256=eFtrI2Xe5HzyierqGWgRmzflMJOjzqXgx51ITrJGDYA,3579
+wframe/static/swagger-ui.html,sha256=atXPvqRW8-dWkNFbHXCAyhG-8vLjnRXtDIRzM8JhE_U,1396
+wframe-0.1.3.dist-info/METADATA,sha256=Gv76EMxy6Et9oaeK2JWRLOwqbfpktJgTYEsf7o1-7mE,2985
+wframe-0.1.3.dist-info/WHEEL,sha256=pxyMxgL8-pra_rKaQ4drOZAegBVuX-G_4nRHjjgWbmo,91
+wframe-0.1.3.dist-info/entry_points.txt,sha256=7VeVkxztKidxCyurvfGhmZsOntFDQdoMywv0PKwoaCA,43
+wframe-0.1.3.dist-info/top_level.txt,sha256=b3ZgdC1i4HwW_i34GuSEdqt7_Pp8fTHo-eiYBQgqj5E,7
+wframe-0.1.3.dist-info/RECORD,,
