@@ -1,0 +1,2 @@
+include bp_runner/bin/bp-runner-time
+recursive-include bp_runner *.py
