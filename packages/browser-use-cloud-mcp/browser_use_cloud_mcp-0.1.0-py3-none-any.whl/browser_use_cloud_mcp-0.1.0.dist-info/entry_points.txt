@@ -1,0 +1,3 @@
+[console_scripts]
+browser-use-cloud-mcp=browser_use_cloud_mcp.cli:main
+
