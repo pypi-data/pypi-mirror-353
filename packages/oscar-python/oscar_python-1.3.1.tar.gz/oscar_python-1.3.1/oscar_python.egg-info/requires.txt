@@ -1,0 +1,7 @@
+aiohttp
+boto3
+liboidcagent
+pyyaml
+requests
+setuptools>=40.8.0
+webdavclient3==3.14.6

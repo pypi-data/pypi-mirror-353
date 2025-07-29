@@ -1,0 +1,5 @@
+build
+dist
+jupyter_example
+oscar_python
+tests
