@@ -1,0 +1,10 @@
+azure_ai_inference_plus/__init__.py,sha256=yIX0n-M5HBFLwB7_BCGbqVgWqaxTRbejovWvCQSeq0Q,1115
+azure_ai_inference_plus/client.py,sha256=CaA5wGgxntjYOxdYwlcgA4wJM8o8Ex02r4PWsoqfOBM,10377
+azure_ai_inference_plus/config.py,sha256=uJ_a1GMdrC-E8fLGtzkWWjNzSQY3lE1HkpRjoem_u90,2881
+azure_ai_inference_plus/exceptions.py,sha256=WY6va9wHeD2QBc7fJbHFcPb2RL3mkB5w1OqIAjL5aSg,679
+azure_ai_inference_plus/utils.py,sha256=WQUR1WQG8yST_0Bw63WTdsfmiwMqvyvx2k-SQ6NJwMI,10405
+azure_ai_inference_plus-1.0.0.dist-info/licenses/LICENSE,sha256=kHDrrSZhHp1yhtT3zPQ8mERhzc-AHjUvt2pmUQYHwRA,1070
+azure_ai_inference_plus-1.0.0.dist-info/METADATA,sha256=nwrfsopcdoJ8P4HhOtgT4-LGwFNbhTW91Q_PBvst9w0,8298
+azure_ai_inference_plus-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+azure_ai_inference_plus-1.0.0.dist-info/top_level.txt,sha256=YmkePXyGCF0TJvRsZRJ5pA5rja6AFGvsCOQ5-QLNgzA,24
+azure_ai_inference_plus-1.0.0.dist-info/RECORD,,
