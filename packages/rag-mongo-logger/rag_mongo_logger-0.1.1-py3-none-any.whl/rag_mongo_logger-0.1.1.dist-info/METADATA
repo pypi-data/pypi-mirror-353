@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: rag-mongo-logger
+Version: 0.1.1
+Summary: Async buffered logger with MongoDB and PostgreSQL support for your rag application
+Author: Siddhesh Dosi
+Author-email: siddheshdosi106@google.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: pymongo
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
