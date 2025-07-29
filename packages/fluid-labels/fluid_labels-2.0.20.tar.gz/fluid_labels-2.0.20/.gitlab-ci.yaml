@@ -1,0 +1,515 @@
+labels-deploy:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH != "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-deploy
+  stage: deploy
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-infra apply:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  resource_group: deploy/$CI_JOB_NAME
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH != "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-infra apply
+  stage: deploy
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-infra lint:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-infra lint
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-infra plan:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-infra plan
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-lint:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  cache:
+    key: $CI_COMMIT_REF_NAME-labels-lint
+    paths:
+    - labels/.ruff_cache
+    - labels/.import_linter_cache
+    - labels/.mypy_cache
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-lint
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-pipeline:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-pipeline
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test advisories:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test advisories
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test core:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test core
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test enrichers:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test enrichers
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test integrations:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test integrations
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test model:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test model
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test output:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test output
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test parsers:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test parsers
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test resolvers:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test resolvers
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test utils:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run ./labels#labels-test utils
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3
+labels-test-functional reports:
+  before_script:
+  - echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install &> /dev/null
+  - cachix use fluidattacks
+  id_tokens:
+    CI_JOB_JWT_V2:
+      aud: https://gitlab.com
+  image: nixos/nix:latest@sha256:3bb728719e2c4e478df4c50b80f93adbe27d5c561d1417c3a2306eb914d910da
+  interruptible: true
+  needs: []
+  retry:
+    max: 2
+    when: runner_system_failure
+  rules:
+  - if: $CI_COMMIT_BRANCH == "trunk"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_PIPELINE_SOURCE == "trigger"
+    when: never
+  - if: $CI_COMMIT_TITLE =~ /^(labels|all)\\(feat|fix|refac)/
+  script:
+  - pushd labels
+  - cachix watch-exec fluidattacks -- nix run .#labels-test-functional reports
+  stage: test
+  tags:
+  - aarch64
+  variables:
+    GIT_DEPTH: 3

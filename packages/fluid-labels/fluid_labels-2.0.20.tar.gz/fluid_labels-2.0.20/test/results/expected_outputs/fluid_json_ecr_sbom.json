@@ -1,0 +1,468 @@
+{
+    "sbom_details": {
+        "name": "docker://205810638802.dkr.ecr.us-east-1.amazonaws.com/labels/test:alpine-sha256-de0eb0b3f2a4",
+        "version": "sha256:7835e2f065209a69056cfe342bfe1d3effd9fff18cdf2a68ec87e9e9723a5614",
+        "timestamp": "2025-05-19T18:21:48.091719+00:00",
+        "tool": "Fluid-Labels",
+        "organization": "Fluid attacks"
+    },
+    "packages": [
+        {
+            "id": "121bcf37c140ec9e4b5afab0519073a722d7cb964b01ce7d86d5cbfc7375f5b3",
+            "name": "alpine-baselayout",
+            "version": "3.4.3-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/alpine-baselayout@3.4.3-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "ced336d2b7562bb532e99e0fb67f14093a153cd1dab03240f55fb2eb4ef8b211",
+            "name": "alpine-baselayout-data",
+            "version": "3.4.3-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/alpine-baselayout-data@3.4.3-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=alpine-baselayout",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "49331d67ce7784e69035ecae4771b55d235231de0b649fb91c49a54d4bef6ae4",
+            "name": "alpine-keys",
+            "version": "2.4-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "MIT"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "2701d1f9d322e5b483cce30f71592ac00fdec08884bcb871864649b26d72bea7",
+            "name": "apk-tools",
+            "version": "2.14.4-r0",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/apk-tools@2.14.4-r0?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "c745431774b87eb9de6dd5d0433a85b2bfa6090240c9c1ff30aee81b23cfffc3",
+            "name": "busybox",
+            "version": "1.36.1-r7",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/busybox@1.36.1-r7?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "064f1af2bd1f05dae3f2fb3aca10780fe8074d6e0b35176577700acb495da8c2",
+            "name": "busybox-binsh",
+            "version": "1.36.1-r7",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/busybox-binsh@1.36.1-r7?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=busybox",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "a3b478f8f35dd92b7d88bb7f19faac98fc35baf204fdc37dc7dccd70c5400a69",
+            "name": "ca-certificates-bundle",
+            "version": "20241121-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "MIT",
+                "MPL-2.0"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/ca-certificates-bundle@20241121-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=ca-certificates",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "072482d9649fd16d0a76f6ae94c04dc748c0731474c01b55237118b0a347a3f0",
+            "name": "libc-utils",
+            "version": "0.7.2-r5",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "BSD-2-Clause",
+                "BSD-3-Clause"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/libc-utils@0.7.2-r5?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=libc-dev",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "3a2d49e44df86125b8d249bbb9ca819887cf088a5f4e4c42b481b089a6984be6",
+            "name": "libcrypto3",
+            "version": "3.1.8-r0",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "Apache-2.0"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/libcrypto3@3.1.8-r0?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=openssl",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "5bf04ecc8f19a8b2c35d1cda46158d8979df0dc1907309def1978923d89da7af",
+            "name": "libssl3",
+            "version": "3.1.8-r0",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "Apache-2.0"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/libssl3@3.1.8-r0?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=openssl",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4",
+            "name": "musl",
+            "version": "1.2.4-r3",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "MIT"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/musl@1.2.4-r3?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "6ea566972d11958db73e777df6fdd9f0677a8fd1063715d4402f3ee51e76edd2",
+            "name": "musl-utils",
+            "version": "1.2.4-r3",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "BSD-2-Clause",
+                "GPL-2.0-or-later",
+                "MIT"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/musl-utils@1.2.4-r3?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=musl",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "0d7c4a4393b84f6dc88fecf77c1a70bcc6b21a5605e6402849e4a8764936fd70",
+            "name": "scanelf",
+            "version": "1.3.7-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/scanelf@1.3.7-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=pax-utils",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "158828739af8f9b97c8955dad4a7df64ecd58849c5aab4588df676c4f169e47d",
+            "name": "ssl_client",
+            "version": "1.36.1-r7",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "GPL-2.0-only"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/ssl_client@1.36.1-r7?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12&upstream=busybox",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        },
+        {
+            "id": "c87eb77c3effbd60b8920782ce5e5e710ea5c48147e981447a6ba94bbd58fd09",
+            "name": "zlib",
+            "version": "1.2.13-r1",
+            "locations": [
+                {
+                    "path": "/lib/apk/db/installed",
+                    "line": null,
+                    "layer": "sha256:171a26c7bc56cc6ba67549042b24db9f5bc7cc7d4f195e8f03aaf58e956b2544",
+                    "dependency_type": "UNKNOWN",
+                    "scope": "PROD",
+                    "reachable_cves": []
+                }
+            ],
+            "licenses": [
+                "Zlib"
+            ],
+            "type": "apk",
+            "language": "unknown_language",
+            "platform": "ALPINE",
+            "package_url": "pkg:apk/alpine/zlib@1.2.13-r1?arch=aarch64&distro=alpine-3.18.12&distro_id=alpine&distro_version_id=3.18.12",
+            "found_by": "apk-db-selector",
+            "health_metadata": null,
+            "advisories": []
+        }
+    ],
+    "relationships": [
+        {
+            "from": "121bcf37c140ec9e4b5afab0519073a722d7cb964b01ce7d86d5cbfc7375f5b3",
+            "to": [
+                "ced336d2b7562bb532e99e0fb67f14093a153cd1dab03240f55fb2eb4ef8b211",
+                "064f1af2bd1f05dae3f2fb3aca10780fe8074d6e0b35176577700acb495da8c2"
+            ]
+        },
+        {
+            "from": "2701d1f9d322e5b483cce30f71592ac00fdec08884bcb871864649b26d72bea7",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4",
+                "a3b478f8f35dd92b7d88bb7f19faac98fc35baf204fdc37dc7dccd70c5400a69",
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4",
+                "3a2d49e44df86125b8d249bbb9ca819887cf088a5f4e4c42b481b089a6984be6",
+                "5bf04ecc8f19a8b2c35d1cda46158d8979df0dc1907309def1978923d89da7af",
+                "c87eb77c3effbd60b8920782ce5e5e710ea5c48147e981447a6ba94bbd58fd09"
+            ]
+        },
+        {
+            "from": "c745431774b87eb9de6dd5d0433a85b2bfa6090240c9c1ff30aee81b23cfffc3",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4"
+            ]
+        },
+        {
+            "from": "064f1af2bd1f05dae3f2fb3aca10780fe8074d6e0b35176577700acb495da8c2",
+            "to": [
+                "c745431774b87eb9de6dd5d0433a85b2bfa6090240c9c1ff30aee81b23cfffc3"
+            ]
+        },
+        {
+            "from": "072482d9649fd16d0a76f6ae94c04dc748c0731474c01b55237118b0a347a3f0",
+            "to": [
+                "6ea566972d11958db73e777df6fdd9f0677a8fd1063715d4402f3ee51e76edd2"
+            ]
+        },
+        {
+            "from": "3a2d49e44df86125b8d249bbb9ca819887cf088a5f4e4c42b481b089a6984be6",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4"
+            ]
+        },
+        {
+            "from": "5bf04ecc8f19a8b2c35d1cda46158d8979df0dc1907309def1978923d89da7af",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4",
+                "3a2d49e44df86125b8d249bbb9ca819887cf088a5f4e4c42b481b089a6984be6"
+            ]
+        },
+        {
+            "from": "6ea566972d11958db73e777df6fdd9f0677a8fd1063715d4402f3ee51e76edd2",
+            "to": [
+                "0d7c4a4393b84f6dc88fecf77c1a70bcc6b21a5605e6402849e4a8764936fd70",
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4"
+            ]
+        },
+        {
+            "from": "0d7c4a4393b84f6dc88fecf77c1a70bcc6b21a5605e6402849e4a8764936fd70",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4"
+            ]
+        },
+        {
+            "from": "158828739af8f9b97c8955dad4a7df64ecd58849c5aab4588df676c4f169e47d",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4",
+                "3a2d49e44df86125b8d249bbb9ca819887cf088a5f4e4c42b481b089a6984be6",
+                "5bf04ecc8f19a8b2c35d1cda46158d8979df0dc1907309def1978923d89da7af"
+            ]
+        },
+        {
+            "from": "c87eb77c3effbd60b8920782ce5e5e710ea5c48147e981447a6ba94bbd58fd09",
+            "to": [
+                "2aef26c527fd600b04ee2218066601ece614f975965fb7a31433898c20ef85c4"
+            ]
+        }
+    ]
+}

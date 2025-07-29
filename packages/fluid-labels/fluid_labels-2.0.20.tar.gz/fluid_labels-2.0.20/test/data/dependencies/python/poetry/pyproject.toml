@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "test-yara"
+version = "0.1.0"
+description = ""
+authors = ["Diego Restrepo <drestrepo@fluidattacks.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+apkid = ">2.1.5"
+
+
+[tool.poetry.group.dev.dependencies]
+python-json-logger = "<3.3.0"
+
+[tool.poetry.dev-dependencies]
+numpy = ">=1.21,<1.26"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

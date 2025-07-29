@@ -1,0 +1,10 @@
+source: "205810638802.dkr.ecr.us-east-1.amazonaws.com/labels/test:alpine-sha256-de0eb0b3f2a4"
+source_type: "ecr"
+execution_id: "test-123"
+aws_credentials:
+  role: ${AWS_TEST_ROLE}
+  external_id: ${AWS_EXTERNAL_ID}
+output:
+  name: "test/results/outputs/fluid_json_ecr_sbom"
+  format: "fluid-json"
+include_package_metadata: false

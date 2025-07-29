@@ -1,0 +1,63 @@
+name: Test deploy
+on:
+  workflow_dispatch:
+
+env:
+  AWS_DEFAULT_OUTPUT: "json"
+  AWS_REGION: "us-east-1"
+  AWS_ENVIRONMENT: "dev"
+  ENVIRONMENT: "dev"
+  PROJECT_NAME: "integrates"
+  SANDBOX: "sand"
+
+jobs:
+  set-parameters:
+    name: set-parameters
+    runs-on: ubuntu-latest
+    outputs:
+      lambda_bucket: ${{ steps.common_params.outputs.lambda_bucket }}
+
+    steps:
+      - name: Set App parameters
+        id: common_params
+        run: |
+          echo "::set-output name=lambda_bucket::${ENVIRONMENT}"
+
+  deploy-integrates:
+    name: build-deploy-artifact-int
+    runs-on: ubuntu-latest
+    needs: [set-parameters]
+    env:
+      LAMBDA_BUCKET: ${{ needs.set-parameters.outputs.lambda_bucket }}
+
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-duration-seconds: 900
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Install ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2
+
+      - name: Use maven
+        uses: gradle/gradle-build-action@2.4.0
+
+      - name: Upload to S3
+        id: upload-to-s3
+        run: |
+          export S3_PACKAGE="s3://${LAMBDA_BUCKET}"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'

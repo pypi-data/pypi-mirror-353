@@ -1,0 +1,9 @@
+source: "test/data/dependencies"
+source_type: "dir"
+execution_id: "test-123"
+exclude:
+  - "should_be_excluded/"
+output:
+  name: "test/results/outputs/spdx_json_sbom"
+  format: "spdx-json"
+include_package_metadata: false

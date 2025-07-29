@@ -1,0 +1,40 @@
+cache-dir = ".ruff_cache"
+line-length = 100
+indent-width = 4
+target-version = "py311"
+include = ["labels/**/*.py", "test/**/*.py", "schedules/**/*.py"]
+exclude = ["test/data/**/*.py"]
+
+[lint]
+select = ["ALL"]
+ignore = [
+  # Temporarily disabled while applying strict typing
+  "PGH003", # 'type: ignore' without specifying the warning type.
+  "ANN401", # Checks that function arguments are annotated with a more specific type than Any.
+
+  # General omissions. Do not add more codes to this list.
+  "D100",    # Checks for undocumented public module definitions.
+  "D101",    # Checks for undocumented public class definitions.
+  "D102",    # Checks for undocumented public method definitions.
+  "D103",    # Checks for undocumented public function definitions.
+  "D104",    # Checks for undocumented public package definitions.
+  "D105",    # Checks for undocumented magic method definitions.
+  "D107",    # Checks for public __init__ method definitions that are missing docstrings.
+  "TRY300",  # Checks for return statements in try blocks. The rule recommends using the `else` clause in the `try-except` structure for return statements.
+  "PLR2004", # Checks for the use of unnamed numerical constants ("magic") values in comparisons.
+  "PTH118",  # Prefer 'Path' over 'str' for file paths. Most paths in this project are handled as strings; switching would require extra conversions.
+  "ISC001",  # Temporarily disabled
+]
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[lint.per-file-ignores]
+"test/**/*" = ["S101"]
+"*_test.py" = ["S101"]

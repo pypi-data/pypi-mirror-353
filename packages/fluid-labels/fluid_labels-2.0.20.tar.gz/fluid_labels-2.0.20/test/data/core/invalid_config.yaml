@@ -1,0 +1,5 @@
+source: test/path
+output:
+    name: output.json
+    format: cyclonedx-json
+# Missing source_type field

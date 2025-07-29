@@ -1,0 +1,9 @@
+source: "test/data/dependencies"
+source_type: "dir"
+execution_id: "test-123"
+exclude:
+  - "should_be_excluded/"
+output:
+  name: "test/results/outputs/cyclonedx_json_sbom"
+  format: "cyclonedx-json"
+include_package_metadata: false

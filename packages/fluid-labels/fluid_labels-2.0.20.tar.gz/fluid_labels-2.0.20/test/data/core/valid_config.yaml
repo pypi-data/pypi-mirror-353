@@ -1,0 +1,16 @@
+source: test/path
+source_type: dir
+execution_id: test-123
+exclude:
+    - node_modules
+    - .git
+docker_credentials:
+    username: user
+    password: pass
+aws_credentials:
+    external_id: ext-id
+    role: aws-role
+output:
+    name: output.json
+    format: cyclonedx-json
+debug: true

@@ -1,0 +1,5 @@
+source: test/path
+source_type: dir
+output:
+    name: output.json
+    format: cyclonedx-json

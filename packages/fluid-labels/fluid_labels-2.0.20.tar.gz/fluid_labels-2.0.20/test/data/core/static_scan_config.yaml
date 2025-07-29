@@ -1,0 +1,23 @@
+---
+language: EN
+namespace: root_nickname
+output:
+  file_path: spots/test/results/lib_sca_labels.csv
+  format: CSV
+working_dir: "./root_nickname"
+sbom:
+  include:
+    - glob(**/*.csproj)
+    - glob(**/*.cs)
+  exclude:
+    - glob(**/.git)
+  output:
+    name: spots/test/results/labels_results
+    format: fluid-json
+  include_package_metadata: false
+sca:
+  include:
+    - glob(**/*.csproj)
+    - glob(**/*.cs)
+  exclude:
+    - glob(**/.git)
