@@ -1,0 +1,22 @@
+# Basic problemtools docker image, containing problemtools and the
+# "ICPC languages" (C, C++, Java, Kotlin, and Python 3)
+#
+# Build requirements:
+# - The problemtools .deb package must be available from the host file
+#   system under a file name matching
+#   artifacts/deb/kattis-problemtools*.deb
+#   (Version of that .deb file should match the build argument
+#    PROBLEMTOOLS_VERSION but this is not checked.)
+
+ARG PROBLEMTOOLS_VERSION=develop
+FROM problemtools/icpclangs:${PROBLEMTOOLS_VERSION}
+
+LABEL maintainer="contact@kattis.com"
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir -p /usr/local/artifacts
+WORKDIR /usr/local/artifacts
+COPY artifacts/deb .
+RUN dpkg -i kattis-problemtools*.deb
+
+WORKDIR /

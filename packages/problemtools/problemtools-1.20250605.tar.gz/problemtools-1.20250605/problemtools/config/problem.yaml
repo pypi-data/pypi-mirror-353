@@ -1,0 +1,9 @@
+limits:
+   memory: 1024
+   output: 8
+   code: 128
+   compilation_time: 60
+   compilation_memory: 1024
+   validation_time: 60
+   validation_memory: 1024
+   validation_output: 8
