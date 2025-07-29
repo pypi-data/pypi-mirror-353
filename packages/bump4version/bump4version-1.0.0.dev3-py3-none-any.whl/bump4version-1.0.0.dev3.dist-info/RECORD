@@ -1,0 +1,14 @@
+bump4version/__init__.py,sha256=U0pTeSr5nrL0nQ8Sp3c52-QR4G1OmEHKyQ3b5DpaBqc,74
+bump4version/__main__.py,sha256=59yGEgTcugYSspra_Vo0JcRuV2QU2d1A2AkYa2mlLYA,31
+bump4version/cli.py,sha256=vClYrxvzvpXp04O43EbrNa7um1w10dCQZLZ0Uh2sG_k,24965
+bump4version/exceptions.py,sha256=SiZ7-VJ2jP_NUInMN45RJWGqBkDWz5wkl3h5wkhoatw,950
+bump4version/functions.py,sha256=5pW8mTofIQ0JNe-O6qkY1nsK2onRI0haci68FYXiDV4,3411
+bump4version/utils.py,sha256=JCNinYpjfn3GCDNwe7sw1FbENFwPzSnpJ4mna5aIFQM,5163
+bump4version/vcs.py,sha256=LIxwfwy68XWmHUe5Q2WjrpuHX38Qv5k7-OPnPMzL22M,6412
+bump4version/version_part.py,sha256=Yna4Kx8U6npLiTAxxicnQXezlqvq3GcRLcq328MSYOw,11893
+bump4version-1.0.0.dev3.dist-info/LICENSE.rst,sha256=oA9KaRdxfbrwZPGX_fXbbiQQ9d-yEobSwXTu-4FMzf4,1063
+bump4version-1.0.0.dev3.dist-info/METADATA,sha256=j3FRn1nf141UP9F4aw-A5mmO0OkAJWx6pWExpJ4okWg,21099
+bump4version-1.0.0.dev3.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+bump4version-1.0.0.dev3.dist-info/entry_points.txt,sha256=c27Dcg9-Ykq2xc1n87Trck-zQlve2kIx7rv5swo1LxA,82
+bump4version-1.0.0.dev3.dist-info/top_level.txt,sha256=NF3v_DeNUTDIPf7_Z0FavIMfG5D_IzRMOlYwwvRO6bs,13
+bump4version-1.0.0.dev3.dist-info/RECORD,,
