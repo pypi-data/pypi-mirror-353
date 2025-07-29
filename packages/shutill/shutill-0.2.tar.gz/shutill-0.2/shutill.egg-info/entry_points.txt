@@ -1,0 +1,2 @@
+[console_scripts]
+shutill = shutill.__main__:open_calc
