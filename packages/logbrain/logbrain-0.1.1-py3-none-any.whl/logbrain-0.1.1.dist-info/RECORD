@@ -1,0 +1,9 @@
+logbrain/__init__.py,sha256=QYM4Uw5DYRv_lRQ-DELEYZMYX8meIYeE88Rcaqimkzo,30
+logbrain/logbrain.py,sha256=vWwd5xo6bJX3tpPfjjh7yhQW1Y-7Yi5GRkeSKP9BFAc,5655
+logbrain-0.1.1.dist-info/licenses/LICENSE,sha256=4uu71IWTxa747-JHKmm90CYBfWGlNxjPDkKAg9o_MfI,519
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_logbrain.py,sha256=tZvSPbCWKqmcNzEmzkroNVcWyI05bQY0iz2iV0lT33c,475
+logbrain-0.1.1.dist-info/METADATA,sha256=tJf_G4mIZ4r70hQCRUz8ra1PSfF4lB65BP6OAr_hbQo,2475
+logbrain-0.1.1.dist-info/WHEEL,sha256=zaaOINJESkSfm_4HQVc5ssNzHCPXhJm0kEUakpsEHaU,91
+logbrain-0.1.1.dist-info/top_level.txt,sha256=9nNLkbDA0KuZs_cpDAiwfICGP-Rc2TOLrqlm6eXRxPg,15
+logbrain-0.1.1.dist-info/RECORD,,
