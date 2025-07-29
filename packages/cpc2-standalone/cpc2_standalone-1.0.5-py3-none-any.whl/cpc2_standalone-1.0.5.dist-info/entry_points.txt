@@ -1,0 +1,3 @@
+[console_scripts]
+cpc2 = cpc2_standalone.bin.CPC2:__main__
+cpc2_output_peptide = cpc2_standalone.bin.CPC2_output_peptide:__main__
