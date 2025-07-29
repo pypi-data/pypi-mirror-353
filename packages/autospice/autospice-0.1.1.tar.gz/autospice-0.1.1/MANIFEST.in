@@ -1,0 +1,7 @@
+include LICENSE
+include README.md
+include requirements.txt
+include figures/spice_overview.jpg
+recursive-include spice/resources *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[cod] 
