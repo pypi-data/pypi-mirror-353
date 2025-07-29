@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+  "hatchling",
+  "hatch-requirements-txt",
+  "hatch-fancy-pypi-readme>=22.5.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "gradio_labanmovementanalysis"
+version = "0.0.5"
+description = "A Gradio 5 component for video movement analysis using Laban Movement Analysis (LMA) with MCP support for AI agents"
+readme = "README.md"
+license = "apache-2.0"
+authors = [{ name = "Csaba Bolyós", email = "bladeszasza@gmail.com" }]
+keywords = ["gradio-custom-component", "gradio-5", "laban-movement-analysis", "LMA", "pose-estimation", "movement-analysis", "mcp", "ai-agents"]
+# Core dependencies
+requires-python = ">=3.10"
+dependencies = [
+    "gradio[mcp]>=5.33.0",
+    "mcp>=1.9.0",
+    "opencv-python>=4.8.0",
+    "mediapipe>=0.10.21",
+    "ultralytics>=8.0.0",
+    "tensorflow>=2.8.0",
+    "tensorflow-hub>=0.12.0",
+    "yt-dlp>=2025.05.22"
+]
+
+[project.optional-dependencies]
+dev = ["build", "twine"]
+
+[tool.hatch.build]
+artifacts = ["/backend/gradio_labanmovementanalysis/templates", "*.pyi"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["/backend/gradio_labanmovementanalysis"]
