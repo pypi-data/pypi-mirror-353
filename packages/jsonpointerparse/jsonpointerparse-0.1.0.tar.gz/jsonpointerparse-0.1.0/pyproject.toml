@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jsonpointerparse.py"]
+
+[project]
+name = "jsonpointerparse"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Actually-unambiguous parsing of RFC 6901 JSON Pointers in Python"
+authors = [
+    {name = "Ryan Young", email = "dev@ryayoung.com"}
+]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/ryayoung/jsonpointerparse"
+repository = "https://github.com/ryayoung/jsonpointerparse"
+documentation = "https://jsonpointerparse.readthedocs.io"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries"
+]
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.401",
+    "pytest>=8.4.0",
+    "pytest-cov>=6.1.1",
+    "ruff>=0.11.12",
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+format = "ruff format"
+typecheck = "pyright"
+tests = "uv run pytest --cov=jsonpointerparse --cov-branch -vvs --doctest-modules"
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pyright]
+reportUnusedImport = "error"
