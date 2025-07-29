@@ -1,0 +1,9 @@
+README.md
+setup.py
+algoleap_testing/__init__.py
+algoleap_testing/evaluator.py
+algoleap_testing.egg-info/PKG-INFO
+algoleap_testing.egg-info/SOURCES.txt
+algoleap_testing.egg-info/dependency_links.txt
+algoleap_testing.egg-info/requires.txt
+algoleap_testing.egg-info/top_level.txt
