@@ -1,0 +1,2 @@
+[console_scripts]
+speedfetch = speedfetch.cli:main

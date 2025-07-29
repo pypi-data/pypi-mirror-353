@@ -1,0 +1,8 @@
+README.md
+setup.py
+speedfetch.egg-info/PKG-INFO
+speedfetch.egg-info/SOURCES.txt
+speedfetch.egg-info/dependency_links.txt
+speedfetch.egg-info/entry_points.txt
+speedfetch.egg-info/requires.txt
+speedfetch.egg-info/top_level.txt
