@@ -1,0 +1,12 @@
+treezy/__init__.py,sha256=4XX5KAzbO-rJfg7KuU1hHbQ4C-SXIV1XcHSMgS8fYXk,88
+treezy/bitset.py,sha256=GU2u4-TKwfQXCvi4GcUk7Y4LJ0lfD2qxHwGEyuWBFVU,1909
+treezy/newick.py,sha256=VsEXfLJ3lXDYrW8AWx74Jqdt-akX_UxMC1mqjocFnQA,2099
+treezy/nexus.py,sha256=vgzT1rfEu1Kso43A1J64lEh51YVsomHG41KDLB7O7NI,18574
+treezy/node.py,sha256=6hNnBi41LEPqKLr2F0zQ0tSkI5oSxm9E4tUcSNL3-ko,12124
+treezy/tree.py,sha256=UhU0NdUzZo6b_diGe2bHCFge37UD5o9OPQIiLDA-cj8,14179
+treezy/treeio.py,sha256=_433l9LAHEEdf4IgSv24cu2tR3Uzc1rJAfQj6oVP0x0,1237
+treezy-0.0.1.dist-info/licenses/LICENSE,sha256=2joVZHub5cPCJO0S9vsZJ879YKG8ykFetUlAPodKb90,1072
+treezy-0.0.1.dist-info/METADATA,sha256=fz74GU-vHKn-7NWaZf4RFe20IhikN03HGzESlwEmYWI,2264
+treezy-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+treezy-0.0.1.dist-info/top_level.txt,sha256=ydvMpuH-uZak-QCb9B0b-3afC-3LecgRNnOrQEbfhCo,7
+treezy-0.0.1.dist-info/RECORD,,
