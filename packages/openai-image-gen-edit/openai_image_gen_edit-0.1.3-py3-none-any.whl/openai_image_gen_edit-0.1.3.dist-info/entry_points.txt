@@ -1,0 +1,2 @@
+[console_scripts]
+openai-image-gen-edit = openai_image_gen_edit.cli:app
