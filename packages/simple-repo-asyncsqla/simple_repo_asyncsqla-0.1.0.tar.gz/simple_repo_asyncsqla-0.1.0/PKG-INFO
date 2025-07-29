@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: simple-repo-asyncsqla
+Version: 0.1.0
+Summary: simple package for fast and flex crud usage with repository pattern
+Project-URL: Homepage, https://github.com/DustGalaxy/simple-repo-asyncsqla
+Author-email: DustGalaxy <103292379+DustGalaxy@users.noreply.github.com>
+License-File: License
+Requires-Python: >=3.12
+Requires-Dist: sqlalchemy[asyncio]>=2.0.41
