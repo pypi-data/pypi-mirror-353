@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=78.0.0", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ida-domain"
+authors = [
+    {name = "Hex-Rays SA", email = "support@hex-rays.com"}
+]
+description = "IDA Domain API"
+license = "MIT"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Disassemblers"
+]
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "idapro>=0.0.4.dev1",
+]
+
+[project.optional-dependencies]
+# Development dependencies, install with `uv sync --extra dev`
+dev = [
+    "pytest>=8.3.0",
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.2.0",
+    "sphinx-rtd-theme>=3.0.2",
+    "setuptools>=78.0.0",
+    "setuptools-scm>=8"
+]
+
+[tool.setuptools_scm]
+# Use setuptools-scm's default version scheme
+# - Manual tags like v0.0.2 become version 0.0.2
+# - Commits after tags automatically get .devN suffixes
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+tag_regex = "^v(?P<version>[^\\+]+)(?:\\+.*)?$"
