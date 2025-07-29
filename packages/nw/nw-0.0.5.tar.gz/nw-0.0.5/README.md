@@ -1,0 +1,87 @@
+# nw
+Association mining
+
+To install:	```pip install nw```
+
+## Overview
+The `nw` package provides a Python implementation of the FP-growth algorithm for efficient frequent itemset mining, which is a common task in the field of association rule learning in data mining. The implementation includes functions to generate frequent itemsets, construct association rules from these itemsets, and calculate their support and confidence metrics without generating candidate itemsets.
+
+## Main Features
+- **Frequent Itemset Generation**: Using the FP-growth algorithm to efficiently find frequent itemsets in a dataset.
+- **Association Rule Learning**: Generating association rules from the frequent itemsets with user-defined minimum confidence.
+- **Support Calculation**: Calculating the support metric for itemsets, which is the proportion of transactions in the dataset that contain the itemset.
+- **Verbose Output Options**: Detailed logging of the algorithm's process for debugging or insight purposes.
+
+## Installation
+To install `nw`, use pip:
+```bash
+pip install nw
+```
+
+## Usage
+
+### Importing the Module
+```python
+import nw
+```
+
+### Preparing Your Dataset
+Your dataset should be a list of transactions, where each transaction is a list of items. For example:
+```python
+dataset = [['milk', 'bread'], ['bread', 'butter'], ['milk', 'bread', 'butter']]
+```
+
+### Running the FP-growth Algorithm
+To find frequent itemsets:
+```python
+frequent_itemsets, support_data = nw.fpgrowth(dataset, min_support=0.5, include_support=True)
+```
+
+### Printing the Rules
+If you want to generate and print rules based on the frequent itemsets:
+```python
+rules = nw.generate_rules(frequent_itemsets, support_data, min_confidence=0.7)
+nw.print_rules(rules)
+```
+
+### Example Output
+This will output rules such as:
+```
+milk --> bread (sup = 0.67)
+bread --> butter (sup = 0.67)
+```
+
+## Documentation
+
+### Functions and Classes
+
+#### `fpgrowth(dataset, min_support=0.5, include_support=False, verbose=False)`
+Implements the FP-growth algorithm to find frequent itemsets.
+- `dataset`: List of transactions (each transaction is a list of items).
+- `min_support`: Minimum support threshold for itemsets to be considered frequent.
+- `include_support`: If `True`, returns a tuple of itemsets and their support values.
+- `verbose`: If `True`, prints detailed logs of the algorithm's execution.
+
+#### `generate_rules(F, support_data, min_confidence=0.5, verbose=False)`
+Generates association rules from frequent itemsets.
+- `F`: List of frequent itemsets.
+- `support_data`: Dictionary with support data for itemsets.
+- `min_confidence`: Minimum confidence threshold for rules to be considered.
+- `verbose`: If `True`, prints each rule with its confidence and support.
+
+#### `print_rules(rules_tuples)`
+Prints formatted association rules.
+- `rules_tuples`: List of tuples representing the rules, where each tuple is (antecedent, consequent, support).
+
+### Classes
+
+#### `FPTree`
+A class representing an FP-tree structure for storing transactions and itemsets efficiently.
+
+#### `FPNode`
+A class representing a node in the FP-tree, which contains a count of occurrences and links to other nodes.
+
+## Contributing
+Contributions to the `nw` package are welcome. Please ensure that any pull requests or issues are relevant to the FP-growth algorithm or associated functionalities.
+
+For more details on the implementation and usage, refer to the in-line comments and documentation within the code.
