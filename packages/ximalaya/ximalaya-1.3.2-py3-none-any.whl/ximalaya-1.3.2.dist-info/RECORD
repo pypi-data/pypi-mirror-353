@@ -1,0 +1,13 @@
+ximalaya-1.3.2.dist-info/METADATA,sha256=WjG0MXsJYBjh9sLZZZGytQLIvVHROxV359F8hBUGhIg,1080
+ximalaya-1.3.2.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+ximalaya-1.3.2.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+ximalaya-1.3.2.dist-info/licenses/LICENSE,sha256=1c8VGG4Gz4BnNGPI-nFHxJX2R55ZHiHHYd4DHNTyDPU,1521
+ximalaya/__init__.py,sha256=vCKj36BHioXKcWUskFYCMrY3CniKHUfCIbehIeLIXT4,80
+ximalaya/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ximalaya/api/category.py,sha256=kdmyClNIwn4C4AJASpHfKrTLKCHheJDRt-uR4BP_Mrw,564
+ximalaya/api/mobile.py,sha256=_LwNeGyE4oKXdgXuKTl3qVhF9ytwtLE-glE3Ap8urXg,710
+ximalaya/api/user.py,sha256=0gVs8D2elmddH-cSal3fPMCDL4wyPFRqvDg_sQHmFao,1298
+ximalaya/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ximalaya/core/client.py,sha256=VA_0RdH8sTvNw6ObON1nLDYxOiMIYpv05-pWz9lhD_M,1964
+ximalaya/core/models.py,sha256=5rGL3nb0yqBS7qe62e3beY8pjNAUq8vJDUxv2Z2O7fs,4880
+ximalaya-1.3.2.dist-info/RECORD,,
