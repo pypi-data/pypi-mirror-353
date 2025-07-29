@@ -1,0 +1,12 @@
+AutoChrome/__init__.py,sha256=2q92l3_T-DoaOBe6zRIDQVpLl1_nwKC0YU9d9HtQEkc,2072
+AutoChrome/auto_chrome.py,sha256=lYL16F4kAwH1PSBAPJ8Zpnl8DP0krw3OSjF5qaAakuI,105231
+AutoChrome/utils/__init__.py,sha256=4d0QC3wigqpEnRF0gj-O04LVa4ivQPsdqRPhblTzTrk,163
+AutoChrome/utils/auto_chrome_cli.py,sha256=xJKj9ZlCw6cQNSjkdZjZDXXcf6oG7jf0nMFhKUHra50,2393
+AutoChrome/utils/chrome_downloader.py,sha256=AEdjiyDlfKx-UZ4pAkwfTfKcnmI-ZnxquTJ2vOUk8lQ,10487
+AutoChrome/utils/custom_types.py,sha256=K7CzcB1PM_1ZtnvdTrXwWzYbntxnFzfMClWZrjTRrCY,2345
+AutoChrome/utils/logger.py,sha256=TxbZRFcaCxWU2NEdFeg9wcEdR11oiIcryZv-9HVpXUQ,6875
+autochrome-0.0.10.dist-info/entry_points.txt,sha256=2sTWZg7IdCwZUZ5KgwhQCOQqiYbft7KuL1J8_wR9ZEI,68
+autochrome-0.0.10.dist-info/LICENSE,sha256=KNSp0C1lQOPwo_nL6T-W3CSi5hwjx3tAcoAzr_eJiCw,1087
+autochrome-0.0.10.dist-info/METADATA,sha256=EySCQO1vG_JPQ02d0QATbPtTiv-hhCzp2Wa98U_ctms,6562
+autochrome-0.0.10.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+autochrome-0.0.10.dist-info/RECORD,,
