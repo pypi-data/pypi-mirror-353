@@ -1,0 +1,107 @@
+[tool.poetry]
+name = "wagtail-spa-integration"
+version = "3.3.0"
+description = "Tools for using Wagtail API with JavaScript single page apps"
+authors = ["thelab <thelabdev@thelab.co>"]
+license = "ISC"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    'Environment :: Web Environment',
+    'Framework :: Django',
+    'Framework :: Wagtail',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Intended Audience :: Developers',
+    "License :: OSI Approved :: Apache Software License",
+]
+packages = [
+    { include = "wagtail_spa_integration", from = "src" }
+]
+
+[tool.poetry.urls]
+"homepage" = "https://gitlab.com/thelabnyc/wagtail-spa-integration"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+wagtail = ">=6.3"
+Django = ">=4.2"
+wagtail-headless-preview = "^0.8"
+django-filter = "^25.1"
+
+[tool.poetry.dev-dependencies]
+django-cors-headers = "4.7.0"
+flake8 = "==7.2.0"
+tox = "==4.26.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "1.16.0"
+django-stubs = "5.2.0"
+djangorestframework-stubs = "3.16.0"
+
+[build-system]
+requires = [ "poetry-core>=2.1.2",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+annotated_tag = true
+gpg_sign = true
+tag_format = "v$version"
+update_changelog_on_bump = true
+changelog_merge_prerelease = true
+version_provider = "poetry"
+version_scheme = "pep440"
+version_files = [
+    "pyproject.toml:version",
+]
+pre_bump_hooks = [
+    "pre-commit run --all-files || true",
+]
+post_bump_hooks = [
+    "git push origin master $CZ_POST_CURRENT_TAG_VERSION"
+]
+
+[tool.mypy]
+python_version = "3.10"
+plugins = ["mypy_django_plugin.main"]
+
+# Strict mode, see mypy --help
+warn_unused_configs = true
+# disallow_subclassing_any = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+show_error_codes = true
+# Not turned on by strict
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = "*.tests.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "wagtail.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "django_filters.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "wagtail_headless_preview.models.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sandbox.models"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "sandbox.settings.dev"

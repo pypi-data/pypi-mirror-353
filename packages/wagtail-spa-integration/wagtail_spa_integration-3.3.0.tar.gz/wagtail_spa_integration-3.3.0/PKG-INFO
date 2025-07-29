@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: wagtail-spa-integration
+Version: 3.3.0
+Summary: Tools for using Wagtail API with JavaScript single page apps
+License: ISC
+Author: thelab
+Author-email: thelabdev@thelab.co
+Requires-Python: >=3.11,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Wagtail
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: Django (>=4.2)
+Requires-Dist: django-filter (>=25.1,<26.0)
+Requires-Dist: wagtail (>=6.3)
+Requires-Dist: wagtail-headless-preview (>=0.8,<0.9)
+Project-URL: homepage, https://gitlab.com/thelabnyc/wagtail-spa-integration
