@@ -1,0 +1,18 @@
+name: "Login Page Flow"
+type: "sequence"
+steps:
+  - name: "Input Username"
+    selector: { type: id, value: "username" }
+    action: { type: input, value: "testuser" }
+
+  - name: "Input Password"
+    selector: { type: id, value: "password" }
+    action: { type: input, value: "123456" }
+
+  - name: "Login Form"
+    action: 'container'
+    selector: { type: xpath, value: "//form[@id='login-form']" }
+    children:
+      - name: "Click Submit"
+        selector: { type: tag, value: "button" }
+        action: { type: click }

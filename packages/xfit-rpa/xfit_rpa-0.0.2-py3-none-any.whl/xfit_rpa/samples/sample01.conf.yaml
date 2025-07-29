@@ -1,0 +1,18 @@
+apps:
+  - name: sample01
+    description: Sample01
+    params:
+      _date_ranges: [ "LAST_3_DAYS" ]
+      _effectEqual: [ 1,15 ]
+    pages:
+      - name: login
+        description: Login
+        params:
+          username: "testuser"
+          password: "123456"
+        modules:
+          - name: sample01.login.login_form
+account_list:
+  - account_id: xxx
+    account_name: xxx
+    brand_code: xxx
