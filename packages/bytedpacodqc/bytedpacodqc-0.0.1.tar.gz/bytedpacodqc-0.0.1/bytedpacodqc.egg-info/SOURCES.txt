@@ -1,0 +1,6 @@
+README.md
+setup.py
+bytedpacodqc.egg-info/PKG-INFO
+bytedpacodqc.egg-info/SOURCES.txt
+bytedpacodqc.egg-info/dependency_links.txt
+bytedpacodqc.egg-info/top_level.txt
