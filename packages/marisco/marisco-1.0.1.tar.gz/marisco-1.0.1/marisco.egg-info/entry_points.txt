@@ -1,0 +1,8 @@
+[console_scripts]
+maris_db_to_nc = marisco.cli.db_to_nc:main
+maris_init = marisco.cli.init:main
+maris_nc_to_csv = marisco.cli.nc_to_csv:main
+maris_to_nc = marisco.cli.to_nc:main
+
+[nbdev]
+marisco = marisco._modidx:d
