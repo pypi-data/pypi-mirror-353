@@ -1,0 +1,8 @@
+LICENSE
+README.md
+nstuff.py
+setup.py
+nstuff.egg-info/PKG-INFO
+nstuff.egg-info/SOURCES.txt
+nstuff.egg-info/dependency_links.txt
+nstuff.egg-info/top_level.txt
