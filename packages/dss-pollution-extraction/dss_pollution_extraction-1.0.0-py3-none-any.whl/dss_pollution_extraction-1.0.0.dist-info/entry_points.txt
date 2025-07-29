@@ -1,0 +1,3 @@
+[console_scripts]
+dss-pollution-analyze = pollution_extraction.cli:main
+pollution-analyze = pollution_extraction.cli:main
