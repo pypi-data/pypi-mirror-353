@@ -1,0 +1,2 @@
+[console_scripts]
+wframe = wframe.cli:main
