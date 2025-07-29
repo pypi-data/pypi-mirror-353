@@ -1,0 +1,175 @@
+# Выборка для разработки модели
+dev_path:
+
+# Выборка для Out-Of-Time
+oot_path:
+
+# Пользовательсякая выборка для train
+train_path:
+
+# Пользовательсякая выборка для valid
+valid_path:
+
+# Пользовательсякая выборка для test
+test_path:
+
+use_compression: False
+
+spark:
+# Путь временной директории
+  temp_dir_path: "./dml_spark_temp_dir"
+
+use_sampling: False
+
+columns:
+  # Название столбца с целевой меткой
+  target_name:
+
+  # Признаки, не участвующие в обучении
+  drop_features: []
+
+  # Признаки, которые должны остаться после отбора
+  remaining_features: []
+
+  never_used_features:
+    - index
+    - level_0
+    - level_1
+    - level_2
+    - report_dt
+    - client_dk
+    - mdm_id
+    - epk_id
+    - mdm_dwh_pty_id
+    - sd_doc_type_id
+    - sd_doc_type_name
+    - seg_crm_client_mgr_login_name
+    - seg_client_segment_bitmask_cd
+    - seg_crd_txn_mcc_cluster_id
+    - seg_crd_txn_mcc_cluster_name
+    - seg_service_channel_cd
+    - prd_lst_prod_vsp_cd
+    - prd_lst_prod_division_dk
+    - prd_1st_prod_osb_cd
+    - prd_1st_prod_vsp_cd
+    - lbt_acct_max_bal_osb_cd
+    - lbt_acct_max_bal_vsp_cd
+    - lbt_payroll_bitmask_l12m_cd
+    - lbt_social_bitmask_l12m_cd
+    - crd_lst_agrmnt_osb_cd
+    - crd_lst_agrmnt_vsp_cd
+    - tp_lst_division_dk
+
+  # Категориальные признаки
+  categorical_features: []
+
+  # Текстовые признаки
+  text_features: []
+  text_features_preprocessed: []
+
+  # Название столбца для разбиений с учетом группы
+  group_column:
+
+  # Название столбца для разбиений по времени
+  time_column:
+
+  # Формат колонки с временем
+  time_column_format:
+
+  # Указание периода времени для разбиения (день, неделя, месяц, год)
+  # "day", "week", "month", "unique_month", "year" и т.д.
+  # Если равен `min`, то разбиение будет среди уникальных значений колонки `time_column`
+  time_column_period:
+
+  # TODO: weights currently are not supported
+  weights_column:
+
+
+splitting:
+  # Перемешивать ли выборки при разбиении
+  shuffle: True
+
+  # Сохранять ли распределение target при разбиениях (при классификации)
+  stratify: False
+
+  # --- Параметры разбиения train-vaid-test-oot ---
+
+  # Пропорции разбиения на train/valid/test
+  split_params: [0.6, 0.2, 0.2]
+  
+  # Выделение test-выборки в соответствие с time_column
+  oot_split_test: False
+  
+  # Выделение valid-выборки в соответствие с time_column
+  oot_split_valid: False
+  
+  # Выделение oot-выборки в случае, если не указан data.oot_path
+  split_oot_from_dev: True
+  
+  # Количество последних значений в time_column для выделения OOT выборки
+  oot_split_n_values: 2
+  
+  # --- Параметры разбиения для кросс-валидации ---
+
+  # Разбиение по группам
+  split_by_group: False
+
+  # Разбиение по периоду времени
+  split_by_time_period: False
+
+  # Разбиение на кросс-валидации для time series вида forward chaining
+  time_series_split: False
+  
+  # Разбиение на кросс-валидации для time series вида sliding window
+  time_series_window_split: False
+
+  # Параметры разбиения time-series
+  time_series_split_test_size:
+  time_series_split_gap: 0
+  
+  # Количество групп (folds) для валидации модели
+  cv_n_folds: 3
+  
+  validation_params:
+    cv_params: {}
+
+  # Используется ли кастомная кросс-валидация
+  custom_cv: False
+
+augmentation:
+  # Аугментация текстовых фичей
+  text_augmentations: []
+  # Список дополнительных стоп-слов
+  additional_stopwords: []
+  # Oversamling для train выборки с помощью аугментаций
+  aug_balance_classes: False
+  # Доля аугментации от train выборки для каждого типа аугментации
+  aug_p: 0.2
+
+#  - _target_: dreamml.features.text._augmentation_wrapper.AugmentationWrapper
+#    aug_type: KeyboardAug
+#    aug_char_max: 7
+#    aug_char_p: 0.2
+#    aug_word_p: 0.2
+#  - _target_: dreamml.features.text._augmentation_wrapper.AugmentationWrapper
+#    aug_type: RandomCharAug
+#    action: insert
+#    aug_char_max: 7
+#    aug_char_p: 0.2
+#    aug_word_p: 0.2
+#  - _target_: dreamml.features.text._augmentation_wrapper.AugmentationWrapper
+#    aug_type: RandomWordAug
+#    action: swap
+#  - _target_: dreamml.features.text._augmentation_wrapper.AugmentationWrapper
+#    aug_type: RandomCharAug
+#    action: delete
+#    aug_char_max: 7
+#    aug_char_p: 0.2
+#    aug_word_p: 0.2
+#  - _target_: dreamml.features.text._augmentation_wrapper.AugmentationWrapper
+#    aug_type: RandomCharAug
+#    action: swap
+#    aug_char_max: 7
+#    aug_char_p: 0.2
+#    aug_word_p: 0.2
+

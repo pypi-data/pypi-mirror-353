@@ -1,0 +1,6 @@
+# @package _global_
+
+pipeline:
+  task: phrase_retrieval
+  eval_metric: phrase_retrieval
+  loss_function: phrase_retrieval

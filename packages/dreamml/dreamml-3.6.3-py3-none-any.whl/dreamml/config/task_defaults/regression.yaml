@@ -1,0 +1,6 @@
+# @package _global_
+
+pipeline:
+  task: regression
+  eval_metric: rmse
+  loss_function: mse

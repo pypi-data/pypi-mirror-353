@@ -1,0 +1,15 @@
+# Директория для сохранения всех экспериментов
+path: results
+
+# Порог для сохранения фич из словаря/странички отчёта other_models
+feature_threshold: 100
+
+# Параметры сохранения данных в Persistent storage
+save_to_ps: False
+persistent_storage:
+  # Название таблиц имеет формат: (storage_name).(prefix)_(model_id)_(table_name)_(train/valid/test)_(suffix)_(n)"
+  storage_name:
+  table_name:
+  prefix: dml
+  suffix: ${now:%Y%m%d}
+  model_id: ${pipeline.model_id}

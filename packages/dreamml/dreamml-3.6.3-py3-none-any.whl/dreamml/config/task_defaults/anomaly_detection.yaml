@@ -1,0 +1,6 @@
+# @package _global_
+
+pipeline:
+  task: anomaly_detection
+  eval_metric: mse
+  loss_function: mse

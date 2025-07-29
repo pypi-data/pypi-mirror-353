@@ -1,0 +1,10 @@
+# @package _global_
+
+pipeline:
+  task: amts
+  eval_metric: mape
+  loss_function: mape
+
+data:
+  splitting:
+    shuffle: False

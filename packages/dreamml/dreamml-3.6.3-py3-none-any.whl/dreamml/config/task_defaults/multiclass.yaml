@@ -1,0 +1,6 @@
+# @package _global_
+
+pipeline:
+  task: multiclass
+  eval_metric: logloss
+  loss_function: logloss

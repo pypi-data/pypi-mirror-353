@@ -1,0 +1,10 @@
+# @package _global_
+
+pipeline:
+  task: topic_modeling
+  eval_metric: average_distance
+  loss_function: average_distance
+
+data:
+  splitting:
+    shuffle: False
