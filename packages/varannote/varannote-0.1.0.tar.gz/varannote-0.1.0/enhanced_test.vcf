@@ -1,0 +1,18 @@
+##fileformat=VCFv4.2
+##reference=hg38
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=CONSEQUENCE,Number=1,Type=String,Description="Variant consequence">
+##INFO=<ID=CADD,Number=1,Type=Float,Description="CADD pathogenicity score">
+##INFO=<ID=CLINVAR_SIG,Number=1,Type=String,Description="ClinVar significance">
+##INFO=<ID=GNOMAD_AF,Number=1,Type=Float,Description="gnomAD allele frequency">
+##INFO=<ID=DBSNP_ID,Number=1,Type=String,Description="dbSNP identifier">
+##INFO=<ID=COSMIC_ID,Number=1,Type=String,Description="COSMIC identifier">
+##INFO=<ID=OMIM_DISEASES,Number=1,Type=String,Description="OMIM disease associations">
+##INFO=<ID=PHARMGKB_DRUGS,Number=1,Type=String,Description="PharmGKB drug interactions">
+##INFO=<ID=CONFIDENCE,Number=1,Type=Float,Description="Annotation confidence score">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+17	43044295	rs80357713	G	A	60	PASS	COSMIC_ID=COSM317585;OMIM_DISEASES=Breast-ovarian cancer, familial 1%3B Fanconi anemia, complementation group S
+17	7577121	None	C	T	45	PASS	COSMIC_ID=COSM549610;OMIM_DISEASES=Li-Fraumeni syndrome 1%3B Colorectal cancer, hereditary nonpolyposis, type 1
+13	32315086	rs144848	T	C	70	PASS	COSMIC_ID=COSM953598;OMIM_DISEASES=Breast-ovarian cancer, familial 2%3B Fanconi anemia, complementation group D1
+1	12345678	None	A	G	30	PASS	.
+2	87654321	None	ATCG	A	55	PASS	.
