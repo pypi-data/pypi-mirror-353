@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+README.txt
+setup.cfg
+setup.py
+simplyRSA/__init__.py
+simplyRSA/roiRSA.py
+simplyRSA/searchlight.py
+simplyRSA.egg-info/PKG-INFO
+simplyRSA.egg-info/SOURCES.txt
+simplyRSA.egg-info/dependency_links.txt
+simplyRSA.egg-info/top_level.txt
