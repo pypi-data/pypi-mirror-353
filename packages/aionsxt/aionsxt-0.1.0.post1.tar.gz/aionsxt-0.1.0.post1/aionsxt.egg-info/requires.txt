@@ -1,0 +1,9 @@
+aiofiles==24.1.0
+aiohttp==3.11.7
+asyncio==3.4.3
+colorama==0.4.6
+types-colorama==0.4.15.20240311
+types-requests==2.32.0.20241016
+typing==3.7.4.3
+typing_extensions==4.12.2
+urllib3==2.2.3
