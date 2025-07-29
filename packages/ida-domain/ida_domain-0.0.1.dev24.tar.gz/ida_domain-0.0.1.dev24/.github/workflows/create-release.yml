@@ -1,0 +1,516 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: 'Git revision (commit SHA, branch, or tag) to checkout'
+        required: false
+        default: ''
+        type: string
+      publish_to_pypi:
+        description: 'Publish to PyPI?'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      create_prerelease:
+        description: 'Create a pre-release tag?'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      prerelease_type:
+        description: 'Pre-release type (if creating pre-release)'
+        required: false
+        default: 'dev'
+        type: choice
+        options:
+          - 'dev'
+          - 'alpha'
+          - 'beta'
+          - 'rc'
+
+jobs:
+  prepare-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      pypi_version: ${{ steps.version.outputs.pypi_version }}
+      git_hash: ${{ steps.version.outputs.git_hash }}
+      tag_name: ${{ steps.version.outputs.tag_name }}
+      is_prerelease: ${{ steps.version.outputs.is_prerelease }}
+      dev_status: ${{ steps.version.outputs.dev_status }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.revision || github.sha }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: false
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install setuptools-scm
+        run: |
+          # Get the latest tag to determine base version for initial sync
+          git fetch --tags
+
+          # Look for the latest dev tag in format: v0.0.1-dev.22
+          LATEST_DEV_TAG=$(git tag -l "v*-dev.*" | sort -V | tail -n 1)
+
+          if [[ -n "$LATEST_DEV_TAG" ]]; then
+            # Extract base version from dev tag: v0.0.1-dev.22 -> 0.0.1
+            BASE_VERSION=$(echo "$LATEST_DEV_TAG" | sed 's/^v//' | sed 's/-dev\..*$//')
+            SYNC_VERSION="${BASE_VERSION}.dev0"
+            echo "Found latest dev tag: $LATEST_DEV_TAG"
+          else
+            # Fail if no dev tags found - this indicates a problem
+            echo "ERROR: No dev tags found! Expected tags like v0.0.1-dev.1, v0.0.2-dev.1, etc."
+            echo "Available tags:"
+            git tag -l | sort -V
+            exit 1
+          fi
+
+          echo "Using version for initial sync: $SYNC_VERSION"
+          export SETUPTOOLS_SCM_PRETEND_VERSION="$SYNC_VERSION"
+
+          # Sync the project to ensure setuptools-scm is available
+          uv sync --extra dev
+
+      - name: Get version from setuptools-scm
+        id: version
+        run: |
+          # Get the short commit hash
+          GIT_COMMIT_SHORT_HASH=$(git rev-parse --short=7 HEAD)
+          echo "Git commit short hash: $GIT_COMMIT_SHORT_HASH"
+
+          # Get the latest tag to determine base version for setuptools-scm
+          git fetch --tags
+
+          # Look for the latest dev tag in your format: v0.0.1-dev.22
+          LATEST_DEV_TAG=$(git tag -l "v*-dev.*" | sort -V | tail -n 1)
+
+          if [[ -n "$LATEST_DEV_TAG" ]]; then
+            # Extract base version from dev tag: v0.0.1-dev.22 -> 0.0.1
+            BASE_VERSION=$(echo "$LATEST_DEV_TAG" | sed 's/^v//' | sed 's/-dev\..*$//')
+            SCM_SAFE_VERSION="${BASE_VERSION}.dev0"
+            echo "Found latest dev tag: $LATEST_DEV_TAG"
+            echo "Using safe version for setuptools-scm: $SCM_SAFE_VERSION"
+          else
+            # Fail if no dev tags found - this indicates a problem
+            echo "ERROR: No dev tags found! Expected tags like v0.0.1-dev.1, v0.0.2-dev.1, etc."
+            echo "Available tags:"
+            git tag -l | sort -V
+            exit 1
+          fi
+
+          # Get version using setuptools-scm with safe version override
+          export SETUPTOOLS_SCM_PRETEND_VERSION="$SCM_SAFE_VERSION"
+          SCM_VERSION=$(uv run python -c "from setuptools_scm import get_version; print(get_version())")
+          echo "setuptools-scm version: $SCM_VERSION"
+
+          # Extract the clean version without local identifiers for PyPI
+          PYPI_VERSION=$(echo "$SCM_VERSION" | sed 's/+.*//')
+          echo "PyPI version: $PYPI_VERSION"
+
+          # Handle manual pre-release creation
+          if [[ "${{ github.event.inputs.create_prerelease }}" == "true" ]]; then
+            echo "Creating manual pre-release..."
+
+            # For manual pre-releases, create a tag based on current setuptools-scm version
+            PRE_TYPE="${{ github.event.inputs.prerelease_type }}"
+
+            if [[ "$PRE_TYPE" == "dev" ]]; then
+              # For dev releases, create setuptools-scm compatible tags
+              # Find the latest dev tag and increment
+              BASE_VERSION=$(echo "$PYPI_VERSION" | sed 's/\.dev[0-9]*$//')
+              git fetch --tags
+
+              # Look for existing dev tags in the new format: v0.0.2-dev.1, v0.0.2-dev.2, etc.
+              TAG_PATTERN="v${BASE_VERSION}-dev.[0-9]*"
+              LATEST_DEV_TAG=$(git tag -l "$TAG_PATTERN" | sort -V | tail -n 1)
+
+              if [[ -n "$LATEST_DEV_TAG" ]]; then
+                # Extract the number and increment: v0.0.2-dev.1 -> 1 -> 2
+                if [[ "$LATEST_DEV_TAG" =~ -dev\.([0-9]+) ]]; then
+                  PREV_NUMBER="${BASH_REMATCH[1]}"
+                  DEV_NUMBER=$((PREV_NUMBER + 1))
+                else
+                  DEV_NUMBER="1"
+                fi
+              else
+                DEV_NUMBER="1"
+              fi
+
+              # Create setuptools-scm compatible GitHub tag
+              TAG_NAME="v${BASE_VERSION}-dev.${DEV_NUMBER}"
+              # Create PyPI compatible version
+              PYPI_VERSION="${BASE_VERSION}.dev${DEV_NUMBER}"
+
+              echo "Creating setuptools-scm compatible dev tag: $TAG_NAME"
+              echo "PyPI version will be: $PYPI_VERSION"
+            else
+              # For alpha/beta/rc, find the latest and increment
+              BASE_VERSION=$(echo "$PYPI_VERSION" | sed 's/\.dev[0-9]*$//')
+              git fetch --tags
+
+              if [[ "$PRE_TYPE" == "alpha" ]]; then
+                TAG_PATTERN="v${BASE_VERSION}-alpha.[0-9]*"
+                PEP_PRE="a"
+              elif [[ "$PRE_TYPE" == "beta" ]]; then
+                TAG_PATTERN="v${BASE_VERSION}-beta.[0-9]*"
+                PEP_PRE="b"
+              elif [[ "$PRE_TYPE" == "rc" ]]; then
+                TAG_PATTERN="v${BASE_VERSION}-rc.[0-9]*"
+                PEP_PRE="rc"
+              fi
+
+              LATEST_PRE_TAG=$(git tag -l "$TAG_PATTERN" | sort -V | tail -n 1)
+
+              if [[ -n "$LATEST_PRE_TAG" ]]; then
+                # Extract the number and increment: v0.0.3-alpha.1 -> 1 -> 2
+                if [[ "$LATEST_PRE_TAG" =~ -${PRE_TYPE}\.([0-9]+) ]]; then
+                  PREV_NUMBER="${BASH_REMATCH[1]}"
+                  PRE_NUMBER=$((PREV_NUMBER + 1))
+                else
+                  PRE_NUMBER="1"
+                fi
+              else
+                PRE_NUMBER="1"
+              fi
+
+              # Create setuptools-scm compatible GitHub tag
+              TAG_NAME="v${BASE_VERSION}-${PRE_TYPE}.${PRE_NUMBER}"
+              # Create PyPI compatible version
+              PYPI_VERSION="${BASE_VERSION}${PEP_PRE}${PRE_NUMBER}"
+
+              echo "Creating setuptools-scm compatible ${PRE_TYPE} tag: $TAG_NAME"
+              echo "PyPI version will be: $PYPI_VERSION"
+            fi
+
+            IS_PRERELEASE="true"
+          else
+            # Use setuptools-scm automatic versioning
+
+            # Check if this is a pre-release (contains dev, alpha, beta, rc)
+            if [[ "$PYPI_VERSION" =~ (dev|a|b|rc) ]]; then
+              IS_PRERELEASE="true"
+              echo "Detected automatic pre-release version"
+            else
+              IS_PRERELEASE="false"
+              echo "Detected stable release version"
+            fi
+
+            # For manual tag creation, use the provided tag name or create one from version
+            if [[ -n "${{ github.event.inputs.revision }}" && "${{ github.event.inputs.revision }}" =~ ^v[0-9] ]]; then
+              # User provided a tag name
+              TAG_NAME="${{ github.event.inputs.revision }}"
+              echo "Using provided tag name: $TAG_NAME"
+            else
+              # Create tag name from version (for dev releases, don't create tags automatically)
+              if [[ "$IS_PRERELEASE" == "true" ]]; then
+                TAG_NAME=""  # Don't auto-create tags for dev versions
+                echo "Dev version detected - no automatic tag creation"
+              else
+                TAG_NAME="v${PYPI_VERSION}"
+                echo "Will create tag: $TAG_NAME"
+              fi
+            fi
+          fi
+
+          # Determine development status based on version
+          if [[ "$PYPI_VERSION" =~ dev ]]; then
+            DEV_STATUS="Development Status :: 2 - Pre-Alpha"
+          elif [[ "$PYPI_VERSION" =~ a ]]; then
+            DEV_STATUS="Development Status :: 3 - Alpha"
+          elif [[ "$PYPI_VERSION" =~ (b|rc) ]]; then
+            DEV_STATUS="Development Status :: 4 - Beta"
+          else
+            DEV_STATUS="Development Status :: 5 - Production/Stable"
+          fi
+
+          echo "Final version: $PYPI_VERSION"
+          echo "Final tag: $TAG_NAME"
+          echo "Is pre-release: $IS_PRERELEASE"
+          echo "Dev status: $DEV_STATUS"
+
+          echo "version=$SCM_VERSION" >> $GITHUB_OUTPUT
+          echo "pypi_version=$PYPI_VERSION" >> $GITHUB_OUTPUT
+          echo "git_hash=$GIT_COMMIT_SHORT_HASH" >> $GITHUB_OUTPUT
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "is_prerelease=$IS_PRERELEASE" >> $GITHUB_OUTPUT
+          echo "dev_status=$DEV_STATUS" >> $GITHUB_OUTPUT
+
+      - name: Create and push Git tag
+        if: steps.version.outputs.tag_name != ''
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+          echo "Creating tag ${{ steps.version.outputs.tag_name }} for current commit"
+          git tag -a ${{ steps.version.outputs.tag_name }} -m "Release ${{ steps.version.outputs.tag_name }}"
+          git push origin ${{ steps.version.outputs.tag_name }}
+          echo "Tag ${{ steps.version.outputs.tag_name }} created and pushed"
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs: prepare-version
+    if: needs.prepare-version.outputs.tag_name != ''
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ needs.prepare-version.outputs.version }}
+      pypi_version: ${{ needs.prepare-version.outputs.pypi_version }}
+      git_hash: ${{ needs.prepare-version.outputs.git_hash }}
+      tag_name: ${{ needs.prepare-version.outputs.tag_name }}
+      is_prerelease: ${{ needs.prepare-version.outputs.is_prerelease }}
+      dev_status: ${{ needs.prepare-version.outputs.dev_status }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 0
+          ref: ${{ needs.prepare-version.outputs.tag_name }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: IDA Domain v${{ needs.prepare-version.outputs.pypi_version }}
+          tag_name: ${{ needs.prepare-version.outputs.tag_name }}
+          body: |
+            # IDA Domain v${{ needs.prepare-version.outputs.pypi_version }}
+
+            ${{ needs.prepare-version.outputs.is_prerelease == 'true' && '⚠️ **PRE-RELEASE VERSION**: This is a pre-release intended for testing purposes. APIs may change without notice and pre-release versions may be deleted at any time.' || '' }}
+
+            Built from tag: ${{ needs.prepare-version.outputs.tag_name }}
+            Commit: ${{ needs.prepare-version.outputs.git_hash }}
+
+            ## Installation
+
+            ${{ github.event.inputs.publish_to_pypi == 'true' && '### From PyPI
+
+            ```bash
+            # Install from PyPI' || '' }}
+            ${{ needs.prepare-version.outputs.is_prerelease == 'true' && 'pip install --pre ida-domain' || 'pip install ida-domain' }}${{ github.event.inputs.publish_to_pypi == 'true' && '
+            ```
+
+            ### From Source
+
+            ' || '' }}This release contains the source code for the IDA Domain API.
+
+            To use this release:
+            1. Clone or download the source code from this tag
+            2. Follow the build instructions in the README
+
+            This release was automatically generated by GitHub Actions.
+          draft: false
+          prerelease: ${{ needs.prepare-version.outputs.is_prerelease == 'true' }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-package:
+    runs-on: ubuntu-latest
+    needs: [prepare-version, create-release]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 0
+          ref: ${{ needs.prepare-version.outputs.tag_name }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Update version in pyproject.toml
+        run: |
+          # Update version in pyproject.toml to use PyPI-compliant version
+          echo "Updating version to ${{ needs.prepare-version.outputs.pypi_version }} in pyproject.toml"
+
+          # Use sed to replace the version line in pyproject.toml
+          sed -i 's/^version = .*/version = "${{ needs.prepare-version.outputs.pypi_version }}"/' pyproject.toml
+
+          # Verify the change
+          echo "Updated pyproject.toml version:"
+          grep "^version" pyproject.toml
+
+      - name: Add development status classifier for pre-releases
+        if: needs.prepare-version.outputs.is_prerelease == 'true'
+        run: |
+          # Add development status classifier to pyproject.toml
+          echo "Adding development status classifier: ${{ needs.prepare-version.outputs.dev_status }}"
+
+          # Find the classifiers section and add the development status
+          if grep -q "classifiers = \[" pyproject.toml; then
+            # Add after the opening bracket of classifiers
+            sed -i '/classifiers = \[/a\    "${{ needs.prepare-version.outputs.dev_status }}",' pyproject.toml
+          else
+            echo "Warning: Could not find classifiers section in pyproject.toml"
+          fi
+
+      - name: Enhance README with example code
+        run: |
+          echo "Creating PyPI-focused README with traverse.py example..."
+
+          # Start with the clean PyPI README
+          cp README_PYPI.md README_enhanced.md
+
+          # Inject the traverse.py content using Python script
+          python3 scripts/inject_example.py
+
+          # Replace the original README with the enhanced PyPI version
+          mv README_enhanced.md README.md
+
+          echo "Created clean PyPI README with injected example code"
+
+      - name: Build Python package
+        run: |
+          echo "Building Python package with uv..."
+
+          # Set the version environment variable to override setuptools-scm BEFORE sync
+          export SETUPTOOLS_SCM_PRETEND_VERSION="${{ needs.prepare-version.outputs.pypi_version }}"
+          echo "Setting SETUPTOOLS_SCM_PRETEND_VERSION to ${{ needs.prepare-version.outputs.pypi_version }}"
+
+          # Sync dependencies (this will create a virtual environment)
+          uv sync --extra dev
+
+          # Build the package using uv (version already set above)
+          uv build
+
+          echo "Built package files:"
+          ls -la dist/
+
+          # Verify the built version matches what we expect
+          echo "Verifying built package version..."
+          BUILT_VERSION=$(ls dist/*.whl | sed 's/.*ida_domain-\([^-]*\)-.*/\1/')
+          echo "Built version: $BUILT_VERSION"
+          echo "Expected version: ${{ needs.prepare-version.outputs.pypi_version }}"
+
+      - name: Verify package
+        run: |
+          # Set version override for twine installation
+          export SETUPTOOLS_SCM_PRETEND_VERSION="${{ needs.prepare-version.outputs.pypi_version }}"
+
+          # Install twine for package verification
+          uv add --dev twine
+
+          # Verify the built packages
+          echo "Verifying package integrity..."
+          uv run twine check dist/*.whl dist/*.tar.gz
+
+      - name: Upload Python package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package-dist
+          path: dist/
+          retention-days: 14
+
+  publish-package:
+    runs-on: ubuntu-latest
+    needs: [prepare-version, create-release, build-package]
+    if: github.event.inputs.publish_to_pypi == 'true'
+
+    steps:
+      - name: Download package artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: python-package-dist
+          path: dist/
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install publishing tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install twine uv
+
+      - name: Verify package before publishing
+        run: |
+          echo "Final verification before publishing..."
+          echo "Package files to publish:"
+          ls -la dist/
+
+          # Final verification with twine
+          twine check dist/*.whl dist/*.tar.gz
+
+      - name: Publish to PyPI
+        run: |
+          echo "Publishing to PyPI..."
+          echo "PyPI version: ${{ needs.prepare-version.outputs.pypi_version }}"
+          echo "Is pre-release: ${{ needs.prepare-version.outputs.is_prerelease }}"
+
+          # Publish using uv publish
+          uv publish \
+            --token ${{ secrets.PYPI_API_TOKEN }} \
+            --verbose \
+            dist/*
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+
+      - name: Verify PyPI publication
+        run: |
+          echo "Waiting for package to be available on PyPI..."
+          sleep 30
+
+          # Try to install the published package to verify it's available
+          echo "Attempting to install published package..."
+          if [[ "${{ needs.prepare-version.outputs.is_prerelease }}" == "true" ]]; then
+            pip install --pre ida-domain==${{ needs.prepare-version.outputs.pypi_version }} || echo "Package not yet available on PyPI"
+          else
+            pip install ida-domain==${{ needs.prepare-version.outputs.pypi_version }} || echo "Package not yet available on PyPI"
+          fi
+
+  cleanup-on-failure:
+    runs-on: ubuntu-latest
+    needs: [prepare-version, create-release, build-package, publish-package]
+    if: always() && contains(needs.*.result, 'failure')
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete tag if job fails
+        run: |
+          echo "Workflow failed. Deleting tag ${{ needs.prepare-version.outputs.tag_name }}"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+          # Delete the tag remotely
+          git push origin --delete ${{ needs.prepare-version.outputs.tag_name }} || echo "Failed to delete remote tag, it may not exist"
+
+          # Delete the tag locally
+          git tag -d ${{ needs.prepare-version.outputs.tag_name }} || echo "Failed to delete local tag, it may not exist"
+
+          echo "Tag cleanup completed"
+          echo "GitHub release may have been created - check the releases page and delete manually if needed"
