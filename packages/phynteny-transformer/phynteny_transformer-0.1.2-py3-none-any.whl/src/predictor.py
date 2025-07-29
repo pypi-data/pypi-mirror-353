@@ -1,0 +1,940 @@
+""" 
+Module for handling predictions with torch 
+""" 
+
+from src import model_onehot
+from src import format_data
+import torch
+import torch.nn.functional as F
+import os
+import numpy as np
+from sklearn.neighbors import KernelDensity
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from Bio.SeqFeature import SeqFeature, FeatureLocation
+from loguru import logger
+from torch.utils.data import DataLoader
+import traceback
+
+class Predictor: 
+
+    def __init__(self, device = 'cuda'): 
+        self.device = torch.device(device)
+        self.models = []
+
+    def predict_batch(self, embeddings, src_key_padding_mask):
+        """
+        Predict the scores for a batch of embeddings.
+
+        :param embeddings: Tensor of input embeddings
+        :param src_key_padding_mask: Mask tensor for padding in the input sequences
+        :return: Dictionary of predicted scores
+        """
+        self.models = [model.to(self.device) for model in self.models]
+        embeddings = embeddings.to(self.device)  # Move embeddings to device
+        src_key_padding_mask = src_key_padding_mask.to(self.device)  # Move mask to device
+
+        for model in self.models:
+            model.eval()
+
+        all_scores = {}
+
+        with torch.no_grad():
+            for model in self.models:
+                outputs = model(embeddings, src_key_padding_mask=src_key_padding_mask)
+                outputs = F.softmax(outputs, dim=-1)
+                
+                if len(all_scores) == 0:
+                    all_scores = outputs.cpu().numpy()
+                else:
+                    all_scores += outputs.cpu().numpy()
+        
+        return all_scores   
+
+    def predict(self, X, y): # not sure if this is right 
+        """
+        Predict the scores for the given input data.
+
+        :param X: List of input data values
+        :param y: List of target data values
+        :return: Dictionary of predicted scores
+        """
+        self.models = [model.to(self.device) for model in self.models]
+        for model in self.models:
+            model.eval()
+
+        all_scores = {}
+
+        # Find the maximum length of the input sequences
+        max_length = max([v.shape[0] for v in X])
+
+        # Pad the input sequences to the same length
+        X_padded = [F.pad(x, (0, 0, 0, max_length - x.shape[0])) for x in X]
+
+        # Convert input data to tensors
+        X_tensor = torch.stack(X_padded).to(self.device)
+
+        # Compute src_key_padding using format_data.pad_sequence
+        src_key_padding = format_data.pad_sequence(y)
+        src_key_padding_tensor = torch.tensor(src_key_padding).to(self.device)
+
+        with torch.no_grad():
+            for model in self.models:
+                outputs = model(X_tensor, src_key_padding_mask=src_key_padding_tensor)
+                outputs = F.softmax(outputs, dim=-1)
+                for i, key in enumerate(y.keys()):
+                    if key not in all_scores:
+                        all_scores[key] = outputs[i].cpu().numpy()
+                    else:
+                        all_scores[key] += outputs[i].cpu().numpy()
+
+        self.scores = all_scores
+        return all_scores  # Remove the TODO comment if the return statement is necessary
+    
+    def predict_inference(self, X, y, batch_size=128):
+        """
+        Predict using batch processing for inference.
+        
+        :param X: Dictionary of embeddings with keys as identifiers
+        :param y: Dictionary of categories with keys as identifiers
+        :param batch_size: Size of batches for processing
+        :return: Dictionary of predicted scores with keys matching input dictionaries
+        """
+        logger.info(f"Starting batch inference with batch size {batch_size}")
+        
+        # Prepare for batch processing
+        self.models = [model.to(self.device) for model in self.models]
+        for model in self.models:
+            model.eval()
+        
+        # Create dataset
+        keys_list = list(X.keys())
+        dataset = model_onehot.EmbeddingDataset(
+            list(X.values()), 
+            list(y.values()), 
+            keys_list,
+            mask_portion=0  # No masking for inference
+        )
+        
+        # Set inference mode
+        dataset.training = False
+        dataset.validation = False
+        
+        # Create DataLoader
+        data_loader = DataLoader(
+            dataset, 
+            batch_size=batch_size, 
+            collate_fn=model_onehot.collate_fn
+        )
+        
+        logger.info(f"Processing {len(keys_list)} samples in batches of {batch_size}")
+        
+        # Process batches
+        all_scores = {}
+        batches_processed = 0
+        total_samples_processed = 0
+        
+        # Track which indices we've processed for debugging
+        processed_indices = set()
+        
+        for batch_idx, (embeddings_batch, categories_batch, masks_batch, idx_batch) in enumerate(data_loader):
+            try:
+                # Move tensors to device
+                embeddings_batch = embeddings_batch.to(self.device)
+                masks_batch = masks_batch.to(self.device)
+                src_key_padding_mask = (masks_batch != -2).to(self.device)
+                
+                # Get predictions for this batch
+                logger.debug(f"Processing batch {batch_idx} with {len(idx_batch)} items")
+                batch_scores = self.predict_batch(embeddings_batch, src_key_padding_mask)
+                
+                # Store scores by their original keys
+                # Calculate the absolute index in the dataset for this batch
+                batch_start_idx = batch_idx * batch_size
+                
+                # This is the critical part: map batch positions to original keys properly
+                for i in range(len(idx_batch)):
+                    absolute_idx = batch_start_idx + i
+                    if absolute_idx < len(keys_list):
+                        key = keys_list[absolute_idx]
+                        processed_indices.add(absolute_idx)
+                        
+                        if isinstance(batch_scores, torch.Tensor):
+                            if i < batch_scores.shape[0]:
+                                all_scores[key] = batch_scores[i].cpu().numpy()
+                                total_samples_processed += 1
+                        else:
+                            # It's already a numpy array
+                            if i < len(batch_scores):
+                                all_scores[key] = batch_scores[i]
+                                total_samples_processed += 1
+                
+                batches_processed += 1
+                logger.debug(f"Processed batch {batches_processed} with {len(idx_batch)} items (total: {total_samples_processed}/{len(keys_list)} samples)")
+                    
+            except Exception as e:
+                logger.error(f"Error processing batch {batch_idx}: {e}")
+                logger.error(traceback.format_exc())
+                continue
+        
+        # Check if we processed all genomes
+        if len(all_scores) < len(keys_list):
+            missing = len(keys_list) - len(all_scores)
+            logger.warning(f"Missing scores for {missing} genomes after processing all batches")
+            
+            # Find missing keys
+            processed_keys = set(all_scores.keys())
+            all_keys = set(keys_list)
+            missing_keys = all_keys - processed_keys
+            logger.warning(f"Missing keys: {list(missing_keys)[:10]}...")
+        
+        logger.info(f"Total batches processed: {batches_processed}")
+        logger.info(f"Collected scores for {len(all_scores)}/{len(keys_list)} samples")
+        
+        # Store scores for compatibility with other methods
+        self.scores = all_scores
+        return all_scores
+
+    def write_predictions_to_genbank(self, gb_dict, output_file, predictions, scores, confidence_scores, threshold=0.9, categories_map=None):
+        """
+        Write the predictions to a GenBank file, creating one record per genome with sequences as features.
+        Only add Phynteny predictions when function is unknown or missing.
+        
+        :param gb_dict: Dictionary containing genome information with nested sequence records
+        :param output_file: Path to the output GenBank file
+        :param predictions: List of predictions for each sequence
+        :param scores: List of scores for each prediction
+        :param confidence_scores: List of confidence scores for each prediction
+        :param threshold: Confidence threshold (default: 0.9)
+        :param categories_map: Dictionary mapping category numbers to human-readable labels
+        :return: None
+        """
+        logger.info(f"Writing predictions to GenBank file: {output_file}")
+        
+        # Track statistics for diagnostics
+        unknown_function_count = 0
+        predictions_added_count = 0
+        low_confidence_count = 0
+        known_function_count = 0
+        
+        # Log the dimensions of the data arrays
+        logger.debug(f"Number of genomes in gb_dict: {len(gb_dict)}")
+        logger.debug(f"Number of prediction arrays: {len(predictions) if predictions is not None else 'None'}")
+        logger.debug(f"Number of score arrays: {len(scores) if scores is not None else 'None'}")
+        logger.debug(f"Number of confidence arrays: {len(confidence_scores) if confidence_scores is not None else 'None'}")
+        
+        # Log the first few genome IDs to verify alignment
+        genome_ids = list(gb_dict.keys())
+
+        try:
+            with open(output_file, "w") as handle:
+                # For each genome in the gb_dict
+                for genome_idx, (genome_id, genome_data) in enumerate(gb_dict.items()):
+                    logger.info(f"Processing genome #{genome_idx}: {genome_id}")
+                    
+                    if 'sequence' not in genome_data:
+                        logger.warning(f"No sequence field found for genome {genome_id}")
+                        continue
+                    
+                    sequences = genome_data.get('sequence', [])
+                    
+                    if not sequences:
+                        logger.warning(f"No sequences found for genome {genome_id}")
+                        continue
+                    
+                    logger.info(f"Genome {genome_id} has {len(sequences)} sequences")
+                    
+                    # Check if we have predictions for this genome index
+                    has_predictions = predictions is not None and genome_idx < len(predictions)
+                    logger.debug(f"Has predictions for genome {genome_id}: {has_predictions}")
+                    if has_predictions:
+                        logger.debug(f"Number of predictions for genome {genome_id}: {len(predictions[genome_idx])}")
+                    
+                    # Check if we have scores for this genome index
+                    has_scores = scores is not None and genome_idx < len(scores)
+                    logger.debug(f"Has scores for genome {genome_id}: {has_scores}")
+                    if has_scores:
+                        logger.debug(f"Number of scores for genome {genome_id}: {len(scores[genome_idx])}")
+                    
+                    # Check if we have confidence scores for this genome index
+                    has_confidence = confidence_scores is not None and genome_idx < len(confidence_scores)
+                    logger.debug(f"Has confidence scores for genome {genome_id}: {has_confidence}")
+                    
+                    # Create a new record for this genome
+                    # Use the first sequence record to extract metadata if available
+                    sample_record = sequences[0]
+                    
+                    # Get length information if available
+                    genome_length = genome_data.get('length', 0)
+                    if genome_length == 0:
+                        # Calculate total length from positions if available
+                        if 'position' in genome_data:
+                            positions = genome_data['position']
+                            if positions:
+                                # Find the furthest endpoint
+                                genome_length = max([pos[1] for pos in positions])
+                    
+                    # Use the original genome sequence if available, otherwise use placeholder
+                    genome_seq = None
+                    if 'original_sequence' in genome_data and genome_data['original_sequence']:
+                        genome_seq = Seq(genome_data['original_sequence'])
+                    else:
+                        # Fallback to placeholder sequence
+                        genome_seq = Seq('N' * genome_length) if genome_length > 0 else Seq('')
+                        logger.warning(f"Using placeholder sequence for genome {genome_id} - original sequence not found")
+                    
+                    # Create the genome record
+                    genome_record = SeqRecord(
+                        seq=genome_seq,
+                        id=genome_id,
+                        name=genome_id,
+                        description=f"{genome_id} - Phynteny annotated genome"
+                    )
+                    
+                    # Set required molecule_type
+                    genome_record.annotations["molecule_type"] = "DNA"
+                    
+                    # Copy any other useful annotations from the first record if available
+                    if sequences and hasattr(sequences[0], 'annotations'):
+                        # List of annotations to preserve at the genome level
+                        preserve_annotations = ['taxonomy', 'organism', 'source', 'date', 'accessions']
+                        
+                        for ann in preserve_annotations:
+                            if ann in sequences[0].annotations:
+                                genome_record.annotations[ann] = sequences[0].annotations[ann]
+                    
+                    # Process each sequence/gene in this genome
+                    for seq_idx, record in enumerate(sequences):
+                        try:
+                            logger.debug(f"Processing sequence #{seq_idx} in genome {genome_id}")
+                            
+                            # Get prediction and confidence for this sequence
+                            prediction = None
+                            max_score = None
+                            conf = None
+                            
+                            # Check array bounds before accessing
+                            if has_predictions and seq_idx < len(predictions[genome_idx]):
+                                prediction = int(predictions[genome_idx][seq_idx])
+                                logger.debug(f"Genome {genome_id}, sequence {seq_idx}: Prediction = {prediction}")
+                                
+                                # Extract max score (at predicted category)
+                                if has_scores and seq_idx < len(scores[genome_idx]):
+                                    score_array = scores[genome_idx][seq_idx]
+                                    logger.debug(f"Genome {genome_id}, sequence {seq_idx}: Score array shape = {score_array.shape if hasattr(score_array, 'shape') else 'scalar'}")
+                                    
+                                    if isinstance(score_array, np.ndarray) and len(score_array) > prediction:
+                                        max_score = float(score_array[prediction])
+                                        logger.debug(f"Genome {genome_id}, sequence {seq_idx}: Max score = {max_score}")
+                                    else:
+                                        max_score = score_array
+                                        logger.debug(f"Genome {genome_id}, sequence {seq_idx}: Score = {max_score}")
+                                else:
+                                    logger.warning(f"Score array missing or index out of bounds for genome {genome_id}, sequence {seq_idx}")
+                                
+                                # Get confidence score
+                                if has_confidence:
+                                    if isinstance(confidence_scores[genome_idx], np.ndarray):
+                                        if seq_idx < len(confidence_scores[genome_idx]):
+                                            conf = confidence_scores[genome_idx][seq_idx]
+                                            logger.debug(f"Genome {genome_id}, sequence {seq_idx}: Confidence = {conf}")
+                                        else:
+                                            logger.warning(f"Confidence index out of bounds: seq_idx {seq_idx} >= len(confidence_scores[genome_idx]) {len(confidence_scores[genome_idx])}")
+                                    else:
+                                        conf = confidence_scores[genome_idx]
+                                        logger.debug(f"Genome {genome_id}: Genome-level confidence = {conf}")
+                            else:
+                                logger.warning(f"Prediction missing or index out of bounds for genome {genome_id}, sequence {seq_idx}")
+                                if has_predictions:
+                                    logger.warning(f"Array bounds issue: seq_idx={seq_idx}, predictions array length={len(predictions[genome_idx])}")
+                            
+                            # Get position information
+                            start = 0
+                            end = len(record.seq)
+                            if 'position' in genome_data and seq_idx < len(genome_data['position']):
+                                start, end = genome_data['position'][seq_idx]
+                            
+                            # Get strand information
+                            strand = 1  # Default to forward strand
+                            if 'sense' in genome_data and seq_idx < len(genome_data['sense']):
+                                strand = 1 if genome_data['sense'][seq_idx] == '+' else -1
+                            
+                            # Start with an empty set of qualifiers
+                            qualifiers = {}
+                            
+                            # Try to get qualifiers from the all_qualifiers field first (most comprehensive)
+                            if 'all_qualifiers' in genome_data and seq_idx < len(genome_data['all_qualifiers']):
+                                qualifiers = genome_data['all_qualifiers'][seq_idx].copy()
+                            
+                            # Next, check features (fallback)
+                            elif hasattr(record, 'features') and record.features:
+                                for feature in record.features:
+                                    if feature.type == "CDS":
+                                        # Deep copy ALL qualifiers from the original feature
+                                        qualifiers = {key: value[:] if isinstance(value, list) else [value] 
+                                                     for key, value in feature.qualifiers.items()}
+                                        break
+                            else:
+                                logger.warning(f"No qualifiers found for {record.id} - creating basic set")
+                            
+                            # Ensure we have the essential qualifiers
+                            if 'translation' not in qualifiers:
+                                qualifiers['translation'] = [str(record.seq)]
+                            
+                            # Add product qualifier if not present
+                            if 'product' not in qualifiers:
+                                qualifiers['product'] = [f"protein_{seq_idx}"]
+                            
+                            # Add protein_id if available and not present
+                            if 'protein_id' not in qualifiers and hasattr(record, 'id'):
+                                qualifiers['protein_id'] = [record.id]
+                            
+                            # Check if we should add Phynteny predictions
+                            should_add_predictions = True
+                            
+                            # Check if this is a gene with unknown function
+                            has_unknown_function = False
+                            if 'function' not in qualifiers:
+                                has_unknown_function = True
+                                unknown_function_count += 1
+                                logger.debug(f"Gene {record.id} has no function annotation")
+                            else:
+                                function_value = qualifiers['function'][0].lower() if isinstance(qualifiers['function'], list) else qualifiers['function'].lower()
+                                if function_value == "unknown function" or function_value == "unknown":
+                                    has_unknown_function = True
+                                    unknown_function_count += 1
+                                    logger.debug(f"Gene {record.id} has unknown function: {function_value}")
+                                else:
+                                    known_function_count += 1
+                                    should_add_predictions = False
+                                    logger.debug(f"Skipping Phynteny annotation for {record.id}: Known function: {function_value}")
+
+                            # Only add predictions if function is unknown or not present
+                            if 'function' in qualifiers:
+                                function_value = qualifiers['function'][0].lower() if isinstance(qualifiers['function'], list) else qualifiers['function'].lower()
+                                if function_value != "unknown function" and function_value != "unknown":
+                                    should_add_predictions = False
+                                    logger.debug(f"Skipping Phynteny annotation for {record.id}: Known function: {function_value}")
+                            
+                            # Only add predictions if the confidence score is above the threshold
+                            if conf is not None and conf < threshold:
+                                should_add_predictions = False
+                                low_confidence_count += 1
+                                logger.debug(f"Skipping Phynteny annotation for {record.id}: Low confidence score: {conf:.4f}")
+                            
+                            # Add our prediction qualifiers only for unknown function
+                            if should_add_predictions:
+                                logger.debug(f'prediction: {prediction}')
+                                if prediction is not None:
+                                    # Add the category label if categories_map is provided
+                                    if categories_map is not None:
+                                        # First try direct lookup
+                                        if prediction in categories_map:
+                                            qualifiers["phynteny_category"] = [categories_map[prediction]]
+                                            predictions_added_count += 1
+                                            logger.debug(f"Added prediction for {record.id}: {categories_map[prediction]}")
+                                        # If direct lookup fails, try string versions of keys
+                                        elif str(prediction) in categories_map:
+                                            qualifiers["phynteny_category"] = [categories_map[str(prediction)]]
+                                            predictions_added_count += 1
+                                            logger.debug(f"Added prediction for {record.id} via string key: {categories_map[str(prediction)]}")
+                                        else:
+                                            # Fallback to just showing the prediction number
+                                            qualifiers["phynteny_category"] = [f"Category_{prediction}"]
+                                            predictions_added_count += 1
+                                            logger.debug(f"Added generic category for {record.id}: Category_{prediction}")
+                                    else:
+                                        # No categories_map provided
+                                        qualifiers["phynteny_category"] = [f"Category_{prediction}"]
+                                        predictions_added_count += 1
+                                        
+                                if max_score is not None:
+                                    qualifiers["phynteny_score"] = [f"{max_score:.4f}"]
+                                if conf is not None:
+                                    qualifiers["phynteny_confidence"] = [f"{conf:.4f}"]
+                            
+                            # Create the feature with ALL original qualifiers plus our additions
+                            feature = SeqFeature(
+                                FeatureLocation(start, end, strand=strand),
+                                type="CDS",
+                                qualifiers=qualifiers
+                            )
+                            
+                            genome_record.features.append(feature)
+                            
+                        except Exception as e:
+                            logger.error(f"Error processing sequence {seq_idx} in genome {genome_id}: {str(e)}")
+                            logger.error(traceback.format_exc())
+                    
+                    # Write the complete genome record with all features
+                    SeqIO.write(genome_record, handle, "genbank")
+                
+                logger.info(f"Successfully wrote predictions to {output_file}")
+                logger.info(f"Statistics: {unknown_function_count} genes with unknown function, {predictions_added_count} predictions added")
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error writing to GenBank file {output_file}: {str(e)}")
+            logger.error(traceback.format_exc())
+            return None
+
+    def write_genbank(self, gb_dict, out, predictions=None, scores=None, confidence_scores=None, threshold=0.9, categories_map=None):
+        """
+        Write the predicted scores to Genbank files.
+
+        :param gb_dict: Dictionary of Genbank records
+        :param out: Output directory or output file path
+        :param predictions: List of predictions (optional)
+        :param scores: List of scores (optional)
+        :param confidence_scores: List of confidence scores (optional)
+        :param threshold: Confidence threshold (default: 0.9)
+        :param categories_map: Dictionary mapping category numbers to human-readable labels
+        :return: None
+        """
+        return self.write_predictions_to_genbank(gb_dict, out, predictions, scores, confidence_scores, threshold, categories_map)
+
+    def read_model(self, model_path, input_dim, num_classes, num_heads, hidden_dim, lstm_hidden_dim, dropout, use_lstm, max_len, protein_dropout_rate=0.0, attention='circular', positional_encoding_type='fourier', pre_norm=False, progressive_dropout=False, initial_dropout_rate=1.0, final_dropout_rate=0.4, output_dim=None, num_layers=2): 
+        """
+        Read and load a model from the given path.
+
+        :param model_path: Path to the model file
+        :param input_dim: Input dimension for the model
+        :param num_classes: Number of classes for the model
+        :param num_heads: Number of attention heads for the model
+        :param hidden_dim: Hidden dimension for the model
+        :param lstm_hidden_dim: LSTM hidden dimension for the model
+        :param dropout: Dropout rate for the model
+        :param use_lstm: Whether to use LSTM in the model
+        :param max_len: Maximum length for the model
+        :param protein_dropout_rate: Dropout rate for protein features
+        :param attention: Type of attention mechanism
+        :param positional_encoding_type: Type of positional encoding
+        :param pre_norm: Whether to use pre-normalization
+        :param progressive_dropout: Whether to use progressive dropout
+        :param initial_dropout_rate: Initial dropout rate for progressive dropout
+        :param final_dropout_rate: Final dropout rate for progressive dropout
+        :param output_dim: Output dimension for the model
+        :param num_layers: Number of transformer layers
+        :return: Loaded model
+        """
+        # Default output_dim to num_classes if not specified
+        if output_dim is None:
+            output_dim = num_classes
+        
+        # Read in the model state dict
+        state_dict = torch.load(model_path, map_location=torch.device(self.device))
+
+        logger.info(f'Reading model with input_dim={input_dim}, num_classes={num_classes}, output_dim={output_dim}, num_heads={num_heads}, hidden_dim={hidden_dim}, lstm_hidden_dim={lstm_hidden_dim}, dropout={dropout}, use_lstm={use_lstm}, max_len={max_len}, protein_dropout_rate={protein_dropout_rate}, attention={attention}, positional_encoding_type={positional_encoding_type}, pre_norm={pre_norm}, num_layers={num_layers}')
+
+        # Select the positional encoding function based on the type
+        positional_encoding_func = model_onehot.fourier_positional_encoding if positional_encoding_type == 'fourier' else model_onehot.sinusoidal_positional_encoding
+        
+        # Create the appropriate model based on attention type
+        if attention == 'circular':
+            model = model_onehot.TransformerClassifierCircularRelativeAttention(
+                input_dim=input_dim, 
+                num_classes=num_classes, 
+                num_heads=num_heads, 
+                hidden_dim=hidden_dim, 
+                lstm_hidden_dim=lstm_hidden_dim if use_lstm else None,
+                dropout=dropout, 
+                max_len=max_len,
+                use_lstm=use_lstm, 
+                positional_encoding=positional_encoding_func,
+                protein_dropout_rate=protein_dropout_rate,
+                pre_norm=pre_norm,
+                progressive_dropout=progressive_dropout,
+                initial_dropout_rate=initial_dropout_rate,
+                final_dropout_rate=final_dropout_rate,
+                output_dim=output_dim
+            )
+        elif attention == 'relative':
+            model = model_onehot.TransformerClassifierRelativeAttention(
+                input_dim=input_dim,
+                num_classes=num_classes,
+                num_heads=num_heads,
+                hidden_dim=hidden_dim,
+                lstm_hidden_dim=lstm_hidden_dim if use_lstm else None,
+                dropout=dropout,
+                max_len=max_len,
+                use_lstm=use_lstm,
+                positional_encoding=positional_encoding_func,
+                protein_dropout_rate=protein_dropout_rate,
+                output_dim=output_dim
+            )
+        elif attention == 'absolute':
+            model = model_onehot.TransformerClassifier(
+                input_dim=input_dim,
+                num_classes=num_classes,
+                num_heads=num_heads,
+                hidden_dim=hidden_dim,
+                lstm_hidden_dim=lstm_hidden_dim if use_lstm else None,
+                dropout=dropout,
+                num_layers=num_layers,  # Use the passed parameter instead of hardcoded value
+                use_lstm=use_lstm,
+                positional_encoding=positional_encoding_func,
+                protein_dropout_rate=protein_dropout_rate,
+                output_dim=output_dim
+            )
+        else:
+            raise ValueError(f"Invalid attention type: {attention}")
+        
+        # Initialize protein feature dropout with dummy forward pass
+        if hasattr(model, 'protein_feature_dropout'):
+            logger.info("Initializing protein_feature_dropout buffers with dummy forward pass")
+            batch_size, seq_len = 2, 10  # Minimal batch for initialization
+            feature_dim = model.gene_feature_dim + (hidden_dim - model.gene_feature_dim)
+            dummy_input = torch.zeros((batch_size, seq_len, feature_dim), device=self.device)
+            dummy_idx = [torch.tensor([0, 1]) for _ in range(batch_size)]
+            model.protein_feature_dropout(dummy_input, dummy_idx)
+        
+        # Load the state dictionary with strict=False to handle missing/unexpected keys
+        model.load_state_dict(state_dict, strict=False)
+        
+        return model
+
+    def read_models_from_directory(self, directory_path, input_dim=1280, num_classes=9, num_heads=8, hidden_dim=512, lstm_hidden_dim=512, dropout=0.1, use_lstm=True, max_len=1500, protein_dropout_rate=0.6, attention='circular', positional_encoding_type='sinusoidal', pre_norm=False, progressive_dropout=True, initial_dropout_rate=1.0, final_dropout_rate=0.4, output_dim=None, num_layers=2):
+        """
+        Read and load all models from the given directory.
+
+        :param directory_path: Path to the directory containing model files
+        :param input_dim: Input dimension for the model
+        :param num_classes: Number of classes for the model
+        :param num_heads: Number of attention heads for the model
+        :param hidden_dim: Hidden dimension for the model
+        :param lstm_hidden_dim: LSTM hidden dimension for the model
+        :param dropout: Dropout rate for the model
+        :param use_lstm: Whether to use LSTM in the model
+        :param max_len: Maximum length for the model
+        :param protein_dropout_rate: Dropout rate for protein features
+        :param attention: Type of attention mechanism
+        :param positional_encoding_type: Type of positional encoding
+        :param pre_norm: Whether to use pre-normalization
+        :param progressive_dropout: Whether to use progressive dropout
+        :param initial_dropout_rate: Initial dropout rate for progressive dropout
+        :param final_dropout_rate: Final dropout rate for progressive dropout
+        :param output_dim: Output dimension for the model
+        :param num_layers: Number of transformer layers
+        """
+        print('Reading models from directory: ', directory_path)
+        
+        # Set default output_dim to num_classes if not specified
+        if output_dim is None:
+            output_dim = num_classes
+        
+        # Log parameters for debugging
+        logger.info(f"Loading models with parameters: input_dim={input_dim}, num_classes={num_classes}, output_dim={output_dim}, " 
+                    f"num_heads={num_heads}, hidden_dim={hidden_dim}, lstm_hidden_dim={lstm_hidden_dim}, "
+                    f"dropout={dropout}, use_lstm={use_lstm}, max_len={max_len}, "
+                    f"protein_dropout_rate={protein_dropout_rate}, attention={attention}, "
+                    f"positional_encoding_type={positional_encoding_type}, pre_norm={pre_norm}")
+
+        for filename in os.listdir(directory_path):
+            if filename.endswith(".model"):  # Assuming model files have .model extension
+                model_path = os.path.join(directory_path, filename)
+                model = self.read_model(
+                    model_path, input_dim, num_classes, num_heads, hidden_dim, 
+                    lstm_hidden_dim, dropout, use_lstm, max_len, protein_dropout_rate,
+                    attention, positional_encoding_type, pre_norm, progressive_dropout,
+                    initial_dropout_rate, final_dropout_rate, output_dim, num_layers
+                )
+                self.models.append(model)
+
+
+    def compute_confidence(self, scores, confidence_dict, categories):
+        """
+        Compute confidence of predictions in a highly efficient vectorized manner.
+        Processes all genomes simultaneously for each category to minimize redundant operations.
+        
+        :param scores: List of score arrays for the genomes
+        :param confidence_dict: Dictionary containing confidence information
+        :param categories: Dictionary of categories
+        :return: Tuple of predictions and confidence scores lists
+        """
+        # Convert to list if a single score array was provided
+        if isinstance(scores, np.ndarray) and scores.ndim > 1:
+            scores = [scores]
+        
+        num_genomes = len(scores)
+        logger.info(f'Processing confidence for {num_genomes} genomes')
+        
+        # Create the category mapping once
+        categories_map = dict(zip(range(len(confidence_dict.keys())), confidence_dict.keys()))
+        
+        # Calculate predictions for all genomes first
+        all_predictions = []
+        all_confidence = []
+        
+        # Pre-allocate arrays for results
+        for i, genome_scores in enumerate(scores):
+            # Get predictions for this genome
+            predictions = np.argmax(genome_scores, axis=1)
+            all_predictions.append(np.zeros_like(predictions, dtype=float))
+            all_confidence.append(np.zeros(len(predictions), dtype=float))
+        
+        # Process each category once for all genomes
+        for category in range(9):  # Assuming 9 categories (0-8)
+            category_key = categories_map.get(category)
+            if category_key not in confidence_dict:
+                logger.warning(f"Category {category} (key={category_key}) not found in confidence dict")
+                continue
+            
+            # Get the model for this category
+            category_model = confidence_dict.get(category_key)
+            
+            # Skip if missing key components
+            required_keys = ["kde_TP", "kde_FP", "num_TP", "num_FP"]
+            if not all(key in category_model for key in required_keys):
+                logger.warning(f"Missing required keys in confidence model for category {category}")
+                continue
+            
+            # Process this category for all genomes at once
+            for g, genome_scores in enumerate(scores):
+                # Find positions where this category is predicted
+                predictions = np.argmax(genome_scores, axis=1)
+                category_mask = (predictions == category)
+                
+                # Skip if no predictions for this category in this genome
+                if not np.any(category_mask):
+                    continue
+                    
+                # Get relevant scores for this category
+                category_scores = genome_scores[category_mask, category].reshape(-1, 1)
+                
+                try:
+                    # Calculate confidence values for this category
+                    e_TP = np.exp(category_model["kde_TP"].score_samples(category_scores))
+                    e_FP = np.exp(category_model["kde_FP"].score_samples(category_scores))
+                    
+                    num_TP = category_model["num_TP"]
+                    num_FP = category_model["num_FP"]
+                    
+                    # Calculate confidence scores
+                    conf = (e_TP * num_TP) / (e_TP * num_TP + e_FP * num_FP + 1e-8)  # Add small epsilon to avoid division by zero
+                    
+                    # Store results
+                    all_predictions[g][category_mask] = category
+                    all_confidence[g][category_mask] = conf
+                except Exception as e:
+                    logger.error(f"Error calculating confidence for category {category}: {str(e)}")
+                    # Set defaults
+                    all_predictions[g][category_mask] = category
+                    all_confidence[g][category_mask] = 0.5  # Conservative default
+        
+        logger.info(f"Completed confidence calculation for {num_genomes} genomes")
+        return all_predictions, all_confidence
+
+    def compute_confidence_isotonic(self, scores, calibration_models, phrog_integer):
+        """
+        Compute confidence using isotonic regression calibration models.
+        
+        :param scores: List of score arrays
+        :param calibration_models: Dictionary or list of dictionaries with isotonic regression models
+        :param phrog_integer: Dictionary mapping phrog categories to integers
+        :return: Tuple of (predictions, confidence_scores, raw_scores, calibrated_scores)
+        """
+        logger.info("Computing confidence scores using isotonic regression calibration")
+        
+        # Add validation and logging of calibration models
+        is_ensemble = isinstance(calibration_models, list)
+        num_models = len(calibration_models) if is_ensemble else 1
+        logger.debug(f"Calibration model type: {'Ensemble' if is_ensemble else 'Single'} with {num_models} model(s)")
+        
+        # Log calibration model keys to verify they exist
+        if is_ensemble:
+            for i, model_dict in enumerate(calibration_models):
+                logger.info(f"Model {i} calibration keys: {list(model_dict.keys())}")
+                # Verify isotonic models exist and can predict
+                for key, iso_model in model_dict.items():
+                    try:
+                        # Test predict with dummy value
+                        test_val = iso_model.predict([[0.5]])[0]
+                        logger.debug(f"Model {i}, class {key}: test prediction for 0.5 = {test_val}")
+                    except Exception as e:
+                        logger.error(f"Error testing isotonic model {i} for class {key}: {e}")
+        else:
+            logger.debug(f"Single model calibration keys: {list(calibration_models.keys())}")
+            # Verify isotonic models exist and can predict
+            for key, iso_model in calibration_models.items():
+                try:
+                    # Test predict with dummy value
+                    test_val = iso_model.predict([[0.5]])[0]
+                    logger.debug(f"Class {key}: test prediction for 0.5 = {test_val}")
+                except Exception as e:
+                    logger.error(f"Error testing isotonic model for class {key}: {e}")
+        
+        # Initialize results lists
+        predictions = []
+        confidence_scores = []
+        raw_scores = {}
+        calibrated_scores = {}
+        
+        # Track confidence score distribution
+        all_confidences = []
+        
+        # Convert to list if a single score array was provided
+        if isinstance(scores, np.ndarray) and scores.ndim > 1:
+            scores = [scores]
+        
+        # Process each genome
+        for genome_idx, genome_scores in enumerate(scores):
+            logger.debug(f"Processing genome {genome_idx}: score array shape {genome_scores.shape if hasattr(genome_scores, 'shape') else 'unknown'}")
+            
+            # Log some raw score samples to check distribution
+            if genome_idx == 0:  # Just log the first genome as an example
+                logger.debug(f"First genome raw scores (first 3 genes):")
+                for i in range(min(3, len(genome_scores))):
+                    logger.debug(f"Gene {i}: {genome_scores[i]}")
+                    logger.debug(f"Gene {i} max score: {np.max(genome_scores[i])}, argmax: {np.argmax(genome_scores[i])}")
+            
+            genome_preds = []
+            genome_confidences = []
+            genome_calibrated_scores = []
+            
+            # Process each gene
+            for gene_idx, gene_scores in enumerate(genome_scores):
+                # Get raw prediction (class with highest score)
+                pred_class = np.argmax(gene_scores)
+                raw_max_score = gene_scores[pred_class]
+                
+                # Log for some genes as examples
+                if genome_idx == 0 and gene_idx < 5:
+                    logger.debug(f"Gene {gene_idx}: predicted class={pred_class}, raw score={raw_max_score:.4f}")
+                    
+                # Initialize calibrated scores for this gene
+                calibrated_gene_scores = np.zeros_like(gene_scores)
+                
+                # Apply calibration for each class
+                for class_idx in range(len(gene_scores)):
+                    raw_class_score = gene_scores[class_idx]
+                    
+                    # Skip if raw score is too low to matter (optimization)
+                    if raw_class_score < 0.01 and class_idx != pred_class:
+                        continue
+                    
+                    calibrated_class_score = raw_class_score  # Default to raw score
+                    
+                    # Apply calibration (different process for ensemble vs single model)
+                    if is_ensemble:
+                        # Apply all models and average results
+                        calibrated_scores_sum = 0.0
+                        valid_calibrations = 0
+                        
+                        for model_idx in range(num_models):
+                            model_dict = calibration_models[model_idx]
+                            # Find the isotonic model for this class
+                            class_key = None
+                            for k in model_dict.keys():
+                                # String matching needed since keys might be strings or ints
+                                if str(class_idx) in str(k):
+                                    class_key = k
+                                    break
+                            
+                            if class_key is not None:
+                                try:
+                                    iso_reg = model_dict[class_key]
+                                    score_2d = np.array([[raw_class_score]])
+                                    cal_score = iso_reg.predict(score_2d)[0]
+                                    calibrated_scores_sum += cal_score
+                                    valid_calibrations += 1
+                                    # Log detailed calibration process for debugging
+                                    if genome_idx == 0 and gene_idx < 3:
+                                        logger.debug(f"Gene {gene_idx}, Class {class_idx}: Model {model_idx} calibration: {raw_class_score:.4f} → {cal_score:.4f}")
+                                except Exception as e:
+                                    logger.error(f"Error in calibration model {model_idx} for class {class_idx}: {e}")
+                        
+                        # Average the calibrated scores if we have any valid ones
+                        if valid_calibrations > 0:
+                            calibrated_class_score = calibrated_scores_sum / valid_calibrations
+                    
+                    else:
+                        # Single model calibration
+                        # Find the isotonic model for this class
+                        class_key = None
+                        for k in calibration_models.keys():
+                            # String matching needed since keys might be strings or ints
+                            if str(class_idx) in str(k):
+                                class_key = k
+                                break
+                        
+                        if class_key is not None:
+                            try:
+                                iso_reg = calibration_models[class_key]
+                                score_2d = np.array([[raw_class_score]])
+                                cal_score = iso_reg.predict(score_2d)[0]
+                                calibrated_class_score = cal_score
+                                # Log detailed calibration process for debugging
+                                if genome_idx == 0 and gene_idx < 3:
+                                    logger.debug(f"Gene {gene_idx}, Class {class_idx}: Single model calibration: {raw_class_score:.4f} → {cal_score:.4f}")
+                            except Exception as e:
+                                logger.error(f"Error in calibration model for class {class_idx}: {e}")
+                    
+                    # Store the calibrated score
+                    calibrated_gene_scores[class_idx] = calibrated_class_score
+                
+                # Ensure scores are in valid range
+                calibrated_gene_scores = np.clip(calibrated_gene_scores, 0, 1)
+                
+                # Log pre-normalization scores
+                if genome_idx == 0 and gene_idx < 3:
+                    logger.debug(f"Gene {gene_idx}: pre-normalization calibrated scores: {calibrated_gene_scores}")
+                    logger.debug(f"Sum before normalization: {np.sum(calibrated_gene_scores):.4f}")
+                
+                # Normalize calibrated scores to sum to 1
+                score_sum = np.sum(calibrated_gene_scores)
+                if score_sum > 0:
+                    calibrated_gene_scores = calibrated_gene_scores / score_sum
+                
+                # Log post-normalization scores
+                if genome_idx == 0 and gene_idx < 3:
+                    logger.debug(f"Gene {gene_idx}: post-normalization calibrated scores: {calibrated_gene_scores}")
+                    logger.debug(f"Sum after normalization: {np.sum(calibrated_gene_scores):.4f}")
+                
+                # Get calibrated prediction and confidence
+                calibrated_pred = np.argmax(calibrated_gene_scores)
+                confidence = calibrated_gene_scores[calibrated_pred]
+                
+                # Log confidence calculation
+                if genome_idx == 0 and gene_idx < 3:
+                    logger.debug(f"Gene {gene_idx}: calibrated prediction={calibrated_pred}, confidence={confidence:.4f}")
+                
+                # Store results for this gene
+                genome_preds.append(calibrated_pred)
+                genome_confidences.append(confidence)
+                genome_calibrated_scores.append(calibrated_gene_scores)
+                
+                # Track for overall statistics
+                all_confidences.append(confidence)
+            
+            # Store results for this genome
+            predictions.append(np.array(genome_preds))
+            confidence_scores.append(np.array(genome_confidences))
+            raw_scores[genome_idx] = genome_scores
+            calibrated_scores[genome_idx] = genome_calibrated_scores
+            
+            # Log summary for this genome
+            if len(genome_confidences) > 0:
+                min_conf = np.min(genome_confidences)
+                max_conf = np.max(genome_confidences)
+                mean_conf = np.mean(genome_confidences)
+                logger.debug(f"Genome {genome_idx}: min_conf={min_conf:.4f}, max_conf={max_conf:.4f}, mean_conf={mean_conf:.4f}")
+        
+        # Log overall confidence statistics
+        if all_confidences:
+            conf_array = np.array(all_confidences)
+            logger.info(f"Overall confidence statistics:")
+            logger.info(f"Min: {np.min(conf_array):.4f}, Max: {np.max(conf_array):.4f}, Mean: {np.mean(conf_array):.4f}")
+            logger.info(f"Confidence distribution:")
+            for threshold in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 0.999, 1.0]:
+                count = np.sum(conf_array >= threshold)
+                pct = 100 * count / len(conf_array)
+                logger.info(f"  >= {threshold:.3f}: {count} ({pct:.1f}%)")
+            
+            # Check if many scores are exactly 1.0 (suspicious)
+            exact_ones = np.sum(conf_array == 1.0)
+            if exact_ones / len(conf_array) > 0.5:  # If more than half are exactly 1.0
+                logger.warning(f"WARNING: {exact_ones} out of {len(conf_array)} confidence scores ({exact_ones/len(conf_array)*100:.1f}%) are exactly 1.0!")
+                logger.warning("This suggests a problem with the calibration process.")
+        
+        return predictions, confidence_scores, raw_scores, calibrated_scores
