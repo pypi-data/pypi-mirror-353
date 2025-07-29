@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite as below."
+authors:
+  - family-names: "Jain"
+    given-names: "Shashvat "
+title: "CO₂ Emissions Prediction from Vehicle Features"
+version: "v1.0.0"
+doi: "10.5281/zenodo.xxxxxxx"
+date-released: "2025-05-28"
