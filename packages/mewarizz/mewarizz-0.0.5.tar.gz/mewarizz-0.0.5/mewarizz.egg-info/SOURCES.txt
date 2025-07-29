@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mewarizz.egg-info/PKG-INFO
+mewarizz.egg-info/SOURCES.txt
+mewarizz.egg-info/dependency_links.txt
+mewarizz.egg-info/top_level.txt
+rizzler/__init__.py

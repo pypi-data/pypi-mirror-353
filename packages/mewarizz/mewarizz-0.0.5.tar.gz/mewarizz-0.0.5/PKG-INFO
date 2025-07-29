@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: mewarizz
+Version: 0.0.5
+Summary: W rizz
+Home-page: https://github.com/yourusername/pygameplusplus
+Author: Robo
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+This is the official Python module to be the most sigma rizzler of your generation! Use now, and be the rizzler.
