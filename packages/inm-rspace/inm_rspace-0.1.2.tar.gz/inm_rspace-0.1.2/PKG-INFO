@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: inm-rspace
+Version: 0.1.2
+Summary: 
+License: LICENSE
+Author: Christian Müller
+Requires-Python: >=3.9
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: numpy (>=1.23)
+Description-Content-Type: text/markdown
+
+# inm-rspace
+
+Python tools for interaction with the Rspace Electronic Lab Notebook. Developed at INM - Leibniz Institute for New Materials in Saarbrücken, Germany.
+
+
+## Installation
+
+Currently only available on `test.pypi.org`. 
+Soon moving to `pypi.org`, which will facilitate installation through:
+
+`pip install inm-rspace`
+
+## Examples
+
+Coming soon...
+
+
+## Documentation
+
+The full API documentation is available [here](https://sintharic.github.io/inm-rspace/).
