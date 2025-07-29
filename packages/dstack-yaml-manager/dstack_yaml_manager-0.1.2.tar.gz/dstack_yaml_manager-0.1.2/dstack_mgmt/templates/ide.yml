@@ -1,0 +1,28 @@
+type: ide
+name: my-ide
+
+# IDE type (code, jupyter, etc.)
+ide: code
+
+# Docker image to use
+image: dstackai/base:py3.11-0.4-cuda-12.1
+
+# Working directory
+working_dir: .
+
+# Resources
+resources:
+  cpu: 4
+  memory: 8GB
+  disk: 50GB
+  # Uncomment for GPU support
+  # gpu: 1
+
+# Environment variables
+env:
+  - PYTHONPATH=/workspace
+
+# Extensions (for VS Code)
+# extensions:
+#   - ms-python.python
+#   - ms-toolsai.jupyter
