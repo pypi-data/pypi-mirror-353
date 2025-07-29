@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: openwebui-client
+Version: 0.1.0
+Summary: A client library for the OpenWebUI API, compatible with OpenAI Python SDK
+Author-email: Mark Durepos <marc@bemade.org>
+Project-URL: Homepage, https://github.com/bemade/openwebui-client
+Project-URL: Documentation, https://bemade.github.io/openwebui-client/
+Project-URL: BugTracker, https://github.com/bemade/openwebui-client/issues
+Project-URL: Changelog, https://bemade.github.io/openwebui-client/CHANGELOG/
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: pytest-mock>=3.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: flake8-bugbear>=24.0.0; extra == "dev"
+Requires-Dist: pre-commit>=3.0.0; extra == "dev"
+Requires-Dist: build>=0.10.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=7.0.0; extra == "test"
+Requires-Dist: pytest-cov>=4.0.0; extra == "test"
+Requires-Dist: pytest-mock>=3.0.0; extra == "test"
+Provides-Extra: docs
+Requires-Dist: sphinx>=8.2.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=3.0.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints>=3.0.0; extra == "docs"
+Requires-Dist: sphinx-copybutton>=0.5.0; extra == "docs"
+Requires-Dist: sphinx-autobuild>=2023.0.0; extra == "docs"
+Requires-Dist: myst-parser>=4.0.0; extra == "docs"
+Dynamic: license-file
+
+This seems to work:
+
+```bash
+#!/bin/bash
+
+# Configuration
+API_BASE_URL="https://ai.bemade.org"
+AUTH_TOKEN="..." # Fill with a real token
+PDF_PATH="..." # Fill with a real value
+
+# Vérifier si le fichier existe
+if [ ! -f "$PDF_PATH" ]; then
+    echo "Erreur: Le fichier $PDF_PATH n'existe pas."
+    exit 1
+fi
+
+# Télécharger le fichier PDF
+echo "Téléchargement du fichier PDF..."
+FILE_RESPONSE=$(curl -s -X POST \
+  "${API_BASE_URL}/api/v1/files/" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -F "file=@${PDF_PATH}" \
+  -F "process=true")
+
+# Afficher la réponse complète pour le débogage
+echo "Réponse complète du serveur:"
+echo "$FILE_RESPONSE"
+
+# Vérifier si la réponse contient un ID de fichier
+if echo "$FILE_RESPONSE" | grep -q "id"; then
+    FILE_ID=$(echo $FILE_RESPONSE | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+    echo "Fichier téléchargé avec succès!"
+    echo "ID du fichier: $FILE_ID"
+else
+    echo "Erreur lors du téléchargement du fichier."
+fi
+```
