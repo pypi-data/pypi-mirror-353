@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+fathom_extractor/__init__.py
+fathom_extractor/cli.py
+fathom_extractor/extractor.py
+fathom_extractor.egg-info/PKG-INFO
+fathom_extractor.egg-info/SOURCES.txt
+fathom_extractor.egg-info/dependency_links.txt
+fathom_extractor.egg-info/entry_points.txt
+fathom_extractor.egg-info/requires.txt
+fathom_extractor.egg-info/top_level.txt

@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fathom-extractor"
+version = "1.0.0"
+description = "Extract transcripts from HAR files, particularly from Fathom video calls"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Isaac Harrison Gutekunst", email = "isaac@gutekunst.com"}
+]
+maintainers = [
+    {name = "Isaac Harrison Gutekunst", email = "isaac@gutekunst.com"}
+]
+keywords = ["har", "transcript", "fathom", "extraction", "video", "audio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.950",
+]
+
+[project.urls]
+Homepage = "https://github.com/igutekunst/fathom-extractor"
+Repository = "https://github.com/igutekunst/fathom-extractor"
+Issues = "https://github.com/igutekunst/fathom-extractor/issues"
+
+[project.scripts]
+fathom-extractor = "fathom_extractor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fathom_extractor*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 

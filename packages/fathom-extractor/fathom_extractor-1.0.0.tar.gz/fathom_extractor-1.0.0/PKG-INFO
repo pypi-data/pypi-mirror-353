@@ -1,0 +1,316 @@
+Metadata-Version: 2.4
+Name: fathom-extractor
+Version: 1.0.0
+Summary: Extract transcripts from HAR files, particularly from Fathom video calls
+Author-email: Isaac Harrison Gutekunst <isaac@gutekunst.com>
+Maintainer-email: Isaac Harrison Gutekunst <isaac@gutekunst.com>
+License: MIT
+Project-URL: Homepage, https://github.com/igutekunst/fathom-extractor
+Project-URL: Repository, https://github.com/igutekunst/fathom-extractor
+Project-URL: Issues, https://github.com/igutekunst/fathom-extractor/issues
+Keywords: har,transcript,fathom,extraction,video,audio
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: flake8>=4.0; extra == "dev"
+Requires-Dist: mypy>=0.950; extra == "dev"
+Dynamic: license-file
+
+# Fathom Extractor
+
+A Python tool for extracting transcripts from HAR (HTTP Archive) files, particularly optimized for Fathom video call transcripts.
+
+## Features
+
+- 🎥 **Fathom Video Support**: Specialized extraction for Fathom video call transcripts
+- 🔍 **Generic Transcript Detection**: Finds transcripts from various APIs (Whisper, Deepgram, etc.)
+- 📄 **Multiple Output Formats**: JSON, clean text, and beautiful Markdown with YAML frontmatter
+- 🎯 **Smart Pattern Matching**: Automatically detects transcript-related network requests
+- 📋 **Rich Metadata**: Extracts speakers, Q&A clips, AI notes, and meeting summaries
+- ⚡ **CLI Tool**: Easy-to-use command-line interface
+
+## Installation
+
+### From PyPI (when published)
+
+```bash
+pip install fathom-extractor
+```
+
+### From Source
+
+```bash
+git clone https://github.com/igutekunst/fathom-extractor.git
+cd fathom-extractor
+pip install -e .
+```
+
+## Quick Start
+
+1. **Download a HAR file** (see [How to Download HAR Files](#how-to-download-har-files))
+2. **Extract transcripts**:
+
+```bash
+fathom-extractor recording.har
+```
+
+3. **Get beautiful output**:
+
+```bash
+fathom-extractor recording.har -m transcript.md -c clean.txt -v
+```
+
+## Usage
+
+### Basic Usage
+
+```bash
+# Extract to JSON (default)
+fathom-extractor recording.har
+
+# Specify output file
+fathom-extractor recording.har -o my_transcripts.json
+
+# Create multiple output formats
+fathom-extractor recording.har -m beautiful.md -c readable.txt
+```
+
+### Command Line Options
+
+```
+fathom-extractor [-h] [-o OUTPUT] [-c CLEAN] [-m MARKDOWN] [-v] [--version] har_file
+
+positional arguments:
+  har_file              Path to the HAR file to extract transcripts from
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Output JSON file (default: extracted_transcripts.json)
+  -c CLEAN, --clean CLEAN
+                        Also create a clean, readable transcript file
+  -m MARKDOWN, --markdown MARKDOWN
+                        Create a beautiful markdown transcript with YAML frontmatter
+  -v, --verbose         Enable verbose output
+  --version             show program version and exit
+```
+
+### Examples
+
+```bash
+# Basic extraction
+fathom-extractor meeting.har
+
+# Extract with all output formats and verbose logging
+fathom-extractor meeting.har -o data.json -c transcript.txt -m report.md -v
+
+# Just create a markdown report
+fathom-extractor meeting.har -m meeting_notes.md
+```
+
+## How to Download HAR Files
+
+HAR (HTTP Archive) files capture all network traffic from your browser. Here's how to download them:
+
+### Chrome/Chromium
+
+1. **Open Developer Tools**
+   - Press `F12` or `Ctrl+Shift+I` (Windows/Linux)
+   - Press `Cmd+Option+I` (Mac)
+   - Or right-click → "Inspect"
+
+2. **Go to Network Tab**
+   - Click the "Network" tab in Developer Tools
+   - Make sure recording is enabled (red circle should be active)
+
+3. **Navigate and Capture**
+   - Go to your Fathom video page or transcript page
+   - Let the page fully load and display the transcript
+   - Scroll through the transcript if needed
+
+4. **Download HAR File**
+   - Right-click in the Network tab
+   - Select "Save all as HAR with content"
+   - Choose a filename and save
+
+### Firefox
+
+1. **Open Developer Tools**
+   - Press `F12` or `Ctrl+Shift+I` (Windows/Linux)
+   - Press `Cmd+Option+I` (Mac)
+
+2. **Go to Network Tab**
+   - Click the "Network" tab
+   - Ensure recording is active
+
+3. **Capture Traffic**
+   - Navigate to your transcript page
+   - Wait for full page load
+
+4. **Export HAR**
+   - Click the gear icon (⚙️) in the Network tab
+   - Select "Save All As HAR"
+
+### Safari
+
+1. **Enable Developer Menu**
+   - Safari → Preferences → Advanced
+   - Check "Show Develop menu in menu bar"
+
+2. **Open Web Inspector**
+   - Develop → Show Web Inspector
+   - Go to Network tab
+
+3. **Capture and Export**
+   - Navigate to transcript page
+   - Right-click in Network tab → "Export HAR"
+
+### Tips for Better Results
+
+- **Clear browser cache** before recording to capture all requests
+- **Disable ad blockers** temporarily to avoid missing requests
+- **Wait for full page load** before saving the HAR file
+- **Interact with the page** (scroll, click) to trigger all network requests
+- **For Fathom**: Make sure you can see the full transcript on screen
+
+## Output Formats
+
+### JSON Output
+Raw extracted data with full metadata and transcript content.
+
+### Clean Text Output
+Human-readable format with:
+- Meeting metadata
+- Speaker information
+- Q&A sections
+- Full transcript with timestamps
+
+### Markdown Output
+Beautiful formatted document with:
+- YAML frontmatter with metadata
+- Structured sections with emojis
+- Proper formatting for speakers and timestamps
+- Q&A sections with time ranges
+- Meeting summaries and AI notes
+
+## What Gets Extracted
+
+### For Fathom Videos
+- 👥 **Speakers**: Names and email addresses
+- 📋 **Meeting Summary**: AI-generated meeting notes
+- 💬 **Q&A Clips**: Questions and answers with timestamps
+- 🤖 **AI Notes**: Additional AI-generated insights
+- 📄 **Full Transcript**: Complete conversation with speaker attribution
+- ⏰ **Metadata**: Meeting title, duration, host information
+
+### For Generic Transcripts
+- 📝 **Transcript Text**: Raw or structured transcript data
+- 🕒 **Timestamps**: When available
+- 👤 **Speaker Information**: If present in the data
+- 📊 **Confidence Scores**: From speech recognition APIs
+
+## Supported Sources
+
+- **Fathom Video**: Full support for Fathom's transcript format
+- **OpenAI Whisper**: API responses
+- **Deepgram**: Transcript API responses  
+- **Rev.ai**: Speech-to-text API responses
+- **Google Speech-to-Text**: API responses
+- **Azure Speech**: API responses
+- **AWS Transcribe**: API responses
+- **Generic APIs**: Any API returning transcript-like JSON
+
+## Python API
+
+You can also use the tool programmatically:
+
+```python
+from fathom_extractor import HARTranscriptExtractor
+
+# Create extractor
+extractor = HARTranscriptExtractor('recording.har')
+
+# Extract all transcripts
+transcripts = extractor.extract_all_transcripts()
+
+# Save in different formats
+extractor.save_transcripts(transcripts, 'output.json')
+extractor.create_clean_transcript(transcripts, 'clean.txt')
+extractor.create_markdown_transcript(transcripts, 'beautiful.md')
+
+# Access transcript data
+for transcript in transcripts:
+    print(f"Source: {transcript['source']}")
+    print(f"URL: {transcript['url']}")
+    if transcript['source'] == 'fathom':
+        data = transcript['transcript_data']
+        print(f"Speakers: {len(data.get('speakers', []))}")
+        print(f"Q&A Clips: {len(data.get('qa_clips', []))}")
+```
+
+## Troubleshooting
+
+### No Transcripts Found
+
+If the tool doesn't find any transcripts:
+
+1. **Check the HAR file**: Make sure you captured network traffic while viewing the transcript
+2. **Verify page loading**: Ensure the transcript was fully loaded when you captured the HAR
+3. **Try verbose mode**: Use `-v` flag to see what URLs were analyzed
+4. **Check browser**: Some browsers or extensions might block certain requests
+
+### Incomplete Transcripts
+
+If transcripts are missing content:
+
+1. **Scroll through the page**: Some transcripts load content dynamically
+2. **Wait longer**: Let the page fully load before capturing
+3. **Check network requests**: Look for additional API calls in the Network tab
+
+### Large HAR Files
+
+HAR files can be large. If you encounter memory issues:
+
+1. **Clear browser data** before recording
+2. **Close other tabs** to reduce network noise
+3. **Use incognito/private mode** to avoid extension interference
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Author
+
+**Isaac Harrison Gutekunst**
+- GitHub: [@igutekunst](https://github.com/igutekunst)
+- Email: isaac@gutekunst.com
+
+## Changelog
+
+### v1.0.0
+- Initial release
+- Fathom video transcript extraction
+- Generic transcript API support
+- Multiple output formats
+- CLI tool with comprehensive options 

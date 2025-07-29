@@ -1,0 +1,2 @@
+[console_scripts]
+fathom-extractor = fathom_extractor.cli:main
