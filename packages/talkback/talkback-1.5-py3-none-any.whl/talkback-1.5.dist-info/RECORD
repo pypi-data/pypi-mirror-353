@@ -1,0 +1,16 @@
+talkback/__init__.py,sha256=jzyfOLomHmCEyfFp_HifBZ5Y5jhym-qRpDWGX3wdRgE,401
+talkback/app.py,sha256=-nCmNyCHUd_gGuF62tXaDQg2ivZrfp2HTOnVpqMRyjE,961
+talkback/cookie.py,sha256=EMseskGOzQCfexf1FLeVskswLf3uXOGOJc9K698RyI4,5763
+talkback/dbkeeper.py,sha256=tFg9fVagHEJBnLC0kpGP9HVUU-WkdK4MthSbVwWXGc8,1993
+talkback/formdata.py,sha256=VcNRRH64gTuXzL0E3_JKbPketJ9-qy1O-6bx08TEF1w,4430
+talkback/fskeeper.py,sha256=xWRqSp3wWgU0ALDsRyOevR8X1Rte9PpfHwljI51SMOI,1508
+talkback/loader.py,sha256=OLT1IcMH8gYFRa_b1pgdWziYAGsGV1Ztt0YahpORLKk,1016
+talkback/parse.py,sha256=d4zthKcEaWIdyxvuR8IY82km5omJe_mZxEUuog0FN-w,4774
+talkback/path.py,sha256=BbsEch81EojfD8-qCGBjMHYVMkZskqgbCWB1B4SmeCE,4859
+talkback/responder.py,sha256=njeeYRS-P4bVlC-WNu3ES_0J5dNVxeMZD_4EeAsbQP8,4711
+talkback/session.py,sha256=a0_Xc0WaFJMAGaz9nlSXxRAnUqO_uPYuid3SUBUvGtM,982
+talkback/transport.py,sha256=WnJdLJcHljD5E5m5w5hU_zNMYCepSrizVfzNPuguzs8,8509
+talkback-1.5.dist-info/METADATA,sha256=7XvnJmi6OQ_gN7Z6D0th6pnmDxvAwj7hlm9zqpANvC0,3190
+talkback-1.5.dist-info/WHEEL,sha256=Nw36Djuh_5VDukK0H78QzOX-_FQEo6V37m3nkm96gtU,91
+talkback-1.5.dist-info/top_level.txt,sha256=Znmb0ta8Uck06hppgGPSjdewnbdEvq2Qkn7KenaAnZw,9
+talkback-1.5.dist-info/RECORD,,
