@@ -1,0 +1,12 @@
+stag/_core.cp311-win_amd64.pyd,sha256=lPkiz5ZxFz33FWdZGSlvUb7MOYFbdRK8ZOBoY2eiRL4,1113088
+stag/__init__.py,sha256=t8BsqMTqBX6rhFoyoxMs9GGwpLigkzdChI9AIa6S19w,356
+stag_python-1.1.1.dist-info/DELVEWHEEL,sha256=TK5vsL4IfcR5xqkbqAp6p0Y4s1F_d79-9GDYYe6aDXk,488
+stag_python-1.1.1.dist-info/LICENSE,sha256=EE80vC6XiTmZu-f88Du_ouAr9XN5CkXYkTsYn-5KTiU,1093
+stag_python-1.1.1.dist-info/METADATA,sha256=ak4WRyWKQp2_faE8gieqgVXVBfoOUuwE62dRDA3xixk,5144
+stag_python-1.1.1.dist-info/RECORD,,
+stag_python-1.1.1.dist-info/top_level.txt,sha256=Ttz8ZkiYUA6OUCDajwPA7q-Rhlgwvmp0rk2JX7Jzevo,5
+stag_python-1.1.1.dist-info/WHEEL,sha256=WutsMqxRjo8PALJe8NWxuOYrO2lUIIHDIxhZ8tjc8BY,101
+stag_python.libs/concrt140-3e687b8e988500b35fa9784214aa3830.dll,sha256=1RD7Tcp2dC80NQ4wXOrwcKfsBq0Gm0dzgyZ68YFdBuk,303616
+stag_python.libs/msvcp140-03f961ac7d601f8f37ab514aff9609ab.dll,sha256=pMIim9wqKmMKzcCVtNhgCOXD47x3cxdDVPPaT1vrnN4,575056
+stag_python.libs/opencv_core4100-cd996952aebadc6349f9c164081aa5b3.dll,sha256=9mj-4d_T93s9Cst7Ne7HCPf1voeM35zXzoCDuVdB9Sc,14804480
+stag_python.libs/opencv_imgproc4100-1ba571d7f8a60f1c93d9f1d1b444ac3b.dll,sha256=-DNBwOe3pKdbhF1_kEWzt0tPgwAp-3FKISDg8UTA97c,28866048
