@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+ai_am/__init__.py
+ai_am.egg-info/PKG-INFO
+ai_am.egg-info/SOURCES.txt
+ai_am.egg-info/dependency_links.txt
+ai_am.egg-info/top_level.txt
+ai_am/hacks/__init__.py
+ai_am/hacks/dir_tree.py
