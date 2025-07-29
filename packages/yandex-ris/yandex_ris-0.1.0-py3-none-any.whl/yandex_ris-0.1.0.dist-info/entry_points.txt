@@ -1,0 +1,2 @@
+[console_scripts]
+yandex-ris = yandex_ris.cli:main
