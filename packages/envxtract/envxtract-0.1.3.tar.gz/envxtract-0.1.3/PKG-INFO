@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: envxtract
+Version: 0.1.3
+Summary: Data extraction and analysis of environmental variables
+Author-email: Muhammad Shafeeque <shafeequ@uni-bremen.de>
+License-File: LICENSE
+Requires-Python: >=3.13
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: bumpver>=2024.1130
+Requires-Dist: folium>=0.19.7
+Requires-Dist: geopandas>=1.1.0
+Requires-Dist: jupyter>=1.1.1
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: pytest>=8.4.0
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: rasterio>=1.4.3
+Requires-Dist: scipy>=1.15.3
+Requires-Dist: seaborn>=0.13.2
+Requires-Dist: twine>=6.1.0
+Requires-Dist: xarray>=2025.4.0

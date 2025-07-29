@@ -1,0 +1,7 @@
+[bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+
+[bumpver.file_patterns]
+"pyproject.toml" = ['version = "{version}"']
+"envxtract/__init__.py" = ['__version__ = "{version}"']
