@@ -1,0 +1,17 @@
+datason/__init__.py,sha256=8tCS-yC2JJK2VXpaXgNj2N5IE-iNHgdk0LZdHjb-Dac,11003
+datason/config.py,sha256=N6igP54EhlrAsP-xGm-gZvkIfjp6Qgu40ig38hbqdxI,12966
+datason/converters.py,sha256=uROOu0tPbUkSpVEvD7Snxz5PrtDjEFvvpm35EgvBbpk,2539
+datason/core.py,sha256=yQS2NQ_ZpUr2T0WJTU_jzKncFx0YTH32SR9NqneOnBM,96862
+datason/data_utils.py,sha256=Ket3Cl3Tzc46wErq_MvnLVj4dkgetVkwJF75sTAwLGQ,2405
+datason/datetime_utils.py,sha256=IJ9ZkUmAhvvDMlrygzlotLghITahVpzxYcA-YW6X0UU,6792
+datason/deserializers.py,sha256=FKy_7J5X8jzqZ1DBQ-QQICoAqHRbdff_81XZFE5AYaU,69964
+datason/ml_serializers.py,sha256=WX36hdu50m-tGJ6n9qozJl0Yv4Jf0wyNcrZJZfRl3Qo,16096
+datason/pickle_bridge.py,sha256=r1ZYxa7eh-j--dEM1ya_yFDvdS0g_n5UVUzpGEDOmsI,14085
+datason/redaction.py,sha256=qg1UmyKK6cO66pUHbX1TzXEeQBjYec8WqlkNJUbWKrI,15797
+datason/serializers.py,sha256=I699DoXj_-Nh1fFL94NVaSw7XYM_k2WLg5N0NaltvN8,2652
+datason/type_handlers.py,sha256=qd6vYsTG4Km5UkOpMUyiyvx87OLknSMHEiCk935HhX8,13431
+datason/utils.py,sha256=49mbydGikc2PUM9KVja0Uyj3ej9ABOtclqQgJokz_Ag,39574
+datason-0.7.0.dist-info/METADATA,sha256=z8J-1G1HXeY59SfyQxWDrnvuIwc14AX-SgqZMU2uZK8,8965
+datason-0.7.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+datason-0.7.0.dist-info/licenses/LICENSE,sha256=PKLDqHsveKtzW5zlee4DhcqiATdo-iaFmw7xqNHAnS0,1077
+datason-0.7.0.dist-info/RECORD,,
