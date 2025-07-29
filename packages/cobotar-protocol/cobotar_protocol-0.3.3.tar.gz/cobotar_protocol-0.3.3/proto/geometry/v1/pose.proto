@@ -1,0 +1,12 @@
+syntax = "proto3";
+package geometry.v1;
+
+import "geometry/v1/point.proto";
+import "geometry/v1/quad.proto";
+
+option go_package = "github.com/cobotar/protocol/messages/geometry";
+
+message Pose {
+  Point position = 1;
+  Quad orientation = 2;
+}
