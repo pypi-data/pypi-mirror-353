@@ -1,0 +1,14 @@
+tkcolorpicker/__init__.py,sha256=EEdEwtkFrPUd1ikl5qq5mgHf9zpm2izLRX-iCdMtBtg,965
+tkcolorpicker/__main__.py,sha256=DuEBX2OsqxAS6PKxbhINvlMYH541QjcLkVfsdIkYPws,1363
+tkcolorpicker/alphabar.py,sha256=u6qsY9l-b6ePCfp2y5XATgVe1FECmGwLb8lckunk21c,4824
+tkcolorpicker/colorpicker.py,sha256=YLfm0yumijFLWeuY7pZGRkdPNlG4-N8p9mvjMgSkdec,23159
+tkcolorpicker/colorsquare.py,sha256=aNKg3_Su8gpf0TyIaFA6Y8DBlquVkInQ7teTVL5cOxo,5807
+tkcolorpicker/functions.py,sha256=UfRD8vwBHvLMqNyYySntLD1Q5nb2eVt2Hz8iAfxFFJU,4018
+tkcolorpicker/gradientbar.py,sha256=ZtUSlxDJBvUrpCMqxe4tpZ9oxiWUhe_cSY2W3Q5xJqU,4120
+tkcolorpicker/limitvar.py,sha256=icNCquXCbHd1cO6pGgGnvpjm9nGrHOUY_sxL5ZYOIV4,1950
+tkcolorpicker/spinbox.py,sha256=Vc1tzzgyb89n4yzwZFg7p_e8BfgyAmeHRDzg-HYYHoM,5097
+tkColorPicker2-1.0.dist-info/LICENSE.txt,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+tkColorPicker2-1.0.dist-info/METADATA,sha256=wg7dd-fE6NluiUNCwYuYBgbXYP4aESkL930_Oip_Eig,2768
+tkColorPicker2-1.0.dist-info/WHEEL,sha256=P9jw-gEje8ByB7_hXoICnHtVCrEwMQh-630tKvQWehc,91
+tkColorPicker2-1.0.dist-info/top_level.txt,sha256=7OO6TIZCcsMVc88tvGcZK3UzGb5uSj5NCpttAJVjPCU,14
+tkColorPicker2-1.0.dist-info/RECORD,,
