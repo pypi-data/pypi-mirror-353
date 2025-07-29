@@ -1,0 +1,3 @@
+[console_scripts]
+sayless = sayless.core:app
+sl = sayless.core:app
