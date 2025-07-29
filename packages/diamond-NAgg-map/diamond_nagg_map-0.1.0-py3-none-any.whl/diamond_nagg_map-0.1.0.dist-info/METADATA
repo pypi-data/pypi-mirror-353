@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: diamond-nagg-map
+Version: 0.1.0
+Summary: Add your description here
+Author-email: WHTowbin <24940778+whtowbin@users.noreply.github.com>
+Requires-Python: >=3.13
+Requires-Dist: ftir-omnic-map-reader>=1.0.0
+Requires-Dist: imageio>=2.37.0
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: pybaselines>=1.2.0
+Requires-Dist: scipy>=1.15.3
+Requires-Dist: seaborn>=0.13.2
+Requires-Dist: xarray>=2025.4.0
+Provides-Extra: dev
+Requires-Dist: ipykernel>=6.29.5; extra == 'dev'
