@@ -1,0 +1,48 @@
+[project]
+name = "pytest-xtime"
+description = "pytest plugin for recording execution time"
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["version"]
+dependencies = ["pytest"]
+license = "MIT"
+authors = [{ name = "Andrew Weng", email = "andrew.weng@ariacoustics.com" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Pytest",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+
+[project.entry-points.pytest11]
+xtime = "pytest_xtime"
+
+[dependency-groups]
+dev = [
+    "pytest-xdist>=3.0.0",
+    "ruff>=0.11.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pytest_xtime.py"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/pytest_xtime.py",
+    "/LICENSE",
+    "/README.md",
+]
+
+[tool.hatch.version]
+source = "vcs"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
