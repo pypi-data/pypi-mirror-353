@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: skyto
+Version: 0.1
+Summary: Skyto, un langage en lingala pour apprendre la programmation et faire de l’IA
+Author: Tshinkola
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
