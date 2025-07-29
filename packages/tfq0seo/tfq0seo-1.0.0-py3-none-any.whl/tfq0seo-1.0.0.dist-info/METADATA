@@ -1,0 +1,233 @@
+Metadata-Version: 2.4
+Name: tfq0seo
+Version: 1.0.0
+Summary: Modern SEO analysis and optimization toolkit
+Home-page: https://github.com/tfq0/tfq0seo
+Author: tfq0
+Project-URL: Bug Tracker, https://github.com/tfq0/tfq0seo/issues
+Project-URL: Documentation, https://github.com/tfq0/tfq0seo/wiki
+Project-URL: Source Code, https://github.com/tfq0/tfq0seo
+Keywords: seo,analysis,optimization,web,content,meta tags,technical seo
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.31.0
+Requires-Dist: beautifulsoup4>=4.12.2
+Requires-Dist: nltk>=3.8.1
+Requires-Dist: readability>=0.3.1
+Requires-Dist: certifi>=2024.2.2
+Requires-Dist: textblob>=0.17.1
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: aiohttp>=3.9.1
+Requires-Dist: validators>=0.22.0
+Requires-Dist: html5lib>=1.1
+Requires-Dist: lxml>=4.9.3
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# SEO Analyzer Tool
+
+A comprehensive SEO analysis tool that helps you analyze websites and content while learning SEO best practices. This tool provides detailed insights into various SEO aspects and teaches you the principles behind each recommendation.
+
+## Features
+
+### URL Analysis
+- Meta tags evaluation
+  - Title and description optimization
+  - Open Graph and Twitter Cards
+  - Schema.org markup validation
+- HTML structure analysis
+  - Heading hierarchy
+  - Content structure
+  - Internal linking
+- Mobile-friendliness checks
+  - Viewport configuration
+  - Touch element spacing
+  - Font size validation
+- Performance analysis
+  - Resource optimization
+  - Load time metrics
+  - Compression checks
+- Security assessment
+  - HTTPS implementation
+  - Security headers
+  - Mixed content detection
+
+### Content Analysis
+- Keyword optimization
+  - Density and distribution
+  - Natural language processing
+  - Semantic analysis
+- Readability assessment
+  - Multiple readability scores
+  - Sentence structure analysis
+  - Content complexity metrics
+- Content quality checks
+  - Duplicate content detection
+  - Grammar and style analysis
+  - Transition word usage
+- Structure evaluation
+  - Paragraph length
+  - Content sectioning
+  - Formatting consistency
+
+### Educational Components
+- Detailed explanations for each recommendation
+- Current SEO best practices
+- Implementation guides
+- Topic-specific resources
+- Interactive learning elements
+
+## Installation
+
+### Using pip
+```bash
+pip install seo-analyzer
+```
+
+### From source
+1. Clone this repository
+```bash
+git clone https://github.com/yourusername/seo-analyzer.git
+cd seo-analyzer
+```
+
+2. Install dependencies
+```bash
+pip install -e .
+```
+
+## Usage
+
+### Command Line Interface
+
+1. Analyze a URL:
+```bash
+seo-analyzer analyze-url https://example.com --keyword "target keyword" --format markdown
+```
+
+2. Analyze text content:
+```bash
+seo-analyzer analyze-content --file content.txt --keyword "target keyword"
+# or
+seo-analyzer analyze-content --text "Your content here" --keyword "target keyword"
+```
+
+3. Get educational resources:
+```bash
+seo-analyzer education --topic meta_tags
+```
+
+### Python API
+
+```python
+from seo_analyzer import SEOAnalyzerApp
+
+# Initialize the analyzer
+analyzer = SEOAnalyzerApp()
+
+# Analyze a URL
+analysis = analyzer.analyze_url('https://example.com', target_keyword='keyword')
+
+# Analyze content
+content_analysis = analyzer.analyze_content('Your content here', target_keyword='keyword')
+
+# Get educational resources
+resources = analyzer.get_educational_resources(topic='meta_tags')
+
+# Export report
+report = analyzer.export_report(analysis, format='markdown')
+```
+
+## Configuration
+
+The tool can be configured using a YAML file. Default configuration is in `config/seo_config.yaml`:
+
+```yaml
+seo_thresholds:
+  title_length:
+    min: 30
+    max: 60
+  meta_description_length:
+    min: 120
+    max: 160
+  content_length:
+    min: 300
+  sentence_length:
+    max: 20
+  keyword_density:
+    max: 3.0
+
+# ... more configuration options
+```
+
+## Analysis Report Sections
+
+The tool provides a comprehensive report with these main sections:
+
+1. **Strengths** ✅
+   - What's working well
+   - SEO best practices in place
+   - Positive metrics
+
+2. **Weaknesses** ⚠️
+   - Areas needing improvement
+   - Missing SEO elements
+   - Performance issues
+
+3. **Recommendations** 📝
+   - Actionable improvement steps
+   - Prioritized suggestions
+   - Implementation guidance
+
+4. **SEO Education** 📚
+   - Explanations of SEO principles
+   - Best practices
+   - Learning resources
+
+## Development
+
+### Running Tests
+```bash
+pytest tests/
+```
+
+### Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
+
+## Requirements
+
+- Python 3.7+
+- Internet connection (for URL analysis)
+- Required Python packages (see requirements.txt)
+
+## License
+
+MIT License - see LICENSE file for details 
