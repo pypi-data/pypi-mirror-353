@@ -1,0 +1,12 @@
+airctest/__init__.py,sha256=fHbCu6SZ-ntr6r1cBFxJYfBAaCTgdzlYWYOz3FS9SJM,953
+airctest/main.py,sha256=GKenY3ejzC5SiUJpMTw70VemWrEz0xqB6g3WI58sffs,9062
+airctest/cli/__init__.py,sha256=BwCpbznEBZ0SEw03aM1nbIZsFKk1q-CrQGtHz1PNG7g,45
+airctest/cli/main.py,sha256=YZqU8RlL4kuT0LBH2MIGEz4_d7u0AzqBWELldjnlvP8,2156
+airctest-1.0.0.dist-info/licenses/LICENSE,sha256=Btzdu2kIoMbdSp6OyCLupB1aRgpTCJ_szMimgEnpkkE,1056
+configs/datasets.yaml,sha256=NosXS3RpHluTjPQLTdYJRFLGcR345nzs9J-L-L8vLqc,29667
+utils/util.py,sha256=N2Cn9H7Y1_IfmeUBadtLAiDOLD4dFge23HgWUjay43A,2132
+airctest-1.0.0.dist-info/METADATA,sha256=vEv2q6Gy1UoEa-aiywzRSzavL2wtFN7YvnbRA9QEcxA,4961
+airctest-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+airctest-1.0.0.dist-info/entry_points.txt,sha256=2QNWB_rccljSGZ1pH8YzMXLa2LFaeqf5nvBSY_0pjlQ,51
+airctest-1.0.0.dist-info/top_level.txt,sha256=s86HFeiX11kSn6m8GwixnvcXT0b3VR5ASjsx5y0MbVU,23
+airctest-1.0.0.dist-info/RECORD,,
