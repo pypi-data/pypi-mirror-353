@@ -1,0 +1,9 @@
+[jupyter_ai.chat_handlers]
+ask = jupyter_ai.chat_handlers.ask:AskChatHandler
+default = jupyter_ai.chat_handlers.default:DefaultChatHandler
+generate = jupyter_ai.chat_handlers.generate:GenerateChatHandler
+help = jupyter_ai.chat_handlers.help:HelpChatHandler
+learn = jupyter_ai.chat_handlers.learn:LearnChatHandler
+
+[jupyter_ai.personas]
+jupyternaut = jupyter_ai.personas.jupyternaut:JupyternautPersona
