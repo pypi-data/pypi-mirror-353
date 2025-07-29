@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: alumathpeergroup17
+Version: 0.1.0
+Summary: A simple matrix math library by Peer Group 17
+Author: WilsonsNavid
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
