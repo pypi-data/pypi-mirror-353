@@ -1,0 +1,14 @@
+prettytable
+humanize
+confuse
+pyyaml
+urllib3
+shtab
+click
+
+# proxmoxer depends on
+proxmoxer>=2.0.1
+requests
+requests_toolbelt
+openssh_wrapper
+paramiko
