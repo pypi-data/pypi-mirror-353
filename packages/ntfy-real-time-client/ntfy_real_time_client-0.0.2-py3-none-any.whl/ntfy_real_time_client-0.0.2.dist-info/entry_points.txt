@@ -1,0 +1,2 @@
+[console_scripts]
+ntfy-real-time-client = ntfy_real_time_client.__main__:cli
