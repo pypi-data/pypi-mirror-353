@@ -1,0 +1,227 @@
+{
+  "_comment": "AGNT5 Model Registry Configuration",
+  "_description": "This configuration file provides model definitions and capabilities without hardcoding model names in source code. Models are organized by provider with capability-based aliases for intelligent selection.",
+  "_version": "1.0",
+  "_last_updated": "2024-12-06",
+  
+  "anthropic": {
+    "claude-3-5-sonnet-20241022": {
+      "tier": "flagship",
+      "capabilities": ["text_generation", "tool_calling", "vision", "reasoning", "analysis", "code_generation", "creative_writing"],
+      "aliases": ["claude-latest", "claude-best", "best-reasoning", "best-analysis"],
+      "context_length": 200000,
+      "max_output_tokens": 8192,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "release_date": "2024-10-22",
+        "description": "Latest Claude 3.5 Sonnet with enhanced reasoning"
+      }
+    },
+    "claude-3-5-haiku-20241022": {
+      "tier": "efficient",
+      "capabilities": ["text_generation", "tool_calling", "fast_inference", "cost_efficient"],
+      "aliases": ["claude-fast", "claude-cheap", "fastest", "most-affordable"],
+      "context_length": 200000,
+      "max_output_tokens": 8192,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "metadata": {
+        "release_date": "2024-10-22",
+        "description": "Fast and efficient Claude 3.5 Haiku"
+      }
+    }
+  },
+  
+  "openai": {
+    "gpt-4o": {
+      "tier": "flagship",
+      "capabilities": ["text_generation", "tool_calling", "vision", "reasoning", "analysis", "code_generation"],
+      "aliases": ["gpt-latest", "gpt-best", "best-multimodal", "best-vision"],
+      "context_length": 128000,
+      "max_output_tokens": 16384,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "description": "GPT-4 Omni with multimodal capabilities"
+      }
+    },
+    "gpt-4o-mini": {
+      "tier": "efficient",
+      "capabilities": ["text_generation", "tool_calling", "fast_inference", "cost_efficient"],
+      "aliases": ["gpt-fast", "gpt-cheap", "gpt-mini"],
+      "context_length": 128000,
+      "max_output_tokens": 16384,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "description": "Efficient GPT-4 Omni mini version"
+      }
+    },
+    "gpt-4-turbo": {
+      "tier": "performance",
+      "capabilities": ["text_generation", "tool_calling", "vision", "reasoning", "analysis"],
+      "aliases": ["gpt-turbo"],
+      "context_length": 128000,
+      "max_output_tokens": 4096,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true
+    }
+  },
+  
+  "google": {
+    "gemini-1.5-pro": {
+      "tier": "flagship",
+      "capabilities": ["text_generation", "tool_calling", "vision", "long_context", "reasoning", "analysis"],
+      "aliases": ["gemini-latest", "gemini-pro", "best-context"],
+      "context_length": 2000000,
+      "max_output_tokens": 8192,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "description": "Gemini 1.5 Pro with 2M context window"
+      }
+    },
+    "gemini-1.5-flash": {
+      "tier": "efficient",
+      "capabilities": ["text_generation", "tool_calling", "fast_inference", "long_context"],
+      "aliases": ["gemini-fast", "gemini-flash"],
+      "context_length": 1000000,
+      "max_output_tokens": 8192,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "description": "Fast Gemini 1.5 Flash with 1M context"
+      }
+    }
+  },
+  
+  "mistral": {
+    "mistral-large-latest": {
+      "tier": "flagship",
+      "capabilities": ["text_generation", "tool_calling", "reasoning", "multilingual", "analysis"],
+      "aliases": ["mistral-latest", "mistral-large", "mistral-best"],
+      "context_length": 128000,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Latest Mistral Large model"
+      }
+    },
+    "mistral-small-latest": {
+      "tier": "efficient",
+      "capabilities": ["text_generation", "fast_inference", "cost_efficient", "multilingual"],
+      "aliases": ["mistral-fast", "mistral-small", "mistral-cheap"],
+      "context_length": 128000,
+      "supports_streaming": true,
+      "supports_tools": false,
+      "metadata": {
+        "description": "Efficient Mistral Small model"
+      }
+    },
+    "codestral-latest": {
+      "tier": "performance", 
+      "capabilities": ["text_generation", "code_generation", "tool_calling"],
+      "aliases": ["codestral", "best-coding", "mistral-code"],
+      "context_length": 32000,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Specialized coding model"
+      }
+    }
+  },
+  
+  "together": {
+    "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": {
+      "tier": "performance",
+      "capabilities": ["text_generation", "tool_calling", "reasoning", "analysis"],
+      "aliases": ["llama-latest", "llama-70b", "llama-large"],
+      "context_length": 131072,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Meta's Llama 3.1 70B parameter model",
+        "open_source": true
+      }
+    },
+    "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": {
+      "tier": "efficient",
+      "capabilities": ["text_generation", "tool_calling", "fast_inference"],
+      "aliases": ["llama-fast", "llama-8b", "llama-small"],
+      "context_length": 131072,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Meta's Llama 3.1 8B parameter model",
+        "open_source": true
+      }
+    },
+    "meta-llama/Llama-3.2-11B-Vision-Instruct-Turbo": {
+      "tier": "performance",
+      "capabilities": ["text_generation", "tool_calling", "vision", "multimodal"],
+      "aliases": ["llama-vision", "llama-multimodal"],
+      "context_length": 131072,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "metadata": {
+        "description": "Meta's Llama 3.2 with vision capabilities",
+        "open_source": true
+      }
+    },
+    "mistralai/Mixtral-8x7B-Instruct-v0.1": {
+      "tier": "balanced",
+      "capabilities": ["text_generation", "tool_calling", "multilingual", "reasoning"],
+      "aliases": ["mixtral-latest", "mixtral", "mixtral-8x7b"],
+      "context_length": 32768,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Mistral's Mixtral 8x7B mixture of experts",
+        "open_source": true
+      }
+    },
+    "Qwen/Qwen2.5-72B-Instruct-Turbo": {
+      "tier": "performance",
+      "capabilities": ["text_generation", "tool_calling", "multilingual", "reasoning", "code_generation"],
+      "aliases": ["qwen-latest", "qwen-72b", "qwen"],
+      "context_length": 131072,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "metadata": {
+        "description": "Alibaba's Qwen 2.5 72B parameter model",
+        "open_source": true
+      }
+    }
+  },
+
+  "_capability_descriptions": {
+    "text_generation": "Basic text generation capabilities",
+    "tool_calling": "Ability to call external tools/functions",
+    "vision": "Can process and understand images",
+    "reasoning": "Strong logical reasoning and problem-solving",
+    "analysis": "Data analysis and interpretation",
+    "code_generation": "Programming and code generation",
+    "creative_writing": "Creative content generation",
+    "long_context": "Extended context window support",
+    "multilingual": "Support for multiple languages",
+    "fast_inference": "Optimized for speed",
+    "cost_efficient": "Optimized for cost"
+  },
+
+  "_tier_descriptions": {
+    "flagship": "Highest performance, latest features, premium cost",
+    "performance": "High performance, good feature set, moderate cost", 
+    "balanced": "Good balance of performance and cost",
+    "efficient": "Optimized for speed and cost efficiency",
+    "experimental": "Beta or preview models"
+  }
+}
