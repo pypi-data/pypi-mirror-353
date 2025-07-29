@@ -1,0 +1,6 @@
+setup.py
+QuakeMAE.egg-info/PKG-INFO
+QuakeMAE.egg-info/SOURCES.txt
+QuakeMAE.egg-info/dependency_links.txt
+QuakeMAE.egg-info/requires.txt
+QuakeMAE.egg-info/top_level.txt
