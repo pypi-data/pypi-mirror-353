@@ -1,0 +1,125 @@
+Metadata-Version: 2.4
+Name: sampah
+Version: 0.1.2
+Summary: Short description of your package
+Home-page: https://github.com/aiamirul/SAMPAH
+Author: Amirul Sadikin
+Author-email: ai.amirul.sadikin@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🧭 S.A.M.P.A.H.
+
+**Spatial Annotation Mapping Platform for Alignment & Heading**  
+*A general-purpose image annotation tool with support for directional labeling.*
+
+---
+
+## 📝 Overview
+
+**S.A.M.P.A.H.** is a lightweight image labeling application built for annotating not just the presence of objects — but their **orientation**. It enables annotators to label an object's **heading direction** using an **8D compass-style system**, in addition to bounding boxes or segmentation.
+
+Whether you're labeling vehicles, humans, animals, or other directional objects, **S.A.M.P.A.H.** provides an intuitive interface to mark both **position** and **direction** with precision.
+
+---
+
+## 🧭 8D Compass Annotation
+
+S.A.M.P.A.H. introduces a novel directional labeling system based on **8 compass directions**:
+
+```
+          N
+       NW   NE
+     W    ●    E
+       SW   SE
+          S
+```
+
+Each object annotation can be tagged with one of the following directions:
+
+- **N** (North) back B
+- **NE** (Northeast) Back-Right BR
+- **E** (East) right R
+- **SE** (Southeast) front-right FR
+- **S** (South) front F
+- **SW** (Southwest) front-left FL
+- **W** (West) left L
+- **NW** (Northwest) back-left BL
+
+This is ideal for tasks involving:
+- **Object orientation** (e.g., which way a person or vehicle is facing)
+- **Motion prediction**
+- **Pose estimation (simplified)**
+
+---
+
+## 🚀 Features
+
+- 📦 Label images with bounding boxes or masks
+- 🧭 Add an 8-direction compass heading to each object
+- 🧠 Supports class-based object labeling
+- 💾 Saves annotations in **Pascal VOC** format (XML), with added direction tag
+- 🌐 Simple Flask + HTML interface — run locally with no installation overhead
+
+---
+
+## 📂 Annotation Format
+
+S.A.M.P.A.H. saves annotations in a modified **Pascal VOC XML** format, with an extra `<direction>` tag inside each object block:
+```xml
+<object>
+    <name>front</name>
+    <bndbox>
+        <xmin>123</xmin>
+        <ymin>85</ymin>
+        <xmax>200</xmax>
+        <ymax>160</ymax>
+    </bndbox>
+</object>
+```
+---
+
+## 🛠️ Getting Started git
+
+```bash
+git clone https://github.com/yourname/sampah
+cd sampah
+pip install -r requirements.txt
+python app.py
+```
+
+Then, open your browser to `http://127.0.0.1:5000`.
+
+
+## 🛠️ Getting Started via PIP
+pip install sampah
+sampah
+
+Then, open your browser to `http://127.0.0.1:5000`.
+
+---
+
+## 🔮 Coming Soon
+
+- Multi-object tracking
+- Custom compass (16D ~ Deg)
+- Export to COCO format with direction support
+- Integrated model-assisted annotation (YOLO/ViT)
+
+---
+## 🧑‍💻 Author
+
+Built by [Your Name]  
+For questions, email [you@example.com]
