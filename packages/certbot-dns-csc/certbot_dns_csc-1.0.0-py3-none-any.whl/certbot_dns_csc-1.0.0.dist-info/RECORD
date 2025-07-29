@@ -1,0 +1,11 @@
+certbot_dns_csc/__init__.py,sha256=9JRzeLVx-Yea7Kjy-ZIdpeeLD5lGZtmuQmwugiPGLso,3163
+certbot_dns_csc/csc_client.py,sha256=qvyTatCqZPk-eIZ4eWeQ9g-wuxhOn37UeA-O3DdxHyE,6033
+certbot_dns_csc/dns_csc.py,sha256=nkmpFNPZv4obULwjlytHAA5P_H_R58st4zfjaiw4vzk,3301
+certbot_dns_csc-1.0.0.dist-info/licenses/LICENSE,sha256=n5vth92Cr1QZ8T251L3DW_h5QAIoZQxKIHWAJO7Fepk,11173
+tests/__init__.py,sha256=OMzlm3UnilgTFc2BJ2ADD68LjY5eCVsgi55jRdMhtvo,39
+tests/test_dns_csc.py,sha256=Sytdynp72QNxUl5_zO1RbWQ0MPpBRGHlowpp9zrfCeo,11010
+certbot_dns_csc-1.0.0.dist-info/METADATA,sha256=4eJV79aJz3Aen4q4QATjzczgR74xMNzd6BkZZ8gQPkE,11587
+certbot_dns_csc-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+certbot_dns_csc-1.0.0.dist-info/entry_points.txt,sha256=f05zRWWapQbUeRPGJHxcB9KxDec5wB22dgZNFS4yrCA,66
+certbot_dns_csc-1.0.0.dist-info/top_level.txt,sha256=peWNJ6BBIMM-7dPPyWtH5HSMBnbJTqUtpp20XMJwhL4,22
+certbot_dns_csc-1.0.0.dist-info/RECORD,,
