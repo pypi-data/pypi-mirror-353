@@ -1,0 +1,11 @@
+gregex/__init__.py,sha256=8zLGg-DfQhnDl2Ky0n-zXpN-8e-g7iR0AcaI4l4Vvpk,32
+gregex/char.py,sha256=KbEVG3C_PMZ58XNiXM4xRpmMqpxqC_1HrQL4QIEkhgg,283
+gregex/group.py,sha256=5z7KS2puxQNo8xk9EGe3IrMSfYtdbga-jxL9cNENLEQ,254
+gregex/repeat.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gregex/set.py,sha256=XfqWFgYfPhPKL2XrXfx8McCK_sTfFdMlpcV0p0W6EBw,303
+gregex/version.py,sha256=1oXPW-RecbjUleSeCXzmU_fwmwK-llROGCu-pk1eJbw,27
+gregex-0.0.0a0.dist-info/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+gregex-0.0.0a0.dist-info/METADATA,sha256=Ojmor_GGKhYTRAMk70SRnoliw29RGtFe2lJQKAIbwxA,21972
+gregex-0.0.0a0.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+gregex-0.0.0a0.dist-info/top_level.txt,sha256=HxCPSnREIhpBvvWQp_z6jtP0KcujT3-xUojfmRvV1-g,7
+gregex-0.0.0a0.dist-info/RECORD,,
