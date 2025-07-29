@@ -1,0 +1,6 @@
+[console_scripts]
+blackd = monochromatic:patched_main [d]
+monochromatic = monochromatic:patched_main
+
+[validate_pyproject.tool_schema]
+monochromatic = monochromatic.schema:get_schema
