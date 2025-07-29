@@ -1,0 +1,2 @@
+[console_scripts]
+abe-deep-research = abe_deep_research:main
