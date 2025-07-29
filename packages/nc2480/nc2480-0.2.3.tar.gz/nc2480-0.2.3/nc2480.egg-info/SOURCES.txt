@@ -1,0 +1,11 @@
+LICENSE
+README.md
+example2480.py
+nc2480.png
+setup.py
+nc2480/__init__.py
+nc2480/vu.py
+nc2480.egg-info/PKG-INFO
+nc2480.egg-info/SOURCES.txt
+nc2480.egg-info/dependency_links.txt
+nc2480.egg-info/top_level.txt
