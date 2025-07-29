@@ -1,0 +1,15 @@
+pobd/__init__.py,sha256=e0xoh_-DkU9aWpYsMHbBXp0SVx589kuEC-JJnmXqStw,154
+pobd/api/__init__.py,sha256=W5DKpXSOmEDaX1ur3EwH90ni0c9SSWxYOFKB6D3qX18,69
+pobd/api/ocr.py,sha256=ocMk5_lJMfxhMvdhcZZx7JvT5xLTIGMELwoY8zf24fs,4596
+pobd/api/ocr2excel.py,sha256=-f7Ck3u76iB5QFJAiib-bbdhPSmpufoQy15SIFTfvRA,17699
+pobd/core/Baidu.py,sha256=BKOGBB7JEDlKe8cvcYtWsc3DFKcNEH1GZatq4uGy0Og,5741
+pobd/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pobd-0.0.3.dist-info/licenses/LICENSE,sha256=GQ6XaGbsxl2OlUBlk1jLBtkHC8U1p6Bw9E1P1XqYAlU,1093
+tests/__init__.py,sha256=-sDr1WLWXNIEjCtHd9d7-5GNTrbml2IO4yIPhgKpNrI,25
+tests/test_codes/__init__.py,sha256=-sDr1WLWXNIEjCtHd9d7-5GNTrbml2IO4yIPhgKpNrI,25
+tests/test_codes/test_ocr.py,sha256=asgFjP5Sez5XiDnr2rtuDrcpwn1IAoSXb8kFKUYuOvs,4687
+tests/test_codes/test_ocr2excel.py,sha256=NPyRykviQ7FA9X-p2IuJDf2lsYMDbZ83mgBv9d6iKUA,6521
+pobd-0.0.3.dist-info/METADATA,sha256=FDhGg9u5RBztsFT-iX08ZMGd9uK9BPJKbrMzOGcOCkQ,4738
+pobd-0.0.3.dist-info/WHEEL,sha256=pxyMxgL8-pra_rKaQ4drOZAegBVuX-G_4nRHjjgWbmo,91
+pobd-0.0.3.dist-info/top_level.txt,sha256=2aCIPORSkiXy2UeSV5a8tIDNmSARxGXzfwW-mGfCBo0,11
+pobd-0.0.3.dist-info/RECORD,,
