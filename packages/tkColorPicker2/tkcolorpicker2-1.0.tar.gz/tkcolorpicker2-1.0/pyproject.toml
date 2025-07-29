@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tkColorPicker2"
+version = "1.0"
+dependencies =["Pillow"]
+
+authors = [
+    {name = "Juliette Monsel", email = "j_4321@protonmail.com"},
+    {name = "Grigory Sharov", email = "sharov.grigory@gmail.com"},
+    {name = "Pablo Conesa", email = "pconesa@cnb.csic.es"}
+]
+description = """Color picker dialog for Tkinter forked from original
+                https://github.com/j4321/tkColorPicker. This one just has a fix
+                for this https://github.com/j4321/tkColorPicker/issues/6"""
+
+readme = "README.rst"
+requires-python = ">=2.7"
+keywords = ['tkinter', 'color', 'colorchooser']
+license = {text = "GNU General Public License v3 (GPLv3)"}
+
+[project.urls]
+Homepage = "https://github.com/scipion-em/tkColorPicker"
+Repository = "https://github.com/scipion-em/tkColorPicker"
+Issues = "https://github.com/scipion-em/tkColorPicker/issues"
+
+[tool.setuptools]
+packages = ["tkcolorpicker"]
