@@ -1,0 +1,14 @@
+onnxruntime_genai/LICENSE,sha256=mQaUD2Gx8LUz-n2ZuvVReLKAj74RPqUd-_rYVyzNXys,1162
+onnxruntime_genai/ThirdPartyNotices.txt,sha256=w62wlRpZZKpgkriPqgfv2wA3B0uwCS6S0fx6zjHpxUI,346208
+onnxruntime_genai/__init__.py,sha256=ygD8P2TMzkUxyxaPIrRVJJ4TLUEqKhjPs9RTv5MsYs8,787
+onnxruntime_genai/_dll_directory.py,sha256=JN1NLR98FL0BH0-T63OhZ9q09rOCbfQJ1J2AW-1rzGo,3176
+onnxruntime_genai/onnxruntime-genai-cuda.dll,sha256=FlsmF_VKA9Q649X0h6oV-oRDsxU84aByh-OYw7yYQIU,48252928
+onnxruntime_genai/onnxruntime-genai.dll,sha256=zFibOSCgF7vDeUHXrC1YD2AF2uG-3sGr33E72rGCS-U,5318656
+onnxruntime_genai/onnxruntime_genai.cp310-win_amd64.pyd,sha256=xkvJYGjZ5PQC6qUDYRGBhfK8wInc32AXZgjvK6ahfsg,366080
+onnxruntime_genai/models/builder.py,sha256=RsaoWtecJCayBKr8I3AMD7onjafOqlY3iT8A7ExuuX8,234868
+onnxruntime_genai/models/gguf_model.py,sha256=ztQxdqmSD3fXE9mKX1rs9Zc35kusGUSOS-beNwF-WoM,18111
+onnxruntime_genai/models/quantized_model.py,sha256=4whObSDZQuL9M-B5wLdtGTOroxUplgDoUlrCzXgW100,56218
+onnxruntime_genai_cuda-0.8.2.dist-info/METADATA,sha256=AMh4k6uggP3UVmc1fOgeUAnTxWZhBtyfnusIdQRO46c,541
+onnxruntime_genai_cuda-0.8.2.dist-info/WHEEL,sha256=NVXpD7b4Gxps0cd2ds5rr5TG8W4ApEwx_i5J99qMZ5E,102
+onnxruntime_genai_cuda-0.8.2.dist-info/top_level.txt,sha256=U92ZdtZYnKUmz1D94v3YxXHvRyNbrxkZ1gDYUzEJ_bc,18
+onnxruntime_genai_cuda-0.8.2.dist-info/RECORD,,
