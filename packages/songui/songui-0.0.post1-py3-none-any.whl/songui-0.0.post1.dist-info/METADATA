@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: songui
+Version: 0.0.post1
+Summary: SongUI: A TUI media controller
+Author-email: usr_40476 <usr_40476@icloud.com>
+Maintainer-email: usr_40476 <usr_40476@icloud.com>
+Project-URL: Homepage, https://github.com/40476/songUI
+Project-URL: Documentation, https://github.com/40476/songUI/blob/main/readme.md
+Project-URL: Repository, https://github.com/40476/songUI.git
+Project-URL: Issues, https://github.com/40476/songUI/issues
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: curses
+Requires-Dist: windows-curses; platform_system == "Windows" and extra == "curses"
