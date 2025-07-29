@@ -1,0 +1,2 @@
+[console_scripts]
+sls-data-analysis = sls_data_analysis.__main__:main
