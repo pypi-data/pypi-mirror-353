@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "testinpack"
+version = "3.0.0"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "Apache License Version 2.0" }
+authors = [
+  { name = "भाग्य ज्योति (Bhagya Jyoti)" }
+]
+keywords = ["testinpack"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable"
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}

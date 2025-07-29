@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/testinpack/__init__.py
+src/testinpack.egg-info/PKG-INFO
+src/testinpack.egg-info/SOURCES.txt
+src/testinpack.egg-info/dependency_links.txt
+src/testinpack.egg-info/top_level.txt
