@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: fastairport
+Version: 0.2.0
+Summary: The fast, Pythonic way to build Arrow Flight servers with Polars and Pydantic.
+Author-email: Carl Kugblenu <ckugblenu@gmail.com>
+License: MIT
+License-File: LICENSE
+Keywords: airport,analytics,arrow,data,duckdb,flight,typer
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: pyarrow>=14.0.0
+Requires-Dist: typer>=0.9.0
+Provides-Extra: dev
+Requires-Dist: mypy>=1.5.0; extra == 'dev'
+Requires-Dist: pre-commit>=3.0.0; extra == 'dev'
+Requires-Dist: pytest-cov>=4.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: ruff>=0.1.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# FastAirport
+
+A tiny wrapper around Apache Arrow Flight for building analytical services.
+
+```python
+from fastairport import FastAirport, Context
+import pyarrow as pa
+
+airport = FastAirport("Demo")
+
+@airport.endpoint("echo")
+def echo(data: pa.Table, ctx: Context) -> pa.Table:
+    ctx.info(f"rows: {data.num_rows}")
+    return data
+
+airport.start()
+```
+
+Clients send and receive Arrow tables:
+
+```python
+from fastairport import Client
+
+client = Client("localhost:8815")
+result = client.call("echo", pa.table({"a": [1, 2]}))
+client.close()
+```
