@@ -1,0 +1,9 @@
+django2_postgres/__init__.py,sha256=yyLtGsBhynC-sSHdax-rRGvHNjH-gdWxIY68WnPVfDw,22
+django2_postgres/geos_patch.py,sha256=sbW0p4repHQBHAuPAjzn5IOhWt9nPVOqkYij3sfGoJI,697
+django2_postgres/operations.py,sha256=BO5A_C3j6w9RdBf0NhzlAUCxcoagFvy6xaRLrd0j_E4,3746
+django2_postgres/psycopg_patch.py,sha256=nHQgvjSIRQFkJVAmFEYeyT1tx518JjqF_TRxAJMVenY,514
+django2_postgres_backport-0.0.3.dist-info/licenses/LICENSE,sha256=2n6rt7r999OuXp8iOqW9we7ORaxWncIbOwN1ILRGR2g,7651
+django2_postgres_backport-0.0.3.dist-info/METADATA,sha256=rQXQN90HIXldZD7Hkucv6tmBUqQZ8vc-MLpBOwRR86U,1570
+django2_postgres_backport-0.0.3.dist-info/WHEEL,sha256=oSJJyWjO7Z2XSScFQUpXG1HL-N0sFMqqeKVVbZTPkWc,109
+django2_postgres_backport-0.0.3.dist-info/top_level.txt,sha256=ss7X1B7JadbYzUBpuTMWVUSIFogBV0Bez4WJsZHjh3E,17
+django2_postgres_backport-0.0.3.dist-info/RECORD,,
