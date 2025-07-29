@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: pypekit
+Version: 0.1.4
+Summary: Lightweight Python package for data pipelines
+Project-URL: Homepage, https://github.com/pypekit/pypekit
+Project-URL: Documentation, https://pypekit.readthedocs.io
+Project-URL: Issues, https://github.com/pypekit/pypekit/issues
+Author-email: Tim Berti <tim.fabian.berti@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: automation,automl,data-pipelines,data-science,etl,machine-learning,pipeline-framework,pipelines,python,synthesis,workflow
+Classifier: Programming Language :: Python
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: black>=24.3; extra == 'dev'
+Requires-Dist: hatch>=1.10; extra == 'dev'
+Requires-Dist: isort>=5.0; extra == 'dev'
+Requires-Dist: mypy>=1.10; extra == 'dev'
+Requires-Dist: pytest-cov>=4.1; extra == 'dev'
+Requires-Dist: pytest>=8.2; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: mkdocs-autorefs>=1.0; extra == 'docs'
+Requires-Dist: mkdocs-jupyter>=0.24; extra == 'docs'
+Requires-Dist: mkdocs-material>=9.5; extra == 'docs'
+Requires-Dist: mkdocs-meta-descriptions-plugin>=4.0; extra == 'docs'
+Requires-Dist: mkdocs>=1.6; extra == 'docs'
+Requires-Dist: mkdocstrings[python]>=0.24; extra == 'docs'
+Description-Content-Type: text/markdown
+
+<div align="center" style="margin-bottom: 0;">
+<img src="https://github.com/pypekit/pypekit/blob/main/docs/assets/logo.png" width="150">
+</div>
+
+# pypekit
+
+A lightweight Python framework for the automatic synthesis and cached execution of pipelines. The Documentation can be found [`here`](https://pypekit.readthedocs.io/).
+
+## Installation
+
+```bash
+pip install pypekit
+```
+
+## Acknowledgements
+
+Pypekit is being developed at the [Institute for Information Management in Engineering](https://www.imi.kit.edu/english/index.php) at the [Karlsruhe Institute of Technology](https://www.kit.edu/english/index.php). 
