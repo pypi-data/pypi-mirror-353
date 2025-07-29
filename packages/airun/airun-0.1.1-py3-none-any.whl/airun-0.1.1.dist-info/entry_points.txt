@@ -1,0 +1,5 @@
+[console_scripts]
+airun=airun.cli:main
+airun-config=airun.cli:config_wizard
+airun-doctor=airun.cli:doctor
+
