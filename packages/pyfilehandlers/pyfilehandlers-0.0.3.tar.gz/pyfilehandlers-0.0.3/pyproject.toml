@@ -1,0 +1,30 @@
+[project]
+name = "pyfilehandlers"
+version = "0.0.3"
+authors = [
+  { name="Danilo Montes", email="danilo.montes101@gmail.com" },
+]
+description = "A package of file handlers for use in Python"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "ruamel.yaml",
+  "amulet-nbt",
+  "lunapyutils"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/danilo-montes-code/py-file-handlers"
+Issues = "https://github.com/danilo-montes-code/py-file-handlers/issues"
+
+
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
