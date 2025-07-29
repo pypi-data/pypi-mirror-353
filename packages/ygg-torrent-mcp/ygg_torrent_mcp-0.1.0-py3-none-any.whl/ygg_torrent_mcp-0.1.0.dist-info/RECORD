@@ -1,0 +1,13 @@
+src/__init__.py,sha256=HJCs1YZP4fDFnojxersFoP7ecsf__El5Ogy3G-Gj_MI,105
+src/mcp_server.py,sha256=1a6t6BjOUBx8izBF1mtDUnga3FDfZ3XEK0zbbXV2V1Q,1291
+src/tests.py,sha256=v1AxRzfoBMq7ums3CRyGyQUv_D1TsJGsU821XqdJCO8,765
+src/wrapper/__init__.py,sha256=2gpWopKzh6Jex7IkjSNI9M5tr_ZHCFq385i7xENMQW4,70
+src/wrapper/categories.py,sha256=esmvekOxmyeEZBRZLxkn7QkxD8ZqBxVZtTMPyB9_M7M,1676
+src/wrapper/models.py,sha256=czBCrT7pxbp6KT9mUIoEKCXDYl9Yk04Fb3RJdmH9FJM,227
+src/wrapper/torrent_editor.py,sha256=EXAej3jqscnAxqCLBLonHTHkOe_ZsCGA_ya_SFSxB90,1243
+src/wrapper/utils.py,sha256=dmzYxPp--rN3hYjWA5GBmTPbvwpAW8aA7s9mqIVXx-Q,2584
+src/wrapper/ygg_api_client.py,sha256=MrH08Bf6bB9Hbc3mrUhCVaNOnExUBQEvccdF7Hm8BEI,7028
+ygg_torrent_mcp-0.1.0.dist-info/LICENCE,sha256=9_to-hqyBxHW1Ad4DZuoQoqTJWWh6O5zmqXTf-bdzcE,1066
+ygg_torrent_mcp-0.1.0.dist-info/METADATA,sha256=hp0fKhEpEzEPL3RlaXsVB6g6CqT-Vbys9lrvQWANDSQ,4055
+ygg_torrent_mcp-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+ygg_torrent_mcp-0.1.0.dist-info/RECORD,,
