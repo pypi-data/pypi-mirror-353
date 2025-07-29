@@ -1,0 +1,2 @@
+[hello]
+iizysl_version = iizysl.__init__:version
