@@ -1,0 +1,14 @@
+MontagePy/FreeSans.ttf,sha256=pTN-8fWg3-Tcj6a08--EelNiSAC1kooO7vW4iM7sqrw,264072
+MontagePy/__init__.py,sha256=RkMTFtiahKkP2bvVw-bNk6E4w6aYIDd62YALsnUD6ng,1141
+MontagePy/_wrappers.c,sha256=E245x-5gr6I4dOAXDx2WoqI1NWdbVAzErMe6g9vQ8To,1677131
+MontagePy/_wrappers.pypy37-pp73-x86_64-linux-gnu.so,sha256=g1wtxRn9XD10BCk9l8E50B-OcocLmIpFApdjaJrsJq4,16363080
+MontagePy/main.c,sha256=dviufl-AJBxG90fKGVt1dry_JXgXtbVkwHKBq92Vhk8,1051767
+MontagePy/main.pypy37-pp73-x86_64-linux-gnu.so,sha256=g5FpizUzv5jv9Bgna6QSB-EASK2QZlMHiYP53Vaz82g,282568
+MontagePy/archive/__init__.py,sha256=BRbyBIeNdQU4iTWh31HvWFrU1Y_4XkPf9PeRhLrusyw,124
+MontagePy/archive/mArchiveDownload.py,sha256=1ExoPlzlOa2oVRoQmhdyicE4u9rTf3sns6f90pjWo4k,3446
+MontagePy/archive/mArchiveList.py,sha256=3Y5_rjDsERDl0KVp0qQYLk1U3Ogi4UlI2J2Qh9vXchM,1787
+MontagePy-2.3.0.dist-info/LICENSE,sha256=4LYfgkU1sMjjH7mTloS7GOFylMMYynCkC244ToyN2uU,1682
+MontagePy-2.3.0.dist-info/METADATA,sha256=boo6L563n9XIn6EGtSs7gmc4MRVLl8zDoXE99Q6RqAM,6940
+MontagePy-2.3.0.dist-info/WHEEL,sha256=q9dACjjc9G4BWGDyt1YJXSsK2l1cs4Mf5BbjFTFXjus,162
+MontagePy-2.3.0.dist-info/top_level.txt,sha256=X64LF-f3F3BNnXurETV4hgxD_2td1QgfPlsOs9eAo8U,10
+MontagePy-2.3.0.dist-info/RECORD,,
