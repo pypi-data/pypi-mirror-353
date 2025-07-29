@@ -1,0 +1,4 @@
+average_calculator.egg-info/PKG-INFO
+average_calculator.egg-info/SOURCES.txt
+average_calculator.egg-info/dependency_links.txt
+average_calculator.egg-info/top_level.txt
