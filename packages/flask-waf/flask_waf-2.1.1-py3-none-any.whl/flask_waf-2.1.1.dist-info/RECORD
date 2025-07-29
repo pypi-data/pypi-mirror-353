@@ -1,0 +1,16 @@
+flask_waf/__init__.py,sha256=Ib4RZIJnnxj51SW5bSQ2z6HQJvyPSjS2ZUlh_zetStc,364
+flask_waf/anomaly_detection.py,sha256=aD18rMwMPm4O8u_WC5dsXcDx91MaaHWU2Xr7dk9ukqs,1197
+flask_waf/config.py,sha256=-0SDbZyuCzu6GcAmXhLGSHXUZ-rWEuVcFwmOyLmwH40,1132
+flask_waf/content_security.py,sha256=hzpQp5kumAF1XMGX89vFuBls6uB0HUIAH9BAFZ5olrw,925
+flask_waf/geo_ip.py,sha256=hh95Vqo2EQsMkCkwACy2f3qj1_weJ33DQliET7cjlRs,423
+flask_waf/logging.py,sha256=zfXKvRlHEuXdNP-UC8VLwnbfWb0m2y3lsJzlyfChVkc,1592
+flask_waf/rate_limiter.py,sha256=U5p2aIXHJgbu_x_HPNYlXToikTgFaK9DQjfOehZpGRk,619
+flask_waf/rules.py,sha256=wlKGu0osRxARrGRr0t2qvBjgoyBDcHZE02ue6tK0c_c,1813
+flask_waf/session_protection.py,sha256=2yTX-mF_sc8_R8Q5PBcPZ-2cJooUWJ4_Q-J7dRV9p5o,852
+flask_waf/threat_intelligence.py,sha256=IDlB4lxj7DCZLfHEM3pc4UCfPIqJ7sn_p6EGOSv0ubA,1134
+flask_waf/waf.py,sha256=m2F4fe_gnD5FPEVGFdpq2MP7hi44rEOKlN1kSsqwh3s,4271
+flask_waf-2.1.1.dist-info/licenses/LICENCE,sha256=njDqcnA-qVVDMzcvGXLTHi7atAFt_0uciWJ8FFVSXtc,1072
+flask_waf-2.1.1.dist-info/METADATA,sha256=KI7j2WHv2i8PJb3ylmnTs7LWlIFXE5XiTetSDSbw4XI,5322
+flask_waf-2.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flask_waf-2.1.1.dist-info/top_level.txt,sha256=ZmkTreVjfJTnmpS4qviG7F7HiDcHX2aOw9gI4C6LMAQ,10
+flask_waf-2.1.1.dist-info/RECORD,,
