@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+scapy_red.egg-info/PKG-INFO
+scapy_red.egg-info/SOURCES.txt
+scapy_red.egg-info/dependency_links.txt
+scapy_red.egg-info/top_level.txt
