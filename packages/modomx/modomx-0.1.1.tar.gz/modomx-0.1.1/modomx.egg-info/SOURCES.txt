@@ -1,0 +1,8 @@
+README.md
+setup.py
+modomx/__init__.py
+modomx/omx.py
+modomx.egg-info/PKG-INFO
+modomx.egg-info/SOURCES.txt
+modomx.egg-info/dependency_links.txt
+modomx.egg-info/top_level.txt
