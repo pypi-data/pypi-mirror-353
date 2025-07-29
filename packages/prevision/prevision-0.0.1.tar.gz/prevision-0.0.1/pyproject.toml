@@ -1,0 +1,27 @@
+[project]
+name = "prevision"
+version = "0.0.1"
+authors = [
+  { name="David Weber", email="david.pascal.weber@example.com" },
+]
+description = "A Visualization Tool for Computations of Probabilistic Term Rewriting"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydot==3.0.4",
+    "graphviz==0.20.3"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
+]
+
+license = { file = "LICENSE" }
+
+[project.scripts]
+prevision = "prevision.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

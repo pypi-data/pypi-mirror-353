@@ -1,0 +1,5 @@
+; @author Unknown
+(format PTRS)
+(fun S 1)
+(fun 0 0)
+(prule (S x) ((x :prob 1) ((S (S x)) :prob 1)))

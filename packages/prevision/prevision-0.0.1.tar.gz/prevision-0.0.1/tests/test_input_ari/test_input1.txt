@@ -1,0 +1,11 @@
+; @author David Weber
+; example taken from TeReSe p. 38
+(format TRS)
+(fun M 2)
+(fun A 2)
+(fun S 1)
+(fun 0 0)
+(rule (A x 0) x)
+(rule (A x (S y)) (S (A x y)))
+(rule (M x 0) 0)
+(rule (M x (S y)) (A (M x y) x))
