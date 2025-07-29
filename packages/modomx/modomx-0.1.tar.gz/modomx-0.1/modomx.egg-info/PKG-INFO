@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: modomx
+Version: 0.1
+Summary: Omxplayer wrapper compatible with Python 2.x
+Home-page: UNKNOWN
+Author: Marcelo Prestes
+Author-email: marcelo.prestes@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Requires-Python: >=2.7, <3
