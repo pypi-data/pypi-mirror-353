@@ -1,0 +1,30 @@
+[build-system]
+requires = [ "setuptools>=42", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiovcenter"
+version = "0.1.0.post3"
+description = "Python asyncio package for VMware vCenter"
+authors = [{ name = "Antoine Richado", email = "fordian68@gmail.com" }]
+readme = { file = "README.md", content-type = "text/markdown" }
+
+classifiers = [
+    "Programming Language :: Python :: 3", 
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "asyncio==3.4.3",
+    "colorama==0.4.6",
+    "pyvmomi==8.0.3.0.1",
+    "types-colorama==0.4.15.20240311",
+    "types-requests==2.32.0.20241016",
+    "typing==3.7.4.3",
+    "typing_extensions==4.12.2",
+    "urllib3==2.2.3",
+]
+
+[tool.setuptools]
+include-package-data = true
+packages = ["aiovcenter"]
