@@ -1,0 +1,17 @@
+appletalk/Finder.py,sha256=heXQESkdow6wqroeVPIeDltpk61BUwIXnrhhuyxG6ek,1904
+appletalk/SystemEvents.py,sha256=rnKJxGF2uHItRChCalyZo8J9fL75GwonpGr1LMlzlGc,5651
+appletalk/__init__.py,sha256=yf6U_6Uzl3IaZToS-N5AcbIN6oYAZQnJ2altBqKNX6M,699
+appletalk/apps.py,sha256=2B3-tav_6WZa6DuRmFBwmcI-hdwq1JdsBkOz86uL4W8,768
+appletalk/chrome.py,sha256=UcTC9jqmSdo-2NCPjiDM2cFwiRpSj7qTOqrmTE5hnOc,1071
+appletalk/contacts.py,sha256=f_VoM_Q4b_fYbuKuzhNEGOoHCXl7rqvrnVLIlUXb00Y,1242
+appletalk/display.py,sha256=cFk30x6RYee2vaeaR6ST9U473f5uQE0QgMgLfVviUA0,1885
+appletalk/mail.py,sha256=0cQ1PkYgriMzHz6rqHGHgL279Rt-Lj76aNY0GsWEh7o,4766
+appletalk/quicktime.py,sha256=0D5c-v8LLTlnn8o3q2tW0RxMsRqLt27mWUpcFUbY0zM,1526
+appletalk/syssettings.py,sha256=Du5fqrV2238YNZFEld6Y3SZ9Lupy_dFVjg104Xjl29E,1078
+appletalk/terminal.py,sha256=SYEU0GDtouZlyPYbsXYcnOUeyldfnG3kQOnqK7tn7jw,907
+appletalk/textedit.py,sha256=fJ04fxGdvyv0cE3jlStpedxaDtU0iCNF4kyQXBEr3Tg,725
+appletalk-0.0.1.dist-info/licenses/LICENSE,sha256=yb_3VziSIZPmf6cm-iJVNYcNKqEFn5FFLEEXNihK1WY,1338
+appletalk-0.0.1.dist-info/METADATA,sha256=eFXnEzWPr3MOY8y8XDscLOFLJ-LPrrJgbadBbLI0YmQ,1391
+appletalk-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+appletalk-0.0.1.dist-info/top_level.txt,sha256=VpW0Q6Deq8qWeuq3yFxeV5fTRSvC0AZso3GwNBa2jyE,10
+appletalk-0.0.1.dist-info/RECORD,,
