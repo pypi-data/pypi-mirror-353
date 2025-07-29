@@ -1,0 +1,29 @@
+=======
+CHANGES
+=======
+
+1.0.0 (2025-06-04)
+------------------
+
+- switch from z3c.jsonrpc to p01.jsonrpc
+
+- improved re-search if user removes search input text. Start search with
+  empty text if search input get removed at all.
+
+- cleanup: removed images, css styles and configure.zcml directive. This was
+  a leftover from the initial commit copied from another package. The
+  livesearch package doesn't define how the result get rendered. It's up to the
+  developer how to render the returned content.
+
+
+0.5.1 (2013-06-28)
+------------------
+
+- bugfix: check basestring not str for javascript value setup and convert
+  given value to string
+
+
+0.5.0 (2012-11-17)
+------------------
+
+- initial release

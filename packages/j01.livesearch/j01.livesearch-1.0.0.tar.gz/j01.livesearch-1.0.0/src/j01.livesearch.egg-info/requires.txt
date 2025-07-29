@@ -1,0 +1,10 @@
+setuptools
+z3c.template
+p01.jsonrpc
+zope.interface
+zope.security
+zope.site
+zope.traversing
+
+[test]
+zope.testing

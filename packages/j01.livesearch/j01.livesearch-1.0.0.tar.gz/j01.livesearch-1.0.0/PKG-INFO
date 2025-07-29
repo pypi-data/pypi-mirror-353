@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: j01.livesearch
+Version: 1.0.0
+Summary: Livesearch built with JQuery for Zope 3
+Home-page: http://pypi.python.org/pypi/j01.livesearch
+Author: Roger Ineichen, Projekt01 GmbH
+Author-email: dev@projekt01.ch
+License: ZPL 2.1
+Description: This package provides an Zope3 javascript live search built with the JQuery 
+        javascript library.
+        
+        
+        =======
+        CHANGES
+        =======
+        
+        1.0.0 (2025-06-04)
+        ------------------
+        
+        - switch from z3c.jsonrpc to p01.jsonrpc
+        
+        - improved re-search if user removes search input text. Start search with
+          empty text if search input get removed at all.
+        
+        - cleanup: removed images, css styles and configure.zcml directive. This was
+          a leftover from the initial commit copied from another package. The
+          livesearch package doesn't define how the result get rendered. It's up to the
+          developer how to render the returned content.
+        
+        
+        0.5.1 (2013-06-28)
+        ------------------
+        
+        - bugfix: check basestring not str for javascript value setup and convert
+          given value to string
+        
+        
+        0.5.0 (2012-11-17)
+        ------------------
+        
+        - initial release
+        
+Keywords: J01 livesearch JQuery Zope3
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Zope Public License
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Framework :: Zope3
+Provides-Extra: test
