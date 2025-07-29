@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+yandex_ris/__init__.py
+yandex_ris/cli.py
+yandex_ris/crawler.py
+yandex_ris/version.py
+yandex_ris.egg-info/PKG-INFO
+yandex_ris.egg-info/SOURCES.txt
+yandex_ris.egg-info/dependency_links.txt
+yandex_ris.egg-info/entry_points.txt
+yandex_ris.egg-info/requires.txt
+yandex_ris.egg-info/top_level.txt
