@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: Contact_info_package
+Version: 2.0.1
+Summary: A package for managing contact information
+Author: Vijay Choudhary
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
