@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: cacimbao
+Version: 0.1.0
+Summary: Brazilian datasets for educational purposes
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: frictionless>=5.0.0
+Requires-Dist: narwhals>=0.7.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: polars>=0.20.0
+Requires-Dist: requests>=2.31.0
+Description-Content-Type: text/markdown
+
+# cacimbao
+
+Bases de dados brasileiras para fins educacionais
+
+## Uso
+
+Primeiro, instale o pacote com o PyPi:
+
+```bash
+pip install cacimbao
+```
+
+Depois, você pode usar o pacote para ver as bases disponíveis:
+
+```python
+import cacimbao
+
+cacimbao.list_datasets()  # name, size, description, local or not
+```
+
+Carregue um dataset local:
+
+```python
+df = cacimbao.download_dataset("filmografia_brasileira")
+```
+
+Ou escolha um dataset para download:
+
+```python
+df = cacimbao.download_dataset("filmografia_brasileira")
+```
+
+Você pode também escolher qual o formato do dataframe na sua biblioteca preferida.
+A biblioteca padrão é o Polars mas você pode trabalhar com Pandas também.
+
+```python
+df = cacimbao.download_dataset("filmografia_brasileira", df_format="pandas")
+```
