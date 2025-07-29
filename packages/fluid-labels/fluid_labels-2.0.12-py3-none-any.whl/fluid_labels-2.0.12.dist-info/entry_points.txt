@@ -1,0 +1,4 @@
+[console_scripts]
+fluid-labels=labels.core.cli:cli
+labels-test=labels.testing.cli:main
+
