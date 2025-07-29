@@ -1,0 +1,55 @@
+[project]
+name = "interactive-feedback"
+version = "1.0.0"
+description = "MCP server for interactive user feedback and command execution in AI-assisted development, by Fábio Ferreira and Pau Oliva."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    {name = "pawa", email = "pawazwz@gmail.com"},
+    {name = "Fábio Ferreira"},
+]
+# 更新许可证定义以符合最新标准
+license = "MIT" # 使用 SPDX 许可证标识符
+license-files = ["LICENSE"] # 指向包含完整许可证文本的文件
+dependencies = [
+    "fastmcp>=2.0.0",
+    "psutil>=7.0.0",
+    "pyside6>=6.8.2.1",
+    "pyperclip",
+    "Pillow",
+    "pyautogui",
+    "pywin32; sys_platform == 'win32'"
+]
+# PyPI 分类器
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    # "License :: OSI Approved :: MIT License", # 已移除，由顶层 license 字段处理
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    # "Framework :: PySide" # Removed invalid classifier
+]
+
+# 定义构建系统
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# 定义命令行脚本入口
+[project.scripts]
+mcp-feedback = "interactive_feedback.cli:main"
+
+# 更新项目链接
+[project.urls]
+Homepage = "https://github.com/pawaovo/interactive-feedback-mcp"
+Repository = "https://github.com/pawaovo/interactive-feedback-mcp"
+
+# 配置 Setuptools 如何发现您的包
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["interactive_feedback*"]
