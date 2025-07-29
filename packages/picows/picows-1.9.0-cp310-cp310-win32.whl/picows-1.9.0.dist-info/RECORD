@@ -1,0 +1,13 @@
+picows/__init__.py,sha256=PBBKVhdf8G_pSNZwGYERPGZOdXNJW-zv1DkMYWjCk1A,658
+picows/picows.c,sha256=74JprM6UsiGK2zDkT1I3YYbOfeQPnIPadSOPSxDVWuw,2774870
+picows/picows.cp310-win32.pyd,sha256=nzVoWFIuBgUOTIm_y9wjdGT3YYEt4BFhTuK3KmLWFiE,332800
+picows/picows.pxd,sha256=oik3I_oDskPI8ma1GCl3PNmS2yrRQ-cVMi2gCrb1GGw,4418
+picows/picows.pyi,sha256=SphMMrdtgoA7cgMS8Xww7vbsSqlZsB73BRQo1_-TNrk,6042
+picows/picows.pyx,sha256=Mutn6cPFqf6Oeyz9AgjqRtdOfnd1xnCZ1XknAZBT2nA,80010
+picows/picows_compat.h,sha256=ikHAKliZDhBS7Z7xvi3IjDYsCbiNbNxPB7VmSQ0ItQo,3711
+picows/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+picows-1.9.0.dist-info/licenses/LICENSE,sha256=WXov4Mk5Fg00Fko0ZBHaMDwvVa3etfS6zish_LE49hM,1126
+picows-1.9.0.dist-info/METADATA,sha256=9NT1M7DlkYaF4huSEkWTSTQiCV9j0__z9j4vKI_0jSA,8508
+picows-1.9.0.dist-info/WHEEL,sha256=GWZF0cboiU4MhsG0baPl8rrtCaXFSLW25384gp3vddM,97
+picows-1.9.0.dist-info/top_level.txt,sha256=hUbNrhLiUJGRlf0OcYhDotazR5iQ87-5WHc8Qasz0pQ,7
+picows-1.9.0.dist-info/RECORD,,
