@@ -1,0 +1,11 @@
+zenodo_deposit/__init__.py,sha256=4ApS_0HSTQQvN8sL5PhuxrXSe3g0WICFBP0_EXbD3Lk,59
+zenodo_deposit/api.py,sha256=XzJ2SpoDPjB1auNGmhVth3zaLzmeBZGtXPwrC0VuOyk,14006
+zenodo_deposit/cli.py,sha256=g32brejs750L438xJ7O5EkUraQ2b7E3kRqr3kUvkykM,10322
+zenodo_deposit/config.py,sha256=rMYeTjvUcdEEMjaNY26oCEV3wHWRXsk6CVwZ0FYM9lA,2980
+zenodo_deposit/metadata.py,sha256=mOdR7__TksvTHogTBN-Yqrt9T2MqLvz45wA12LM0YaU,5273
+zenodo_deposit/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zenodo_deposit-0.1.5.dist-info/METADATA,sha256=FbxW5WXz0YffSRWnHIN3SydyALkVzFP72phvdGJoTJI,2862
+zenodo_deposit-0.1.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+zenodo_deposit-0.1.5.dist-info/entry_points.txt,sha256=B8lGGYAUqf3c2pVL-gmCvPD0WYoSeZl0T8yRZLxcF9M,46
+zenodo_deposit-0.1.5.dist-info/licenses/LICENSE,sha256=AecrKb6VjoKNo1MZ4uvj7kLOpMKOK7hvQisjRUrRQYw,1072
+zenodo_deposit-0.1.5.dist-info/RECORD,,
