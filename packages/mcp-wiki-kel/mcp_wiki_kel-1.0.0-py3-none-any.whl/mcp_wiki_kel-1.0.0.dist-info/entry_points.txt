@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-wiki-kel = mcp_wiki_kel:main
