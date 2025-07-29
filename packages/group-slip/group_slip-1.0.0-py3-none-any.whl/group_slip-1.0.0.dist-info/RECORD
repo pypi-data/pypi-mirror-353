@@ -1,0 +1,9 @@
+group_slip/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+group_slip/cfuns/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+group_slip/cfuns/image_scanner.py,sha256=5tevpLQ1koBjlbminehrX6XbMVdWGyq9hkjFjWiaqm4,711
+group_slip/cfuns/ocr_and_group.py,sha256=hu7CRIUHJb8p3tLW4ethE6OicchI_u9IXBTA1xzy0V4,3815
+group_slip/main.py,sha256=LER-D_yaZKHtA0Q_XKONmrJFfqN-k7FKCwGudtFF2fU,1502
+group_slip-1.0.0.dist-info/entry_points.txt,sha256=QZemjWb7pgsTXsbib5eH93YJGg8yS5VQo3REQSylhaE,51
+group_slip-1.0.0.dist-info/METADATA,sha256=MH2l_ksq7lZiYy7g3mRxfSFhhEE_pqL_cSa_SBJnUMI,653
+group_slip-1.0.0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+group_slip-1.0.0.dist-info/RECORD,,
