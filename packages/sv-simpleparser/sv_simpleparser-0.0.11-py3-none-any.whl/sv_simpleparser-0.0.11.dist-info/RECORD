@@ -1,0 +1,17 @@
+sv_simpleparser-0.0.11.dist-info/METADATA,sha256=Fj0O-jWVVi_DdkP4Qy2_o5gCI7NGWPpHdPtzXwugJRU,1611
+sv_simpleparser-0.0.11.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+sv_simpleparser-0.0.11.dist-info/entry_points.txt,sha256=sesbpA6LxczM9ncDUnWwxTwXsKkBhdBBL5trJ9Ri3TI,69
+sv_simpleparser-0.0.11.dist-info/licenses/LICENSE,sha256=t9yhSoUnNO3MIE-sW7Jhi4NlgeMNrLebgCabHAE5YAY,1068
+sv_simpleparser/Templates/__init__.py,sha256=ceC4BKqWuBhCUJwLU1uBz3lYJvGLmYeR4NZBbDcc8KE,1106
+sv_simpleparser/Templates/confluence_wiki_table_template,sha256=WPHhDdgStq7Lw1ZmKLQFXNnANc7eSe01Kjz_0r8lvV4,351
+sv_simpleparser/Templates/instance_template,sha256=VtZ9pD4SJZ-NbLlDb4rJGbO9iR2F_NzVEGfp6-2MXRk,277
+sv_simpleparser/Templates/instance_with_param_template,sha256=SYaRWmPVv3pZXY8i35r38xqM0fPI1dc5jg--5T_NsDo,523
+sv_simpleparser/Templates/markdown_table_template,sha256=KRqQUyAo-q58Fx7iJke_N9R8TdBg5E6J7GNS8ni2SJo,424
+sv_simpleparser/Templates/wrapper.temp.sv,sha256=haJ3qbp9lB6J9N46EcFkFGR6AdZk6DB5Jc-3oZQXZSM,372
+sv_simpleparser/__init__.py,sha256=O7_gyRGXIssZcbcRjWX98_jVgKai9LyHI4YJPmPtRoU,1133
+sv_simpleparser/_gen_templates.py,sha256=SiSC0urIHOPfIXu7ju5FDoHv9KmGAFLiLer2oM9KPQ4,2933
+sv_simpleparser/_hdl.py,sha256=b2dT5U7ZbJ8B8qxK3zvwac3lpnVZfT9sCoZDJyXxgbs,25767
+sv_simpleparser/_sv_parser.py,sha256=OCFaJh4zbTb-V2T_2qipRlA1hqTxMniHShH_KWkhF3k,12587
+sv_simpleparser/_token.py,sha256=jTpeosJePRGwUjfG1FCRCChK9Lhu1Ws4F5RAu6RfTvo,1493
+sv_simpleparser/cli.py,sha256=kAyN5D_mJhJGkvTnyF4XDCj_uXMbSqLZ4U6x3OadzrE,2169
+sv_simpleparser-0.0.11.dist-info/RECORD,,
