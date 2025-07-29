@@ -1,0 +1,11 @@
+bincraft2json.cpython-312-x86_64-linux-gnu.so,sha256=PjEuxVEl2pAZz1z3FO3ojT_2BOtCxaXY3DFNjysxCj4,4342664
+bincraft2json/bincraft2json.cpp,sha256=pKHJaRW2sMZ93D5TRNQ_rfpce8_4KutJq0dcLznqVrw,5073
+bincraft2json/bincraft2json.hpp,sha256=zgSfN1cim6PV0ZFrIKdKn76wFEmaIB0iyDhJtPi3dUg,14103
+bincraft2json/bincraft2json.py,sha256=EmGv1-UV_DxGeHOoNFWmQyiS5kdjVnG46dgPL25p3As,1000
+bincraft2json/bincraft2json_impl.hpp,sha256=T0DAAdjJDmgBrZt5Bk-_TCeECpvP-XofuMFE16cP0dY,5348
+bincraft2json/json.hpp,sha256=qvEnwEyzHEBuWwSmPxrok2n8zebY-nzdoe1PMt_F3mM,953436
+bincraft2json/setup.py,sha256=4-LduqijZXlC7h2xg9FTmxBKDDwqCT8EX4x212K0pxc,3094
+bincraft2json-0.1.3.dist-info/METADATA,sha256=8D8r6ylWg96qOKV_UdVdeRowcHEnOeTEFEF1IQzTMD8,2213
+bincraft2json-0.1.3.dist-info/WHEEL,sha256=iz2FxGAMhu-B_N345rh883pSfZMChLra6qpU_xfLSVU,113
+bincraft2json-0.1.3.dist-info/top_level.txt,sha256=FXhi9HoWLgJ3miXPy3yW1MNVTsnmUNkgmXM0WiZzLdY,14
+bincraft2json-0.1.3.dist-info/RECORD,,
