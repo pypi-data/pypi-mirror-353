@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: streambp
+Version: 1.0
+Summary: Package which implements the algorithm proposed by "StreamBP: Memory-Efficient Exact Backpropagation for Long Sequence Training of LLMs".
+Home-page: https://github.com/Ledzy/StreamBP
+Author: Qijun Luo
+Author-email: qijunluo@link.cuhk.edu.cn
+Project-URL: Bug Tracker, https://github.com/Ledzy/StreamBP/issues
+Project-URL: Source Code, https://github.com/Ledzy/StreamBP
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: zero3
+Requires-Dist: deepspeed>=0.10.0; extra == "zero3"

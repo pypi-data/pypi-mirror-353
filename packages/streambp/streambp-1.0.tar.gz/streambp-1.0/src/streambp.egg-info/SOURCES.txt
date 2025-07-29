@@ -1,0 +1,15 @@
+pyproject.toml
+setup.cfg
+src/streambp/__init__.py
+src/streambp/stream_model.py
+src/streambp/stream_model_gemma.py
+src/streambp.egg-info/PKG-INFO
+src/streambp.egg-info/SOURCES.txt
+src/streambp.egg-info/dependency_links.txt
+src/streambp.egg-info/requires.txt
+src/streambp.egg-info/top_level.txt
+src/streambp/trainers/__init__.py
+src/streambp/trainers/stream_dpo_trainer.py
+src/streambp/trainers/stream_grpo_trainer.py
+src/streambp/trainers/stream_sft_trainer.py
+tests/test_grad_correctness.py
