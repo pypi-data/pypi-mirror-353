@@ -1,0 +1,10 @@
+yandex_ris/__init__.py,sha256=FVuZ5hO14bYuOXYHSeHCmIdkdejeEvG0hPJ8VwSZLJ0,218
+yandex_ris/cli.py,sha256=pBJ8G36CFvOMmtt5nxnOO3RPAUkdkyB3WeJB4i-Hw94,4105
+yandex_ris/crawler.py,sha256=eYh9tU4yCoML3cdyHuBXTACHFgG_NMKwptpQQy2q6oA,18828
+yandex_ris/version.py,sha256=vOoPjcgr36cy-Tq8cdCDDL4C35KfmhWH-rCcy-CN8b0,50
+yandex_ris-0.1.1.dist-info/licenses/LICENSE,sha256=JF-0CRFveByjbmTGUga9Xws8oLWSm6q9iXVC2P0JnTc,1066
+yandex_ris-0.1.1.dist-info/METADATA,sha256=gQlHQauyAK1ZUSneMkGuC6M2jOgWVhK4adUjJlsL4Ks,6143
+yandex_ris-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+yandex_ris-0.1.1.dist-info/entry_points.txt,sha256=07XTWu1rWeWzsZb6WiyYZTYih_bf6etSvld1bumlV28,51
+yandex_ris-0.1.1.dist-info/top_level.txt,sha256=YUrc3MJ-K5bnC97bVwFTpaGfuGEGPr4TieIiuvcObR4,11
+yandex_ris-0.1.1.dist-info/RECORD,,
