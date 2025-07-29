@@ -1,0 +1,51 @@
+[project]
+name = "parsescore-client"
+version = "0.19"  # TODO: Change version!
+description = "ParseScore - A client for collecting character data and adding it to the WoW addon"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "rich",
+    "loguru",
+    "python-dotenv",
+    "SLPP",
+    "thefuzz>=0.22.1",
+    "httpx",
+    "flet[all]>=0.28.3",
+]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "ty"
+]
+
+[project.scripts]
+parsescore = "parsescore_client.app:launch"
+
+[tool.ruff]
+extend = "~/AppData/Roaming/ruff/ruff.toml"
+line-length = 120
+target-version = "py313"
+unsafe-fixes = true
+
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
+exclude = ["docs", "addon", "wcl.py", "lua_converter.py", "app.py"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+docstring-code-line-length = 80
+
+[tool.ty]
+environment = { python-version = "3.13" }
