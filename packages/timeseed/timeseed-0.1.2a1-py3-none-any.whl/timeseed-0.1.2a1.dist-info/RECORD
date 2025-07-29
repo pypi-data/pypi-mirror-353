@@ -1,0 +1,13 @@
+timeseed/__init__.py,sha256=no7frbdZCvXw0be3PpJNtfEElvVxuEe15_zMms1SJQk,12622
+timeseed/cli.py,sha256=gfd9yTQHNSHERTaFOnQFti3aIw1P3en1R3S6HoAJmqY,22758
+timeseed/config.py,sha256=QHw9OI0CEuwEhVhuJzUiDSL4Q6sm_d_tfEs12A-eJUI,12102
+timeseed/exceptions.py,sha256=_nYu6Sd_8fZ3xuNYoRL84KFPLSKR0Rf7dXrQfn3JBMQ,4905
+timeseed/generator.py,sha256=lUN7BAl23PMD_-qrszyMgEm5or6eX9MZfFj13U-VQkM,19325
+timeseed/simple_ids.py,sha256=6Q0pUTEP3I5hRDswBF7eV9pKGTGjobIj7VclxsueBaA,8435
+timeseed/utils.py,sha256=kxlfbgEYqMAeMrWfbFijdi2pRKX5BCvtu_ueKKCzl3I,7831
+timeseed-0.1.2a1.dist-info/licenses/LICENSE,sha256=uvJ-sNWCIJswKtE-faCvjlWjsMg7wDR3PBKIH0POlD4,1072
+timeseed-0.1.2a1.dist-info/METADATA,sha256=-O16__imA_a4Qkx-tSPYDe3EreX65WNnAodqZuTgDc8,10112
+timeseed-0.1.2a1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+timeseed-0.1.2a1.dist-info/entry_points.txt,sha256=6No0ZCDmuld8dWVsahUlfrAFZXlIZn8BKc1fHi0Zh-A,47
+timeseed-0.1.2a1.dist-info/top_level.txt,sha256=KlIT-IEQd1gt7YaQTnFz_9lHEz3um1wEuZOegW1yO80,9
+timeseed-0.1.2a1.dist-info/RECORD,,
