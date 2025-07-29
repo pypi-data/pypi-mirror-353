@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Supported Boards" href="boards.html" />
+    <link rel="prev" title="Welcome to EKF System Management Library documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-ekfsm">What is ekfsm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-concepts">Core Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#passive">Passive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-configuration">System Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relation-between-objects">Relation between objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-device-functions">Accessing Device functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#querying-slots">Querying slots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-preparation">System Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root-privileges">Root Privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-from-multiple-processes">Usage from multiple processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-from-within-a-container">Usage from within a container</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<section id="what-is-ekfsm">
+<h2>What is ekfsm?<a class="headerlink" href="#what-is-ekfsm" title="Link to this heading"></a></h2>
+<p>The ekfsm python package provides access to system management functions on Linux based modular hardware systems,
+such as CompactPCI-Serial systems.</p>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>System configuration definition via YAML configuration file</p></li>
+<li><p>Obtain inventory information of the system and its components</p></li>
+<li><p>Obtain sensor information, such as temperature, humidity, voltage, current, accelerometer, gyroscope, etc.</p></li>
+<li><p>Access to system level functions, such as system LEDs, system fan, system power supply, etc.</p></li>
+<li><p>Supports simulation mode for development and testing</p></li>
+</ul>
+</section>
+<section id="core-concepts">
+<h2>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading"></a></h2>
+<p>The ekfsm package is built around the following core concepts:</p>
+<section id="passive">
+<h3>Passive<a class="headerlink" href="#passive" title="Link to this heading"></a></h3>
+<p>The ekfsm package is designed to be passive. It will not perform any actions on the system,
+unless called by the user.</p>
+</section>
+<section id="system-configuration">
+<h3>System Configuration<a class="headerlink" href="#system-configuration" title="Link to this heading"></a></h3>
+<p>The system configuration is defined in a <a class="reference internal" href="reference/systemconfig.html#systemconfig"><span class="std std-ref">System Configuration File</span></a>. The configuration file defines the
+modular components of the system, i.e. you define which board types (called :class:<a href="#id1"><span class="problematic" id="id2">`</span></a>~HwModule`s in ekfsm) are expected in which slots of the chassis.</p>
+<p>The system configuration file is then passed to the <a class="reference internal" href="reference/ekfsm.html#ekfsm.System" title="ekfsm.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> constructor to create a system object.
+During instantiation, the system object will create the necessary <a class="reference internal" href="reference/ekfsm.html#ekfsm.core.components.HwModule" title="ekfsm.core.components.HwModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">HwModule</span></code></a> objects and all the
+supported functions for the devices.</p>
+<p>It will also check if the actual hardware configuration matches the expected configuration. The result
+of this check in then available in the corresponding <code class="xref py py-class docutils literal notranslate"><span class="pre">Slot</span></code> object.</p>
+</section>
+<section id="relation-between-objects">
+<h3>Relation between objects<a class="headerlink" href="#relation-between-objects" title="Link to this heading"></a></h3>
+<p>The objects and subobjects model the hardware topology of the system.</p>
+<p>An <a class="reference internal" href="reference/ekfsm.html#ekfsm.System" title="ekfsm.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code></a> object is the root object of the ekfsm package.
+The system object contains <code class="xref py py-class docutils literal notranslate"><span class="pre">Slot</span></code> objects, which represent the slots of the chassis.
+Each slot object contains zero or one <a class="reference internal" href="reference/ekfsm.html#ekfsm.core.components.HwModule" title="ekfsm.core.components.HwModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">HwModule</span></code></a> objects, which represents the hardware module in the slot.</p>
+<img alt="_images/ekfsm_system.drawio.png" class="align-center" src="_images/ekfsm_system.drawio.png" />
+<p>The hardware modules contain subfunctions, implemented by <a class="reference internal" href="reference/ekfsm.html#ekfsm.devices.generic.Device" title="ekfsm.devices.generic.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a> objects and the device objects provide
+methods to access the hardware functions.</p>
+<img alt="_images/devices.drawio.png" class="align-center" src="_images/devices.drawio.png" />
+</section>
+<section id="accessing-device-functions">
+<h3>Accessing Device functions<a class="headerlink" href="#accessing-device-functions" title="Link to this heading"></a></h3>
+<p>Suppose you have the following configuration <cite>system.yaml</cite>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Simple</span><span class="nv"> </span><span class="s">System&quot;</span>
+<span class="w">  </span><span class="nt">slots</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYSTEM_SLOT</span>
+<span class="w">      </span><span class="nt">slot_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CPCI_S0_SYS</span>
+<span class="w">      </span><span class="nt">desired_hwmodule_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EKF SC9-Toccata</span>
+<span class="w">      </span><span class="nt">desired_hwmodule_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CPU</span>
+<span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">is_master</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLOT1</span>
+<span class="w">      </span><span class="nt">slot_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CPCI_S0_PER</span>
+<span class="w">      </span><span class="nt">desired_hwmodule_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EKF SRF-SUR</span>
+<span class="w">      </span><span class="nt">desired_hwmodule_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SER</span>
+<span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">slot_coding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x1</span>
+</pre></div>
+</div>
+<p>If you want to access the LEDs on the <a class="reference internal" href="boards/ekf/sur-uart.html#sur-uart"><span class="std std-ref">EKF SUR-UART</span></a>, you can do the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ekfsm</span>
+
+<span class="n">system</span> <span class="o">=</span> <span class="n">ekfsm</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="s2">&quot;system.yaml&quot;</span><span class="p">)</span>
+
+<span class="c1"># alternative ways to get the SUR HwModule</span>
+<span class="n">sur</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="s2">&quot;SER&quot;</span><span class="p">]</span>    <span class="c1"># by using the hwmodule name as key</span>
+<span class="n">sur</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">ser</span>       <span class="c1"># by using the hwmodule name as attribute</span>
+<span class="n">sur</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="s2">&quot;SLOT1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hwmodule</span>  <span class="c1"># by using the slot name as key</span>
+<span class="n">sur</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">slots</span><span class="o">.</span><span class="n">slot1</span><span class="o">.</span><span class="n">hwmodule</span>  <span class="c1"># by using the slot name as attribute</span>
+
+<span class="c1"># accessing the LED device</span>
+<span class="n">sur</span><span class="o">.</span><span class="n">led_a</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>  <span class="c1"># set the color of the LED to purple</span>
+</pre></div>
+</div>
+<p>For a list of each board’s supported functions, see the <a class="reference internal" href="boards.html#boards"><span class="std std-ref">Supported Boards</span></a> section.</p>
+</section>
+<section id="querying-slots">
+<h3>Querying slots<a class="headerlink" href="#querying-slots" title="Link to this heading"></a></h3>
+<p>To check if the actual system configuration matches the one defined in the configuration file,
+you can use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">info()</span></code> method, which gives you the
+desired and actual configuration of the slot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ekfsm</span>
+
+<span class="n">system</span> <span class="o">=</span> <span class="n">ekfsm</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="s2">&quot;system.yaml&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">slots</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_populated()</span></code> method to check if a slot is populated and
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">is_correctly_populated()</span></code> method to check if the slot contains the
+correct hardware module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The detection mechanism has limitations. If a board is installed which is
+unknown to the ekfsm library, the slot will not be marked as populated.</p>
+</div>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<section id="system-preparation">
+<h3>System Preparation<a class="headerlink" href="#system-preparation" title="Link to this heading"></a></h3>
+<p>Many ekfsm devices rely on sysfs to access the hardware. Before ekfsm can be used,
+the system must be configured so that all necessary sysfs entries are available.</p>
+<p>For example, for an X86 CompactPCI Serial system, most of the devices supported by ekfsm
+are I2C devices, but linux cannot detect them without further configuration.</p>
+<p>Therefore, the I2C device tree is typically provided as ACPI SSDT (Secondary System Descriptor Table)
+to the UEFI BIOS via a UEFI variable, and GRUB is configured to provide the device tree
+(from that variable) to the kernel.</p>
+<p>Consult your hardware provider for guidance.</p>
+</section>
+<section id="root-privileges">
+<h3>Root Privileges<a class="headerlink" href="#root-privileges" title="Link to this heading"></a></h3>
+<p>The ekfsm package requires root privileges to access the sysfs, dev and proc entries, so your
+application must be run as root or with sudo.</p>
+</section>
+<section id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h3>
+<p>The ekfsm package uses the Python logging module for logging.
+and follows <a class="reference external" href="https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library">common practices for library logging</a>.
+By default, if the application does not configure logging, the logging module will log
+only messages with level WARNING or above and is using the default formatting, i.e.
+only the message is printed.</p>
+<p>To get a more verbose output, the application should call, for example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="usage-from-multiple-processes">
+<h3>Usage from multiple processes<a class="headerlink" href="#usage-from-multiple-processes" title="Link to this heading"></a></h3>
+<p>It is possible to use ekfsm from multiple processes at the same time. The linux kernel
+ensures that the relevant linux sysfs entries and devices are protected from concurrent access.</p>
+<p>However, there are some exceptions due to the nature of some devices. For example, the
+<a class="reference internal" href="boards/ekf/ccu.html#ccu"><span class="std std-ref">EKF CCU</span></a> has some methods that cannot be simultaneously accessed by multiple processes.</p>
+<p>This is why the ekfsm package provides a locking mechanism for these devices. The locking mechanism is
+implemented using a file lock. Application can choose to use the locking mechanism or not.
+By default, the locking mechanism is enabled and uses the default lockfile directory <code class="docutils literal notranslate"><span class="pre">/var/lock/ekfsm</span></code>.
+The <code class="xref py py-meth docutils literal notranslate"><span class="pre">locking_configure()</span></code> method can be used to enable or disable the locking mechanism and
+to configure the lockfile directory.</p>
+<p>To ensure that file locks are properly released, the application should
+call the <code class="xref py py-meth docutils literal notranslate"><span class="pre">locking_cleanup()</span></code> whenever the program exits. This can be done
+using the <cite>atexit</cite> module.</p>
+</section>
+<section id="usage-from-within-a-container">
+<h3>Usage from within a container<a class="headerlink" href="#usage-from-within-a-container" title="Link to this heading"></a></h3>
+<p>The ekfsm package can be used from within a container, but the container must have access to the <cite>/sys</cite>, <cite>/dev</cite> #
+and - if locking is enabled - <cite>/var/lock</cite> directories of the host system.</p>
+<p>This can be achieved by mounting the host’s <cite>/sys</cite> and <cite>/dev</cite> directories into the container, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/sys:/sys<span class="w"> </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span>my_container
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to EKF System Management Library documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="boards.html" class="btn btn-neutral float-right" title="Supported Boards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

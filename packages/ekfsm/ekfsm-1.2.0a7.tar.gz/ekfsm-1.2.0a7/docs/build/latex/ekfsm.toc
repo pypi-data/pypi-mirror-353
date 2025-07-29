@@ -1,0 +1,87 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}What is ekfsm?}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Features}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Core Concepts}{1}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Passive}{1}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}System Configuration}{1}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Relation between objects}{1}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Accessing Device functions}{2}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Querying slots}{3}{subsection.1.3.5}%
+\contentsline {section}{\numberline {1.4}Usage}{3}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}System Preparation}{3}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Root Privileges}{4}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Logging}{4}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Usage from multiple processes}{4}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Usage from within a container}{4}{subsection.1.4.5}%
+\contentsline {chapter}{\numberline {2}Supported Boards}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}EKF CCU}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Chassis Inventory (Object: \sphinxtitleref {chassis\_inventory})}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Inventory of the CCU board (Object: \sphinxtitleref {inventory})}{5}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}CCU EEPROM Customer area (Object: \sphinxtitleref {custom\_eeprom})}{5}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}CCU Management (Object: \sphinxtitleref {management})}{6}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}System State Controller (Object: \sphinxtitleref {sysstate})}{6}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Fan Controller (Object: \sphinxtitleref {fan})}{6}{subsection.2.1.6}%
+\contentsline {subsubsection}{Example}{6}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {2.1.7}Inertial Measurement Unit (Object: \sphinxtitleref {imu})}{7}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Thermal and Humidity Sensor (Object: \sphinxtitleref {th})}{7}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}System Input Voltage (Object: \sphinxtitleref {vin})}{7}{subsection.2.1.9}%
+\contentsline {section}{\numberline {2.2}EKF SC5\sphinxhyphen {}FESTIVAL}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Inventory (Object: \sphinxtitleref {inventory})}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}CPU Temperature (Object: \sphinxtitleref {cputemp})}{7}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}EKF SC9\sphinxhyphen {}TOCCATA}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Inventory (Object: \sphinxtitleref {inventory})}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}CPU Temperature (Object: \sphinxtitleref {cputemp})}{8}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}EKF SE5\sphinxhyphen {}CLUB}{8}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Inventory}{8}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}EKF SN4\sphinxhyphen {}DJEMBE}{8}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Inventory}{8}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}EKF SPV\sphinxhyphen {}MYSTIC}{9}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Inventory}{9}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}GPIOs (Objects: \sphinxtitleref {gpio0}, \sphinxtitleref {gpio1}, \sphinxtitleref {gpio2})}{9}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}EKF SQ1\sphinxhyphen {}TRACK}{9}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Inventory}{9}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}EKF SQ3\sphinxhyphen {}QUARTET}{9}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Inventory}{9}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}EKF SUR\sphinxhyphen {}UART}{10}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Inventory}{10}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Thermal and Humidity Sensor (Object: \sphinxtitleref {th})}{10}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Front Panel LEDs (Object: \sphinxtitleref {led\_a}, \sphinxtitleref {led\_b}, \sphinxtitleref {led\_c}, \sphinxtitleref {led\_d})}{10}{subsection.2.9.3}%
+\contentsline {section}{\numberline {2.10}HITRON HDRC\sphinxhyphen {}300S}{10}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Inventory (Object: \sphinxtitleref {inventory})}{10}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Device Temperature (Object: \sphinxtitleref {th})}{11}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Main Output (Object: \sphinxtitleref {main})}{11}{subsection.2.10.3}%
+\contentsline {subsection}{\numberline {2.10.4}Standby Output (Object: \sphinxtitleref {sby})}{11}{subsection.2.10.4}%
+\contentsline {section}{\numberline {2.11}Accessing Boards}{11}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Example}{11}{subsection.2.11.1}%
+\contentsline {chapter}{\numberline {3}Reference}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}ekfsm package}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Accessing boards}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Exceptions}{16}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}CLI}{17}{subsection.3.1.3}%
+\contentsline {subsubsection}{ekfsm\sphinxhyphen {}cli}{17}{subsubsection*.31}%
+\contentsline {paragraph}{show}{17}{paragraph*.40}%
+\contentsline {paragraph}{write}{17}{paragraph*.41}%
+\contentsline {subsection}{\numberline {3.1.4}Locking}{18}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Utils}{19}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}ekfsm.devices package}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}I2C Devices using SysFs}{19}{subsection.3.2.1}%
+\contentsline {subsubsection}{EEPROM}{19}{subsubsection*.63}%
+\contentsline {paragraph}{Routine Listings}{19}{paragraph*.64}%
+\contentsline {paragraph}{Structure}{25}{paragraph*.92}%
+\contentsline {subsubsection}{GPIO}{32}{subsubsection*.117}%
+\contentsline {subsubsection}{EKF SUR LED}{35}{subsubsection*.144}%
+\contentsline {subsubsection}{PMBUS}{35}{subsubsection*.147}%
+\contentsline {subsubsection}{IIO Thermal and Humidity Sensor}{39}{subsubsection*.172}%
+\contentsline {subsubsection}{I2C MUX}{39}{subsubsection*.176}%
+\contentsline {subsection}{\numberline {3.2.2}I2C Devices using SMBus directly}{40}{subsection.3.2.2}%
+\contentsline {subsubsection}{EKF CCU Microcontroller}{40}{subsubsection*.179}%
+\contentsline {subsection}{\numberline {3.2.3}Devices using SysFs}{45}{subsection.3.2.3}%
+\contentsline {subsubsection}{CoreTemp}{45}{subsubsection*.211}%
+\contentsline {subsubsection}{SMBIOS}{45}{subsubsection*.215}%
+\contentsline {subsection}{\numberline {3.2.4}Base Classes and Utilities}{46}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}ekfsm.core package}{48}{section.3.3}%
+\contentsline {section}{\numberline {3.4}System Configuration File}{53}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Making board objects accessible from the system object}{54}{subsection.3.4.1}%
+\contentsline {chapter}{Python Module Index}{55}{section*.281}%
+\contentsline {chapter}{Index}{57}{section*.282}%

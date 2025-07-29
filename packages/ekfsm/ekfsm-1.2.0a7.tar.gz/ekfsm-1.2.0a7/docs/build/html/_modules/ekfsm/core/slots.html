@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.core.slots &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.core.slots</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.core.slots</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">munch</span><span class="w"> </span><span class="kn">import</span> <span class="n">Munch</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+
+<div class="viewcode-block" id="SlotType">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.SlotType">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Define the types of slots that can be found in a chassis.</span>
+
+<span class="sd">    The following slot types are defined:</span>
+<span class="sd">    - CPCI_S0_UTILITY: CompactPCI Serial Utility Connector</span>
+<span class="sd">    - CPCI_S0_SYS: CompactPCI Serial System Slot</span>
+<span class="sd">    - CPCI_S0_PER: CompactPCI Serial Peripheral Slot</span>
+<span class="sd">    - CPCI_S0_PSU: CompactPCI Serial Power Supply Slot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">CPCI_S0_UTILITY</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># CompactPCI Serial Utility Connector</span>
+    <span class="n">CPCI_S0_SYS</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># CompactPCI Serial System Slot</span>
+    <span class="n">CPCI_S0_PER</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># CompactPCI Serial Peripheral Slot</span>
+    <span class="n">CPCI_S0_PSU</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># CompactPCI Serial Power Supply Slot</span>
+
+<div class="viewcode-block" id="SlotType.from_string">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.SlotType.from_string">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SlotType&quot;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid </span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SlotType.to_string">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.SlotType.to_string">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Slot">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.Slot">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Slot</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A slot represents a physical slot in a chassis.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name</span>
+<span class="sd">        The name of the slot, e.g. &quot;SlotA&quot; or &quot;CPCI-SYSTEMSLOT&quot;</span>
+<span class="sd">    slot_type</span>
+<span class="sd">        The type of the slot, e.g. SlotType.CPCI_S0_SYS</span>
+<span class="sd">    desired_hwmodule_type</span>
+<span class="sd">        The desired type of the hardware module that should be in the slot (currently unused)</span>
+<span class="sd">    desired_hwmodule_name</span>
+<span class="sd">        The name to be used for the hardware module instance in the slot. (currently unused)</span>
+<span class="sd">    master</span>
+<span class="sd">        The master board of the system</span>
+<span class="sd">    hwmodule</span>
+<span class="sd">        The hardware module that is in the slot</span>
+<span class="sd">    number</span>
+<span class="sd">        The number of the slot</span>
+<span class="sd">    attributes</span>
+<span class="sd">        Additional attributes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">slot_type</span><span class="p">:</span> <span class="n">SlotType</span><span class="p">,</span>
+        <span class="n">desired_hwmodule_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">desired_hwmodule_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">hwmodule</span><span class="p">:</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">master</span><span class="p">:</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">attributes</span><span class="p">:</span> <span class="n">Munch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_type</span> <span class="o">=</span> <span class="n">slot_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_desired_hwmodule_type</span> <span class="o">=</span> <span class="n">desired_hwmodule_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_desired_hwmodule_name</span> <span class="o">=</span> <span class="n">desired_hwmodule_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="n">number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span> <span class="o">=</span> <span class="n">hwmodule</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span> <span class="o">=</span> <span class="n">attributes</span>
+
+<div class="viewcode-block" id="Slot.info">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.Slot.info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a dictionary with information about the slot.</span>
+
+<span class="sd">        - name (str): The name of the slot</span>
+<span class="sd">        - slot_type (str): The type of the slot</span>
+<span class="sd">        - number (int): The number of the slot</span>
+<span class="sd">        - desired_hwmodule_type (str): The desired type of the hardware module</span>
+<span class="sd">        - actual_hwmodule_type (str): The actual type of the hardware module</span>
+<span class="sd">        - desired_hwmodule_name (str): The desired name of the hardware module</span>
+<span class="sd">        - is_populated (bool): Is the slot populated?</span>
+<span class="sd">        - is_correctly_populated (bool): Is the slot correctly populated?</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
+            <span class="s2">&quot;slot_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">slot_type</span><span class="o">.</span><span class="n">to_string</span><span class="p">(),</span>
+            <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+            <span class="s2">&quot;desired_hwmodule_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_desired_hwmodule_type</span><span class="p">,</span>
+            <span class="s2">&quot;actual_hwmodule_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span><span class="o">.</span><span class="n">board_type</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;desired_hwmodule_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_desired_hwmodule_name</span><span class="p">,</span>
+            <span class="s2">&quot;is_populated&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_populated</span><span class="p">,</span>
+            <span class="s2">&quot;is_correctly_populated&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_correctly_populated</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">, slot_type=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">slot_type</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the name of the slot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_populated</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return True if the slot is populated, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_correctly_populated</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return True if the slot is populated with the desired hardware module type, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmodule</span><span class="o">.</span><span class="n">board_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_desired_hwmodule_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Slots">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.Slots">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Slots</span><span class="p">(</span><span class="n">Munch</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A collection of slots.</span>
+
+<span class="sd">    Slots are stored in a dictionary-like object, where the key is the slot name and the value is the Slot object.</span>
+<span class="sd">    Slots can be accessed by name, by number or via an attribute access matching the key.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; from ekfsm..core.slots import Slot, Slots, SlotType</span>
+<span class="sd">    &gt;&gt;&gt; slotA = Slot(&quot;SlotA&quot;, SlotType.CPCI_S0_PER, &quot;Bla&quot;, &quot;Blubb&quot;, 3)</span>
+<span class="sd">    &gt;&gt;&gt; slots = Slots((slotA.name, slotA))</span>
+<span class="sd">    &gt;&gt;&gt; print(slots[name])</span>
+<span class="sd">    &gt;&gt;&gt; print(slots.slotA) # attribute access, same as slots[name]</span>
+<span class="sd">    &gt;&gt;&gt; print(slots[3]) # number access, same as slots.slotA</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Slot</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a slot by name, number or attribute access.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="n">slot</span> <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">number</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a Slot object to the collection.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            if:</span>
+<span class="sd">            - the value is not a Slot object</span>
+<span class="sd">            - the key does not match the slot name</span>
+<span class="sd">            - the slot already exists in collection</span>
+<span class="sd">            - or the slot number is not unique</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Slot</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only Slot instances can be added to a Slots collection.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Slot name must match key.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Slot already exists in collection.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">value</span><span class="o">.</span><span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">()]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Slot number must be unique.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Slots.add">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.core.slots.Slots.add">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Slot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a Slot object to the collection, where the name of the slot object is used as the key.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; from ekfsm.core.slots import Slot, Slots, SlotType</span>
+<span class="sd">        &gt;&gt;&gt; slotA = Slot(&quot;SlotA&quot;, SlotType.CPCI_S0_PER, &quot;Bla&quot;, &quot;Blubb&quot;, 3)</span>
+<span class="sd">        &gt;&gt;&gt; slots = Slots()</span>
+<span class="sd">        &gt;&gt;&gt; slots.add(slotA) # add slotA to the collection</span>
+<span class="sd">        &gt;&gt;&gt; print(slots.SlotA) # attribute access, same as slots[&quot;SlotA&quot;]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">slot</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
