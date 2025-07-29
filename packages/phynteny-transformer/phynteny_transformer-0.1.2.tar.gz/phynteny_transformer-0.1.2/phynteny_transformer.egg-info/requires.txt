@@ -1,0 +1,9 @@
+loguru
+click
+torch>=2.0.0
+numpy
+biopython
+scikit-learn
+transformers
+pandas
+tqdm
