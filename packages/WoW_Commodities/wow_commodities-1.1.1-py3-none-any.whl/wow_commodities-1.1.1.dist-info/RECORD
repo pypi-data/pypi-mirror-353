@@ -1,0 +1,11 @@
+app.py,sha256=tuQJCDI4uBUNSTydwr4NpHL4NESgZAINNKZ-iFktvkw,2774
+src/__about__.py,sha256=erLKTLKPBs03t-agPUFQWhXEjXxrE-HrbSO9WFhVtFQ,58
+src/get_commodities.py,sha256=ZS9eYHYeqCCwZAD85bvkb1XEqgGfKNfCSIyOMYDxZFk,826
+src/get_token.py,sha256=0yEUlNz8Qk92e1xfWMaTvCa-lpl6MmU1gW8CX6aEWiA,601
+src/process_data.py,sha256=NhcLWpf_9nAgX2LX893qx_bgbkan1x0cFlru_ulWhxQ,830
+src/region_locale.py,sha256=wfhEJ1Hq1C8SsMiDRh351WX_oSvxSjCsOklTHz6Lumw,203
+wow_commodities-1.1.1.dist-info/METADATA,sha256=3DcDNC2Jmic78fwaV05TPhD_ztGd_P7x8JbmuxQtRCI,5613
+wow_commodities-1.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+wow_commodities-1.1.1.dist-info/entry_points.txt,sha256=N0DcpyeH-YtVkCo-fyB4YyV40pKoJDF0zut0EzWr1xg,41
+wow_commodities-1.1.1.dist-info/licenses/LICENSE.txt,sha256=pWgb-bBdsU2Gd2kwAXxketnm5W_2u8_fIeWEgojfrxs,7651
+wow_commodities-1.1.1.dist-info/RECORD,,
