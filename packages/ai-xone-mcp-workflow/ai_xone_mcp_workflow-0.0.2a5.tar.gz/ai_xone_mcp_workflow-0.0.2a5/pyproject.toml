@@ -1,0 +1,18 @@
+[project]
+name = "ai_xone_mcp_workflow"
+version = "0.0.2-alpha.5"
+description = "Workflow module for ai_xone_mcp"
+authors = [{name = "80pc", email = "80pc@aliyun.com"}]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = ["fastmcp==2.3.5", "pyyaml==6.0.1"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+ai-xone-mcp-workflow = "ai_xone_mcp_workflow.server:main"
+
+[project.entry-points."mcp.tools"]
+ai-xone-mcp-workflow = "ai_xone_mcp_workflow.server"
