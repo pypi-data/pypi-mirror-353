@@ -1,0 +1,2 @@
+[console_scripts]
+qnorm = qnorm.cli:main

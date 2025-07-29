@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qnorm"
+description = "Quantile normalization"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Maarten van der Sande", email = "maartenvandersande@hotmail.com"}
+]
+maintainers = [
+    {name = "Maarten van der Sande", email = "maartenvandersande@hotmail.com"}
+]
+keywords = ["quantile", "normalization", "bioinformatics"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+dependencies = [
+    "numba",
+    "numpy"
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Maarten-vd-Sande/qnorm"
+Repository = "https://github.com/Maarten-vd-Sande/qnorm"
+Issues = "https://github.com/Maarten-vd-Sande/qnorm/issues"
+
+[project.scripts]
+qnorm = "qnorm.cli:main"
+
+[tool.setuptools]
+packages = ["qnorm"]
+
+[tool.setuptools.dynamic]
+version = {attr = "qnorm.__version__"}
+
+[tool.black]
+line-length = 80
+target-version = ["py37", "py38", "py39", "py310", "py311", "py312"]
+
+[tool.mypy]
+ignore_missing_imports = true
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
