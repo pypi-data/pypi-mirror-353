@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+  "setuptools>=65.5.1",
+  "wheel",
+  "build",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello_package_hubert"
+version = "1.0"
+description = "A simple hello package"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Hubert", email = "hubert.kwiatekx2003@gmail.com"}
+]
+requires-python = ">=3.7"
+dependencies = []
+
+
+# [project.urls]
+# Homepage = 'xyz'
+# Repository = 'xyz'
+# Issues = 'xyz'

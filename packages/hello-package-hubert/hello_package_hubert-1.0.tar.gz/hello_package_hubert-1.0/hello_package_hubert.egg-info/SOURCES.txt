@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+hello_package_hubert/__init__.py
+hello_package_hubert/main.py
+hello_package_hubert.egg-info/PKG-INFO
+hello_package_hubert.egg-info/SOURCES.txt
+hello_package_hubert.egg-info/dependency_links.txt
+hello_package_hubert.egg-info/top_level.txt
