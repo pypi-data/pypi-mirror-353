@@ -1,0 +1,15 @@
+name: jupyter-session-tracer-dev
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python >=3.8
+  - pip
+  - nodejs >=18
+  - yarn
+  - jupyterlab >=4.0.0,<5
+  - jupyter_server >=2.0.1,<3
+  - build
+  - hatchling >=1.4.0
+  - pip:
+    - jupyter_server >=2.0.1,<3 
