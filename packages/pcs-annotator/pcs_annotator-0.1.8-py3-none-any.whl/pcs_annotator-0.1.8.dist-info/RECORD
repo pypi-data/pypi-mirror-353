@@ -1,0 +1,10 @@
+pcs_annotator/Annotator.py,sha256=jTUF6333RSx2PXcS1qVFi_pjIhCrjiKXqzEOyzR44yM,1239
+pcs_annotator/LLM.py,sha256=jke9X8UYgqI2KWNBxpXHKrC0sbspuf9af0vG8pCMwig,2746
+pcs_annotator/PCS.py,sha256=DkhsjhKR8ilaBmQsEdEqhTSbyTfMgkV0kcK1CZabWjc,19687
+pcs_annotator/TextMutator.py,sha256=PE5UlZZqtigbVUWllEaywUvBQg1i6528V1MX_z-dtuc,1963
+pcs_annotator/Tools.py,sha256=oRsMhngzJ0rrfe4KeMUYgkl54BhvzknidFv7BymH8hY,1200
+pcs_annotator/__init__.py,sha256=ff7LaQ_3eKcDnArfl7348gfG_wz3aYT-bsBRd89pUCU,138
+pcs_annotator-0.1.8.dist-info/METADATA,sha256=re5RcMyGYX9XRrNAO0VZjDKtrVtppU7Tb2HNvug2ICM,3466
+pcs_annotator-0.1.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pcs_annotator-0.1.8.dist-info/licenses/LICENSE,sha256=xQL2HfZyWEOYJzNPEMLKB5ba8VKoSbE0UqMc2UycE00,1056
+pcs_annotator-0.1.8.dist-info/RECORD,,
