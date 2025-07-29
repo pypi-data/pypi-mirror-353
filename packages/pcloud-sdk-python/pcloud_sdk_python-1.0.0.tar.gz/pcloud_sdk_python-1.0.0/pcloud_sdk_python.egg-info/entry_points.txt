@@ -1,0 +1,2 @@
+[console_scripts]
+pcloud-sdk-python = pcloud_sdk.cli:main
