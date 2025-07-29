@@ -1,0 +1,9 @@
+param_manager/__init__.py,sha256=nfj7Is93qLkX4Oxx19b9j0-90248b9LfJ8GL5WAzzgs,2063
+param_manager/manager.py,sha256=qcQ2p87DRgthH3_Vi-y7W6eS4tls57g1s-eNW2d8elg,18616
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=NI9Bb-Iamg8AnLx6Ar_rs72gFJ0kbXb8izrUqWKyMDg,1533
+tests/test_param_manager.py,sha256=PvRQACP1vSwd1bZXssSkIxdOT9j5tRECLRHKgDPof44,12363
+param_manager-0.1.5.dist-info/METADATA,sha256=HVN8uemFg4pf6ZG2ukVIFunA4Zr3VPTHvzkNTedbX38,2817
+param_manager-0.1.5.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+param_manager-0.1.5.dist-info/top_level.txt,sha256=R4sIt2aXzOn9jezzhgyNN-lkKvbQJsUgyJYSAJZgAps,20
+param_manager-0.1.5.dist-info/RECORD,,
