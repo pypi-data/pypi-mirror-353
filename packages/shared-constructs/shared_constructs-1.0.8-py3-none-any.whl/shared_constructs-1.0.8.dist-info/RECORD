@@ -1,0 +1,8 @@
+shared_constructs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shared_constructs/aws/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shared_constructs/aws/s3.py,sha256=FVb5OJgdjb9zSjLAIMaP9dTt75o34z8A5FUDX6pPyJY,2446
+shared_constructs/config.py,sha256=JbzE15TQirpkJ3gAUyjXgxm2q0sNOBqUzyG7qUb0H54,1121
+shared_constructs-1.0.8.dist-info/LICENSE,sha256=g2EpwyYM70vytsqMcaSee6iH1cvBVZyvViyOvQNxQdM,1064
+shared_constructs-1.0.8.dist-info/METADATA,sha256=HRmkznXeOz2mN1gumX2ITqS8FsChT0OOYcFS32YuqnE,3566
+shared_constructs-1.0.8.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+shared_constructs-1.0.8.dist-info/RECORD,,
