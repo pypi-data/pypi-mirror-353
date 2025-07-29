@@ -1,0 +1,1 @@
+this was a small project by myself to reduce teh complexity and time consuming of git commands.
