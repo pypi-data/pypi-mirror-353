@@ -1,0 +1,7 @@
+[project]
+name = "chartuno"
+version = "0.0"
+description = "Coming soon"
+authors = [
+    { name = "ChartUno" }
+]
