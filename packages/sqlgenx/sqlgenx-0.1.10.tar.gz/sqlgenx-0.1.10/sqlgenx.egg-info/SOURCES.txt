@@ -1,0 +1,9 @@
+LICENSE
+pyproject.toml
+setup.py
+sqlgenx.py
+sqlgenx.egg-info/PKG-INFO
+sqlgenx.egg-info/SOURCES.txt
+sqlgenx.egg-info/dependency_links.txt
+sqlgenx.egg-info/requires.txt
+sqlgenx.egg-info/top_level.txt

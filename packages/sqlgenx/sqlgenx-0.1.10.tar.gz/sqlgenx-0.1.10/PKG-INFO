@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: sqlgenx
+Version: 0.1.10
+Summary: Generate SQL INSERT from CSV or pandas DataFrame
+Author: ryohei-iwamoto
+Author-email: celeron5576@gmail.com
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: pandas
