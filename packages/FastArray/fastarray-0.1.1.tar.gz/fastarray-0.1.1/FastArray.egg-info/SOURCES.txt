@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+FastArray.egg-info/PKG-INFO
+FastArray.egg-info/SOURCES.txt
+FastArray.egg-info/dependency_links.txt
+FastArray.egg-info/requires.txt
+FastArray.egg-info/top_level.txt
+fastarray/__init__.py
+fastarray/indicies.py
+fastarray/io.py
+fastarray/tensor.py
+fastarray/transform.py
