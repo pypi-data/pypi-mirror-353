@@ -1,0 +1,7 @@
+llm>=0.26
+libzim>=3.5
+strip-tags>=0.6
+
+[test]
+pytest
+llm-echo>=0.3a1
