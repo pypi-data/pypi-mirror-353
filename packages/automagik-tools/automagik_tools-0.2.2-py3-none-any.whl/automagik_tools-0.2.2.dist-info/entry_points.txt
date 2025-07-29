@@ -1,0 +1,5 @@
+[automagik_tools.plugins]
+automagik-agents = automagik_tools.tools.automagik_agents:create_tool
+
+[console_scripts]
+automagik-tools = automagik_tools.cli:main

@@ -1,0 +1,15 @@
+automagik_tools/__init__.py,sha256=TrWYR_GL7vgW10kdTADwng3chvDSBH5KF-h-NBZatMA,301
+automagik_tools/cli.py,sha256=nirwSVkUQYEVUTlhOm9uSzSR8xmkCu6m19o1ipXTKgk,31618
+automagik_tools/hub.py,sha256=LXVQyAlUk8xxbHP2bRAKRvd-p76Ng9YWt54mR3v1ZRg,8961
+automagik_tools/ai_processors/__init__.py,sha256=ZJ1C-sIe84OJ7-Kf5VSMwpYV_cCPWXBMO-_IgNW8kNM,367
+automagik_tools/ai_processors/openapi_processor.py,sha256=tPIEcOyTesHXE-QwdHyd-Kg0uq_eQEmaCFr0vO6jzMo,14656
+automagik_tools/tools/__init__.py,sha256=QEKJhul5p_vU-PTDe4n5CrdJCIIi2vtOUJAGlgnj_Nk,161
+automagik_tools/tools/automagik_agents/__init__.py,sha256=nvOAoPdxhiEPkpAlhY4b4elkbR4QNv0d2CON8_duKVs,39186
+automagik_tools/tools/automagik_agents/__main__.py,sha256=djcVE63EwyybSqO-WHEvIj6KYBjL94OpWawqQzWIaUo,683
+automagik_tools/tools/automagik_agents/config.py,sha256=Fe8AkRMcwn5HkUr2MrpTSKjfrLa188qV9sgAkP9jrZ4,874
+automagik_tools-0.2.2.dist-info/licenses/LICENSE,sha256=4YBI_gD69ZQzULvYouuV6z77RKQnoJzG1ioFxeEcIOY,1069
+automagik_tools-0.2.2.dist-info/METADATA,sha256=HdiHCe0hrSw9dhiacQMiQtHpDZlld2dpq0pI0Z4Vjz8,10853
+automagik_tools-0.2.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+automagik_tools-0.2.2.dist-info/entry_points.txt,sha256=dJiHHjr9J8BpdKIVM1WpOFEoamGmnLvbw5UzO44-7ko,158
+automagik_tools-0.2.2.dist-info/top_level.txt,sha256=yD40kSxkHVcl4FKmhjsPYDm6MS7Erp_Wz6jyQ1kIb-0,16
+automagik_tools-0.2.2.dist-info/RECORD,,
