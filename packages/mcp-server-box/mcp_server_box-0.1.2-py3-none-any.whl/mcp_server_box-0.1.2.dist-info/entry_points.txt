@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-server-box = mcp_server_box:main
