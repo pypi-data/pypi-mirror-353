@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "source": ".air/rules/",
+  "sourceIsDirectory": true,
+  "indexFileName": "index.md",
+  "defaultFormat": "markdown",
+  "autoSync": true,
+  "showStatus": true,
+  "vendors": {
+    "claude": {
+      "enabled": true,
+      "path": ".claude/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "copilot": {
+      "enabled": true,
+      "path": ".github/copilot-instructions/",
+      "format": "markdown",
+      "isDirectory": true
+    }
+  }
+}
