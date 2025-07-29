@@ -1,0 +1,13 @@
+taskguard/__init__.py,sha256=U65MlJs6AEi0o9q8-DqlULBdZbBlhE2A6qyBIzBRl6I,6039
+taskguard/best_practices.py,sha256=r5f7Wz6Pxx5o2uHQNadqZcnTG174I8HBMLX-ggn-SIU,51
+taskguard/cli.py,sha256=k79EJXbaYzI2lrQdRmG3n1ooOntni44XwEmpTjglm50,36611
+taskguard/document_parser.py,sha256=PjDgDdkWxa4LZd0r3omxJCBy87iL3k_NBeXBhlyset8,57
+taskguard/local_llm_interface.py,sha256=O-OsNeNiseuMnJXjm6RzAqeWyeh0I3F5JlKKCLSLYyA,22306
+taskguard/shell_integration.py,sha256=Ano5jOUyR62NvNJSqbzVQRUG3XYA3wPYVpk1-XlGf-M,55
+taskguard/taskguard.py,sha256=cEdrYn95utXcGEcELqzpltouKzscp2amR_fi9kWzWpY,25215
+taskguard-0.2.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+taskguard-0.2.0.dist-info/METADATA,sha256=yTh2R_jEZT14NY_ZUVzrxigvZ2vb_z4IJqIeFUnpyrE,17955
+taskguard-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+taskguard-0.2.0.dist-info/entry_points.txt,sha256=IN5TIp2vgArw-6h3AaZEQPEAZ33_Hxsc4SDdG11kwIo,102
+taskguard-0.2.0.dist-info/top_level.txt,sha256=y5jUohFgtWkLxhBLIXE9aLQQKAa2ZQKey0VOGXhgUK4,10
+taskguard-0.2.0.dist-info/RECORD,,
