@@ -1,0 +1,39 @@
+name: Publish Python Package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install flit
+        run: pip install flit toml
+
+      - name: Set version from tag
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          echo "Setting version to: $VERSION"
+          python -c "
+import toml
+pyproject = toml.load('pyproject.toml')
+pyproject['project']['version'] = '$VERSION'
+with open('pyproject.toml', 'w') as f:
+    toml.dump(pyproject, f)
+"
+      - name: Publish to PyPI
+        env:
+          FLIT_USERNAME: __token__
+          FLIT_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: flit publish
