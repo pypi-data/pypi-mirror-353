@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+vibe_automation.egg-info/PKG-INFO
+vibe_automation.egg-info/SOURCES.txt
+vibe_automation.egg-info/dependency_links.txt
+vibe_automation.egg-info/top_level.txt
