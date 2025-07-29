@@ -1,0 +1,8 @@
+aistv/__init__.py,sha256=G1ZBskWNkKKEK9s51RrBuK-S2_d3Fw8UaLk0RKsbuKw,33
+aistv/aistv.py,sha256=8OClk7fg1g41NtW7ELj83-g0JF5fV1fQy0dJh2qlV8s,190
+aistv/core.py,sha256=7524gq2alREOSFmqyfLMwTLm3wQxYKLX17BJ1hIVC_g,5643
+aistv/trainer.py,sha256=oqIHGAJAJgIdw3P6_BrnXt3JMXYwsGHfGVaJ_e635YU,1125
+aistv-1.3.8.dist-info/METADATA,sha256=o2bFS_5pYIT5o4_DytYQsAPdTj1gpAB21mq5ZOy_iU0,4568
+aistv-1.3.8.dist-info/WHEEL,sha256=zaaOINJESkSfm_4HQVc5ssNzHCPXhJm0kEUakpsEHaU,91
+aistv-1.3.8.dist-info/top_level.txt,sha256=P6gyYzXFvBPESQyFZQSi6Rs8v5ALhw-d4UN2Jo9Pkgw,6
+aistv-1.3.8.dist-info/RECORD,,
