@@ -1,0 +1,44 @@
+{
+  "@id": "/comunicacao/noticias/primeira-noticia/foto-senado.jpeg",
+  "@type": "Image",
+  "UID": "3cfe6f015e054e8cbac486bcc12d5e16",
+  "allow_discussion": null,
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-06-04T19:57:58+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "foto-senado.jpeg",
+  "image": {
+    "blob_path": "3cfe6f015e054e8cbac486bcc12d5e16/image/foto-senado.jpeg",
+    "content-type": "image/jpeg",
+    "filename": "foto-senado.jpeg",
+    "height": 600,
+    "size": 138882,
+    "width": 900
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-04T19:57:58+00:00",
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "foto-senado.jpeg",
+  "type_title": "Image",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}
