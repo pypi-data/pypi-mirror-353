@@ -1,0 +1,70 @@
+{% if foto_enabled %}
+<div id="foto-container"></div>
+<script>
+    async function loadFoto() {
+        const movable = '{{ 'true' if foto_movable else 'false' }}';
+        const fotoUrl = "{{ foto_url }}";
+        const container = document.getElementById('foto-container');
+        let position = {x: 0, y: 0};
+        try {
+            const posResp = await fetch('/foto/position');
+            if (posResp.ok) position = await posResp.json();
+        } catch {}
+        const img = document.createElement('img');
+        img.src = fotoUrl;
+        img.style.position = 'absolute';
+        img.style.left = position.x + 'px';
+        img.style.top = position.y + 'px';
+        img.style.zIndex = 1000;
+        img.id = 'foto-img';
+        container.appendChild(img);
+        if (movable === "true") {
+            let isDragging = false, currentX, currentY, initialX, initialY, xOffset = position.x, yOffset = position.y;
+            img.style.cursor = 'move';
+            img.addEventListener('mousedown', dragStart);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', dragEnd);
+            function dragStart(e) {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+                if (e.target === img) isDragging = true;
+            }
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    xOffset = currentX; yOffset = currentY;
+                    img.style.left = currentX + 'px';
+                    img.style.top = currentY + 'px';
+                }
+            }
+            function dragEnd(e) {
+                if (isDragging) {
+                    initialX = currentX; initialY = currentY; isDragging = false;
+                    fetch('/foto/position', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({x: currentX, y: currentY})
+                    });
+                }
+            }
+            // Кнопка удалить
+            const btn = document.createElement('button');
+            btn.textContent = 'Удалить фото';
+            btn.className = 'btn btn-danger btn-sm';
+            btn.style.position = 'absolute';
+            btn.style.left = (position.x + 10) + 'px';
+            btn.style.top = (position.y + img.height + 10) + 'px';
+            btn.onclick = function() {
+                img.remove(); btn.remove();
+                fetch('/foto/position', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({x: 0, y: 0})});
+            };
+            setTimeout(()=>container.appendChild(btn), 500);
+        } else {
+            img.style.cursor = 'default';
+        }
+    }
+    window.addEventListener('DOMContentLoaded', loadFoto);
+</script>
+{% endif %} 
