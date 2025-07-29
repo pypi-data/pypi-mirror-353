@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+ai_xone_mcp_workflow.egg-info/PKG-INFO
+ai_xone_mcp_workflow.egg-info/SOURCES.txt
+ai_xone_mcp_workflow.egg-info/dependency_links.txt
+ai_xone_mcp_workflow.egg-info/entry_points.txt
+ai_xone_mcp_workflow.egg-info/requires.txt
+ai_xone_mcp_workflow.egg-info/top_level.txt
