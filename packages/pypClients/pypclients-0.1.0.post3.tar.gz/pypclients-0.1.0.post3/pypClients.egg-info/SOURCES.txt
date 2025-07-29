@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+pypClients.egg-info/PKG-INFO
+pypClients.egg-info/SOURCES.txt
+pypClients.egg-info/dependency_links.txt
+pypClients.egg-info/requires.txt
+pypClients.egg-info/top_level.txt
+pypclients/__init__.py
+pypclients/bitbucket_client.py
+pypclients/files_client.py
+pypclients/sql_client.py
+pypclients/zipfiles_client.py

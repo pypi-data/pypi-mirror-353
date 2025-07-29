@@ -1,0 +1,32 @@
+[build-system]
+requires = [ "setuptools>=42", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypClients"
+version = "0.1.0.post3"
+description = "Python packages Bitbucket, SQL, Zipfile, misc. files methods"
+authors = [{ name = "Antoine Richado", email = "fordian68@gmail.com" }]
+readme = { file = "README.md", content-type = "text/markdown" }
+
+classifiers = [
+    "Programming Language :: Python :: 3", 
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "colorama==0.4.6",
+    "pandas==2.2.3",
+    "pymssql==2.3.2",
+    "requests==2.32.3",
+    "requests-toolbelt==1.0.0",
+    "types-colorama==0.4.15.20240311",
+    "types-requests==2.32.0.20241016",
+    "typing==3.7.4.3",
+    "typing_extensions==4.12.2",
+    "urllib3==2.2.3"
+]
+
+[tool.setuptools]
+include-package-data = true
+packages = ["pypclients"]

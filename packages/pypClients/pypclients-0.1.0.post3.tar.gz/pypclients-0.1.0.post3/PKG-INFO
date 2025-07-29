@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: pypClients
+Version: 0.1.0.post3
+Summary: Python packages Bitbucket, SQL, Zipfile, misc. files methods
+Author-email: Antoine Richado <fordian68@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: colorama==0.4.6
+Requires-Dist: pandas==2.2.3
+Requires-Dist: pymssql==2.3.2
+Requires-Dist: requests==2.32.3
+Requires-Dist: requests-toolbelt==1.0.0
+Requires-Dist: types-colorama==0.4.15.20240311
+Requires-Dist: types-requests==2.32.0.20241016
+Requires-Dist: typing==3.7.4.3
+Requires-Dist: typing_extensions==4.12.2
+Requires-Dist: urllib3==2.2.3
+
+# Clients Package
+
+This package provides a collection of Python client classes for interacting with various services.
+
+## Installation
+
+```bash
+pip install pypClients
+```
+
+## Modules
+
+Below is a summary of the modules and their main classes/functions:
+
+### `clients/api_client.py`
+
+- **ApiClient**  
+    Base class for making HTTP requests to APIs. Handles authentication, request building, and response parsing.
+
+### `clients/database_client.py`
+
+- **DatabaseClient**  
+    Provides methods to connect to and interact with SQL/NoSQL databases.
+
+### `clients/email_client.py`
+
+- **EmailClient**  
+    Utility class for sending emails via SMTP or third-party providers.
+
+### `clients/file_client.py`
+
+- **FileClient**  
+    Handles file operations such as upload, download, and storage management.
+
+### `clients/utils.py`
+
+- Utility functions used across client classes (e.g., configuration loading, logging).
+
+## Usage Example
+
+```python
+from clients.api_client import ApiClient
+
+client = ApiClient(base_url="https://api.example.com", api_key="your_api_key")
+response = client.get("/endpoint")
+print(response.json())
+```
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+*For detailed documentation, refer to the docstrings in each module.*
