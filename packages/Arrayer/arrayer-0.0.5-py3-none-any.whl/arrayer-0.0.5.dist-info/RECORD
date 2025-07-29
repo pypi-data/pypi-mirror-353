@@ -1,0 +1,12 @@
+arrayer/__init__.py,sha256=EImkGWpdy4ZpAmW0mbvPbw8l1cPizOVYdRJgHxewZp0,191
+arrayer/dtype.py,sha256=xBgc5cK3_9NIwZAMwRk8it16gT4vc1wz4MwD1Mj4AAs,1865
+arrayer/exception.py,sha256=sKAdCQbQ9LrtFERzrPkUehk5E7NZqWQ8w_F9kVu_zkk,633
+arrayer/matrix.py,sha256=Ng5kbJMsGvTjIzrhhMreQqzdss1-8wioCxxoHDScF3o,6017
+arrayer/pca.py,sha256=oydBs3aUIM_fjQXsXMACi9vNb4JlPo4nnsMT5md7edU,12271
+arrayer/pcloud.py,sha256=sFU1qIadwEI2PT0x58pzKviQQR742J9kazSvjuJSOFQ,5999
+arrayer/tensor.py,sha256=ej_QXEno-FQsEHnncCjq_ec4g1M1YqOlLCsVUKjHoEE,6530
+arrayer/typing.py,sha256=oI1aEutenBXBqR8i12djUdhvYFcldF6T_xdKxyQqF_k,470
+arrayer-0.0.5.dist-info/METADATA,sha256=3o4nsKdUvwbPc4J9lbFkJ815AZtUgPDQ1fyxdDjkBPA,164
+arrayer-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+arrayer-0.0.5.dist-info/top_level.txt,sha256=vDIAofJmRSQeYuEHX4VN9SVg0_BTh55thJhNQ5UmxlQ,8
+arrayer-0.0.5.dist-info/RECORD,,
