@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+hypertgdownloader/__init__.py
+hypertgdownloader/clients.py
+hypertgdownloader/downloader.py
+hypertgdownloader/exceptions.py
+hypertgdownloader/types.py
+hypertgdownloader/utils.py
+hypertgdownloader.egg-info/PKG-INFO
+hypertgdownloader.egg-info/SOURCES.txt
+hypertgdownloader.egg-info/dependency_links.txt
+hypertgdownloader.egg-info/requires.txt
+hypertgdownloader.egg-info/top_level.txt
