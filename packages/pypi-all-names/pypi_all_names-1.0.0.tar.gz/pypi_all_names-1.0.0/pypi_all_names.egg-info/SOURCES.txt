@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+pypi_all_names/__init__.py
+pypi_all_names/cli.py
+pypi_all_names/fetcher.py
+pypi_all_names.egg-info/PKG-INFO
+pypi_all_names.egg-info/SOURCES.txt
+pypi_all_names.egg-info/dependency_links.txt
+pypi_all_names.egg-info/entry_points.txt
+pypi_all_names.egg-info/requires.txt
+pypi_all_names.egg-info/top_level.txt

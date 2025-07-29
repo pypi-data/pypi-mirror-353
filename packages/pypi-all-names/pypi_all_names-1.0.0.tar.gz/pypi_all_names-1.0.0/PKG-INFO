@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: pypi_all_names
+Version: 1.0.0
+Summary: Library to get all package names registered with PyPI at once!
+Home-page: https://github.com/gaon12/pypi_all_names
+Author: Jeong Gaon
+Author-email: gokirito12@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# pypi_all_names
+
+PyPI에 등록된 모든 패키지 이름을 가져와 파이썬 리스트로 반환하고, 필요시 JSON 또는 TXT 파일로 저장할 수 있는 라이브러리 입니다.
+
+## 설치
+
+### pip로 설치(권장)
+```bash
+pip install pypi_all_names
+```
+
+### git clone하여 설치
+```bash
+pip install git+https://github.com/gaon12/pypi_all_names
+```
+
+## 사용 예시
+
+### 1) 파이썬 코드에서 함수 호출
+
+```python
+from pypi_all_names.fetcher import fetch_all_package_names, save_as_json, save_as_txt
+
+# 모든 패키지 이름을 리스트로 가져옴
+names = fetch_all_package_names()
+
+# JSON 파일로 저장
+save_as_json(names, 'all_packages.json')
+
+# TXT 파일로 저장
+save_as_txt(names, 'all_packages.txt')
+```
+
+### 2) 커맨드라인에서 사용
+
+- 표준 출력(한 줄씩 패키지 이름 출력):
+
+  ```bash
+  pypi-all-names
+  ```
+
+- JSON으로 저장:
+
+  ```bash
+  pypi-all-names -f json -o all_packages.json
+  ```
+
+- TXT로 저장:
+
+  ```bash
+  pypi-all-names -f txt -o all_packages.txt
+  ```
