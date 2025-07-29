@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+ask_human_mcp/__init__.py
+ask_human_mcp/server.py
+ask_human_mcp.egg-info/PKG-INFO
+ask_human_mcp.egg-info/SOURCES.txt
+ask_human_mcp.egg-info/dependency_links.txt
+ask_human_mcp.egg-info/entry_points.txt
+ask_human_mcp.egg-info/requires.txt
+ask_human_mcp.egg-info/top_level.txt
+tests/test_cli_integration.py
+tests/test_integration.py
+tests/test_server.py

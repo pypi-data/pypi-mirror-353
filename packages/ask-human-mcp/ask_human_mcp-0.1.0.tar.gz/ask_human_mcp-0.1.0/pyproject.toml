@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ask-human-mcp"
+version = "0.1.0"
+description = "MCP server that lets AI agents escalate questions to humans"
+authors = [
+    {name = "Mason Yarbrough", email = "mason@kallro.com"}
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+keywords = ["mcp", "ai", "human-in-the-loop", "cursor", "claude"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "watchdog>=3.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/masony817/ask-human-mcp"
+Repository = "https://github.com/masony817/ask-human-mcp.git"
+Documentation = "https://github.com/masony817/ask-human-mcp#readme"
+Issues = "https://github.com/masony817/ask-human-mcp/issues"
+
+[project.scripts]
+ask-human-mcp = "ask_human_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ask_human_mcp*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.ruff]
+target-version = "py38"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "W"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 
