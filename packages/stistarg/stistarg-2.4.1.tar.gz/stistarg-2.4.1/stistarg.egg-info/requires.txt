@@ -1,0 +1,11 @@
+setuptools
+numpy
+astropy
+matplotlib
+
+[docs]
+sphinx
+
+[test]
+pytest
+pytest-cov

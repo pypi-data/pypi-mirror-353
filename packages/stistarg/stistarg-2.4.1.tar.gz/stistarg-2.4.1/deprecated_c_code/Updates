@@ -1,0 +1,21 @@
+STIS Target Acquisition Simulator -- Release 1
+
+The following bugs have been addressed:
+
+ 2. 24-Feb-97		tas.h					RAShaw
+
+The definition of TAS_FTP_PATH had been set to a world-writable directory 
+on /data/vega3, which of course broke when vega was moved from the ra 
+server to tib.  This of course broke the test version of the TAS on ra.  
+The definition has been revised, although this should really be established 
+via a compiler switch.  
+
+ 1. 24-Feb-97		tas_getirafimage.c			RAShaw
+
+The pixel scale was being incorrectly calculated.  This was fixed in the 
+routine getImageScale.  The bug, and the fix, only affect the reported 
+pixel scale (and possibly the generation of a warning message), but it 
+does not affect the validity of the computed target position.  
+_________________________________
+
+Release 1.0 on 27-Jan-1997

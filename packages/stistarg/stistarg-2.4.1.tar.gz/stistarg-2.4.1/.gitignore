@@ -1,0 +1,12 @@
+build/
+*.pyc
+*%
+*~
+.DS_Store
+targacq.a
+.coverage
+dist/
+docs/_build/
+stistarg.egg-info/
+stistarg/_version.py
+.pytest_cache/

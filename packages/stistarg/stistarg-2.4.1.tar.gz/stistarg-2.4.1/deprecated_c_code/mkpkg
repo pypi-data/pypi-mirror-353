@@ -1,0 +1,63 @@
+# mkpkg file for STIS Target Acquisition Simulator		06-Jan-99
+#
+# do this:  setenv IRAFCC cc
+
+$call stalone
+$exit
+
+native:
+	$set XFLAGS='-c -DIRAF_NATIVE_TASK -O'
+	$call	build
+	;
+
+stalone:
+#	$set STSDAS='/usr/stsci/stsdasx/lib'
+	$set XFLAGS='-c -Inolibc -DIRAF -O'
+        $set LFLAGS = "-H -z $(LFLAGS)"	
+	$call	build
+	;
+
+debug:
+	$set STSDAS='/usr/stsci/stsdasx/lib'
+#	$set XFLAGS='-cgq -DIRAF_NATIVE_TASK'
+	$set XFLAGS='-cgq -DIRAF'
+#	$set LFLAGS = "-xz"
+	$set LFLAGS = "-g $(LFLAGS)"
+	$call	build
+	;
+
+build:
+	$update	targacq.a
+	$call	linkonly
+	;
+
+linkonly:
+	$set LIBS = "-lcvos -lc -lm -lxtools -lex -lsys -lvops -lboot -los"
+	$set LFLAGS = '-h -p tables -p stsdas -/L/opt/SUNWspro/SC3.0.1/lib/ $(LFLAGS)'
+
+	$link   targacq.a $(LIBS) \
+		-o targacquire \
+	;
+
+targacq.a:
+	tas_main.c		"tas.h" "tas_error.h" "tas_struct.h" 
+	tas_checkbox.c		"tas.h" 
+	tas_error.c		"tas.h" "tas_error.h" 
+	tas_inputhtml.c		"tas.h" "tas_error.h" "tas_struct.h" 
+	tas_getirafimage.c	"tas.h" "tas_error.h" 
+	tas_inputiraf.c		"tas.h" "tas_error.h" "tas_struct.h" 
+	tas_locate.c		"tas.h" "tas_error.h" "tas_struct.h" 
+	tas_out.c		"tas.h" "tas_error.h" "tas_struct.h" 
+	@(uncgi)
+	;
+
+uncgi:
+	$set SCRIPT_BIN = '/opt/www/cgi-bin/STIS/STIS/tas'
+	$set DEST_DIR = '/opt/www/cgi-bin/STIS/STIS/tas'
+#	$set NOQUERY = '-DNO_QUERY_OK'
+	$set XFLAGS='-c -DNO_QUERY_OK -DSCRIPT_BIN="$(SCRIPT_BIN)"'
+	$set LFLAGS = "-xz $(LFLAGS)"
+	uncgi.c			
+	;
+
+#	$set LIBS = "-lcvos -lc -lxtools -lex -lsys -lvops -lboot -los"

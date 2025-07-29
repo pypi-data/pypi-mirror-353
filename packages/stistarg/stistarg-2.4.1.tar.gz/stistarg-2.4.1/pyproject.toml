@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stistarg"
+description = "HST/STIS Target Acquisition Simulator"
+readme = "README.rst"
+license = { file = "LICENSE.txt" }
+authors = [
+    { name = "Sean Lockwood", email = "lockwood@stsci.edu" },
+    { name = "Bralen Berry" },
+]
+maintainers = [
+    { name = "Sean Lockwood", email = "lockwood@stsci.edu" },
+]
+keywords = ["astronomy"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+requires-python = ">=3.9"
+dependencies = [
+    "setuptools",
+    "numpy",
+    "astropy",
+    "matplotlib"
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+docs = ["sphinx"]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=stistarg --cov-report=term --cov-fail-under=80"
+testpaths = ["stistarg"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+omit = ["stistarg/test_stistarg.py", "stistarg/_version.py"]
+
+[project.urls]
+Homepage = "http://www.stsci.edu/instruments/stis"
+Documentation = "https://stistarg.readthedocs.io"
+Support = "https://hsthelp.stsci.edu"
+
+[project.scripts]
+stistarg = "stistarg.main:parse"
+
+[tool.setuptools]
+packages = ["stistarg"]
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "node-and-date"
+write_to = "stistarg/_version.py"

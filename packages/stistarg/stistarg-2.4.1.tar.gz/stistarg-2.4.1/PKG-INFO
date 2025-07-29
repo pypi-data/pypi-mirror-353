@@ -1,0 +1,145 @@
+Metadata-Version: 2.4
+Name: stistarg
+Version: 2.4.1
+Summary: HST/STIS Target Acquisition Simulator
+Author: Bralen Berry
+Author-email: Sean Lockwood <lockwood@stsci.edu>
+Maintainer-email: Sean Lockwood <lockwood@stsci.edu>
+License: Copyright (C) 2017 Association of Universities for Research in Astronomy (AURA)
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+            1. Redistributions of source code must retain the above copyright
+              notice, this list of conditions and the following disclaimer.
+        
+            2. Redistributions in binary form must reproduce the above
+              copyright notice, this list of conditions and the following
+              disclaimer in the documentation and/or other materials provided
+              with the distribution.
+        
+            3. The name of AURA and its representatives may not be used to
+              endorse or promote products derived from this software without
+              specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY AURA ``AS IS'' AND ANY EXPRESS OR IMPLIED
+        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL AURA BE LIABLE FOR ANY DIRECT, INDIRECT,
+        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+        BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+        OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+        ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+        TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+        USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+        DAMAGE.
+        
+        
+Project-URL: Homepage, http://www.stsci.edu/instruments/stis
+Project-URL: Documentation, https://stistarg.readthedocs.io
+Project-URL: Support, https://hsthelp.stsci.edu
+Keywords: astronomy
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: setuptools
+Requires-Dist: numpy
+Requires-Dist: astropy
+Requires-Dist: matplotlib
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Dynamic: license-file
+
+HST/STIS Target Acquisition Simulator
+=====================================
+
+See documentation at http://stistarg.readthedocs.io/en/latest/
+
+Utility to simulate HST/STIS target acquisitions with various "optional parameters" 
+available in the Astronomer's Proposal Tool (APT) on a user-supplied FITS image.
+
+|PyPI| |docs| |build-status|
+
+
+Command Line Interface
+----------------------
+
+For more information, type ``stistarg --help``::
+  
+  usage: stistarg [-h] [--ext EXT] [--point | --diffuse CHECKBOXSIZE] [--display]
+                  FILENAME
+  
+  Simulate HST/STIS onboard target acquisition algorithm on user data.
+  
+  positional argument:
+    FILENAME              Input FITS file
+  
+  optional arguments:
+    -h, --help            show this help message and exit
+    --ext EXT             Input FITS extension [default=0]
+    --point               Point-source algorithm [default]
+    --diffuse CHECKBOXSIZE
+                          Diffuse-source algorithm. Specify checkboxsize [odd integer 3-101]
+    --display, -d         Display results with matplotlib.pyplot
+  
+  Written by Berry & Lockwood
+
+
+Python API
+----------
+
+.. code-block:: python
+
+  import stistarg
+  stistarg.stistarg(filename, ext=0, source='point', checkboxsize=3, display=False)
+
+
+Limitations
+-----------
+
+This release currently supports only the STIS detector format and scale.  The 
+capability to use non--STIS data will be added in a future release.  Users wishing to 
+use data from other sources must trim and rescale their input data accordingly.  The 
+STIS CCD plate scale is `0.05078 arcsec/pix`_.
+
+.. _`0.05078 arcsec/pix`: http://www.stsci.edu/hst/stis/documents/handbooks/currentIHB/c13_specref03.html#922126
+
+Furthermore, `stistarg` assumes the use of STIS acquisition image data and trims out the 
+last five columns from the input array before performing calculations (these are normally 
+hot).  To skip this behavior, users should pad their data accordingly.
+
+
+Contact
+-------
+
+For support, please contact the `STScI help desk`_.
+
+.. _`STScI help desk`: https://hsthelp.stsci.edu
+
+
+.. |PyPI| image:: https://img.shields.io/pypi/v/stistarg
+   :alt: PyPI - Version
+   :target: https://pypi.org/project/stistarg/
+
+.. |docs| image:: https://readthedocs.org/projects/stistarg/badge/
+    :alt: Documentation Status
+    :target: http://stistarg.readthedocs.io/en/latest/?badge=latest
+
+.. |build-status| image:: https://github.com/spacetelescope/stistarg/actions/workflows/ci.yml/badge.svg?branch=master
+    :alt: build status
+    :target: https://github.com/spacetelescope/stistarg/actions/workflows/ci.yml
