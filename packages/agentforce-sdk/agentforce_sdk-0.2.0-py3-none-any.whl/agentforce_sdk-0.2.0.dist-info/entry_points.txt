@@ -1,0 +1,3 @@
+[console_scripts]
+agentforce-server=agent_sdk.server:main
+
