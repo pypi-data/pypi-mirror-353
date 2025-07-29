@@ -1,0 +1,13 @@
+djc_heroicons/__init__.py,sha256=3ArbVhhcAm6sk1mSyCFdPLYkbX_oavy97XNhn2uPjJQ,285
+djc_heroicons/app_settings.py,sha256=ibJqwcOX29pt04q6gYz3F5bFXT4bduKkXbPnxCRUIjk,2379
+djc_heroicons/apps.py,sha256=mUKsvbj6OXj2jLVh2VPDkPr5dl9W6QgbQd3A6MQ9OTk,562
+djc_heroicons/icons.py,sha256=fg6SM9Kelrnpu0-_Rrh2VjVWUjQ6FUY_-nQVB4EY8Do,289095
+djc_heroicons/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djc_heroicons/utils.py,sha256=3U-AfWq-TAQjU4636defzXxeM1KgRuBKJzKRc8b8_OQ,270
+djc_heroicons/components/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djc_heroicons/components/icon.py,sha256=6AzKXRX4jovuN0oohPxuiE4CZSdKR26PcCVaj2rFfMg,2806
+djc_heroicons-1.1.0.dist-info/licenses/LICENSE,sha256=inryfBkMlRcdoCCKnr9M24ZYZbU0i9QbLHA64uks1vM,1068
+djc_heroicons-1.1.0.dist-info/METADATA,sha256=EExVWzXMG_4rEa4CNwd1dJCzWG2SJPNt66pxZMH0G-E,199306
+djc_heroicons-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+djc_heroicons-1.1.0.dist-info/top_level.txt,sha256=6Kid_jp91xnzpjYGxqfqSRWW8CcxXgrBz6jrWDLfFXw,14
+djc_heroicons-1.1.0.dist-info/RECORD,,
