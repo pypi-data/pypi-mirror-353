@@ -1,0 +1,18 @@
+[project]
+name = "pullapprove"
+version = "5.0.0"
+description = "CLI for PullApprove5"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2",
+    "click>=8",
+    "pydantic>=2",
+    "wcmatch>=8.0",
+    "keyring>=25.6.0",
+]
+scripts = { "pullapprove" = "pullapprove.cli:cli" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
