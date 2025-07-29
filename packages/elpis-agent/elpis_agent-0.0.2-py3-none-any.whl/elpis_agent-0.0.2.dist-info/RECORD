@@ -1,0 +1,11 @@
+elpis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+elpis/agent.py,sha256=iuz1yPEqKXVvqDqfJtUUGM2iUwwOxKll7QkGYLaUzL0,2148
+elpis/constants.py,sha256=b_gQiQh6V0FJAVAgYjIuVr0WLAQAMuei0f_nuE7fndk,81
+elpis/main.py,sha256=3ecgc-RNI9sIN_y2AYsuRiETQMqYzJ_vriw8t_jWuFI,536
+elpis/prompts.py,sha256=g60PYBtO1poXEfpcmTuwlCYFBGohUpz8b-uPrjThxgw,28148
+elpis/tools.py,sha256=IKiJTnWdAdspXEtfEMeR7z4jdNa2stDdtpejgtEjw1c,37648
+elpis_agent-0.0.2.dist-info/METADATA,sha256=WRnWcwBLrC-7QluVDk6jFn0ZWwrfR237JBMGbGsDFyI,8003
+elpis_agent-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+elpis_agent-0.0.2.dist-info/entry_points.txt,sha256=WAdcgV_ZyMrAXT5ISHolTWXWliFfr0W6IjKmpIR4fCo,42
+elpis_agent-0.0.2.dist-info/licenses/LICENSE,sha256=jhzeW0netC7TjugHml_geLw0UHXQYCQf4aU6a7wsIRc,1091
+elpis_agent-0.0.2.dist-info/RECORD,,
