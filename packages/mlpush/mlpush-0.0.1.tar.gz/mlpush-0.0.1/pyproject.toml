@@ -1,0 +1,11 @@
+[project]
+name = "mlpush"
+version = "0.0.1"
+description = "Git-style CLI tool to version and publish ML models"
+authors = [{name = "ashadahmed", email = "ashadx21@gmail.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: mlpush
+Version: 0.0.1
+Summary: Git-style CLI tool to version and publish ML models
+Author-email: ashadahmed <ashadx21@gmail.com>
+License: MIT
+Description-Content-Type: text/markdown
