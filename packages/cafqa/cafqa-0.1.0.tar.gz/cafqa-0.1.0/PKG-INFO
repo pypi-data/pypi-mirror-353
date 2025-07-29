@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: cafqa
+Version: 0.1.0
+Summary: CAFQA: A classical simulation bootstrap for variational quantum algorithms
+Project-URL: Paper, https://arxiv.org/abs/2202.12924
+Project-URL: Homepage, https://github.com/your-repo/cafqa
+Project-URL: Repository, https://github.com/your-repo/cafqa
+Author: Gokul Subramanian Ravi, Pranav Gokhale, Yi Ding, William M. Kirby, Kaitlin N. Smith, Jonathan M. Baker, Peter J. Love, Henry Hoffmann, Kenneth R. Brown, Frederic T. Chong
+License: MIT
+Keywords: Clifford gates,NISQ,VQE,ansatz initialization,quantum chemistry,quantum computing,quantum simulation,variational quantum algorithms
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.12
+Requires-Dist: jupyter>=1.1.1
+Requires-Dist: pyscf>=2.9.0
+Requires-Dist: qiskit-aer>=0.17.1
+Requires-Dist: qiskit-ibm-runtime>=0.35.0
+Requires-Dist: qiskit-nature>=0.7.2
+Requires-Dist: qiskit==1.2.1
+Requires-Dist: scikit-quant>=0.8.2
+Requires-Dist: stim>=1.15.0
+Provides-Extra: all
+Requires-Dist: hypermapper; extra == 'all'
+Provides-Extra: cafqa
+Requires-Dist: hypermapper; extra == 'cafqa'
+Description-Content-Type: text/markdown
+
+# CAFQA
+
+(Re-)Implementation of an interface for the Variational Quantum Eigensolver and the [CAFQA](https://dl.acm.org/doi/abs/10.1145/3567955.3567958) scheme (original code: https://github.com/rgokulsm/CAFQA).
+
+CAFQA is a special case of VQE where the ansatz is built of Clifford gates only and the optimization is therefore performed over a discrete set. This implementation uses [Stim](https://github.com/quantumlib/Stim) for fast Clifford circuit simulation and [HyperMapper](https://github.com/luinardi/hypermapper) for Bayesian Optimization over the discrete search space.
+
+Full list of dependencies (`pip install ...`):
+- numpy
+- qiskit
+- qiskit[optimize]
+- qiskit[nature]
+- stim
+- scikit-quant
+- hypermapper
+- pyscf

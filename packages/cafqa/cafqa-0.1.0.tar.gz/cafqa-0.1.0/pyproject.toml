@@ -1,0 +1,67 @@
+[project]
+name = "cafqa"
+version = "0.1.0"
+description = "CAFQA: A classical simulation bootstrap for variational quantum algorithms"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "Gokul Subramanian Ravi" },
+    { name = "Pranav Gokhale" },
+    { name = "Yi Ding" },
+    { name = "William M. Kirby" },
+    { name = "Kaitlin N. Smith" },
+    { name = "Jonathan M. Baker" },
+    { name = "Peter J. Love" },
+    { name = "Henry Hoffmann" },
+    { name = "Kenneth R. Brown" },
+    { name = "Frederic T. Chong" },
+]
+keywords = [
+    "quantum computing",
+    "variational quantum algorithms",
+    "VQE",
+    "Clifford gates",
+    "quantum simulation",
+    "NISQ",
+    "ansatz initialization",
+    "quantum chemistry",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "jupyter>=1.1.1",
+    "pyscf>=2.9.0",
+    "qiskit==1.2.1",
+    "qiskit-aer>=0.17.1",
+    "qiskit-ibm-runtime>=0.35.0",
+    "qiskit-nature>=0.7.2",
+    "scikit-quant>=0.8.2",
+    "stim>=1.15.0",
+]
+
+[project.optional-dependencies]
+cafqa = ["hypermapper"]
+all = ["hypermapper"]
+
+[project.urls]
+"Paper" = "https://arxiv.org/abs/2202.12924"
+"Homepage" = "https://github.com/your-repo/cafqa"
+"Repository" = "https://github.com/your-repo/cafqa"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/.git", "/.venv", "/__pycache__", "/examples", "/uv.lock"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["cafqa"]
