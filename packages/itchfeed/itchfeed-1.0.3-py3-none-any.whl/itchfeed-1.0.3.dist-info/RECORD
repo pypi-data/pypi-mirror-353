@@ -1,0 +1,9 @@
+itch/__init__.py,sha256=m8ulOH0nET4yLoKcqWJA-VjOEZldGo932t95rHOZh4w,204
+itch/indicators.py,sha256=-Ed2M8I60xGQ1bIPZCGCKGb8ayT87JAnIaosfiBimXI,6542
+itch/messages.py,sha256=UHr4eBTtgiLg9vO53GpciAxiAO9AD9uCu8Xz3WnfadM,61927
+itch/parser.py,sha256=BOrkGsmRkcYnXSf5S9yqrwzP0jqtkH5mGCpWCeiWNTg,6155
+itchfeed-1.0.3.dist-info/licenses/LICENSE,sha256=f2u79rUzh-UcYH0RN0Ph0VvVYHBkYlVxtguhKmrHqsw,1089
+itchfeed-1.0.3.dist-info/METADATA,sha256=nfZbTBXUq5Ghq1xhls4fttblPNlpRGtqZth1h8lnx-4,30699
+itchfeed-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+itchfeed-1.0.3.dist-info/top_level.txt,sha256=xwsOYShvy3gc1rfyitCTgSxBZDGG1y6bfQxkdhIGmEM,5
+itchfeed-1.0.3.dist-info/RECORD,,
