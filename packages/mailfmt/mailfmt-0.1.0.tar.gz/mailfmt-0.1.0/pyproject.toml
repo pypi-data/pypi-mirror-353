@@ -1,0 +1,17 @@
+[project]
+name = "mailfmt"
+version = "0.1.0"
+description = "Plain text email formatter"
+readme = "README.md"
+authors = [
+    { name = "Daniel Fichtinger", email = "daniel@ficd.ca" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+mailfmt = "mailfmt:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
