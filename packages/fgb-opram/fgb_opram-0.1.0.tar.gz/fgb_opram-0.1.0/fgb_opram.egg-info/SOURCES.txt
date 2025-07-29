@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+fgb_opram/__init__.py
+fgb_opram/fuzzy_overlap.py
+fgb_opram/granular_ball.py
+fgb_opram/gui.py
+fgb_opram/opram.py
+fgb_opram/rcc8.py
+fgb_opram/spatial_query_engine.py
+fgb_opram/visualize.py
+fgb_opram.egg-info/PKG-INFO
+fgb_opram.egg-info/SOURCES.txt
+fgb_opram.egg-info/dependency_links.txt
+fgb_opram.egg-info/entry_points.txt
+fgb_opram.egg-info/requires.txt
+fgb_opram.egg-info/top_level.txt
