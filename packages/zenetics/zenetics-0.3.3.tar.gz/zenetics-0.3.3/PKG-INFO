@@ -1,0 +1,397 @@
+Metadata-Version: 2.3
+Name: zenetics
+Version: 0.3.3
+Summary: Zenetics SDK
+Author: Zenetics
+Author-email: contact@zenetics.io
+Requires-Python: >=3.10,<3.14
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: httpx (>=0.28.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.7.1,<3.0.0)
+Requires-Dist: python-dotenv (>=1.1.0,<2.0.0)
+Requires-Dist: requests (==2.32.3)
+Requires-Dist: rich (>=13.7.0,<14.0.0)
+Requires-Dist: typer (>=0.15.1,<0.16.0)
+Project-URL: Homepage, https://github.com/zenetics/zenetics-sdk
+Project-URL: Issues, https://github.com/zenetics/zenetics-sdk/issues
+Description-Content-Type: text/markdown
+
+# ZENETICS SDK
+
+[![PyPI version](https://badge.fury.io/py/zenetics.svg)](https://badge.fury.io/py/zenetics)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+ZENETICS SDK is a Python library that provides a simple interface to interact with the ZENETICS API. It includes a powerful command-line interface (CLI) to run test suites on your local development machine or in your CI/CD system.
+
+The ZENETICS SDK is designed to work seamlessly with the **ZENETICS Platform - Quality Management for LLM Applications**. To get started with LLM testing, sign up at [www.zenetics.io](https://www.zenetics.io).
+
+## 🚀 Quick Start
+
+### Installation
+
+Install the ZENETICS SDK using pip or poetry:
+
+```bash
+pip install zenetics
+```
+
+or
+
+```bash
+poetry add zenetics
+```
+
+### Setup
+
+1. **Get your API Key** from the [ZENETICS Portal](https://app.zenetics.io)
+2. **Configure your API Key** using one of these methods:
+
+**Option A: Environment Variable**
+
+```bash
+export ZENETICS_API_KEY=your-api-key-here
+```
+
+**Option B: .env File (Recommended)**
+Create a `.env` file in your project root:
+
+```env
+ZENETICS_API_KEY=your-api-key-here
+```
+
+The CLI will automatically detect and load the `.env` file from your current directory or any parent directory.
+
+3. **Validate your setup:**
+
+```bash
+zenetics check --verbose
+```
+
+## 📋 Usage
+
+### Running Test Suites
+
+The ZENETICS CLI provides a simple way to run your test suites. The `run` command requires two parameters:
+
+```bash
+zenetics run --test-suite-id <ID> --generator-file <PATH>
+```
+
+**Example:**
+
+```bash
+zenetics run --test-suite-id 1234 --generator-file src/test/generate.py
+```
+
+**Short form:**
+
+```bash
+zenetics run -t 1234 -g src/test/generate.py
+```
+
+### Command Options
+
+| Option             | Short | Description                                             | Default        |
+| ------------------ | ----- | ------------------------------------------------------- | -------------- |
+| `--test-suite-id`  | `-t`  | ID of the test suite to run (required)                  | -              |
+| `--generator-file` | `-g`  | Python file containing the generate function (required) | -              |
+| `--output-dir`     | `-o`  | Directory for storing test results                      | `test_results` |
+| `--local-only`     | -     | Run locally without connecting to ZENETICS API          | `false`        |
+| `--verbose`        | `-v`  | Enable verbose output                                   | `false`        |
+
+**Full example:**
+
+```bash
+zenetics run -t 1234 -g src/test/generate.py --output-dir ./results --verbose
+```
+
+## 🔧 Implementing the Generation Function
+
+Create a Python file that implements a single function: `generate(input: str) -> Generation`. This function connects ZENETICS with your application.
+
+### Basic Structure
+
+```python
+from zenetics.models.generation import Generation, TokenUsage, ModelMetadata
+
+def generate(input: str) -> Generation:
+    """
+    Generate output using your LLM application.
+
+    Args:
+        input: The input string from test cases
+
+    Returns:
+        Generation object with output and optional metadata
+    """
+
+    # Generate output using your application
+    output, retrieval_context = YOUR_APPLICATION.generate(input)
+
+    # Optional: Get token usage and metadata
+    token_usage = TokenUsage(
+        input_tokens=864,
+        completion_tokens=567,
+        total_tokens=1431
+    )
+
+    metadata = ModelMetadata(
+        provider="OpenAI",
+        model="gpt-3.5-turbo",
+        parameters={
+            "max_tokens": 1024,
+            "temperature": 0.7
+        }
+    )
+
+    return Generation(
+        output=output,
+        retrieval_context=retrieval_context,  # Required for RAG applications
+        token_usage=token_usage,              # Optional but recommended
+        metadata=metadata                     # Optional but recommended
+    )
+```
+
+### Generation Object Fields
+
+-   **`output`** (required): The result generated by your LLM application
+-   **`retrieval_context`** (optional): List of retrieved documents for RAG applications
+-   **`token_usage`** (optional): Token consumption information
+-   **`metadata`** (optional): Model configuration and parameters
+
+## 📚 CLI Commands
+
+### Core Commands
+
+#### `run` - Execute Test Suites
+
+```bash
+# Basic usage
+zenetics run --test-suite-id 123 --generator-file my_generator.py
+
+# With options
+zenetics run -t 456 -g ./generators/test_gen.py --verbose --output-dir ./results
+```
+
+#### `testsuite` - Manage Test Suites
+
+```bash
+# List all available test suites
+zenetics testsuite list
+
+# Get help for testsuite commands
+zenetics testsuite --help
+```
+
+#### `check` - Validate Setup
+
+```bash
+# Basic connectivity check
+zenetics check
+
+# Verbose output
+zenetics check --verbose
+```
+
+#### `version` - Show Version
+
+```bash
+zenetics version
+```
+
+#### `help` - Show Help
+
+```bash
+zenetics help
+```
+
+## 🏗️ CI/CD Integration
+
+### GitHub Actions Example
+
+```yaml
+name: ZENETICS Tests
+
+on: [push, pull_request]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.9'
+
+            - name: Install dependencies
+              run: |
+                  pip install zenetics
+                  pip install -r requirements.txt
+
+            - name: Run ZENETICS tests
+              env:
+                  ZENETICS_API_KEY: ${{ secrets.ZENETICS_API_KEY }}
+              run: |
+                  zenetics run --test-suite-id 1234 --generator-file src/generate.py --verbose
+```
+
+### Docker Example
+
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["zenetics", "run", "--test-suite-id", "1234", "--generator-file", "src/generate.py"]
+```
+
+## 🔑 API Key Management
+
+### Getting Your API Key
+
+1. Log in to the [ZENETICS Portal](https://app.zenetics.io)
+2. Select your application
+3. Navigate to **Settings** in the left sidebar
+4. Find the "API Key - Test Runners" section
+5. Click **Create API Key**
+
+### Setting Environment Variables
+
+The ZENETICS CLI supports multiple ways to configure your API key:
+
+**Method 1: .env File (Recommended)**
+Create a `.env` file in your project directory:
+
+```env
+ZENETICS_API_KEY=your-api-key-here
+```
+
+The CLI automatically searches for `.env` files in:
+
+-   Current working directory
+-   Parent directories (walking up the directory tree)
+
+**Method 2: Environment Variables**
+
+**Linux/macOS:**
+
+```bash
+export ZENETICS_API_KEY=your-api-key-here
+```
+
+**Windows:**
+
+```cmd
+set ZENETICS_API_KEY=your-api-key-here
+```
+
+**Method 3: Shell Profile**
+Add to your `~/.bashrc`, `~/.zshrc`, or equivalent:
+
+```bash
+export ZENETICS_API_KEY=your-api-key-here
+```
+
+## 🎯 Best Practices
+
+### 1. Generator Function Design
+
+-   Keep your `generate()` function focused and simple
+-   Handle errors gracefully within the function
+-   Include meaningful metadata when available
+-   Use type hints for better code clarity
+
+### 2. Test Organization
+
+-   Group related test cases into logical test suites
+-   Use descriptive names for your generator files
+-   Organize generator files in a dedicated directory structure
+
+### 3. Performance Optimization
+
+-   Use `--local-only` for development and debugging
+-   Monitor token usage to control costs
+-   Organize test suites for efficient execution
+
+### 4. Error Handling
+
+-   Always validate your setup with `zenetics check`
+-   Use `--verbose` mode for detailed debugging information
+-   Check generator file syntax before running tests
+
+### 5. Environment Management
+
+-   Use `.env` files for project-specific configurations
+-   Keep API keys secure and never commit them to version control
+-   Add `.env` to your `.gitignore` file
+-   Use different `.env` files for different environments (dev, staging, prod)
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**"API Key not found"**
+
+```bash
+# Check if API key is set
+echo $ZENETICS_API_KEY
+
+# Check if .env file exists and contains the key
+cat .env | grep ZENETICS_API_KEY
+
+# Validate setup
+zenetics check --verbose
+```
+
+**"Generator file not found"**
+
+```bash
+# Verify file exists and is readable
+ls -la path/to/your/generator.py
+
+# Check file permissions
+chmod +r path/to/your/generator.py
+```
+
+**"Invalid test suite ID"**
+
+```bash
+# List available test suites
+zenetics testsuite list
+
+# Ensure ID is a positive integer
+zenetics run --test-suite-id 123 --generator-file generate.py
+```
+
+## 📖 Documentation
+
+-   **Full Documentation**: [docs.zenetics.io](https://docs.zenetics.io)
+-   **API Reference**: [docs.zenetics.io/api](https://docs.zenetics.io/api)
+-   **Examples**: [github.com/zenetics/examples](https://github.com/zenetics/examples)
+
+## 🤝 Support
+
+-   **Issues**: [GitHub Issues](https://github.com/zenetics/zenetics-sdk/issues)
+-   **Email**: contact@zenetics.io
+-   **Documentation**: [docs.zenetics.io](https://docs.zenetics.io)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤️ by the ZENETICS team
+
