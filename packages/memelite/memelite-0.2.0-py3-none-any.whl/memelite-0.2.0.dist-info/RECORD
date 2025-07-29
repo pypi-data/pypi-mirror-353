@@ -1,0 +1,12 @@
+memelite/__init__.py,sha256=AHMc-K5uEZPWA8Nd0PX0j9PC-tYWCIwdAihB5oaTLxo,222
+memelite/fimo.py,sha256=iWF9SKEmFSr_nj0iSx9n72BdBLTUb4slF-exFNl1NZk,12485
+memelite/io.py,sha256=t-d0KhJPgtUKy1aEp3lxDSGNhb0QFZAa-HKpCyaETkU,2353
+memelite/symmetric_tomtom.py,sha256=BkJfftlaOoDapLB1VL-geeSb9k3gIHpEKMRBRZlbUCM,11405
+memelite/tomtom.py,sha256=9Ga72YMemMxorxW-Q0kZNoTwhHZmiHrFZ6n21b39fvU,17176
+memelite/utils.py,sha256=hCOFh6MEBooJIwPBZMCs4V1ExOOxeI7v3_n1SfquxvY,5415
+memelite-0.2.0.data/scripts/ttl,sha256=deVTetS4TJF6D7cM1wonAJ5bPX1Wr5V2B3eLEqlQp5s,8596
+memelite-0.2.0.dist-info/licenses/LICENSE,sha256=RCpYazrCpYJOs8F1vl_SHuVgnY30HhA6OmsT9n84uno,1072
+memelite-0.2.0.dist-info/METADATA,sha256=eIeDrm7RDuSbLVXvHEigNuT5Gp0zmsTRgytTWpGNHY4,560
+memelite-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+memelite-0.2.0.dist-info/top_level.txt,sha256=NGwVDmfOOjY5GJVgfQMKoMF6bvhsGdy079qGggJoJBI,9
+memelite-0.2.0.dist-info/RECORD,,
