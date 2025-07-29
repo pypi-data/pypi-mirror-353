@@ -1,0 +1,7 @@
+groq
+google-genai
+requests
+nltk
+python-dotenv
+openai
+rouge_metric
