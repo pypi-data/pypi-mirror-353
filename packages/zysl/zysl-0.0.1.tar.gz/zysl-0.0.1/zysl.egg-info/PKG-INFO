@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: zysl
+Version: 0.0.1
+Summary: A Python package for intelligent information bagging system
+Home-page: https://github.com/lqxnjk/zysl
+Author: lqxnjk
+Author-email: lqxnjk@qq.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/lqxnjk/zysl/issues
+Project-URL: Source, https://github.com/lqxnjk/zysl
+Keywords: ii,etls,lqxnjk,data
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: plot
+Provides-Extra: gpu
+Provides-Extra: all
+
+## 构建依赖包
+
+### 基础命令
+
+```shell
+python setup.py sdist bdist_wheel
+python -m build
+pip install -e .[dev]
+```
+
+### 构建命令
+
+```shell
+rm -rf './dist'
+python -m build
+twine upload dist/*
+```
+

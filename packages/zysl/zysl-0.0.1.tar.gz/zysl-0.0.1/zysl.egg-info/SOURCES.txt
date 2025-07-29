@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+src/__init__.py
+zysl.egg-info/PKG-INFO
+zysl.egg-info/SOURCES.txt
+zysl.egg-info/dependency_links.txt
+zysl.egg-info/entry_points.txt
+zysl.egg-info/requires.txt
+zysl.egg-info/top_level.txt

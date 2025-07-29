@@ -1,0 +1,2 @@
+[hello]
+zysl_version = zysl.__init__:version

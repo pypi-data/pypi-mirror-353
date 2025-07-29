@@ -1,0 +1,21 @@
+
+[:python_version < "3.8"]
+typing-extensions
+
+[all]
+zysl[dev]
+zysl[plot]
+
+[dev]
+pytest>=6.0
+pytest-cov>=2.0
+flake8>=3.9
+mypy>=0.910
+sphinx>=4.0
+
+[gpu]
+cupy>=10.0
+
+[plot]
+matplotlib>=3.0
+seaborn>=0.11
