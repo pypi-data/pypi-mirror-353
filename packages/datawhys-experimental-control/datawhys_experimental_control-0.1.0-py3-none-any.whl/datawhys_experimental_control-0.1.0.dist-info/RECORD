@@ -1,0 +1,15 @@
+datawhys_experimental_control/__init__.py,sha256=fiFAajg2pBTIUeH7BFJAsFDA_Lpn3PbyrEGEWKk7fb4,616
+datawhys_experimental_control/_version.py,sha256=ac3tgjoOzsODOlacRPCwz99LbZv0NK7ZYAaBWulFo7E,171
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/package.json,sha256=3IRBXKwsld76i9_faVfrVBIqsZfWXNH66-9ywAsrQDc,6198
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/509.22e3d69c32bc5a6bbddb.js,sha256=IuPWnDK8Wmu92_LugHvKYdLP-z4taeC0V-t2qDSQiv0,4585
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/692.1fb5a7bda18d52b917e0.js,sha256=maj4f7frY2M4T24WMIYTe57VT2GHDXaGJJMjalnctSA,87236
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/692.1fb5a7bda18d52b917e0.js.LICENSE.txt,sha256=ksdo1_7QX-XguRBhrddYKKuxB-rCvhJLqHvo4vo2WMY,218
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/728.831d83a24909d4006501.js,sha256=gx2DokkJ1ABlAfDfbQWGDBAy6eGL9iWmXWHqTT3wtMU,4029
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/remoteEntry.90d63a99743b076204d1.js,sha256=kNY6mXQ7B2IE0RSwZlO9LuuwyNN4-klBZKbUukQJcXk,7447
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/style.js,sha256=MqwEloq2GLSERP_b8rs3wd7DEiA1UQ9UxznSjoJaai0,172
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/static/third-party-licenses.json,sha256=9lqpBGIriCMlnzIIGKD7rhbfyHN1rCB8r1Z3nxgNpcQ,3693
+datawhys_experimental_control-0.1.0.data/data/share/jupyter/labextensions/datawhys_experimental_control/install.json,sha256=Fan-XoUXhLOlko7rtD-UkNzDA5aLxdByyqwRvTRPGT4,219
+datawhys_experimental_control-0.1.0.dist-info/METADATA,sha256=XUpRHSzRpzx3FNqk8s61Z0rsdO5vNlbY7eOpsYlkuRo,18264
+datawhys_experimental_control-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+datawhys_experimental_control-0.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+datawhys_experimental_control-0.1.0.dist-info/RECORD,,
