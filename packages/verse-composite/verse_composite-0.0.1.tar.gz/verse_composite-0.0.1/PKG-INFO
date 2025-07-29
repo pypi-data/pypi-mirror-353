@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: verse-composite
+Version: 0.0.1
+Summary: Verse Composite Components
+License: MIT
+Keywords: verse,composite,components
+Author: Verse
+Author-email: admin@rapidverse.com
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: all
+Provides-Extra: choice-default
+Provides-Extra: parallel-default
+Provides-Extra: partition-default
+Provides-Extra: script-default
+Provides-Extra: serial-default
+Provides-Extra: shadow-default
+Project-URL: Documentation, https://github.com/rapidverse/verse
+Project-URL: Homepage, https://github.com/rapidverse/verse
+Project-URL: Repository, https://github.com/rapidverse/verse
+Description-Content-Type: text/markdown
+
+# Orchestration-Verse
+
+
+
