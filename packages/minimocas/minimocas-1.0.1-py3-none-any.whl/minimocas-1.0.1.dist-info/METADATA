@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: minimocas
+Version: 1.0.1
+Summary: minimocas companion package
+Author-email: Roman <author@example.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# minimocas
+
+Companion package for `minimocas` simulation library.
