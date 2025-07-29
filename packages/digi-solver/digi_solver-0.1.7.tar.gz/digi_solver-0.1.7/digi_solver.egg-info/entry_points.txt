@@ -1,0 +1,4 @@
+[console_scripts]
+digicircuit-gen = digi_solver.lo_gateimg_tool.digicircuit.cli:main
+ncalc = digi_solver.ncalc_python.cli:main_cli
+sbn_converter = digi_solver.signed_binary_conversion.binary_converter:main
