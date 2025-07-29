@@ -1,0 +1,10 @@
+monodeal/__init__.py,sha256=Q2X07NLb-Ki50QdmoGWVOKy6hsTbr5xro3zOfzdcOM8,3472
+monodeal/actions.py,sha256=zAhbYs1zZsgIJklf8ULwJVtD9Tw2SeY_M15Zh_gL5ig,7705
+monodeal/deck.py,sha256=hHUvRByYm5lzLzsqcB1qhos7zxAAbROId5Evi0iR58I,5860
+monodeal/game.py,sha256=Qavz2y4Cf57HwBVetoxNvDC9rPq17tf-pRODgdksZH0,19765
+monodeal/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+monodeal-0.0.2.dist-info/licenses/LICENSE,sha256=JhKadjeUVgo73FoHDQ9XMyHjaab4pjdfdEe66AHYHCA,1073
+monodeal-0.0.2.dist-info/METADATA,sha256=tyEEhpCENUPEPMgXawiD8bbVWi5-VXw9Yx-qFUiVZRQ,8282
+monodeal-0.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+monodeal-0.0.2.dist-info/top_level.txt,sha256=_i5kAIwFopOMG3d-2HfhPbutEepsLXU_0bfMv_eapYs,9
+monodeal-0.0.2.dist-info/RECORD,,
