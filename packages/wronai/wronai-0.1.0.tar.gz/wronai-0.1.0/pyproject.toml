@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "wronai"
+version = "0.1.0"
+description = "A Python package for AI model management and deployment"
+authors = ["WronAI Team <info@softreck.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "wronai"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+click = "^8.1.7"
+rich = "^13.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+wronai = 'wronai.cli:main'
