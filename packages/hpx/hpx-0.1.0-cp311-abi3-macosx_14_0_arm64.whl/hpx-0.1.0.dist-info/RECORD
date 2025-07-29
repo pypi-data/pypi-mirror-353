@@ -1,0 +1,8 @@
+hpx-0.1.0.dist-info/RECORD,,
+hpx-0.1.0.dist-info/WHEEL,sha256=L46VOSoiHHmGDJI4uHNzPL7_vSbC206ODD32atAm5pA,121
+hpx-0.1.0.dist-info/METADATA,sha256=fwXO1X6c5lXQU9yhGeQDBHXf5l2hUYtaUB7ew5pfuB4,1258
+hpx/_core.pyi,sha256=oQRvxkOWsZSZYF0EpxbIH3q19u-_34PZm3qKdwzkPwE,148
+hpx/__init__.py,sha256=BUBpsb17K0zOmlIs_f4K7rdyoQ4LztTLioLBFJaDaMY,179
+hpx/_core.abi3.so,sha256=luqKa38495GMuNhNXr6NBwW552N-EhLe60ymnj8ZQbA,389360
+hpx/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hpx/.dylibs/libgmp.10.dylib,sha256=CqF88wk-zfV9SlPXJlMeEtFodACq2KryR2Jp9rpc8qU,452816
