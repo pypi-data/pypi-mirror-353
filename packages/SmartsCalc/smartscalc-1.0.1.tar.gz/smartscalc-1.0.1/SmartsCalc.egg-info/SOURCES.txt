@@ -1,0 +1,11 @@
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+SmartsCalc.egg-info/PKG-INFO
+SmartsCalc.egg-info/SOURCES.txt
+SmartsCalc.egg-info/dependency_links.txt
+SmartsCalc.egg-info/top_level.txt
+smartscalc/__init__.py
+smartscalc/calculator.py
