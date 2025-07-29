@@ -1,0 +1,140 @@
+Metadata-Version: 2.4
+Name: embedkit
+Version: 0.1.9
+Summary: A simple toolkit for generating vector embeddings across multiple providers and models
+Author-email: JP Hwang <me@jphwang.com>
+License: MIT
+License-File: LICENSE
+Keywords: ai,cohere,colpali,embeddings,machine-learning,vector
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Requires-Dist: accelerate>=1.7.0
+Requires-Dist: cohere>=5.15.0
+Requires-Dist: colpali-engine<0.4.0,>=0.3.0
+Requires-Dist: pdf2image>=1.17.0
+Requires-Dist: pillow>=11.2.1
+Requires-Dist: sentence-transformers>=4.1.0
+Requires-Dist: torch<=2.5
+Requires-Dist: transformers>=4.46.2
+Description-Content-Type: text/markdown
+
+# EmbedKit
+
+A unified interface for text and image embeddings, supporting multiple providers.
+
+## Installation
+
+```bash
+pip install embedkit
+```
+
+## Quick Start
+
+```python
+from embedkit import EmbedKit
+from embedkit.classes import Model, CohereInputType, SnowflakeInputType
+
+# Initialize a provider
+kit = EmbedKit.cohere(
+    model=Model.Cohere.EMBED_V4_0,
+    api_key="your-api-key",
+    text_input_type=CohereInputType.SEARCH_QUERY,
+)
+
+# Get text embeddings
+result = kit.embed_text("Hello world")
+print(result.objects[0].embedding.shape)  # 1D array
+
+# Get image embeddings
+result = kit.embed_image("path/to/image.png")
+print(result.objects[0].embedding.shape)  # 1D array
+print(result.objects[0].source_b64)  # Base64 encoded image
+```
+
+## Supported Providers
+
+### Cohere
+```python
+kit = EmbedKit.cohere(
+    model=Model.Cohere.EMBED_V4_0,  # or EMBED_ENGLISH_V3_0, EMBED_MULTILINGUAL_V3_0, etc.
+    api_key="your-api-key",
+    text_input_type=CohereInputType.SEARCH_QUERY,  # or SEARCH_DOCUMENT
+)
+```
+
+### Snowflake
+```python
+kit = EmbedKit.snowflake(
+    model=Model.Snowflake.ARCTIC_EMBED_L_V2_0,  # or ARCTIC_EMBED_M_V1_5
+    text_input_type=SnowflakeInputType.QUERY,  # or DOCUMENT
+)
+```
+
+### ColPali
+```python
+kit = EmbedKit.colpali(
+    model=Model.ColPali.COLPALI_V1_3,  # or COLSMOL_256M, COLSMOL_500M
+)
+```
+
+### Jina
+```python
+kit = EmbedKit.jina(
+    model=Model.Jina.CLIP_V2,
+    api_key="your-api-key",
+)
+```
+
+## Response Format
+
+```python
+class EmbeddingResponse:
+    model_name: str
+    model_provider: str
+    input_type: str
+    objects: List[EmbeddingObject]
+
+class EmbeddingObject:
+    embedding: np.ndarray  # 1D array for everything except ColPali
+    source_b64: Optional[str]  # Base64 encoded source for images and PDFs
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run tests for specific providers
+pytest -m cohere    # Run only Cohere tests
+pytest -m colpali   # Run only ColPali tests
+pytest -m jina      # Run only Jina tests
+pytest -m snowflake # Run only Snowflake tests
+
+# Additional options
+pytest -v           # Verbose output
+pytest -s           # Show print statements
+pytest -x           # Stop on first failure
+```
+
+## Requirements
+
+- Python 3.10+
+
+## License
+
+MIT
+
+## GitHub
+
+https://github.com/databyjp/embedkit
