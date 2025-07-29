@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: dundle
+Version: 2025.6.5
+Summary: Convenient and deterministic packaging. No pyproject.toml, only the __project__ dictionary.
+License: 0BSD
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Description-Content-Type: text/plain
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: summary
+
+Convenient and deterministic packaging. No pyproject.toml, only the __project__ dictionary.
+
+> pip install dundle
+
+License: 0BSD (See end of file)
