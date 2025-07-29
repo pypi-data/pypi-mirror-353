@@ -1,0 +1,95 @@
+# MCP Server Google News
+
+A Model Context Protocol (MCP) server for fetching Google News articles from Japan region.
+
+## Available Tools
+
+### google_news_search
+
+Search for news articles using a query (Japan region only).
+
+Parameters:
+
+- `query` (string, required): Search query
+- `limit` (int, optional): Number of articles to fetch (default: 10)
+
+### google_news_topics
+
+Get news articles by topic (Japan region only).
+
+Parameters:
+
+- `topic_id` (string, required): Topic ID
+- `limit` (int, optional): Number of articles to fetch (default: 10)
+
+Common Topic IDs for Japan:
+
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRFZxYUdjU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: 国内
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JXcGhMVXBRSWdKS1VDZ0FQAQ`: 国際
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx6TVdZU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: ビジネス
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNREpxYW5RU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: テクノロジー
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp1ZEdvU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: エンタメ
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp0Y1RjU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: スポーツ
+- `CAAqJQgKIh9DQkFTRVFvSUwyMHZNR3QwTlRFU0JXcGhMVXBRS0FBUAE`: 健康
+- `CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRzYm5BU0JXcGhMVXBRSWdKS1VDZ0FQAQ`: 科学
+
+## Installation
+
+### Using `uv` (Recommended)
+
+No special installation is required when using `uv`. You can run `mcp-server-google-news` directly using `uvx`.
+
+### Using PIP
+
+Alternatively, you can install `mcp-server-google-news` using pip:
+
+```sh
+pip install mcp-server-google-news
+```
+
+After installation, you can run the script as follows:
+
+```sh
+mcp-server-ogp
+```
+
+## Configuration
+
+### Configure for Claude.app
+
+Add to your Claude settings:
+
+<details>
+<summary>Using uvx</summary>
+
+```json
+{
+  "mcpServers": {
+    "google-news": {
+      "command": "uvx",
+      "args": ["mcp-server-google-news"]
+    }
+  }
+}
+```
+
+</details>
+
+### Configure for VS Code
+
+For quick installation, use one of the one-click install buttons below...
+
+[![Install with UV in VS Code](https://img.shields.io/badge/VS_Code-UV-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=google-news&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22google-news%22%5D%7D)
+
+### Command Line Options
+
+You can specify the following options when running the server:
+
+- `--sse`: Enable Server-Sent Events transport (on/off)
+- `--host`: Server bind address (default: localhost)
+- `--port`: Server port number (default: 8000)
+- `--log-level`: Logging verbosity (debug, info, warning, error)
+
+## License
+
+MIT
