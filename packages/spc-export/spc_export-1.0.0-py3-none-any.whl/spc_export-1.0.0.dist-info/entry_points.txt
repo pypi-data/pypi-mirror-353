@@ -1,0 +1,2 @@
+[console_scripts]
+spc-export = spc_export.__main__:main

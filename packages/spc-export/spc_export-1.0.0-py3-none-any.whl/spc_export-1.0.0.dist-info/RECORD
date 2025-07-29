@@ -1,0 +1,8 @@
+spc_export/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spc_export/__main__.py,sha256=WLQ6fDJzI7gTiPoH5tJB0YwDUDi4HV2D391blhvUQBo,616
+spc_export/spc.py,sha256=ZCJDJqprzE0hD9hk1dhfywoU0gzQ13gMQhUIPxDn8aM,23011
+spc_export-1.0.0.dist-info/METADATA,sha256=o7cZr9hXtMwLyhhirb5sXTTzkbLnweW9kM4p2T-q3i4,3239
+spc_export-1.0.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+spc_export-1.0.0.dist-info/entry_points.txt,sha256=ljlmI50U531aaRdXaTqRiZos1EB50t7jr11bt1nvMXo,56
+spc_export-1.0.0.dist-info/top_level.txt,sha256=r77ht-7Hys7dM3Ro311tNHvR2vGQa0CL_c7ZwJR-TSs,11
+spc_export-1.0.0.dist-info/RECORD,,
