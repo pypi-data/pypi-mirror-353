@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+app/__init__.py
+app/main.py
+data_core_pipelines_beam.egg-info/PKG-INFO
+data_core_pipelines_beam.egg-info/SOURCES.txt
+data_core_pipelines_beam.egg-info/dependency_links.txt
+data_core_pipelines_beam.egg-info/not-zip-safe
+data_core_pipelines_beam.egg-info/requires.txt
+data_core_pipelines_beam.egg-info/top_level.txt
+src/__init__.py
+src/modules/__init__.py
+src/modules/wordcount_minimal.py
+src/queries/__init__.py
+tests/__init__.py

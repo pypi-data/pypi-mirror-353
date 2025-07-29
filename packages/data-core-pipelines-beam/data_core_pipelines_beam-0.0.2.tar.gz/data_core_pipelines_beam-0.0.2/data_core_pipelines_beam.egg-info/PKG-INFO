@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: data-core-pipelines-beam
+Version: 0.0.2
+Summary: TDD core project to develop Apache Beam with Python SDK
+Author: Israel Martinez @israndroid
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: apache-beam[gcp]==2.65.0
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
