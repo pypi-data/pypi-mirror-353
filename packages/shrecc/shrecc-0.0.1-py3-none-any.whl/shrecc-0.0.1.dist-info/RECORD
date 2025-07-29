@@ -1,0 +1,9 @@
+shrecc/__init__.py,sha256=VtLP60eARKolEzdyjZ4YXi2VyYaDe3VGr7WxS0eFcWI,503
+shrecc/database.py,sha256=5rwxEmsNenGHxRmBdw5-UX0bUtGsrsNrJOoSEbvZEcc,21266
+shrecc/download.py,sha256=g-I9Adwtiw1DMmOMJHCRRv6PA1FFaSYLYnZ-SjsIR7Q,13708
+shrecc/treatment.py,sha256=C7wkD-HQa2lDjoVSjtk-Gpbq0wA4z0rX7pEG1lRzGp8,14376
+shrecc-0.0.1.dist-info/licenses/LICENSE,sha256=we86J0-mcomfRKjewzCkwA7b9osVJtpdqVB7coQdofs,1101
+shrecc-0.0.1.dist-info/METADATA,sha256=UJtHhSemKM9iRbaA6WYHq388n5nL0RiG1FhxfQ_BAgk,4823
+shrecc-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shrecc-0.0.1.dist-info/top_level.txt,sha256=PXGJaadrD14LKJSOsmgfRhP2GuVdsH4_eVNWMx1DBNI,7
+shrecc-0.0.1.dist-info/RECORD,,
