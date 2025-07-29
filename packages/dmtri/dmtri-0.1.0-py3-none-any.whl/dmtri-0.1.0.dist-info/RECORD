@@ -1,0 +1,13 @@
+dmtri/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dmtri/cli.py,sha256=W8prY3t-1S2nBfgdrU3UkqFE321GtMwWQjh9E-Cudxc,4977
+dmtri/doctor.py,sha256=jZKJPKQEciPCvwAQu2WWpa92jcGq7QN7JE1VxSB-5SQ,1605
+dmtri/execution_plan.py,sha256=hVHwQ_nPUAicoAVIvl1sQBE56cTBYo7dBYnNwzqAtBs,1711
+dmtri/paths.py,sha256=UxR_TaFsdqfEdzD3uy1ox45gKf0ADhOhvzCcDJ5OM38,1477
+dmtri/utils.py,sha256=Z31wh0fOngyrDoqandkj1nwOVflSPUqMrWXF6-kO0nY,2750
+dmtri/hooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dmtri/hooks/hooks.py,sha256=513anKlKihLaFen56qRGqj17pUfc_j6mEAJ_SQGkNgc,1197
+dmtri-0.1.0.dist-info/METADATA,sha256=dRdOjkNR0ML1_to5i5SwQCBdZsoSen_fceJhP1rtcjk,4206
+dmtri-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dmtri-0.1.0.dist-info/entry_points.txt,sha256=GkiQuWx49WWaF2Lk838r-PYy9xib3YHTnU0avJWW80Y,41
+dmtri-0.1.0.dist-info/top_level.txt,sha256=qsH9klgTnBBHWZSzKqzLd8uIPNno_X-Uq34cBkqVyuE,6
+dmtri-0.1.0.dist-info/RECORD,,
