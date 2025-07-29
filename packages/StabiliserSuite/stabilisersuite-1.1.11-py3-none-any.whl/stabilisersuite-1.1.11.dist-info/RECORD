@@ -1,0 +1,11 @@
+stabiliser_suite/__init__.py,sha256=GRwKlfajM4iyjCnW_YFFuDupSWCIizJ_RDH7yg2ZVBw,69
+stabiliser_suite/benchmark.py,sha256=WMQ01oxe2l5Cvg7piLcibRSki0IgZyLVSE6SbiUBM88,1782
+stabiliser_suite/circuit.py,sha256=xYl7UcfLEwSM6nORu1V3yVhzufgRaNVOgdzU0_v4On8,1706
+stabiliser_suite/clifford.py,sha256=KcyzeheIL9QQbnTwkYSkNpRuhWgxkDYCaHglue2aK3o,15785
+stabiliser_suite/gate_utils.py,sha256=GwuTLwhluuPt5hj9dlQhqfWrtacsMISNuv9W7S1gcSI,25273
+stabiliser_suite/utils.py,sha256=Ocyy4IF-dK_lweJT60IeR5G4gQOPyg7e2n01Izn20T0,693
+stabilisersuite-1.1.11.dist-info/licenses/LICENSE,sha256=5bQV8ktbx5FXeLOzHgWjhJXjD_rUY7W1XUTVLdZ1cWc,1078
+stabilisersuite-1.1.11.dist-info/METADATA,sha256=RFi6y1wxo_1iJcuADpsyJ9cn2TV3fk0VRk0xkWZ2TE0,6095
+stabilisersuite-1.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+stabilisersuite-1.1.11.dist-info/top_level.txt,sha256=dLtGiUxfY9OFfkDl4gCUb2NwbAiuU7yvUD0T_qKdc6k,17
+stabilisersuite-1.1.11.dist-info/RECORD,,
