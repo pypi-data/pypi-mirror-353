@@ -1,0 +1,93 @@
+{
+  "name": "EnvXtract Python Development",
+  "image": "envxtract-dev:latest",
+  
+  // Features for additional tools
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
+  },
+  
+  // Mount configurations - removed .venv mount to avoid conflicts
+  "mounts": [
+    // Cache directory for uv (improves performance)
+    "source=${localWorkspaceFolder}/.uv-cache,target=/workspace/.uv-cache,type=bind"
+    // Your project-specific mounts (uncomment as needed)
+    // "source=C:\\AWI_Job\\elapse,target=/workspace/elapse,type=bind",
+    // "source=C:\\Users\\mushaf001,target=/workspace/mushaf001,type=bind"
+  ],
+  
+  // VS Code customizations
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.terminal.activateEnvironment": false,
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": false,
+        "ruff.enable": true,
+        "ruff.organizeImports": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit",
+          "source.fixAll.ruff": "explicit"
+        },
+        "files.exclude": {
+          "**/__pycache__": true,
+          "**/.pytest_cache": true,
+          "**/*.pyc": true,
+          "**/.venv": false
+        },
+        "python.analysis.extraPaths": ["/workspace"],
+        "python.envFile": "${workspaceFolder}/.env"
+      }
+      // "extensions": [
+      //   // Python development
+      //   "ms-python.python",
+      //   "ms-python.debugpy",
+      //   "ms-toolsai.jupyter",
+      //   "charliermarsh.ruff",
+      //   // Data science and visualization
+      //   "ms-toolsai.vscode-jupyter-cell-tags",
+      //   "ms-toolsai.vscode-jupyter-slideshow",
+      //   // Docker and containerization
+      //   "ms-azuretools.vscode-docker",
+      //   // Git and GitHub
+      //   "github.vscode-github-actions",
+      //   "github.copilot",
+      //   // General productivity
+      //   "ms-vscode.vscode-json",
+      //   "redhat.vscode-yaml"
+      // ]
+    }
+  },
+  
+  // Use the vscode user created in Dockerfile
+  "remoteUser": "vscode",
+  
+  // Initialize environment after container creation
+  // "postCreateCommand": "/home/vscode/init-env.sh",
+  
+  // Commands to run when attaching to container
+  // "postAttachCommand": "bash -c 'if [ ! -f /workspace/.venv/bin/python ]; then /home/vscode/init-env.sh; fi'",
+  
+  // Forward common ports
+  "forwardPorts": [8000, 8080, 3000, 5000],
+  
+  // Container environment variables
+  "containerEnv": {
+    "PYTHONPATH": "/workspace",
+    "UV_CACHE_DIR": "/workspace/.uv-cache",
+    "UV_LINK_MODE": "copy"
+  },
+  
+  // Run arguments for the container
+  "runArgs": ["--init"],
+  
+  // Lifecycle scripts
+  "initializeCommand": "echo 'Initializing EnvXtract development environment...'",
+  "onCreateCommand": "echo 'Container created successfully!'"
+}
