@@ -1,0 +1,2 @@
+funcnodes-core>=0.4.1
+funcnodes
