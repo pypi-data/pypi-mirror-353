@@ -1,0 +1,11 @@
+cloudkv/__init__.py,sha256=AK0sG5920ruP1xUPJ-FUJAvrhPiEhst8h_emByDsRtY,238
+cloudkv/__main__.py,sha256=jRjLtre6XANwo5eBC5ooVMNhlC4hu37QMHVn8wz_suY,1227
+cloudkv/_async_client.py,sha256=l-dAu6JgtYgokedaRRMRYr-oQHG4NCtKP8YcWMBhx8g,5190
+cloudkv/_shared.py,sha256=VHdyPz4O22ZnKKndb-FRfMtd_seN0BCDdTL3pkJxpP8,3102
+cloudkv/_sync_client.py,sha256=SzwIc1JTBLcNjqGF--SpIRveWl6WLWbz-4VK7RLC4ZY,4965
+cloudkv/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudkv-0.1.0.dist-info/METADATA,sha256=fTx37P8X0m3O06J3sbMhIxYw4Ik1KxgGzPKIqm7IaHM,1399
+cloudkv-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cloudkv-0.1.0.dist-info/entry_points.txt,sha256=kwJkWSt61BR_XI0hBoinzFkmLyrLtaWJdohHn3MjZ8c,49
+cloudkv-0.1.0.dist-info/licenses/LICENSE,sha256=l1hgBjmp1bQY7sCO24WuKFYRE8V-MBKYDfw2Zf12kdM,1091
+cloudkv-0.1.0.dist-info/RECORD,,

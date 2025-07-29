@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: cloudkv
+Version: 0.1.0
+Summary: Hosted key/value store based on Cloudflare workers and KV store.
+Author-email: Samuel Colvin <s@muelcolvin.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: coverage>=7.8.2
+Requires-Dist: eval-type-backport>=0.2.2
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.11.5
+Description-Content-Type: text/markdown
+
+# Cloud KV
+
+Hosted key/value store based on Cloudflare workers and KV store.
