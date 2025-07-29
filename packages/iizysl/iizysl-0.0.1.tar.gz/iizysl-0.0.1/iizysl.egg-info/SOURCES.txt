@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+iizysl.egg-info/PKG-INFO
+iizysl.egg-info/SOURCES.txt
+iizysl.egg-info/dependency_links.txt
+iizysl.egg-info/entry_points.txt
+iizysl.egg-info/requires.txt
+iizysl.egg-info/top_level.txt
+src/__init__.py
