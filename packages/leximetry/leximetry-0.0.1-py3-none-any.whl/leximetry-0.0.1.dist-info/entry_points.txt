@@ -1,0 +1,2 @@
+[console_scripts]
+leximetry = leximetry.cli.cli_main:main
