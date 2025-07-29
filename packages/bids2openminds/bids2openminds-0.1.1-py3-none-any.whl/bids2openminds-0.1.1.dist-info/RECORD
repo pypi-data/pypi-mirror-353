@@ -1,0 +1,13 @@
+bids2openminds/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bids2openminds/converter.py,sha256=ENhByVF3H92JAUX1Zvrf3c5NTBV5McJCQmKACnuc7BQ,3819
+bids2openminds/main.py,sha256=2vVJoHpr87aSqULTxPt93asP_OXpX-ApZshsVaGWK04,20170
+bids2openminds/mapping.py,sha256=UrfBVVPvEp8JIBIy4sV2w0ggnN9LRdMrg01P-RIDVxc,5782
+bids2openminds/report.py,sha256=jbMV_gi9vShRcAz7YTLKmH01JgvFvAfyIpMhZZoGtyM,3924
+bids2openminds/utility.py,sha256=-_xl3Gj-IHkx7c06__HBuKmdt0xbJut0yGiwWVG3i6g,5707
+bids2openminds-0.1.1.dist-info/licenses/AUTHORS,sha256=Nj6oz8qgp6LuetHNexhaLWcAtkzSoN-6bBdwTsbBZEo,60
+bids2openminds-0.1.1.dist-info/licenses/LICENSE,sha256=wJgLXinIFGfiCh485lLjgG1fMLLeReDIeB6luaihIR4,1079
+bids2openminds-0.1.1.dist-info/METADATA,sha256=SBEndZL6MbBINiLv4k9fSDRMcGtHfpVZ5qcvCmZ-77k,3651
+bids2openminds-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bids2openminds-0.1.1.dist-info/entry_points.txt,sha256=nDe2YiDpY5GtyaGLMHaOo3VLvOX26Gs1k-IIkIzMmkc,74
+bids2openminds-0.1.1.dist-info/top_level.txt,sha256=6fH6jLjMhrHllWrVybaJ98MCW8jqhtBucD5n42VkJ68,15
+bids2openminds-0.1.1.dist-info/RECORD,,
