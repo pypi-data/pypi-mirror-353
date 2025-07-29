@@ -1,0 +1,14 @@
+lecture_downloader/__init__.py,sha256=sSBYqFpIpztGFrEnK0A2sI9Dix_Ze10NKaA_PvHDfnc,1687
+lecture_downloader/cli.py,sha256=IlHSKw-0VWY8Fc1FWupW8lyxRsQOTrlFoJlBXOik1Gc,7256
+lecture_downloader/downloader.py,sha256=BOhFHud7_kytdVDu1Ffpeu1xvnURGkVaV8kql0EPiww,27297
+lecture_downloader/merger.py,sha256=-VDP4WuXzMvScaOhEfAofOjOb6xdb2b3DUfGRZE4c5g,12955
+lecture_downloader/pipeline.py,sha256=Ns_AuMTsNmcsEDvE0CyzDU3lA2MrclftmLeIF6Ozcpg,8779
+lecture_downloader/processor.py,sha256=8FEK8M9A-8Nk7N9YqGicVUkqEw3o5o865v3rt7rf590,22628
+lecture_downloader/transcriber.py,sha256=3PKumT3dRWL4WO1emd4wHPn-D8K_8mYTaXhbwdNW5nU,23182
+lecture_downloader/utils.py,sha256=FVxCjehj2QG21gmftT8Vi9yVoIq0zbauew19XqKNO-k,9834
+lecture_downloader-1.0.0.dist-info/licenses/LICENSE,sha256=LwyD4sNjgurR0D5g-xvjZxYDetn6gnbrXhL3hJNMb2k,1067
+lecture_downloader-1.0.0.dist-info/METADATA,sha256=8c87uSOYPOMICL-RBSTlgm8_Gx8NTNEdMBGS2dwMkBU,9801
+lecture_downloader-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lecture_downloader-1.0.0.dist-info/entry_points.txt,sha256=n28H5ycr_tquB3zwKf50GQCj8zgUfJBslNwmknj4Y0w,66
+lecture_downloader-1.0.0.dist-info/top_level.txt,sha256=aEgE8r_HzSO6glxumOjVzIbOkeGCrAVxDs9XA3Zu-xY,19
+lecture_downloader-1.0.0.dist-info/RECORD,,
