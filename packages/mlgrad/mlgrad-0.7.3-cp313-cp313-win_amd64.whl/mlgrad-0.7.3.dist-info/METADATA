@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: mlgrad
+Version: 0.7.3
+Summary: Machine Learning tools.
+Home-page: https://github.org/intellimath/mlgrad
+Download-URL: https://github.org/intellimath/mlgrad
+Author: Zaur Shibzukhov
+Author-email: Zaur Shibzukhov <szport@gmail.com>
+License-Expression: BSD-4-Clause
+Keywords: machine learning,data analysis
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: licence.txt
+Requires-Dist: Cython
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license-file
+
+# Machine Learning & Data Analysis Tools
+
