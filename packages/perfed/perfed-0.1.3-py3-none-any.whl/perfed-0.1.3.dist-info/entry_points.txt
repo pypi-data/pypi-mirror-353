@@ -1,0 +1,4 @@
+[console_scripts]
+check = scripts.check:start
+lint = scripts.lint:start
+test = scripts.test:start
