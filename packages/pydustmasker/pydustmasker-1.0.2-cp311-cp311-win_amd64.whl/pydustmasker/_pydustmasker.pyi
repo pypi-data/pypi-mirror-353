@@ -1,0 +1,18 @@
+from __future__ import annotations
+
+from collections.abc import Sequence
+
+__version__: str
+
+class DustMasker:
+    sequence: str
+    window_size: int
+    score_threshold: int
+    intervals: Sequence[tuple[int, int]]
+    def __init__(
+        self, sequence: str, window_size: int = 64, score_threshold: int = 20
+    ) -> None: ...
+    @property
+    def n_masked_bases(self) -> int: ...
+    def mask(self, hard: bool) -> str: ...
+    def __repr__(self) -> str: ...
