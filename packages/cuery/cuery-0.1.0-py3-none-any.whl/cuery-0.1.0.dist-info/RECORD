@@ -1,0 +1,17 @@
+cuery/__init__.py,sha256=rUbET88lwWAK5hoet0Y4GKg2t5wdHAXQxMXwTdY6CBA,295
+cuery/call.py,sha256=qJaTkVlgvEfDccK0GedhLGnruv2bhDH43cZkqv1-HdM,3578
+cuery/cli.py,sha256=y85Jj-ov1qhbP48PX7iwl1LeZK08e0FLyMKgcbfZ5lY,2042
+cuery/context.py,sha256=PniiFxwGrg_T_awY1CyoAAiGUsNf-K8qMUXkoXkU7rk,3942
+cuery/cost.py,sha256=X7Esgz52WuDi6dtCQ-ZkJPI2KhvykMcs4V6G6Bl-C2k,4748
+cuery/pretty.py,sha256=iomwMhL78JnrmCdAZBi2-kZ3csmIoIaOg0lFl8ySu0Q,888
+cuery/prompt.py,sha256=9oTWCc1CJu7bKNvpbGAEYbNn_j7Xqliw6QJoQ3YEiBw,2676
+cuery/response.py,sha256=Uxmi1M7vqpUcu1dksF4RiTDwC3YsRNgyOnX6LS9UVfM,7334
+cuery/task.py,sha256=51eBbzLstHmOMIA-TutzfD6jBqBKX6jAXZWAVHg1WY4,8784
+cuery/utils.py,sha256=bweabCHTYQasHhJQmq9mZza5zfTn50nuM9Am_Xvu8V4,6598
+cuery/topics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cuery/topics/oneshot.py,sha256=9qrR4HlPXTAW3F8V4ykOikWTKrdMc2W41S767dpamnA,2562
+cuery-0.1.0.dist-info/METADATA,sha256=St7swVGOpFGPvesBDiL1gxZT0QwQmx45CXDaxxGBak8,20896
+cuery-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cuery-0.1.0.dist-info/entry_points.txt,sha256=nbFs1OnDazoN_hJVj5pqiYfc2NaBZyrWIUJg1uGncDc,40
+cuery-0.1.0.dist-info/licenses/LICENSE,sha256=Jm-Ec-x14mLDFSUSTrax-kVRZ8-EpYqp-qBj5tatTB8,11348
+cuery-0.1.0.dist-info/RECORD,,
