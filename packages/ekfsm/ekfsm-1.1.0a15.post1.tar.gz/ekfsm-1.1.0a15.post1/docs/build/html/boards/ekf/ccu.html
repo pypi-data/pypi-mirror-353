@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKF CCU &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EKF SC5-FESTIVAL" href="sc5-festival.html" />
+    <link rel="prev" title="Supported Boards" href="../../boards.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../boards.html">Supported Boards</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EKF CCU</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chassis-inventory-object-chassis-inventory">Chassis Inventory (Object: <cite>chassis_inventory</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inventory-of-the-ccu-board-object-inventory">Inventory of the CCU board (Object: <cite>inventory</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ccu-eeprom-customer-area-object-custom-eeprom">CCU EEPROM Customer area (Object: <cite>custom_eeprom</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ccu-management-object-management">CCU Management (Object: <cite>management</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-state-controller-object-sysstate">System State Controller (Object: <cite>sysstate</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fan-controller-object-fan">Fan Controller (Object: <cite>fan</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inertial-measurement-unit-object-imu">Inertial Measurement Unit (Object: <cite>imu</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thermal-and-humidity-sensor-object-th">Thermal and Humidity Sensor (Object: <cite>th</cite>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-input-voltage-object-vin">System Input Voltage (Object: <cite>vin</cite>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sc5-festival.html">EKF SC5-FESTIVAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc9-toccata.html">EKF SC9-TOCCATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="se5-club.html">EKF SE5-CLUB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sn4-djembe.html">EKF SN4-DJEMBE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spv-mystic.html">EKF SPV-MYSTIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sq1-track.html">EKF SQ1-TRACK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sq3-quartet.html">EKF SQ3-QUARTET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sur-uart.html">EKF SUR-UART</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hitron/hdrc-300s.html">HITRON HDRC-300S</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../boards.html">Supported Boards</a></li>
+      <li class="breadcrumb-item active">EKF CCU</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/boards/ekf/ccu.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ekf-ccu">
+<span id="ccu"></span><h1>EKF CCU<a class="headerlink" href="#ekf-ccu" title="Link to this heading"></a></h1>
+<section id="chassis-inventory-object-chassis-inventory">
+<h2>Chassis Inventory (Object: <cite>chassis_inventory</cite>)<a class="headerlink" href="#chassis-inventory-object-chassis-inventory" title="Link to this heading"></a></h2>
+<p>The system inventory provides access to the chassis inventory, such as the vendor, model, serial number, and revision.</p>
+<p>You can access the chassis inventory from the ccu object via the <cite>chassis_inventory</cite> attribute.</p>
+<p>Alternatively, if your system configuration has the following snippet:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system_config</span><span class="p">:</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MySystem&quot;</span>
+<span class="nt">aggregates</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">chassis_inventory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inventory</span>
+</pre></div>
+</div>
+<p>you can access the chassis inventory via the system object’s <cite>inventory</cite> attribute.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cvendor" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.cvendor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vendor()</span></code></a></p></td>
+<td><p>Get the chassis vendor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">EKF</span> <span class="pre">Elektronik</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cmodel" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.cmodel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">model()</span></code></a></p></td>
+<td><p>Get the chassis model</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SRS-C001</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cserial" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.cserial"><code class="xref py py-meth docutils literal notranslate"><span class="pre">serial()</span></code></a></p></td>
+<td><p>Get the chassis serial number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12345678</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.crevision" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.crevision"><code class="xref py py-meth docutils literal notranslate"><span class="pre">revision()</span></code></a></p></td>
+<td><p>Get the chassis revision</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.unit" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.unit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unit()</span></code></a></p></td>
+<td><p>Get subsystem unit number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inventory-of-the-ccu-board-object-inventory">
+<h2>Inventory of the CCU board (Object: <cite>inventory</cite>)<a class="headerlink" href="#inventory-of-the-ccu-board-object-inventory" title="Link to this heading"></a></h2>
+<p>The inventory function provides access to the inventory, such as the
+vendor, model, serial number (taken from the board’s EEPROM), and revision (from the board’s
+GPIO device).</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.vendor" title="ekfsm.devices.eeprom.EKF_EEPROM.vendor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vendor()</span></code></a></p></td>
+<td><p>Get the board vendor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">EKF</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.model" title="ekfsm.devices.eeprom.EKF_EEPROM.model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">model()</span></code></a></p></td>
+<td><p>Get the board model</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SUR-UART</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.serial" title="ekfsm.devices.eeprom.EKF_EEPROM.serial"><code class="xref py py-meth docutils literal notranslate"><span class="pre">serial()</span></code></a></p></td>
+<td><p>Get the board serial number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12345678</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander.revision" title="ekfsm.devices.gpio.EKFIdentificationIOExpander.revision"><code class="xref py py-meth docutils literal notranslate"><span class="pre">revision()</span></code></a></p></td>
+<td><p>Get the board revision</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ccu-eeprom-customer-area-object-custom-eeprom">
+<h2>CCU EEPROM Customer area (Object: <cite>custom_eeprom</cite>)<a class="headerlink" href="#ccu-eeprom-customer-area-object-custom-eeprom" title="Link to this heading"></a></h2>
+<p>The CCU EEPROM provides 64 bytes for custom data storage.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_customer_area" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_customer_area"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a></p></td>
+<td><p>Write data to CCU EEPROM customer are</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">b'\x01\x02\x03\x04\x05</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.customer_area" title="ekfsm.devices.eeprom.EKF_CCU_EEPROM.customer_area"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a></p></td>
+<td><p>Get the customer area of the CCU EEPROM.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">b'\x01\x02\x03\x04\x05</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ccu-management-object-management">
+<h2>CCU Management (Object: <cite>management</cite>)<a class="headerlink" href="#ccu-management-object-management" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.identify_firmware" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.identify_firmware"><code class="xref py py-meth docutils literal notranslate"><span class="pre">identify_firmware()</span></code></a></p></td>
+<td><p>Get the firmware title and version of the CCU</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fw-ccu-00-default</span></code> <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_firmware" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_firmware"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_firmware()</span></code></a></p></td>
+<td><p>Load firmware into the CCU</p></td>
+<td><p>&lt;binary data&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.get_parameterset" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.get_parameterset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_parameterset()</span></code></a></p></td>
+<td><p>Get the CCU parameterset in JSON format</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;version&quot;:</span> <span class="pre">&quot;factory&quot;,</span> <span class="pre">&quot;parameters&quot;:</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span> <span class="pre">}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_parameterset" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_parameterset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_parameterset()</span></code></a></p></td>
+<td><p>Load a parameterset into the CCU</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;version&quot;:</span> <span class="pre">&quot;1.0.0&quot;,</span> <span class="pre">&quot;parameters&quot;:</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span> <span class="pre">}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.restart" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.restart"><code class="xref py py-meth docutils literal notranslate"><span class="pre">restart()</span></code></a></p></td>
+<td><p>Restart the CCU</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-state-controller-object-sysstate">
+<h2>System State Controller (Object: <cite>sysstate</cite>)<a class="headerlink" href="#system-state-controller-object-sysstate" title="Link to this heading"></a></h2>
+<p>The system state controller provides method to influence the CCU’s system state controller.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.wd_trigger" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.wd_trigger"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wd_trigger()</span></code></a></p></td>
+<td><p>Trigger Watchdog</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.sw_shutdown" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.sw_shutdown"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sw_shutdown()</span></code></a></p></td>
+<td><p>Tell CCU that we are going to shutdown</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">50</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fan-controller-object-fan">
+<h2>Fan Controller (Object: <cite>fan</cite>)<a class="headerlink" href="#fan-controller-object-fan" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.fan_status" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.fan_status"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fan_status()</span></code></a></p></td>
+<td><p>Get the status of a fan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5500</span></code>, <code class="docutils literal notranslate"><span class="pre">5380</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.push_temperature" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.push_temperature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">push_temperature()</span></code></a></p></td>
+<td><p>Tell FAN controller the external temperature</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">65</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inertial-measurement-unit-object-imu">
+<h2>Inertial Measurement Unit (Object: <cite>imu</cite>)<a class="headerlink" href="#inertial-measurement-unit-object-imu" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.imu_sample" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.imu_sample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sample()</span></code></a></p></td>
+<td><p>Read the next IMU sample</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">accel:</span> <span class="pre">[-0.0047884033203125,</span> <span class="pre">-0.0143652099609375,</span> <span class="pre">9.859322436523437],</span> <span class="pre">gyro:</span> <span class="pre">[-0.3662109375,</span> <span class="pre">-0.54931640625,</span> <span class="pre">0.18310546875],</span> <span class="pre">lost:</span> <span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="thermal-and-humidity-sensor-object-th">
+<h2>Thermal and Humidity Sensor (Object: <cite>th</cite>)<a class="headerlink" href="#thermal-and-humidity-sensor-object-th" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.temperature" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.temperature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">temperature()</span></code></a></p></td>
+<td><p>Get the temperature</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.humidity" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.humidity"><code class="xref py py-meth docutils literal notranslate"><span class="pre">humidity()</span></code></a></p></td>
+<td><p>Get the humidity</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">50</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-input-voltage-object-vin">
+<h2>System Input Voltage (Object: <cite>vin</cite>)<a class="headerlink" href="#system-input-voltage-object-vin" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Method</p></td>
+<td><p>Description</p></td>
+<td><p>Example Value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.vin_voltage" title="ekfsm.devices.ekf_ccu_uc.EKFCcuUc.vin_voltage"><code class="xref py py-meth docutils literal notranslate"><span class="pre">voltage()</span></code></a></p></td>
+<td><p>Get the system input voltage</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">108</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../boards.html" class="btn btn-neutral float-left" title="Supported Boards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sc5-festival.html" class="btn btn-neutral float-right" title="EKF SC5-FESTIVAL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

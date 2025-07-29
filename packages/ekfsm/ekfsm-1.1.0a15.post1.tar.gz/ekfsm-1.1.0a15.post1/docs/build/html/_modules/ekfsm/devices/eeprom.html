@@ -1,0 +1,1333 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.devices.eeprom &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.devices.eeprom</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.devices.eeprom</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A module containing classes to represent EEPROM devices.</span>
+
+<span class="sd">Routine Listings</span>
+<span class="sd">----------------</span>
+<span class="sd">    :py:class:`EEPROM`</span>
+<span class="sd">    :py:class:`Validatable_EEPROM`</span>
+<span class="sd">    :py:class:`EKF_EEPROM`</span>
+<span class="sd">    :py:class:`validated`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.probe</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProbeableDevice</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_int_from_bytes</span><span class="p">,</span> <span class="n">get_crc16_xmodem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataCorruptionError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hexdump</span><span class="w"> </span><span class="kn">import</span> <span class="n">hexdump</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">ekfsm_logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">ekfsm_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="validated">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.validated">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validated</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A decorator to validate the CRC of the EEPROM content before executing a method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    func</span>
+<span class="sd">        The method to validate.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This decorator should be used on methods that read data from an EEPROM.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Validating EEPROM content for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DataCorruptionError</span><span class="p">(</span><span class="s2">&quot;CRC validation failed&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EEPROM content is valid for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">validate</span></div>
+
+
+
+<div class="viewcode-block" id="EEPROM">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EEPROM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EEPROM</span><span class="p">(</span><span class="n">Device</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to represent a generic EEPROM device.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name</span>
+<span class="sd">        The name of the EEPROM device.</span>
+<span class="sd">    parent</span>
+<span class="sd">        The parent device of the EEPROM in the :py:class:`~.generic.Device` tree.</span>
+
+
+<span class="sd">    Caution</span>
+<span class="sd">    -------</span>
+<span class="sd">    The following conditions must be met for this class to work properly:</span>
+<span class="sd">        - EEPROM must be I2C accessable</span>
+<span class="sd">        - EEPROM must have a sysfs device</span>
+
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This class should be inherited by classes representing specific EEPROM devices and defining custom storage schemes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_chip_addr</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_sysfs_device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_content</span><span class="p">()</span>
+
+<div class="viewcode-block" id="EEPROM._update_content">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EEPROM._update_content">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the content of the EEPROM device.</span>
+
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">            - This method should be called whenever the content of the EEPROM is updated (after each write op).</span>
+<span class="sd">            - Inheriting classes should call this method before updating their own attributes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reading data&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error reading data, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="EEPROM.read">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EEPROM.read">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read the content of the EEPROM.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The content of the EEPROM.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        FileNotFoundError</span>
+<span class="sd">            If the EEPROM sysfs file is not found.</span>
+<span class="sd">        RuntimeError</span>
+<span class="sd">            If the sysfs device is not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="p">:</span>
+                <span class="n">cnt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">read_attr_bytes</span><span class="p">(</span><span class="s2">&quot;eeprom&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;No sysfs device for EEPROM&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;EEPROM not found&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cnt</span></div>
+
+
+<div class="viewcode-block" id="EEPROM.write">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EEPROM.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to the EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            The data to write to the EEPROM.</span>
+<span class="sd">        offset</span>
+<span class="sd">            The offset at which to start writing the data.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        RuntimeError</span>
+<span class="sd">            If the sysfs device is not found.</span>
+<span class="sd">        FileNotFoundError</span>
+<span class="sd">            If the EEPROM sysfs file is not found.</span>
+<span class="sd">        DataCorruptionError</span>
+<span class="sd">            If an error occurs during the write operation.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Operation is checked for data corruption by reading back the written data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> bytes to EEPROM at offset </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">write_attr</span><span class="p">(</span><span class="s2">&quot;eeprom&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;No sysfs device for EEPROM&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;EEPROM not found&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_content</span><span class="p">()</span>
+        <span class="n">written</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="n">offset</span> <span class="p">:</span> <span class="n">offset</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">written</span> <span class="o">==</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DataCorruptionError</span><span class="p">(</span>
+                <span class="s2">&quot;Error during EEPROM write, data is not the same as read back&quot;</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EEPROM.print">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EEPROM.print">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hexdump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Validatable_EEPROM">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.Validatable_EEPROM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Validatable_EEPROM</span><span class="p">(</span><span class="n">EEPROM</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract class used to represent an EEPROM device using CRC to validate its content.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    crc_pos</span>
+<span class="sd">        The position of the CRC value in the EEPROM content (`&#39;start&#39;` or `&#39;end&#39;`).</span>
+<span class="sd">    crc_length</span>
+<span class="sd">        The length of the CRC value in number of bytes (defaults to 2).</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    - Derived classes must implement a method to compute the CRC value of the EEPROM content.</span>
+<span class="sd">    - If the CRC position differs from the shipped schema `(&#39;start&#39; | &#39;end&#39;)`,</span>
+<span class="sd">      the derived class must override the :meth:`~Validatable_EEPROM._update_content` method.</span>
+<span class="sd">    - Validity of individual content fields stored/returned by attributes, methods or properties</span>
+<span class="sd">      can be achieved by using the :py:func:`validated` decorator.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    Validatable_EEPROM._compute_crc : Method to compute the CRC value of the EEPROM content.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">crc_pos</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;end&quot;</span><span class="p">,</span>
+        <span class="n">crc_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">crc_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">crc_pos</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos</span> <span class="o">==</span> <span class="s2">&quot;end&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span>
+
+<div class="viewcode-block" id="Validatable_EEPROM._update_content">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.Validatable_EEPROM._update_content">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the content of the EEPROM device (checksum excluded).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_content</span><span class="p">()</span>
+
+        <span class="c1"># Firmware data without CRC</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Validatable_EEPROM._update_crc">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.Validatable_EEPROM._update_crc">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_crc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the CRC value of the EEPROM content.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_crc</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_crc_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_end</span><span class="p">],</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets or sets the CRC value of the EEPROM content.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value: optional</span>
+<span class="sd">            The CRC value to write to the EEPROM.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            int</span>
+<span class="sd">                The CRC value currently stored in the EEPROM if used as *getter*.</span>
+<span class="sd">            None</span>
+<span class="sd">                If used as *setter*.</span>
+
+
+<span class="sd">        Caution</span>
+<span class="sd">        -------</span>
+<span class="sd">        The *setter* actually writes the CRC value to the EEPROM.</span>
+
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        The *setter* method should be used with caution as it can lead to data corruption if the CRC value is not correct!</span>
+
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        The *setter* is usually triggered automatically after a successful write operation</span>
+<span class="sd">        and in most cases, there is no need to call it manually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_crc_value</span><span class="p">()</span>
+
+    <span class="nd">@crc</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">crc_bytes</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing CRC value </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> to EEPROM&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">crc_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error writing CRC value to EEPROM, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># self._update_content()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if the EEPROM content is valid by comparing the stored CRC value with the computed CRC value.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            `True` if the EEPROM content is valid, `False` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_crc</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">crc</span>
+
+<div class="viewcode-block" id="Validatable_EEPROM._compute_crc">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.Validatable_EEPROM._compute_crc">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_crc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method should be implemented by derived classes to compute the CRC value of the EEPROM content.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The computed CRC value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Validatable_EEPROM.write">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.Validatable_EEPROM.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_crc</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error writing to EEPROM, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="EKF_EEPROM">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EKF_EEPROM</span><span class="p">(</span><span class="n">Validatable_EEPROM</span><span class="p">,</span> <span class="n">ProbeableDevice</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to represent an EKF EEPROM device.</span>
+
+<span class="sd">    Structure</span>
+<span class="sd">    ---------</span>
+<span class="sd">    The EKF_EEPROM content is structured as follows:</span>
+
+<span class="sd">    - `Serial number` (4 bytes, starts at pos 8):</span>
+<span class="sd">        The serial number of the device.</span>
+<span class="sd">    - `Manufactured at` (2 bytes, starts at pos 12):</span>
+<span class="sd">        The date the device was manufactured.</span>
+<span class="sd">    - `Repaired at` (2 bytes, starts at pos 14):</span>
+<span class="sd">        The date the device was repaired.</span>
+<span class="sd">    - `Customer serial number` (4 bytes, starts at pos 32):</span>
+<span class="sd">        The customer serial number of the device.</span>
+<span class="sd">    - `Customer configuration block offset pointer` (4 bytes, starts at pos 36):</span>
+<span class="sd">        The offset pointer to the customer configuration block.</span>
+<span class="sd">    - `String array` (78 bytes, starts at pos 48):</span>
+<span class="sd">        An array of strings containing the model, manufacturer, and custom board data of the device.</span>
+<span class="sd">    - `CRC` (2 bytes, starts at pos 126):</span>
+<span class="sd">        The CRC value of the EEPROM content.</span>
+<span class="sd">    - `Raw content` (80 bytes, starts at pos 128):</span>
+<span class="sd">        Free customizable content for other purposes.</span>
+
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    - As the CRC value is stored at the end of the OEM data space, just before the customer configuration block,</span>
+<span class="sd">      the CRC position is manually set and the :meth:`~ekfsm.devices.eeprom.Validatable_EEPROM._update_content` method is</span>
+<span class="sd">      overridden.</span>
+<span class="sd">    - The CRC value is computed using the `CRC-16/XMODEM &lt;https://en.wikipedia.org/wiki/Cyclic_redundancy_check&gt;`_ algorithm.</span>
+<span class="sd">    - Dates are stored in a proprietary format (2 bytes) and must be decoded using the :meth:`~EKF_EEPROM._decode_date` method.</span>
+
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    `crcmod &lt;https://crcmod.sourceforge.net/&gt;`_</span>
+
+
+<span class="sd">    Important</span>
+<span class="sd">    ---------</span>
+<span class="sd">    All data read from the EEPROM should be validated using the @validated decorator.</span>
+<span class="sd">    This decorator ensures that the data is not corrupted by checking the CRC value.</span>
+
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    DataCorruptionError</span>
+<span class="sd">        If the CRC validation fails.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_sernum_index_start</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">_sernum_index_end</span> <span class="o">=</span> <span class="mi">12</span>
+
+    <span class="n">_date_mft_index_start</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">_date_mft_index_end</span> <span class="o">=</span> <span class="mi">14</span>
+
+    <span class="n">_date_rep_index_start</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="n">_date_rep_index_end</span> <span class="o">=</span> <span class="mi">16</span>
+
+    <span class="n">_customer_serial_index_start</span> <span class="o">=</span> <span class="mi">32</span>
+    <span class="n">_customer_serial_index_end</span> <span class="o">=</span> <span class="mi">36</span>
+
+    <span class="n">_customer_config_block_offset_pointer_index</span> <span class="o">=</span> <span class="mi">36</span>
+
+    <span class="n">_str_array_start_offset</span> <span class="o">=</span> <span class="mi">48</span>
+    <span class="n">_str_array_end_offset</span> <span class="o">=</span> <span class="mi">126</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_content</span><span class="p">()</span>
+
+        <span class="c1"># EKF EEPROM content is restricted to 128 bytes, so strip the rest!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_firmware_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[:</span><span class="mi">128</span><span class="p">]</span>
+
+        <span class="c1"># The rest is raw content available for other purposes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="mi">128</span><span class="p">:]</span>
+
+        <span class="c1"># Firmware data without CRC needs to be overriden</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_firmware_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_firmware_content</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string_array</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span>
+
+<div class="viewcode-block" id="EKF_EEPROM.serial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.serial">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the serial number of the device to which the EEPROM is attached (the root device).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The serial number of the root device.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_sernum_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sernum_index_end</span><span class="p">]</span>
+        <span class="n">sernum</span> <span class="o">=</span> <span class="n">compute_int_from_bytes</span><span class="p">(</span><span class="n">area</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">sernum</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.write_serial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.write_serial">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write serial number of the root device to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        serial</span>
+<span class="sd">            The serial number to write to the EEPROM.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check serial number is within bounds</span>
+        <span class="n">unsigned_upper_bound</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">serial</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">serial</span> <span class="o">&gt;</span> <span class="n">unsigned_upper_bound</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Serial number must be between 0 and </span><span class="si">{</span><span class="n">unsigned_upper_bound</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">serial_bytes</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">serial_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sernum_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.custom_serial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.custom_serial">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">custom_serial</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the customer serial number of the device to which the EEPROM is attached (the root device).</span>
+
+<span class="sd">        Attention</span>
+<span class="sd">        ---------</span>
+<span class="sd">        This is a custom - non-OEM - serial number that can be set by the user.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The customer serial number of the root device.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_customer_serial_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_serial_index_end</span>
+        <span class="p">]</span>
+        <span class="n">sernum</span> <span class="o">=</span> <span class="n">compute_int_from_bytes</span><span class="p">(</span><span class="n">area</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">sernum</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.write_custom_serial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.write_custom_serial">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_custom_serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write customer serial number of the root device to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        serial</span>
+<span class="sd">            The customer serial number to write to the EEPROM.</span>
+
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the serial number is not within the bounds of a 32-bit unsigned integer.</span>
+
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Due to space restrictions on storage, the serial number must be a 32-bit unsigned integer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check serial number is within bounds</span>
+        <span class="n">unsigned_upper_bound</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">serial</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">serial</span> <span class="o">&gt;</span> <span class="n">unsigned_upper_bound</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Serial number must be between 0 and </span><span class="si">{</span><span class="n">unsigned_upper_bound</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">serial_bytes</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing customer serial </span><span class="si">{</span><span class="n">serial</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">serial_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_serial_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.manufactured_at">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.manufactured_at">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">manufactured_at</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">date</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the date the device was manufactured.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The date the device was manufactured.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_date_mft_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_mft_index_end</span><span class="p">]</span>
+        <span class="n">encoded_mft_date</span> <span class="o">=</span> <span class="n">area</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_date</span><span class="p">(</span><span class="n">encoded_mft_date</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.repaired_at">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.repaired_at">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repaired_at</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">date</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the date the device was repaired.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The most recent date the device was repaired.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_date_rep_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_rep_index_end</span><span class="p">]</span>
+        <span class="n">encoded_rep_date</span> <span class="o">=</span> <span class="n">area</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_date</span><span class="p">(</span><span class="n">encoded_rep_date</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.write_repaired_at">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.write_repaired_at">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_repaired_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the date the device was repaired to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        date</span>
+<span class="sd">            The date the device was repaired.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        The date year must be within the range of 1980-2079.</span>
+
+<span class="sd">        Attention</span>
+<span class="sd">        ---------</span>
+<span class="sd">        The date is stored in a proprietary 2-byte format.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the year is not within the range of 1980-2079.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;</span> <span class="mi">1980</span> <span class="ow">or</span> <span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;</span> <span class="mi">2079</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Year must be within the range of 1980-2079&quot;</span><span class="p">)</span>
+        <span class="n">rep_date_bytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_date</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing repair date </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2"> to EEPROM&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rep_date_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_date_rep_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.model">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.model">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the model name of the device to which the EEPROM is attached to (the root device).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The model name of the device.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.vendor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.vendor">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vendor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the vendor/manufacturer of the device to which the EEPROM is attached to (the root device).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The name of the vendor/manufacturer of the device.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.custom_board_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.custom_board_data">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">custom_board_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the custom board data of the device.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        This is a custom field that can be set by the user.</span>
+
+
+<span class="sd">        Attention</span>
+<span class="sd">        ---------</span>
+<span class="sd">        This field is optional and may not be present in the EEPROM content.</span>
+
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The custom board data of the device as a string, or `None` if the field is not present.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.write_custom_board_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.write_custom_board_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_custom_board_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write custom board data to EEPROM.</span>
+
+<span class="sd">        Important</span>
+<span class="sd">        ---------</span>
+<span class="sd">        Due to size limitations, the custom board data should only contain expressive,</span>
+<span class="sd">        short content like serials, variants or specific codes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            The custom board data to write to the EEPROM.</span>
+
+<span class="sd">        Attention</span>
+<span class="sd">        ---------</span>
+<span class="sd">        The model and vendor fields are mandatory and must be set before writing custom board data.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the model and vendor fields are not set before writing custom board data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data_bytes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">data_offset</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_list</span><span class="p">[:</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Model and vendor fields must be set before writing custom board data&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">data_offset</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing custom board data </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2"> to EEPROM&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_array_start_offset</span> <span class="o">+</span> <span class="n">data_offset</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.custom_raw_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.custom_raw_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">custom_raw_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the raw content area data stored in the EEPROM.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The data contained in the raw content block of the EEPROM.</span>
+
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        This area is free for custom data storage and is not included during crc calculations and validations.</span>
+
+
+<span class="sd">        Important</span>
+<span class="sd">        ---------</span>
+<span class="sd">        If custom raw data should be stored on EEPROM and</span>
+<span class="sd">        if it should be protected against corruption, it has to be validated manually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM.write_custom_raw_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.write_custom_raw_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_custom_raw_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write custom data to the raw content area of the EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data</span>
+<span class="sd">            The data to write to the raw content area of the EEPROM.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> bytes to raw content area of EEPROM&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_string_array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+        <span class="n">str_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_str_array_start_offset</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_array_end_offset</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">str_array</span> <span class="k">if</span> <span class="n">s</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+
+<div class="viewcode-block" id="EKF_EEPROM._decode_date">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM._decode_date">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_decode_date</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">encoded_date</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">date</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decode a date from a proprietary 2-byte format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        encoded_date</span>
+<span class="sd">            The date to decode.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the date is invalid (e.g., 30th Feb).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        date</span>
+<span class="sd">            The decoded date.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">encoded_date</span> <span class="o">=</span> <span class="n">encoded_date</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">bdate</span> <span class="o">=</span> <span class="n">compute_int_from_bytes</span><span class="p">(</span><span class="n">encoded_date</span><span class="p">)</span>
+
+        <span class="c1"># Extract the day (bit 0-4)</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">bdate</span> <span class="o">&amp;</span> <span class="mh">0x1F</span>  <span class="c1"># 0x1F is 00011111 in binary (5 bits)</span>
+
+        <span class="c1"># Extract the month (bit 5-8)</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="p">(</span><span class="n">bdate</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x0F</span>  <span class="c1"># Shift right by 5 and mask with 0x0F (4 bits)</span>
+
+        <span class="c1"># Extract the year since 1980 (bit 9-15)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="p">(</span><span class="n">bdate</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x7F</span>  <span class="c1"># Shift right by 9 and mask with 0x7F (7 bits)</span>
+        <span class="n">year</span> <span class="o">+=</span> <span class="mi">1980</span>  <span class="c1"># Add base year (1980)</span>
+
+        <span class="c1"># Return a datetime object with the extracted year, month, and day</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">decoded_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">decoded_date</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid date: </span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>  <span class="c1"># Handle invalid dates, e.g., 30th Feb</span></div>
+
+
+<div class="viewcode-block" id="EKF_EEPROM._encode_date">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM._encode_date">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_encode_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Encode a date into a proprietary 2-byte format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        date</span>
+<span class="sd">            The date to encode.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bytes</span>
+<span class="sd">            The encoded date.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">1980</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">month</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">day</span>
+
+        <span class="n">encoded_date</span> <span class="o">=</span> <span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="mi">9</span> <span class="o">|</span> <span class="n">month</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span> <span class="o">|</span> <span class="n">day</span>
+        <span class="k">return</span> <span class="n">encoded_date</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_crc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">get_crc16_xmodem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EKF_EEPROM.probe">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_EEPROM.probe">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">probe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EKF_CCU_EEPROM</span><span class="p">(</span><span class="n">EKF_EEPROM</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    EKF CCU EEPROM - uses the second part of the EEPROM for chassis inventory and customer area</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_cvendor_index_start</span> <span class="o">=</span> <span class="mi">128</span>
+    <span class="n">_cvendor_length</span> <span class="o">=</span> <span class="mi">24</span>
+
+    <span class="n">_cmodel_index_start</span> <span class="o">=</span> <span class="mi">152</span>
+    <span class="n">_cmodel_length</span> <span class="o">=</span> <span class="mi">24</span>
+
+    <span class="n">_crevision_index_start</span> <span class="o">=</span> <span class="mi">176</span>
+    <span class="n">_crevision_length</span> <span class="o">=</span> <span class="mi">9</span>
+
+    <span class="n">_cserial_index_start</span> <span class="o">=</span> <span class="mi">185</span>
+    <span class="n">_cserial_length</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="n">_unit_index_start</span> <span class="o">=</span> <span class="mi">189</span>
+    <span class="n">_unit_length</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">_customer_area_start</span> <span class="o">=</span> <span class="mi">190</span>
+    <span class="n">_customer_area_length</span> <span class="o">=</span> <span class="mi">63</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_update_content</span><span class="p">()</span>
+
+        <span class="c1"># CCU content is the raw content area of the EEPROM</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ccu_content</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span>
+
+        <span class="c1"># CCU Firmware data without CRC needs to be overriden</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cdata</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ccu_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccu_content</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span> <span class="p">:]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdata</span><span class="p">)</span> <span class="o">+</span> <span class="mi">128</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span>
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM._update_ccrc">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM._update_ccrc">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_ccrc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the CRC value of the EEPROM content.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ccrc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_ccrc</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_ccrc_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_end</span><span class="p">],</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ccrc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets or sets the CRC value of the EEPROM content.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value: optional</span>
+<span class="sd">            The CRC value to write to the EEPROM.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            int</span>
+<span class="sd">                The CRC value currently stored in the EEPROM if used as *getter*.</span>
+<span class="sd">            None</span>
+<span class="sd">                If used as *setter*.</span>
+
+
+<span class="sd">        Caution</span>
+<span class="sd">        -------</span>
+<span class="sd">        The *setter* actually writes the CRC value to the EEPROM.</span>
+
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        The *setter* method should be used with caution as it can lead to data corruption if the CRC value is not correct!</span>
+
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        The *setter* is usually triggered automatically after a successful write operation</span>
+<span class="sd">        and in most cases, there is no need to call it manually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ccrc_value</span><span class="p">()</span>
+
+    <span class="nd">@ccrc</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ccrc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ccrc_bytes</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crc_length</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing chassis CRC value </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">Validatable_EEPROM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ccrc_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error writing CRC value, error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if the EEPROM content is valid by comparing the stored CRC value with the computed CRC value.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            `True` if the EEPROM content is valid, `False` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_ccrc</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">ccrc</span> <span class="ow">and</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">valid</span>
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.cvendor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cvendor">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvendor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the chassis vendor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The vendor of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cvendor_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cvendor_index_start</span>
+                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cvendor_length</span>
+            <span class="p">]</span>
+            <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_cvendor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_cvendor">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_cvendor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vendor</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the vendor of the chassis to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        vendor</span>
+<span class="sd">            The vendor of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vendor_bytes</span> <span class="o">=</span> <span class="n">vendor</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">vendor_fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cvendor_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">vendor_bytes</span><span class="p">))</span>
+        <span class="n">vendor_bytes</span> <span class="o">+=</span> <span class="n">vendor_fill</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing vendor </span><span class="si">{</span><span class="n">vendor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vendor_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cvendor_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.cmodel">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cmodel">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cmodel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the chassis model.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The model of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cmodel_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cmodel_index_start</span>
+                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cmodel_length</span>
+            <span class="p">]</span>
+            <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_cmodel">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_cmodel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_cmodel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the model of the chassis to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        model</span>
+<span class="sd">            The model of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">model_bytes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">model_fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cmodel_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">model_bytes</span><span class="p">))</span>
+        <span class="n">model_bytes</span> <span class="o">+=</span> <span class="n">model_fill</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing model </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">model_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cmodel_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.cserial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.cserial">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cserial</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the chassis serial number.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The serial number of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cserial_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cserial_index_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cserial_length</span>
+        <span class="p">]</span>
+        <span class="n">cserial</span> <span class="o">=</span> <span class="n">compute_int_from_bytes</span><span class="p">(</span><span class="n">area</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">cserial</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_cserial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_cserial">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_cserial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the serial number of the chassis to EEPROM.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        serial</span>
+<span class="sd">            The serial number of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check serial number is within bounds</span>
+        <span class="n">unsigned_upper_bound</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">serial</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">serial</span> <span class="o">&gt;</span> <span class="n">unsigned_upper_bound</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Serial number must be between 0 and </span><span class="si">{</span><span class="n">unsigned_upper_bound</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">serial_bytes</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing chassis serial </span><span class="si">{</span><span class="n">serial</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">serial_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cserial_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.crevision">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.crevision">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">crevision</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the revision of the chassis.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The revision of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_crevision_index_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crevision_index_start</span>
+                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crevision_length</span>
+            <span class="p">]</span>
+            <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_crevision">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_crevision">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_crevision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">revision</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the chassis revision.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        revision</span>
+<span class="sd">            The revision of the chassis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">revision_bytes</span> <span class="o">=</span> <span class="n">revision</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">revision_fill</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crevision_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">revision_bytes</span><span class="p">))</span>
+        <span class="n">revision_bytes</span> <span class="o">+=</span> <span class="n">revision_fill</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing chassis revision </span><span class="si">{</span><span class="n">revision</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">revision_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crevision_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.unit">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.unit">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the subsystem unit number.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The unit number of the subsystem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit_index_start</span><span class="p">]</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">compute_int_from_bytes</span><span class="p">([</span><span class="n">area</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">unit</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.version">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.version">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the version of the EEPROM data scheme.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        If undefined, the version is set to 255 and then defaults to 0.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The version of the EEPROM data scheme.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">version</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_version">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_version">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the version of the EEPROM data scheme.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        version</span>
+<span class="sd">            The version of the EEPROM data scheme.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">version</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Version must be between 0 and 255&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Version 255 is undefined, setting to 0&quot;</span><span class="p">)</span>
+            <span class="n">version</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">version_bytes</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing version </span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">version_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccrc_pos_start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_unit">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_unit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the subsystem unit number.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unit</span>
+<span class="sd">            The unit number of the subsystem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">unit_bytes</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;little&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing unit </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">unit_bytes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit_index_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.customer_area">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.customer_area">[docs]</a>
+    <span class="nd">@validated</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">customer_area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the customer area of the CCU EEPROM.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            The customer area of the CCU EEPROM.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_customer_area_start</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_area_start</span>
+            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_area_length</span>
+        <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_customer_area">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_customer_area">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_customer_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to CCU EEPROM customer area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_area_length</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data exceeds customer area length&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customer_area_start</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_ccrc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">get_crc16_xmodem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdata</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">Validatable_EEPROM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error writing to EEPROM, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_ccrc</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.custom_raw_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.custom_raw_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">custom_raw_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;CCU EEPROM does not have a raw content area&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKF_CCU_EEPROM.write_custom_raw_data">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.eeprom.EKF_CCU_EEPROM.write_custom_raw_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_custom_raw_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;CCU EEPROM does not have a raw content area&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

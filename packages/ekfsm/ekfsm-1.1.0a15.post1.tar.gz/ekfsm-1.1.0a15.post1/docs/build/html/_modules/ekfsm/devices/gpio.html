@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.devices.gpio &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.devices.gpio</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.devices.gpio</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">gpiod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gpiod.chip</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineSettings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gpiod.line</span><span class="w"> </span><span class="kn">import</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">Value</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">more_itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">first_true</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">GPIOError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">ekfsm_logger</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.probe</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProbeableDevice</span>
+
+<span class="n">gpio_pat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;gpiochip\d+&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_gpio_major_minor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.get_gpio_major_minor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_gpio_major_minor</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">gpio_pat</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">dev</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="s2">&quot;dev&quot;</span>
+            <span class="k">if</span> <span class="n">dev</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">major</span><span class="p">,</span> <span class="n">minor</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">major</span><span class="p">,</span> <span class="n">minor</span>
+
+    <span class="k">raise</span> <span class="n">GPIOError</span><span class="p">(</span>
+        <span class="n">GPIOError</span><span class="o">.</span><span class="n">ErrorType</span><span class="o">.</span><span class="n">NO_MAJOR_MINOR</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;No minor/major number found for GPIO device at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="find_gpio_dev_with_major_minor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.find_gpio_dev_with_major_minor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_gpio_dev_with_major_minor</span><span class="p">(</span><span class="n">major</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">minor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/dev&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">gpio_pat</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">dev</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">stat_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
+
+            <span class="n">cmaj</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">major</span><span class="p">(</span><span class="n">stat_info</span><span class="o">.</span><span class="n">st_rdev</span><span class="p">)</span>
+            <span class="n">cmin</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">minor</span><span class="p">(</span><span class="n">stat_info</span><span class="o">.</span><span class="n">st_rdev</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cmaj</span> <span class="o">==</span> <span class="n">major</span> <span class="ow">and</span> <span class="n">cmin</span> <span class="o">==</span> <span class="n">minor</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">dev</span>
+
+    <span class="k">raise</span> <span class="n">GPIOError</span><span class="p">(</span>
+        <span class="n">GPIOError</span><span class="o">.</span><span class="n">ErrorType</span><span class="o">.</span><span class="n">NO_MATCHING_DEVICE</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;Failed to find GPIO device with major </span><span class="si">{</span><span class="n">major</span><span class="si">}</span><span class="s2"> and minor </span><span class="si">{</span><span class="n">minor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GPIO">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GPIO</span><span class="p">(</span><span class="n">Device</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">,</span>
+            <span class="n">parent</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">ekfsm_logger</span><span class="p">(</span><span class="s2">&quot;GPIODevice&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">major</span><span class="p">,</span> <span class="n">minor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_gpio_dev</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gpio</span> <span class="o">=</span> <span class="n">find_gpio_dev_with_major_minor</span><span class="p">(</span><span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpio</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GPIOError</span><span class="p">(</span>
+                <span class="n">GPIOError</span><span class="o">.</span><span class="n">ErrorType</span><span class="o">.</span><span class="n">NO_MATCHING_DEVICE</span><span class="p">,</span> <span class="s2">&quot;Failed to find matching device&quot;</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_dev</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_find_gpio_dev</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_chip_addr</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GPIO: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_sysfs_device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">get_gpio_major_minor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GPIO.init_dev">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.init_dev">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">init_dev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dev</span> <span class="o">=</span> <span class="n">gpiod</span><span class="o">.</span><span class="n">Chip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GPIO.num_lines">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.num_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get number of GPIO lines available on the device.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">get_info</span><span class="p">()</span><span class="o">.</span><span class="n">num_lines</span></div>
+
+
+<div class="viewcode-block" id="GPIO.set_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.set_pin">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the value of a GPIO pin.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pin : int</span>
+<span class="sd">            The pin number.</span>
+<span class="sd">        value : bool</span>
+<span class="sd">            The value to set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">Value</span><span class="o">.</span><span class="n">ACTIVE</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="n">Value</span><span class="o">.</span><span class="n">INACTIVE</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">request_lines</span><span class="p">(</span>
+            <span class="n">consumer</span><span class="o">=</span><span class="s2">&quot;set-pin&quot;</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">pin</span><span class="p">:</span> <span class="n">gpiod</span><span class="o">.</span><span class="n">LineSettings</span><span class="p">()},</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GPIO.get_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.get_pin">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the value of a GPIO pin.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pin : int</span>
+<span class="sd">            The pin number.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            The value of the pin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">request_lines</span><span class="p">(</span>
+            <span class="n">consumer</span><span class="o">=</span><span class="s2">&quot;get-pin&quot;</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">pin</span><span class="p">:</span> <span class="n">gpiod</span><span class="o">.</span><span class="n">LineSettings</span><span class="p">()},</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">value</span> <span class="o">==</span> <span class="n">Value</span><span class="o">.</span><span class="n">ACTIVE</span></div>
+
+
+<div class="viewcode-block" id="GPIO.get_lines">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.get_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">invalid_pin</span> <span class="o">:=</span> <span class="n">first_true</span><span class="p">(</span>
+                <span class="n">lines</span><span class="p">,</span>
+                <span class="n">pred</span><span class="o">=</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">line</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_lines</span><span class="p">(),</span>
+                <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GPIOError</span><span class="p">(</span>
+                <span class="n">GPIOError</span><span class="o">.</span><span class="n">ErrorType</span><span class="o">.</span><span class="n">INVALID_PIN</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;GPIO </span><span class="si">{</span><span class="n">invalid_pin</span><span class="si">}</span><span class="s2"> is invalid.&quot;</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GPIO.set_direction">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIO.set_direction">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the direction of a GPIO pin.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pin : int</span>
+<span class="sd">            The pin number.</span>
+<span class="sd">        direction : bool</span>
+<span class="sd">            The direction to set. True for output, False for input.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span> <span class="k">if</span> <span class="n">direction</span> <span class="k">else</span> <span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">request_lines</span><span class="p">(</span>
+            <span class="n">consumer</span><span class="o">=</span><span class="s2">&quot;set-direction&quot;</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">pin</span><span class="p">:</span> <span class="n">LineSettings</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="nb">dir</span><span class="p">)},</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;GPIO - Number: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">; &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;sysfs_path: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(dev: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">gpio</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No matching device found&#39;</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GPIOExpander">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.GPIOExpander">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GPIOExpander</span><span class="p">(</span><span class="n">GPIO</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;GPIOExpander - Number: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">; &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;sysfs_path: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EKFIdentificationIOExpander</span><span class="p">(</span><span class="n">GPIOExpander</span><span class="p">,</span> <span class="n">ProbeableDevice</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander.probe">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander.probe">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">probe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="p">,</span> <span class="n">HwModule</span><span class="p">)</span>
+        <span class="nb">id</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_board_id_rev</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probing EKFIdentificationIOExpander: </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="nb">id</span></div>
+
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander.read_board_id_rev">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander.read_board_id_rev">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_board_id_rev</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_direction</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_direction</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">v_gnd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_id_gpio_inputs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_pin</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">v_7h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_id_gpio_inputs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_pin</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">v_6h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_id_gpio_inputs</span><span class="p">()</span>
+
+        <span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="n">v_gnd</span><span class="p">,</span> <span class="n">v_7h</span><span class="p">,</span> <span class="n">v_6h</span><span class="p">]</span>
+        <span class="n">bit_sums</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">reading</span> <span class="ow">in</span> <span class="n">readings</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="n">reading</span> <span class="o">&gt;&gt;</span> <span class="n">bit</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+            <span class="n">bit_sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">bit_sums</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_board_rev</span><span class="p">(</span><span class="n">bit_sums</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span>  <span class="c1"># board_rev</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander.revision">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander.revision">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">revision</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="nb">id</span><span class="p">,</span> <span class="n">rev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_board_id_rev</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">rev</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander.read_id_gpio_inputs">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander.read_id_gpio_inputs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_id_gpio_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">pin</span>
+
+        <span class="k">return</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="EKFIdentificationIOExpander._get_board_rev">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdentificationIOExpander._get_board_rev">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_board_rev</span><span class="p">(</span><span class="n">bits</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert 2-bit sum values to board revision number.&quot;&quot;&quot;</span>
+        <span class="n">rev_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">rev_map</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">bits</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bits</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;EKFIdentificationIOExpander - Number: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">; &quot;</span>
+            <span class="sa">f</span><span class="s1">&#39;sysfs_path: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SimGpio">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.SimGpio">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SimGpio</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<div class="viewcode-block" id="SimGpio.num_lines">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.SimGpio.num_lines">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SimGpio.set_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.SimGpio.set_pin">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SimGpio.get_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.SimGpio.get_pin">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SimGpio.set_direction">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.SimGpio.set_direction">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="EKFIdSimGpio">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdSimGpio">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EKFIdSimGpio</span><span class="p">(</span><span class="n">SimGpio</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coding_gnd</span><span class="p">,</span> <span class="n">coding_vcc</span><span class="p">,</span> <span class="n">coding_6</span><span class="p">,</span> <span class="n">coding_7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coding_gnd</span> <span class="o">=</span> <span class="n">coding_gnd</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coding_vcc</span> <span class="o">=</span> <span class="n">coding_vcc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coding_6</span> <span class="o">=</span> <span class="n">coding_6</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coding_7</span> <span class="o">=</span> <span class="n">coding_7</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dir</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_out</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_in</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="EKFIdSimGpio.num_lines">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdSimGpio.num_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">num_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">8</span></div>
+
+
+<div class="viewcode-block" id="EKFIdSimGpio.set_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdSimGpio.set_pin">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">pin</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;value must be 0 or 1&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dir</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_out</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_out</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">mask</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">pin</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;pin not set as output&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFIdSimGpio.get_pin">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdSimGpio.get_pin">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">pin</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coding_gnd</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coding_vcc</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coding_6</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_out</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coding_7</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_out</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="EKFIdSimGpio.set_direction">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.gpio.EKFIdSimGpio.set_direction">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pin</span> <span class="o">!=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="n">pin</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;only pins 6 and 7 supported as output&quot;</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">pin</span>
+        <span class="k">if</span> <span class="n">direction</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dir</span> <span class="o">|=</span> <span class="n">mask</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dir</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">mask</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

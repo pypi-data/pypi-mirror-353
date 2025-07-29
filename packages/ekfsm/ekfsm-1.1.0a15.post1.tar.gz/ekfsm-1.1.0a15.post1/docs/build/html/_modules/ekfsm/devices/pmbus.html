@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.devices.pmbus &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.devices.pmbus</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.devices.pmbus</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntFlag</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.sysfs</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysFSDevice</span><span class="p">,</span> <span class="n">sysfs_root</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.probe</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProbeableDevice</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">ekfsm_logger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Lock</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PsuStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;PmBus&quot;</span><span class="p">,</span> <span class="s2">&quot;retry&quot;</span><span class="p">]</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">ekfsm_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="retry">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.retry">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">retry</span><span class="p">(</span><span class="n">max_attempts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retry decorator.</span>
+
+<span class="sd">    Decorator that retries a function a number of times before giving up.</span>
+
+<span class="sd">    This is useful for functions that may fail due to transient errors.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This is needed for certain PMBus commands that may fail due to transient errors</span>
+<span class="sd">    because page switching timing is not effectively handled by older kernel versions.</span>
+
+<span class="sd">    Important</span>
+<span class="sd">    ---------</span>
+<span class="sd">    This decorator is thread-safe, meaning a read attempt is atomic and cannot</span>
+<span class="sd">    be interupted by scheduler.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    max_attempts</span>
+<span class="sd">        The maximum number of attempts before giving up.</span>
+<span class="sd">    delay</span>
+<span class="sd">        The delay in seconds between attempts.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="k">if</span> <span class="n">attempts</span> <span class="o">==</span> <span class="n">max_attempts</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span>
+                                <span class="sa">f</span><span class="s2">&quot;Failed to execute </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> after </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">}</span><span class="s2"> attempts: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                            <span class="p">)</span>
+                            <span class="k">raise</span> <span class="n">e</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Retrying execution of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">delay</span><span class="si">}</span><span class="s2">s...&quot;</span>
+                        <span class="p">)</span>
+                <span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">decorator</span></div>
+
+
+
+<div class="viewcode-block" id="PsuStatus">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PsuStatus">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PsuStatus</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents the status of a PSU according to STATUS_BYTE register.</span>
+
+<span class="sd">    See also</span>
+<span class="sd">    --------</span>
+<span class="sd">    External Documentation:</span>
+<span class="sd">    `PMBus Power System Management Protocol Specification - Part II - Revision 1.4, Fig. 60 &lt;https://pmbus.org/&gt;`_</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; from ekfsm.devices.pmbus import PsuStatus</span>
+<span class="sd">    &gt;&gt;&gt; status = PsuStatus(0x1F)</span>
+<span class="sd">    &gt;&gt;&gt; status</span>
+<span class="sd">    &lt;PsuStatus.OUTPUT_OVERCURRENT|INPUT_UNDERVOLTAGE|TEMP_ANORMALY|COMMUNICATION_ERROR|ERROR: 31&gt;</span>
+<span class="sd">    &gt;&gt;&gt; PsuStatus.OUTPUT_OVERCURRENT in status</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; # OK is always present</span>
+<span class="sd">    &gt;&gt;&gt; PsuStatus.OK in status</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; # Instead, check if status is OK</span>
+<span class="sd">    &gt;&gt;&gt; status = PsuStatus(0x00)</span>
+<span class="sd">    &gt;&gt;&gt; status</span>
+<span class="sd">    &lt;PsuStatus.OK: 0&gt;</span>
+<span class="sd">    &gt;&gt;&gt; PsuStatus.OUTPUT_OVERCURRENT in status</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">OUTPUT_OVERVOLTAGE</span> <span class="o">=</span> <span class="mh">0x20</span>
+    <span class="n">OUTPUT_OVERCURRENT</span> <span class="o">=</span> <span class="mh">0x10</span>
+    <span class="n">INPUT_UNDERVOLTAGE</span> <span class="o">=</span> <span class="mh">0x08</span>
+    <span class="n">TEMP_ANORMALY</span> <span class="o">=</span> <span class="mh">0x04</span>
+    <span class="n">COMMUNICATION_ERROR</span> <span class="o">=</span> <span class="mh">0x02</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="n">OK</span> <span class="o">=</span> <span class="mh">0x00</span></div>
+
+
+
+<div class="viewcode-block" id="PmBus">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PmBus</span><span class="p">(</span><span class="n">Device</span><span class="p">,</span> <span class="n">ProbeableDevice</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class represents a PMBus device (e.g. a PSU).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Device</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">children</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_chip_addr</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_sysfs_device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">)</span>
+
+        <span class="n">files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;hwmon/*/in1_input&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;No HWMON entries found in sysfs&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span> <span class="o">=</span> <span class="n">SysFSDevice</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">debugfs_root</span> <span class="o">=</span> <span class="n">sysfs_root</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;kernel/debug/pmbus&quot;</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">debugfs_root</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;hwmon*/status*_input&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;No HWMON entries found in debugfs&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_debugfs</span> <span class="o">=</span> <span class="n">SysFSDevice</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PmBus.probe">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.probe">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">probe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="p">,</span> <span class="n">HwModule</span><span class="p">)</span>
+        <span class="c1"># compare the regexp from the board yaml file with the model</span>
+        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hw_module</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
+
+
+    <span class="c1"># Voltage and Current Interfaces</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_conversion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="n">in_file</span><span class="p">))</span> <span class="o">/</span> <span class="mf">1000.0</span>
+
+<div class="viewcode-block" id="PmBus.in1_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.in1_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">in1_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get input voltage of PSU page 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Input voltage in volts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conversion</span><span class="p">(</span><span class="s2">&quot;in1_input&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PmBus.in2_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.in2_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">in2_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get input voltage of PSU page 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Input voltage in volts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conversion</span><span class="p">(</span><span class="s2">&quot;in2_input&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PmBus.curr1_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.curr1_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">curr1_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get input current of PSU page 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Input current in amperes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conversion</span><span class="p">(</span><span class="s2">&quot;curr1_input&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PmBus.curr2_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.curr2_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">curr2_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get input current of PSU page 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Input current in amperes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conversion</span><span class="p">(</span><span class="s2">&quot;curr2_input&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Status Interface</span>
+<div class="viewcode-block" id="PmBus.status0_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.status0_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">status0_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PsuStatus</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the status of PSU page 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU status as defined in PsuStatus</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hwmon_debugfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;status0_input&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">PsuStatus</span><span class="p">(</span><span class="n">status</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PmBus.status1_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.status1_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">status1_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PsuStatus</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the status of PSU page 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU status as defined in PsuStatus</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hwmon_debugfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;status1_input&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">PsuStatus</span><span class="p">(</span><span class="n">status</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Temperature Interface</span>
+<div class="viewcode-block" id="PmBus.temp1_input">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.temp1_input">[docs]</a>
+    <span class="nd">@retry</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temp1_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the PSU temperature.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU temperature in degrees celsius</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conversion</span><span class="p">(</span><span class="s2">&quot;temp1_input&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Inventory Interface</span>
+<div class="viewcode-block" id="PmBus.vendor">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.vendor">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vendor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the vendor of the PSU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU vendor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;vendor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PmBus.model">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.model">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the model of the PSU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PmBus.serial">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.serial">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the serial number of the PSU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU serial number</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;serial&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PmBus.revision">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.pmbus.PmBus.revision">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">revision</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the revision of the PSU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            PSU revision</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwmon_sysfs</span><span class="o">.</span><span class="n">read_attr_utf8</span><span class="p">(</span><span class="s2">&quot;revision&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.devices.ekf_ccu_uc &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.devices.ekf_ccu_uc</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.devices.ekf_ccu_uc</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">smbus2</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMBus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AcquisitionError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..lock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Locker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.imu</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImuSample</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+
+<div class="viewcode-block" id="CcuCommands">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.CcuCommands">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CcuCommands</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NOP</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="n">IMU_SAMPLES</span> <span class="o">=</span> <span class="mh">0x10</span>
+    <span class="n">FAN_STATUS</span> <span class="o">=</span> <span class="mh">0x11</span>
+    <span class="n">VIN_VOLTAGE</span> <span class="o">=</span> <span class="mh">0x12</span>
+    <span class="n">CCU_TEMPERATURE</span> <span class="o">=</span> <span class="mh">0x13</span>
+    <span class="n">CCU_HUMIDITY</span> <span class="o">=</span> <span class="mh">0x14</span>
+    <span class="n">PUSH_TEMPERATURE</span> <span class="o">=</span> <span class="mh">0x15</span>
+    <span class="n">SW_SHUTDOWN</span> <span class="o">=</span> <span class="mh">0x16</span>
+    <span class="n">WD_TRIGGER</span> <span class="o">=</span> <span class="mh">0x17</span>
+    <span class="n">IDENTIFY_FIRMWARE_TITLE</span> <span class="o">=</span> <span class="mh">0x80</span>
+    <span class="n">IDENTIFY_FIRMWARE_VERSION</span> <span class="o">=</span> <span class="mh">0x81</span>
+    <span class="n">LOAD_FIRMWARE_CHUNK</span> <span class="o">=</span> <span class="mh">0x82</span>
+    <span class="n">LOAD_PARAMETERSET</span> <span class="o">=</span> <span class="mh">0x83</span>
+    <span class="n">GET_PARAMETERSET_BEGIN</span> <span class="o">=</span> <span class="mh">0x84</span>
+    <span class="n">GET_PARAMETERSET_FOLLOW</span> <span class="o">=</span> <span class="mh">0x85</span>
+    <span class="n">RESTART</span> <span class="o">=</span> <span class="mh">0x8F</span></div>
+
+
+
+<div class="viewcode-block" id="EKFCcuUc">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EKFCcuUc</span><span class="p">(</span><span class="n">Device</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class to communicate with I2C microcontroller on the EKF CCU.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">SysTree</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_chip_addr</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_bus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_i2c_bus_number</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span> <span class="o">=</span> <span class="n">SMBus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_bus</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;EKFCCU - I2C Bus/Address: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_bus</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">)</span><span class="si">}</span><span class="s2">; &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;sysfs_path: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="o">.</span><span class="n">path</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">sysfs_device</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="EKFCcuUc.temperature">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.temperature">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the temperature from the CCU thermal/humidity sensor.</span>
+<span class="sd">        The temperature is read once per second.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The temperature in degrees Celsius.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        AcquisitionError</span>
+<span class="sd">            If the temperature cannot be read, for example, because the sensor is not working.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_signed_word_data</span><span class="p">(</span><span class="n">CcuCommands</span><span class="o">.</span><span class="n">CCU_TEMPERATURE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">)</span>
+            <span class="o">/</span> <span class="mf">10.0</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.humidity">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.humidity">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">humidity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the relative humidity from the CCU thermal/humidity sensor.</span>
+<span class="sd">        The humidity is read once per second.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The relative humidity in percent.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        AcquisitionError</span>
+<span class="sd">            If the humidity cannot be read, for example, because the sensor is not working.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_signed_word_data</span><span class="p">(</span><span class="n">CcuCommands</span><span class="o">.</span><span class="n">CCU_HUMIDITY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;humidity&quot;</span><span class="p">)</span>
+            <span class="o">/</span> <span class="mf">10.0</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.vin_voltage">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.vin_voltage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vin_voltage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the system input voltage from the CCU (the pimary voltage of the PSU).</span>
+<span class="sd">        The voltage is read every 100ms.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The system input voltage in volts.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        AcquisitionError</span>
+<span class="sd">            If the voltage cannot be read, for example, because the ADC is not working.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_signed_word_data</span><span class="p">(</span><span class="n">CcuCommands</span><span class="o">.</span><span class="n">VIN_VOLTAGE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;VIN voltage&quot;</span><span class="p">)</span>
+            <span class="o">/</span> <span class="mf">10.0</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_signed_word_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">what</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_word_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mh">0x8000</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AcquisitionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cannot read </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&lt;h&quot;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;H&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="EKFCcuUc.fan_status">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.fan_status">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fan_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fan</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the status of a fan.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fan</span>
+<span class="sd">            The fan number (0-2).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        desired: float</span>
+<span class="sd">            The desired speed.</span>
+<span class="sd">        actual: float</span>
+<span class="sd">            The actual speed.</span>
+<span class="sd">        diag: int</span>
+<span class="sd">            The diagnostic value.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        The diagnostic value is a bitfield with the following meaning:</span>
+
+<span class="sd">            - bit 0: 0 = fan status is invalid, 1 = fan status is valid</span>
+<span class="sd">            - bit 1: 0 = no error detected, 1 = fan is stuck</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_block_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">FAN_STATUS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">_data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">desired</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">diag</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&lt;HHB&quot;</span><span class="p">,</span> <span class="n">_data</span><span class="p">[</span><span class="n">fan</span> <span class="o">*</span> <span class="mi">5</span> <span class="p">:</span> <span class="n">fan</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">desired</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">diag</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.push_temperature">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.push_temperature">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">push_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fan</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">temp</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tell FAN controller the external temperature, usually the CPU temperature.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fan</span>
+<span class="sd">            The fan number (0-2), or -1 to set the external temperature of all fans.</span>
+
+<span class="sd">        temp</span>
+<span class="sd">            The external temperature in degrees Celsius.</span>
+
+<span class="sd">        Important</span>
+<span class="sd">        ---------</span>
+<span class="sd">        If push_temperature is no more called for a certain time (configurable with `fan-push-tout` parameter),</span>
+<span class="sd">        the fan controller will fallback to it&#39;s default fan speed (configurable with the `fan-defrpm` parameter).</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">fan</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">fan</span> <span class="o">=</span> <span class="mh">0xFF</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;Bh&quot;</span><span class="p">,</span> <span class="n">fan</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp</span> <span class="o">*</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_block_data</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">PUSH_TEMPERATURE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.imu_sample">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.imu_sample">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">imu_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ImuSample</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read the next IMU sample from the CCU&#39;s IMU sample FIFO.</span>
+
+<span class="sd">        If no sample is available, this method returns None.</span>
+<span class="sd">        The second return value indicates if more samples are available in the FIFO.</span>
+
+<span class="sd">        The CCU periodically samples the accelerometer and gyroscope data from the IMU and</span>
+<span class="sd">        places it into a FIFO of 256 entries.</span>
+<span class="sd">        Application must periodically read the samples from the FIFO to avoid overflow.</span>
+
+<span class="sd">        FIFO overflow is indicated in the sample by the `lost` attribute.</span>
+
+<span class="sd">        Note that the x, y, and z axes of the accelerometer and gyroscope</span>
+<span class="sd">        are aligned to the mounting of the IMU on the CCU board. Please correct the axes if necessary</span>
+<span class="sd">        to match the orientation of the IMU in your application.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        imu_data: ImuSample | None</span>
+<span class="sd">            The IMU sample, or None if no sample is available.</span>
+<span class="sd">        more_samples: bool</span>
+<span class="sd">            True if more samples are available in the FIFO, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">more_samples</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_block_data</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">IMU_SAMPLES</span><span class="o">.</span><span class="n">value</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">14</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">False</span>  <span class="c1"># No data available</span>
+        <span class="n">diag</span><span class="p">,</span> <span class="n">fsr</span><span class="p">,</span> <span class="n">acc_x</span><span class="p">,</span> <span class="n">acc_y</span><span class="p">,</span> <span class="n">acc_z</span><span class="p">,</span> <span class="n">gyro_x</span><span class="p">,</span> <span class="n">gyro_y</span><span class="p">,</span> <span class="n">gyro_z</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+            <span class="s2">&quot;&lt;BBhhhhhh&quot;</span><span class="p">,</span> <span class="n">data</span>
+        <span class="p">)</span>
+        <span class="n">imu_data</span> <span class="o">=</span> <span class="n">ImuSample</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_accel</span><span class="p">(</span><span class="n">acc_x</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_accel</span><span class="p">(</span><span class="n">acc_y</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_accel</span><span class="p">(</span><span class="n">acc_z</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_gyro</span><span class="p">(</span><span class="n">gyro_x</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_gyro</span><span class="p">(</span><span class="n">gyro_y</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_scale_imu_gyro</span><span class="p">(</span><span class="n">gyro_z</span><span class="p">,</span> <span class="n">fsr</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="kc">True</span> <span class="k">if</span> <span class="n">diag</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">more_samples</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="p">(</span><span class="n">diag</span> <span class="o">&amp;</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="n">imu_data</span><span class="p">,</span> <span class="n">more_samples</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_scale_imu_accel</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">fsr</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">fsr</span> <span class="o">=</span> <span class="n">fsr</span> <span class="o">&amp;</span> <span class="mh">0xF</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">fsr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span> <span class="o">*</span> <span class="p">(</span><span class="n">scale</span> <span class="o">/</span> <span class="mi">32768</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.80665</span>  <span class="c1"># convert to m/s^2</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_scale_imu_gyro</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">fsr</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">fsr</span> <span class="o">=</span> <span class="n">fsr</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="mh">0xF</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="mi">2000</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">fsr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span> <span class="o">*</span> <span class="p">(</span><span class="n">scale</span> <span class="o">/</span> <span class="mi">32768</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EKFCcuUc.sw_shutdown">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.sw_shutdown">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sw_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tell CCU that the system is going to shutdown.</span>
+<span class="sd">        This cause the CCU&#39;s system state controller to enter shutdown state and power off the system after a certain time</span>
+<span class="sd">        (parameter `shutdn-delay`).</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_byte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">SW_SHUTDOWN</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.wd_trigger">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.wd_trigger">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wd_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Trigger the CCU&#39;s application watchdog.</span>
+<span class="sd">        This will reset the watchdog timer.</span>
+
+<span class="sd">        The CCU watchdog is only enabled when the parameter `wd-tout` is set to a value greater than 0. Triggering</span>
+<span class="sd">        the watchdog when the timeout is 0 will have no effect.</span>
+
+<span class="sd">        If the watchdog is not reset within the timeout, the CCU will power cycle the system.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_byte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">WD_TRIGGER</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+    <span class="c1">#</span>
+    <span class="c1"># Management commands</span>
+    <span class="c1">#</span>
+<div class="viewcode-block" id="EKFCcuUc.identify_firmware">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.identify_firmware">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">identify_firmware</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the firmware title and version of the CCU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        title: str</span>
+<span class="sd">            The firmware title.</span>
+<span class="sd">        version: str</span>
+<span class="sd">            The firmware version.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_block_data</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">IDENTIFY_FIRMWARE_TITLE</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_block_data</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">IDENTIFY_FIRMWARE_VERSION</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">title</span><span class="p">,</span> <span class="n">version</span></div>
+
+
+<div class="viewcode-block" id="EKFCcuUc.load_firmware">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_firmware">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_firmware</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">firmware</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">progress_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load firmware into the CCU.</span>
+
+<span class="sd">        The firmware must be the binary firmware file containing the application partition,</span>
+<span class="sd">        typically named `fw-ccu-mm-default.bin`,</span>
+<span class="sd">        where `mm` is the major version of the CCU hardware.</span>
+
+<span class="sd">        The download can take several minutes, that is why a progress callback can be provided.</span>
+
+<span class="sd">        When the download is complete and successful, the CCU will restart. To check if the firmware was loaded successfully,</span>
+<span class="sd">        call :meth:`identify_firmware()` after the restart.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        firmware</span>
+<span class="sd">            The firmware binary data.</span>
+
+<span class="sd">        progress_callback</span>
+<span class="sd">            A callback function that is called with the current progress in bytes.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">Locker</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;-load_firmware&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lock</span><span class="p">():</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">max_chunk_len</span> <span class="o">=</span> <span class="mi">28</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">firmware</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">chunk</span><span class="p">,</span> <span class="n">firmware</span> <span class="o">=</span> <span class="n">firmware</span><span class="p">[:</span><span class="n">max_chunk_len</span><span class="p">],</span> <span class="n">firmware</span><span class="p">[</span><span class="n">max_chunk_len</span><span class="p">:]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_load_firmware_chunk</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">firmware</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">chunk</span><span class="p">)</span>
+                <span class="n">offset</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">firmware</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_nop</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">progress_callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">progress_callback</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_firmware_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">is_last</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_last</span><span class="p">:</span>
+            <span class="n">offset</span> <span class="o">|=</span> <span class="mh">0x80000000</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;I&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">hdr</span> <span class="o">+</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_block_data</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">LOAD_FIRMWARE_CHUNK</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="EKFCcuUc.get_parameterset">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.get_parameterset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_parameterset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the CCU parameterset in JSON format.</span>
+
+<span class="sd">        A typical parameterset looks like this:</span>
+
+<span class="sd">        .. code-block:: json</span>
+
+<span class="sd">            {</span>
+<span class="sd">                &quot;version&quot;:      &quot;factory&quot;,</span>
+<span class="sd">                &quot;parameters&quot;:   {</span>
+<span class="sd">                        &quot;num-fans&quot;:     &quot;2&quot;,</span>
+<span class="sd">                        &quot;fan-temp2rpm&quot;: &quot;25:2800;50:5000;100:6700&quot;,</span>
+<span class="sd">                        &quot;fan-rpm2duty&quot;: &quot;2800:55;5000:88;6700:100&quot;,</span>
+<span class="sd">                        &quot;fan-defrpm&quot;:   &quot;5500&quot;,</span>
+<span class="sd">                        &quot;fan-ppr&quot;:      &quot;2&quot;,</span>
+<span class="sd">                        &quot;fan-push-tout&quot;:        &quot;4000&quot;,</span>
+<span class="sd">                        &quot;pon-min-temp&quot;: &quot;-25&quot;,</span>
+<span class="sd">                        &quot;pon-max-temp&quot;: &quot;70&quot;,</span>
+<span class="sd">                        &quot;shutdn-delay&quot;: &quot;120&quot;,</span>
+<span class="sd">                        &quot;wd-tout&quot;:      &quot;0&quot;,</span>
+<span class="sd">                        &quot;pwrcycle-time&quot;:        &quot;10&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;unsupported_parameters&quot;:       [],</span>
+<span class="sd">                &quot;missing_parameters&quot;:   [&quot;num-fans&quot;, &quot;fan-temp2rpm&quot;, &quot;fan-rpm2duty&quot;, &quot;fan-defrpm&quot;, &quot;fan-ppr&quot;, \</span>
+<span class="sd">                    &quot;fan-push-tout&quot;, &quot;pon-min-temp&quot;, &quot;pon-max-temp&quot;, &quot;shutdn-delay&quot;, &quot;wd-tout&quot;, &quot;pwrcycle-time&quot;],</span>
+<span class="sd">                &quot;invalid_parameters&quot;:   [],</span>
+<span class="sd">                &quot;reboot_required&quot;:      false</span>
+<span class="sd">            }</span>
+
+<span class="sd">        `version` is the version of the parameterset. If no parameterset has been loaded by the user, the version is `factory`,</span>
+<span class="sd">        otherwise it is the version of the loaded parameterset.</span>
+
+<span class="sd">        `parameters` contains the current values of all parameters of the parameterset.</span>
+
+<span class="sd">        `unsupported_parameters` contains the names of parameters that might have been downloaded, but</span>
+<span class="sd">        are not supported by the CCU firmware.</span>
+
+<span class="sd">        `missing_parameters` contains the names of parameters that have not been downloaded yet. Those parameters will</span>
+<span class="sd">        have their default values.</span>
+
+<span class="sd">        `invalid_parameters` contains the names of parameters that have been downloaded, but have invalid values.</span>
+<span class="sd">        Those parameters will have their default values.</span>
+
+<span class="sd">        `reboot_required` is a flag that indicates if a reboot is required to apply the parameterset.</span>
+
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The parameterset in JSON format.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">Locker</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;-parameterset&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lock</span><span class="p">():</span>
+            <span class="n">json</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+            <span class="n">begin</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_parameterset_chunk</span><span class="p">(</span><span class="n">begin</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="c1"># if chunk ends with zero byte, remove it (workaround for I2C slave bug)</span>
+                <span class="k">if</span> <span class="n">chunk</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">chunk</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">json</span> <span class="o">+=</span> <span class="n">chunk</span>
+                <span class="n">begin</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_parameterset_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_block_data</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="n">CcuCommands</span><span class="o">.</span><span class="n">GET_PARAMETERSET_BEGIN</span><span class="o">.</span><span class="n">value</span>
+                <span class="k">if</span> <span class="n">begin</span>
+                <span class="k">else</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">GET_PARAMETERSET_FOLLOW</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EKFCcuUc.load_parameterset">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.load_parameterset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_parameterset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_cfg</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a parameterset into the CCU.</span>
+
+<span class="sd">        The parameterset must be a JSON string containing the parameterset, for example:</span>
+
+<span class="sd">        .. code-block:: json</span>
+
+<span class="sd">            {</span>
+<span class="sd">                &quot;version&quot;: &quot;1.0.0&quot;,</span>
+<span class="sd">                &quot;parameters&quot;:   {</span>
+<span class="sd">                    &quot;fan-defrpm&quot;: &quot;6000&quot;</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+
+
+<span class="sd">        This would load a parameterset with just one parameter, the default fan speed. All other parameters will</span>
+<span class="sd">        be set to their default values.</span>
+
+<span class="sd">        In order to apply the parameterset, the CCU must be restarted.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        _cfg</span>
+<span class="sd">            The parameterset in JSON format.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">Locker</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;-parameterset&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lock</span><span class="p">():</span>
+            <span class="n">cfg</span> <span class="o">=</span> <span class="n">_cfg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">max_chunk_len</span> <span class="o">=</span> <span class="mi">28</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">chunk</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">[:</span><span class="n">max_chunk_len</span><span class="p">],</span> <span class="n">cfg</span><span class="p">[</span><span class="n">max_chunk_len</span><span class="p">:]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_load_parameterset_chunk</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">chunk</span><span class="p">)</span>
+                <span class="n">offset</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_nop</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_parameterset_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">is_last</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_last</span><span class="p">:</span>
+            <span class="n">offset</span> <span class="o">|=</span> <span class="mh">0x80000000</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;I&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">hdr</span> <span class="o">+</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_block_data</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">LOAD_PARAMETERSET</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="EKFCcuUc.restart">
+<a class="viewcode-back" href="../../../reference/ekfsm.html#ekfsm.devices.ekf_ccu_uc.EKFCcuUc.restart">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">restart</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restart the CCU.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">write_byte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">RESTART</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_nop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_smbus</span><span class="o">.</span><span class="n">read_word_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_i2c_addr</span><span class="p">,</span> <span class="n">CcuCommands</span><span class="o">.</span><span class="n">NOP</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

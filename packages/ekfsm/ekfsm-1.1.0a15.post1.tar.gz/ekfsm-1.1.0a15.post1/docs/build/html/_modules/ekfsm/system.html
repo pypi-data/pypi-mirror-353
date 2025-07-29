@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ekfsm.system &mdash; ekfsm  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ekfsm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../boards.html">Supported Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ekfsm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ekfsm.system</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ekfsm.system</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Generator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">munch</span><span class="w"> </span><span class="kn">import</span> <span class="n">Munch</span><span class="p">,</span> <span class="n">munchify</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ekfsm.core.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">SysTree</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.core.slots</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">SlotType</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_config</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">HwModule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.core.slots</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slots</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfigError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">ekfsm_logger</span>
+
+
+<span class="n">_CFG_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;boards&quot;</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_board_config</span><span class="p">(</span><span class="n">module_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find a matching board config in `boards/oem/` given the module type specified in</span>
+<span class="sd">    the system configuration file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module_type</span>
+<span class="sd">        Board type specified in the system configuration for a slot.</span>
+<span class="sd">        It must consist of an OEM and the board type, separated by whitespace. Neither</span>
+<span class="sd">        part may contain any other whitespace.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">oem</span><span class="p">,</span> <span class="n">board</span> <span class="o">=</span> <span class="n">module_type</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">path</span> <span class="o">:=</span> <span class="n">_CFG_DIR</span> <span class="o">/</span> <span class="s2">&quot;oem&quot;</span> <span class="o">/</span> <span class="n">oem</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">board</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.yaml&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">path</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">all_board_cfg_files</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generator that recursively yields all *.yaml files in a directory</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">_CFG_DIR</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.yaml&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="n">item</span>
+
+
+<div class="viewcode-block" id="System">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">System</span><span class="p">(</span><span class="n">SysTree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A System represents a CPCI system.</span>
+
+<span class="sd">    Once initialised, it will create:</span>
+<span class="sd">        - a list of boards that are present in the system which can be accessed either by name or by slot number.</span>
+<span class="sd">        - a list of slots that are present in the system which can be accessed under the slots attribute.</span>
+
+<span class="sd">    Visual representation of the system is shown as trees of HW Modules and attached devices.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name</span>
+<span class="sd">        The name of the system.</span>
+<span class="sd">    slots</span>
+<span class="sd">        A dictionary-like object that contains all slots in the system.</span>
+<span class="sd">    boards</span>
+<span class="sd">        A list of all boards in the system.</span>
+<span class="sd">    master</span>
+<span class="sd">        The master board of the system.</span>
+<span class="sd">    master_slot_number</span>
+<span class="sd">        The slot number of the master board.</span>
+<span class="sd">    config</span>
+<span class="sd">        The system configuration.</span>
+
+
+<span class="sd">    Accessing boards</span>
+<span class="sd">    ----------------</span>
+
+<span class="sd">    Iterating over the system will iterate over all boards in the system.</span>
+
+<span class="sd">    &lt;board_name&gt;</span>
+<span class="sd">        The board object can be accessed by its name.</span>
+<span class="sd">    &lt;slot_number&gt;</span>
+<span class="sd">        The board object can be accessed by its slot number.</span>
+
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; from ekfsm.system import System</span>
+<span class="sd">    &gt;&gt;&gt; system = System(&quot;path/to/config.yaml&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(system) # Print the system configuration as trees of HwModules</span>
+<span class="sd">    &gt;&gt;&gt; system.print() # same as above</span>
+<span class="sd">    &gt;&gt;&gt; cpu = system.cpu # Access the CPU board by its name</span>
+<span class="sd">    &gt;&gt;&gt; cpu = system[0] # Access the CPU board by its slot index (index as in configuration file)</span>
+<span class="sd">    &gt;&gt;&gt; print(system.slots) # Print all slots in the system</span>
+<span class="sd">    &gt;&gt;&gt; print(system.boards) # Print all boards in the system</span>
+<span class="sd">    &gt;&gt;&gt; for b in system: # Iterate over all boards in the system</span>
+<span class="sd">    &gt;&gt;&gt;    print(b.name + b.slot.name) # Print the name of the board and the slot it is in</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="System.__init__">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">abort</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config</span>
+<span class="sd">            Path to the config that specifies the system and how the slots are filled.</span>
+<span class="sd">        abort</span>
+<span class="sd">            If True, abort the program if a board cannot be created. If False, leave the slot empty.</span>
+<span class="sd">            Default is False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config_path</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_path</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">system_config</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">abort</span><span class="o">=</span><span class="n">abort</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">ekfsm_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_system</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_slot_attrs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_provider_functions</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boards</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_init_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">:</span> <span class="n">Slots</span> <span class="o">=</span> <span class="n">Slots</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boards</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HwModule</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_slot_number</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_master</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span><span class="s2">&quot;No master board found in system configuration!&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Master board found in slot </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">master_slot_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">slot_cfg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">system_config</span><span class="o">.</span><span class="n">slots</span><span class="p">):</span>
+            <span class="n">hwmod</span><span class="p">:</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="n">Slot</span> <span class="o">|</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_slot_number</span><span class="p">:</span>
+                <span class="n">hwmod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">hwmod</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_hwmodule</span><span class="p">(</span><span class="n">slot_cfg</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">hwmod</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hwmod</span><span class="o">.</span><span class="n">slot</span><span class="o">.</span><span class="n">hwmodule</span> <span class="o">=</span> <span class="n">hwmod</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">boards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hwmod</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">hwmod</span><span class="o">.</span><span class="n">slot</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_init_slot_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">board</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">boards</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="o">.</span><span class="n">instance_name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">board</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_aggregate_provider_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">system_config</span><span class="p">,</span> <span class="s2">&quot;aggregates&quot;</span><span class="p">):</span>
+            <span class="n">agg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">system_config</span><span class="o">.</span><span class="n">aggregates</span>
+            <span class="k">if</span> <span class="n">agg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">agg</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">prv</span> <span class="o">=</span> <span class="n">Munch</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">board</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">boards</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                            <span class="n">prv</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">value</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">key</span><span class="p">)})</span>
+                    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">prv</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">prv</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
+
+<div class="viewcode-block" id="System.reload">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System.reload">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reload the current system configuration.</span>
+
+<span class="sd">        Important</span>
+<span class="sd">        ---------</span>
+<span class="sd">        This will rebuild all system objects and reinitialize the system tree.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_path</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_master</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">slot</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">system_config</span><span class="o">.</span><span class="n">slots</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;attributes&quot;</span> <span class="ow">in</span> <span class="n">slot</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;is_master&quot;</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">attributes</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">is_master</span><span class="p">:</span>
+                        <span class="n">master</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_hwmodule</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">master</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="n">master</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>  <span class="c1"># ???</span>
+                            <span class="k">return</span> <span class="n">master</span><span class="p">,</span> <span class="n">i</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># ???</span>
+
+<div class="viewcode-block" id="System.create_hwmodule">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System.create_hwmodule">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_hwmodule</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">slot_entry</span><span class="p">:</span> <span class="n">Munch</span><span class="p">,</span> <span class="n">slot_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">master</span><span class="p">:</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Slot</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create HwModule object for the slot.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            slot_entry</span>
+<span class="sd">                The slot entry config (usually part of the system configuration).</span>
+<span class="sd">            slot_number</span>
+<span class="sd">                The slot number of the slot.</span>
+<span class="sd">            master</span>
+<span class="sd">                The master board of the system.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            HwModule and Slot. HwModule is None if it cannot be created.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_slot</span><span class="p">(</span><span class="n">slot_entry</span><span class="p">,</span> <span class="n">slot_number</span><span class="p">,</span> <span class="n">master</span><span class="p">)</span>
+        <span class="n">board_type</span> <span class="o">=</span> <span class="n">slot_entry</span><span class="o">.</span><span class="n">desired_hwmodule_type</span>
+        <span class="n">board_name</span> <span class="o">=</span> <span class="n">slot_entry</span><span class="o">.</span><span class="n">desired_hwmodule_name</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Creating hwmodule </span><span class="si">{</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> (desired name: </span><span class="si">{</span><span class="n">board_name</span><span class="si">}</span><span class="s2">) in slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">board_type</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="c1"># try to create first the desired board</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">find_board_config</span><span class="p">(</span><span class="n">board_type</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;No board config found for </span><span class="si">{</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> (desired name: </span><span class="si">{</span><span class="n">board_name</span><span class="si">}</span><span class="s2">)&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">slot</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">hwmod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_hwmodule_from_cfg_file</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">board_name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">abort</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;failed to create desired hwmodule </span><span class="si">{</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> (as </span><span class="si">{</span><span class="n">board_name</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Aborting!&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;failed to create desired hwmodule </span><span class="si">{</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> (as </span><span class="si">{</span><span class="n">board_name</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Leaving slot empty!&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">slot</span>
+
+            <span class="c1"># try to probe desired board type</span>
+            <span class="k">if</span> <span class="n">hwmod</span><span class="o">.</span><span class="n">probe</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Found desired board type </span><span class="si">{</span><span class="n">hwmod</span><span class="o">.</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> for slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">hwmod</span><span class="p">,</span> <span class="n">slot</span>
+
+        <span class="c1"># try all other boards types. Maybe someone inserted the wrong board</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Probing failed. Trying all other board types for slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_board_cfg_files</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">hwmod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_hwmodule_from_cfg_file</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">board_name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">ConfigError</span><span class="p">:</span>
+                <span class="c1"># slot type not matching, ignore</span>
+                <span class="c1"># ??? should we log this?</span>
+                <span class="k">continue</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;failed to create hwmodule </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> for slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">hwmod</span><span class="o">.</span><span class="n">probe</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Found other board type </span><span class="si">{</span><span class="n">hwmod</span><span class="o">.</span><span class="n">board_type</span><span class="si">}</span><span class="s2"> for slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">hwmod</span><span class="p">,</span> <span class="n">slot</span>
+
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">slot</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_slot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">slot_entry</span><span class="p">:</span> <span class="n">Munch</span><span class="p">,</span> <span class="n">slot_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">master</span><span class="p">:</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Slot</span><span class="p">:</span>
+        <span class="n">attributes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="s2">&quot;attributes&quot;</span> <span class="ow">in</span> <span class="n">slot_entry</span><span class="p">:</span>
+            <span class="n">attributes</span> <span class="o">=</span> <span class="n">slot_entry</span><span class="o">.</span><span class="n">attributes</span>
+
+        <span class="k">return</span> <span class="n">Slot</span><span class="p">(</span>
+            <span class="n">slot_entry</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">SlotType</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">slot_entry</span><span class="o">.</span><span class="n">slot_type</span><span class="p">),</span>
+            <span class="n">slot_entry</span><span class="o">.</span><span class="n">desired_hwmodule_type</span><span class="p">,</span>
+            <span class="n">slot_entry</span><span class="o">.</span><span class="n">desired_hwmodule_name</span><span class="p">,</span>
+            <span class="n">slot_number</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="n">master</span><span class="p">,</span>
+            <span class="n">attributes</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="System._create_hwmodule_from_cfg_file">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System._create_hwmodule_from_cfg_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_hwmodule_from_cfg_file</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">board_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HwModule</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Try to create a HwModule object from a board config file.</span>
+<span class="sd">        It does not probe the hardware.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            HwModule object.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">            FileNotFoundError</span>
+<span class="sd">                If the board config file does not exist.</span>
+<span class="sd">            ConfigError</span>
+<span class="sd">                If the slot type in the config file does not match the slot type.</span>
+<span class="sd">            Exception</span>
+<span class="sd">                If something else went wrong.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">yaml_data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="n">cfg</span> <span class="o">=</span> <span class="n">munchify</span><span class="p">(</span><span class="n">yaml_data</span><span class="p">)</span>
+            <span class="c1"># only instantiate if slot type matches</span>
+            <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">slot_type</span> <span class="o">!=</span> <span class="n">slot</span><span class="o">.</span><span class="n">slot_type</span><span class="o">.</span><span class="n">to_string</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">ConfigError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Slot type mismatch for slot </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">cfg</span><span class="o">.</span><span class="n">slot_type</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">slot_type</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">hwmod</span> <span class="o">=</span> <span class="n">HwModule</span><span class="p">(</span>
+                <span class="n">instance_name</span><span class="o">=</span><span class="n">board_name</span><span class="p">,</span>
+                <span class="n">config</span><span class="o">=</span><span class="n">yaml_data</span><span class="p">,</span>
+                <span class="n">slot</span><span class="o">=</span><span class="n">slot</span><span class="p">,</span>
+                <span class="n">abort</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abort</span><span class="p">,</span>
+                <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">hwmod</span></div>
+
+
+<div class="viewcode-block" id="System.get_module_in_slot">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System.get_module_in_slot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_module_in_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the hwmodule in the given slot.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            idx</span>
+<span class="sd">                The slot index.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            HwModule</span>
+<span class="sd">                The hwmodule in the given slot.</span>
+<span class="sd">            None</span>
+<span class="sd">                If no hwmodule is present in the given slot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">hwmodule</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">idx</span>
+            <span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="System.get_module_by_name">
+<a class="viewcode-back" href="../../reference/ekfsm.html#ekfsm.System.get_module_by_name">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_module_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HwModule</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the hwmodule by its name.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            name</span>
+<span class="sd">                The name of the hwmodule.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            HwModule</span>
+<span class="sd">                The hwmodule with the given name.</span>
+<span class="sd">            None</span>
+<span class="sd">                If no hwmodule is present with the given name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">boards</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;instance_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">name</span><span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boards</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HwModule</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_module_in_slot</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_module_by_name</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Board </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> not found in system!&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Access board by attribute using dot notation&quot;&quot;&quot;</span>
+        <span class="c1"># This fixes mypy error: &quot;... has no object ...&quot;</span>
+        <span class="n">hwModule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_module_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hwModule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hwModule</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; object has no board with name &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;System (name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Klaus Popp, Felix Päßler, Jan Jansen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
