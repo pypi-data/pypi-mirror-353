@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1><a class="button" href="{{ url_for('lesson11.index') }}">{% block title %}Lesson 11{% endblock %}</a></h1>
+{% endblock %}
+
+{% block content %}
+    <h1><a class="button" href="{{ url_for('lesson11.percent_problems') }}">Percent Problems</a></h1>
+    {% set lesson = 'lesson11' %}
+    {% set section = 'percent_problems' %}
+    {% include 'stats.html' %}
+    {% include 'lesson11/percent_problems_form.html' %}
+{% endblock %}
