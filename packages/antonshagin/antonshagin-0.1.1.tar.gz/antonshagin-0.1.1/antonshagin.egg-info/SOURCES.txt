@@ -1,0 +1,16 @@
+MANIFEST.in
+setup.py
+S/__init__.py
+S/auth_client.py
+S/auth_staff.py
+S/db.py
+S/main.py
+S/requirements.txt
+S/screens_admin.py
+S/screens_client.py
+S/screens_manager.py
+S/screens_staff.py
+antonshagin.egg-info/PKG-INFO
+antonshagin.egg-info/SOURCES.txt
+antonshagin.egg-info/dependency_links.txt
+antonshagin.egg-info/top_level.txt
