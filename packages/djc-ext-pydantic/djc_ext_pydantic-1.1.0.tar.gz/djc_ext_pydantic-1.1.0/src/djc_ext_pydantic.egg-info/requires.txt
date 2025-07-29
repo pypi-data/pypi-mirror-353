@@ -1,0 +1,2 @@
+django-components>=0.140
+pydantic>=2.9
