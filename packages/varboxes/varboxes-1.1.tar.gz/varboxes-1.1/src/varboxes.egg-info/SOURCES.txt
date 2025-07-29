@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+src/__init__.py
+src/varboxes.py
+src/varboxes.egg-info/PKG-INFO
+src/varboxes.egg-info/SOURCES.txt
+src/varboxes.egg-info/dependency_links.txt
+src/varboxes.egg-info/requires.txt
+src/varboxes.egg-info/top_level.txt
+tests/test_varboxes.py

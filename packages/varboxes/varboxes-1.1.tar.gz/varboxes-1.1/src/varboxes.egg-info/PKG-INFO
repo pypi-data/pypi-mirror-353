@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: varboxes
+Version: 1.1
+Summary: a varbox allows to store parmanently python variables between sessions
+Author: Imam Usmani
+Project-URL: Source Code, https://github.com/ImamAzim/varboxes
+Project-URL: Documentation, https://varboxes.readthedocs.io/en/latest/index.html
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: xdg
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: ipython; extra == "dev"
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Requires-Dist: sphinx-rtd-theme; extra == "dev"
+Dynamic: license-file
+
+varboxes
+===================
+
+A varbox is an object to store permanently objects between python session. It uses json module, so it restricts the type of variable to store accordingely.
+
+
+Installation
+============
+
+.. code-block:: bash
+
+    pip install varboxes
+
+Usage
+=====
+
+
+.. code-block:: python
+
+    from varboxes import VarBox
+    vb = VarBox('MyApp')
+    # you can create any variable as attribute of the varbox:
+    vb.a = 1
+    # now, you could quit this session, restart the computer, and recreate a varbox (with the same app name):
+    vb2 = VarBox('MyApp')
+    print(vb2.a)
+    >>>  1
+    # and the attribute has been remembered!!
+
+
+Features
+========
+
+* to use permanent variable between session, use attribute of a varbox
+* the attribute will be saved on the disk and retrieved later
+
+
+License
+=======
+
+The project is licensed under GNU GENERAL PUBLIC LICENSE v3.0
