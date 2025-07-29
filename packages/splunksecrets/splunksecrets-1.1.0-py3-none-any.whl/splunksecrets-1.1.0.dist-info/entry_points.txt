@@ -1,0 +1,2 @@
+[console_scripts]
+splunksecrets = splunksecrets.cli:main
