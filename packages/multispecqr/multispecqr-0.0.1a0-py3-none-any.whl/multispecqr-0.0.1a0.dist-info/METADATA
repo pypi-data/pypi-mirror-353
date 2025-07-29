@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: multispecqr
+Version: 0.0.1a0
+Summary: Encode and decode multi-spectral / multi-layer QR codes (RGB, UV, NIR) with optional ML-based separation.
+Project-URL: Documentation, https://github.com/jemsbhai/multispecqr#readme
+Project-URL: Issues, https://github.com/jemsbhai/multispecqr/issues
+Project-URL: Source, https://github.com/jemsbhai/multispecqr
+Author-email: Muntaser Syed <jemsbhai@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Keywords: barcode,multispectral,qr
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: pillow
+Requires-Dist: pyzbar
+Requires-Dist: qrcode[pil]
+Requires-Dist: scikit-learn
+Provides-Extra: ml
+Requires-Dist: torch; extra == 'ml'
+Requires-Dist: torchvision; extra == 'ml'
+Description-Content-Type: text/markdown
+
+# multispecqr
+
+[![PyPI - Version](https://img.shields.io/pypi/v/multispecqr.svg)](https://pypi.org/project/multispecqr)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/multispecqr.svg)](https://pypi.org/project/multispecqr)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install multispecqr
+```
+
+## License
+
+`multispecqr` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

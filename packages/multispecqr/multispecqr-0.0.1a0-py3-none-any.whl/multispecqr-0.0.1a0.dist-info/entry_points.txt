@@ -1,0 +1,2 @@
+[console_scripts]
+multispecqr = multispecqr._cli:main

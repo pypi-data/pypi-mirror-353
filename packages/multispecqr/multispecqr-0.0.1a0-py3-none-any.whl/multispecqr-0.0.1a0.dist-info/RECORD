@@ -1,0 +1,12 @@
+multispecqr/__about__.py,sha256=Jh12NsWCRvLzCqZGSKMQ7vFlO5ixgMQzF_T0-5Q6SmQ,23
+multispecqr/__init__.py,sha256=aFeaL7MxUNqThEyQX3sjc_5IFraHFG5gjj9GSV8sucg,37
+multispecqr/_cli.py,sha256=gPt2n9E2gsoMKYWCsSDpOjBPSoZqyyTaoxJObJ3SKfk,1558
+multispecqr/calibration.py,sha256=ozrB5PAdOkzrTZeS897JICpDGg5owg4uBQXtkASIqHs,54
+multispecqr/decoder.py,sha256=f_vW1CPxldIFF-Yyex2e7vkexAJDFmNr7teL7dxQ9ho,1256
+multispecqr/encoder.py,sha256=hvv-KXMt3Jgp5feir8XuQ_oausEJIYhqe9gyiAY4ENo,1616
+multispecqr/test_encoder.py,sha256=oGEgub-NotZxVqvmXb63IQfdnOlgUSaBfaTOVd4Sfqc,272
+multispecqr-0.0.1a0.dist-info/METADATA,sha256=mdUif5MCRLB3ENI7fF9Mb3-DKJ5rROGJyMussjBGO-Q,1748
+multispecqr-0.0.1a0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+multispecqr-0.0.1a0.dist-info/entry_points.txt,sha256=aVkYp0T8ISkRaUpAeh5EkW1c3m7UtRcs56Izbl8YTMg,54
+multispecqr-0.0.1a0.dist-info/licenses/LICENSE.txt,sha256=ut2jZsFKmycX5_CbIWVkMbJajGBjIpui9wDByJqJYdU,1108
+multispecqr-0.0.1a0.dist-info/RECORD,,
