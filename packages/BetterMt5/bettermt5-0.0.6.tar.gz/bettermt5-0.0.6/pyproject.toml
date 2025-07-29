@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BetterMt5"
+version = "0.0.6"
+description = "A user-friendly version of the MetaTrader5 Python library."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Mathijs Follon", email = "mathijs.follon@gmail.com" }
+]
+requires-python = ">=3.7"
+dependencies = [
+    "MetaTrader5>=5.0.45"
+]
+keywords = [
+    "python", "trading", "trader", "metatrader", "MetaTrader5",
+    "daytrading", "bot", "expert advisor", "EA", "automated"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Office/Business :: Financial",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+
+[project.urls]
+Homepage = "https://github.com/mathlon26/BetterMt5"
+Repository = "https://github.com/mathlon26/BetterMt5"
+Issues = "https://github.com/mathlon26/BetterMt5/issues"

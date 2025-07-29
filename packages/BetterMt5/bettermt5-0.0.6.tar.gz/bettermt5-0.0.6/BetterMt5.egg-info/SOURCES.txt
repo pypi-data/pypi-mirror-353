@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+BetterMt5.egg-info/PKG-INFO
+BetterMt5.egg-info/SOURCES.txt
+BetterMt5.egg-info/dependency_links.txt
+BetterMt5.egg-info/requires.txt
+BetterMt5.egg-info/top_level.txt
+bettermt5/__init__.py
+bettermt5/core.py
+tests/test_py.py
