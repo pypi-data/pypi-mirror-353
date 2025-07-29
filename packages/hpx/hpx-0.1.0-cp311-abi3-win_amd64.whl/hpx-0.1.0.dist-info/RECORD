@@ -1,0 +1,13 @@
+hpx/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hpx/_core.dll.a,sha256=DbzCFNGBZ1W8rSvNA2fRlwrWb_X7azePrm7Ty_g0GwU,1532
+hpx/_core.pyd,sha256=04bBeN6LI7xMQFGbZny9SpxCnxstqTPFDwcyBEnelKE,796199
+hpx/_core.pyi,sha256=0HYKsl6ILuqLZfn9aT41hYsGrxMaR1vkoL0Wit1m4PE,154
+hpx/__init__.py,sha256=aWfYtGPo8wimRh3Q-oHHDByqEll0eI8JLPEVoMVAFac,510
+hpx-0.1.0.dist-info/DELVEWHEEL,sha256=mfpitIIGdcY7P1oYku2KC4Dt7OR6C0TLlPIHK14Sxuk,471
+hpx-0.1.0.dist-info/METADATA,sha256=fwXO1X6c5lXQU9yhGeQDBHXf5l2hUYtaUB7ew5pfuB4,1258
+hpx-0.1.0.dist-info/RECORD,,
+hpx-0.1.0.dist-info/WHEEL,sha256=JPhObXoTXDkZFKdXdTC-rLeuWwNGOLhO5MoUMpuo06U,84
+hpx.libs/libgcc_s_seh-1-b338da2564bdf144bb8c9eddfbcd1b65.dll,sha256=Ku9NFxjRzUNBwVH0jODqPnyq8UQq0jgw5h_chVNSVSs,820266
+hpx.libs/libgmp-10-c272a495a0a94982ebfbecbe66b684d0.dll,sha256=i1QrrFOoM1RGozP8fL6LpsrvVH7BvT09O1rrYV4rvAA,1133114
+hpx.libs/libstdc++-6-87cff402cb4dbb36c1f110db99a645a9.dll,sha256=V7oXGCwFGyUgjiatUxEF5c_xDgSKI9tpvOO_QOyi0vM,2020352
+hpx.libs/libwinpthread-1-0caa31423d3b918071b0d9ad81fe2ef3.dll,sha256=aopsX5o0HlEdYdf50wiGTsGZoaCGXUhjeAlYKVvT_SI,62126
