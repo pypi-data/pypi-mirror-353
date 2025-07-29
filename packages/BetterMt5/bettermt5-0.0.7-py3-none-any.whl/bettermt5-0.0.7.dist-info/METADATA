@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: BetterMt5
+Version: 0.0.7
+Summary: A user-friendly version of the MetaTrader5 Python library.
+Author-email: Mathijs Follon <mathijs.follon@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/mathlon26/BetterMt5
+Project-URL: Repository, https://github.com/mathlon26/BetterMt5
+Project-URL: Issues, https://github.com/mathlon26/BetterMt5/issues
+Keywords: python,trading,trader,metatrader,MetaTrader5,daytrading,bot,expert advisor,EA,automated
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: MetaTrader5>=5.0.45
+Dynamic: license-file
+
+A user friendly version of the Metatrader5 python library.
