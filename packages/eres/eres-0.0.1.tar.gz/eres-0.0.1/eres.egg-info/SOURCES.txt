@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+eres/__init__.py
+eres.egg-info/PKG-INFO
+eres.egg-info/SOURCES.txt
+eres.egg-info/dependency_links.txt
+eres.egg-info/top_level.txt
