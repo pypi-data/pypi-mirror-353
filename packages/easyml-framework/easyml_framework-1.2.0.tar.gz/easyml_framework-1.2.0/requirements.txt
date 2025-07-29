@@ -1,0 +1,30 @@
+numpy>=1.19.0
+pandas>=1.2.0
+scikit-learn>=1.0.0
+matplotlib>=3.3.0
+seaborn>=0.11.0
+joblib>=1.0.0
+tqdm>=4.60.0
+pyyaml>=5.4.0
+requests>=2.25.0
+
+# Dépendances optionnelles pour fonctionnalités avancées
+# Installer avec: pip install -r requirements.txt
+
+# Pour le deep learning (optionnel):
+# tensorflow>=2.8.0
+# torch>=1.10.0
+
+# Pour le NLP avancé (optionnel):
+# nltk>=3.6
+# spacy>=3.2.0
+
+# Pour les visualisations avancées (optionnel):
+# plotly>=5.0.0
+# bokeh>=2.3.0
+
+# Pour le développement (optionnel):
+# pytest>=6.0
+# black>=21.0
+# flake8>=3.8
+# jupyter>=1.0.0 
