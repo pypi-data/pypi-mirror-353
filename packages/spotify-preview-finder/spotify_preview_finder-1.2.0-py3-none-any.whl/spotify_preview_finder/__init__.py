@@ -1,0 +1,1 @@
+from .finder import search_and_get_links
