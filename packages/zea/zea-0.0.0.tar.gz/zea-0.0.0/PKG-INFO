@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: zea
+Version: 0.0.0
+Summary: A Toolbox for Cognitive Ultrasound Imaging. Provides a set of tools for processing of ultrasound data, all built in your favorite machine learning framework.
+Author-email: Tristan Stevens <t.s.w.stevens@tue.nl>, Wessel van Nierop <w.l.v.nierop@tue.nl>, Ben Luijten <w.m.b.luijten@tue.nl>, Vincent van de Schaft <v.v.d.schaft@tue.nl>, Oisín Nolan <o.i.nolan@tue.nl>, Beatrice Federici <b.fedherici@tue.nl>, Louis van Harten <l.d.v.arten@tue.nl>, Simon Penninga <s.w.penninga@tue.nl>, Noortje Schueler <n.i.p.schueler@tue.nl>, Ruud van Sloun <r.j.g.v.sloun@tue.nl>
+Keywords: ultrasound,machine learning,beamforming
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: <3.13,>=3.10
+Description-Content-Type: text/markdown

@@ -1,0 +1,30 @@
+[project]
+name = "zea"
+version = "0.0.0"
+description = "A Toolbox for Cognitive Ultrasound Imaging. Provides a set of tools for processing of ultrasound data, all built in your favorite machine learning framework."
+authors = [
+    { name = "Tristan Stevens", email = "t.s.w.stevens@tue.nl" },
+    { name = "Wessel van Nierop", email = "w.l.v.nierop@tue.nl" },
+    { name = "Ben Luijten", email = "w.m.b.luijten@tue.nl" },
+    { name = "Vincent van de Schaft", email = "v.v.d.schaft@tue.nl" },
+    { name = "Oisín Nolan", email = "o.i.nolan@tue.nl" },
+    { name = "Beatrice Federici", email = "b.fedherici@tue.nl" },
+    { name = "Louis van Harten", email = "l.d.v.arten@tue.nl" },
+    { name = "Simon Penninga", email = "s.w.penninga@tue.nl" },
+    { name = "Noortje Schueler", email = "n.i.p.schueler@tue.nl" },
+    { name = "Ruud van Sloun", email = "r.j.g.v.sloun@tue.nl" },
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10,<3.13"
+keywords = ["ultrasound", "machine learning", "beamforming"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering",
+]
