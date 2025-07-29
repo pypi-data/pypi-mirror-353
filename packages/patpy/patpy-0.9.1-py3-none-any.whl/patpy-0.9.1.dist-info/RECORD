@@ -1,0 +1,15 @@
+patpy/__init__.py,sha256=HHzqTVMpoSl3dI7Pew0xwSYuwiOi7xRlKTI4TeUCFi8,127
+patpy/pl/__init__.py,sha256=lEs8yV7o-7QTl9BqpZvVk0av3q1mEDsncTwyxs9w2nY,39
+patpy/pl/basic.py,sha256=_aGJUjawLTDVQPgw1tlV4Hur4c9AOrO5MDAvsqXs_Kc,2731
+patpy/pp/__init__.py,sha256=Q8QEMOTDXJmL1_In_gI1wamuBl__36lNXp2dR4FGdzg,329
+patpy/pp/basic.py,sha256=HQxb3to46jTG5dPe5EcQHK0UkBCuYLc6tKI6jSczxR8,11784
+patpy/tl/__init__.py,sha256=qgf8PzhhgsRef1wWeXOkcb_Sntn3PShc0G6Yh-qfN_U,533
+patpy/tl/_types.py,sha256=sUPIqcXr0IA1NWtTK5cY-UPlwutx1fvEuvYaXUvQfng,249
+patpy/tl/evaluation.py,sha256=cA2GHBeEr0WDzZLqaC9TCKVPedHKRIa8R3Id5jVqKkE,23690
+patpy/tl/gloscope.R,sha256=k8JqZ_UKDSQrwQpvmKsPk8-4JrgivQJtopo_OxvzPeY,2202
+patpy/tl/persistence.py,sha256=OCRm1Dn5TD2xWkxvEz6Oi0O7kWEAug9ouJzeVTmSG1o,4912
+patpy/tl/sample_representation.py,sha256=-DdgIrMyM8EfOISrziDq9JCkY38cQKMrdsfeugOwuLk,72733
+patpy-0.9.1.dist-info/METADATA,sha256=iBiQ2pg4UtCpmzkCDMIF_iecqVko2hdKJ4D4LpUH_VQ,7719
+patpy-0.9.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+patpy-0.9.1.dist-info/licenses/LICENSE,sha256=_26bfQQM2pAmI-mRPiBqox1Q957pfSJo2M0M6vVPQZ8,1523
+patpy-0.9.1.dist-info/RECORD,,
