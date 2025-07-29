@@ -1,0 +1,8 @@
+fasthttp/__init__.py,sha256=WQfwvi97mcwUlsaP1TzH6y8Cfo_CcMM4TQsDz4a0eLo,379
+fasthttp/applications.py,sha256=P19EaPE1ikNkYW5aXNRQ2VsBhHtmPHAa4vDtB33rIhA,10268
+fasthttp/lifecycle.py,sha256=1AXB19jswKRwUO_-etvudO4zdBOLY-cirmsu-flUdQ0,3091
+fasthttp/serializers.py,sha256=fq4KuheUYFgJ3W2GsCsvlkcSQ9_VJikKsPdvDgAXu_g,3559
+fastaiohttp-0.1.1.dist-info/METADATA,sha256=3mbJezt8s1irctLf14QL9XnkxlPdzifw6kWMgbJ1Uns,9754
+fastaiohttp-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fastaiohttp-0.1.1.dist-info/licenses/LICENSE,sha256=SAGpalX644epMVAcbAzRv8igWMpnuYCE0jeJWf3F7RM,1070
+fastaiohttp-0.1.1.dist-info/RECORD,,
