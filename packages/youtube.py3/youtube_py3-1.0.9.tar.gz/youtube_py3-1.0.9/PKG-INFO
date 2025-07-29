@@ -1,0 +1,151 @@
+Metadata-Version: 2.4
+Name: youtube.py3
+Version: 1.0.9
+Summary: A simplified wrapper for YouTube Data API v3
+Home-page: https://github.com/Himarry/youtube.py3
+Author: Chihalu
+Author-email: 
+Project-URL: Bug Reports, https://github.com/Himarry/youtube.py3/issues
+Project-URL: Source, https://github.com/Himarry/youtube.py3
+Project-URL: Documentation, https://github.com/Himarry/youtube.py3#readme
+Project-URL: Homepage, https://github.com/Himarry/youtube.py3
+Keywords: youtube api wrapper python google data v3
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: google-api-python-client>=2.0.0
+Requires-Dist: google-auth>=2.0.0
+Requires-Dist: google-auth-oauthlib>=0.5.0
+Requires-Dist: google-auth-httplib2>=0.1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Requires-Dist: build>=0.8.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=4.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.0; extra == "docs"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# youtube.py3
+
+[![PyPI version](https://badge.fury.io/py/youtube-py3.svg)](https://badge.fury.io/py/youtube-py3)
+[![Python versions](https://img.shields.io/pypi/pyversions/youtube-py3.svg)](https://pypi.org/project/youtube-py3/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A Python wrapper library for easy use of YouTube Data API v3.
+
+## 🎯 Features
+
+- **Beginner-friendly**: Simplified complex API parameters
+- **Rich functionality**: Video, channel, playlist, and comment management
+- **Automated processing**: Pagination and error handling
+- **Japanese support**: Easy-to-understand method names and descriptions
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install youtube-py3
+```
+
+### Basic Usage Example
+
+```python
+import os
+from youtube_py3 import YouTubeAPI
+
+# Get API key from environment variable
+api_key = os.getenv('YOUTUBE_API_KEY')
+yt = YouTubeAPI(api_key)
+
+# Get channel information
+channel = yt.get_channel_info("UC_x5XG1OV2P6uZZ5FSM9Ttw")
+print(f"Channel name: {channel['snippet']['title']}")
+
+# Search videos
+videos = yt.search_videos("Python programming", max_results=5)
+for video in videos:
+    print(f"- {video['snippet']['title']}")
+```
+
+## 📚 Documentation
+
+For detailed documentation, please see the [docs/](docs/) folder:
+
+- [Installation Guide](docs/installation.md)
+- [API Reference](docs/api_reference.md)
+- [Examples](docs/examples/)
+- [Troubleshooting](docs/troubleshooting.md)
+
+## ⚠️ Important Notes
+
+### About API Keys
+- **This library does not include an API key**
+- Each user must obtain an API key individually from Google Cloud Console
+- API key usage limits and security are managed by each user
+
+### How to Get an API Key
+1. Access [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project
+3. Enable YouTube Data API v3
+4. Create an API key from credentials
+
+## 🛠️ Development
+
+### Development Environment Setup
+
+```bash
+git clone https://github.com/Himarry/youtube.py3.git
+cd youtube.py3
+pip install -e .[dev]
+```
+
+### Running Tests
+
+```bash
+pytest tests/
+```
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Pull requests and issue reports are welcome!
+
+## 📞 Support
+
+- GitHub Issues: [Issues](https://github.com/Himarry/youtube.py3/issues)
+- Email: yanase.ui.prv@gmail.com
+
+---
+
+**Note**: This library is an unofficial wrapper for YouTube Data API v3. It is not affiliated with Google/YouTube.
