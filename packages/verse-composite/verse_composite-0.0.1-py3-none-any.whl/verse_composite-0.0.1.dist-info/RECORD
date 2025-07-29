@@ -1,0 +1,7 @@
+verse/composite/script/__init__.py,sha256=DidVZdhonAcGVA_BWYPxPjPM7aOU7M9vtFkgqZR-LV8,52
+verse/composite/script/component.py,sha256=t7C7Iv-36EcTmmpDw8Jn9pIRScdl3zu08pPVq8ANlQs,129
+verse/composite/script/providers/default.py,sha256=hG8hK5wWnR6StCFu8lXjiVp5AfvO9c-e96cx78gfPE8,1547
+verse_composite-0.0.1.dist-info/LICENSE,sha256=2L9Br1l89fnA7m3XmoKWh6O3KM7r9k5-Hl_XhaNX7nM,1067
+verse_composite-0.0.1.dist-info/METADATA,sha256=TAmaX7k3su5jpMQwq12bi-blMhJQrGPwyHZ5lwls7Tw,1031
+verse_composite-0.0.1.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+verse_composite-0.0.1.dist-info/RECORD,,
