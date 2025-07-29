@@ -1,0 +1,20 @@
+name: CI master
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - release/**
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  ci:
+    uses: ./.github/workflows/_ci.yaml
+  build_wheels:
+    needs: ci
+    uses: ./.github/workflows/wheels.yaml
