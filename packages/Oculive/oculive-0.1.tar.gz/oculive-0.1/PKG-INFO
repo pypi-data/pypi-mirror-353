@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: Oculive
+Version: 0.1
+Summary: EAA software.
+Author-email: Romain Loustalet Palengat <romain.loustalet@gmx.com>
+Project-URL: Homepage, https://github.com/rloustalet/oculive
+Project-URL: Source, https://github.com/rloustalet/oculive
+Keywords: astro,EAA,oculive,live
+Platform: unix
+Platform: linux
+Platform: osx
+Platform: cygwin
+Platform: win32
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.20
+Requires-Dist: opencv-python>=4.9.0.80
+Requires-Dist: pyqt6>=6.5.0
+Requires-Dist: astropy>=6.1.7
+Requires-Dist: scikit-image>=0.20.0
+Dynamic: license-file

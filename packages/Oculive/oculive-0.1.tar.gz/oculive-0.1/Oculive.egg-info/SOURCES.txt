@@ -1,0 +1,13 @@
+LICENSE
+README.md
+REQUIREMENTS
+oculive.py
+pyproject.toml
+setup.py
+Oculive.egg-info/PKG-INFO
+Oculive.egg-info/SOURCES.txt
+Oculive.egg-info/dependency_links.txt
+Oculive.egg-info/entry_points.txt
+Oculive.egg-info/not-zip-safe
+Oculive.egg-info/requires.txt
+Oculive.egg-info/top_level.txt
