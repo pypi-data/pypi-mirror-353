@@ -1,0 +1,775 @@
+Metadata-Version: 2.4
+Name: speedfetch
+Version: 1.0.0
+Summary: network and system performance testing library
+Home-page: https://github.com/volksgeistt/speedfetch
+Author: Ujjawal Singh / @volksgeistt
+Author-email: unrealvolksgeist@gmail.com
+Project-URL: Bug Reports, https://github.com/volksgeistt/speedfetch/issues
+Project-URL: Source, https://github.com/volksgeistt/speedfetch
+Project-URL: Documentation, https://github.com/volksgeistt/speedfetch
+Keywords: network,speed test,performance,system info,bandwidth,latency
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: speedtest-cli>=2.1.0
+Requires-Dist: psutil>=5.8.0
+Requires-Dist: requests>=2.25.0
+Requires-Dist: colorama>=0.4.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Requires-Dist: mypy>=0.800; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# SpeedFetch 🚀
+**Network and system performance testing library for Python developers and system administrators.**
+> SpeedFetch provides comprehensive network diagnostics, internet speed testing, and system performance analysis in a simple, elegant Python package. Perfect for monitoring applications, network diagnostics, system health checks, and performance benchmarking.
+
+## ✨ Features
+
+### 🌐 Network Testing
+- **Internet Speed Tests** - Accurate download/upload speed measurements
+- **Ping Latency Analysis** - Network responsiveness testing
+- **DNS Resolution Tests** - Domain name resolution performance
+- **Public IP Detection** - Automatic external IP identification
+- **Network Interface Discovery** - Local network configuration analysis
+
+### 💻 System Analysis  
+- **CPU Performance** - Multi-core usage and performance benchmarking
+- **Memory Monitoring** - RAM usage and availability analysis
+- **Disk I/O Testing** - Storage performance measurement
+- **System Information** - Comprehensive hardware and OS details
+
+### 🎨 Developer Experience
+- **Simple API** - Intuitive methods for quick integration
+- **Rich Data Models** - Structured results with convenient properties
+- **Progress Callbacks** - Real-time test progress monitoring
+- **Error Handling** - Comprehensive exception handling
+- **Colored Output** - Beautiful terminal displays with color coding
+- **Cross-Platform** - Works on Windows, macOS, and Linux
+
+## 📦 Installation
+
+### From PyPI (Recommended)
+```bash
+pip install speedfetch
+```
+
+### From Source
+```bash
+git clone https://github.com/volksgeistt/speedfetch
+cd speedfetch
+pip install -e .
+```
+
+### Development Installation
+```bash
+git clone https://github.com/volksgeistt/speedfetch
+cd speedfetch
+pip install -e ".[dev]"
+```
+
+## 🚀 Quick Start
+
+### Command Line Interface
+
+```bash
+# Full comprehensive test
+speedfetch
+
+# Quick speed test only
+speedfetch --quick
+
+# System information only  
+speedfetch --system-only
+
+# Disable colored output
+speedfetch --no-color
+
+# Custom timeout (60 seconds)
+speedfetch --timeout 60
+
+# Show help
+speedfetch --help
+```
+
+### Python API - Basic Usage
+
+```python
+from speedfetch import SpeedFetch
+
+# Initialize SpeedFetch
+sf = SpeedFetch()
+
+# Quick internet speed test
+result = sf.quick_test()
+print(f"Download: {result.download_mbps:.1f} Mbps")
+print(f"Upload: {result.upload_mbps:.1f} Mbps")
+print(f"Ping: {result.ping_ms:.1f} ms")
+```
+
+## 📖 Complete API Documentation
+
+### SpeedFetch Class
+
+#### Initialization
+
+```python
+from speedfetch import SpeedFetch
+
+# Basic initialization
+sf = SpeedFetch()
+
+# Advanced configuration
+sf = SpeedFetch(
+    timeout=60,        # Test timeout in seconds
+    no_color=False,    # Disable colored output
+    force_color=True   # Force colors even if not detected
+)
+```
+
+### Core Methods
+
+#### 1. Internet Speed Testing
+
+```python
+# Quick speed test
+result = sf.quick_test()
+
+# Speed test with progress callback
+def progress_handler(message):
+    print(f"⏳ {message}")
+
+result = sf.speed_test(progress_callback=progress_handler)
+
+# Access results
+print(f"Download Speed: {result.download_mbps:.2f} Mbps")
+print(f"Upload Speed: {result.upload_mbps:.2f} Mbps") 
+print(f"Ping Latency: {result.ping_ms:.1f} ms")
+print(f"Server: {result.server.name} ({result.server.country})")
+print(f"Distance to Server: {result.server.distance} km")
+print(f"Test Duration: {result.test_duration:.1f} seconds")
+
+# Convert to dictionary for JSON serialization
+speed_data = result.to_dict()
+```
+
+#### 2. System Information
+
+```python
+# Get comprehensive system information
+info = sf.get_system_info()
+
+# Basic system details
+print(f"Hostname: {info.hostname}")
+print(f"OS: {info.os}")
+print(f"Architecture: {info.architecture}")
+print(f"Python Version: {info.python_version}")
+
+# CPU information
+print(f"CPU Cores: {info.cpu_count}")
+print(f"CPU Usage: {info.cpu_percent:.1f}%")
+
+# Memory information
+print(f"Total Memory: {info.memory_total_gb:.1f} GB")
+print(f"Used Memory: {info.memory_used_gb:.1f} GB")
+print(f"Memory Usage: {info.memory_percent:.1f}%")
+
+# Disk information
+print(f"Total Disk: {info.disk_total_gb:.1f} GB")
+print(f"Used Disk: {info.disk_used_gb:.1f} GB") 
+print(f"Disk Usage: {info.disk_percent:.1f}%")
+```
+
+#### 3. Network Analysis
+
+```python
+# Get network information
+network = sf.get_network_info()
+
+print(f"Public IP: {network.public_ip}")
+print(f"Network Interfaces: {network.interfaces}")
+print(f"Average DNS Time: {network.avg_dns_time:.1f} ms")
+
+# DNS resolution times
+for domain, time_ms in network.dns_times.items():
+    if time_ms > 0:
+        print(f"{domain}: {time_ms:.1f} ms")
+    else:
+        print(f"{domain}: Failed")
+```
+
+#### 4. Performance Benchmarking
+
+```python
+# Run system performance tests
+perf = sf.performance_test()
+
+print(f"Disk I/O Speed: {perf.disk_io_speed_mbps:.1f} MB/s")
+print(f"CPU Performance Score: {perf.cpu_score:.0f} operations/sec")
+print(f"Test Duration: {perf.test_duration:.1f} seconds")
+```
+
+#### 5. Comprehensive Testing
+
+```python
+# Run all tests together
+def progress_handler(message):
+    print(f"🔄 {message}")
+
+# Full test with progress monitoring
+results = sf.full_test(
+    display=True,  # Show formatted results
+    progress_callback=progress_handler
+)
+
+# Access individual result components
+speed_result = results['speed_test']
+system_info = results['system_info']
+network_info = results['network_info'] 
+performance = results['performance']
+
+# Example: Create a summary report
+print(f"""
+📊 SPEEDFETCH SUMMARY REPORT
+============================
+🌐 Internet Speed: {speed_result.download_mbps:.1f} Mbps ↓ / {speed_result.upload_mbps:.1f} Mbps ↑
+📡 Ping Latency: {speed_result.ping_ms:.1f} ms
+💻 CPU Usage: {system_info.cpu_percent:.1f}%
+🧠 Memory Usage: {system_info.memory_percent:.1f}%
+💾 Disk Usage: {system_info.disk_percent:.1f}%
+🌍 Public IP: {network_info.public_ip}
+⚡ Disk I/O: {performance.disk_io_speed_mbps:.1f} MB/s
+""")
+```
+
+## 🔧 Advanced Usage Examples
+
+### 1. Network Monitoring Script
+
+```python
+import time
+from speedfetch import SpeedFetch
+from datetime import datetime
+
+def monitor_network():
+    sf = SpeedFetch(timeout=30)
+    
+    while True:
+        try:
+            print(f"\n📊 Network Check - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            # Quick speed test
+            result = sf.quick_test()
+            
+            # Alert if speed is below threshold
+            if result.download_mbps < 50:  # 50 Mbps threshold
+                print(f"⚠️  SLOW CONNECTION: {result.download_mbps:.1f} Mbps")
+            else:
+                print(f"✅ Connection OK: {result.download_mbps:.1f} Mbps")
+            
+            # Check ping latency
+            if result.ping_ms > 100:  # 100ms threshold
+                print(f"⚠️  HIGH LATENCY: {result.ping_ms:.1f} ms")
+            else:
+                print(f"✅ Latency OK: {result.ping_ms:.1f} ms")
+                
+        except Exception as e:
+            print(f"❌ Test failed: {e}")
+        
+        # Wait 5 minutes before next test
+        time.sleep(300)
+
+if __name__ == "__main__":
+    monitor_network()
+```
+
+### 2. System Health Dashboard
+
+```python
+from speedfetch import SpeedFetch
+import json
+from datetime import datetime
+
+class SystemHealthDashboard:
+    def __init__(self):
+        self.sf = SpeedFetch()
+    
+    def get_health_report(self):
+        """Generate comprehensive system health report."""
+        
+        def progress(msg):
+            print(f"🔄 {msg}")
+        
+        # Run full diagnostics
+        results = self.sf.full_test(display=False, progress_callback=progress)
+        
+        # Generate health scores
+        health_report = {
+            'timestamp': datetime.now().isoformat(),
+            'overall_health': self._calculate_health_score(results),
+            'details': {
+                'internet_speed': {
+                    'download_mbps': results['speed_test'].download_mbps,
+                    'upload_mbps': results['speed_test'].upload_mbps,
+                    'ping_ms': results['speed_test'].ping_ms,
+                    'server': results['speed_test'].server.name
+                },
+                'system_resources': {
+                    'cpu_usage': results['system_info'].cpu_percent,
+                    'memory_usage': results['system_info'].memory_percent,
+                    'disk_usage': results['system_info'].disk_percent,
+                    'hostname': results['system_info'].hostname
+                },
+                'network_health': {
+                    'public_ip': results['network_info'].public_ip,
+                    'dns_avg_time': results['network_info'].avg_dns_time,
+                    'interfaces_count': len(results['network_info'].interfaces)
+                },
+                'performance': {
+                    'disk_io_mbps': results['performance'].disk_io_speed_mbps,
+                    'cpu_score': results['performance'].cpu_score
+                }
+            }
+        }
+        
+        return health_report
+    
+    def _calculate_health_score(self, results):
+        """Calculate overall system health score (0-100)."""
+        score = 100
+        
+        # Deduct points for high resource usage
+        if results['system_info'].cpu_percent > 80:
+            score -= 20
+        elif results['system_info'].cpu_percent > 60:
+            score -= 10
+            
+        if results['system_info'].memory_percent > 85:
+            score -= 15
+        elif results['system_info'].memory_percent > 70:
+            score -= 8
+            
+        if results['system_info'].disk_percent > 90:
+            score -= 15
+        elif results['system_info'].disk_percent > 80:
+            score -= 8
+        
+        # Deduct points for poor network performance
+        if results['speed_test'].download_mbps < 10:
+            score -= 20
+        elif results['speed_test'].download_mbps < 50:
+            score -= 10
+            
+        if results['speed_test'].ping_ms > 150:
+            score -= 15
+        elif results['speed_test'].ping_ms > 100:
+            score -= 8
+        
+        return max(0, score)
+    
+    def save_report(self, filename='health_report.json'):
+        """Save health report to JSON file."""
+        report = self.get_health_report()
+        
+        with open(filename, 'w') as f:
+            json.dump(report, f, indent=2)
+        
+        print(f"📋 Health report saved to {filename}")
+        return report
+
+# Usage
+if __name__ == "__main__":
+    dashboard = SystemHealthDashboard()
+    report = dashboard.save_report()
+    
+    print(f"🏥 System Health Score: {report['overall_health']}/100")
+```
+
+### 3. Performance Benchmarking Suite
+
+```python
+from speedfetch import SpeedFetch
+import statistics
+from datetime import datetime
+
+class PerformanceBenchmark:
+    def __init__(self, iterations=3):
+        self.sf = SpeedFetch()
+        self.iterations = iterations
+    
+    def run_benchmark_suite(self):
+        """Run comprehensive performance benchmark."""
+        
+        print(f"🏃‍♂️ Starting Performance Benchmark ({self.iterations} iterations)")
+        print("=" * 60)
+        
+        # Collect multiple test results
+        speed_results = []
+        performance_results = []
+        
+        for i in range(self.iterations):
+            print(f"\n🔄 Running iteration {i+1}/{self.iterations}")
+            
+            try:
+                # Speed test
+                speed_result = self.sf.speed_test()
+                speed_results.append({
+                    'download_mbps': speed_result.download_mbps,
+                    'upload_mbps': speed_result.upload_mbps,
+                    'ping_ms': speed_result.ping_ms
+                })
+                
+                # Performance test
+                perf_result = self.sf.performance_test()
+                performance_results.append({
+                    'disk_io_mbps': perf_result.disk_io_speed_mbps,
+                    'cpu_score': perf_result.cpu_score
+                })
+                
+            except Exception as e:
+                print(f"❌ Iteration {i+1} failed: {e}")
+        
+        # Calculate statistics
+        self._generate_report(speed_results, performance_results)
+    
+    def _generate_report(self, speed_results, performance_results):
+        """Generate statistical benchmark report."""
+        
+        if not speed_results or not performance_results:
+            print("❌ No valid results to analyze")
+            return
+        
+        print(f"\n📊 BENCHMARK RESULTS")
+        print("=" * 60)
+        
+        # Speed test statistics
+        download_speeds = [r['download_mbps'] for r in speed_results]
+        upload_speeds = [r['upload_mbps'] for r in speed_results]
+        ping_times = [r['ping_ms'] for r in speed_results]
+        
+        print(f"🌐 INTERNET SPEED STATISTICS")
+        print(f"  Download Speed:")
+        print(f"    Average: {statistics.mean(download_speeds):.2f} Mbps")
+        print(f"    Minimum: {min(download_speeds):.2f} Mbps")
+        print(f"    Maximum: {max(download_speeds):.2f} Mbps")
+        print(f"    Std Dev: {statistics.stdev(download_speeds) if len(download_speeds) > 1 else 0:.2f} Mbps")
+        
+        print(f"  Upload Speed:")
+        print(f"    Average: {statistics.mean(upload_speeds):.2f} Mbps")
+        print(f"    Minimum: {min(upload_speeds):.2f} Mbps")
+        print(f"    Maximum: {max(upload_speeds):.2f} Mbps")
+        
+        print(f"  Ping Latency:")
+        print(f"    Average: {statistics.mean(ping_times):.1f} ms")
+        print(f"    Minimum: {min(ping_times):.1f} ms")
+        print(f"    Maximum: {max(ping_times):.1f} ms")
+        
+        # Performance statistics  
+        disk_speeds = [r['disk_io_mbps'] for r in performance_results]
+        cpu_scores = [r['cpu_score'] for r in performance_results]
+        
+        print(f"\n⚡ SYSTEM PERFORMANCE STATISTICS")
+        print(f"  Disk I/O Speed:")
+        print(f"    Average: {statistics.mean(disk_speeds):.1f} MB/s")
+        print(f"    Minimum: {min(disk_speeds):.1f} MB/s")
+        print(f"    Maximum: {max(disk_speeds):.1f} MB/s")
+        
+        print(f"  CPU Performance:")
+        print(f"    Average: {statistics.mean(cpu_scores):.0f} ops/sec")
+        print(f"    Minimum: {min(cpu_scores):.0f} ops/sec")
+        print(f"    Maximum: {max(cpu_scores):.0f} ops/sec")
+
+# Usage
+if __name__ == "__main__":
+    benchmark = PerformanceBenchmark(iterations=5)
+    benchmark.run_benchmark_suite()
+```
+
+## 🔍 Error Handling
+
+SpeedFetch provides comprehensive error handling with specific exception types:
+
+```python
+from speedfetch import SpeedFetch, SpeedFetchError, TimeoutError, NetworkError
+
+sf = SpeedFetch()
+
+try:
+    result = sf.speed_test()
+    print(f"Success: {result.download_mbps:.1f} Mbps")
+    
+except TimeoutError as e:
+    print(f"⏰ Test timed out: {e}")
+    
+except NetworkError as e:
+    print(f"🌐 Network error: {e}")
+    
+except SpeedFetchError as e:
+    print(f"❌ SpeedFetch error: {e}")
+    
+except Exception as e:
+    print(f"💥 Unexpected error: {e}")
+```
+
+## 🎛️ Configuration Options
+
+### Environment Variables
+
+SpeedFetch respects the following environment variables:
+
+```bash
+# Disable colors globally
+export NO_COLOR=1
+
+# Custom timeout (seconds)
+export SPEEDFETCH_TIMEOUT=60
+
+# Force color output
+export FORCE_COLOR=1
+```
+
+### Programmatic Configuration
+
+```python
+# Custom timeout and color settings
+sf = SpeedFetch(
+    timeout=120,        # 2 minute timeout
+    no_color=False,     # Enable colors
+    force_color=True    # Force colors even in non-TTY
+)
+
+# Configure for CI/CD environments
+sf = SpeedFetch(
+    timeout=60,
+    no_color=True,      # Disable colors for logs
+    force_color=False
+)
+```
+
+## 📊 Data Models
+
+### SpeedTestResult
+
+```python
+@dataclass
+class SpeedTestResult:
+    download_bps: float      # Download speed in bits per second
+    upload_bps: float        # Upload speed in bits per second
+    ping_ms: float           # Ping latency in milliseconds
+    server: ServerInfo       # Test server information
+    timestamp: datetime      # When the test was performed
+    test_duration: float     # How long the test took
+    
+    # Convenience properties
+    @property
+    def download_mbps(self) -> float: ...
+    @property 
+    def upload_mbps(self) -> float: ...
+    @property
+    def download_gbps(self) -> float: ...
+    @property
+    def upload_gbps(self) -> float: ...
+```
+
+### SystemInfo
+
+```python
+@dataclass  
+class SystemInfo:
+    hostname: str
+    os: str
+    architecture: str
+    python_version: str
+    cpu_count: int
+    cpu_percent: float
+    memory_total: int        # Total memory in bytes
+    memory_used: int         # Used memory in bytes
+    memory_percent: float
+    disk_total: int          # Total disk in bytes
+    disk_used: int           # Used disk in bytes
+    disk_percent: float
+    
+    # Convenience properties for GB values
+    @property
+    def memory_total_gb(self) -> float: ...
+    @property
+    def memory_used_gb(self) -> float: ...
+```
+
+## 🧪 Testing
+
+SpeedFetch includes a comprehensive test suite:
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=speedfetch
+
+# Run specific test categories
+pytest tests/test_core.py
+pytest tests/test_display.py
+pytest tests/test_models.py
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get started:
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/volksgeistt/speedfetch
+cd speedfetch
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run linting
+black speedfetch/
+flake8 speedfetch/
+mypy speedfetch/
+```
+
+### Contribution Guidelines
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Make** your changes
+4. **Add** tests for new functionality
+5. **Ensure** all tests pass (`pytest`)
+6. **Run** code formatting (`black speedfetch/`)
+7. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+8. **Push** to the branch (`git push origin feature/amazing-feature`)
+9. **Open** a Pull Request
+
+### Code Style
+
+- Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/)
+- Use [Black](https://black.readthedocs.io/) for code formatting
+- Add type hints for all public functions
+- Write docstrings for all public methods
+- Include tests for new features
+
+## 📋 Requirements
+
+### Core Dependencies
+- **Python** 3.7 or higher
+- **speedtest-cli** >= 2.1.0 - Internet speed testing
+- **psutil** >= 5.8.0 - System and process utilities
+- **requests** >= 2.25.0 - HTTP library
+- **colorama** >= 0.4.0 - Cross-platform colored terminal text
+
+### Development Dependencies
+- **pytest** >= 6.0 - Testing framework
+- **pytest-cov** >= 2.0 - Coverage reporting
+- **black** >= 21.0 - Code formatting
+- **flake8** >= 3.8 - Code linting
+- **mypy** >= 0.800 - Static type checking
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### Import Error: Missing Dependencies
+```bash
+# Install all dependencies
+pip install speedtest-cli psutil requests colorama
+
+# Or install SpeedFetch which includes them
+pip install speedfetch
+```
+
+#### Timeout Errors
+```python
+# Increase timeout for slow connections
+sf = SpeedFetch(timeout=120)  # 2 minutes
+```
+
+#### Permission Errors on Linux/macOS
+```bash
+# Run with appropriate permissions for system info
+sudo python -m speedfetch
+```
+
+#### Colors Not Working
+```python
+# Force color output
+sf = SpeedFetch(force_color=True)
+
+# Or disable colors
+sf = SpeedFetch(no_color=True)
+```
+
+### Getting Help
+
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/volksgeistt/speedfetch/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/volksgeistt/speedfetch/discussions)
+
+## 🌟 Acknowledgments
+- **speedtest-cli** team for the excellent speed testing library
+- **psutil** developers for comprehensive system utilities
+- **colorama** team for cross-platform color support
+- All contributors and users who help improve SpeedFetch
+
+## 📈 Changelog
+
+### Version 1.0.0 (Current)
+- ✅ Initial PyPI release
+- ✅ Complete API documentation
+- ✅ Comprehensive test suite
+- ✅ Cross-platform compatibility
+- ✅ CLI and Python API
+- ✅ Progress callbacks
+- ✅ Error handling
+- ✅ Colored output
+
+### Upcoming Features
+- 🔄 WebSocket support for real-time monitoring
+- 📊 Historical data storage
+- 🌐 Multiple server testing
+- 📱 Mobile network detection
+- 🔌 Plugin system
+- 📈 Performance trending
+
+---
+
+**Made with ❤️ by the SpeedFetch team**
+
+*If you find SpeedFetch useful, please consider giving it a ⭐ on GitHub!*
