@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: flowchem-test
+Version: 0.1b5
+Summary: Add support for test devices in flowchem.
+Author-email: Dario Cambié <2422614+dcambie@users.noreply.github.com>
+Maintainer-email: Jakob Wolf <75418671+JB-Wolf@users.noreply.github.com>
+License-Expression: MIT
+Project-URL: repository, https://github.com/cambiegroup/flowchem-test
+Keywords: chemistry,automation,laboratory,testing
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flowchem
+Provides-Extra: dev
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
+
+# flowchem-test
+
+Add test-devices to [flowchem](https://github.com/cambiegroup/flowchem) and serves as an example of how to add support
+to new devices via plugins.

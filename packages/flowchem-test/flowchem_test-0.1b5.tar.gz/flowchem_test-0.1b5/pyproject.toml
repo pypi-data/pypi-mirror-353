@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flowchem-test"
+version = "0.1b5"
+description = "Add support for test devices in flowchem."
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["chemistry", "automation", "laboratory", "testing"]
+license = "MIT"
+license-files = ['LICEN[CS]E*',]
+authors = [
+    { name = "Dario Cambié", email = "2422614+dcambie@users.noreply.github.com" },
+]
+maintainers = [
+  { name = "Jakob Wolf", email = "75418671+JB-Wolf@users.noreply.github.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "flowchem",
+]
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "black",
+    "ruff",
+]
+[project.urls]
+repository = "https://github.com/cambiegroup/flowchem-test"
+[project.entry-points."flowchem.devices"]
+test-device = "flowchem_test.fakedevice"
+[tool.ruff]
+line-length = 120
