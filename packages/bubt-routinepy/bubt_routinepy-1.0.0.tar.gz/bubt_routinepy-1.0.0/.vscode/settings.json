@@ -1,0 +1,8 @@
+{
+    "autoDocstring.docstringFormat": "sphinx",
+    "autoDocstring.startOnNewLine": true,
+    "cSpell.words": [
+        "BUBT",
+        "routinepy"
+    ]
+}
