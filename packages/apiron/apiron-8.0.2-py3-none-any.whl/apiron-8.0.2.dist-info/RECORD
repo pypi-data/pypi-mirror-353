@@ -1,0 +1,17 @@
+apiron/__init__.py,sha256=b5PMM9Bsoe5YmOfQCsPG3ivsDdY9T_aOVkBOoXJnYrM,567
+apiron/client.py,sha256=AwwPJnlRb6qlIrCw-hYMJsdTn1PK9du0WPJLsSaWDxk,9656
+apiron/exceptions.py,sha256=7AkoR_3xy1xbp7ndRixgOW2b57cj09oGOYZc21I69os,506
+apiron/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+apiron/endpoint/__init__.py,sha256=Ka0vmxts6jbxbINOCTf3fQZ74IqS8sKF2yHssIFJsbY,271
+apiron/endpoint/endpoint.py,sha256=VFkBf79R8pQWuqwEaMI-s2eoy2HBxBu8tPHO5Y77t38,7455
+apiron/endpoint/json.py,sha256=r3A3a4woiIVkZS8I_6jg9-M53ERPmbcUEP06C2L5A2U,1383
+apiron/endpoint/streaming.py,sha256=4PZpCW5Wo8YfzkOA4O604c3gPK-isVJKlZUhhXyv644,570
+apiron/endpoint/stub.py,sha256=hJ3F0aDrzYr0Y7b1HqK_Vt5-Pd0I2WGAXiRsoPdKKIs,1621
+apiron/service/__init__.py,sha256=QCUx7ZlqYjgXY4USjNJi8pn8B_DvroOl_Qfu3WLRepY,174
+apiron/service/base.py,sha256=hAl2vQenxUc-oPOe4x3NW8g9KY-jtcQPXvkrMcbPq58,1951
+apiron/service/discoverable.py,sha256=EmKotTYtfqi3Td3Yil0Wsfsw9dSVPYWwRH0k5QN3hjA,1005
+apiron-8.0.2.dist-info/licenses/LICENSE,sha256=aor2bE9_xEG1eAR9K4DnprnEPUCoJ_y28LCLvC2wrlE,1065
+apiron-8.0.2.dist-info/METADATA,sha256=PAVbHqH3I4BXwBE85GjALWzpMbAYc-AbkK-wqKDgvsM,5063
+apiron-8.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+apiron-8.0.2.dist-info/top_level.txt,sha256=SABgRus_cS2KvPVvvdsfNvyAilghuXjPMkMqqlGpSu0,7
+apiron-8.0.2.dist-info/RECORD,,
