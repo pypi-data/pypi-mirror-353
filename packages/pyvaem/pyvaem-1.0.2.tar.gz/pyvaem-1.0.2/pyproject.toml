@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pyvaem"
+version = "1.0.2" # This is dynamically set by poetry-dynamic-versioning
+description = "Python API for VAEM Festo valve control module"
+authors = ["Jose <jlmoraleshellin@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/jlmoraleshellin/pyvaem"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+pymodbus = "^3.0.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+metadata = true
+dirty = true    
+style = "pep440"
+format = "{base}"
+
+[build-system]
+requires = ["poetry-core>=1.0.2", "poetry-dynamic-versioning"]
+build-backend = "poetry.core.masonry.api"
