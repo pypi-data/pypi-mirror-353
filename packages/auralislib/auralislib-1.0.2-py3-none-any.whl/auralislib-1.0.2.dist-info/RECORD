@@ -1,0 +1,16 @@
+auralislib/__version__.py,sha256=LHilvlxTnu0KLNXINomVigAsQLEwiKf_biPpgdntKnc,23
+auralislib/STT/inference.py,sha256=a1B1YL9qMWXSirdx-y7Ps7P7ARXYwIXerylLGScCqYs,2298
+auralislib/TTS/synth.py,sha256=9Mf8sgQW7l_othrMtRGa3unbHrYVyqiG3IcC1ey8Q5I,414
+auralislib/VC/clone.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auralislib/audio/preprocessing.py,sha256=R3aPWtg_KR2a6JRwoYDUaZJK6HXgImqm-em6DXcfGz4,575
+auralislib/models/ctc_model.py,sha256=MquMx5QSXQssjXRiHRDeoenwC-W5w7l3HNxoNSrhVRk,572
+auralislib/models/tacotron_stub.py,sha256=fxxebC1JXYV8uEfzy2g1R6KTVy7xRDIWjp2-Gog7AkA,511
+auralislib/models/voice_clone_decoder.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auralislib/utils/audio_utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auralislib/utils/image_utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auralislib/utils/model_utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auralislib-1.0.2.dist-info/licenses/LICENSE,sha256=ITKYmaPNLwuruDcBKzayO1mn7kbwWqtX9QFmKaeQFK0,1074
+auralislib-1.0.2.dist-info/METADATA,sha256=9QUsWsXA8ls_cY9RC83MMYBp7aWiizdU8fxIlTbm6WM,4334
+auralislib-1.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+auralislib-1.0.2.dist-info/top_level.txt,sha256=GzXFkgk4DIkGgiuI0d7qA6UudITWgRgNZ15CLfQNt2A,11
+auralislib-1.0.2.dist-info/RECORD,,
