@@ -1,0 +1,2 @@
+[hello]
+toolkit_version = toolkit.__init__:version
