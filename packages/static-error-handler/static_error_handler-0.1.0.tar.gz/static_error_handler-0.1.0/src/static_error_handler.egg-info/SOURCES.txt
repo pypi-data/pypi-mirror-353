@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/static_error_handler.py
+src/static_error_handler.egg-info/PKG-INFO
+src/static_error_handler.egg-info/SOURCES.txt
+src/static_error_handler.egg-info/dependency_links.txt
+src/static_error_handler.egg-info/top_level.txt
