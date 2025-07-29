@@ -1,0 +1,14 @@
+inflect
+pylatexenc
+
+[dev]
+nbstripout
+coverage
+sphinx
+nbsphinx
+sphinx_rtd_theme
+sphinxcontrib-mermaid
+sphinxcontrib.asciinema
+black
+pycodestyle
+setuptools
