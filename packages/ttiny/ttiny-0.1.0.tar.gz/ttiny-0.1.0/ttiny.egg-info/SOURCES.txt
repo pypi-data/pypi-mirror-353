@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+ttiny/__init__.py
+ttiny/ttiny.py
+ttiny/ttiny_7cfg.py
+ttiny.egg-info/PKG-INFO
+ttiny.egg-info/SOURCES.txt
+ttiny.egg-info/dependency_links.txt
+ttiny.egg-info/entry_points.txt
+ttiny.egg-info/top_level.txt
