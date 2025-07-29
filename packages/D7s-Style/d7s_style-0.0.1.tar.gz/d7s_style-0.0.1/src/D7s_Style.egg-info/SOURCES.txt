@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+src/D7s_Style/D7s_Style.py
+src/D7s_Style/__init__.py
+src/D7s_Style.egg-info/PKG-INFO
+src/D7s_Style.egg-info/SOURCES.txt
+src/D7s_Style.egg-info/dependency_links.txt
+src/D7s_Style.egg-info/top_level.txt
