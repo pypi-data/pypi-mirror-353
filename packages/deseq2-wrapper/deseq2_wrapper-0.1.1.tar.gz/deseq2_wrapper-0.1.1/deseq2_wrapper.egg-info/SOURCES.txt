@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+deseq2_wrapper/__init__.py
+deseq2_wrapper/deseq2_functions.R
+deseq2_wrapper/deseq2_wrapper.py
+deseq2_wrapper.egg-info/PKG-INFO
+deseq2_wrapper.egg-info/SOURCES.txt
+deseq2_wrapper.egg-info/dependency_links.txt
+deseq2_wrapper.egg-info/requires.txt
+deseq2_wrapper.egg-info/top_level.txt

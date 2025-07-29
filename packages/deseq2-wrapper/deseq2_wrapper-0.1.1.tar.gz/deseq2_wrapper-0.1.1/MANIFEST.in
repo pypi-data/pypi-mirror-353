@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include deseq2_wrapper/deseq2_functions.R
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
