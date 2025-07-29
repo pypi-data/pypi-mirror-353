@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: python-jsondoc
+Version: 0.1.0.post6
+Author-email: TextCortex Dev Team <dev@textcortex.com>
+Requires-Python: <3.13,>=3.10
+Requires-Dist: beautifulsoup4>=4.13.3
+Requires-Dist: jsonschema<5,>=4.23.0
+Requires-Dist: pydantic<3,>=2.7.2
+Requires-Dist: pypandoc>=1.15
+Requires-Dist: typeid-python>=0.3.2
+Description-Content-Type: text/markdown
+
+# JSON-DOC Python Package
+
+Python implementation of the JSON-DOC specification.
+
+See the [root README](../README.md) for more information.
