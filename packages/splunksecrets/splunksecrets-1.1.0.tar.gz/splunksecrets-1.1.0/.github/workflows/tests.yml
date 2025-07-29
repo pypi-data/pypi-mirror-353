@@ -1,0 +1,41 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  main-lint-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+
+      - name: 🚀 Install just 
+        uses: extractions/setup-just@v2
+
+      - name: 🦾 Install the project
+        run: just dev-sync
+          
+      - name: 💅 🧪 Format, Lint and test
+        run: just validate
