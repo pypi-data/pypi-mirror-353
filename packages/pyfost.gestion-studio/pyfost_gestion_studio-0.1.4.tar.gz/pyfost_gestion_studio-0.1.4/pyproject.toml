@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyfost.gestion-studio"
+dynamic = ["version"]
+description = 'Studio Seat Management Tools'
+readme = "README.md"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+keywords = []
+authors = [
+  { name = "Dee", email = "dee.somethech@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+# -- API --
+  "fastapi",
+  "fastapi[standard]",
+  #"uvicorn[standard]>=0.20.0",
+  "sqlalchemy",
+  "pydantic",
+  "pydantic-settings",
+  "python-dotenv",
+  #"psycopg2-binary",    # If using PostgreSQL
+  #"mysqlclient",        # If using MySQL
+  "python-multipart",    # for upload file endpoints
+# -- Frontend --
+  "nicegui",
+  "httpx",
+  "python-dotenv",
+  "pydantic",
+  # --- map component svg manipulation: (needs cleanup)
+  "lxml",
+  "cssutils",
+  "svgwrite",
+  "svgelements",
+  "drawsvg~=2.0",
+# -- Pyfost --
+  "pyfost.adminui",
+# -- Others --
+  "pydantic-settings",
+]
+
+[project.urls]
+Documentation = "https://github.com/fost-studio/pyfost.gestion-studio#readme"
+Issues = "https://github.com/fost-studio/pyfost.gestion-studio/issues"
+Source = "https://github.com/fost-studio/pyfost.gestion-studio"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0+dev1"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "./src/pyfost/gestion_studio/_version.py"
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+packages = ["src/pyfost"]
+
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/pyfost/gestion_studio tests}"
+
+[tool.coverage.run]
+source_pkgs = ["pyfost.gestion_studio", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/pyfost/gestion_studio/_version.py",
+]
+
+[tool.coverage.paths]
+pyfost.gestion_studio = ["src/pyfost/gestion_studio", "*/pyfost.gestion-studio/src/pyfost/gestion_studio"]
+tests = ["tests", "*/pyfost.gestion-studio/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

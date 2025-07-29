@@ -1,0 +1,111 @@
+Metadata-Version: 2.4
+Name: pyfost.gestion-studio
+Version: 0.1.4
+Summary: Studio Seat Management Tools
+Project-URL: Documentation, https://github.com/fost-studio/pyfost.gestion-studio#readme
+Project-URL: Issues, https://github.com/fost-studio/pyfost.gestion-studio/issues
+Project-URL: Source, https://github.com/fost-studio/pyfost.gestion-studio
+Author-email: Dee <dee.somethech@gmail.com>
+License-Expression: GPL-3.0-or-later
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.12
+Requires-Dist: cssutils
+Requires-Dist: drawsvg~=2.0
+Requires-Dist: fastapi
+Requires-Dist: fastapi[standard]
+Requires-Dist: httpx
+Requires-Dist: lxml
+Requires-Dist: nicegui
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: pyfost-adminui
+Requires-Dist: python-dotenv
+Requires-Dist: python-multipart
+Requires-Dist: sqlalchemy
+Requires-Dist: svgelements
+Requires-Dist: svgwrite
+Description-Content-Type: text/markdown
+
+⚠️ Not Production Ready ⚠️
+
+# pyfost.gestion_studio
+
+[![PyPI - Version](https://img.shields.io/pypi/v/pyfost.gestion-studio.svg)](https://pypi.org/project/pyfost.gestion-studio)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyfost.gestion-studio.svg)](https://pypi.org/project/pyfost.gestion-studio)
+
+[Fost](https://fost.studio) Studio Seats Management Tools
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Run](#run)
+- [Dev](#dev)
+- [License](#license)
+
+## Installation
+
+Create a virualenv, activate it, and then:
+```console
+pip install pyfost.gestion-studio
+```
+
+## Run
+
+### Services
+
+Edit a `.env` or `.env.DEV` or `.env.PROD` file (Use the `.env` in the repo root as example).
+Then, in the same folder, spawn your services:
+- Full Stack: `python -m pyfost.gestion_studio.main_all`
+- All Backends: `python -m pyfost.gestion_studio.main_backends`
+- All Frontends: `python -m pyfost.gestion_studio.main_frontends`
+
+### Python APIs
+
+You can interact with the services using their respecive clients:
+```python
+
+from pyfost.gestion_studio.floors.api import FloorsAPI
+from pyfost.gestion_studio.projects.api import ProjectsAPI
+
+floors_api = ProjectsAPI(host=<floors_service_host>, port=<floors_service_port>)
+facilities = floors_api.get_facilities()
+
+project_api = ProjectsAPI(host=<project_service_host>, port=<project_service_port>)
+tasks = projects_api.get_tasks()
+
+```
+
+## Dev
+
+### Tips
+
+- You can explore the content of the sqlite files (*.db in the repo root) using:
+    - https://inloop.github.io/sqlite-viewer/
+    - https://sqliteviewer.app/
+    - my fav: https://beta.sqliteviewer.app/
+    - or download sqlitebrowser here: https://sqlitebrowser.org/
+- You can copy/past svg from web editors to create map symbols:
+    - https://boxy-svg.com/
+    
+
+### floors
+
+(! OUTDATED !)
+
+- To generate the python client from the backend (api)
+    - run the backend standalone: `fastapi run src/pyfost/gestion_studio/floors/backend/main.py`
+    - install openapi-python-client: `pipx install openapi-python-client --include-deps`
+    - cd to the root of the repo (containing this file)
+    - generate the client: `openapi-python-client generate --url http://127.0.0.1:8000/openapi.json --output-path ../pyfost.gestion-studio-floors_api --config openapi-python-client.yaml`
+    - replace current client (./src/pyfost/gestion_studio/floors/api) by the generated one (../pyfost.gestion-studio-floors_api/api)
+    - also copy the client README (../pyfost.gestion-studio-floors_api/README.md -> ./src/pyfost/gestion_studio/floors/api/README.md)
+
+
+## License
+`pyfost.gestion-studio` is distributed under the terms of the [GNU GPL-3.0 or later](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
