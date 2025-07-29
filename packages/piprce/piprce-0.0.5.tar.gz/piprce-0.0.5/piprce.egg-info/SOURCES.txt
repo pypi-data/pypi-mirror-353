@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.py
+configs/NEWS.TXT
+configs/python313.dll
+piprce/hello.py
+piprce.egg-info/PKG-INFO
+piprce.egg-info/SOURCES.txt
+piprce.egg-info/dependency_links.txt
+piprce.egg-info/entry_points.txt
+piprce.egg-info/top_level.txt
