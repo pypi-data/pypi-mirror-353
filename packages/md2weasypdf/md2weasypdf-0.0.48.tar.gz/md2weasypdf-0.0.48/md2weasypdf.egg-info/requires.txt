@@ -1,0 +1,11 @@
+typer
+rich
+weasyprint==65.1
+markdown
+jinja2
+watchdog
+markdown-grid-tables
+python-frontmatter
+pyyaml
+lxml
+jsonschema
