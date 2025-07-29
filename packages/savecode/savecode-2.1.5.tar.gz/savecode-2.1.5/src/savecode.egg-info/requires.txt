@@ -1,0 +1,12 @@
+tqdm>=4.65.0
+pyperclip>=1.8
+
+[dev]
+pytest>=8.0
+pytest-asyncio
+pytest-env
+ruff>=0.4
+black>=24.3
+mypy>=1.10
+build
+twine
