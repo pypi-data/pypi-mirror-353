@@ -1,0 +1,180 @@
+<div class="profiler-panel">
+  <h2>Memory Usage Analysis</h2>
+
+  <!-- Métriques générales -->
+  <div class="panel-section">
+    <h3>General Memory Metrics</h3>
+    <div class="memory-info">
+      <div class="memory-metric">
+        <span class="metric-label">Process Memory (RSS)</span>
+        <span
+          class="metric-value {{ 'high' if data.memory_usage > 500 else 'normal' }}"
+        >
+          {{ "%.2f"|format(data.memory_usage) }} MB
+        </span>
+      </div>
+      <div class="memory-metric">
+        <span class="metric-label">Virtual Memory</span>
+        <span class="metric-value"
+          >{{ "%.2f"|format(data.peak_memory) }} MB</span
+        >
+      </div>
+      <div class="memory-metric">
+        <span class="metric-label">Python Current</span>
+        <span class="metric-value"
+          >{{ "%.2f"|format(data.python_current_mb) }} MB</span
+        >
+      </div>
+      <div class="memory-metric">
+        <span class="metric-label">Python Peak</span>
+        <span class="metric-value"
+          >{{ "%.2f"|format(data.python_peak_mb) }} MB</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ NOUVEAU : Analyse des objets Python -->
+  <div class="panel-section">
+    <h3>Python Objects Analysis</h3>
+    <div class="objects-info">
+      <p>
+        <strong>Total Objects:</strong> {{ data.gc_objects_count | format_number
+        }}
+      </p>
+      <p><strong>Object Types:</strong> {{ data.object_types_count }}</p>
+
+      <h4>Top Object Types</h4>
+      <table class="memory-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for obj_type, count in data.top_object_types.items() %}
+          <tr>
+            <td>{{ obj_type }}</td>
+            <td>{{ count | format_number }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ✅ NOUVEAU : Points chauds mémoire -->
+  {% if data.memory_hotspots %}
+  <div class="panel-section">
+    <h3>Memory Hotspots</h3>
+    <table class="memory-table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Size (MB)</th>
+          <th>Allocations</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for hotspot in data.memory_hotspots %}
+        <tr>
+          <td class="file-location">{{ hotspot.file }}</td>
+          <td
+            class="size-value {{ 'high' if hotspot.size_mb > 10 else 'normal' }}"
+          >
+            {{ "%.2f"|format(hotspot.size_mb) }}
+          </td>
+          <td>{{ hotspot.count | format_number }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <!-- ✅ NOUVEAU : Plus gros objets -->
+  {% if data.largest_objects %}
+  <div class="panel-section">
+    <h3>Largest Objects (>1MB)</h3>
+    <table class="memory-table">
+      <thead>
+        <tr>
+          <th>Object Type</th>
+          <th>Size (MB)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for obj_type, size_mb in data.largest_objects %}
+        <tr>
+          <td>{{ obj_type }}</td>
+          <td class="size-value high">{{ "%.2f"|format(size_mb) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <!-- ✅ NOUVEAU : Garbage Collection -->
+  <div class="panel-section">
+    <h3>Garbage Collection</h3>
+    <div class="gc-info">
+      <p><strong>Garbage Objects:</strong> {{ data.gc_stats.garbage_count }}</p>
+      {% for gen_stats in data.gc_stats.collections %}
+      <p>
+        <strong>Generation {{ loop.index0 }}:</strong>
+        {{ gen_stats.collections }} collections, {{ gen_stats.collected }}
+        collected, {{ gen_stats.uncollectable }} uncollectable
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Styles existants + nouveaux */
+  .memory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+
+  .memory-table th,
+  .memory-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .memory-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  .size-value.high {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+
+  .size-value.normal {
+    color: #27ae60;
+  }
+
+  .file-location {
+    font-family: monospace;
+    font-size: 12px;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .metric-value.high {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+
+  .metric-value.normal {
+    color: #27ae60;
+  }
+</style>
