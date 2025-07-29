@@ -1,0 +1,2 @@
+[console_scripts]
+mindello_manager = main:main
