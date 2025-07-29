@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+evalz.egg-info/PKG-INFO
+evalz.egg-info/SOURCES.txt
+evalz.egg-info/dependency_links.txt
+evalz.egg-info/top_level.txt
