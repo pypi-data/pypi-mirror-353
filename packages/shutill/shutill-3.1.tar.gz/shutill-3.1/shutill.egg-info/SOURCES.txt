@@ -1,0 +1,9 @@
+README.md
+setup.py
+shutill/__init__.py
+shutill/__main__.py
+shutill.egg-info/PKG-INFO
+shutill.egg-info/SOURCES.txt
+shutill.egg-info/dependency_links.txt
+shutill.egg-info/entry_points.txt
+shutill.egg-info/top_level.txt

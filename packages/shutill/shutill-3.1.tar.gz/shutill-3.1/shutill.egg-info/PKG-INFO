@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: shutill
+Version: 3.1
+Summary: Open Windows Calculator from Python
+Author: Bat-sec
+Author-email: bat-sec1337@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
