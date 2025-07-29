@@ -1,0 +1,15 @@
+[project]
+name = "minwei-tools"
+version = "0.1.7"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "colorama>=0.4.6",
+    "flask>=2.2.5",
+]
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
