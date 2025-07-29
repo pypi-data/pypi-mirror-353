@@ -1,0 +1,14 @@
+S/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+S/auth_client.py,sha256=1Q7Nmai4MVnihhMnJAPtsSzlnEP1WnbD_6928tlZlPc,4591
+S/auth_staff.py,sha256=OBgdtpwIoHSaoDryn4xIkapf8D9a3ko8BIpX_Pr26bk,1818
+S/db.py,sha256=glZ3tD4HpOs3W5GUj-BM29LrTYCYmkME_BHY_WeNhlk,228
+S/main.py,sha256=iJ6s2ScLE25ErqGRAwA7iktJXkuV-R5ZqD4eNlUEF_I,759
+S/requirements.txt,sha256=sSlDi8UFszlwKkpLmG9X0iBMSafNfAfxzI8RURQJ1gk,15
+S/screens_admin.py,sha256=-GTJLJjilCGHFAtz4eo1yHYhkrh6h2tR0vdg70XYtDw,300
+S/screens_client.py,sha256=CsSakkSUteliZVg46_8FykvIp1zOR7WkzmXZrBl9JTY,453
+S/screens_manager.py,sha256=YrXLCI1f8s4hCTo_gCyqCqBzFyfJRTjOiNfDfzSYRwA,332
+S/screens_staff.py,sha256=anwgDTEPQx_8FeoJXUTI80nqXLOqYusbLfh3b-U7reI,187
+antonshagin-0.1.1.dist-info/METADATA,sha256=OqiuxvqYi5HmmyvygWPHPAdnP2JCwB-GyZDHMVc8wuM,258
+antonshagin-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+antonshagin-0.1.1.dist-info/top_level.txt,sha256=eqOX32YwS6tP4nWv4FB6AYROf9qEi04ZSpQC0BByGDk,2
+antonshagin-0.1.1.dist-info/RECORD,,
