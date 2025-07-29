@@ -1,0 +1,11 @@
+bangla_normalizer/__init__.py,sha256=DF_oDdbGuCS07YJDdgykTzsmdVn1l3C1hGruIUveI7k,2374
+bangla_normalizer/conversion_data.py,sha256=iR_5B8ArSYaa5Us9MvVsRg17VI1x-g1m4AlucYN6uMo,32212
+bangla_normalizer/extractor.py,sha256=P9bk2SVL4chD4aGllnQbEfIhHgnCIDjy4UE6wZl0a0w,9220
+bangla_normalizer/methods.py,sha256=1mTkpVfUU2PAxB4r1t2rETyBrbbvOmhJMEKnaXrtIvI,11454
+bangla_normalizer/normalizer.py,sha256=UV_CKucaMBZxoFtwcXlnYEsh4oPUdSTOjf2MG8Nkfck,6923
+bangla_normalizer/utils.py,sha256=Ru1s8yvbD5xSOmjawSbdKQujgt1BxZyNWkz68o05m3o,6151
+bangla_normalizer-0.1.1.dist-info/licenses/LICENSE.txt,sha256=JfnaWKwTFM7VY7ySBqsGPQjalAqbwCcDvICr93fAEh8,1076
+bangla_normalizer-0.1.1.dist-info/METADATA,sha256=VzQMBITw9shfGUeWLkyfwuLxEYsKK1bgDyA4hwWQdr4,42642
+bangla_normalizer-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bangla_normalizer-0.1.1.dist-info/top_level.txt,sha256=soaZvodflNwmj0GCppJWVOG8HejqHCm14eGYxsFp_vA,18
+bangla_normalizer-0.1.1.dist-info/RECORD,,
