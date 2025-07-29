@@ -1,0 +1,2 @@
+[console_scripts]
+gpu-stress = gpu_stress:main
