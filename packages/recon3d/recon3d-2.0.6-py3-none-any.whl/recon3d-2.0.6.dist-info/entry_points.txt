@@ -1,0 +1,14 @@
+[console_scripts]
+binary_to_semantic = recon3d.utility:main_binary_to_semantic
+downscale = recon3d.downscale:main
+grayscale_image_stack_to_segmentation = recon3d.grayscale_image_stack_to_segmentation:main
+hdf_to_image = recon3d.hdf_io:hdf_to_image_command_line
+hdf_to_npy = recon3d.hdf_io:hdf_to_npy_command_line
+hello = recon3d.command_line:hello
+image_to_hdf = recon3d.hdf_io:image_to_hdf_command_line
+image_to_npy = recon3d.image_stack_to_array:main
+instance_analysis = recon3d.instance_analysis:main
+npy_to_mesh = recon3d.npy_to_mesh:main
+recon3d = recon3d.command_line:recon3d
+semantic_to_binary = recon3d.utility:main_semantic_to_binary
+void_descriptor = recon3d.void_descriptor:main
