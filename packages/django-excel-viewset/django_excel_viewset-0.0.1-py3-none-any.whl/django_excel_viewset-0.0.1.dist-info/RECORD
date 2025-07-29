@@ -1,0 +1,11 @@
+django_excel_viewset/__init__.py,sha256=2neSZq-ksI1RYkDX9emVN-Ag6G7oU1SNwZOXXH1jQBE,193
+django_excel_viewset/excel_writer/__init__.py,sha256=3ECHSu1Tc-dd_o_vbP7WBp-cT7oM7B_WNF0paecXzFs,121
+django_excel_viewset/excel_writer/creator.py,sha256=cId_9Byz_PcP9VZOZJIPrMm-J1MFJI8BQEsTexyty50,14436
+django_excel_viewset/responses.py,sha256=tkKxb3Dokm3EqTnkwliiz6hI97xjRF-X7Lbjdj-qpIs,2108
+django_excel_viewset/serializers.py,sha256=Q0ON8M9TGM9FYANMkKdsoK2owBKv2mU6taEKLsHkmNo,3755
+django_excel_viewset/settings.py,sha256=npYALm9lNlcNvgo_1f0I_MCL0BMkMLg-RuazthPtBT8,249
+django_excel_viewset/views.py,sha256=uzGUyaV6CpDXAK57xD53jaN-Cm5Z-zOMaUhG6ihvnaU,505
+django_excel_viewset-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+django_excel_viewset-0.0.1.dist-info/METADATA,sha256=A5MKlWQvOLeHn9NFhpGEMQT2B8gfD8DKmLjaZmceSX0,3786
+django_excel_viewset-0.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+django_excel_viewset-0.0.1.dist-info/RECORD,,
