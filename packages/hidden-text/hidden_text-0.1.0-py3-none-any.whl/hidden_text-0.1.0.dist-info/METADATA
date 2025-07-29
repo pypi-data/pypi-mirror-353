@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: hidden_text
+Version: 0.1.0
+Summary: Cross-platform terminal password input with masked characters
+Home-page: https://github.com/kdiitg/hidden_text
+Author: Kuldeep Singh
+Author-email: kdiitg@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Security :: Cryptography
+Classifier: Environment :: Console
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# hidden_text
+
+A simple, cross-platform Python module to securely accept password input in the terminal with masked characters (`*`).
+
+## Features
+
+- Supports Windows, Linux, macOS
+- Masks password characters with asterisks
+- Works in real-time in the terminal
+
+## Example
+
+```python
+from hidden_text import hidden_text
+
+password = hidden_text("Enter your password: ")
+print("You entered:", password)
