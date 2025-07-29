@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: sls-data-analysis
+Version: 0.1.0
+Summary: A data analysis app for the SLS experiment
+Author-email: Bastien Bégon <bastien.begon@crpp.cnrs.fr>
+License: Copyright (c) 2025 Bastien Bégon
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        
+Project-URL: Homepage, https://src.koda.cnrs.fr/65sw9tz8/sls-data-analysis
+Keywords: scattering,data,analysis,Mie
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qtpy
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pyqtgraph
+Requires-Dist: matplotlib
+Requires-Dist: h5py
+Provides-Extra: pyqt6
+Requires-Dist: PyQt6; extra == "pyqt6"
+Provides-Extra: pyside6
+Requires-Dist: PySide6<6.9.1; extra == "pyside6"
+Dynamic: license-file
+
+# Static Light Scattering (SLS) data analysis app
+
+This app is made for performing data analysis on the SLS experiment.
+
+## Installation
+
+You need to have one of the supported Qt bindings installed for using this package. You can install PySide6 or PyQt6 using `pip`:
+
+```bash
+pip install PySide6
+# or
+pip install PyQt6
+```
+
+or more directly:
+
+```bash
+pip install sls-data-analysis[pyside6]
+# or
+pip install sls-data-analysis[pyqt6]
+```
