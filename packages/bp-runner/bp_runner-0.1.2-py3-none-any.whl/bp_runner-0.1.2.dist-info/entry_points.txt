@@ -1,0 +1,3 @@
+[console_scripts]
+bp-runner = bp_runner.main:main
+bp-runner-time = bp_runner.main:bp_runner_time
