@@ -1,0 +1,9 @@
+aiogram_dialog_survey/__init__.py,sha256=PxykH9D2xCuoEHtFhm_Vcs9oorp_znlrb0fNWt1N0Mk,139
+aiogram_dialog_survey/handler.py,sha256=7FsTYbPhGU2u4x2C32RwqHPaV2FuWk24mN15tr8Q0OE,5510
+aiogram_dialog_survey/interface.py,sha256=zSAPqr6WH2BbNqER7UgSbdKh19Vs0O8byU89_4_bP1s,4469
+aiogram_dialog_survey/state.py,sha256=wwhObIPSPi-XpCcMi6Ku9BhqEbD6Zj8zofEoOl9-qT8,1507
+aiogram_dialog_survey/survey.py,sha256=sl47VigF2SXjl3HTe0T-HQO0HRbd_wbsetr4hWQQjK8,3309
+aiogram_dialog_survey/widgets.py,sha256=DbNDnGv9CECMhFSMFI19jZ1scUbXUC7gfcmwla5Dnb0,5668
+aiogram_dialog_survey-0.2.5.dist-info/METADATA,sha256=pHJDq8WelgR7KZTnAeq-RLqDzM5c6Wkk0s7qlAarYfM,13447
+aiogram_dialog_survey-0.2.5.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+aiogram_dialog_survey-0.2.5.dist-info/RECORD,,
