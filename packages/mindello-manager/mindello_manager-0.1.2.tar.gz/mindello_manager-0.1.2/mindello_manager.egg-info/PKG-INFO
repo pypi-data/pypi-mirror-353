@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: mindello_manager
+Version: 0.1.2
+Summary: Scanner e autenticador de dispositivos Matter FALL-R1 na rede local.
+Author: Mindêllo Casas Inteligentes
+Author-email: lucas@mindello.com.br
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: zeroconf
+Requires-Dist: scapy
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

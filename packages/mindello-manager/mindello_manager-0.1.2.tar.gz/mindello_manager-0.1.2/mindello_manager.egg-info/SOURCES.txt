@@ -1,0 +1,11 @@
+README.md
+setup.py
+mindello_manager/__init__.py
+mindello_manager/main.py
+mindello_manager/matterlistener.py
+mindello_manager.egg-info/PKG-INFO
+mindello_manager.egg-info/SOURCES.txt
+mindello_manager.egg-info/dependency_links.txt
+mindello_manager.egg-info/entry_points.txt
+mindello_manager.egg-info/requires.txt
+mindello_manager.egg-info/top_level.txt
