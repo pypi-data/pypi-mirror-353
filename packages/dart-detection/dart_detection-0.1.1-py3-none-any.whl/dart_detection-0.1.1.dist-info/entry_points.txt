@@ -1,0 +1,3 @@
+[console_scripts]
+calibration-visualizer = dart_detection.demo.visualizer_demo:main
+dart-scorer = dart_detection.demo.image_scorer_demo:main
