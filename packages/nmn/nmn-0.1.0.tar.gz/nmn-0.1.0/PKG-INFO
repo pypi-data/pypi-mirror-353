@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: nmn
+Version: 0.1.0
+Summary: a neuron that matter
+Project-URL: Homepage, https://github.com/mlnomadpy/nmn
+Project-URL: Bug Tracker, https://github.com/mlnomadpy/my_package/issues
+Author-email: Taha Bouhsine <yat@mlnomads.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# nmn
+Not the neurons we want, but the neurons we need
+
+## Overview
+
+**nmn** provides neural network layers for multiple frameworks (Flax, NNX, Keras, PyTorch, TensorFlow) that do not require activation functions to learn non-linearity. The main goal is to enable deep learning architectures where the layer itself is inherently non-linear, inspired by the paper:
+
+> Deep Learning 2.0: Artificial Neurons that Matter: Reject Correlation - Embrace Orthogonality
+
+## Supported Frameworks & Tasks
+
+### Flax (JAX)
+- `YatNMN` layer implemented in `src/nmn/linen/nmn.py`
+- **Tasks:**
+  - [x] Core layer implementation
+  - [ ] Recurrent layer (to be implemented)
+
+### NNX (Flax NNX)
+- `YatNMN` layer implemented in `src/nmn/nnx/nmn.py`
+- **Tasks:**
+  - [x] Core layer implementation
+  - [ ] Recurrent layer (to be implemented)
+
+### Keras
+- `YatNMN` layer implemented in `src/nmn/keras/nmn.py`
+- **Tasks:**
+  - [x] Core layer implementation
+  - [ ] Recurrent layer (to be implemented)
+
+### PyTorch
+- `YatNMN` layer implemented in `src/nmn/torch/nmn.py`
+- **Tasks:**
+  - [x] Core layer implementation
+  - [ ] Recurrent layer (to be implemented)
+
+### TensorFlow
+- `YatNMN` layer implemented in `src/nmn/tf/nmn.py`
+- **Tasks:**
+  - [x] Core layer implementation
+  - [ ] Recurrent layer (to be implemented)
+
+## Installation
+
+```bash
+pip install nmn
+```
+
+## Usage Example (Flax)
+
+```python
+from nmn.nnx.nmn import YatNMN
+from nmn.nnx.yatconv import YatConv
+# ... use as a Flax module ...
+```
+
+## Roadmap
+- [ ] Implement recurrent layers for all frameworks
+- [ ] Add more examples and benchmarks
+- [ ] Improve documentation and API consistency
+
+## License
+GNU Affero General Public License v3
