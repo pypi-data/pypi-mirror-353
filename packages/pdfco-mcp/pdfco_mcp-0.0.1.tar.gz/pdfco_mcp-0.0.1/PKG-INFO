@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: pdfco-mcp
+Version: 0.0.1
+Summary: Add your description here
+Requires-Python: >=3.12
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: langchain-community>=0.3.21
+Requires-Dist: langchain[google-genai]>=0.3.23
+Requires-Dist: langgraph>=0.3.30
+Requires-Dist: mcp[cli]>=1.6.0
+Description-Content-Type: text/markdown
+
+# PDF.co MCP
+
+#### Sample `.cursor/mcp.json` for test in cursor
+```json
+{
+  "mcpServers": {
+    "pdfco": {
+      "command": "uvx",
+      "args": [
+        "pdfco-mcp"
+      ],
+      "env": {
+        "X_API_KEY": "YOUR_API_KEY" // To get the API key please sign up at https://pdf.co and you can get the API key from the dashboard
+      }
+    }
+  }
+}
+```
