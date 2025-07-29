@@ -1,0 +1,7 @@
+geopandas<2.0.0,>=1.0.0
+pandas<3.0.0,>2.0.0
+lxml<6.0.0,>=5.4.0
+requests<3.0.0,>2.0.0
+beautifulsoup4<5,>4
+zeep>4.0.0
+pydash<9.0.0,>=8.0.0
