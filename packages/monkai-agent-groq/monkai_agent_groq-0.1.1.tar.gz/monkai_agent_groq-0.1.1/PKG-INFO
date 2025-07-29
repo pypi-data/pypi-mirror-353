@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: monkai-agent-groq
+Version: 0.1.1
+Summary: Groq integration for MonkAI Agent
+Requires-Python: >=3.8
+Requires-Dist: groq
+Requires-Dist: monkai-agent>=0.1.1
