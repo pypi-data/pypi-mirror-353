@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/mist/git/IsoSpec/IsoSpec++",
+  "command": "/usr/bin/c++ -DIsoSpec___shared_EXPORTS -DQT_NO_DEBUG_OUTPUT -I/Users/mist/git/IsoSpec/IsoSpec++ -O3 -DNDEBUG -std=gnu++17 -arch arm64 -fPIC   -Wno-unknown-pragmas -Wall -Wextra -pedantic -o CMakeFiles/IsoSpec++-shared.dir/unity-build.cpp.o -c /Users/mist/git/IsoSpec/IsoSpec++/unity-build.cpp",
+  "file": "/Users/mist/git/IsoSpec/IsoSpec++/unity-build.cpp",
+  "output": "IsoSpec++/CMakeFiles/IsoSpec++-shared.dir/unity-build.cpp.o"
+},
+{
+  "directory": "/Users/mist/git/IsoSpec/IsoSpec++",
+  "command": "/usr/bin/c++ -DQT_NO_DEBUG_OUTPUT -I/Users/mist/git/IsoSpec/IsoSpec++ -O3 -DNDEBUG -std=gnu++17 -arch arm64   -Wno-unknown-pragmas -Wall -Wextra -pedantic -o CMakeFiles/IsoSpec++-static.dir/unity-build.cpp.o -c /Users/mist/git/IsoSpec/IsoSpec++/unity-build.cpp",
+  "file": "/Users/mist/git/IsoSpec/IsoSpec++/unity-build.cpp",
+  "output": "IsoSpec++/CMakeFiles/IsoSpec++-static.dir/unity-build.cpp.o"
+}
+]

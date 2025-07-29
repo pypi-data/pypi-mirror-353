@@ -1,0 +1,2 @@
+/usr/bin/ar qc libIsoSpec++.a "CMakeFiles/IsoSpec++-static.dir/unity-build.cpp.o"
+/usr/bin/ranlib libIsoSpec++.a
