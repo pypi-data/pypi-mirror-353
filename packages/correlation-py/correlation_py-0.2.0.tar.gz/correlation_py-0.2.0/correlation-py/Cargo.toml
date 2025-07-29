@@ -1,0 +1,15 @@
+[package]
+name = "correlation-py"
+version = "0.2.0"
+edition = "2021"
+
+[lib]
+name = "correlation_py"
+
+# "cdylib" is necessary to produce a shared library for Python to import from.
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.25", features = ["extension-module"] }
+numpy = "0.25"
+correlation = { path = "../correlation" }

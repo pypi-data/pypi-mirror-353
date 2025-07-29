@@ -1,0 +1,26 @@
+[package]
+name = "correlation"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.71"
+bitvec = "1.0.1"
+itertools = "0.14"
+smallvec = "1.10.0"
+rayon = "1.7.0"
+argmin = { git = "https://github.com/argmin-rs/argmin" }
+argmin-math = { git = "https://github.com/argmin-rs/argmin", features = ["ndarray_latest-nolinalg"] }
+ndarray = { version = "0.16.1", features = ["serde-1"] }
+cfg-if = "1.0.0"
+num_cpus = "1.15.0"
+kahan = "0.1.4"
+finitediff = { version = "0.1.4", features = ["ndarray"], optional = true }
+
+[dev-dependencies]
+serde = {version="1.0", features=["derive"]}
+serde_yaml = "0.9.21"
+serde_json = "1.0.96"
+
+[features]
+finite-diff = ["finitediff"]
