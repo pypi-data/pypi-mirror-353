@@ -1,0 +1,10 @@
+geospyer/__init__.py,sha256=tsP2rPEymMBjF7SYqCnP5iEGqkhHGGWblK2sDQ_V07s,73
+geospyer/__main__.py,sha256=Y7CYGnncwDihQcHQjvVD_wfXj6SlUcHzBtsv6MBUsRg,82
+geospyer/cli.py,sha256=yF3SyUD1Sdyh8MlobKzLnlftEEnJse7k2a8M8JmWcV4,4093
+geospyer/geospy.py,sha256=HJymSWsRcVkdo8XYLecNsyTtPg4-8iOVfLud-LR_8UA,11815
+geospyer-0.1.9.dist-info/licenses/LICENSE,sha256=8VQJSt-YjLNAIRe-yyhmq6T0fQx_XgV9J22p6H6w9lw,1085
+geospyer-0.1.9.dist-info/METADATA,sha256=UwKIHSMMxn-Z6p7YD-HAl5TCuZylCyLtIt8pwkmjsU8,507
+geospyer-0.1.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+geospyer-0.1.9.dist-info/entry_points.txt,sha256=GnDsqhVhiplIXQLeqhOxCmmOgmloWjV7VOZ9A7MZYtU,47
+geospyer-0.1.9.dist-info/top_level.txt,sha256=yj_TfmPfjWmmpztPy5jzie0AJwbst9etk5VoCjJpWeM,9
+geospyer-0.1.9.dist-info/RECORD,,
