@@ -1,0 +1,66 @@
+#!/usr/bin/python3
+
+import datetime
+import itertools
+import re
+import subprocess
+
+try:
+    import colorist
+except ImportError:
+    colorist = None
+
+
+def pairwise(x):
+    a, b = itertools.tee(x)
+    next(b, None)
+    return zip(a, b)
+
+
+r = subprocess.run(
+    "git reflog --date=relative",
+    shell=True,
+    universal_newlines=True,
+    stdout=subprocess.PIPE,
+    check=True,
+)
+date_by_hash = {}
+if colorist:
+    absolute = subprocess.run(
+        "git reflog --date=iso8601",
+        shell=True,
+        universal_newlines=True,
+        stdout=subprocess.PIPE,
+        check=True,
+    )
+    for l in reversed(absolute.stdout.splitlines()):
+        if "moving from" in l:
+            h, d, *_ = re.match("^([a-f0-9]+).*\\{(.*)\\}.*moving from (.*) to (.*)", l).groups()  
+            d = datetime.datetime.fromisoformat(d)
+            date_by_hash[h] = d
+
+
+moving_from = [
+    re.match("^([a-f0-9]+).*\\{(.*)\\}.*moving from (.*) to (.*)", l).groups()
+    for l in reversed(r.stdout.splitlines())
+    if "moving from" in l
+]
+
+now = datetime.datetime.now(tz=datetime.timezone.utc)
+max_left = 0
+max_right = 0
+for (hp, dp, fp, tp), (hn, dn, fn, tn) in pairwise(itertools.chain(moving_from, ((None, None, None, None),))):
+    max_left = max(len(dp), max_left)
+    max_right = max(len(dn or "now"), max_right)
+
+for (hp, dp, fp, tp), (hn, dn, fn, tn) in pairwise(itertools.chain(moving_from, ((None, None, None, None),))):
+    if colorist:
+        Dp, Dn = map(date_by_hash.get, (hp, hn))
+        a = min((now-(Dp+((Dn or now)-Dp)/2)).total_seconds() ** 0.29595885, 135)
+        color = colorist.ColorHSL(135-a, 100, 50)
+        off = color.OFF
+    else:
+        color = ""
+        off = ""
+
+    print(f"{color}{dp.rjust(max_right)} — {(dn or 'now').ljust(max_right)}:{off} {tp}{' (' + fn + ')' if fn and fn != tp else ''}")
