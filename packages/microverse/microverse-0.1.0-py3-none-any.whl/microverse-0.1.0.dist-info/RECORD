@@ -1,0 +1,12 @@
+microverse/__init__.py,sha256=OjSK3o2AaUdFAeHugOOanY2-yyNoq68LxUNPRhLXVKs,1684
+microverse/asynctestclient.py,sha256=kLDCzckhiEexwfceIi0MIsv1gPlx9N8MTPn5mAPi_H4,27042
+microverse/contents.py,sha256=WIZSdhWsW2l5r_SwAccn5PIiKcJ7j44zG7KEvZD2KGM,5271
+microverse/index.html,sha256=JzLJKVTs7jdOmkPLuF74hUQizE_syuxHOaWlg5MhXB0,862
+microverse/main.py,sha256=dNwP4x2L6gokkv7KuG-WBl_7EcssxDr37xJN7airv2I,2817
+microverse/service-worker.js,sha256=GkhnrAXMkw_oK3_J8VtaHMFjGa6dhUMhhLZqR39KwC8,2316
+microverse/to_thread.py,sha256=VNxlH7EIdPetzCn1e5xZF9PH2dzVAHNBKopIudxlInI,64
+microverse-0.1.0.dist-info/METADATA,sha256=_7ll_k3JM4SSKFfamW0kuOKS8UZNHIXlrTkMv0Sh6Nc,2972
+microverse-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+microverse-0.1.0.dist-info/entry_points.txt,sha256=HQW2QyGna1Y4OsyjQaWfa5rCbXIZC9XPREdz9yknjFM,47
+microverse-0.1.0.dist-info/licenses/LICENSE,sha256=b-z8kzOM0PPqWrt5OJC0jW9VogEgCXxazvBO7BKCdbA,1499
+microverse-0.1.0.dist-info/RECORD,,
