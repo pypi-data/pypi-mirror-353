@@ -1,0 +1,14 @@
+realtime_mlx_stt/README.md,sha256=s1HkGKNH9cHxxERqQR2SMjM1xGKNhzmG60ZpJZpGqA8,2698
+realtime_mlx_stt/__init__.py,sha256=Erk51ubBjh0ETy7j_EKQ-Pu-xiDKedZO57cTbY6Pt54,4099
+realtime_mlx_stt/client.py,sha256=kP6rJlD2ar4Rq4QP32eNYt6DzMlejYlZOlkE5XtRC3c,13433
+realtime_mlx_stt/config.py,sha256=gN16uqFSj7XKzdS2L674l8yvxCkGvC-3JXGTkojKtps,6023
+realtime_mlx_stt/session.py,sha256=zD5k4C4YV7SfhwoB9Ki2N8e9md-Jcr_4OwdZINh-zbw,15247
+realtime_mlx_stt/transcriber.py,sha256=bc79RpNpRRKprQqcBW4NmTMzttUH1sAoVJR4qt4lWOE,18158
+realtime_mlx_stt/types.py,sha256=vEkx3rZ8X-Z3jQkIca_su-r7Ay-0ii5VwPRX4isb97U,1153
+realtime_mlx_stt/utils.py,sha256=14EtJH1xRAl_2qEvIERT5RIu1eUe2moKIvuKz01SJ0A,3522
+realtime_mlx_stt/wake_word.py,sha256=zKHqPJ1PWE7td-6TeaQc6nfBPo6Br6LEWJFlMWPhbQU,6422
+realtime_mlx_stt-0.1.0.dist-info/licenses/LICENSE,sha256=zshj0l8Yr7jS7BvWWpIJszdu6SFR5x1nkkNkaNXpAhk,1075
+realtime_mlx_stt-0.1.0.dist-info/METADATA,sha256=_lLuiGwRHHJ2gdzQ0EU5A_RoWzy-7EPDwEkO7USxJ-A,16725
+realtime_mlx_stt-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+realtime_mlx_stt-0.1.0.dist-info/top_level.txt,sha256=SO0AqPnkyKjMx0ZjEz2Tzs_STo8UmT1qf3bijQ8QOEM,17
+realtime_mlx_stt-0.1.0.dist-info/RECORD,,
