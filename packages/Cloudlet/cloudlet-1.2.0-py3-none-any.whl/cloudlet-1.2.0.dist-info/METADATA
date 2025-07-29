@@ -1,0 +1,82 @@
+Metadata-Version: 2.4
+Name: Cloudlet
+Version: 1.2.0
+Summary: A Python file server with web ui with roles, based on Flask
+Home-page: https://github.com/ByteBendr/cloudlet
+Author: Lucian
+Author-email: lucianclaudiu73@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Flask>=2.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Cloudlet
+
+A simple, user-friendly Python file server with a modern web interface inspired by updog, featuring user roles, secure sessions, and file management capabilities.
+
+---
+
+## Features
+
+- Upload, download, and remove files via a sleek web UI
+- User roles:
+  - **Admin**: upload, download, and delete files
+  - **Guest**: upload and download files only
+- Built-in authentication with login/logout
+- Responsive file explorer interface for browsing files
+- Notifications with auto-hide
+- Runs in the current working directory, no configuration needed
+
+---
+
+## Installation
+
+```bash
+pip install cloudlet
+```
+
+Or clone this repo and run:
+```
+python cloudlet.py
+```
+
+# Usage
+
+Start the server:
+
+```
+cloudlet
+```
+
+Open your browser and go to:
+```
+http://localhost:5000
+```
+
+# Requirements
+
+- Python 3.7+
+- Flask
+
+# Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+# License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+### Made with love in Romania.
