@@ -1,0 +1,8 @@
+cself_tools/__init__.py,sha256=i53HmNAe8vBRafkCM0Qb8pkntZoDyeC8uTWqJHhq660,403
+cself_tools/cli.py,sha256=sbEHkLzH6N4flxM0-1-Yc2fXXS2TN6T6GXGnxnk5rS0,6248
+cself_tools/mt_resistivity.py,sha256=OZnn0rFFR0D4Q19210KNISSGIqX_PNCfJLskuI4jMtE,23563
+cself_tools-0.3.0.dist-info/licenses/LICENSE,sha256=cod_ffaaYBzPjAx57qLOtlQIZsqi5OVCa5EufwRztIM,1084
+cself_tools-0.3.0.dist-info/METADATA,sha256=xaDXA7hv9b1OCxtoSZhcE2vEpYPGh5s14i32jZdraqc,6693
+cself_tools-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cself_tools-0.3.0.dist-info/top_level.txt,sha256=kdrwgi-bVPgN0DTCRMjOHtwRacvoifxEBGC45vvNBMI,12
+cself_tools-0.3.0.dist-info/RECORD,,

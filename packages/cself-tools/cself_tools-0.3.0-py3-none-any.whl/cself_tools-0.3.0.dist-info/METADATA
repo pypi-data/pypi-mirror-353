@@ -1,0 +1,182 @@
+Metadata-Version: 2.4
+Name: cself_tools
+Version: 0.3.0
+Summary: 极低频视电阻率数据处理工具
+Home-page: https://github.com/chdwql/cself_tools
+Author: WANGQinglin
+Author-email: WANG Qinglin <chd_wql@qq.com>
+License: MIT License
+        
+        Copyright (c) 2025 WANGQl
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/chdwql/cself_tools
+Project-URL: Bug Tracker, https://github.com/chdwql/cself_tools/issues
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# cself_tools
+
+视电阻率(MT)数据处理与可视化工具包，适用于各种地震监测站的极低频视电阻率数据。
+
+## 功能特点
+
+- 从Oracle数据库查询视电阻率数据
+- 使用中位数绝对偏差(MAD)法过滤异常值
+- 计算移动平均平滑数据
+- 生成高质量的数据可视化图表
+- 支持多频率数据比较
+- 提供命令行界面和Python API
+- 适用于任何监测站和点位的数据，不仅限于特定站点
+
+## 安装方法
+
+### 依赖项
+
+- Python >= 3.6
+- cx_Oracle
+- pandas
+- numpy
+- matplotlib
+- addereq (用于数据库连接)
+
+### 安装步骤
+
+```bash
+# 克隆仓库
+git clone https://github.com/chdwql/cself_tools.git
+cd cself_tools
+
+# 安装包
+pip install -e .
+```
+
+## 使用方法
+
+### 命令行使用
+
+```bash
+# 使用默认参数
+python -m cself_tools.cli
+
+# 指定查询参数
+python -m cself_tools.cli --start-time "2021-01-01 00:00:00" --end-time "2023-12-31 23:59:59" --station-id "37024" --point-id "E" --station-name "大山台" --frequencies 22 74 --moving-avg-days 7
+
+# 显示帮助信息
+python -m cself_tools.cli --help
+```
+
+### Python API使用
+
+```python
+from cself_tools import process_and_plot_mt_data
+
+# 初始化Oracle客户端（如果需要）
+from cself_tools.mt_resistivity import init_oracle_client
+init_oracle_client(lib_dir='C:/instantclient')
+
+# 处理并绘制数据
+output_file = process_and_plot_mt_data(
+    start_time="2021-01-01 00:00:00",
+    end_time="2023-12-31 23:59:59",
+    station_id="37024",  # 可以是任何监测站ID
+    point_id="E",        # 可以是任何点位ID
+    station_name="大山台", # 监测站名称，用于图表标题
+    frequencies=[22, 74],
+    moving_avg_days=7,
+    db_connection="DB-Shandong-12",
+    show_plot=True
+)
+
+print(f"图表已保存至: {output_file}")
+```
+
+## 参数说明
+
+| 参数              | 说明                                     | 默认值                  |
+|-------------------|-----------------------------------------|------------------------|
+| start_time        | 查询开始时间                             | "2020-01-01 00:00:00"  |
+| end_time          | 查询结束时间                             | "2025-05-31 23:59:59"  |
+| station_id        | 站点ID                                   | "37024"                |
+| point_id          | 点位ID                                   | "E"                    |
+| station_name      | 站点名称（用于图表标题）                 | "监测站"                |
+| frequencies       | 频率列表(Hz)                             | [22, 74]               |
+| moving_avg_days   | 移动平均窗口大小（天数）                 | 5                      |
+| db_connection     | 数据库连接名称                           | "DB-Shandong-12"       |
+| oracle_client_lib | Oracle客户端库目录路径                   | "C:/instantclient"     |
+| output_filename   | 输出文件名                               | 自动生成               |
+| show_plot         | 是否显示图表                             | False                  |
+| period_start      | 特定时间段的开始日期（用于计算均值）     | None                   |
+| period_end        | 特定时间段的结束日期（用于计算均值）     | None                   |
+| verbose           | 是否输出处理信息                         | True                   |
+
+## 主要功能
+
+### 数据查询 (query_data)
+
+从Oracle数据库查询指定时间范围、站点ID、点位ID和频率的视电阻率数据。
+
+### 数据预处理 (preprocess_data)
+
+使用中位数绝对偏差(MAD)方法过滤异常值，确保数据质量。
+
+### 移动平均计算 (calculate_moving_average)
+
+计算数据的移动平均值，平滑数据变化趋势。
+
+### 数据可视化 (plot_data)
+
+生成高质量的数据可视化图表，支持多频率数据的对比展示。
+
+### 一站式处理 (process_and_plot_mt_data)
+
+提供一站式的数据处理和可视化功能，简化操作流程。
+
+## 站点配置
+
+该工具支持处理任何监测站的视电阻率数据，只需指定:
+
+1. `station_id` - 监测站的唯一标识符
+2. `point_id` - 监测站内的点位标识符
+3. `station_name` - 监测站名称（用于图表标题）
+4. `db_connection` - 对应的数据库连接
+
+## 示例输出
+
+程序会生成高质量的视电阻率图表，包括：
+- 原始数据点（带误差线）
+- 移动平均曲线
+- 可选的特定时间段均值线
+- 清晰的标签和图例
+
+## 注意事项
+
+- 需要正确配置Oracle客户端才能连接到数据库
+- 依赖addereq模块进行数据库连接，请确保该模块可用
+- 图表生成需要足够的内存和处理能力，尤其是处理大量数据时
+
+## 许可证
+
+MIT许可证
