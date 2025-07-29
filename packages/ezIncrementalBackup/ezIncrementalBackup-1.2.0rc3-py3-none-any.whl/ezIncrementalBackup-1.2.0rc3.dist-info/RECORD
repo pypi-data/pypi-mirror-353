@@ -1,0 +1,15 @@
+ezIncrementalBackup/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+ezIncrementalBackup/cli.py,sha256=YV_uuAZFLKsCZvs5Lkhdd4MMYksQpKVHgFTW13PZmzg,21600
+ezIncrementalBackup/cli_wizard.py,sha256=B3HIA-N_Gho9EIGoBJ0iPnp7YgiaPmqd3ZTc3lLeSQo,13475
+ezIncrementalBackup/utils.py,sha256=aC8WOZBd4ZSx9QSFmrZVbwIu0ogvnMsiBr_dxg4Q_uc,176
+ezIncrementalBackup/backup/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+ezIncrementalBackup/backup/compress.py,sha256=Db4yT5jNXeujzep45T3jExLHge6jSsa3vSFKDKI2gbo,3323
+ezIncrementalBackup/backup/full.py,sha256=zvlizZPGAtSHXSrZ5xGGGqDIomGZ1lbZY9T7idMb7KQ,1199
+ezIncrementalBackup/backup/incremental.py,sha256=uxMAGppHuzaUnpxoyH5hrYgZ2DOhZDcY7pUiSHH3Z_8,6246
+ezIncrementalBackup/backup/webdav.py,sha256=Tg54rFCNvrPn6hwT52hFN6fLztEOTQMw2Nry8Dsfi-4,681
+ezIncrementalBackup-1.2.0rc3.dist-info/LICENSE,sha256=O9qvmnhPfRKXW0_oFO0te_7CYmz25wk_vl7JytxLiuk,1074
+ezIncrementalBackup-1.2.0rc3.dist-info/METADATA,sha256=BReyQ9OMm8TDs1KsQpOktMoXh02SN1OnrH9EKG_yK8E,313
+ezIncrementalBackup-1.2.0rc3.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+ezIncrementalBackup-1.2.0rc3.dist-info/entry_points.txt,sha256=qHlRWRK4jtJqBgfnCrHPG0TpagYn-RLk4nfMQEkP-74,57
+ezIncrementalBackup-1.2.0rc3.dist-info/top_level.txt,sha256=kuG03KRcOVDQvkVyndqhvv30sCh-4sfFX7nkLyvji_g,20
+ezIncrementalBackup-1.2.0rc3.dist-info/RECORD,,
