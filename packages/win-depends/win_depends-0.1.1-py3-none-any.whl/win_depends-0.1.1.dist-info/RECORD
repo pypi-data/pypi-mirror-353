@@ -1,0 +1,8 @@
+win_depends/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+win_depends/cli.py,sha256=id2GzvI-mg1xBwWi5QPwbOm_-3deoVSjfXDy50dTOVg,3248
+win_depends/core.py,sha256=f-lXFBEY6GrCzP00ikTTZwy7jpmgW_yUAqGPr9Uw8-w,6389
+win_depends-0.1.1.dist-info/METADATA,sha256=hZmG2wVJXIOc_dN_ja9OFvbEFzckxGSXFYr-ZgaPwgY,1862
+win_depends-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+win_depends-0.1.1.dist-info/entry_points.txt,sha256=gDkNakEQhbdoIvBUW9gGO9e3cnL3ko15epzBrLNG_po,53
+win_depends-0.1.1.dist-info/top_level.txt,sha256=Y0EBEfJmhctT8VTbnLobaKDtoWdImFlUDbumaNjKFI4,12
+win_depends-0.1.1.dist-info/RECORD,,
