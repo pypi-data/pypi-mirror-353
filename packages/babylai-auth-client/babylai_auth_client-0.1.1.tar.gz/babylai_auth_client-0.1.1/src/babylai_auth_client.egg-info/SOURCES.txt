@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/babylai_auth_client/__init__.py
+src/babylai_auth_client/client.py
+src/babylai_auth_client.egg-info/PKG-INFO
+src/babylai_auth_client.egg-info/SOURCES.txt
+src/babylai_auth_client.egg-info/dependency_links.txt
+src/babylai_auth_client.egg-info/requires.txt
+src/babylai_auth_client.egg-info/top_level.txt

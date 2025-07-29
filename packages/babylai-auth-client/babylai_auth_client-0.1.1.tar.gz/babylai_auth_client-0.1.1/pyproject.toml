@@ -1,0 +1,33 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "babylai-auth-client"
+version = "0.1.1"
+description = "Python client for BabylAI Auth API (fetch client token)"
+authors = [
+  { name="AAU", email="info@aau.iq" },
+  { name = "Ahmed Majid", email = "ahmed1992madrid@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+keywords = ["babylai", "auth", "client", "token"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "requests>=2.25.0",
+]
+
+[project.urls]
+"Source" = "https://github.com/yourusername/babylai_auth_client"
+"Tracker" = "https://github.com/yourusername/babylai_auth_client/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
