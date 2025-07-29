@@ -1,0 +1,15 @@
+xlin/__init__.py,sha256=MWWCNPgJFS_oV2US52ULa4yg4Ku61qjn40NVKqcp9-c,248
+xlin/ischinese.py,sha256=Ia9IMQ6q-UHkdLwqS70L1fTnfSPbluFrv_I1UqsKquo,293
+xlin/jsonl.py,sha256=QLIipsORyMC5OlTW5yntNnXS1aZ4so984yT_c0elM80,10854
+xlin/metric.py,sha256=N7wJ35y-C-IaBr1I1CJ_37lTG7gA69zmn9Xg6xSwKoI,1690
+xlin/multiprocess_mapping.py,sha256=XZJLsYRHyNooeBFngnSZ6l_YhbK0xjbN1_nK8GonmkE,17290
+xlin/read_as_dataframe.py,sha256=ufTH1z-ewdE4X33trXQDWgvsjCE18hzRxSFEvoH7Eaw,9173
+xlin/statistic.py,sha256=nwFSN8BWfTQRimI-zfp6RwfA-I9aFDbemtV2cyh6Hq8,16533
+xlin/timing.py,sha256=XMT8dMcMolOMohDvAZOIM_BAiPMREhGQKnO1kc5s6PU,998
+xlin/util.py,sha256=HEDJv09tNmvHCgQdP4uhMkDM8fQgcuYa0MuMXZmyZns,10977
+xlin/xls2xlsx.py,sha256=uSmXcDvIhi5Sq0LGidMXy0wErNBXdjaoa6EftYVjTXs,947
+xlin/yaml.py,sha256=kICi7G3Td5q2MaSXXt85qNTWoHMgjzt7pvn7r3C4dME,183
+xlin-0.1.38.dist-info/LICENSE,sha256=60ys6rRtc1dZOP8UjSUr9fAqhZudT3WpKe5WbMCralM,1066
+xlin-0.1.38.dist-info/METADATA,sha256=1yJfCyje0O72bLoSxXYr2NMqThAz5pNrAhD-x9DOrJw,1098
+xlin-0.1.38.dist-info/WHEEL,sha256=IrRNNNJ-uuL1ggO5qMvT1GGhQVdQU54d6ZpYqEZfEWo,92
+xlin-0.1.38.dist-info/RECORD,,
