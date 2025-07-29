@@ -1,0 +1,10 @@
+requests
+pypdf
+arabic-reshaper
+python-bidi
+setuptools
+langchain-community==0.3.24
+langchain==0.3.25
+sentence-transformers==4.1.0
+langchain-text-splitters==0.3.8
+chromadb==0.4.14
