@@ -1,0 +1,10 @@
+dockie/__init__.py,sha256=MffeJISnXkh0QhTvbYtvTVMAErOPvVAnqNU55FAuO1Q,159
+dockie/app.tcss,sha256=xly_ySl1imAwoxqnVdSzMVYbCLyn4PhulWp2v3cQQiI,3347
+dockie/containers.py,sha256=kLXadXR5OXYPoX77ZeWccBj1AYSMtsGNVEHqsrKzV5c,26176
+dockie/entrypoint.py,sha256=P4qt8vy3wmwxeI-Y1hghOpNL1lX_tS9ZmXYsEk0TI6o,78
+dockie/main.py,sha256=sW2BKL6_QSvkRtZnPD00EPDctS3Wisz4rkUvlcyru-0,2813
+dockie-0.1.2.data/data/dockie/app.tcss,sha256=xly_ySl1imAwoxqnVdSzMVYbCLyn4PhulWp2v3cQQiI,3347
+dockie-0.1.2.dist-info/METADATA,sha256=ogO4e-pxca3TT6Gh9vbluGRaHBs38UoE6NO5xWLalQQ,4315
+dockie-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dockie-0.1.2.dist-info/entry_points.txt,sha256=VckN7AEKZi075GOFHUkeTXtflWkTkCwjBmynMp9iwxo,50
+dockie-0.1.2.dist-info/RECORD,,
