@@ -1,0 +1,10 @@
+karva-0.0.19.dist-info/METADATA,sha256=Y2ybx7VXFqlKk3-7W-8iQ9ffulyFlz_pDHhlqSBL3_8,2681
+karva-0.0.19.dist-info/WHEEL,sha256=tMyzbmBGyqBKdyvThqTRhfykAaHTjq10TYHh90EALIE,108
+karva-0.0.19.dist-info/entry_points.txt,sha256=6KlY5w8hJSFDExhFJMNaw2Os52-wvAFzyObt-WaI-JI,47
+karva-0.0.19.dist-info/licenses/LICENSE,sha256=kxIJzeUnqgEZyCi8LxKAAq-fhj6RkU4hlUa110XaSqA,1070
+karva/__init__.py,sha256=PrRcwtSCSFmohc6Lv4MhAu2f5Uv2mKk9DfT32zcDpTA,139
+karva/__main__.py,sha256=GE2uxiULYQCUHd5NVg_kuCItS-2Ca0rxy-BBQYOfgig,2722
+karva/_karva.cpython-310-x86_64-linux-gnu.so,sha256=KjDchZta6LStMD0RWPH3KkRV_e3YUo7L-Y-iGfry1O8,8070256
+karva/_karva.pyi,sha256=ClP0hQXOG8imiViuwfP4rIjZihMLSe0mojICjuzb0Xw,28
+karva/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+karva-0.0.19.dist-info/RECORD,,
