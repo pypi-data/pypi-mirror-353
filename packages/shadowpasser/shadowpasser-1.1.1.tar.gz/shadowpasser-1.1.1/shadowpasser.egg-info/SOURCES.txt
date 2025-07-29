@@ -1,0 +1,11 @@
+pyproject.toml
+setup.py
+shadowpasser/__init__.py
+shadowpasser/__main__.py
+shadowpasser/app.py
+shadowpasser.egg-info/PKG-INFO
+shadowpasser.egg-info/SOURCES.txt
+shadowpasser.egg-info/dependency_links.txt
+shadowpasser.egg-info/entry_points.txt
+shadowpasser.egg-info/requires.txt
+shadowpasser.egg-info/top_level.txt
