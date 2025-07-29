@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.py
+oeis/__init__.py
+oeis/sequence.py
+python_oeis.egg-info/PKG-INFO
+python_oeis.egg-info/SOURCES.txt
+python_oeis.egg-info/dependency_links.txt
+python_oeis.egg-info/requires.txt
+python_oeis.egg-info/top_level.txt
