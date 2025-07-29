@@ -1,0 +1,8 @@
+az_account_switcher/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+az_account_switcher/az_account_switcher.py,sha256=8tuio2pAZjYhxwxSw-c9celFypbZgAyTQtRW5-j-foc,4279
+az_account_switcher/azure_cli.py,sha256=H3wpNB_kop-7azu_S4cX4oep9Y1g2tLeNnMmZUB-pXY,2115
+az_account_switcher-1.5.0.dist-info/LICENSE,sha256=dJp6u9x0FKYQNDg8YPUd0EU2fKihXMl4IEAvKpNGS3w,1070
+az_account_switcher-1.5.0.dist-info/METADATA,sha256=1ZWuwxnV6OOL2FkVkA26g4IgEm_kCPululZ2VwNM7mI,5020
+az_account_switcher-1.5.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+az_account_switcher-1.5.0.dist-info/entry_points.txt,sha256=n7jhM8l8P1ZYXdzxNz6EijySRy8HjI8t4pNtvYAkvrw,139
+az_account_switcher-1.5.0.dist-info/RECORD,,
