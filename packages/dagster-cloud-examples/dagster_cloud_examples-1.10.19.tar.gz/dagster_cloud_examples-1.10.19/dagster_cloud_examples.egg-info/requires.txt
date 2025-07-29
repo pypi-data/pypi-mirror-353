@@ -1,0 +1,7 @@
+dagster-cloud==1.10.19
+
+[tests]
+mypy
+pylint
+pytest
+buildkite-test-collector
