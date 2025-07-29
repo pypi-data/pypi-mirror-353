@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: teste-operacoes
+Version: 0.0.1
+Summary: Um pacote Python simples para operações de teste.
+Home-page: https://github.com/Rommanomm/teste_operacoes_project.git
+Author: Rommano Moreira Mismetti
+Author-email: rommanomm@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# teste-operacoes
+
+Este pacote `teste_operacoes_lib` oferece funÃ§Ãµes essenciais para operaÃ§Ãµes matemÃ¡ticas bÃ¡sicas e serve como um exemplo prÃ¡tico de empacotamento em Python.
+
+O pacote `teste_operacoes_lib` Ã© usado para:
+	- Realizar operaÃ§Ãµes de adiÃ§Ã£o, subtraÃ§Ã£o, multiplicaÃ§Ã£o e divisÃ£o de nÃºmeros.
+	- Demonstrar a estrutura e o processo de criaÃ§Ã£o de um pacote Python distribuÃ­vel.
+	- Fornecer um esqueleto funcional para o desenvolvimento de novos pacotes.
+
+## InstalaÃ§Ã£o
+
+VocÃª pode instalar este pacote usando o gerenciador de pacotes [pip](https://pip.pypa.io/en/stable/) diretamente do PyPI (apÃ³s o upload):
+
+```bash
+pip install teste-operacoes
+Uso
+Aqui estÃ£o alguns exemplos de como importar e utilizar as funÃ§Ãµes deste pacote:
+
+Python
+
+# Importa a funÃ§Ã£o de saudaÃ§Ã£o do mÃ³dulo principal do pacote
+from teste_operacoes_lib import saudar
+
+# Importa as funÃ§Ãµes de operaÃ§Ãµes matemÃ¡ticas de um submÃ³dulo
+from teste_operacoes_lib.operacoes import somar, subtrair, multiplicar, dividir
+
+# Exemplo de chamada da funÃ§Ã£o de saudaÃ§Ã£o
+print(saudar())
+# SaÃ­da esperada: OlÃ¡ do meu pacote de operaÃ§Ãµes de teste!
+
+# Exemplos de uso das funÃ§Ãµes matemÃ¡ticas
+resultado_soma = somar(10, 5)
+print(f"10 + 5 = {resultado_soma}")
+# SaÃ­da esperada: 10 + 5 = 15
+
+resultado_subtracao = subtrair(20, 8)
+print(f"20 - 8 = {resultado_subtracao}")
+# SaÃ­da esperada: 20 - 8 = 12
+
+resultado_multiplicacao = multiplicar(4, 6)
+print(f"4 * 6 = {resultado_multiplicacao}")
+# SaÃ­da esperada: 4 * 6 = 24
+
+try:
+    resultado_divisao = dividir(25, 5)
+    print(f"25 / 5 = {resultado_divisao}")
+    # SaÃ­da esperada: 25 / 5 = 5.0
+
+    # Teste de divisÃ£o por zero para demonstrar o tratamento de erro
+    dividir(10, 0)
+except ValueError as e:
+    print(f"Erro ao tentar dividir por zero: {e}")
+    # SaÃ­da esperada: Erro ao tentar dividir por zero: NÃ£o Ã© possÃ­vel dividir por zero.
+Autor
+Rommano Moreira Mismetti
+
+LicenÃ§a
+Este projeto estÃ¡ licenciado sob a LicenÃ§a MIT.
+
+MIT
