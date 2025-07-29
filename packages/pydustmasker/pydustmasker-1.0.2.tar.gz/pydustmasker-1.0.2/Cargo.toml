@@ -1,0 +1,15 @@
+[package]
+name = "pydustmasker"
+version = "1.0.2"
+description = "Python bindings to DustMasker, a utility to identify and mask low-complexity regions in nucleotide sequences"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "_pydustmasker"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.25.0", features = ["extension-module"] }
+thiserror = "2.0.12"
