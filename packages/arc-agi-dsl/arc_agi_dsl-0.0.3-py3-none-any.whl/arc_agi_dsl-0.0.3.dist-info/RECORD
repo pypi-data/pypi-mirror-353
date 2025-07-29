@@ -1,0 +1,8 @@
+arc_agi_dsl/__init__.py,sha256=afh4cLqnCscKZ99g91iraYXT2EFMEY7Z4duyipifsAg,232
+arc_agi_dsl/_utils.py,sha256=Ke6FZJh_7KfwL9m7HIliQ7ZGaSVrJweQNkLHIgDS14U,6469
+arc_agi_dsl/d8_symmetry/__init__.py,sha256=FrKL76Cto0uHhH--y7gYoRFJDoY9_mRmNUclgRvzJ2o,606
+arc_agi_dsl/d8_symmetry/primitives.py,sha256=9Oc016q7BE9QGtRfINjaFyDg5-WbSRMl-xfv3XEpfjI,746
+arc_agi_dsl/d8_symmetry/rule_set.py,sha256=wDKofsypQk8xx4W12Lx9hHe-FWj9mbrlZnNZ1zV5Ub4,3968
+arc_agi_dsl-0.0.3.dist-info/METADATA,sha256=MySGjAUWkazCL0B5u8RwQcNeCpFjVdyXNiLGvtqwy6s,107
+arc_agi_dsl-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+arc_agi_dsl-0.0.3.dist-info/RECORD,,
