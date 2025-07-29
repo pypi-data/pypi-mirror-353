@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: brickbox
+Version: 0.0.0
+Summary: A placeholder for brickbox project.
+Author-email: akshpra <akshay.pra26@gmail.com>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+This is a placeholder for brickbox library.
