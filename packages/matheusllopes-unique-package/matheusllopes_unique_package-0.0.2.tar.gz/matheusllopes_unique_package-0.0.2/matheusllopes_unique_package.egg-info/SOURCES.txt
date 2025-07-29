@@ -1,0 +1,14 @@
+README.md
+setup.py
+matheusllopes_unique_package/__init__.py
+matheusllopes_unique_package.egg-info/PKG-INFO
+matheusllopes_unique_package.egg-info/SOURCES.txt
+matheusllopes_unique_package.egg-info/dependency_links.txt
+matheusllopes_unique_package.egg-info/requires.txt
+matheusllopes_unique_package.egg-info/top_level.txt
+matheusllopes_unique_package/module1_name/__init__.py
+matheusllopes_unique_package/module1_name/file1_name.py
+matheusllopes_unique_package/module1_name/file2_name.py
+matheusllopes_unique_package/module2_name/__init__.py
+matheusllopes_unique_package/module2_name/file1_name.py
+matheusllopes_unique_package/module2_name/file2_name.py
