@@ -1,0 +1,10 @@
+mangodb/__init__.py,sha256=YxT_Y3It_wOE-E8h3A6hXVY1kYd04qMl8ftHiaZt8dA,167
+mangodb/core.py,sha256=fT0wNuyAO5CXN__M-cykffWLtSuPWiwQ4mKtmEv6lZk,5253
+mangodb/decoder.py,sha256=mbLw7je6iqu-4mqSbolM7h_vjoUvYIhxPUULX9WRcYo,806
+mangodb/encoder.py,sha256=7hL1L1586yH_H92zwmG52a3g9yPrfmNy18eYstII6z4,601
+mangodb/utils.py,sha256=Kuuwqe0RObkpdJTiQfcd1YPq5MxD6PTSkQ8nl53DYwg,656
+pymangodb-0.1.1.dist-info/licenses/LICENSE,sha256=N9MDW2uooEuodCGAC17E-cpQyf-9EXRnsVQ2hWcriJo,1067
+pymangodb-0.1.1.dist-info/METADATA,sha256=fZXtkUEAvRdwDZJg0CuCtMzCn8B3Nn5LyCFqWHEcHHI,2809
+pymangodb-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pymangodb-0.1.1.dist-info/top_level.txt,sha256=b_1NsuWYbgPI4xTPKmAhMmFjgxNbyoiEppzjOAhEU-8,8
+pymangodb-0.1.1.dist-info/RECORD,,
