@@ -1,0 +1,3 @@
+[beets.plugins]
+beetrhythm=beetsplug.beetrhythm.plugin:BeetRhythmPlugin
+
