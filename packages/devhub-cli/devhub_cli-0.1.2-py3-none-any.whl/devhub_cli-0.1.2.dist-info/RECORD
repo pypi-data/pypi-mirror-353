@@ -1,0 +1,15 @@
+devhub/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devhub/__main__.py,sha256=8hDtWlaFZK24KhfNq_ZKgtXqYHsDQDetukOCMlsbW0Q,59
+devhub/cli.py,sha256=QYMMSwVmJwOFas-QhZTrQ8lUgaVkosa1SSj9dK5fbyU,541
+devhub/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devhub/commands/aikit.py,sha256=uH50YH8cowgjlcIvxIw_hqjFnMAOxw7Ohv7ZR6WsOo8,3043
+devhub/commands/theme.py,sha256=XFD6E9AoOJ3yx1Zu3pZoV6_wTsUp4xcyBiIcb36dyA8,8147
+devhub/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devhub/utils/client.py,sha256=D0ZRTjHzO7Aum5nFqlYcATb0EgZsfK-BYQUhel9f9TE,366
+devhub/utils/templates.py,sha256=F7sejRSKdNiFt0BsStDF6FQ8PL5vzzHmW9YxEpN2uCU,11306
+devhub_cli-0.1.2.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+devhub_cli-0.1.2.dist-info/METADATA,sha256=rVerkLWuqCpXJVq342r1LQvNGoXiSkAZja_v98-mVCI,5761
+devhub_cli-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+devhub_cli-0.1.2.dist-info/entry_points.txt,sha256=rYXxUMUYmdLE-qzbtFlamX_z_mVaaW1d15akNJBjPWY,70
+devhub_cli-0.1.2.dist-info/top_level.txt,sha256=zSw42jjRodg-hdCtja_OBOqGyocvo7VvCc72cnNSVSk,7
+devhub_cli-0.1.2.dist-info/RECORD,,
