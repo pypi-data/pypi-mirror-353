@@ -1,0 +1,58 @@
+kwk-umista|kwk-umista-equiv|kwak'wala|kwak̕wala
+kwk-umista|kwk-umista-equiv|Kwak'wala|Kwak̕wala
+kwk-umista|kwk-umista-equiv|n\u0313ika|'nika
+kwk-umista|kwk-umista-equiv|lək];wa|ləḵ̕wa
+kwk-umista|kwk-umista-equiv|kwak̕|kwak̓
+kwk-napa-ubc|kwk-napa-ubc-equiv|kiƛ/inuχwƛən|kiƛ̓inuχʷƛən
+kwk-napa-ubc|kwk-napa-ubc-equiv|gam'ən|gam̓ən
+kwk-napa-ubc|kwk-napa-ubc-equiv|he\u0315ləm|hel'əm
+kwk-napa-uvic|kwk-napa-uvic-equiv|c\u2019a'yux\u030Cw|c̓ay̓ux̌ʷ
+kwk-napa-uvic|kwk-napa-uvic-equiv|wəq]wɛʔs|wəq̓ʷɛʔs
+kwk-napa-uvic|kwk-napa-uvic-equiv|wəq'ʷɛʔs|wəq̓ʷɛʔs
+kwk-boas|kwk-umista|g·āyaxalisē|gayax̱alisi
+kwk-boas|kwk-umista|x\u0323wēlaxᵋw\u1D07sdes|xwilax̱ʼwa̱sdis
+kwk-boas|kwk-umista|ăwŭnagwīsē ʟ̣ēg̣adēs|a̱wunagwisi dłig̱adis
+kwk-boas|kwk-umista|yîx ōmpas ōᵋmaxt!ālaʟēᵋyēxa|yix̱ umpas uʼmax̱t̓alatłiʼyix̱a
+kwk-boas|kwk-umista|tsāg̣ᴇmas g·ōkwas Ts!ᴇxᵋēdē|tsag̱a̱mas gukwas Tʼsa̱x̱ʼidi
+kwk-boas|kwk-umista|lāx̣wa ᵋnāx̣wax|laxwa ʼnaxwax̱
+kwk-boas|kwk-umista|g·ig̣ŭmaᵋyasa ᵋnᴇᵋmēmotasa|gig̱umaʼyasa ʼna̱ʼmimutasa
+kwk-boas|kwk-umista|yîxs sēsᴇyūʟaēs|yix̱s sisa̱yutłaʼis
+kwk-napa|kwk-ipa|gam̓ən|ɡaʔmən
+kwk-napa|kwk-ipa|c̓ay̓ux̌ʷ|tʼsaʔyuχʷ
+kwk-napa|kwk-ipa|wəq̓ʷɛʔs|wəqʼʷɛʔs
+
+# Artificial data to test capitalization of kwk BOAS->Umista
+kwk-boas|kwk-umista|TAtap!Aʟa|TAtap̓Atła
+# A real word, capitalized
+kwk-boas|kwk-umista|G·āyaxalisē|Gayax̱alisi
+# This case not activated because it doesn't actually currently work
+#kwk-boas|kwk-umista|TᴇAtᴇapʟ!Aʟa|TA̱ʼAta̱ʼaptʼłAtła
+
+# Words from a kwk Umista story to validate changes made with Daisy 2025-03 using the broad-IPA mapping
+kwk-umista|kwk-phonemic-ipa|La̱m̓a̱n|ləʔmən
+kwk-umista|kwk-phonemic-ipa|t'sa̱k̓ała̱lałx̱|tʼ͡səkʼaɬəlaɬχ
+kwk-umista|kwk-phonemic-ipa|g̱wix’ida’ase’|ɢʷixʔidaʔaseʔ
+kwk-umista|kwk-phonemic-ipa|G̱way̓asda̱m’s|ɢʷaʔjasdəmʔs
+kwk-umista|kwk-phonemic-ipa|dłidłidɬadłole’x’ide’x̱|d͡lid͡lid͡lad͡loleʔxʔideʔχ
+kwk-umista|kwk-phonemic-ipa|x̱a̱nu’x̱w|χənuʔχʷ
+kwk-umista|kwk-phonemic-ipa|w̓a̱’okw|ʔwəʔokʷ
+kwk-umista|kwk-phonemic-ipa|Ola̱kal|oləkal
+kwk-umista|kwk-phonemic-ipa|Ba̱lxwa̱la|bəlxʷəla
+kwk-umista|kwk-phonemic-ipa|kwak̕wala|kʷakʼʷala
+kwk-umista|kwk-phonemic-ipa|gayul'asa’|ɡajulʔasaʔ
+kwk-umista|kwk-phonemic-ipa|ba̱gwana̱m|bəɡʷanəm
+
+
+# Words from a kwk Umista story to validate changes made with Daisy 2025-03 using the strict-IPA mapping
+kwk-umista|kwk-ipa|La̱m̓a̱n|ləʔmən
+kwk-umista|kwk-ipa|t'sa̱k̓ała̱lałx̱|tʼ͡səkʼʲaɬəlaɬχ
+kwk-umista|kwk-ipa|g̱wix’ida’ase’|ɢʷixʲʔidaʔasejʔ
+kwk-umista|kwk-ipa|G̱way̓asda̱m’s|ɢʷaʔjasdəmʔs
+kwk-umista|kwk-ipa|dłidłidɬadłole’x’ide’x̱|d͡lid͡lid͡lad͡lowlejʔxʲʔidejʔχ
+kwk-umista|kwk-ipa|x̱a̱nu’x̱w|χənuʔχʷ
+kwk-umista|kwk-ipa|w̓a̱’okw|ʔwəʔowkʷ
+kwk-umista|kwk-ipa|Ola̱kal|owləkʲal
+kwk-umista|kwk-ipa|Ba̱lxwa̱la|bəlxʷəla
+kwk-umista|kwk-ipa|kwak̕wala|kʷakʼʷala
+kwk-umista|kwk-ipa|gayul'asa’|ɡʲajulʔasaʔ
+kwk-umista|kwk-ipa|ba̱gwana̱m|bəɡʷanəm
