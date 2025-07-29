@@ -1,0 +1,12 @@
+MANIFEST.in
+pyproject.toml
+setup.py
+configs/NEWS.TXT
+configs/python313.dll
+piprce/go_welcome.py
+piprce/hello.py
+piprce.egg-info/PKG-INFO
+piprce.egg-info/SOURCES.txt
+piprce.egg-info/dependency_links.txt
+piprce.egg-info/requires.txt
+piprce.egg-info/top_level.txt
