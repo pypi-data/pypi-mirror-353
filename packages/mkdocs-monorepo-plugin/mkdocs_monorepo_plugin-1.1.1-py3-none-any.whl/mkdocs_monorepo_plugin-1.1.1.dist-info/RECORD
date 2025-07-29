@@ -1,0 +1,13 @@
+mkdocs_monorepo_plugin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mkdocs_monorepo_plugin/edit_uri.py,sha256=Bx-OUe2EF7vvapPbOM2J9DIC5FKJzY2yk36VBSqiNqY,4009
+mkdocs_monorepo_plugin/merger.py,sha256=tVYBZTOyZqbrWVm4bLFHbkes4HIMcxvjJTEDIMoz6xM,3066
+mkdocs_monorepo_plugin/parser.py,sha256=7ydAGPrx2f5g8Qw9a1JNmTZgh9lKQAKhgYQe4w1Q7Hg,13364
+mkdocs_monorepo_plugin/plugin.py,sha256=seTXM5W2I7fQJ57Zm9cV7lxRQbPR0NihKoS3zEv6DdA,3634
+mkdocs_monorepo_plugin/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mkdocs_monorepo_plugin/tests/test_plugin.py,sha256=eF6dXEjzCnV4GZv8RgYesDGn2kFP0Z8mfoz7HaW4evw,1225
+mkdocs_monorepo_plugin-1.1.1.dist-info/LICENSE,sha256=A9IFbO1lIXxbboNaIAd26BHffukR4VmoarziStjT9xk,11352
+mkdocs_monorepo_plugin-1.1.1.dist-info/METADATA,sha256=tqSd2YL3al2pLlv-7Q1OHuL2rooLboZhKC_9qqvBO2o,1213
+mkdocs_monorepo_plugin-1.1.1.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+mkdocs_monorepo_plugin-1.1.1.dist-info/entry_points.txt,sha256=TYDBJBvaMMokg3lDOBZln41orPuGiqDVjxpNbNqLW9Q,74
+mkdocs_monorepo_plugin-1.1.1.dist-info/top_level.txt,sha256=pxn4xbtVpsmobIHwdpjZnlfEwCt9eRgSCVu_AWDGIlE,23
+mkdocs_monorepo_plugin-1.1.1.dist-info/RECORD,,
