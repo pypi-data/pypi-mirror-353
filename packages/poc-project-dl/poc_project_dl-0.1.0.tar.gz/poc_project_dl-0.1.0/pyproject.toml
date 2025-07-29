@@ -1,0 +1,16 @@
+[project]
+name = "poc-project-dl"
+version = "0.1.0"
+description = "dlt pipeline POC"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dlt[duckdb,parquet]>=1.11.0",
+    "pandas>=2.2.3",
+    "pytest>=8.4.0",
+]
+
+[dependency-groups]
+dev = [
+    "dotenv>=0.9.9",
+]

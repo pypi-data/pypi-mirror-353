@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/app/__init__.py
+src/app/main.py
+src/app/ingest/rest_api_pipeline.py
+src/app/utils/__init__.py
+src/app/utils/logging_utils.py
+src/app/utils/spark_utils.py
+src/app/utils/validation_utils.py
+src/poc_project_dl.egg-info/PKG-INFO
+src/poc_project_dl.egg-info/SOURCES.txt
+src/poc_project_dl.egg-info/dependency_links.txt
+src/poc_project_dl.egg-info/requires.txt
+src/poc_project_dl.egg-info/top_level.txt
