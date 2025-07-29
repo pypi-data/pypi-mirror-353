@@ -1,0 +1,1017 @@
+uv run nvim .
+uv add pydantic-settings
+uv run nvim .
+nvim .
+uv run nvim .
+git status
+git diff
+git checkout -b settings-refactor
+git status
+git add ./
+git status
+git commit -m 'Refactor for usage as library, incorporate server settings'
+git push origin settings-refactor
+uv run nvim src/mcp_server_docker/server.py
+git status
+git add ./
+git commit -m 'Prefer relative improts'
+git push origin
+git push origin settings-refactor
+git checkout main
+git status
+git checkout -b readme-updates
+nvim README.md
+uv run nvim
+nvim README.md
+cat devbox.json
+devbox prettier-format
+prettier-format 
+devbox shell
+exit
+prettier-format 
+devbox run -- prettier-format
+vim README.md
+nvim devbox.json
+devbox run -- prettier-format
+nvim devbox.json
+devbox run -- prettier-format
+cat devbox.json
+devbox run -- pyproject-check
+devbox run -- pyproject-format
+nvim README.md
+git status
+git add ./
+devbox run -- prettier-format
+git status
+git commit -m 'README enhancements'
+git push origin readme-updates
+cat devbox.json
+devbox run mcp-inspector
+clear
+nvim README.md
+git status
+git add ./
+git commit -m 'Raise headers'
+git push origin readme-updates
+nvim README.md
+devbox run -- prettier-format
+git status
+git diff
+git add README.md
+git commit -m 'Move quickstart up'
+git push origin readme-updates
+nvim README.md
+devbox run -- prettier-format
+git status
+git add README.md
+git commit -m 'Add prereqs section to readme'
+git push origin readme-updates
+uv run nvim
+git status
+git diff
+git add ./
+git commit -m 'Remove logger'
+git push origin settings-refactor
+exit
+uv run nvim-claude
+uv run nvim
+python 
+uv run nvim
+git status
+gmain
+git stash push
+gmain
+git pull origin main
+git stash pop
+git status
+git diff
+uv run nvim src/mcp_server_docker/server.py
+git diff
+git status
+git add src/
+git checkout -b output-schemas
+git status
+git commit -m 'Add a docker_to_dict function for encoding Docker objects'
+git push origin output-schemas
+brew install ghostty
+uv run nvim src/mcp_server_docker/server.py
+nvim README.md
+nvim README.md
+devbox run -- uv run nvim
+git status
+git diff
+git add ./
+git commit -m 'Slight touch-ups'
+git push origin output-schemas
+git status
+git status
+git status
+git status
+git status
+git status
+git checkout main
+git checkout -b license
+nvim LICENSE
+git status
+git add LICENSE
+git commit -m 'Add a license'
+git push origin license
+nvim pyproject.toml
+grep -i license
+git status
+gmain
+echo $TERM
+echo '%TERM' | envsubst
+echo '$TERM' | envsubst
+echo '${TERM}' | envsubst
+cd chass
+ls
+cd chassis
+git status
+cd ../
+rm tmp.py
+git status
+gmain
+cd dev-tools/terraform/remote
+nvim .
+terraform init -backend=false
+terraform -version
+nvim ../../../devbox.json
+git status
+git status
+terraform -version
+cd dev-tools/terraform/remote
+terraform init -backend=false
+nvim 
+terraform validate
+nvim ecs.service.tf
+nvim twingate.tf
+nvim outputs.tf
+terraform validate
+nvim cloud_map.tf
+terraform validate
+cat versions.tf
+git status
+rg central_alb_security_group
+nvim variables.remote.tf
+git status
+terraform validate
+git status
+git add ./
+git checkout -b PT-2179-poc
+git status
+git commit -m 'PT-2179 strip out Platform resources, replace with datasources'
+git diff vpc.tf
+git diff main -- vpc.tf
+git diff --plain main -- vpc.tf
+git diff --plain main -- vpc.tf
+git diff main -- vpc.tf
+git status
+git diff --no-color
+git --no-pager diff
+git --no-pager diff origin/main vpc.tf
+git --no-pager diff origin/main vpc.tf --no-color
+git --no-pager --no-color diff origin/main vpc.tf
+git --no-pager diff --no-color origin/main vpc.tf
+git --no-pager diff origin/main vpc.tf --no-color
+git --no-pager diff origin/main vpc.tf
+nvim vpc.tf
+nvim vpc.tf
+terraform validate
+nvim vpc.tf
+terraform validate
+git status
+git add ./
+git commit -m 'PT-2179 strip out Platform resources, replace with datasources'
+git status
+terraform validate
+git add ./
+git commit -m 'PT-2179 strip out Platform resources, replace with datasources'
+git commit -m 'PT-2179 strip out Platform resources, replace with datasources' --no-verify
+git push origin PT-2179-poc
+docker build -t mcp-server-docker .
+nvim Dockerfile
+cat ~/Code/github.com/grow-therapy-team/python-service-chassis/chassis/dockerfiles/service.Dockerfile
+nvim Dockerfile
+nvim Dockerfile
+nvim Dockerfile
+ls -la
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim .dockerignore
+nvim Dockerfile
+docker build -t mcp-server-docker .
+cat pyproject.toml
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+docker run -it --rm mcp-server-docker
+nvim Dockerfile
+docker run -it --rm mcp-server-docker
+nvim Dockerfile
+docker build -t mcp-server-docker .
+docker run -it --rm mcp-server-docker
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock mcp-server-docker
+git status
+git diff
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+nvim Dockerfile
+docker build -t mcp-server-docker .
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock mcp-server-docker
+nvim Dockerfile
+uv sync --help
+nvim Dockerfile
+nvim ~/mcp/claude_desktop_config.json
+docker ps
+git status
+git checkout -b dockerfile
+git add .dockerignore Dockerfile
+git commit -m 'Add a Dockerfile and dockerignore'
+nvim README.md
+git status
+ls  -la .gith
+git status
+git add README.md
+git commit -m 'Update the README with instructions'
+git push origin dockerfile
+which ruff
+cat devbox.json
+nvim devbox.json
+prettier-format
+which python
+which poetry
+devbox shell
+exit
+which ruff
+which uv
+devbox search ruff
+devbox add ruff@latest
+cat devbox.json
+devbox rm ruff
+cat devbox.json
+devbox run prettier-format
+devbox run prettier-check
+git status
+refresh
+prettier-format
+devbox run prettier-check
+cat devbox.json
+devbox run pyproject-check
+echo $?
+devbox run pyproject-format
+git status
+git diff pyproject.toml
+git status
+git add devbox.lock
+git status
+git status
+git status
+git diff pyproject.toml
+git status
+git diff --staged
+git commit -m 'Update devbox.lock for 0.14.0'
+git push origin dockerfile
+nvim README.md
+git status
+git diff README.md
+git add README.md
+git commit -m 'Just remove prereqs from readme'
+git push origin dockerfile
+git checkout output-schemas
+git pull origin main
+docker build -t mcp-server-docker .
+git status
+git push origin output-schemas
+cd grow-infra
+git status
+gmain
+git status
+grep datadog_*_index
+grep 'datadog_*_index'
+grep 'datadog*index'
+grep 'datadog_log'
+grep 'resource "datadog_log'
+grep 'resource "datadog_logs_index'
+nvim terraform/monitoring/logs.tf
+git status
+git checkout -b dd-indexes-20250227
+git status
+git add terraform/
+git status
+git commit -m 'Add PDS and EIS to Datadog log indexes'
+git push origin dd-indexes-20250227
+cat ./terraform/monitoring/datadog.tf
+cat ./terraform/monitoring/logs.tf
+nvim
+cd ../python-service-chassis
+cd ../python-service-template
+grow poetry install
+grow build
+poetry lock --no-update
+git status
+git diff
+grow build
+cat pyproject.toml
+cat pyproject.toml | pbcopy
+git status
+git reset --hard HEAD
+grow build
+nvim pyproject.toml
+poetry install
+poetry lock --no-update
+poetry install
+nvim pyproject.toml
+nvim grow.yml
+grow build
+poetry update --no-update
+poetry lock --no-update
+git diff
+grow build
+nvim pyproject.toml
+nvim pyproject.toml
+poetry install 
+poetry --version
+ls -la .grow
+ls -la .grow/kernel/grow-py-kernel
+ls -la
+nvim grow.yml
+export GROW_CHASSIS_VERSION=main
+export GROW_IMAGE_PULL_PREF=local
+grow build
+ls -la .grow/kernel
+grow up
+exit
+uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS_openai_key='something' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS='{}' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS='{"hello": "world"}' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS='{"hello": "world"}' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS__hello='world' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRETS__hello='world' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+MCP_SERVER_DOCKER_SECRET__hello='world' MCP_SERVER_DOCKER_SECRET__other='whoa' uv run src/mcp_server_docker/settings.py
+docker container ls
+docker container ls -o json
+docker container ls --format json
+docker container ls --format json | jq
+docker container ps --format json
+docker container ps --format json | jq
+uv run python
+git status
+git status
+which python
+which uv
+nvim
+uv sync
+git status
+uv install
+uv
+uv sync
+nvim
+uv run nvim
+uv run src/mcp_server_docker/settings.py
+uv run nvim
+uv run src/mcp_server_docker/settings.py
+uv run nvim
+uv run src/mcp_server_docker/settings.py --docker_secrets "k=v"
+uv run nvim
+docker ps
+docker ps -f json
+docker ps --format json
+docker ps --format json | jq
+uv python
+uv run python
+cat src/mcp_server_docker/server.py
+cat src/mcp_server_docker/server.py
+cat src/mcp_server_docker/output_schemas.py
+nvim src/mcp_server_docker/output_schemas.py
+uv run nvim src/mcp_server_docker/output_schemas.py
+uv add detect-secrets
+uv run detect-secrets
+uv run detect-secrets scan pyproject.toml
+uv run detect-secrets scan pyproject.toml
+uv run detect-secrets scan pyproject.toml
+nvim src/mcp_server_docker/output_schemas.py
+git status
+uv rm detect-secrets
+uv remove detect-secrets
+git status
+git diff
+uv run nvim
+git diff src/mcp_server_docker/input_schemas.py
+git add -p src/mcp_server_docker/input_schemas.py
+git status
+git diff
+git status
+cd src/mcp_server_docker
+git add server.py
+git status
+git add settings.py
+git add output_schemas.py
+git status
+git diff --staged
+git status
+git checkout -b secrets-support
+git status
+git commit -m 'Start slow, adding settings and a new Tool for listing custom secrets'
+git diff input_schemas.py
+git restore input_schemas.py
+uv run nvim input_schemas.py
+git status
+git diff
+git status
+cat input_schemas.py
+uv run nvim input_schemas.py
+git diff
+git add ./
+git commit -m 'Sprinkle in functionality to mount secrets'
+git push origin secrets-support
+uv run nvim input_schemas.py
+uv run python
+uv run nvim input_schemas.py
+uv run python
+uv run nvim input_schemas.py
+git status
+git diff
+uv run nvim server.py
+git status
+git diff
+git status
+git add ./
+git commit -m 'Prefer using Pydantic to set secrets on input types'
+git push origin secrets-support
+git status
+uv run nvim server.py
+cd ../../
+uv run nvim 
+cat devbox.json
+prettier-format
+devbox run -- prettier-format
+nvim README.md
+git diff
+git status
+git diff
+git add ./
+git commit -m 'Add some README docs'
+git push origin secrets-support
+nvim README.md
+git add README.md
+git commit -m 'Add a line item to readme.md'
+git push origin secrets-support
+brew services restart sketchybar
+curl https://growtherapystaging.com/summit
+curl https://growtherapystaging.com/summit
+curl bricks.grow-therapy.coak-sg-host.com
+curl https://bricks.grow-therapy.coak-sg-host.com
+curl https://bricks.grow-therapy.coak-sg-host.com/summit
+curl https://bricks.grow-therapy.coak-sg-host.com/summit -v
+curl https://bricks.grow-therapy.coak-sg-host.com/summit/ -v
+curl https://bricks.grow-therapy.coak-sg-host.com/summit/ -vvv
+curl https://bricks.grow-therapy.coak-sg-host.com/summit -v
+curl https://bricks.grow-therapy.coak-sg-host.com/summit -vvv
+devbox search redis-cli
+devbox search redis
+devbox global add redis
+refresh-global
+redis-cli -h
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com -vvv
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com -v
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com -p 6379
+redis-cli --help
+redis-cli -h production-external-integrations-default-001.production-external-integrations-default.p9cskd.use1.cache.amazonaws.com -p 6379 
+exit
+uv add python-dotenv
+exit
+uv run python
+touch .env
+echo 'HELLO=world' >> .env
+uv run python
+uv run python
+git status
+devbox --help
+which python
+uv run nvim
+git status
+rm .env
+git diff
+git add ./
+git commit -m 'Add dotenv support instead of specifying in MCP config directly'
+git push origin secrets-support
+uv run nvim 
+git status
+cat devbox.json
+python-lint 
+devbox run python-lint
+uv run ruff check src/**/*.py 
+uv run ruff check src/**/*.py --format
+uv run ruff check src/**/*.py
+git status
+uv run ruff check 'src/**/*.py'
+uv run ruff check src/**/*.py
+uv run ruff check src/**/*.py --verbose
+uv run ruff check src/**/*.py 
+uv run ruff check src/**/*.py 
+cat devbox.json
+refresh
+pyproject-check
+devbox run pyproject-check
+git status
+git diff
+git add ./
+git commit -m 'Use a match statement for runtime type checking'
+git push origin secrets-support
+git push origin secrets-support
+uv run nvim 
+git status
+git diff
+git add ./
+git commit -m 'Use constructors instead...'
+git push origin secrets-support
+nvim ../claude_desktop_config.json
+uv run nvim
+git status
+git diff
+git add ./
+git commit -m 'Fix new tool'
+git push origin secrets-support
+gmain
+git pull origin main
+git checkout -b readme-enhancements-20250404
+nvim README.md
+uv run nvim
+git status
+git stash push
+git status
+git checkout main
+git branch -D readme-enhancements-20250404
+git fetch
+git checkout readme-enhancements-20250404
+git stash pop
+git status
+git diff
+git status
+git add ./
+git commit -m 'Small bugfix type stuff'
+nvim README.md
+git status
+git diff
+git add RE
+git commit -m 'Readme tweaks'
+git push origin RE
+git push origin readme-enhancements-20250404
+git status
+git status
+git add ./
+git commit -m 'Readme tweaks'
+git push origin readme-enhancements-20250404
+nvim README.md
+git status
+git add README.md
+git diff --staged
+git commit -m 'Adding a bit of docs based on #14'
+git push origin readme-
+git push origin readme-enhancements-20250404
+git status
+nvim README.md
+cat devbox.json
+devbox run prettier-format
+git status
+git add README.md
+git commit -m 'More readme'
+git push origin readme-enhancements-20250404
+uv build
+nvim pyproject.toml
+export UV_PUBLISH_TOKEN='pypi-AgEIcHlwaS5vcmcCJDliMzZlYTllLTY4NDAtNGJiYi1hZTFmLTFkZmRiNjAyMDZlYgACKlszLCJmOTU5ZjA5Yy0wYmUwLTRkYzUtOTMyNS1kN2E4ZmExZjM5N2MiXQAABiBjYVqj8Pdnr38rJB5WP-qyRGlX5IvCcI2Lp7OelwagEw'
+nvim pyproject.toml
+uv build
+nvim pyproject.toml
+uv publish
+nvim README.md
+nvim ../claude_desktop_config.json
+nvim ../claude_desktop_config.json
+nvim README.md
+cat ../claude_desktop_config.json
+nvim README.md
+git status
+git diff
+git add ./
+git commit -m 'Make it easier to install with uvx'
+git push origin readme-enhancements-20250404
+git status
+git diff
+git status
+cat devbox.json
+devbox run prettier-format
+git status
+nvim README.md
+devbox run prettier-format
+git status
+git diff
+git add ./
+nvim README.md
+devbox run prettier-format
+git status
+git diff
+git add ./
+git commit -m 'Better language...'
+git push origin readme-enhancements-20250404
+git status
+git remote add fork git@github.com:ckreiling/awesome-mcp-servers.git
+git status
+git remote
+git remote rm fork
+aws sso get-role-credentials
+aws sso help get-role-credentials
+aws sso get-role-credentials
+aws sso get-role-credentials help
+grow login
+grow login
+git status
+ eval "$(grow shellenv)"
+aws sts assume-role help
+python -V
+which python
+which uv
+uv python version
+uv python
+uv python list
+which sops
+sops --version
+devbox search sops
+sops --version
+sops --help
+cd ~/Code/sops-testing
+ls
+git status
+aws-select
+clear
+echo "hello, world
+echo
+echo hello
+ffmpeg -i input.mp4 -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+devbox search ffmpeg
+devbox global add ffmpeg
+refresh-global
+ffmpeg -i input.mp4 -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 2.51.17 PM.mov -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+open output.gif
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 2.51.17 PM.mov -vf "scale=-1:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 2.51.17 PM.mov -vf "scale=-1:0.5*in_h:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+open output.gif
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 2.51.17 PM.mov -vf "scale=-1:0.5*in_h:flags=lanczos,fps=30,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 2.51.17 PM.mov 
+clear
+ls -la
+nvim mynewtestfile.yaml
+cat mynewtestfile.yaml
+cat mynewtestfile.yaml
+sops edit mynewtestfile.yaml
+cat mynewtestfile.yaml
+cat mynewtestfile.yaml
+nvim mynewtestfile.yaml
+sops edit mynewtestfile.yaml
+clear
+mv mynewtestfile.yaml demo.encrypted.yml
+cat demo.encrypted.yml
+clear
+sops edit demo.encrypted.yml
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+sops edit demo.encrypted.yml
+git status
+clear
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+sops edit demo.encrypted.yml
+cat demo.encrypted.yml
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+nvim demo.encrypted.yml
+clear
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+sops edit demo.encrypted.yml
+cat demo.encrypted.yml
+clear
+nvim demo.encrypted.yml
+sops edit demo.encrypted.yml
+nvim demo.encrypted.yml
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 3.17.42 PM.mov
+ffmpeg -i ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 3.17.42 PM.mov -vf "scale=-1:0.5*in_h:flags=lanczos,fps=30,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif\
+
+nvim ~/.zsh_aliases
+nvim ~/.zsh_functions
+source ~/.zsh_functions
+togif ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 3.17.42 PM.mov
+togif ~/Desktop/Screen\ Recording\ 2025-04-07\ at\ 3.17.42 PM.mov output.gif
+gum --help
+gum style "Hello world"
+gum style "First we will look at the encrypted contents of the file"
+nvim demo.encrypted.yml
+gum style "Now we will decrypt the contents with SOPS"
+sops edit demo.encrypted.yml
+gum style 'And that is it'
+gum style < demo.encrypted.yml
+gum
+gum log "Hey"
+gum log -l debug "Hey"
+gum version-check
+gum --version
+devbox search gum
+devbox global upgrade gum
+devbox global update gum
+which gum
+brew uninstall gum
+which gum
+devbox global add gum
+which gum
+refresh-global
+gum --version
+gum
+gum style "Hey"
+gum style "Whoooaaaa"
+gum
+gum join "Hey" "Ho"
+gum pager demo.encrypted.yml
+gum pager < demo.encrypted.yml
+gum pager < demo.encrypted.yml
+gum pager -h
+gum pager < demo.encrypted.yml
+cat demo.encrypted.yml | gum pager
+bat demo.encrypted.yml  | gum pager
+bat demo.encrypted.yml
+gum
+gum table "way"
+gum table
+gum table
+cat demo.encrypted.yml
+gum sops
+exit
+git status
+uv sync
+uv run nvim
+uv add Jinja2
+uv run nvim
+git reset --hard HEAD
+uv sync
+uv run nvim
+nvim pyproject.toml
+nvim pyproject.toml
+uv run ruff check src/**/*.py 
+uv run ruff  src/**/*.py 
+uv run ruff format src/**/*.py 
+git status
+git diff
+nvim pyproject.toml
+nvim pyproject.toml
+uv run ruff format src/**/*.py 
+nvim pyproject.toml
+uv run ruff format src/**/*.py 
+nvim pyproject.toml
+uv run ruff format src/**/*.py 
+uv run ruff src/**/*.py 
+uv run ruff check src/**/*.py 
+uv run ruff check --fix src/**/*.py 
+uv run ruff check src/**/*.py
+uv run ruff check --help
+uv run ruff check --unsafe-fixes --fix src/**/*.py
+git commit --help
+git commit --help | mods how do i skip pre-commit hooks
+devbox -h
+sops encrypt --help
+sops encrypt -h | mods what output types are there
+sops -h
+sops -h | mods is completions supported
+sops -h
+mods --show-last
+sops completion -h
+sops -h
+sops --help | mods this is sops help text does it support completions
+uv --help
+mods --settings
+cd nvim
+nvim
+nvim
+nvim
+nvim
+nvim lua/kickstart/ckreiling/copilot.lua
+nvim lua/kickstart/ckreiling/copilot.lua
+uv run nvim
+nvim kms.context.sh
+chmod +x kms.context.sh
+./kms.context.sh
+docker context use kms-local
+docker ps
+docker ps
+uv run python
+uv add paramiko
+uv run python
+git status
+git checkout -b ssh-support
+rm kms.context.sh
+git diff
+nvim README.md
+nvim ../claude_desktop_config.json
+nvim README.md
+git status
+git add README.md pyproject.toml uv.lock
+git status
+gcm
+git push origin ssh-support
+git diff main
+nvim pyproject.toml
+git status
+git add pyproject.toml
+gcm
+git diff HEAD~1
+git status
+uv build
+uv publish --token 'pypi-AgEIcHlwaS5vcmcCJDliMzZlYTllLTY4NDAtNGJiYi1hZTFmLTFkZmRiNjAyMDZlYgACKlszLCJmOTU5ZjA5Yy0wYmUwLTRkYzUtOTMyNS1kN2E4ZmExZjM5N2MiXQAABiBjYVqj8Pdnr38rJB5WP-qyRGlX5IvCcI2Lp7OelwagEw'
+git push origin ssh-support
+nvim ../claude_desktop_config.json
+curl 192.168.0.125:9092
+curl 192.168.0.125:9092 -vvv
+curl 192.168.0.125:9092 -vvv
+curl 192.168.0.125:9092/wp-admin/install.php -vvv
+docker ps
+docker context list
+docker context use default
+docker context create -h
+docker context create --help
+docker context create kms-vpn --description "KMS over vpn" --docker "host=ssh://kreiling@kreilingmediaserver.com"
+docker context use kms-vpn
+docker ps
+docker context use default
+docker ps
+exit
+uv c
+uvx crawl4ai
+uvx --from crawl4ai crwl
+uvx --from crawl4ai crawl4ai-setup
+uvx --from crawl4ai crawl4ai-doctor
+uvx --from crawl4ai crwl --url 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --max-depth 10
+uvx --from crawl4ai crwl --url 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --max-depth 10
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --max-depth 10
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' ---depth 10
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --depth 10
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --help
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --output md --output-file test.md 
+cat test.md
+ls -l
+cat test.md | wc -l
+nvim test.md
+uvx --from crawl4ai crwl 'https://oblivionremastered.wiki.fextralife.com/Oblivion+Wiki' --help
+uvx --from crawl4ai crwl --version
+uvx --from crawl4ai crwl -V
+uvx --from crawl4ai crwl --help
+uvx --from crawl4ai crwl -v
+uvx --from crawl4ai crwl --version
+uvx --from crawl4ai crwl -help
+uvx --from crawl4ai crwl https://docs.crawl4ai.com --deep-crawl bfs --max-pages 10
+uv show crawl4ai
+uv help
+uvx help
+uvx --help
+help
+# Install the package\
+uv pip install -U crawl4ai\
+\
+# For pre-release versions\
+uv pip install crawl4ai --pre
+uv pip install -U crawl4ai
+uv run crwl --help
+uv run crwl version
+uv run crwl version
+uv run crwl -V
+uv run crwl --version
+uv run crwl --version
+uv pip install -U crawl4ai --pre
+uv run crwl --help
+uv run crwl crawl --help
+uv run which crwl
+ls .venv/bin
+uvx rm crwl
+uvx --remove crwl
+cd ../
+cd -
+uv sync
+uv run which crwl
+uv run crwl
+exit
+devbox version update
+uv run --help
+uv add pydantic
+git status
+git diff
+uv sync
+uv update --help
+uv upgrade --help
+uv -h
+uv python list
+uv python find
+uv --help
+uv lock --help
+uv lock --upgrade-package mcp
+git status
+uv sync
+nvim ../claude_desktop_config.json
+docker ps
+docker ps
+git status
+git diff pyproject.toml
+git diff uv.lock 
+nvim pyproject.toml
+uv sync
+nvim pyproject.toml
+uv sync
+git status
+git diff pyproject.toml
+nvim pyproject.toml
+uv upgrade docker
+uv lock --upgrade-package docker
+git status
+git diff uv
+git diff uv.lock
+git status
+git add ./
+git status
+git restore --staged .DS_Store glama.Dockerfile test.md
+cat test.md
+rm test.md
+git status
+rm .DS_Store
+rm glama.
+rm glama.Dockerfile
+git status
+git diff
+git diff --staged
+uv lock --no-upgrade
+uv lock --upgrade
+git status
+git diff
+uv run python
+docker pull unclecode/crawl4ai:0.6.0-r2
+docker run -d \\
+  -p 11235:11235 \\
+  --name crawl4ai \\
+  --shm-size=1g \\
+  unclecode/crawl4ai:latest
+git status
+docker ps
+docker stop 858aef6c8fed
+docker rm 858aef6c8fed
+docker ps
+git diff
+git status
+git add uv.lock
+git status
+git diff --staged
+git status
+git checkout -b uv-upgrade-05202025
+git status
+gcm
+git push origin uv-upgrade-05202025
+grow-login
+aws-select
+aws secretsmanager delete-secret \\
+  --secret-id grow-sops-monolith-staging-config \\
+  --force-delete-without-recovery
+ls ~/.config
+ls -la ~/.config/github-copilot
+cat ~/.config/github-copilot/hosts.json
+cat ~/.config/github-copilot/versions.json
+ls -la
