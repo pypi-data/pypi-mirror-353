@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "cats-test-manu-python-advanced"
+version = "0.1.0"
+description = ""
+authors = ["m.mendizabal"]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+packages = [
+    { include = "gaticos" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.2.1"
+ipdb = "^0.13.13"
+setuptools = "^80.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]  # Actualizado a la nueva sintaxis
+pytest = "^6.2.5"
+pylint = ">=3.0.0"
+build = "^0.7.0"
+mypy = "^0.910"
+pytest-cov = "^3.0.0"
+black = "^25.1.0"
+isort = "^5.9.3"
+click = "^8.2.1"
+astroid = ">=3.0.0"
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+target-version = ['py313']
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.mypy]
+#ignore_missing_imports = false
+
+[tool.poetry.scripts]
+gaticos = "gaticos.main:main"
