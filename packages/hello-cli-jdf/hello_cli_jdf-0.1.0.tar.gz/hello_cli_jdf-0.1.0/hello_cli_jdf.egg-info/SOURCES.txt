@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+hello_cli/__init__.py
+hello_cli/cli.py
+hello_cli_jdf.egg-info/PKG-INFO
+hello_cli_jdf.egg-info/SOURCES.txt
+hello_cli_jdf.egg-info/dependency_links.txt
+hello_cli_jdf.egg-info/entry_points.txt
+hello_cli_jdf.egg-info/top_level.txt
+tests/test_cli.py

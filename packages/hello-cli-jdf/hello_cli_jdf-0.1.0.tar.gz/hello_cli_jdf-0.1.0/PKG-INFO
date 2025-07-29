@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: hello-cli-jdf
+Version: 0.1.0
+Summary: A simple CLI tool that says hi
+Author-email: James Furtado <jamesdfurtado@gmail.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+This is a simple CLI tool.
+
+When you download the package via "pip install hello-cli",
+
+You can then navigate to any terminal and type "hello_cli", to which it will respond "Hi there!"
+
+This project was made for me to test out how to ship CLI tools via python packages.

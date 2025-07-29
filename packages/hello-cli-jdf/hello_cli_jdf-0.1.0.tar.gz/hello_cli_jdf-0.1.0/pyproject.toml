@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-cli-jdf"
+version = "0.1.0"
+description = "A simple CLI tool that says hi"
+authors = [{ name = "James Furtado", email = "jamesdfurtado@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.7"
+
+[project.scripts]
+hello = "hello_cli.cli:main"
