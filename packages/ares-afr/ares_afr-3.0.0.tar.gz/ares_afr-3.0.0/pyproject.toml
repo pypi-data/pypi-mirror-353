@@ -1,0 +1,17 @@
+[project]
+name = "ares_afr"
+version = "3.0.0"
+description = "Advanced Toolkit for Financial and Non-financial Data Assessment"
+authors = [{ name = "Aryslan Iskakov", email = "iskakov.aryslan@gmail.com" }]
+license = {text = "BSD-3-Clause"}
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent"
+]
+dependencies = ["pandas"]
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
