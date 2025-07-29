@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+smartjson/__init__.py
+smartjson/core.py
+smartjson.egg-info/PKG-INFO
+smartjson.egg-info/SOURCES.txt
+smartjson.egg-info/dependency_links.txt
+smartjson.egg-info/requires.txt
+smartjson.egg-info/top_level.txt
+tests/test_smart_json.py
