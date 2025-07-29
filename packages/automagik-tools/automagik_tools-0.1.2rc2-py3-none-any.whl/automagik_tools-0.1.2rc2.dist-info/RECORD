@@ -1,0 +1,17 @@
+automagik_tools/__init__.py,sha256=MPmo6AhSkxOF9xU1_y4NVpYQqIbLKfMMtX7l1_iJ-DY,142
+automagik_tools/cli.py,sha256=beQ46cppPBKPfeV-1Tdbxj0E8-hViqhs5wFmji1YgGA,19085
+automagik_tools/tools/__init__.py,sha256=Od4gsh7MMYPcdynsyBwHTnLSPMbCuEHWmyssF2uIMhI,161
+automagik_tools/tools/automagik_agents/__init__.py,sha256=Nwwtacc3LoNlCoDn1BPDO9hQVDnMzqHBRx0uNzEZ9SM,4072
+automagik_tools/tools/automagik_agents/__main__.py,sha256=djcVE63EwyybSqO-WHEvIj6KYBjL94OpWawqQzWIaUo,683
+automagik_tools/tools/automagik_agents/config.py,sha256=0WWhsjBxL15iiZiG3ecmW1J6bakn4HGqDDEWTaWglm8,1089
+automagik_tools/tools/evolution_api/__init__.py,sha256=Zg-hedbTxk97gsVZ0STjDhCsEMztHfhwUyNiawXvgz0,16226
+automagik_tools/tools/evolution_api/__main__.py,sha256=m-Pp31WBgUQabn_fGPWKgobAqz0JbyAI4oShk3BfoOA,1235
+automagik_tools/tools/evolution_api/config.py,sha256=KFW7RFqX5vq8EFmZeRcbhoCaEoah7mEsayvc3uSHeEo,736
+automagik_tools/tools/example_hello/__init__.py,sha256=FgrkT6wB7UKc0zQhuKRMkvqPvrUfp2MW_7c-pOpir9k,3375
+automagik_tools/tools/example_hello/__main__.py,sha256=N7_4IkZN1xeObmoyCEIb5KbA92wzMtp6sM49JmdGQUc,576
+automagik_tools/tools/example_hello/config.py,sha256=sMIXdZE3qKwQpjfgBSNG8RfXw6Izz9_r88qesRH9RSM,476
+automagik_tools-0.1.2rc2.dist-info/METADATA,sha256=FA2oG61xkMYYBctAtERi39rJ4zBoeiOl7TGLJSnvVgo,26305
+automagik_tools-0.1.2rc2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+automagik_tools-0.1.2rc2.dist-info/entry_points.txt,sha256=3SERvsEXYeZv081yL76Eb8hX7h_Ia6LHeIB7KWsL6xU,286
+automagik_tools-0.1.2rc2.dist-info/top_level.txt,sha256=yD40kSxkHVcl4FKmhjsPYDm6MS7Erp_Wz6jyQ1kIb-0,16
+automagik_tools-0.1.2rc2.dist-info/RECORD,,
