@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lccgrid"
+version = "0.1.1"
+description = "Convert Lambert Conformal grid to lat/lon coordinates"
+authors = [{ name = "phanpy", email = "214837134+phanpy8910@users.noreply.github.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+    "pyproj"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/phanpy8910/lccgrid"
+"Issues" = "https://github.com/phanpy/lccgrid/issues"
