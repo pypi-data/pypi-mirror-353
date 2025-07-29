@@ -1,0 +1,9 @@
+serpen-0.4.3.dist-info/METADATA,sha256=hQcUPFiVM2XyNJdcikT3WP7iKxICshOFS1zxi7AxJoo,10528
+serpen-0.4.3.dist-info/WHEEL,sha256=7Kg2mc_E2V3G7r294Y1bQJFG7ViTzRfrM31xrUPI0Nc,128
+serpen-0.4.3.dist-info/licenses/LICENSE,sha256=86zZFJf7ZgtSVRGb6BhzGTbC4c5vLJZ3d8uwmol4Y9E,1075
+serpen/__main__.py,sha256=0hbtbMwOlZIdsEgCcaVWj7VqTS1HuhBF4wbAulfISkw,694
+serpen/__init__.py,sha256=XVaIZ_gbg6fMJsJ4BxXO1gTD6noBe9rhFCvdPDd3iQM,291
+serpen/py.typed,sha256=Ttxz4VHIQ1CflPFkuFBqa8kdXw5b_0R19ZXbo585lwQ,747
+serpen-0.4.3.data/scripts/debug_analyzer,sha256=GbzqZ62sTXUq9f_R1cxnDBfZQwaoythJ3hKjXz1WPsQ,1989432
+serpen-0.4.3.data/scripts/serpen,sha256=yZHXSlu5AIu99C4VwJll9eApZrGzVmbQ6bAzsmfC7cA,4607608
+serpen-0.4.3.dist-info/RECORD,,
