@@ -1,0 +1,2 @@
+[console_scripts]
+dvtk = dvtk.cli:main
