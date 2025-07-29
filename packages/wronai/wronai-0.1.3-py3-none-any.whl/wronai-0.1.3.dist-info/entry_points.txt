@@ -1,0 +1,3 @@
+[console_scripts]
+wronai=wronai.cli_new:cli
+
