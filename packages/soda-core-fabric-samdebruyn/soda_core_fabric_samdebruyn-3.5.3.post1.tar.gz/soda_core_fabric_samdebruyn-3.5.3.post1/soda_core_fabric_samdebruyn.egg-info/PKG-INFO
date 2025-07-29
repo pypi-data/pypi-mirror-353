@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: soda-core-fabric-samdebruyn
+Version: 3.5.3.post1
+Author-email: Sam Debruyn <sam@debruyn.dev>
+Requires-Python: >=3.9
+Requires-Dist: soda-core-sqlserver-samdebruyn==3.5.3.post1
