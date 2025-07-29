@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+easyevals.egg-info/PKG-INFO
+easyevals.egg-info/SOURCES.txt
+easyevals.egg-info/dependency_links.txt
+easyevals.egg-info/top_level.txt
+ezeval/__init__.py
