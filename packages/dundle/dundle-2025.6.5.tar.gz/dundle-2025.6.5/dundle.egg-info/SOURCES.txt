@@ -1,0 +1,6 @@
+dundle.py
+setup.py
+dundle.egg-info/PKG-INFO
+dundle.egg-info/SOURCES.txt
+dundle.egg-info/dependency_links.txt
+dundle.egg-info/top_level.txt
