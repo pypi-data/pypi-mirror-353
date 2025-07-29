@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+st_clipboard/__init__.py
+st_clipboard.egg-info/PKG-INFO
+st_clipboard.egg-info/SOURCES.txt
+st_clipboard.egg-info/dependency_links.txt
+st_clipboard.egg-info/top_level.txt
