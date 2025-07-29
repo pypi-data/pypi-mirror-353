@@ -1,0 +1,6 @@
+llama_index/embeddings/azure_openai/__init__.py,sha256=dZBFSeeZ8k61wwHMbKw5sG9xv-8iUJJ5Wgt18aodL2Q,193
+llama_index/embeddings/azure_openai/base.py,sha256=Ig8gWb9h5ogk62aZkvW0rjN1qJoV5YfHilwME-L5VTM,6914
+llama_index_embeddings_azure_openai-0.3.7.dist-info/METADATA,sha256=fbIyq8wJ840x0LoFi1BwKzR-R2Ad4UQEE6j0Bc-6QYc,503
+llama_index_embeddings_azure_openai-0.3.7.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+llama_index_embeddings_azure_openai-0.3.7.dist-info/licenses/LICENSE,sha256=JPQLUZD9rKvCTdu192Nk0V5PAwklIg6jANii3UmTyMs,1065
+llama_index_embeddings_azure_openai-0.3.7.dist-info/RECORD,,
