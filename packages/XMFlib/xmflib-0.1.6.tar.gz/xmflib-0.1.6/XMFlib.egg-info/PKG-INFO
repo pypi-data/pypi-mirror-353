@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: XMFlib
+Version: 0.1.6
+Summary: A library for pair probability prediction using machine learning.
+Author-email: Minhui Li <23210220016@m.fudan.edu.cn>
+License: MIT License
+        
+        Copyright (c) 2025 aFui233
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/aFui233/XMFlib
+Project-URL: Repository, https://github.com/aFui233/XMFlib
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: torch>=2.6.0
+Requires-Dist: numpy>=2.0.2
+Dynamic: license-file
+
+# XMFlib
+
+**XMFlib** is a machine learning-based library for predicting pair-site probabilities, designed for surface science and materials simulation. Leveraging pre-trained neural network models, it can quickly predict various types of pair probabilities based on input interaction energy, temperature, and coverage.
+
+---
+
+## Features
+
+- Supports multiple surface types (e.g., 100, 111 facets)
+- Built-in multi-layer perceptron (MLP) models for efficient inference
+- Simple and user-friendly API, easy to integrate into research and engineering projects
+- Compatible with PyTorch, making it easy to extend and customize models
+
+---
+
+## Installation
+
+```bash
+pip install XMFlib
+```
+
+---
+
+## Virtual Environment Setup (Recommended)
+
+```bash
+conda create --name <env_name> python=3.9
+conda activate <env_name>
+pip install XMFlib
+```
+
+---
+
+## Usage Example
+
+```python
+from XMFlib.PairProbML import PairProbPredictor
+
+predictor = PairProbPredictor()
+result = predictor.predict(
+    facet=100,                  # Facet type, options: '100' or '111'
+    interaction_energy=0.2,     # Interaction energy (eV)
+    temperature=400,            # Temperature (K)
+    main_coverage=0.5           # Main species coverage (0~1)
+)
+print(result)
+# Example output: {'vacancy_pair': 0.12, 'species_pair': 0.34, 'species_vacancy_pair': 0.54}
+```
