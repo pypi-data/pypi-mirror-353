@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+ydyld/__init__.py
+ydyld/demangle.py
+ydyld/syms.py
+ydyld.egg-info/PKG-INFO
+ydyld.egg-info/SOURCES.txt
+ydyld.egg-info/dependency_links.txt
+ydyld.egg-info/top_level.txt
