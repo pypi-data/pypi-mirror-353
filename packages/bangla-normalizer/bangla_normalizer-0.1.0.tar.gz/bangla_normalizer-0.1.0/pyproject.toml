@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+backend-path = ["."]
+
+[project]
+name = "bangla_normalizer"
+version = "0.1.0"
+authors = [
+    { name = "Md. Shohanur Rahman", email = "shorons38@gmail.com" },
+]
+description = "A Python library for normalizing Bengali text, including dates, numbers, currency, etc."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+keywords = [
+    "bengali", "bangla", "nlp", "natural language processing", "text normalization",
+    "text standardisation", "bangla text processing", "bengali text processing",
+    "text verbalization", "spell-out", "number to words", "date to words",
+    "time to words", "currency to words", "taka normalization",
+    "percentage normalization", "temperature normalization", "ratio normalization",
+    "ordinal normalization", "year normalization", "phone number normalization",
+    "distance normalization", "bangla nsw", "bengali nsw", "non-standard words",
+    "bangla tts", "bengali tts", "text to speech preprocessing", "bangla unicode",
+    "bengali unicode", "text cleaning", "bangla data preprocessing",
+    "bengali data preprocessing", "bangla text utilities", "bengali text tools",
+    "bengali language", "bangla language", "indic nlp", "bangla script",
+    "bengali script", "text normalizer", "bangla normalizer", "bengali normalizer"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Text Processing :: Linguistic",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "regex",
+    "python-dateutil",
+]
+
+[project.urls]
+Homepage = "https://github.com/shohanur-shoron/bangla_normalizer.git"
+"Bug Tracker" = "https://github.com/shohanur-shoron/bangla_normalizer/issues"

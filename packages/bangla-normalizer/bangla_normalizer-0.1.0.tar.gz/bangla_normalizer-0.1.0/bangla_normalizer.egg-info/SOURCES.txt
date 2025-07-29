@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+bangla_normalizer/__init__.py
+bangla_normalizer/conversion_data.py
+bangla_normalizer/extractor.py
+bangla_normalizer/methods.py
+bangla_normalizer/normalizer.py
+bangla_normalizer/utils.py
+bangla_normalizer.egg-info/PKG-INFO
+bangla_normalizer.egg-info/SOURCES.txt
+bangla_normalizer.egg-info/dependency_links.txt
+bangla_normalizer.egg-info/requires.txt
+bangla_normalizer.egg-info/top_level.txt
