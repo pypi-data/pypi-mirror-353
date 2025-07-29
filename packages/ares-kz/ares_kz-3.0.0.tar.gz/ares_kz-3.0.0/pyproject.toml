@@ -1,0 +1,15 @@
+[project]
+name = "ares-kz"
+version = "3.0.0"
+description = "Kazakhstan corporate credit risk factors"
+authors = [{name = "Iskakov.Aryslan_AFR"}]
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = ["Programming Language :: Python :: 3"]
+requires-python = ">=3.7"
+
+[tool.setuptools]
+packages = ["ARES_KZ"]
+
+[tool.setuptools.package-data]
+"ARES_KZ" = ["factorsKZ.csv"]
