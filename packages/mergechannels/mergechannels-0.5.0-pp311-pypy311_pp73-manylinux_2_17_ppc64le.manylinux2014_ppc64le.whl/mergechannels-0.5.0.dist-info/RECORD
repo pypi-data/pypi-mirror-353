@@ -1,0 +1,11 @@
+mergechannels-0.5.0.dist-info/METADATA,sha256=BE79C5q3unppqNXbQOsjb2LXtJyWxpQuaRl7QLm2NOk,36723
+mergechannels-0.5.0.dist-info/WHEEL,sha256=zT0bmFvabXQjAvZIkp1dxAJe7ov1DJo7Flm9RFnEhlY,138
+mergechannels-0.5.0.dist-info/licenses/LICENSE,sha256=csvD60rgtSorbYEM3f8867qNyPCzmIXyFNj8h01Bd6c,1071
+mergechannels/__init__.py,sha256=RpIHde1-y_FgqPaFQFhVoqurnZDbOQgOT4b5I3ejYrI,391
+mergechannels/__init__.pyi,sha256=-7K9OcPQU0SD6B8lO6hNSeYxStfjtr6lwL8ifJ5BVI4,1740
+mergechannels/_blending.py,sha256=mE5Cr9wvVJRcwfymg_UUZUjdIKx2mldfLU8QJT95bVM,84
+mergechannels/_internal.py,sha256=JeXnzF2OjVmRLm2BxNoPpBzhVE2Loa3ifoufT-uafzk,3451
+mergechannels/_luts.py,sha256=gFcSIjbLqRS33UvrOryYRKAU5i8EGLjgQbXMJYpiy48,2967
+mergechannels/mergechannels.pypy311-pp73-ppc_64-linux-gnu.so,sha256=W67ify7vre-RWnTWmXQOrszI2jCV5BdjiFcUqSHTkWo,1531744
+mergechannels/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mergechannels-0.5.0.dist-info/RECORD,,
