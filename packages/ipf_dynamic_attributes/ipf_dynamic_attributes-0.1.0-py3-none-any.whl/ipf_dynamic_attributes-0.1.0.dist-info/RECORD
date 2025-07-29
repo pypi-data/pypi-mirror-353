@@ -1,0 +1,14 @@
+ipf_dynamic_attributes/__init__.py,sha256=yFBXU4uhDYGc2RwpiuwsuqS4a3sm3ACmZnEvc9VHaoQ,1164
+ipf_dynamic_attributes/configs/__init__.py,sha256=f5X-91OJdPNBo-0jNtaMQARLgV6Om_bGUEgMd9jdEZQ,220
+ipf_dynamic_attributes/configs/filters.py,sha256=Gdb7uyElKHQdto5qG4IrqRjjnZ8rUIzI2kyZkYY4KUs,1804
+ipf_dynamic_attributes/configs/rules.py,sha256=2x5mqPv20sOIb0Lcnr4oIP11g7OxySPK7UmMexf_4dY,10052
+ipf_dynamic_attributes/configs/sync.py,sha256=X1tJc7ZLaRAzVkl5gjrvbwoW58LNjbcTq4i1Gq-YQWg,5634
+ipf_dynamic_attributes/configs/values.py,sha256=kl3Gkl3Lrh1gWACMRUxl3gfTF9s01Vq8iiTmYRwDi1Q,8895
+ipf_dynamic_attributes/entry.py,sha256=RhuVHdd50_BrjP2fNO_n5sv7FvLrPC-p8gFandI2q0o,2522
+ipf_dynamic_attributes/models.py,sha256=ZsWTeGCzO_sFjrkVRdk6u-WIuCIfpWBRXm1fJ-5uN9s,4950
+ipf_dynamic_attributes/sync.py,sha256=IN5bvAbVDxZYpwrwrlrYg4Ncr0JjLzUix09WoVhGJdA,12829
+ipf_dynamic_attributes-0.1.0.dist-info/entry_points.txt,sha256=e9tLTRfPeQ1ICahSBRlqDrQxa9Tr3HBi3Mz-duEmEkI,76
+ipf_dynamic_attributes-0.1.0.dist-info/LICENSE,sha256=RyYNPLLnmwShDA6LumMnT0m_KAotRAG3hOsB_rbtdjM,1124
+ipf_dynamic_attributes-0.1.0.dist-info/METADATA,sha256=i-N3Z6TkSjepIRQxXCWxkn9o5jMqrykCYTaQcsx_zC0,2565
+ipf_dynamic_attributes-0.1.0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+ipf_dynamic_attributes-0.1.0.dist-info/RECORD,,
