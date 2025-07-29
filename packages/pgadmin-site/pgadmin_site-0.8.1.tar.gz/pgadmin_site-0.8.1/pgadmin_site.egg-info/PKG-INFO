@@ -1,0 +1,218 @@
+Metadata-Version: 2.4
+Name: pgadmin-site
+Version: 0.8.1
+Summary: Библиотека для создания локального сайта для работы с таблицами PostgreSQL
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/pgadmin-site
+Project-URL: Bug Tracker, https://github.com/yourusername/pgadmin-site/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask>=2.0.0
+Requires-Dist: psycopg2-binary>=2.9.3
+Requires-Dist: SQLAlchemy>=2.0.0
+Requires-Dist: wtforms>=3.0.0
+Requires-Dist: flask-sqlalchemy>=3.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: openai>=1.0.0
+Dynamic: license-file
+
+# PGAdmin Site
+
+Библиотека для создания локального веб-интерфейса для работы с таблицами PostgreSQL.
+
+## Версия
+
+**v0.6.0**
+
+## Установка и обновление
+
+```bash
+pip install pgadmin-site
+pip install --upgrade pgadmin-site
+```
+
+## Использование
+
+- `site(...)` — запуск локального сайта для работы с базой данных PostgreSQL и карточками.
+- `tkinter_card_designer(...)` — визуальный редактор шаблонов карточек (Tkinter, drag&drop, формулы, фильтры, кнопки).
+
+### site
+```python
+from pgadmin_site import site
+site(
+    host="localhost",
+    port=5432,
+    username="postgres",
+    password="password",
+    database="your_database",
+    web_port=5000,  # Порт для веб-интерфейса
+    icon="path/to/icon.png",  # Путь к иконке
+    foto="path/to/image.jpg true",  # Путь к изображению и флаг перемещаемости
+    card="path/to/template_name.json"  # Путь к шаблону карточки
+)
+```
+
+### tkinter_card_designer
+```python
+from pgadmin_site import tkinter_card_designer
+tkinter_card_designer(
+    username="postgres",
+    password="пароль",
+    database="mydb",
+    host="localhost",
+    port=5432
+)
+```
+
+## Возможности
+
+- Просмотр и редактирование таблиц PostgreSQL через веб-интерфейс (Flask + Bootstrap)
+- Импорт и экспорт данных (CSV, Excel)
+- Визуальный редактор карточек (Tkinter): поддержка фигур, формул, drag&drop столбцов, кнопок с фильтрами
+- Автоматическое построение JOIN по связям, подстановка данных из связанных таблиц
+- Кнопки на карточках с визуальным редактором запроса и фильтрами (AND/OR, подстановка из карточки)
+- Импорт/экспорт шаблонов карточек в JSON
+- Удаление карточки и связанных данных через модальное окно
+- Совместимость с любыми структурами БД PostgreSQL
+- Настройка favicon и добавление перемещаемых изображений
+- Отображение данных в виде карточек по шаблону
+
+## Параметры изображения
+
+Параметр `foto` принимает путь к файлу изображения и опциональный флаг перемещаемости:
+- `"path/to/image.jpg"` - статическое изображение
+- `"path/to/image.jpg true"` - перемещаемое изображение
+- `"path/to/image.jpg false"` - статическое изображение
+
+Перемещаемое изображение можно перетаскивать мышью по странице, и его позиция сохраняется между сессиями.
+
+## Параметры карточек
+
+Параметр `card` позволяет отображать данные в виде карточек по заданному шаблону.
+- `"template_name.json"` - название шаблона карточки
+- Можно создавать свои шаблоны через `tkinter_card_designer`
+
+## Требования
+
+- Python 3.8+
+- PostgreSQL
+
+## Лицензия
+
+MIT 
+
+## Команды CLI
+
+- `pgadmin-site` — запуск локального веб-интерфейса для работы с PostgreSQL. Поддерживает параметры:
+  - `--host`, `-h` — адрес сервера PostgreSQL (по умолчанию localhost)
+  - `--port`, `-p` — порт PostgreSQL (по умолчанию 5432)
+  - `--username`, `-u` — имя пользователя (по умолчанию postgres)
+  - `--password`, `-P` — пароль (запрашивается интерактивно)
+  - `--database`, `-d` — имя базы данных (по умолчанию postgres)
+  - `--web-port`, `-w` — порт для веб-интерфейса (по умолчанию 5000)
+  - `--debug` — режим отладки
+  - `--icon` — путь к файлу иконки
+  - `--foto` — путь к файлу изображения с опциональным флагом перемещаемости (true/false)
+  - `--card` — название шаблона карточки (без .json)
+
+- `from pgadmin_site import tkinter_card_designer` — запуск визуального редактора карточек на Tkinter:
+  - Позволяет создавать SVG-шаблоны карточек с drag&drop, формулами, кнопками, фильтрами и связями с БД.
+
+- `from pgadmin_site import create_module_file` — генерация примеров Tkinter-карточек:
+  - `create_module_file('modul(2)')`, `create_module_file('modul(3)')`, `create_module_file('modul(4)')` — создаёт примеры модулей для работы с карточками и БД.
+
+## Основные возможности
+
+- Просмотр и редактирование таблиц PostgreSQL через веб-интерфейс (Flask + Bootstrap)
+- Визуальный редактор карточек (Tkinter): поддержка фигур, формул, drag&drop столбцов, кнопок с фильтрами
+- Автоматическое построение JOIN по связям, подстановка данных из связанных таблиц
+- Кнопки на карточках с визуальным редактором запроса и фильтрами (AND/OR, подстановка из карточки)
+- Импорт/экспорт шаблонов карточек в JSON
+- Удаление карточки и связанных данных через модальное окно
+- Совместимость с любыми структурами БД PostgreSQL
+- Настройка favicon и добавление перемещаемых изображений
+- Отображение данных в виде карточек по шаблону
+
+## Пример запуска
+
+```bash
+pgadmin-site --host localhost --port 5432 --username postgres --database mydb --web-port 5000 --icon path/to/icon.png --foto "path/to/image.jpg true" --card template_name
+```
+
+## Пример запуска редактора карточек
+
+```python
+from pgadmin_site import tkinter_card_designer
+tkinter_card_designer(username="postgres", password="пароль", database="mydb")
+```
+
+## Резервное копирование и восстановление
+
+### Резервное копирование базы данных PostgreSQL
+
+```bash
+pg_dump -U postgres -d furniture_db -F c -f furniture_db.backup
+```
+
+### Восстановление из резервной копии
+
+```bash
+pg_restore -U postgres -d furniture_db --clean --create furniture_db.backup
+```
+
+## Диагностика и устранение ошибок
+
+- Если сайт не запускается — проверьте параметры подключения к БД в example_site.py
+- Если не открывается страница — проверьте логи в консоли (выводятся ошибки)
+- Для диагностики проблем с БД используйте pgAdmin или DBeaver
+- Для восстановления данных используйте резервную копию (см. выше)
+
+## Обновление системы
+
+1. Остановите сервер (Ctrl+C)
+2. Обновите файлы проекта (git pull или копирование новых файлов)
+3. Проверьте, не изменились ли структура БД и зависимости (requirements.txt)
+4. Запустите сервер снова
+
+## Функция расчёта сырья
+
+```python
+def calculate_material_quantity(product_type_id, material_id, product_quantity, param1, param2):
+    """
+    product_type_id: int — идентификатор типа продукции
+    material_id: int — идентификатор материала
+    product_quantity: int — количество продукции
+    param1, param2: float — параметры продукции (например, длина и ширина)
+    Возвращает: int — количество сырья с учётом потерь, либо -1 при ошибке
+    """
+    import psycopg2
+    try:
+        conn = psycopg2.connect(dbname='furniture_db', user='postgres', password='your_password')
+        cur = conn.cursor()
+        cur.execute('SELECT koef_product_type FROM product_types WHERE product_type_id=%s', (product_type_id,))
+        row1 = cur.fetchone()
+        cur.execute('SELECT percent_braka FROM material_type WHERE material_id=%s', (material_id,))
+        row2 = cur.fetchone()
+        if not row1 or not row2:
+            return -1
+        koef = float(row1[0])
+        percent = float(row2[0])
+        material_per_unit = param1 * param2 * koef
+        total_material = material_per_unit * product_quantity * (1 + percent / 100)
+        return int(total_material) + 1
+    except Exception:
+        return -1
+    finally:
+        if conn:
+            conn.close()
+```
+
+**Инструкция:**
+- Передайте в функцию нужные параметры (id типа продукции, id материала, количество, параметры продукции)
+- Если тип или материал не найдены — функция вернёт -1
+- Результат — целое число, сколько сырья нужно с учётом потерь 
