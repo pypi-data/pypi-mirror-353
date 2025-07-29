@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+qfeval/__init__.py
+qfeval.egg-info/PKG-INFO
+qfeval.egg-info/SOURCES.txt
+qfeval.egg-info/dependency_links.txt
+qfeval.egg-info/top_level.txt
