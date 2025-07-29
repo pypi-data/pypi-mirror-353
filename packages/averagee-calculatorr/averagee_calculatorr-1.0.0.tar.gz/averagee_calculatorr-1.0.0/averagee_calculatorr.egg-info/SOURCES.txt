@@ -1,0 +1,7 @@
+averagee_calculatorr.egg-info/PKG-INFO
+averagee_calculatorr.egg-info/SOURCES.txt
+averagee_calculatorr.egg-info/dependency_links.txt
+averagee_calculatorr.egg-info/top_level.txt
+marks_averagee/__init__.py
+marks_averagee/averagee.py
+marks_averagee/setup.py
