@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: mcp_test_czhsb
+Version: 0.1.0
+Summary: MCP服务测试 - 在用户输入后添加'我收到了'
+Home-page: https://github.com/czhsb/mcp_test_czhsb
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: bs4>=0.0.2
+Requires-Dist: dashscope>=1.23.4
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.9.2
+Dynamic: home-page
+Dynamic: requires-python
+
+# mcp_test_czhsb
+
+阿里百炼 MCP 服务测试工具
+
+## 功能
+
+在用户输入后添加"我收到了"
+
+## 安装
+
+```bash
+pip install mcp_test_czhsb
+```
+
+## 使用方法
+
+在阿里百炼平台配置 MCP 服务：
+
+```python
+from mcp_test_czhsb import process_input
+
+# 在百炼平台会自动注册为工具
+```
+
+## 示例
+
+输入: "你好"
+输出: "你好，我收到了"
+
+输入: "测试 123"
+输出: "测试 123，我收到了"
