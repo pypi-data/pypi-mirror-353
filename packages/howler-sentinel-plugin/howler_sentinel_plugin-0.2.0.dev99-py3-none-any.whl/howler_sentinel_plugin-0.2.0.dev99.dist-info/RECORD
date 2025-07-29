@@ -1,0 +1,17 @@
+sentinel/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sentinel/actions/azure_emit_hash.py,sha256=yEO8ZjFTUjNm03fJfHRVER3xf0v5o0qdU8GnqwZtMTM,2938
+sentinel/actions/send_to_sentinel.py,sha256=rfIJk02iAACvb8bfKv9MEkSDILDnvXlxt49hQVyvvQ4,3734
+sentinel/actions/update_defender_xdr_alert.py,sha256=OjNXM8DixURYdl7fHLCS81I0izQVtQgFkw9Iteeklwg,6418
+sentinel/mapping/sentinel_incident.py,sha256=3QBnP6qFpJgE3pHvx5VvFnB3m2TVOoWxs8OysDlJVV8,9547
+sentinel/mapping/xdr_alert.py,sha256=UPoqdZsjUXmJz0dCf_qMlh9Jr0D2HcSNOFvbg8lE4wY,18250
+sentinel/mapping/xdr_alert_evidence.py,sha256=q622G4eZwFR3TCj418ZCpE83DGVicrWIQZo8Gkj_3FM,31323
+sentinel/odm/hit.py,sha256=hAuO2ONMK3Ml8Xu6E7tHrmZ7M6HG5tT38RD9ZxwY254,666
+sentinel/odm/models/sentinel.py,sha256=XT3XdT92uoCV5vmY9dT1jmcxRyuu9vp1gE8AwZdKBIc,337
+sentinel/routes/__init__.py,sha256=JYmKRwIfEsiPos1XuMQ2mlGDbxk6TN_cVEM0K_RNze4,130
+sentinel/routes/ingest.py,sha256=_9OdOw_9nBJseKIBnmHDLjnqZ_bDdM4wfLpLrek4-ak,7018
+sentinel/utils/tenant_utils.py,sha256=W7kBtxYNhs3vcgMf78eIRqiTpDtqjzEI2H2d0papQ_Q,1224
+howler_sentinel_plugin-0.2.0.dev99.dist-info/LICENSE,sha256=Wg2luVnxEkP2NSn11nh1US6W_nFFbICBAVTG9iG3t5M,1091
+howler_sentinel_plugin-0.2.0.dev99.dist-info/METADATA,sha256=QZH7YTqc7odZI8KwzX9IeOU_C2quRyThuIHqiKjdyaM,748
+howler_sentinel_plugin-0.2.0.dev99.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+howler_sentinel_plugin-0.2.0.dev99.dist-info/entry_points.txt,sha256=4IJyMY0V49s3Wp659ngN_7U8g66-czeKxI-_dNAFP5g,60
+howler_sentinel_plugin-0.2.0.dev99.dist-info/RECORD,,
