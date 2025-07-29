@@ -1,0 +1,2 @@
+[console_scripts]
+no-nickname-mcp-test = no_nickname_mcp_test:main
