@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+imas_validator/_version.py
+
+# Unit test / coverage reports
+.cache
+
+tmp
+.coverage
+.venv
+venv
+build
+junit.xml
+.idea/
+.asv
+
+imas-validator-course
+imas-validator-training-rulesets
+validate_reports

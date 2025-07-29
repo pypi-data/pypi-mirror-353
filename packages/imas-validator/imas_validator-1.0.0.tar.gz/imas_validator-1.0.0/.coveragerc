@@ -1,0 +1,2 @@
+[run]
+omit = imas_validator/_version.py
