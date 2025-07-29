@@ -1,0 +1,9 @@
+tqdm_pandas/__init__.py,sha256=EPzaFprpRKZwd6I-B0hCKHN_vyPohCE9HulHbJX47eo,196
+tqdm_pandas/_version.py,sha256=ehRUxyJc7eM3iVRxhmQPAWPDdh0H8zRtLmthBU67nyw,511
+tqdm_pandas/patcher.py,sha256=7i5Zmf7yUqLJW82H86axbcM0faCtFqRuzX4Idhq7IgU,1377
+tqdm_pandas/reader.py,sha256=sT6JURQLpWqkaNusl4oHWFXDiRW91HKK9FUj7Xqv0C0,8151
+tqdm_pandas-1.7.0.dist-info/licenses/LICENSE,sha256=RXoLGHAKGsNn9yFRIWdRp1atnDf66aXS7hp-o_jFta8,1069
+tqdm_pandas-1.7.0.dist-info/METADATA,sha256=mjRyr8n8rpfakyhTgE2RtwnikPumaUUFKeTbX2Js3iU,1434
+tqdm_pandas-1.7.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tqdm_pandas-1.7.0.dist-info/top_level.txt,sha256=Eq0J0J3m2qvUasc3x3obhCUxo5pCv0TmLvgaJtKzrX4,12
+tqdm_pandas-1.7.0.dist-info/RECORD,,
