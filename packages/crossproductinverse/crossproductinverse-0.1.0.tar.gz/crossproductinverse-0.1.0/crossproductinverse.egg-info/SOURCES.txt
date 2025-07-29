@@ -1,0 +1,10 @@
+README.md
+setup.py
+crossproductinverse/__init__.py
+crossproductinverse/main.py
+crossproductinverse/utils.py
+crossproductinverse.egg-info/PKG-INFO
+crossproductinverse.egg-info/SOURCES.txt
+crossproductinverse.egg-info/dependency_links.txt
+crossproductinverse.egg-info/requires.txt
+crossproductinverse.egg-info/top_level.txt
