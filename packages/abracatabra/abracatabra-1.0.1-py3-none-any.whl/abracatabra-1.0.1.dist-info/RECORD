@@ -1,0 +1,14 @@
+abracatabra/__about__.py,sha256=d4QHYmS_30j0hPN8NmNPnQ_Z0TphDRbu4MtQj9cT9e8,22
+abracatabra/__init__.py,sha256=h5lGaceFKDNRKaua57bEMRSFW1SIhsHqA-DczwTCjpo,4330
+abracatabra/figure_widget.py,sha256=V6jMMlWmMap2-VSjBhaQcpJk1LU8LcwSNxDjASQMq4Q,2747
+abracatabra/tab_group_container.py,sha256=EqWur6CMspll8JilQESPcl7a3Jyd2DmcfmC4SVQb5ko,1835
+abracatabra/tabbed_figure_widget.py,sha256=XFfyrQCdx4Z1ooiZek6U8Tggs4h4KBXnXWToWWZY3Jw,3712
+abracatabra/tabbed_plot_window.py,sha256=N-RfznZp2QvlLVmYIyhn5SpX02r21fa20FkvgSxtwEw,19212
+abracatabra/icons/abracatabra1.svg,sha256=rF5hzX8qZfeclUo7kWzI22Dd6zKzGs75vqqV6uSxjzI,40966
+abracatabra/icons/abracatabra2.svg,sha256=NWqkCa8J8ZwDOHD_Qn-BvQkbA40BLRECmyPnF5xoGPc,40966
+abracatabra/icons/abracatabra3.svg,sha256=pVtMzNtk_ApoLyLeFQAhw0YUH6Tpo-Jq5eA-1O8T8YI,10358
+abracatabra/icons/tabplot.svg,sha256=CotjNBhCc-19uEDkksqlByPj-jN_tGvjc527eYv-wyI,40379
+abracatabra-1.0.1.dist-info/METADATA,sha256=h4tqz3Yx30t_eGas1Vhaw_628kJWwA8JPzE7wd9prk0,4836
+abracatabra-1.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+abracatabra-1.0.1.dist-info/licenses/LICENSE,sha256=uxZaqNOo5VoP3jZzYZbM2jy8pW1a7yKXit2SFX8NQ6k,1563
+abracatabra-1.0.1.dist-info/RECORD,,
