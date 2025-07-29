@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: video-fragment-ingest
+Version: 0.0.0a2
+Summary: Kafka-based ingest and decoding service for VideoIngestFragments
+Author: Andres Godoy
+Author-email: andres@volt.ai
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Thrud
+
+Daughter of Thor and Sif, one of the valkyres that served ale to the einherjar in Valhalla.
+
+---
+
+Submodule for video fragment ingest and decode
