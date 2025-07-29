@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-jamie-test3 = mcp-jamie-test3:main
