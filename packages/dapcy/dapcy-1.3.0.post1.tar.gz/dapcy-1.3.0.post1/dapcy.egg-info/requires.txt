@@ -1,0 +1,10 @@
+bed-reader
+bio2zarr
+joblib
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
+seaborn
+sgkit
