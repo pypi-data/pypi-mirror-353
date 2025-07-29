@@ -1,0 +1,16 @@
+rickle/__init__.py,sha256=8RoJW2i5gJ43aH5uyhcdANlOSc1t4ZH4zlmEps_xasg,96786
+rickle/__version__.py,sha256=kotDeESmlsQ9gn7Jnk6sa3JfaorwX84aUZU9R6SMDbk,48
+rickle/cli/__init__.py,sha256=MDrynyMtTv9_M5KbjJP9b1mCBL_kTeTftPDPnm70ZyA,35485
+rickle/cli/__main__.py,sha256=PMpSaSDYi76cJ9RpejODUGdlilX6HsMcUMY7-Mh4JaU,35
+rickle/cli/conv.py,sha256=l7Ru1oqVx0hLolsg15mUEa-gqGV08b3ICDeC0KoDUOs,3736
+rickle/cli/obj.py,sha256=r2eIxn2lUG9re1XgbBiKMgdYypRsEwVSIhXmlZGLyaQ,18659
+rickle/cli/schema.py,sha256=Q8pE7VZSDihyqHKS4WFvQikTYNBeFKM3y_tesVhChOA,5043
+rickle/cli/serve.py,sha256=zKefPVLJjyRFDLLuAiInYwVfLMmynGX4X0urOIw6eyI,2098
+rickle/net.py,sha256=pfTffMql06gb3GspyeUIgUlYNuxFDrNc9cR6UrxCR9c,6989
+rickle/schema.py,sha256=rQh5KlV130bZcPp3lUfZDN83u_XlfnOSIGLB3bUX4FU,28005
+rickle/tools.py,sha256=tS2hyodOv8pqu6Bs0c9roDbM10_szqgI7rBvJPwur28,27149
+rickle-1.2.4.dist-info/entry_points.txt,sha256=PxNoftuYDh2URJlB5lbtL8rFw8BO8mxqm8CtemUf7Is,42
+rickle-1.2.4.dist-info/LICENSE,sha256=7LJkKtkeCgtMYQgfa3M70xLzhw5UF_X9ibztI1lNFX8,11349
+rickle-1.2.4.dist-info/METADATA,sha256=6fAr8Wm794IYH8_FBd4P55s2Jh5GAMUe-rOjuB7gs0A,13748
+rickle-1.2.4.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+rickle-1.2.4.dist-info/RECORD,,
