@@ -1,0 +1,14 @@
+[project]
+name = "brickbox"
+version = "0.0.0"
+description = "A placeholder for brickbox project."
+readme = "README.md"
+authors = [
+    { name = "akshpra", email = "akshay.pra26@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
