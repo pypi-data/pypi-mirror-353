@@ -1,0 +1,101 @@
+Metadata-Version: 2.4
+Name: pycamp-cli
+Version: 1.0.1
+Summary: a command-line tool to fetch a random bandcamp album from a chosen genre — instantly.
+Home-page: https://github.com/worldwidemisery/pycamp
+Author: jasper binetti-makin
+Author-email: jasper@priest.com
+License: MIT
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: playwright>=1.30.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# pycamp
+
+a command-line tool to fetch a random bandcamp album from a chosen genre — instantly.
+
+## features
+
+- open random bandcamp albums by tag/genre
+- two modes:
+  - `quick`: quick, no album details, just opens it
+  - `full`: fetch album details (title, artist, date, tags) before prompting to open
+- works with any genre tag on bandcamp
+- supports short flags for fast access (`-q`, `-f`)
+
+## installation
+
+```bash
+pip install pycamp-cli
+```
+
+## usage
+
+```bash
+pycamp <genre> [ --quick | -q | --full | -f ]
+```
+
+### Examples
+
+```bash
+pycamp hardcore
+pycamp ambient --full
+pycamp blackened crust -q
+```
+
+if no flag is provided, `--quick` is the default.
+
+## flags
+
+| flag         | mode description                        |
+|--------------|------------------------------------------|
+| `--quick` or `-q` | quick mode — skips detail fetch, just opens    |
+| `--full` or `-f`  | full mode — shows album info before prompting  |
+
+## notes
+
+- uses playwright under the hood. on first run, you may need to install browser dependencies:
+
+```bash
+playwright install
+```
+
+- make sure `node` and a recent python (3.7+) are installed.
+
+## tip
+
+use specific genres like:
+
+- `trip hop`
+- `blackened crust`
+- `powerviolence`
+- `spiritual jazz`
+- `grindcore`
+
+they map directly to bandcamp tag pages.
+
+## license
+
+MIT © jasper binetti-makin
