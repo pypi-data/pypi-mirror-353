@@ -1,0 +1,10 @@
+interactive_feedback/__init__.py,sha256=kj8KNN70BSc989dYWSgnKIA_8RYA8oeePNYNTm51soM,57
+interactive_feedback/cli.py,sha256=XCIu28kEqOz0HHnpNcPCLt1j1ncCIj2NGhPO1eX3CSc,1171
+interactive_feedback/feedback_ui.py,sha256=2hEnAr_VWBBph6BWx8htyq97dllM7utJ476VIqBxMYA,174820
+interactive_feedback/server.py,sha256=QVAzNFlhC168dCXuzhK8E1K913UqIo6a0SQo-jPxRd0,9692
+interactive_feedback-1.0.0.dist-info/licenses/LICENSE,sha256=SExjUiEGJ-r2ZcBYWiW19mJRbeTmzcIpuqyU9wxw4P4,1123
+interactive_feedback-1.0.0.dist-info/METADATA,sha256=xW15QjmmrGEBAXcgfxxcFB2FiIrZOT3oLxYjoihrsHI,13976
+interactive_feedback-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+interactive_feedback-1.0.0.dist-info/entry_points.txt,sha256=wh-M6DgpF_f4221ZEl00Jnab76rYWeapxE_k5z0Nkb8,63
+interactive_feedback-1.0.0.dist-info/top_level.txt,sha256=9aAD1Innu7RxDkMmy4chPfFo7AqKLqQW_cSQGBij7V4,21
+interactive_feedback-1.0.0.dist-info/RECORD,,

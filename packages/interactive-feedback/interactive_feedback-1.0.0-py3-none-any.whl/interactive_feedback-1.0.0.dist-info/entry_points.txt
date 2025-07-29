@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-feedback = interactive_feedback.cli:main
