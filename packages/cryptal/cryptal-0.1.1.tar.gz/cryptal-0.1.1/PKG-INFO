@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: cryptal
+Version: 0.1.1
+Summary: A Python library for encrypting and decrypting files and text.
+Author: DottSpace12
+Author-email: dottspace12@gmail.com
+License: Custom::Restricted Use License
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# Cryptal
+
+Cryptal is a lightweight Python library for encrypting and decrypting files and text.  
+It is implemented independently without relying on any external libraries, focusing on simplicity and ease of use.
+
+## Features
+
+- Encrypt and decrypt text and files with a password  
+- Uses strong key derivation with PBKDF2 and random salt  
+- Simple and minimal dependency (no external libraries)  
+
+## Installation
+
+You can install Cryptal via pip:
+
+```bash
+pip install cryptal
