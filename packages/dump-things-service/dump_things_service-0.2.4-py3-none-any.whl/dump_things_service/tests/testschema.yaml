@@ -1,0 +1,73 @@
+id: http://example.org/person-schema
+name: person_schema
+prefixes:
+  abc: http://example.org/person-schema/abc/
+  linkml: https://w3id.org/linkml/
+  oxo: http://purl.obolibrary.org/obo/
+  trr379: http://example.org/person-schema/trr379/
+  xyz: http://example.org/person-schema/xyz/
+imports:
+  - linkml:types
+default_range: string
+default_prefix: abc
+
+slots:
+  relations:
+    range: Thing
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+
+  acted_on_behalf_of:
+    multivalued: true
+
+  annotations:
+    range: Annotation
+    inlined: true
+    multivalued: true
+
+  annotation_tag:
+    description: A tag identifying an annotation.
+    range: Thing
+
+  annotation_value:
+    description: The actual annotation.
+    range: string
+
+
+classes:
+  Any:
+    class_uri: "linkml:Any"
+
+  Thing:
+    slots:
+      - relations
+      - annotations
+    attributes:
+      pid:
+        identifier: true
+        required: true
+      schema_type:
+        range: string
+
+  Annotation:
+    slots:
+      - annotation_tag
+      - annotation_value
+    slot_usage:
+      annotation_tag:
+        key: true
+
+  Agent:
+    is_a: Thing
+    slots: acted_on_behalf_of
+
+  InstantaneousEvent:
+    is_a: Thing
+    attributes:
+      at_time:
+
+  Person:
+    is_a: Agent
+    attributes:
+      given_name:
