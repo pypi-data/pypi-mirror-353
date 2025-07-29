@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_vidtoolz_trim.py
+vidtoolz_trim/__init__.py
+vidtoolz_trim.egg-info/PKG-INFO
+vidtoolz_trim.egg-info/SOURCES.txt
+vidtoolz_trim.egg-info/dependency_links.txt
+vidtoolz_trim.egg-info/entry_points.txt
+vidtoolz_trim.egg-info/requires.txt
+vidtoolz_trim.egg-info/top_level.txt
