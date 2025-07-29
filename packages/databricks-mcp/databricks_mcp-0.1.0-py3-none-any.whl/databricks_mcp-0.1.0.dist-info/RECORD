@@ -1,0 +1,5 @@
+databricks_mcp/__init__.py,sha256=FtpZFhsUMfG913Q8ppmM6Pc_MTTRbR9xbjxUkouWUa4,117
+databricks_mcp/oauth_provider.py,sha256=3zXQ9ZiyNnZnnYUw2ISmW7I51ois4olT1ECoLUGL_q0,1195
+databricks_mcp-0.1.0.dist-info/METADATA,sha256=k_8DIZRo28YKay0JfjjFxniTtNtILR3XNMF4huB1Yek,1395
+databricks_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+databricks_mcp-0.1.0.dist-info/RECORD,,
