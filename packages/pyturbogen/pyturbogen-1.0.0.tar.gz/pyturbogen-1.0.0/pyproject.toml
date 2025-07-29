@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyturbogen"
+version = "1.0.0"
+description = "A simple image generation library in Python that uses the Turbo model"
+authors = [
+  { name="Gaurav Pandey", email="golupandey95207@gmail.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/Coder-Gaurav997/pyturbogen"
+"Bug Tracker" = "https://github.com/Coder-Gaurav997/pyturbogen/issues"

@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pyturbogen
+Version: 1.0.0
+Summary: A simple image generation library in Python that uses the Turbo model
+Home-page: https://github.com/Coder-Gaurav997/pyturbogen
+Author: Gaurav Pandey
+Author-email: Gaurav Pandey <golupandey95207@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2023 Gaurav Pandey
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        ...
+Project-URL: Homepage, https://github.com/Coder-Gaurav997/pyturbogen
+Project-URL: Bug Tracker, https://github.com/Coder-Gaurav997/pyturbogen/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyTurboGen
+
+**PyTurboGen** is a lightweight image generation utility for Python. You can use it to create simple images/graphics programmatically. This library is designed to be easy to use and understand, making it perfect for beginners and experts alike. This library use Turbo AI model for image generation.
+
+## Note
+This library needs internet to work.
+
+### Installation
+
+```bash
+pip install pyturbogen
