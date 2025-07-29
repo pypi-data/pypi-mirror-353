@@ -1,0 +1,12 @@
+chATLAS_Scrape/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chATLAS_Scrape/gitlab/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chATLAS_Scrape/gitlab/config.py,sha256=VD8gSor_gpxqaPU0T98X-IlPWI4zjEqwL0RCOrjMbsE,2632
+chATLAS_Scrape/gitlab/get_markdown.py,sha256=lp8zwS9gNc9R9OT8WeE2pkafrRU4YMbLcbneisug164,6908
+chATLAS_Scrape/gitlab/get_projects.py,sha256=wvXf3hrEgvNbul2UVuMVuv71cxeIq89Q1RDaJ4HouQI,9643
+chATLAS_Scrape/gitlab/rate_limiter.py,sha256=NV1YLnoxRhfv6cIH859jlAP-fa5D4v4c4nffCObAB5c,1094
+chatlas_scrape-0.0.1.dist-info/licenses/LICENSE,sha256=i4xkIjVh9qAZlkujBgWWzSWMeV_dv9trQtyiiT18p5c,11381
+tests/gitlab/test_gitlab.py,sha256=eTwoXrLbkN3nCnCs8Kiwdf5EtUccFEXqAPhm9tBrCS4,387
+chatlas_scrape-0.0.1.dist-info/METADATA,sha256=UrqvV2VN65pbvvbIuAUbO336gT_JJvUA_ew0lD4CEoQ,839
+chatlas_scrape-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+chatlas_scrape-0.0.1.dist-info/top_level.txt,sha256=2pgV1b_S_L-y5YFl3CBG6QhSS_53KVuxvWZb8E4ARjM,21
+chatlas_scrape-0.0.1.dist-info/RECORD,,

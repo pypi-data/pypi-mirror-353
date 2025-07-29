@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: chATLAS_Scrape
+Version: 0.0.1
+Summary: A python package for scraping input data for chATLAS.
+Author: chATLAS Team
+License: Apache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.32.3
+Requires-Dist: pandas>=2.0.0
+Dynamic: license-file
+
+# chATLAS Scrape
+
+This package provides utilities for scraping and processing data for chATLAS.
+
+The following sources are currently supported:
+- **GitLab**: Scrapes markdown files from CERN GitLab repositories.
+
+## Installation
+
+You can install the package using `uv`:
+
+```sh
+uv sync
+```
+
+
+## Tests
+
+To run the tests, use:
+
+```sh
+uv run pytest
+```
