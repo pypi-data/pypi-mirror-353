@@ -1,0 +1,90 @@
+[project]
+name = "hpx"
+description = "Multiresolution HEALPix sampling and adaptive grids"
+readme = "README.md"
+authors = [ { name = "Leo Singer", email = "leo.p.singer@nasa.gov" } ]
+license = "Apache-2.0"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=1.23",
+]
+requires-python = ">=3.11"
+dynamic = [ "version" ]
+
+[project.optional-dependencies]
+doc = [
+    "sphinx-astropy[confv2]",
+]
+test = [
+    "astropy",
+    "pytest",
+    "pytest-benchmark",
+    "scipy",
+]
+
+[project.urls]
+GitHub = "https://github.com/nasa-gcn/hpx"
+
+[build-system]
+build-backend = 'mesonpy'
+requires = [
+    "meson-python",
+    "numpy>=2.0.0",
+    "setuptools_scm>=6.2",
+]
+
+[tool.meson-python]
+limited-api = true
+
+[tool.cibuildwheel]
+build-verbosity = 1
+skip = [
+    # Skip these platforms because conda-forge does not support them, and we
+    # are using conda to install our external shared library dependencies.
+    "*i686*", "*musl*",
+    # Skip these platforms because the configuration is failing with the error
+    # `Need python for x86_64, but found x86`.
+    # See https://github.com/nasa-gcn/hpx/pull/14
+    "*win32",
+    # Skip PyPy because it will be disabled by default in cibuildwheel 3.x.
+    # FIXME: Remove when we update to cibuildwheel 3.x.
+    "*pp*",
+]
+test-extras = ["test"]
+test-command = ["pytest {project}/test --benchmark-disable"]
+before-all = [
+    "curl -L https://micro.mamba.pm/install.sh | bash",
+    "bash -c '~/.local/bin/micromamba install -y --prefix ~/micromamba cgal-cpp cmake'",
+]
+
+[tool.cibuildwheel.environment]
+CMAKE = "$HOME/micromamba/bin/cmake"
+
+[tool.cibuildwheel.windows]
+before-build = "pip install delvewheel"
+repair-wheel-command = "delvewheel repair --add-path C:\\\\Users\\\\runneradmin\\\\micromamba\\\\Library\\\\bin -w {dest_dir} {wheel}"
+
+[tool.cibuildwheel.windows.environment]
+CMAKE = "C:\\\\Users\\\\runneradmin\\\\micromamba\\\\Library\\\\bin\\\\cmake"
+
+[[tool.cibuildwheel.overrides]]
+# macOS arm64 wheels are built on GitHub on macOS 13; set deployment target accordingly
+select = "*macosx_x86_64"
+inherit.environment = "append"
+environment.MACOSX_DEPLOYMENT_TARGET = "13.0"
+
+[[tool.cibuildwheel.overrides]]
+# macOS arm64 wheels are built on GitHub on macOS 14; set deployment target accordingly
+select = "*macosx_arm64"
+inherit.environment = "append"
+environment.MACOSX_DEPLOYMENT_TARGET = "14.0"
