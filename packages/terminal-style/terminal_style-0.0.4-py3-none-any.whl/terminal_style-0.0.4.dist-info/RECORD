@@ -1,0 +1,9 @@
+terminal_style/__init__.py,sha256=PRBjA2lovp1K5tu09s58wBQLQpa5U5GGQR7Vx-hOyDI,602
+terminal_style/config_styles.yml,sha256=yRCu2_K0iut-ioBrKFsqaZlN9AJxq_iuwhzP4wr_k4I,3709
+terminal_style/spinner.py,sha256=0Bs2qD0IUdJHufsMn9z9nVEDyPZdhKBtg7V1xROe73o,4414
+terminal_style/terminal_style.py,sha256=yX65sKS-MA9PDIddvGuLqywCeOsSxZtGCn51DqFL5Lw,3698
+terminal_style/terminal_style_config.py,sha256=SIVAktLYBrAN0lVwi9DckR5MuOHs3XCBvnJMZenjR24,2094
+terminal_style-0.0.4.dist-info/METADATA,sha256=Dq3vghhn_vD0FJTA2b0dkIP8QPAZS9W3_gAyGqBlFHo,8325
+terminal_style-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+terminal_style-0.0.4.dist-info/licenses/LICENSE,sha256=D4imk4k8MvmDClRVJ4zlzfp9_uGBkNgeJXz7TzPNBAU,1069
+terminal_style-0.0.4.dist-info/RECORD,,
