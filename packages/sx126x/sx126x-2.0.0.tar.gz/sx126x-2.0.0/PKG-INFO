@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: sx126x
+Version: 2.0.0
+Project-URL: Homepage, https://github.com/nbdy/pysx126x
+Project-URL: Documentation, https://github.com/nbdy/pysx126x/wiki
+Project-URL: Repository, https://github.com/nbdy/pysx126x.git
+Project-URL: Issues, https://github.com/nbdy/pysx126x/issues
+Author: nbdy
+Maintainer: nbdy
+License: MIT License
+License-File: LICENSE
+Keywords: lora,sx126x
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Requires-Dist: pyserial==3.5
+Requires-Dist: rpi-gpio==0.7.1
+Description-Content-Type: text/markdown
+
+# sx126x
+
+## install
+
+```shell
+pip3 install sx126x
+```
+
+## features
+
+- [ ] configuration
+  - [X] address
+    - [X] hi
+    - [X] lo
+    - [X] hi:lo
+  - [X] net id
+  - [X] baud rate
+  - [X] parity
+  - [X] air speed
+  - [X] ambient noise
+  - [X] transmit power
+  - [X] channel
+  - [X] rssi
+  - [X] transfer mode
+  - [X] lbt
+  - [X] wor control
+  - [X] wor period
+  - [?] crypt key (data does not persist?)
+    - [?] hi
+    - [?] lo
+    - [?] hilo
+  - [ ] module info
+- [X] mode switching
+- [X] rx (& rx loop)
+- [X] tx
+- [X] tests
+- [ ] documentation
+- [ ] examples
+  - [X] defaults
+  - [X] rx
+  - [X] tx
+  - [ ] configuration (look at tests for now)
