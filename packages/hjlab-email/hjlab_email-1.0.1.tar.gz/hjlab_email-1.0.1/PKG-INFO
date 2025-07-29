@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: hjlab-email
+Version: 1.0.1
+Summary: Print hello
+Home-page: https://github.com/hojungyun/hjlab-email
+License: MIT
+Keywords: hjlab,email
+Author: Hojung Yun
+Author-email: hojung.yun@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: aiosmtplib (>=4.0.1,<5.0.0)
+Requires-Dist: environs (>=14.2.0,<15.0.0)
+Project-URL: Repository, https://github.com/hojungyun/hjlab-email
+Description-Content-Type: text/markdown
+
+# Test
+```shell
+poetry add hjlab-email
+```
+
