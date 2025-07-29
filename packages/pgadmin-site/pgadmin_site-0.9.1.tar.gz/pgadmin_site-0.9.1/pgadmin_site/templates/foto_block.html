@@ -1,0 +1,113 @@
+{% if foto_enabled %}
+<div id="foto-container"></div>
+<script>
+    async function loadFoto() {
+        const movable = {{ 'true' if foto_movable else 'false' }};
+        const fotoUrl = "{{ foto_url }}";
+        const container = document.getElementById('foto-container');
+        let position = {x: 0, y: 0, deleted: false};
+        
+        // Получаем имя карточки из URL, если оно там есть
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardName = urlParams.get('card');
+        
+        // Если фото должно быть привязано к карточке и имя карточки есть в URL
+        if (cardName) {
+            try {
+                // Используем URL с именем карточки
+                const posResp = await fetch(`/foto/position/${cardName}`);
+                if (posResp.ok) position = await posResp.json();
+            } catch (e) { console.error('Error loading foto position:', e); }
+        }
+        
+        if (position.deleted) return; // Не показываем фото, если удалено
+        
+        const img = document.createElement('img');
+        img.src = fotoUrl;
+        img.style.position = 'absolute';
+        img.style.left = position.x + 'px';
+        img.style.top = position.y + 'px';
+        img.style.zIndex = 1000;
+        img.id = 'foto-img';
+        container.appendChild(img);
+        
+        if (movable === true) {
+            let isDragging = false, currentX, currentY, initialX, initialY, xOffset = position.x, yOffset = position.y;
+            img.style.cursor = 'move';
+            img.addEventListener('mousedown', dragStart);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', dragEnd);
+            
+            function dragStart(e) {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+                if (e.target === img) isDragging = true;
+            }
+            
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - yOffset;
+                    xOffset = currentX; yOffset = currentY;
+                    img.style.left = currentX + 'px';
+                    img.style.top = currentY + 'px';
+                }
+            }
+            
+            function dragEnd(e) {
+                if (isDragging) {
+                    initialX = currentX; initialY = currentY; isDragging = false;
+                    // Сохраняем позицию с именем карточки, если оно есть
+                    if (cardName) {
+                         fetch(`/foto/position/${cardName}`, {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({x: currentX, y: currentY})
+                        }).catch(e => console.error('Error saving foto position:', e));
+                    }
+                }
+            }
+            
+            // Кнопка удалить
+            const btn = document.createElement('button');
+            btn.textContent = 'Удалить фото';
+            btn.className = 'btn btn-danger btn-sm';
+            btn.style.position = 'absolute';
+            btn.style.left = (position.x + 10) + 'px'; // Небольшой отступ от фото
+            btn.style.top = (position.y + img.offsetHeight + 10) + 'px'; // Под фото
+            btn.style.zIndex = 1000;
+            
+            btn.onclick = function() {
+                img.remove(); 
+                btn.remove();
+                 // Удаляем фото с именем карточки, если оно есть
+                if (cardName) {
+                    fetch(`/foto/position/${cardName}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({deleted: true})}).catch(e => console.error('Error deleting foto:', e));
+                }
+            };
+            // Добавляем кнопку после загрузки изображения, чтобы получить img.offsetHeight
+            img.onload = () => {
+                 // Позиционируем кнопку после загрузки изображения
+                 btn.style.left = (position.x + 10) + 'px'; // Небольшой отступ от фото
+                 btn.style.top = (position.y + img.offsetHeight + 10) + 'px'; // Под фото
+                 container.appendChild(btn);
+            };
+            // Если изображение уже загружено (из кэша), добавляем кнопку сразу
+            if (img.complete) {
+                // Позиционируем кнопку после загрузки изображения
+                 btn.style.left = (position.x + 10) + 'px'; // Небольшой отступ от фото
+                 btn.style.top = (position.y + img.offsetHeight + 10) + 'px'; // Под фото
+                 container.appendChild(btn);
+            }
+
+        } else {
+            img.style.cursor = 'default';
+        }
+    }
+    
+    // Загружаем фото всегда, когда foto_enabled равно true
+    window.addEventListener('DOMContentLoaded', loadFoto);
+    
+</script>
+{% endif %} 
