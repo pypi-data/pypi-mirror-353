@@ -1,0 +1,7 @@
+nvidia/nvjpeg/include/nvjpeg.h,sha256=bCp-7qXZCEPhjabx5ACNnRyIDR-wsGBSaRUw9Hv4EaY,35606
+nvidia/nvjpeg/lib/libnvjpeg.so.12,sha256=3R8u6y-iJfHttAk_bEFADBlT-yHSjWwezimpc5ZBr6s,9040496
+nvidia_nvjpeg_cu12-12.4.0.76.dist-info/licenses/License.txt,sha256=rW9YU_ugyg0VnQ9Y1JrkmDDC-Mk_epJki5zpCttMbM0,59262
+nvidia_nvjpeg_cu12-12.4.0.76.dist-info/METADATA,sha256=koj64nVlFyAVcaq_iEKwWQNUEtQsByrHWTOBo_xKLE8,1708
+nvidia_nvjpeg_cu12-12.4.0.76.dist-info/WHEEL,sha256=Epvbf-qHw1VzWwLnUD7xwIc9KIe-SBkvwBbB2Pxecas,146
+nvidia_nvjpeg_cu12-12.4.0.76.dist-info/top_level.txt,sha256=fTkAtiFuL16nUrB9ytDDtpytz2t0B4NvYTnRzwAhO14,7
+nvidia_nvjpeg_cu12-12.4.0.76.dist-info/RECORD,,
