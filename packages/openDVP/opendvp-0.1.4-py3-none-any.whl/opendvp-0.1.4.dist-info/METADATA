@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: openDVP
+Version: 0.1.4
+Summary: Add a short description here
+Author-email: Jose Nimo <nimojose@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: anndata
+Requires-Dist: geopandas
+Requires-Dist: ipykernel
+Requires-Dist: jupyter<2,>=1.1.1
+Requires-Dist: matplotlib<3.9.0
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: plotly<6,>=5.24.1
+Requires-Dist: rasterio
+Requires-Dist: rich
+Requires-Dist: scanpy
+Requires-Dist: seaborn
+Requires-Dist: tabulate
+Provides-Extra: dev
+Requires-Dist: furo<2025,>=2024.8.6; extra == 'dev'
+Requires-Dist: myst-parser<5,>=4.0.1; extra == 'dev'
+Requires-Dist: nbsphinx<0.10,>=0.9.7; extra == 'dev'
+Requires-Dist: sphinx-autodoc-typehints<4,>=3.2.0; extra == 'dev'
+Requires-Dist: sphinx<9,>=8.2.3; extra == 'dev'
+Requires-Dist: twine<7,>=6.1.0; extra == 'dev'
+Provides-Extra: spatialdata
+Requires-Dist: dask; extra == 'spatialdata'
+Requires-Dist: dask-image; extra == 'spatialdata'
+Requires-Dist: napari-spatialdata; extra == 'spatialdata'
+Requires-Dist: pyqt5; extra == 'spatialdata'
+Requires-Dist: spatial-image; extra == 'spatialdata'
+Requires-Dist: spatialdata; extra == 'spatialdata'
