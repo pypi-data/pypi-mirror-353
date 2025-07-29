@@ -1,0 +1,10 @@
+acme>=0.31.0
+certbot>=0.31.0
+requests>=2.20.0
+setuptools
+zope.interface
+
+[dev]
+pytest>=3.0.0
+pytest-cov
+responses>=0.9.0
