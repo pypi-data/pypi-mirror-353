@@ -1,0 +1,11 @@
+mvf1/__init__.py,sha256=oiPEcdYZxJm2REpIKwO0bKhK0te4lG_1BZYlBPzVLlM,255
+mvf1/cmdline.py,sha256=3kbHKY38YZJHjp_z7KgpUsycIBgMcuuCZ7FdRG5NIZU,16360
+mvf1/mcp.py,sha256=AW5M08FM_CyZi8Jf-t942R0OqE7ZpQFO6HNNM07y1v8,13281
+mvf1/mvf1.py,sha256=3YqyLWQkFhNrVgBLmAfpoSORddNfknbOSD9GP6h-HVk,23283
+mvf1/mvf1_schema.py,sha256=PndgyFEsnn8gfXONQkUD0f9qQ8FtE2ZezoVK3w2UdbM,33573
+mvf1-2.0.0.dist-info/licenses/LICENSE,sha256=ey5wnPwNBRPsbHqXMaspGJJtRgDzhQ-Wo30WRAJAeyI,1056
+mvf1-2.0.0.dist-info/METADATA,sha256=NjpRnzyjzEbGU28yFefQrMd8mphJhsA_LH0wKe0-zU0,5235
+mvf1-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mvf1-2.0.0.dist-info/entry_points.txt,sha256=BAAUjq0erFAxuOMwWM5VVSQjIlH-6eSrEww7IOAsBc8,46
+mvf1-2.0.0.dist-info/top_level.txt,sha256=8wHEei3yRdX9dPxwWNFFyTo1JSgzMsqBGkFd3cIRiB4,5
+mvf1-2.0.0.dist-info/RECORD,,
