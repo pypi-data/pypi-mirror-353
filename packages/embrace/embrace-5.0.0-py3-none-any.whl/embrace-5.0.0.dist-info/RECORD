@@ -1,0 +1,16 @@
+embrace/__init__.py,sha256=LgrMMjO0BMTlnPijujLWjhYaiX1bjecrmXaI7fyU5MU,937
+embrace/codegen.py,sha256=j_srPUJpNdaE5fmyfw03r35vQrI_EZrc_2ioec7t03I,9218
+embrace/exceptions.py,sha256=mzckviv-v4qVKJS_An5t-Y_ZoWwYR8CePNh3OgsIFLw,1938
+embrace/mapobject.py,sha256=lmHjmK8dZLFav55uqDcLWlahRleZb9NyDTbtB269Gew,19346
+embrace/module.py,sha256=b3GtXdc9pkAZwcIwwvb7QuKPe2CBooDjXKh2lXImhBA,10335
+embrace/parsing.py,sha256=d5sDCl1b5IHX2lMgPAm4BnqG9iuzNNhuiUoDDHiNYUw,15450
+embrace/pool.py,sha256=2CuY234CZUP123IL9hfVKQKL5Fn6gvUYAN8kU7ZCtow,7186
+embrace/poolvalidators.py,sha256=zpZ_t1AmGFyFw5ToJZ4m7Us9ul_sVEiHw8Kgv8-WYBk,1896
+embrace/query.py,sha256=1uSf5mlboqrjY2rv6IJOBc7UXyghD_0toznmzmKnUdE,19824
+embrace/types.py,sha256=A3GfQU39QUD70YVAT8EwoK_8uxAjl-r2utL2tWg9Fv4,2446
+embrace/util.py,sha256=2ApRATiw7gRrEooALV8-xPTR_uotGySaYyobeuLSPJ4,3682
+embrace-5.0.0.dist-info/licenses/LICENSE.txt,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+embrace-5.0.0.dist-info/METADATA,sha256=huGBP0FlhUP3oJ2UEm51the2TbJHCaqU4r_cDrwt_bs,17052
+embrace-5.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+embrace-5.0.0.dist-info/top_level.txt,sha256=qiWOeTftFsBIwQXc9i_FxJDiWIcJFxUHOgws27MFVas,8
+embrace-5.0.0.dist-info/RECORD,,
