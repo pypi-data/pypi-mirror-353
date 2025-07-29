@@ -1,0 +1,6 @@
+README.md
+setup.py
+grainsy.egg-info/PKG-INFO
+grainsy.egg-info/SOURCES.txt
+grainsy.egg-info/dependency_links.txt
+grainsy.egg-info/top_level.txt
