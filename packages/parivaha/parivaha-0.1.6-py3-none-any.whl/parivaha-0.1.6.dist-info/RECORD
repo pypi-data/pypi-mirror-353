@@ -1,0 +1,17 @@
+parivaha/.DS_Store,sha256=AyWXDeekcbQ3-TzcbgsYs9MCSSIeDB7b4wZnQTJxC-I,6148
+parivaha/.config/env.example,sha256=YjnmFSFABgoHoYqSO_qWkj4yAgvpNOpep43mz73WyoY,566
+parivaha/.config/sample_payload.json,sha256=mwhcd5mboI-_Dsw8kJz4g7wSD2Emj96AcsvJlINhwak,1507
+parivaha/.config/sync_config.json,sha256=ImmBZ6wflFu7KgG5r-Q4Wf5qJj5ClC0r0urUcUYOyBM,2295
+parivaha/__init__.py,sha256=onyhs__W77in6iEkveVNeUgTIUB4-0Q3ke2f1nEnStU,280
+parivaha/cli.py,sha256=BOBE2iscSOMRzbkOzq-Zc_LbZcfiA7TFcyCcXIi3ItE,2365
+parivaha/config.py,sha256=xJ6PijhHP_RiSWVsRqicCsvOMDgS4_kFx20TpSgMMS4,1392
+parivaha/obsidian_io.py,sha256=hh6H5GNy4gvbwossIgWsp0mcCuJ6RGvLxd10gs60q8c,3563
+parivaha/seed.py,sha256=3_UhXRzP3BPjB3HnkDc1RpySROwTD7zHmIY7tR3GJHU,6181
+parivaha/sync.py,sha256=4dhjtr43z2ZFZ6Ml9dQopAKSnq7ZgrDL7s8qhluvMHM,5472
+parivaha/utils.py,sha256=jr5P3x0y-HzI_hsDS-6e_rJtDnLbB-bo0EJdBpvriSE,473
+parivaha/vault.py,sha256=t0G3r5fCe9ogHcMdQLmWG5ah2AFWUOPO6gOSJtKMp4A,1473
+parivaha-0.1.6.dist-info/LICENSE,sha256=b08DAlCBtnZmAVmi5kSCDsMHsp4lA8TGtWX5-RC3GFA,1063
+parivaha-0.1.6.dist-info/METADATA,sha256=w7Mq_sVFjcHZ3OfNbf7p3CuTUndpSrgwpJPzYq4afpc,2592
+parivaha-0.1.6.dist-info/WHEEL,sha256=Nq82e9rUAnEjt98J6MlVmMCZb-t9cYE2Ir1kpBmnWfs,88
+parivaha-0.1.6.dist-info/entry_points.txt,sha256=h4pA6C20zVqPbU4nFci1awcQ1IuPtjpKFej2eh_8pI4,46
+parivaha-0.1.6.dist-info/RECORD,,
