@@ -1,0 +1,2 @@
+[console_scripts]
+ScreenTranslator = ScreenTranslator.__main__:main
