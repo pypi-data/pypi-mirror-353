@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: trainflow
+Version: 0.2.0
+Summary: A modular batch training interface with metric control.
+Author: ResearchLab
+Requires-Python: >=3.6
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: tqdm
+Requires-Dist: scikit-learn
+
