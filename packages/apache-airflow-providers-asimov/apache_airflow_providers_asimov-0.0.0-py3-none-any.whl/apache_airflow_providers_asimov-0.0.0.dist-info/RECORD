@@ -1,0 +1,5 @@
+airflow/providers/asimov/_version.py,sha256=PqNGih23TQ8yvpw6AfE0jq7D_RYFgeG1E-CSVJ9Dntw,511
+apache_airflow_providers_asimov-0.0.0.dist-info/METADATA,sha256=sYp9fZJ2vlYqbbDMSKC-h-4X7vqDp25BPwzR1-Z7zvY,1514
+apache_airflow_providers_asimov-0.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+apache_airflow_providers_asimov-0.0.0.dist-info/licenses/UNLICENSE,sha256=tQZYOMusRS38hVum5uAxSBrSxoQG9w0h6tkyE3RlPmw,1212
+apache_airflow_providers_asimov-0.0.0.dist-info/RECORD,,
