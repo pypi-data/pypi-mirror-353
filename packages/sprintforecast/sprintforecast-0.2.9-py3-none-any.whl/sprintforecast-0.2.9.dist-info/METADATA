@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: sprintforecast
+Version: 0.2.9
+Summary: Hierarchical Bayesian sprint forecasting and intake planning
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.26
+Requires-Dist: scipy>=1.12
+Requires-Dist: typer[all]>=0.12
+Requires-Dist: requests>=2.32
+Requires-Dist: sympy>=1.14
+Requires-Dist: graphql-core>=3.2
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+Requires-Dist: mypy>=1.10; extra == "dev"
+Dynamic: license-file
+
+# SprintForecast
+
+A hierarchical Bayesian sprint‑forecast model that converts each ticket’s PERT triad into a scaled‑Beta prior, layers skew‑Student‑t execution noise with queue‑based review and capacity terms, and finally Monte‑Carlo‑simulates the Dev → Review → Done flow to yield the sprint‑completion probability and expected carry‑over.
+
+## TODO
+- [ ] Implement the hierarchical Bayesian model
+- [ ] Add unit tests for the model components
+- [ ] Prioritise dependencies of issues in plan
+- [ ] Implement the Monte Carlo simulation for sprint completion
+- [ ] Visualise the sprint forecast results and carry-over and interpretation of the results
+- [ ] Move class and function definitions to separate files for better organisation
+- [ ] Refactor cli.py using SOLID principles for better maintainability
+
+*NOTE* that this is a work in progress, and the model is not yet implemented. The code is provided for educational purposes only.
