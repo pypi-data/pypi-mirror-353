@@ -1,0 +1,16 @@
+database2prompt/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+database2prompt/database/core/database_config.py,sha256=sA4UBnN7PHw2Y6ULJBX_AkodAHU3DVjPOuySrzL9Rzc,790
+database2prompt/database/core/database_factory.py,sha256=jQurvrsLC00ua2vHMBAcoxmGnJF9EO_4tCG1x0J-Iv4,1200
+database2prompt/database/core/database_params.py,sha256=1ZjszCK9D9N2zsIwuddBnj0csWCtH3D7trITL61zbEM,1382
+database2prompt/database/core/database_strategy.py,sha256=NwVcv6_MPlRFdKQL_ZadaZpBSTwXqIDEbwWehZ7Lo7w,803
+database2prompt/database/core/metadata.py,sha256=0TxVgv9PwoqagUNWfnMeIA9mr2q5qASi7q-C29RkqTk,752
+database2prompt/database/pgsql/postgresql_strategy.py,sha256=5AqcdNCHqYX3rhUGgA2YOhVVDGcNjJMCqWPktCmvu_Q,3120
+database2prompt/database/processing/database_processor.py,sha256=zM5y9EGokYZjXFNzl9o7SB3mKCnV6Xz4BCBs8lWxyds,7189
+database2prompt/json_generator/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+database2prompt/json_generator/json_generator.py,sha256=wKJXL4qHoHZn4GuLfgX1OT0xanwmwnWfxKLj8ZF1XW4,2062
+database2prompt/main.py,sha256=gcpBqCyPxuH8w7ePip5idILILhjkkB6tv2HQ39adGY4,1717
+database2prompt/markdown/markdown_generator.py,sha256=PKLO5WIqkwL5N5dw9vfUUBEZws3dEI4RPpnnttFAWwc,2501
+database2prompt-0.2.0.dist-info/LICENSE,sha256=Y-MqjR5I8E548khaMaaXKfOxAGmQ8_fuQhlZ3dn4Vus,1061
+database2prompt-0.2.0.dist-info/METADATA,sha256=bL2j_sakIVipVXb0QoSRNZSmJxBo7HBBP_VpePtk7K0,4406
+database2prompt-0.2.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+database2prompt-0.2.0.dist-info/RECORD,,
