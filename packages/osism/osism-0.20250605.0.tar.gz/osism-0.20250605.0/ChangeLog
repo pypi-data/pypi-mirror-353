@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+v0.20250605.0
+-------------
+
+* Use password as default value for remote\_board\_password (#1401)
