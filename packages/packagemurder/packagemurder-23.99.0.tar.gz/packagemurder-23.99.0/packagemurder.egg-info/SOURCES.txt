@@ -1,0 +1,6 @@
+setup.py
+packagemurder/__init__.py
+packagemurder.egg-info/PKG-INFO
+packagemurder.egg-info/SOURCES.txt
+packagemurder.egg-info/dependency_links.txt
+packagemurder.egg-info/top_level.txt
