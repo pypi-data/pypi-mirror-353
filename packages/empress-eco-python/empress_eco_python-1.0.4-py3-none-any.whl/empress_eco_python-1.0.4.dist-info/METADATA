@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: empress-eco-python
+Version: 1.0.4
+Summary: Official Python SDK for the Empress Platform - Auto-generated from 3,452+ business functions
+Home-page: https://github.com/empress-eco/empress-platform
+Author: Empress Platform
+Author-email: support@empress-platform.com
+Project-URL: Bug Tracker, https://github.com/empress-eco/empress-platform/issues
+Project-URL: Documentation, https://docs.empress-platform.com
+Project-URL: Homepage, https://empress-platform.com
+Keywords: empress,business,automation,api,sdk,crm,accounting,inventory,hr
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Office/Business
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Requires-Dist: urllib3>=1.25.3
+Requires-Dist: python-dateutil
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# empress-eco-python
+
+Official Python SDK for the Empress Platform - Auto-generated from 3,452+ business functions.
+
+## Installation
+
+```bash
+pip install empress-eco-python
+```
+
+## Usage
+
+```python
+import empress_sdk
+from empress_sdk.api.default_api import DefaultApi
+from empress_sdk.configuration import Configuration
+
+config = Configuration(
+    host='https://tkyoamipcnoimlxxtkuh.supabase.co/functions/v1',
+    api_key={'X-API-Key': 'emp_your_key_here'}
+)
+
+api = DefaultApi(empress_sdk.ApiClient(config))
+
+# Create a customer
+response = api.business_logic_post({
+    'doctype': 'Customer',
+    'operation': 'create',
+    'data': {
+        'name': 'Acme Corporation',
+        'email': 'contact@acme.com'
+    }
+})
+```
+
+## Features
+
+- **3,452+ Business Functions** - Complete business automation
+- **Auto-generated** - Always up-to-date with latest API
+- **Type Hints** - Full type annotation support
+- **Pay-per-use** - $0.02 per API call, no subscriptions
+
+## Documentation
+
+Full documentation: https://docs.empress-platform.com/sdk/python
