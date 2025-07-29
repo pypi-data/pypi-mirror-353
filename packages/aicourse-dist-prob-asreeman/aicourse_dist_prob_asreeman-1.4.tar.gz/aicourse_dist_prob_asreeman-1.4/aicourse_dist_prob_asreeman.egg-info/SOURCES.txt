@@ -1,0 +1,11 @@
+README.md
+setup.py
+aicourse_dist_prob_asreeman/Binomialdistribution.py
+aicourse_dist_prob_asreeman/Gaussiandistribution.py
+aicourse_dist_prob_asreeman/Generaldistribution.py
+aicourse_dist_prob_asreeman/__init__.py
+aicourse_dist_prob_asreeman.egg-info/PKG-INFO
+aicourse_dist_prob_asreeman.egg-info/SOURCES.txt
+aicourse_dist_prob_asreeman.egg-info/dependency_links.txt
+aicourse_dist_prob_asreeman.egg-info/not-zip-safe
+aicourse_dist_prob_asreeman.egg-info/top_level.txt
