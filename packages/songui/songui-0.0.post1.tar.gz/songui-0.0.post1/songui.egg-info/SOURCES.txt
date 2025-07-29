@@ -1,0 +1,9 @@
+pyproject.toml
+readme.md
+songui.py
+.github/workflows/python-publish.yml
+songui.egg-info/PKG-INFO
+songui.egg-info/SOURCES.txt
+songui.egg-info/dependency_links.txt
+songui.egg-info/requires.txt
+songui.egg-info/top_level.txt
