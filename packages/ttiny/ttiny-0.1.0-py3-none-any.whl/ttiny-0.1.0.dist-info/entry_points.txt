@@ -1,0 +1,2 @@
+[console_scripts]
+ttiny = ttiny.ttiny:run_ttiny

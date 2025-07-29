@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: ttiny
+Version: 0.1.0
+Summary: ttiny is a lightweight TUI mode-based text editor for files of all kinds
+Home-page: https://github.com/yourname/ttiny
+Author: displaynameishere
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# ttiny
+ttiny is a lightweight TUI mode-based text editor for files of all kinds
+## Features
+### `.7cfg` support
+ttiny implements a lighter, faster modified version of [recon7](https://github.com/displaynameishere/recon7)'s config parser and format, `7cfg`. This means you can use the same configuration file for both recon7 and ttiny- useful if you have many theming settings configured and would like to transfer them over.
+### Cursor support
+ttiny supports moving around with your mouse as well as scrolling through large files
