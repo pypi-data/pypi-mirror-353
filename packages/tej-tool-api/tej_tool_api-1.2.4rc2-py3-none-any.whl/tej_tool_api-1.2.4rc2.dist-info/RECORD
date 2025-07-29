@@ -1,0 +1,16 @@
+TejToolAPI/Map_Dask_API.py,sha256=psQwLgK2-LfgvUjQqjiEF3Ig-0jwbMdDMgv83TaBL8I,29259
+TejToolAPI/TejToolAPI.py,sha256=3RM-FMg1v6JPa3WheiTygYKezF_Soj4YgJYjpcUi21w,17478
+TejToolAPI/__init__.py,sha256=0hyw_S_ypfW9DAUV2N8YIHRJvpngL6iF-fxNaSqHZzg,803
+TejToolAPI/_version.py,sha256=x0wD_C_pX99vyrA8WyAbsFAXz5HBM4gfHUyPB3LYK-c,521
+TejToolAPI/exchange_calendar.py,sha256=WwRld4ThysbMetDBu1w8zqCQGu2toZ4ZVMcrb6A3BBw,4412
+TejToolAPI/meta_types.py,sha256=owiyCu6QB9XXvMU0lesJ5Xe6E_rql-l0nJ75VcMugho,1538
+TejToolAPI/parameters.py,sha256=88_erG04n66EtyYMYxdQDZNyfFCH8IKvdb12F7MyQ-Q,1534
+TejToolAPI/utils.py,sha256=h5YRby6jLPdaxjUgjhZqZcOcu-8sy53TR0kZdk-eGpE,795
+TejToolAPI/tables/all_meta.json,sha256=szHm2Swt-bCumU1ZLz--iOB5qU-qGXIb6ULk_4gJ2H0,25075
+TejToolAPI/tables/columns_group.xlsx,sha256=Y3DuwWiy-vVMwZKLesw9H-YaXhhtgX1ThFCYAKyPnIQ,63093
+TejToolAPI/tables/~$columns_group.xlsx,sha256=0KWidsY0yxvFN6nyoj0i48uFVgjIc8rZXPejUuLa5Jw,165
+tej_tool_api-1.2.4rc2.dist-info/licenses/LICENSE,sha256=5GvfFKkGDO_xItlWLDiM_lmX8AvyWg9wuWn073wjdlw,11362
+tej_tool_api-1.2.4rc2.dist-info/METADATA,sha256=W3oWS05lQFJ9dCvL1TQqBL9QEKGGHsM0yKzOhDpZQtI,6039
+tej_tool_api-1.2.4rc2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tej_tool_api-1.2.4rc2.dist-info/top_level.txt,sha256=ug4CISRTJsutWR1uMbL1L8X2F8YRmI5eHqJr71w7SJ4,11
+tej_tool_api-1.2.4rc2.dist-info/RECORD,,
