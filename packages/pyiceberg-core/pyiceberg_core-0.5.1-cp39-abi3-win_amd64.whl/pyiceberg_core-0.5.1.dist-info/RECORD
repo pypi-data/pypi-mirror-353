@@ -1,0 +1,5 @@
+pyiceberg_core-0.5.1.dist-info/METADATA,sha256=6cmGeFq7S70Jj3WPeD9K1CmNTkKfiWHLENKua_8Vm-Q,1674
+pyiceberg_core-0.5.1.dist-info/WHEEL,sha256=2OnzeD-Mt7eNjmrtchSJO1LUSaCwNHKze1SLnzTwXU8,94
+pyiceberg_core/__init__.py,sha256=T2NPdQGmmIwgTACJ_mop2yIr7H2cOqHj-pEMu3BkVbQ,919
+pyiceberg_core/pyiceberg_core_rust.pyd,sha256=aQWZf3lg7a820Mv0y4kw4e5TKeW67iduJ3E4r4q2ReQ,86307328
+pyiceberg_core-0.5.1.dist-info/RECORD,,
