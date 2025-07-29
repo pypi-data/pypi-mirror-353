@@ -1,0 +1,52 @@
+query substitutionsForDate($date: Date!) {
+  items: substitutionsForDate(date: $date) {
+    affectedTeachers {
+      id
+      avatarContentUrl
+      shortName
+      fullName
+    }
+    affectedGroups {
+      id
+      shortName
+    }
+    substitutions {
+      oldGroups {
+        id
+        shortName
+      }
+      newGroups {
+        id
+        shortName
+      }
+      startSlot
+      endSlot
+      startTime
+      endTime
+      oldTeachers {
+        id
+        shortName
+        fullName
+      }
+      newTeachers {
+        id
+        shortName
+        fullName
+      }
+      oldSubject
+      newSubject
+      oldRooms {
+        id
+        shortName
+        name
+      }
+      newRooms {
+        id
+        shortName
+        name
+      }
+      cancelled
+      notes
+    }
+  }
+}

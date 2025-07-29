@@ -1,0 +1,13 @@
+{
+  "chronos": {
+    "substitutions": {
+      "groups": "Greges",
+      "time": "tempus"
+    },
+    "timetable": {
+      "types": {
+        "groups": "Greges"
+      }
+    }
+  }
+}
