@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: skill-anvil-core-services
+Version: 0.1.2
+Summary: Reusable service layer for Django apps
+Author: Fodor Robert Stefan
+Author-email: robifodor1234576@yahoo.com
+License: MIT
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+Requires-Dist: Django (>=3.2)
+
