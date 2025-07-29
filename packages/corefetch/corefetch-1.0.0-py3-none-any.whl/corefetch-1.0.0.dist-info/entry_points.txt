@@ -1,0 +1,2 @@
+[console_scripts]
+corefetch = corefetch:main
