@@ -1,0 +1,18 @@
+include README.md
+include LICENSE
+include install.json
+include package.json
+include tsconfig.json
+include yarn.lock
+
+recursive-include jupyter_session_tracer/labextension *
+recursive-include src *.ts
+recursive-include style *.css
+recursive-include lib *.js *.js.map *.d.ts
+
+global-exclude *.pyc
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude node_modules/*
+global-exclude .pytest_cache/*
+global-exclude __pycache__/* 
