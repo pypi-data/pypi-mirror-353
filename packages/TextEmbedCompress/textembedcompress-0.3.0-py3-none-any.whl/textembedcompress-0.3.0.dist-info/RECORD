@@ -1,0 +1,13 @@
+textembedcompress/__init__.py,sha256=Z-vvCOt0KRVdDoFMgMwJ9FmnqglnJtoFHJeAdW9AkEw,95
+textembedcompress/common_utils.py,sha256=j33rIZrceBVffb9q9Eguw2tZHIqXNEaT-uhsbFBwyls,383
+textembedcompress/compress.py,sha256=waZeC82oOjrGoLMoq9fOmaQziyNjNZtwq1nNnn7W8fQ,5793
+textembedcompress/datasets.py,sha256=4ZNto1VVMLsLon_eVHXJ1JyqoXoaCvNVCYqdFcFG9G4,4334
+textembedcompress/evaluate.py,sha256=zAMEqZCrA3BiyWHVGBJCiP0ZsrjOecktu4ewoay9IZM,27930
+textembedcompress/evaluation_utils.py,sha256=Lq76xU2Ofg0nsl52pDQYRHjR9cI8uGqENHJn7NnZ3hE,5217
+textembedcompress/models.py,sha256=ZXktsM77NQ2AKj2_wwZQu4cruUNXH4luKzduXROLcqg,4526
+textembedcompress/pipeline.py,sha256=UHgW5xmrST_0N-KaetJ6dye7O-NuXxVwiPJe6G8ugUQ,8824
+textembedcompress-0.3.0.dist-info/licenses/LICENSE,sha256=Z6ElXR5z9-iKBj5sxm6DI3hVyIgg9jOZzHtDxho7Vlg,1074
+textembedcompress-0.3.0.dist-info/METADATA,sha256=8RZcx2w4rsRedgnBhU1Mc_MMjBbcLZrjhN3IffqtfXc,11975
+textembedcompress-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+textembedcompress-0.3.0.dist-info/top_level.txt,sha256=uMSKzW-cE2AueJV8P6z7ADcocj3IWWb9eYpAK80ud9I,18
+textembedcompress-0.3.0.dist-info/RECORD,,
