@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+shutill/__init__.py
+shutill/core.py
+shutill.egg-info/PKG-INFO
+shutill.egg-info/SOURCES.txt
+shutill.egg-info/dependency_links.txt
+shutill.egg-info/top_level.txt
