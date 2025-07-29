@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: artifex
+Version: 0.1.0
+Summary: Train small AI models with a 1-liner, without data.
+Author: Saurabh Pradhan
+Author-email: Riccardo Lucato <riccardo@tanaos.com>
+License: MIT
+Project-URL: homepage, https://github.com/tanaos/artifex
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic>=2.11.2
+Requires-Dist: pydantic_settings>=2.9.1
+Requires-Dist: synthex>=0.2.3
+Requires-Dist: pytest>=8.3.5
+Requires-Dist: pytest-mock>=3.14.1
+Requires-Dist: datasets>=3.6.0
+Requires-Dist: transformers>=4.52.3
+Requires-Dist: transformers[torch]>=4.52.3
+Dynamic: license-file
+
+# Artifex
+
+[![Static Badge](https://img.shields.io/pypi/v/artifex?logo=pypi&logoColor=%23fff&color=%23006dad&label=Pypi)](https://pypi.org/project/artifex/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tanaos/artifex/python-publish.yml?logo=github&logoColor=%23fff&label=Tests)](https://github.com/tanaos/artifex/actions/workflows/python-publish.yml)
+[![Documentation](https://img.shields.io/badge/%20Docs-Read%20the%20docs-orange?logo=docusaurus&logoColor=white)](https://docs.tanaos.com)
+
+Artifex is a Python library for training small AI models in 1 line of code and **WITHOUT DATA**. How is it even possible, you may ask? Because synthetic training data is automatically generated under the hood through our [synthex library](https://github.com/tanaos/synthex-python).
+
+## Documentation
+
+See the [full Artifex documentation](https://docs.tanaos.com/).
+
+## Installation
+
+You only need acces to this source code if you want to modify the package. We do welcome contributions. To find out how you can contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+If you just want to **use** the package, simply run
+
+```bash
+pip install --upgrade artifex
+```
+
+## Use cases
+
+Artifex can be used to easily generate *pre-trained* AI models for specific use-cases, such as:
+
+- Chatbot Guardrail models
+- RAG re-rankers

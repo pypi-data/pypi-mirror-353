@@ -1,0 +1,8 @@
+pydantic>=2.11.2
+pydantic_settings>=2.9.1
+synthex>=0.2.3
+pytest>=8.3.5
+pytest-mock>=3.14.1
+datasets>=3.6.0
+transformers>=4.52.3
+transformers[torch]>=4.52.3
