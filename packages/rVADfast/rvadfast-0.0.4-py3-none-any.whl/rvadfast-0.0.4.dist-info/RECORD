@@ -1,0 +1,16 @@
+rVADfast/__init__.py,sha256=LL8qqJ3Hq98QNo1pmPBykpUEryKGEnzkl-dEgcJaAPo,57
+rVADfast/rVADfast.py,sha256=8RTzuehsuZSKwbfgGBjf4hS-x73cy5VR7QSmjUJqaBs,3339
+rVADfast/legacy_files/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rVADfast/legacy_files/rVAD_fast.py,sha256=f9uFVtynbg28JAlpF9sdvGxUktVacL5W07eigg9GNBg,1893
+rVADfast/legacy_files/rVAD_fast_stream.py,sha256=DSbaZ7fpdg5Nty9DahHgkaZIzhhR1fizifcqs6DGpM4,1937
+rVADfast/legacy_files/speechproc.py,sha256=eWfWScJzI0QLfGDWKWO7St3zha5LDiDXM6nvaDiF_vk,15818
+rVADfast/process/__init__.py,sha256=VFq8UACX7ZIUgG4EmaYYlteVj26oaVAf2ylVJ534NNs,200
+rVADfast/process/process.py,sha256=vSm7M-nCnLUqBI5sOxKcUlrzJNIBqMgTUIkx0DuXqFw,8936
+rVADfast/speechproc/__init__.py,sha256=tpDzmotqmWs11FD086QKHLk-rL17TLV7atab2MBWK2E,586
+rVADfast/speechproc/speechproc.py,sha256=bodVgZ87Pq5QZKIKHXkH7SgyK8N6O-dinNedZih_G4k,14988
+rvadfast-0.0.4.dist-info/licenses/LICENSE,sha256=VKesl0WZa2TtHFk0GirHcqIRkhkIF1eSpCQYrCGXF_w,1117
+rvadfast-0.0.4.dist-info/METADATA,sha256=1I_zi1njK106RDXXgNyp65w-2abaJ17mA32Zw3-D1nI,5093
+rvadfast-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+rvadfast-0.0.4.dist-info/entry_points.txt,sha256=95Fuf_Z7ch0sthCO1eWBrwAaWJL2DBKsSeB3rmF59k4,59
+rvadfast-0.0.4.dist-info/top_level.txt,sha256=vhmJi8HY13o6HNpTDsU3Z0VOzik2xyzFsry0QP_U-4o,9
+rvadfast-0.0.4.dist-info/RECORD,,
