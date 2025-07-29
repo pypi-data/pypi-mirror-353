@@ -1,0 +1,54 @@
+    100 import aochallenge
+     29 import copy
+     26 import re
+     14 import sys
+     14 from collections.abc import Generator
+     10 from dataclasses import dataclass
+      9 import itertools
+      8 import os
+      8 import fercsi.aoc
+      7 from typing import cast
+      7 from functools import cache
+      7 from collections.abc import Generator, Iterator
+      6 from typing import NamedTuple
+      6 from collections.abc import Iterator
+      5 import math
+      4 import stretchy
+      4 from typing import Self
+      4 from typing import Callable
+      4 from itertools import product
+      3 import networkx as nx
+      3 from functools import lru_cache
+      2 #import os
+      2 import operator
+      2 import functools
+      2 from typing import Generator, cast
+      2 from itertools import islice
+      2 from itertools import groupby
+      2 from dataclasses import dataclass, field
+      2 #>from dataclasses import dataclass
+      2 from collections import deque
+      2 from collections.abc import Generator, Sequence
+      1 import sympy
+      1 import numpy as np
+      1 import ast
+      1 from typing import Generator
+      1 from typing import Callable, NamedTuple
+      1 from typing import Callable, cast
+      1 from typing import *
+      1 from operator import sub
+      1 from math import log2
+      1 from itertools import zip_longest
+      1 from itertools import count, product
+      1 from itertools import combinations, product
+      1 from itertools import combinations
+      1 from itertools import accumulate
+      1 from __future__ import annotations
+      1 from functools import cmp_to_key
+      1 from enum import Enum
+      1 from dijkstra import Node as DijkstraNode
+      1 from dijkstra import Graph as DijkstraGraph
+      1 from dijkstra import dijkstra_paths
+      1 from dataclasses import dataclass, replace
+      1 #>from collections import namedtuple
+      1 from collections import Counter

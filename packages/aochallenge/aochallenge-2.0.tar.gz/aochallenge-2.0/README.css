@@ -1,0 +1,19 @@
+body {
+  font-size: 12pt;
+}
+pre {
+  background: #ccc;
+  padding: 5pt;
+  font-size: 12pt;
+}
+code {
+  background: #ccc;
+  padding: 1pt;
+  font-size: 12pt;
+}
+b, strong {
+  color: red;
+}
+i, em {
+  color: green;
+}

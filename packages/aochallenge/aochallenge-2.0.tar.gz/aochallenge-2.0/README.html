@@ -1,0 +1,344 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="README.css"/>
+<h1 id="aochallenge-module">AOChallenge Module</h1>
+<p>The module is designed to speed up the solution of certain coding
+challenges. The module is inspired by <a
+href="https://adventofcode.com/">Advent of Code</a>, I have not used it
+for anything else, but it is probably useful for other things.</p>
+<p>The use of the module is different from the traditional ones, my goal
+was to be able to create a new solution easily. The
+<code>Solution</code> base class provided by the module contains some
+frequently used or useful functions for debugging and only the solutions
+need to be added.</p>
+<p>Each time I start from the code below.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python3 -u</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aochallenge <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solution(Solver):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> load(<span class="va">True</span>,<span class="st">&#39;,&#39;</span>,<span class="bu">int</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#    def part1(self):</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#    def part2(self):</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#    def solve_more(self):</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> Solution()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>solution.main()</span></code></pre></div>
+<p>To be more precise, I also use type annotation, which I have taken
+from here.</p>
+<p>The <code>part1</code> and <code>part2</code> methods are called and
+the returned value is displayed by the original class. If the two parts
+of the challenge build on each other, you can also use
+<code>solve_more</code> (generator), in which the solutions are returned
+with the <code>yield</code> keyword, so that the computation can
+continue without saving previous results. Check out also the <a
+href="#example">example</a> at the end of this document.</p>
+<p>In the constructor, it makes sense to load and, if necessary,
+preprocess the input data, which is well done by the load function of
+the Solution class. Note that this function examines the program’s input
+arguments and decides which input file to load (test or main) based on
+them.</p>
+<h2 id="importing-data">Importing data</h2>
+<p>For each challenge there are one or more test inputs and there is
+your challenge one. The class expects the input files to be named
+appropriately to be able to load automatically, but also arbitrary file
+name can be specified. Default filebname is ‘input’ or ‘input.txt’ and
+test file variant can be appended to ‘inpit’, i.e. ‘input-t’ or
+‘inpuz-t.txt’.</p>
+<pre><code>aoc/2022/01/
+|---- aoc.py        source code
+|---- input-t.txt   test input
+\---- input.txt     challenge input</code></pre>
+<p>In this case, you can run your code with the test data as
+follows:</p>
+<pre><code>$ ./aoc-2201.py -t</code></pre>
+<p>And with the challenge data, simply:</p>
+<pre><code>$ ./aoc-2201.py</code></pre>
+<p>In some special cases the input is a single line of data or some
+other simple constructs. In this case it is unnecessary to create files
+for each, you can simply pass a look-up-table to the <code>load</code>
+function. E.g.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>INPUT <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">None</span>: <span class="st">&#39;My challenge input data&#39;</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;t&#39;</span>: <span class="st">&#39;My test 1 input data&#39;</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;t2&#39;</span>: <span class="st">&#39;My test 2 input data&#39;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> <span class="va">self</span>.load(lut<span class="op">=</span>INPUT)</span></code></pre></div>
+<p>If you need which variant the solution has been run with, you can
+check it with <code>variant</code>. It returns <code>None</code> if no
+variant has bee given and the variant id (E.g. <code>"-t"</code>) if it
+has been:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> variant() <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="co"># test variant</span></span></code></pre></div>
+<h3 id="using-load-method">Using <code>load</code> method</h3>
+<p>The <code>load</code> method is used to prepare the data for further
+processing. The input can come from a file or from a predefined
+look-up-table. If the latter is not specified, file handling is
+automatic (see above).</p>
+<p><code>load</code> function does not only import data, but does some
+preprocessing on them:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load(<span class="va">self</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        splitlines: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        splitrecords: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        recordtype:  <span class="bu">list</span>[<span class="bu">type</span>] <span class="op">|</span> <span class="bu">tuple</span>[<span class="bu">type</span>, ...] <span class="op">|</span> <span class="bu">type</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        lut: <span class="bu">dict</span>[<span class="bu">str</span> <span class="op">|</span> <span class="va">None</span>, Any] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        filename: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        ) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span> <span class="op">|</span> <span class="bu">int</span> <span class="op">|</span> <span class="bu">list</span>]</span></code></pre></div>
+<p>Parameters:</p>
+<ul>
+<li><code>splitlines</code>: boolean value whether the input data lines
+have to be splitted into a list.</li>
+<li><code>splitrecords</code>: string value used to separate the records
+in each line. For example, if there are comma-separated values, this
+field is “,”. If set to <code>None</code>, items within the row are not
+split.</li>
+<li><code>recordtype</code>: type of records. For example, if the values
+are numbers, it can be <code>int</code> or even <code>float</code>. The
+<code>load</code> function does the conversion. If the parameter type is
+<code>list</code> or <code>tuple</code>, the various fields may have
+different types. E.g. <code>(str, list)</code> means, that the first
+record should be a <code>str</code>, but all further ones have to be
+casted to <code>int</code>.</li>
+<li><code>lut</code> (keyword only parameter): if this parameter is
+specified, the input data will be read from it instead of from an input
+file.</li>
+<li><code>filename</code> (keyword only parameter): input file’s name.
+Note, that a <code>@@</code> in in the filename will be replaced by the
+variant. If file is not found, <code>load</code> tries to add a ‘.txt’
+extension and open that one.</li>
+</ul>
+<p>Note, that if <code>splitlines</code> is <code>False</code> but
+<code>splitrecords</code> is defined, only the first row will be
+processed. This means that if you have a one-row data set, the return
+element is not a two-dimensional list with a single nested list, but a
+simple list of values from the first row.</p>
+<h2 id="using-grids">Using grids</h2>
+<p>The purpose of the grid submodule is to handle 2D/3D arrays and
+coordinates. It provides types and functions that are frequently useful
+in Advent of Code challenges. Here are a few examples of how it can be
+used:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> blur(src: grid.Grid[<span class="bu">int</span>]) <span class="op">-&gt;</span> grid.Grid[<span class="bu">int</span>]:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    dst <span class="op">=</span> grid.create_grid(src, <span class="dv">0</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> coord, px <span class="kw">in</span> grid.iter_grid(src):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        neighbors <span class="op">=</span> grid.bounded_neighbors_full(coord, (<span class="dv">0</span>, <span class="dv">0</span>), grid.boundaries(src))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> ncoord <span class="kw">in</span> neighbors:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            px <span class="op">+=</span> grid.get_element(src, ncoord)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        pxcnt <span class="op">=</span> <span class="bu">len</span>(neighbors) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        grid.set_element(dst, coord, px <span class="op">//</span> <span class="dv">9</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dst</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>area: Grid2D[<span class="bu">int</span>] <span class="op">=</span> [[]]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>colsums <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> grid.width(area)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>rowsums <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> grid.height(area)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x, y), v <span class="kw">in</span> grid.iter_grid(area):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    colsums[x] <span class="op">+=</span> v</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    rowsums[y] <span class="op">+=</span> v</span></code></pre></div>
+<h3 id="types">Types</h3>
+<ul>
+<li><code>Coord2D</code> (or <code>Coord</code>), <code>Coord3D</code>:
+A 2D/3D coordinate represented as a hashable named tuple with x, y (and
+z) components. Supports vector-style addition and subtraction.</li>
+<li><code>Grid2D</code> (or <code>Grid</code>),<code>Grid3D</code>: Type
+alias for a 2D/3D grid of elements of type T, represented as a sequence
+of sequences (e.g., list or tuple of list/tuple).</li>
+<li><code>MutableGrid2D</code> (or
+<code>MutableGrid</code>),<code>MutableGrid3D</code>: Type alias for a
+mutable 2D/3D grid of type T, specifically a list of lists.</li>
+</ul>
+<h3 id="functions">Functions</h3>
+<p>The functions below can also be used with <code>_2d</code> and
+<code>_3d</code> suffixes (e.g., <code>neighbors_2d</code> and
+<code>neighbors_3d</code>), depending on your needs. The 3D variants
+correspond to the <code>Coord3D</code> and <code>Grid3D[T]</code> types.
+Omitting the suffix defaults to 2D usage. Note that some functions are
+only available in a 3D context. This is clearly indicated where
+applicable.</p>
+<p>Coordinate operations:</p>
+<ul>
+<li><code>manhattan(a: Coord, b: Coord) -&gt; int</code>: Returns the
+Manhattan distance between two 2D/3D coordinates.</li>
+<li><code>is_within(p: Coord, corner2: Coord, corner2: Coord) -&gt; bool</code>:
+Returns True if the 2D/3D coordinate <code>p</code> lies within or on
+the boundary defined by the two opposite dcorners. Assumes corner1 has
+the smaller coordinate values in all dimensions.</li>
+<li><code>neighbors(coord: Coord)  -&gt; list[Coord]</code>: Returns the
+list of direct (side-adjacent) neighbors of the given 2D/3D
+coordinate.</li>
+<li><code>bounded_neighbors(coord: Coord) -&gt; list[Coord]</code>:
+Returns the list of direct (side-adjacent) neighbors of the 2D/3D
+coordinate <code>coord</code> that lie within the bounds defined by
+<code>corner1</code> and <code>corner2</code> Assumes.
+<code>corner1</code> has the smaller values in all dimensions .</li>
+<li><code>neighbors_full(coord: Coord) -&gt; list[Coord]</code>: Returns
+the list of all neighbors of the given 2D/3D coordinate, including those
+adjacent by faces, edges, and corners (8/26-directional neighbors).</li>
+<li><code>bounded_neighbors_full(coord:  Coord)  -&gt; list[Coord]</code>:
+Returns the list of all neighbors of the given 2D/3D coordinate,
+including those adjacent by faces, edges, and corners (8/26-directional
+neighbors) that lie within the bounds defined by <code>corner1</code>
+and <code>corner2</code> Assumes. <code>corner1</code> has the smaller
+values in all dimensions .</li>
+<li><code>neighbors_edge_3d(coord: Coord3D) -&gt; list[Coord3D]</code>:
+Returns the list of 3D neighbors adjacent to the given coordinate by
+faces and edges, excluding corner-adjacent neighbors.</li>
+<li><code>bounded_neighbors_edge_3d(coord: Coord3D)  -&gt; list[Coord3D]</code>:
+Returns the list of 3D neighbors adjacent by faces and edges that lie
+within the bounds defined by <code>corner1</code> and
+<code>corner2</code>, excluding corner neighbors. Assumes
+<code>corner1</code> has the smaller coordinate values in all
+dimensions.</li>
+</ul>
+<p>Grid operations:</p>
+<ul>
+<li><code>create_grid_2d</code>, <code>create_grid_3d</code>: Returns
+with a 2D/3D grid filled up with th default value.</li>
+<li><code>width_2d</code>, <code>height_2d</code>,
+<code>width_3d</code>, <code>height_3d</code>, <code>depth_3d</code>:
+Return the corresponding dimension value of the given 2D/3D grid</li>
+<li><code>dimension_2d</code>, <code>dimension_3d</code>: Return the
+dimensions of the given 2D/3D grid in
+<code>Coord2D</code>/<code>Coord3D</code> format</li>
+<li><code>boundaries_2d</code>, <code>boundaries_3d</code>: Return the
+boundariess of the given 2D/3D grid in
+<code>Coord2D</code>/<code>Coord3D</code> format. Note that it differs
+from dimensions in that it includes the last index - meaning each value
+is one less than it would be in that case.</li>
+<li><code>set_element_2d</code>, <code>set_element_3d</code>: Sets the
+element at the given 2D/3D coordinate in the mutable grid to the
+specified value (modifies the grid in place).</li>
+<li><code>get_element_2d</code>, <code>get_element_3d</code>: Returns
+the element at the given 2D/3D coordinate in the grid.</li>
+<li><code>iter_grid_2d</code>, <code>iter_grid_3d</code>: Iterator,
+yields pairs of 2D/3D coordinates and their corresponding values by
+iterating over all elements in the 2D/3D grid.</li>
+</ul>
+<h2 id="displaying-temporary-results">Displaying temporary results</h2>
+<p>The class contains some debugging solutions to display temporary
+results.</p>
+<ul>
+<li><p><code>print_condensed(grid: Grid2D[T])</code>: Prints content of
+a 2-dimensional container of characters “condensed”. E.g. if data is</p>
+<pre><code>[[&#39;#&#39;, &#39;#&#39;, &#39;.&#39;], [&#39;.&#39;, &#39;#&#39;, &#39;.&#39;], [&#39;.&#39;, &#39;#&#39;, &#39;#&#39;]]`</code></pre>
+<p>the following will be printed:</p>
+<pre><code>##.
+.#.
+.##</code></pre>
+<p>Note that the 2-dimensional container can be also a list of
+strings.</p></li>
+<li><p><code>def  print_csv(grid: Grid2D[T])</code>: Prints content of a
+2-dimensional container in a comma separated way</p></li>
+<li><p><code>def  print_arranged(grid: Grid2D[T])</code>: Prints content
+of a 2-dimensional container arranged into columns</p></li>
+<li><p><code>def  print_solution(solution:  Solver)</code>: Prints
+properties of a <code>Solver</code> based object</p></li>
+</ul>
+<h2 id="data-visualization">Data visualization</h2>
+<p>Sometimes it’s necessary to save an image - either to analyze the
+current state or simply to visualize the result. The
+<code>save_image</code> function provides this capability.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>scene Grid2D[<span class="bu">str</span>] <span class="op">=</span> [</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>], </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;#&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;.&quot;</span>, <span class="st">&quot;.&quot;</span>, <span class="st">&quot;#&quot;</span>], </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;#&quot;</span>, <span class="st">&quot;.&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;.&quot;</span>, <span class="st">&quot;#&quot;</span>], </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;#&quot;</span>, <span class="st">&quot;.&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;#&quot;</span>], </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;#&quot;</span>], </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>colors : ColorLUT[<span class="bu">str</span>] <span class="op">=</span> {</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.&quot;</span>: <span class="bn">0xdddddd</span>, <span class="co"># light gray</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#&quot;</span>: <span class="bn">0x000900</span>, <span class="co"># black</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;S&quot;</span>: <span class="bn">0xff0900</span>, <span class="co"># red</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;E&quot;</span>: <span class="bn">0x0009ff</span>, <span class="co"># blue</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>save_image(<span class="st">&quot;scene.png&quot;</span>, scene, colors)</span></code></pre></div>
+<p>Festures:</p>
+<ul>
+<li><code>ColorLUT[T]</code>: a dictionary-based look-up table that maps
+values of type T to RGB color integers in 0xRRGGBB format.</li>
+<li><code>save_image(filename:  str,  grid: Grid2D[T],  colors:  ColorLUT[T])</code>:
+converts grid to an image using the color table and saves it to the
+specified file path.</li>
+</ul>
+<h2 id="autoimported-modules-and-functions">Autoimported modules and
+functions</h2>
+<p>The aochallenge module also imports several commonly used standard
+functions and modules when used with
+<code>from aochallenge import *</code>.</p>
+<p>Imported modules:</p>
+<ul>
+<li><code>sys</code></li>
+<li><code>re</code></li>
+</ul>
+<p>Imported functions:</p>
+<ul>
+<li><code>cache</code> (from <code>functools</code>)</li>
+<li><code>lru_cache</code> (from <code>functools</code>)</li>
+<li><code>combinations</code> (from <code>itertools</code>)</li>
+<li><code>count</code> (from <code>itertools</code>)</li>
+<li><code>product</code> (from <code>itertools</code>)</li>
+<li><code>Generator</code> (from <code>collections.abc</code>)</li>
+<li><code>dataclass</code> (from <code>dataclasses</code>)</li>
+<li><code>field</code> (from <code>dataclasses</code>)</li>
+<li><code>copy</code> (from <code>copy</code>)</li>
+<li><code>deepcopy</code> (from <code>copy</code>)</li>
+<li><code>Callable</code> (from <code>typing</code>)</li>
+<li><code>cast</code> (from <code>typing</code>)</li>
+<li><code>NamedTuple</code> (from <code>typing</code>)</li>
+</ul>
+<h2 id="example">Example</h2>
+<p><strong>PART 1</strong>: Add up all the numbers in each row separated
+by commas and print the maximum of these sums.</p>
+<p><strong>PART 2</strong>: Find the 3 largest sums, add them up and
+determine the final result.</p>
+<p>Using <code>part1</code> and <code>part2</code>:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python2 -u</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aochallenge <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solution(Solver):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data <span class="op">=</span> load(<span class="va">True</span>,<span class="st">&#39;,&#39;</span>,<span class="bu">int</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> part1(<span class="va">self</span>):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">max</span>(<span class="bu">sum</span>(row) <span class="cf">for</span> row <span class="kw">in</span> <span class="va">self</span>.data)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> part2(<span class="va">self</span>):</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">sum</span>(<span class="bu">sorted</span>(<span class="bu">sum</span>(row) <span class="cf">for</span> row <span class="kw">in</span> <span class="va">self</span>.data)[<span class="op">-</span><span class="dv">4</span>:])</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> Solution()</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>solution.main()</span></code></pre></div>
+<p>Using <code>solve_more</code>:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python2 -u</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aochallenge <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solution(Solver):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data <span class="op">=</span> load(<span class="va">True</span>,<span class="st">&#39;,&#39;</span>,<span class="bu">int</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> solve_more(<span class="va">self</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        sums <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">sum</span>(row) <span class="cf">for</span> row <span class="kw">in</span> <span class="va">self</span>.data)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> sums[<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> <span class="bu">sum</span>(sums[<span class="op">-</span><span class="dv">4</span>:])</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> Solution()</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>solution.main()</span></code></pre></div>

@@ -1,0 +1,7 @@
+README +-
+distance
+immutableGrid
+
+
+- print content of solutions object (show_self)
+- CharMap, IntMap, Coord, Position?(r,c,dir), Direction, neighbours, Graph types, Path (Coord List)...
