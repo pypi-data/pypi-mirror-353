@@ -1,0 +1,10 @@
+README.md
+setup.py
+wash/__init__.py
+wash/cli.py
+wframe.egg-info/PKG-INFO
+wframe.egg-info/SOURCES.txt
+wframe.egg-info/dependency_links.txt
+wframe.egg-info/entry_points.txt
+wframe.egg-info/requires.txt
+wframe.egg-info/top_level.txt
