@@ -1,0 +1,9 @@
+remote/__init__.py,sha256=qiU2ZZGDlyWYCJFAMGDvNQZUZkBP64dGUQEABg0UURM,144
+remote/consumer.py,sha256=sv8kKGynKmBZ6OQryTDHS4vo8-izXF31ynGvfyUe9-U,8881
+remote/producer.py,sha256=kuRzg5GbVDOn_-Tme06xtZcd7CAGOZmqnKj-8bg-tBU,16970
+remote/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+remote/util.py,sha256=cs5vLgoaW5HyJrcCnPdvDCOsSJgiecNvJO9_bMq9fss,2939
+rmq_remote-0.1.0.dist-info/LICENSE,sha256=5xsxxVKW9W-A_vpTHmuuWeUEcmb5bAgHYHwzy2u7wqY,11380
+rmq_remote-0.1.0.dist-info/METADATA,sha256=6mumSADvj6qt7d9xruZChi3dJ5ATmZDYeQUM7ZE8zKE,3166
+rmq_remote-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+rmq_remote-0.1.0.dist-info/RECORD,,
