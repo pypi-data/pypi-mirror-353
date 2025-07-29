@@ -1,0 +1,31 @@
+[project]
+name = "ThreeLog"
+version = "2.0.1"
+requires-python = ">=3.10"
+description = "A flexible logging abstraction layer"
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/thirdversion/threelog-py"
+"Bug Tracker" = "https://github.com/thirdversion/threelog-py/issues"
+
+[tool.black]
+line-length = 160
+
+[tool.ruff]
+line-length = 168
+
+[tool.pyright]
+include = ["threelog"]
+
+[dependency-groups]
+dev = [
+    "assertpy>=1.1",
+    "build>=1.2.2.post1",
+    "pyright>=1.1.401",
+    "pytest>=8.4.0",
+    "ruff>=0.11.12",
+    "twine>=6.1.0",
+]
