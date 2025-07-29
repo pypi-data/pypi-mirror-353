@@ -1,0 +1,9 @@
+flask_tabler_icons/__init__.py,sha256=ilI3SOHpwrwFa1zsHodW8slnBJO2mWadnzn00KsUaM8,1507
+flask_tabler_icons/static/tabler_icons/tabler-sprite-filled.svg,sha256=nlo6hbha9ngPhRvrseZ2waKJNed_bfHfDbbXWp6ysx8,609850
+flask_tabler_icons/static/tabler_icons/tabler-sprite-nostroke.svg,sha256=KQb4bEWVgSmyoaYSQXG-EuM7CVyb7ZQAx63n6a1fnzw,1760039
+flask_tabler_icons/templates/tabler_icons/helper.html,sha256=OQ_dv19bexAx73oudhi9kZEs-66JFPI0cOgdBHpBYNI,2040
+flask_tabler_icons-3.34.0.dist-info/licenses/LICENSE.txt,sha256=Gf8n7S-6iJZmwOOfwAp6v3BEINIwHTpSCzycwmmJFyc,1452
+flask_tabler_icons-3.34.0.dist-info/METADATA,sha256=HEF4B-PCOd2Dsjz5FrUrvTE4ZKDLDlibVQP6dO0_ph4,1683
+flask_tabler_icons-3.34.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flask_tabler_icons-3.34.0.dist-info/top_level.txt,sha256=Z6DlPOkTZCdmKJfOcVEg72OOqkSV2uw_KX6WwxqB9jM,19
+flask_tabler_icons-3.34.0.dist-info/RECORD,,
