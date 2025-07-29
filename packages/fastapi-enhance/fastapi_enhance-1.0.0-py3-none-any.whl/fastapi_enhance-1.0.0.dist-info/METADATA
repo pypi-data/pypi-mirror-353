@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: fastapi-enhance
+Version: 1.0.0
+Summary: The extended function library of fastapi can be read README.md
+Home-page: https://github.com/hgz1989/fastapi-enhance
+Author: HanGuangZheng
+Author-email: hanguangzheng@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.111.0
+Dynamic: license-file
+
+# FastAPI Enhance
+
+---
+
+**Source Code**: <a href="https://github.com/hgz1989/fastapi-enhance" target="_blank">https://github.com/hgz1989/fastapi-enhance</a>
+
+---
+
+Installation
+------------
+
+``pip install fastapi-enhance``
+
+
+Hello World Example
+-------------------
+
+.. code:: python
+
+    from fastapi import FastAPI
+    from fastapi-enhance import enhance
+
+    app = FastAPI(title='Hello World Example')
+    app.enhance() # 或enhance(app)
+
+
+    @app.get('/')
+    async def index():
+        return {'hello': 'world'}
+
+    if __name__ == '__main__':
+        import uvicorn
+
+        uvicorn.run(app)
