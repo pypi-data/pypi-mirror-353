@@ -1,0 +1,146 @@
+Metadata-Version: 2.4
+Name: pypi-indices-api
+Version: 0.3
+Summary: A Python package to get the latest indices from the Indices-API
+Home-page: https://github.com/Zyla-Labs/pypi-indices-api
+Author: zylalabs
+Author-email: hello@zylalabs.com
+Keywords: indices-api,precious Indicesapi,Indicesapi,Indices,precious Indices,gold,silver,Platinum,Palladium,Ruthenium,Rhodium,forex data,rates,money,usd,eur,btc,forex api,gbp to usd,gbp to eur,eur to usd,api,currency api,exchange rate api,get currency rates api,currency rates php,usd to eur api,copper,nickel,aluminium,TIN,Zinc
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: summary
+
+# Indices-API
+
+[![Indices-API](https://indices-api.com/img/logoIndices.png)](https://indices-api.com)
+
+<!--start: description-->
+
+**Indices-API** – The ultimate solution for seamless access to real-time and historical data on global stock market indices. With support for 100+ symbols and updates every 60 seconds, Indices-API delivers accurate and comprehensive data with ease.
+
+Track major indices like the SSE Composite, Amsterdam AEX, S&P/ASX 200, S&P BSE SENSEX, Dow Jones Industrial Average, S&P 500, and many more. 
+
+Try the Start 7-Day Free Trial. Cancel anytime at your convenience.
+
+<!--end: description-->
+
+<!--start: docs-->
+
+## Key Features:
+
+- **Built for Developers:** Tailored for developers, ensuring ease of use and seamless integration.
+- **Robust JSON API:** A powerful JSON API designed for accurate and efficient data retrieval.
+- **Top-Tier Security:** Trust Indices-API with advanced security measures to protect your data.
+- **Reliable Data Sources:** Benefit from reliable and accurate data from trusted sources.
+- **Flexible Integration:** Easily integrate Indices-API into any language for diverse applications.
+- **Historical Data Access:** Dive into historical data for comprehensive analysis and informed decision-making.
+- **Exceptional Accuracy:** Rely on Indices-API for spot-on accuracy in real-time and historical data.
+- **User-Friendly Documentation:** Navigate through our comprehensive documentation for a smooth integration process.
+- **Specialized Support:** Count on our dedicated support team for assistance tailored to your specific needs.
+
+## Supported Indices
+
+Explore a wide range of global stock market indices, from major regional benchmarks to currency and volatility indices. Whether you're tracking the S&P 500, Dow Jones, Nikkei 225, FTSE 100, or SSE Composite, Indices-API provides real-time and historical data with unmatched reliability.
+
+Our coverage spans:
+
+- Regional Stock Indices (US, Europe, Asia, Latin America)
+- Global Market Indices
+- Currency-Based Indices
+- Volatility Indices
+
+Stay up to date with over 100 supported symbols, including:
+
+🟢 NYSE Composite (NYA)
+🟢 NASDAQ Composite (IXIC)
+🟢 DAX Performance (GDAXI)
+🟢 Nikkei 225 (N225)
+🟢 S&P/ASX 200 (AXJO)
+🟢 FTSE 100 (FTSE)
+🟢 Hang Seng (HSI)
+🟢 IBOVESPA (BVSP)
+🟢 S&P BSE SENSEX (BSESN)
+🟢 SSE Composite (000001)
+… and many more.
+[View All Supported Indices](https://www.indices-api.com/symbols).
+
+## Documentation
+
+For detailed information on API endpoints, usage, and integration guidelines, check our [API Documentation](https://www.indices-api.com/documentation).
+
+Start using Indices-API today for unparalleled access to indices data. Visit [Indices-API.com](https://indices-api.com) and integrate in just minutes!
+
+
+## Installation
+
+You can install Indices-API Python SDK with pip.
+
+```bash
+pip indices-api
+```
+
+## Usage
+
+The Indices-API Python SDK is a wrapper around the [requests](https://docs.python-requests.org/en/master/) library. Indices-API supports a GET request for now.
+
+Sign-up to Indices-API to [get your API key](https://indices-api.com/register) and some credits to get started.
+
+### Making the GET request
+
+```python
+>>> from indices_api import IndicesApiClient
+
+>>> client = IndicesApiClient(access_key='REPLACE-WITH-YOUR-ACCESS-KEY')
+
+>>> response = client.get_latest("base", ["symbols"])
+```
+
+### Request Example
+
+```python
+>>> from indices_api import IndicesApiClient
+
+>>> client = IndicesApiClient(access_key='REPLACE-WITH-YOUR-ACCESS-KEY')
+
+>>> response = client.get_latest("USD", ["NYA", "GSPC", "MERV"])
+```
+
+### Response Example
+
+```json
+{
+  "data": {
+    "success": true,
+    "timestamp": 1748638260,
+    "date": "2025-05-30",
+    "base": "USD",
+    "rates": {
+      "GSPC": 0.0001691918551041,
+      "MERV": 0.00051296350856518,
+      "NYA": 0.000050530698662705,
+      "USDGSPC": 5910.44999999984,
+      "USDMERV": 1949.45641025639,
+      "USDNYA": 19789.95
+    }
+  }
+}
+```
+
+### AVAILABLE METHODS
+
+```python
+>>> get_latest(base: str, symbols: List[str])
+```
+
+```python
+>>> get_historical(date:str, base:str, symbols: List[str])
+```
+
+```python
+>>> get_time_series(start_date: str, end_date: str, symbol: str)
+```
