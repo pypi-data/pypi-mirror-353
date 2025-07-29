@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: morsetune
+Version: 0.1.4
+Summary: Convert text to its corresponding Morse Code tune.
+Author-email: Samuel Zhang <qisamuelzhang@hotmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yiyitech/morsetune
+Project-URL: Repository, https://github.com/yiyitech/morsetune
+Project-URL: Issues, https://github.com/yiyitech/morsetune/issues
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Multimedia :: Sound/Audio
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: IPython
+Dynamic: license-file
+
+# Morse Tune
+
+Convert text to its corresponding [Morse Code](https://en.wikipedia.org/wiki/Morse_code) tune.
+
+## License
+
+MIT License
