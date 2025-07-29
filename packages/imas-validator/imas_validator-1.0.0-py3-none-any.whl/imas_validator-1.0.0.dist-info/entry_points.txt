@@ -1,0 +1,2 @@
+[console_scripts]
+imas_validator = imas_validator.cli.imas_validator_cli:execute_cli
