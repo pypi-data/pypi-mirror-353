@@ -1,0 +1,10 @@
+rbot/__init__.py,sha256=zQZ3gMUztmT2mqnz52zXbR_Bn3oOZLZvAm7fmMOxfd8,54
+rbot/colorExtractor.py,sha256=U1P2CNaFb4PYTXblfCVsptJM4lqqVm50Mzc4SqRO-j4,2586
+rbot/dataCollector.py,sha256=B-OhH0vqBN51YygQ8qEcRW2DnYEcSR-rz4E85--QnVk,3469
+rbot/rbot.py,sha256=eBT_s-HeLTv92-vM34GtTLNL05AnPyiIBODzy679BwQ,3876
+rbot/trainer.py,sha256=f5p-RAEQCVoQ3uSrlvYWbwDAfXPYI9DHYMpX5qdvbKI,4579
+rbot/version.py,sha256=UQMgr-uEtcfW87hZvWz8fDm29B0QdooGeVqugmmV1yc,17
+rbobjecttracking-1.0.1.dist-info/METADATA,sha256=aIZ_t6ZCMBcF31MMqHdv2iaP1_NW2vbk8tRETHEP_kI,693
+rbobjecttracking-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+rbobjecttracking-1.0.1.dist-info/top_level.txt,sha256=-R1hI8SUuywWyal9J-6UVR3MGAAQVj3uF1Sl1HxZ-GQ,5
+rbobjecttracking-1.0.1.dist-info/RECORD,,
