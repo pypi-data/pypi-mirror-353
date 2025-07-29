@@ -1,0 +1,19 @@
+[project]
+name = "no-nickname-mcp-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "qianchao", email = "980569038@qq.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.9.3",
+]
+
+[project.scripts]
+no-nickname-mcp-test = "no_nickname_mcp_test:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
