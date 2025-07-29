@@ -1,0 +1,2 @@
+[numcodecs.codecs]
+delta.binary = numcodecs_delta:BinaryDeltaCodec
