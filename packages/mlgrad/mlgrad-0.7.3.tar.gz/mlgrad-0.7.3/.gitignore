@@ -1,0 +1,15 @@
+.hg
+MANIFEST
+python/build
+python/dist
+python/doc/_build
+.ipynb_checkpoints
+build/
+dist/
+examples/fig/
+*.pyc
+*.pyo
+__pycache__
+*.egg-info
+*~
+*.bak
