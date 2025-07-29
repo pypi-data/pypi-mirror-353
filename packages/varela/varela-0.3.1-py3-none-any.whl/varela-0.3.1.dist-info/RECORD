@@ -1,0 +1,14 @@
+varela/__init__.py,sha256=ZuArIvTyVrhb2-RFahy2mvodJhJmsQMdVIKNyeT0rkc,175
+varela/algorithm.py,sha256=VEelxzQ0IPCF-SMJNcVX77BxqsgJWR65ijMTDmDxSlY,5922
+varela/app.py,sha256=et6SNiHjcfiCqC9nZOqDlD5bIvZh3S8z6-YfY8ZBtgc,4326
+varela/applogger.py,sha256=fQBo51-TboX1DBqfSxX2P2eKJ5CcyiCq_IVlJTHjxAE,2624
+varela/batch.py,sha256=skUnOzxRl7KMffV1rT7MJMIovakxCKAuYuMfst3eAh8,2308
+varela/parser.py,sha256=Ib4TnWdkQb6A6FA3HHEjZDBb7uD0v9Gabwewqfu4XpQ,2549
+varela/test.py,sha256=cbv94YSdFoKWYerOXqr14cektpxPh1isaUz2_oDAUY4,5474
+varela/utils.py,sha256=jAa2tP7RsJ6PGOvSUnfWJo_6lAMnPZ1KD2XXOEE7jkw,7834
+varela-0.3.1.dist-info/licenses/LICENSE,sha256=nUDh1nfa7rfEv1HocpoqPu0JaFnZKpIVh9eM0MgozpM,1067
+varela-0.3.1.dist-info/METADATA,sha256=Y4_c4o0QW5qQVJzjrEGO0-wOL8X7o-Mc0IsBZl9KvSc,8312
+varela-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+varela-0.3.1.dist-info/entry_points.txt,sha256=1u3mguM52M_AYGdAoNlnAvQBH47IR1TxteDPSlwplvM,104
+varela-0.3.1.dist-info/top_level.txt,sha256=hoo9U_XYKVeTIaTo5JTY1u54gyECl6r289eGUqKa-3U,7
+varela-0.3.1.dist-info/RECORD,,
