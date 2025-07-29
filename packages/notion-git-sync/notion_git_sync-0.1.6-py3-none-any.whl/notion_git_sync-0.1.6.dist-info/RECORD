@@ -1,0 +1,10 @@
+notion_git_sync/__init__.py,sha256=4L_p--GIpiordA-DoiHcl9oPBAGiLLzjUcD5ruPhK4E,497
+notion_git_sync/converter.py,sha256=vWGdiDGuS0WQh-1anRBlSm8TkWQ_vFLJ-D2AmwW2WGI,16931
+notion_git_sync/frontmatter.py,sha256=pU7jhi7H0xA-g6eBnV2KyjhaYAFGV1aCrNl5oh1zPfI,5901
+notion_git_sync/sync.py,sha256=DPIjqrl9MBwPcshPGXbh5d_8TXp4EPdHAYG5INwPt6Y,7987
+notion_git_sync-0.1.6.dist-info/licenses/LICENSE,sha256=hpVUVv88pDBCpqkJ_kesD5weL3uCmikALFN0bOpN9c0,1065
+notion_git_sync-0.1.6.dist-info/METADATA,sha256=Bb_GKq_UFqgJZG0qgn3TwpTs5eRcaXYVZlNxUlVgg04,4456
+notion_git_sync-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+notion_git_sync-0.1.6.dist-info/entry_points.txt,sha256=3d79LR0iSrnfI1z6GMeTAMig3WMWgTlPsJlcCdUMv4M,62
+notion_git_sync-0.1.6.dist-info/top_level.txt,sha256=3QAYYRgw8rrYOAfzx7SE8deyNWlzzBys4FMvoVgTfKQ,16
+notion_git_sync-0.1.6.dist-info/RECORD,,
