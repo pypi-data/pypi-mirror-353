@@ -1,0 +1,6 @@
+README.md
+setup.py
+yandex_rag_pipelines.egg-info/PKG-INFO
+yandex_rag_pipelines.egg-info/SOURCES.txt
+yandex_rag_pipelines.egg-info/dependency_links.txt
+yandex_rag_pipelines.egg-info/top_level.txt
