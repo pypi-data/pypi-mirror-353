@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: pytest-xtime
+Version: 0.0.1a0
+Summary: pytest plugin for recording execution time
+Author-email: Andrew Weng <andrew.weng@ariacoustics.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Pytest
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.9
+Requires-Dist: pytest
+Description-Content-Type: text/markdown
+
+# pytest-xtime
+
+`pytest-xtime` is a simple plugin for `pytest` that records
+execution time of individual tests and reports the results
+to terminal and optionally to JSON.
