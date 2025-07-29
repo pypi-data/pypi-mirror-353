@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+chATLAS_Scrape/__init__.py
+chATLAS_Scrape.egg-info/PKG-INFO
+chATLAS_Scrape.egg-info/SOURCES.txt
+chATLAS_Scrape.egg-info/dependency_links.txt
+chATLAS_Scrape.egg-info/requires.txt
+chATLAS_Scrape.egg-info/top_level.txt
+chATLAS_Scrape/gitlab/__init__.py
+chATLAS_Scrape/gitlab/config.py
+chATLAS_Scrape/gitlab/get_markdown.py
+chATLAS_Scrape/gitlab/get_projects.py
+chATLAS_Scrape/gitlab/rate_limiter.py
+tests/gitlab/test_gitlab.py
