@@ -1,0 +1,3 @@
+[console_scripts]
+ovisu=ovisu.main:cli
+
