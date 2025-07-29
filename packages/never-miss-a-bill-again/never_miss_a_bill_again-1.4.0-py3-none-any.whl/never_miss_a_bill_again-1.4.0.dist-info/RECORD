@@ -1,0 +1,11 @@
+never_miss_a_bill_again-1.4.0.dist-info/licenses/LICENSE.txt,sha256=wpQYMH7ezBkXtDclnHxXqnrDm4sUSloxu8QQRcfxQrE,1081
+nmba/cli.py,sha256=Wf9WOyGu_a9PQ478WGEZ4YjmxKBThJmoHCDVfrT6F60,13136
+nmba/data/crud.py,sha256=_LeZcShOTkFaK0KBGUGcfBeT0CRKYAPR2NY8qITVWMY,783
+nmba/data/database.py,sha256=_T23QzVaRDp11NCJEDq39wYRKBsihwxkevdQyq40lc0,642
+nmba/data/models.py,sha256=Zl07_o8x7nygUbUfJTnYZmjkJPXhmu-CvqUKAHER3_0,660
+nmba/data/schemas.py,sha256=FOwZbGAyQApXwce3G2dRBA_4q9eFZb-pw6LAQpWeIEA,298
+never_miss_a_bill_again-1.4.0.dist-info/METADATA,sha256=MTa66QpcnfR-KphI3Sx97JRs03cht_xvVPJJaKdXfps,1200
+never_miss_a_bill_again-1.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+never_miss_a_bill_again-1.4.0.dist-info/entry_points.txt,sha256=WmiiV7_m8u05iOEBf_g7ZNUsPcBLWwZfgANg123pN0U,38
+never_miss_a_bill_again-1.4.0.dist-info/top_level.txt,sha256=HDytwb42gAkMm-UZHdXjL_aVPFWGxtVPBNyCy2k_Y5A,5
+never_miss_a_bill_again-1.4.0.dist-info/RECORD,,
