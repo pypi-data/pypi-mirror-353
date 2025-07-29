@@ -1,0 +1,191 @@
+# Poker Manager
+
+A comprehensive Python library for managing poker games, including Texas Hold'em variants with support for multi-board play, pot management, and hand evaluation.
+
+## Features
+
+### Game Variants
+- **Texas Hold'em**: Standard no-limit Texas Hold'em with small/big blinds
+- **Bomb Pot**: Variant where all players are automatically all-in pre-flop
+- **Multi-board Support**: Play with multiple boards simultaneously
+
+### Core Components
+
+#### Table Management
+- Manage players and seating
+- Handle player rotations and dealer button
+- Support for table limits and configurations
+
+#### Player System
+- Track player status (active, folded, all-in, sitting out)
+- Manage chip stacks and bankroll
+- Track hole cards and best possible hands
+- Calculate hand equities
+
+#### Board Management
+- Handle community cards (flop, turn, river)
+- Support for multiple concurrent boards
+- Board texture analysis
+
+#### Pot Management
+- Track main and side pots
+- Handle all-in situations
+- Support for multi-board pot splitting
+- Track winners per board
+
+#### Hand Evaluation
+- Evaluate hand strengths
+- Calculate winning hands
+- Support for various poker hand rankings
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Quick Start
+
+### Creating a Game
+
+```python
+from collections import deque
+from pokermgr.table import Table
+from pokermgr.player import TablePlayer
+from pokermgr.game import GameTexasHoldemRegular
+
+# Create players
+players = deque([
+    TablePlayer("Alice"),
+    TablePlayer("Bob"),
+    TablePlayer("Charlie")
+])
+
+# Create a table
+table = Table("Main Table", players)
+
+# Create a Texas Hold'em game with small blind 5 and big blind 10
+game = GameTexasHoldemRegular(
+    key=1,
+    table=table,
+    small_blind=5,
+    big_blind=10
+)
+```
+
+### Playing a Hand
+
+```python
+# Deal hole cards to all players
+game.deal_hole_cards()
+
+# Deal the flop
+game.deal_flop()
+
+# Deal the turn
+game.deal_turn()
+
+# Deal the river
+game.deal_river()
+
+# Showdown and determine winners
+winners = game.showdown()
+```
+
+### Multi-board Example
+
+```python
+from pokermgr.game import Game
+from pokermgr.table import Table
+from pokermgr.player import TablePlayer
+from cardspy.card import extract_cards
+
+# Create a table with players
+players = deque([
+    TablePlayer("Player1"),
+    TablePlayer("Player2"),
+    TablePlayer("Player3")
+])
+table = Table("MultiBoard", players)
+
+# Create a game with 2 boards
+game = Game(1, table, initial_board_count=2)
+
+# Deal hole cards to players
+game.deal_hole_cards()
+
+# Deal community cards
+for _ in range(3):  # Flop
+    game.deal_flop()
+for _ in range(1):  # Turn
+    game.deal_turn()
+for _ in range(1):  # River
+    game.deal_river()
+
+# Determine winners for each board
+winners = game.showdown()
+```
+
+## Advanced Usage
+
+### Creating a Bomb Pot
+
+```python
+from pokermgr.game import GameTexasHoldemBomb
+
+# Create a bomb pot where all players post 100 chips
+game = GameTexasHoldemBomb(
+    key=1,
+    table=table,
+    blind=100,  # Mandatory blind amount
+    initial_board_count=1
+)
+```
+
+### Custom Hand Evaluation
+
+```python
+from pokermgr.hand import Hand
+
+# Create a hand from a card mask
+hand = Hand(0x1a1)  # Bitmask representing cards
+
+# Get hand properties
+print(f"Hand type: {hand.type_name}")
+print(f"Hand weight: {hand.weight}")
+print(f"Draws: {hand.draws}")
+```
+
+## Project Structure
+
+```
+pokermgr/
+├── __init__.py
+├── board.py          # Board and board texture management
+├── evaluate.py       # Hand evaluation logic
+├── funcs.py          # Utility functions
+├── game.py           # Core game logic and variants
+├── hand.py           # Hand representation
+├── hole_cards.py     # Hole cards management
+├── player.py         # Player classes and logic
+├── pot.py            # Pot management
+└── table.py          # Table management
+
+tests/               # Comprehensive test suite
+```
+
+## Testing
+
+Run the test suite with pytest:
+
+```bash
+pytest tests/
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
