@@ -1,0 +1,3 @@
+[console_scripts]
+barz = barz:main
+
