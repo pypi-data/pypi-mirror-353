@@ -1,0 +1,282 @@
+#!/usr/bin/env python3
+
+import argparse
+import collections
+import json
+
+import reasm.binary as binary
+import reasm.mzstartup as mzstartup
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('path', type=str, help='path to executable file')
+parser.add_argument('--hex', action='store_true', help='hexadecimal output')
+parser.add_argument('--fast', action='store_true', help='skip long checks')
+parser.add_argument('--content', action='store_true', help='output content')
+parser.add_argument('--indent', type=int, default=4, help='indent')
+parser.add_argument('--max-width', type=int, default=160, help='max width')
+args = parser.parse_args()
+
+bytes = open(args.path, 'rb').read()
+
+info = {}
+
+mz_header = binary.read_block(bytes, 0, 0x1c)
+assert mz_header[:2] in b'MZM'
+
+info['text-offset'] = binary.read_word(mz_header, 8) * 0x10
+info['minimum-allocation'] = binary.read_word(mz_header, 0x0a) * 0x10
+info['maximum-allocation'] = binary.read_word(mz_header, 0x0c) * 0x10
+
+info['load-size'] = binary.read_word(mz_header, 4) * 0x200 - info['text-offset']
+# See:
+# - https://github.com/microsoft/MS-DOS/blob/2d04cacc5322951f187bb17e017c12920ac8ebe2/v2.0/source/EXEC.ASM#L348 ;
+# - https://github.com/microsoft/MS-DOS/blob/2d04cacc5322951f187bb17e017c12920ac8ebe2/v4.0/src/DOS/EXEC.ASM#L318 .
+
+info['text-size'] = (binary.read_word(mz_header, 4) - bool(binary.read_word(mz_header, 2))) * 0x200 + binary.read_word(mz_header, 2) - info['text-offset']
+info['file-size'] = len(bytes)
+info['errors'] = []
+
+if info['text-size'] + info['text-offset'] > info['file-size']:
+    info['errors'].append(f'Text end address is {hex(info["text-size"] + info["text-offset"])}, but file size is {hex(info["file-size"])}.')
+
+info['entry-point'] = binary.read_word(mz_header, 0x14) + binary.read_word(mz_header, 0x16)*0x10
+info['entry-point-segment'] = binary.read_word(mz_header, 0x16)
+info['stack-pointer'] = binary.read_word(mz_header, 0x10) + binary.read_word(mz_header, 0x0e)*0x10
+info['stack-pointer-segment'] = binary.read_word(mz_header, 0x0e)
+
+info['relocations'] = collections.defaultdict(list)
+relocation_table_base = binary.read_word(mz_header, 0x18)
+for r in range(binary.read_word(mz_header, 6)):
+    offset = binary.read_word(bytes, relocation_table_base + r*4)
+    segment = binary.read_word(bytes, relocation_table_base + r*4 + 2)
+    if info['file-size'] < segment*0x10+offset+info['text-offset']+1:
+        info['errors'].append(f'Too big relocation {segment:04X}:{offset:04X}.')
+    value = binary.read_word(bytes, segment*0x10+offset+info['text-offset'])
+    info['relocations'][value*0x10].append(segment*0x10+offset)
+info['relocations'] = {x: sorted(y) for x, y in sorted(info['relocations'].items())}
+
+info['compiler'] = None
+if args.fast is not True:
+    for compiler, patterns_alternatives in mzstartup.startups.items():
+        for patterns in patterns_alternatives:
+            for pattern in patterns:
+                if len(binary.find_all(bytes, pattern)) != 1:
+                    break
+            else:
+                assert info['compiler'] is None
+                info['compiler'] = compiler
+                break
+
+try:
+    # Turbo C 1.5 or Turbo C 2.0?
+    # Borland C++ 2.0, Borland C++ 3.0, Borland C++ 3.1, Borland C++ 4.0
+    dseg_fill, = binary.find_all(bytes, [0xba, None, None, 0x2e, 0x89, 0x16, None, None, 0xb4, 0x30, 0xcd, 0x21, 0x8b, 0x2e, None, None, 0x8b, 0x1e, None, None, 0x8e, 0xda])
+    dgroup_address = int.from_bytes(bytes[dseg_fill+6:dseg_fill+8], 'little')
+    dseg = int.from_bytes(bytes[dseg_fill+1:dseg_fill+3], 'little') * 0x10
+    tiny_model = False
+except Exception:
+    try:
+        # Turbo C 1.5 or Turbo C 2.0?
+        # Borland C++ 2.0, Borland C++ 3.0, Borland C++ 3.1, Borland C++ 4.0
+        dseg_fill, = binary.find_all(bytes, [0x8c, 0xca, 0x2e, 0x89, 0x16, None, None, 0xb4, 0x30, 0xcd, 0x21, 0x8b, 0x2e, None, None, 0x8b, 0x1e, None, None, 0x8e, 0xda])
+        dgroup_address = int.from_bytes(bytes[dseg_fill+5:dseg_fill+7], 'little')
+        dseg = 0
+        tiny_model = True
+    except Exception:
+        dgroup_address = None
+        tiny_model = None
+        try:
+            # Some other compilers including Assembler.
+            dseg_fill, = binary.find_all(bytes, [0xb8, None, None, 0x8e, 0xd8])
+            dseg = int.from_bytes(bytes[dseg_fill+1:dseg_fill+3], 'little') * 0x10
+        except Exception:
+            dseg = None
+
+memory_model = None
+if dgroup_address is not None:
+    try:
+        droup = int.from_bytes(bytes[dgroup_address+info['text-offset']:dgroup_address+info['text-offset']+2], 'little')
+        assert droup == 0
+        memory_model_code = int.from_bytes(bytes[dgroup_address+2+info['text-offset']:dgroup_address+2+info['text-offset']+2], 'little')
+        memory_models = {0: 'tiny', 1: 'small', 0x8002: 'medium', 0x4003: 'compact', 0xc004: 'large', 0xc005: 'huge'}
+        assert memory_model_code in memory_models
+        memory_model = memory_models[memory_model_code]
+    except Exception:
+        memory_model = None
+
+if tiny_model is True:
+    # Rare case.
+    memory_model = 'tiny'
+
+ranges = [(0, info['text-size'])]
+for a in list(info['relocations']) + [info['stack-pointer-segment']*0x10]:
+    for i, (s, e) in enumerate(ranges):
+        if s < a < e:
+            ranges[i] = (a, e)
+            ranges.insert(i, (s, a))
+            break
+
+info['bits'] = 16
+info['machine'] = 'IMAGE_FILE_MACHINE_I8086' # Does not exist!
+info['characteristics'] = ['IMAGE_FILE_EXECUTABLE_IMAGE']
+info['sections'] = {
+    '.text' if s == 0 else '.data' if s == dseg else '.stack' if s == info['stack-pointer-segment']*0x10 else f'.text{s//0x10:04x}': {
+        'address': s,
+        'address-end': e,
+        'characteristics': [
+            'IMAGE_SCN_CNT_CODE',
+            'IMAGE_SCN_CNT_INITIALIZED_DATA',
+            'IMAGE_SCN_MEM_EXECUTE',
+            'IMAGE_SCN_MEM_READ',
+            'IMAGE_SCN_MEM_WRITE'
+        ],
+        'raw-offset': info['text-offset'] + s,
+        'raw-size': e-s,
+    } for s, e in ranges
+}
+if info['minimum-allocation'] > 0:
+    info['sections']['.bss'] = {
+        'address': info['load-size'],
+        'address-end': info['load-size'] + info['minimum-allocation'],
+        'characteristics': [
+            'IMAGE_SCN_CNT_UNINITIALIZED_DATA',
+            'IMAGE_SCN_MEM_READ',
+            'IMAGE_SCN_MEM_WRITE'
+        ],
+        'raw-offset': info['text-size'] + info['text-offset'],
+        'raw-size': 0,
+    }
+if info['text-size'] + info['text-offset'] < info['file-size']:
+    info['sections']['.tail'] = {
+        'address': info['text-size'],
+        'address-end': min(info['file-size'] - info['text-offset'], info['load-size']),
+        'characteristics': [],
+        'raw-offset': info['text-size'] + info['text-offset'],
+        'raw-size': info['file-size'] - info['text-size'] - info['text-offset'],
+    }
+
+for section in info['sections'].values():
+    section['entropy'] = round(binary.shannon(bytes[section['raw-offset']:section['raw-offset']+section['raw-size']]), 5)
+    if args.content:
+        section['data'] = bytes[section['raw-offset']:section['raw-offset']+section['raw-size']].hex().upper()
+
+info['subsystem'] = 'IMAGE_SUBSYSTEM_NATIVE'
+info['directories'] = {}
+info['imports'] = []
+info['exports'] = []
+info['resources'] = []
+
+try:
+    # Turbo C 1.5 or Turbo C 2.0 FIXME
+    uninitialized_fill, = binary.find_all(bytes, [0xbf, None, None, 0xb9, None, None, 0x2b, 0xcf, 0xf3, 0xaa])
+    initialized_size = int.from_bytes(bytes[uninitialized_fill+1:uninitialized_fill+3], 'little')
+    uninitialized_size = int.from_bytes(bytes[uninitialized_fill+4:uninitialized_fill+6], 'little') - initialized_size
+    possible_compilers = ['Turbo C 1.5', 'Turbo C 2.0']
+except Exception:
+    try:
+        # Borland C++ 2.0, Borland C++ 3.0, Borland C++ 3.1, Borland C++ 4.0
+        uninitialized_fill, = binary.find_all(bytes, [0xbf, None, None, 0xb9, None, None, 0x2b, 0xcf, 0xfc, 0xf3, 0xaa])
+        initialized_size = int.from_bytes(bytes[uninitialized_fill+1:uninitialized_fill+3], 'little')
+        uninitialized_size = int.from_bytes(bytes[uninitialized_fill+4:uninitialized_fill+6], 'little') - initialized_size
+        possible_compilers = ['Borland C++ 2.0', 'Borland C++ 3.0']
+    except Exception:
+        initialized_size = None
+        uninitialized_size = None
+        possible_compilers = None
+
+try:
+    # Turbo C 1.5 or Turbo C 2.0 FIXME
+    system_break_shift, = binary.find_all(bytes, [0x8b, 0x56, 8, 3, 6, None, None, 0x83, 0xd2, 0, 0x8b, 0xc8, 0x81, 0xc1, 0, 1, 0x83, 0xd2, 0])
+    system_break_address = int.from_bytes(bytes[system_break_shift+5:system_break_shift+7], 'little')
+    system_break = int.from_bytes(bytes[system_break_address+dseg+info['text-offset']:system_break_address+dseg+info['text-offset']+2], 'little')
+    assert system_break == initialized_size + uninitialized_size
+
+except Exception:
+    try:
+        # Borland C++ 2.0, Borland C++ 3.0, Borland C++ 3.1, Borland C++ 4.0
+        system_break_shift, = binary.find_all(bytes, [0x8b, 0x56, 6, 3, 6, None, None, 0x83, 0xd2, 0, 0x8b, 0xc8, 0x0b, 0xd2, 0x75, 0x10, 0x81, 0xc1, 0])
+        system_break_address = int.from_bytes(bytes[system_break_shift+5:system_break_shift+7], 'little')
+        system_break = int.from_bytes(bytes[system_break_address+dseg+info['text-offset']:system_break_address+dseg+info['text-offset']+2], 'little')
+        assert system_break == initialized_size + uninitialized_size
+
+    except Exception:
+        system_break = None
+
+info['memory-manager'] = {
+    'near-initialized-size': initialized_size,
+    'near-uninitialized-size': uninitialized_size,
+    'near-system-break': system_break,
+    'memory-model': memory_model,
+}
+
+# Export.
+
+info = dict(sorted(info.items()))
+
+if args.hex:
+    def hexify(x):
+        if isinstance(x, list):
+            for index, item in enumerate(x):
+                if isinstance(item, int):
+                    x[index] = hex(item)
+                else:
+                    hexify(item)
+
+        elif isinstance(x, dict):
+            for key, value in x.items():
+                if isinstance(value, int):
+                    x[key] = hex(value)
+                else:
+                    hexify(value)
+            y = {hex(k) if isinstance(k, int) else k: v for k, v in x.items()}
+            x.clear()
+            x |= y
+
+    hexify(info)
+
+if args.max_width:
+    import uuid
+
+    def mark_lists(x, depth=0):
+        if isinstance(x, dict):
+            x = x.values()
+        elif not isinstance(x, list):
+            return
+        for y in x:
+            mark_lists(y, depth=depth+1)
+        if isinstance(x, list):
+            x[:] = [str(uuid.uuid4())] + x + [str(uuid.uuid4())]
+            by_depth[depth].append((x[0], x[-1]))
+
+    by_depth = collections.defaultdict(list)
+    mark_lists(info)
+
+result = json.dumps(info, indent=args.indent)
+
+if args.max_width:
+    for depth, lists in by_depth.items():
+        for prefix, suffix in lists:
+            start_index = result.rindex('[', 0, result.index(prefix))
+            start_line_index = result.rindex('\n', 0, start_index)
+            end_index = result.index(']', result.index(suffix)) + 1
+            subs = list(map(json.dumps, json.loads(result[start_index:end_index])[1:-1]))
+            initial_indent = args.indent*depth
+            new_indent = args.indent*(depth+1)
+            if start_index - start_line_index + sum(map(len, subs)) + len(subs)*2 <= args.max_width:
+                result = result[:start_index] + '[' + ', '.join(subs) + ']' + result[end_index:]
+            else:
+                lines = ['']
+                i = 1
+                while i != len(subs) + 1:
+                    new_size = (not lines[-1])*new_indent + len(lines[-1]) + bool(lines[-1]) + len(subs[i-1]) + (i != len(subs))
+                    if new_size > args.max_width and lines[-1]:
+                        lines.append('')
+                        continue
+                    lines[-1] = ' '*new_indent if not lines[-1] else lines[-1] + ' '
+                    i, lines[-1] = i + 1, lines[-1] + subs[i-1] + ','[i == len(subs):]
+                result = result[:start_index] + '[\n' + '\n'.join(lines) + '\n' + ' '*initial_indent + ']' + result[end_index:]
+            assert prefix not in result
+            assert suffix not in result
+
+print(result)
