@@ -1,0 +1,19 @@
+[project]
+name = "dvtk"
+version = "0.2.1"
+description = "Lightweight package to validate/measure audio files in local or S3 directories."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "boto3>=1.38.29",
+    "librosa>=0.11.0",
+    "numpy>=2.0.2",
+    "onnxruntime-gpu>=1.20.2",
+    "requests>=2.32.3",
+    "torch>=2.7.0",
+    "torchaudio>=2.7.0",
+    "torchmetrics>=1.7.2",
+]
+
+[project.scripts]
+dvtk = "dvtk.cli:main"
