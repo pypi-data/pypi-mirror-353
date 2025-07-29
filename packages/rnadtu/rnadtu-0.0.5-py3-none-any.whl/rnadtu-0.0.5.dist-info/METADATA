@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: rnadtu
+Version: 0.0.5
+Summary: Package for running the CIDR algorithm implemented in R, in python
+Author-email: Anton <s235256@dtu.dk>, Sigurd <s235215@dtu.dk>, Alex <s235237@dtu.dk>, Aryan <s224208@dtu.dk>
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy<3.0,>=2.0.2
+Requires-Dist: pandas<3.0,>=2.2.3
+Requires-Dist: anndata<1.0,>=0.11
+Requires-Dist: scanpy<2.0,>=1.9.8
+Dynamic: license-file
+
+# rnadtu
+
+A Python package for running the CIDR algorithm (originally in R) for clustering single-cell RNA-seq data.
+
+## Features
+- Can run the CIDR-Algorithm in Python with the "cidr" function on an AnnData-object with either subprocesses or rpy2.
+
+## Installation
+```bash
+pip install rnadtu
