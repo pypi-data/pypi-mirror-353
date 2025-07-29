@@ -1,0 +1,4 @@
+pydantic<3.0.0,>=2.0.0
+httpx<1.0.0,>=0.28.0
+python-socketio<6.0.0,>=5.0.0
+websocket-client<2.0.0,>=1.8.0
