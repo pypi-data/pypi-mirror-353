@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zuadoss"
+version = "1.0.0"
+description = "ZUAD OSS Python SDK - 兼容OSS接口的对象存储Python客户端SDK"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "ZUAD OSS Team", email = "support@zuadoss.com"}
+]
+keywords = [
+    "oss", "object-storage", "cloud-storage", "s3-compatible",
+    "zuad", "zuadoss", "storage", "sdk", "python"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Archiving",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "requests>=2.25.0",
+]
+
+[project.urls]
+Homepage = "https://zuadoss.com"
+Documentation = "https://zuadoss.readthedocs.io/"
+Repository = "https://github.com/zuadoss/zuadoss-python-sdk"
+"Bug Reports" = "https://github.com/zuadoss/zuadoss-python-sdk/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["tests*", "docs*", "__pycache__*", "*.egg-info*"] 

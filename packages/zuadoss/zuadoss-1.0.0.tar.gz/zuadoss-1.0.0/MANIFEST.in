@@ -1,0 +1,32 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+include pyproject.toml
+include setup.py
+include requirements.txt
+
+# 包含所有Python源文件
+recursive-include zuadoss *.py
+
+# 排除不需要的文件
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~
+global-exclude *.bak
+global-exclude .git*
+global-exclude __pycache__/*
+global-exclude *.egg-info/*
+global-exclude build/*
+global-exclude dist/*
+global-exclude .pytest_cache/*
+
+# 排除测试文件
+prune tests
+prune docs/_build
+
+# 排除开发工具配置
+exclude .gitignore
+exclude .editorconfig
+exclude tox.ini
+exclude .travis.yml
+exclude .github/* 
