@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatchling.packages.find]
+where = ["src"]
+
+[tool.hatchling.metadata]
+allow-direct-references = true
+
+[project]
+name = "chuck-data"
+version = "0.1.0"
+description = "Command line AI for customer data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    { name = "John Rush", email = "john.rush@amperity.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "databricks-sdk>=0.50.0",
+    "jsonschema>=4.23.0",
+    "openai>=1.76.0",
+    "prompt-toolkit>=3.0.50",
+    "pydantic>=2.11.3",
+    "readchar>=4.2.1",
+    "requests>=2.32.3",
+    "textual>=0.40.0",
+]
+
+[project.scripts]
+chuck-data = "chuck_data.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pexpect",
+    "pyright",
+    "pytest",
+    "pytest-cov",
+]
+
+[project.urls]
+Homepage = "https://github.com/amperity/chuck-data"
+Repository = "https://github.com/amperity/chuck-data"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+exclude = ["assets/stitch_notebook_template.ipynb"]
+
+[tool.pyright]
+typeCheckingMode = "basic"
