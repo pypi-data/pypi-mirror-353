@@ -1,0 +1,2 @@
+[console_scripts]
+bids2openminds = bids2openminds.converter:convert_click
