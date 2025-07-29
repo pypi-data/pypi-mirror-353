@@ -1,0 +1,22 @@
+.gitignore
+CHANGELOG.md
+LICENSE
+README package.md
+README.md
+pyproject.toml
+requirements.txt
+.github/workflows/publish.yaml
+src/airctest/__init__.py
+src/airctest/main.py
+src/airctest.egg-info/PKG-INFO
+src/airctest.egg-info/SOURCES.txt
+src/airctest.egg-info/dependency_links.txt
+src/airctest.egg-info/entry_points.txt
+src/airctest.egg-info/requires.txt
+src/airctest.egg-info/top_level.txt
+src/airctest/cli/__init__.py
+src/airctest/cli/main.py
+src/configs/datasets.yaml
+src/utils/util.py
+tests/__init__.py
+tests/test_reader.py
