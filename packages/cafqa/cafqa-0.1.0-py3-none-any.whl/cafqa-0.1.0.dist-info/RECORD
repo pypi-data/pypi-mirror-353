@@ -1,0 +1,8 @@
+cafqa/__init__.py,sha256=nC9gLGTNmPXVT4eyS5az6nlf_rtgM7H5tpR_Y0c-9ZE,1544
+cafqa/circuit_manipulation.py,sha256=T-eA67tNwOnGW4ZQ72R-CrJLANtWxcjDq8Ul7Vfav6E,3997
+cafqa/main.py,sha256=7B6N8Px8ttCnCDjAX2G2V7jviyAhDT1ijIEyLy-E2RU,1264
+cafqa/vqe_experiment.py,sha256=kuxL46yFM7QYa5j4CkNeobocm0oXY28csTMUDMMSrlY,10442
+cafqa/vqe_helpers.py,sha256=1AsSfl5UWw4EajyatzqfqIsyW5OJnSuJyCqVTzprbxM,13319
+cafqa-0.1.0.dist-info/METADATA,sha256=t-HNaaq7uCiBMBHlydFZokc1UNtHYbl_R4BAXt_6vJU,2175
+cafqa-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cafqa-0.1.0.dist-info/RECORD,,
