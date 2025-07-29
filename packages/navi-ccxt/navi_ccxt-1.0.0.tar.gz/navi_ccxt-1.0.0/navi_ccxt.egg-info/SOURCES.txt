@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+navi_ccxt.egg-info/PKG-INFO
+navi_ccxt.egg-info/SOURCES.txt
+navi_ccxt.egg-info/dependency_links.txt
+navi_ccxt.egg-info/requires.txt
+navi_ccxt.egg-info/top_level.txt
