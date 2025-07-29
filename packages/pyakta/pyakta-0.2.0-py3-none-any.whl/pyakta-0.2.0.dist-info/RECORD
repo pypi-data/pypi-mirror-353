@@ -1,0 +1,9 @@
+pyakta-0.2.0.dist-info/METADATA,sha256=Km6485OTrwDnZMQvizoMUG9EbBC07Zkt0p90fFAEZqw,5463
+pyakta-0.2.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+pyakta-0.2.0.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+pyakta-0.2.0.dist-info/licenses/LICENSE,sha256=-qRt8wmrhQ9aMf7KhmZXc2vrTETYZF-6_T1KCeUhvHY,11340
+pyakta/__init__.py,sha256=3xo9OwfDX1R0KDkLmiRcrE1_-Na3uQQxV4nTBSzxjBk,198
+pyakta/credentials.py,sha256=O-y8-Z9IyOi5KF9uczI_Rj4Nq7a--BTjK4yZimUzUms,13319
+pyakta/did.py,sha256=p33bGEonncRWnJ6I-T1cWxVpTG6iVIu3XLEFDRQBses,11266
+pyakta/models.py,sha256=vXf8_vsRekvUkRK9ZbmaYsJJxoDeZA7VawyR22yHdX8,3987
+pyakta-0.2.0.dist-info/RECORD,,
