@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+gregex/__init__.py
+gregex/char.py
+gregex/group.py
+gregex/repeat.py
+gregex/set.py
+gregex/version.py
+gregex.egg-info/PKG-INFO
+gregex.egg-info/SOURCES.txt
+gregex.egg-info/dependency_links.txt
+gregex.egg-info/requires.txt
+gregex.egg-info/top_level.txt
