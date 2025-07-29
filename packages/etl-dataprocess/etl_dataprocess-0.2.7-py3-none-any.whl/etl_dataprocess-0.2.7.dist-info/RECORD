@@ -1,0 +1,7 @@
+dataprocess/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dataprocess/dataprocessing.py,sha256=loBO8rNuSGIInk9JTTWGM6Uc2NVJKPVBNspTqdcBxuw,53578
+etl_dataprocess-0.2.7.dist-info/licenses/LICENSE,sha256=2z-KaVGiKKIz2gOfczjRVW5_DhyOvoX-jVHJZdVDAgE,1087
+etl_dataprocess-0.2.7.dist-info/METADATA,sha256=XmpE52frTeFBg5q1x4Xb4FsdwFEMZe3L1pc9cKN2TNU,2864
+etl_dataprocess-0.2.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+etl_dataprocess-0.2.7.dist-info/top_level.txt,sha256=KwoI-LbJenyJGnYZ2v7A5LublZmkHjjVq5ZONNGYeu4,12
+etl_dataprocess-0.2.7.dist-info/RECORD,,
