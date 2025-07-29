@@ -1,0 +1,10 @@
+openwholeslide/__init__.py,sha256=VS-cjSn_RyDO1hlEQ2DilJmE8jNd0VF1XPpom0feE6Y,378
+openwholeslide/__version__.py,sha256=CNPD-gCnOZYQyQRsB4fJNuNJ1DL6A4op89zpifviSI0,481
+openwholeslide/_slide.py,sha256=dctAg4mvTWCXbCjZaXXI9FGeXDnmK1pjwXxv500cbgs,16900
+openwholeslide/vectors.py,sha256=ZIo35dvJIntRJqLMmh43EuM9dwZ-UhLUYt31x-t3rMo,4570
+openwholeslide/wsi.py,sha256=1C75wI1Iv_D-Z7uXaJy-PdvzCCW_riviafpgbudY9BE,14942
+openwholeslide-0.2.0.dist-info/LICENSE,sha256=_twE6EKK7EZLF5Ix99TGb8k4QZ8dIQw-6Phr4JhcjdI,1092
+openwholeslide-0.2.0.dist-info/METADATA,sha256=J7hos7xbJuxBdMGasaj_mvGFkGbRL6LqvnQaMBlJawM,2183
+openwholeslide-0.2.0.dist-info/WHEEL,sha256=fS9sRbCBHs7VFcwJLnLXN1MZRR0_TVTxvXKzOnaSFs8,110
+openwholeslide-0.2.0.dist-info/top_level.txt,sha256=fSE30AdHT3tnf6F8tDJtoM249wIga023ouZ6aV32H4E,15
+openwholeslide-0.2.0.dist-info/RECORD,,
