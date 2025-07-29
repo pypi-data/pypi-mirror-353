@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: thallu
+Version: 0.1.1
+Description-Content-Type: text/markdown
+Dynamic: description
+Dynamic: description-content-type
+
+# thallu
+
+**thallu** is a lightweight CLI tool that streamlines your Git workflow. It automates the process of initializing repositories, adding remotes, staging, committing, renaming branches, and pushing — all with a single command.
+
+---
+
+## 🚀 Features
+
+- 🔧 Initialize Git repositories (if not already initialized)
+- 🔗 Add and validate Git remote (`origin`)
+- ➕ Automatically stage all files
+- 📝 Prompt for commit messages
+- 🌿 Rename the current branch to `main`
+- 🚀 Push to `origin/main`
+- 📄 Validate presence of required project files (like `plan.txt`)
+
+---
+
+## 📦 Installation
+
+Install via PyPI:
+
+```bash
+pip install thallu
+```
+
+---
+
+## ⚙️ Usage
+
+Create or update your Git repo:
+
+```bash
+thallu
+```
+
+Recommit and push updates (safe for existing repos):
+
+```bash
+thallu -u
+```
+
+---
+
+## 📁 Requirements
+
+- Python 3.7+
+- Git installed and configured
+- A `plan.txt` file in the root of your project
+
+---
+
+## 📮 Roadmap
+
+The project is actively evolving. Upcoming features:
+
+- 🧠 Auto-detect project type (Python, Node, etc.)
+- 🔐 GPG signing support
+- 📦 GitHub releases integration
+- 📝 Commit message presets and conventions
+- 🧪 Test coverage and CI hooks
+- 🌐 GitHub project visibility enhancements
+
+---
+
+## 🧪 Example Output
+
+```bash
+$ thallu
+✅ Git repo already initialized.
+🔗 Remote 'origin' already exists.
+➕ Staged all files.
+💬 Enter commit message: initial setup
+📦 Commit done: initial setup
+🌿 Renamed branch to 'main'.
+🚀 Pushed to origin/main.
+```
+---
+
+## 🤝 Contributing
+
+Contributions are welcome — especially new features, bug fixes, and feedback.
+
+Please:
+
+- Fork the repo
+- Create a new branch for your feature or fix
+- Open a Pull Request with a clear description
+
+---
+
+## 📜 License
+
+© Naveensivam03
+
+⚡ Built for developers who want to stop wasting time on repetitive Git tasks.
