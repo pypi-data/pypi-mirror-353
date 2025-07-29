@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: spc-export
+Version: 1.0.1
+Summary: SPC-Export is a tool designed to facilitate the conversion of SPC from Brama measurements into a format that is both human- and Python-readable. This streamlined conversion ensures easy access, readability, and visualization of measurement data for further analysis and interpretation.
+Home-page: https://gitlab.tuwien.ac.at/iap/aip/anp/spc-export
+Author: Richard van Nieuwenhoven, Markus Valtiner
+Author-email: richard.nieuwenhoven@tuwien.ac.at, markus.valtiner@tuwien.ac.at
+Project-URL: Homepage, https://gitlab.tuwien.ac.at/iap/aip/anp/spc-export
+Keywords: spc conversion
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.1
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib>=3.5.1
+Requires-Dist: NumPy<2.0
+
+# SPC-Export: SPC Data Conversion for Human and Python Readability
+
+**SPC-Export** is a Python-based tool designed to facilitate the conversion of **SPC** files from Raman measurements into a format that is both human- and Python-readable. This streamlined conversion ensures easy access, readability, and visualization of measurement data for further analysis and interpretation.
+
+SPC-Export was developed to streamline the analysis and sharing of SPC measurement data, making it accessible for scientists and engineers.
+
+Feel free to contribute improvements or report issues to enhance this tool for the Raman community!
+
+---
+
+### ZIP File Contents:
+1. **Metadata File**:  
+   - **`metadata.xml`**: A detailed XML file containing all header data.  
+   - The data is condensed and presented in an easily readable, descriptive format.  
+
+2. **Measurement Data**:  
+   - Each measurement is saved as a **tab-separated CSV file** with a header line.  
+   - CSV filenames are derived from the measurement descriptions.  
+
+---
+
+## Benefits  
+
+- **Human-Readable**:  
+  The condensed XML metadata and descriptive filenames ensure clarity for manual review.  
+
+- **Machine-Friendly**:  
+  The CSV format enables seamless integration with Python and other data processing workflows.  
+
+- **Organized Output**:  
+  The ZIP file structure ensures all related data is packaged together for easy sharing and storage.  
+
+---
+
+## Applications  
+
+- Post-experiment analysis of SPC measurements.  
+- Integration into automated workflows for advanced data analysis.  
+
+---
+
+## Installation and Usage  
+
+1. **Instalation**:  
+   - Python >= 3.1  
+   - pip >= 22.0.2
+   - pip install spc-export  
+
+2. **Run the Script**:  
+   ```bash
+   spc-export --help
+
+    usage: xps-export.py [-h] [--create-plots] [--create-csv]
+                         input_file output_file
+    
+    Utility for parsing files to XML.
+    
+    positional arguments:
+      input_file      Path to the XPS file.
+    
+    options:
+      -h, --help      show this help message and exit
+      
+   spc-export test/SGL_reduced.spc
+   
+   ```
+2. **Output**:  
+   The ZIP file containing metadata, CSVs will be saved as {output_file}.zip .
+
+## Developers and Designers
+
+   Richard W. van Nieuwenhoven <nieuwenhoven@iap.tuwien.ac.at>
+   Markus Valtiner <markus.valtiner@tuwien.ac.at>
+
+
+
