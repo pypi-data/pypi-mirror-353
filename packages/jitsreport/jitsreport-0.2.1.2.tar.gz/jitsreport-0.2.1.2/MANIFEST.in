@@ -1,0 +1,2 @@
+recursive-include dist_protected/jitsreport/pyarmor_runtime_000000/*
+include README.md
