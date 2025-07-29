@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+keeper_secrets_manager_storage_oracle_kms/__init__.py
+keeper_secrets_manager_storage_oracle_kms/constants.py
+keeper_secrets_manager_storage_oracle_kms/oci_kms_client.py
+keeper_secrets_manager_storage_oracle_kms/oci_session_config.py
+keeper_secrets_manager_storage_oracle_kms/oracle_key_value_storage.py
+keeper_secrets_manager_storage_oracle_kms/utils.py
+keeper_secrets_manager_storage_oracle_kms.egg-info/PKG-INFO
+keeper_secrets_manager_storage_oracle_kms.egg-info/SOURCES.txt
+keeper_secrets_manager_storage_oracle_kms.egg-info/dependency_links.txt
+keeper_secrets_manager_storage_oracle_kms.egg-info/requires.txt
+keeper_secrets_manager_storage_oracle_kms.egg-info/top_level.txt
