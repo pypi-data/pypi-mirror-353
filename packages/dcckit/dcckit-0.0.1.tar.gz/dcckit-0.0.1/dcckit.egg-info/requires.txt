@@ -1,0 +1,5 @@
+numpy
+scipy
+wgpu
+PILLOW
+matplotlib
