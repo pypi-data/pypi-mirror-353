@@ -1,0 +1,50 @@
+# Base image with all heavy dependencies pre-installed
+# This should be built once and reused across multiple builds
+FROM python:3.11-slim as agnt5-python-base
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies (these rarely change)
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    pkg-config \
+    protobuf-compiler \
+    file \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create runtime user
+RUN useradd --create-home --shell /bin/bash agnt5
+
+# Create cache directories for faster builds
+RUN mkdir -p /home/agnt5/.cache/uv /home/agnt5/.cache/pip /home/agnt5/.cargo/registry /home/agnt5/.cargo/git
+RUN chown -R agnt5:agnt5 /home/agnt5/.cache /home/agnt5/.cargo
+
+# Install Rust for building the SDK core extension (as agnt5 user)
+USER agnt5
+
+# Install Rust with explicit target for container architecture
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable --target $(uname -m)-unknown-linux-gnu
+ENV PATH="/home/agnt5/.cargo/bin:${PATH}"
+ENV CARGO_HOME="/home/agnt5/.cargo"
+ENV RUSTUP_HOME="/home/agnt5/.rustup"
+
+# Pre-install common Rust components to cache them
+RUN rustup component add clippy rustfmt
+
+# Switch back to root for Python package installation
+USER root
+
+# Install uv for faster Python package management
+RUN pip install uv
+
+# Set environment variables for caching
+ENV UV_CACHE_DIR="/home/agnt5/.cache/uv"
+ENV CARGO_TARGET_DIR="/tmp/cargo-target"
+
+# Final setup
+USER agnt5
+WORKDIR /app
+
+# This base image is now ready for use by application-specific Dockerfiles

@@ -1,0 +1,42 @@
+[package]
+name = "agnt5-python"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "agnt5_python"
+crate-type = ["cdylib"]
+path = "rust-src/lib.rs"
+
+[dependencies]
+# PyO3 for Python bindings - DO NOT CHANGE VERSION, KEEP AT 0.25.0
+pyo3 = { version = "0.20.0", features = ["extension-module", "abi3-py39"] }
+
+# Include our Rust SDK core
+agnt5-sdk-core = { path = "../sdk-core" }
+
+# Async runtime integration
+tokio = { version = "1.0", features = ["full"] }
+
+# pyo3-asyncio - Temporarily disabled due to version incompatibility with PyO3 0.25.0
+pyo3-asyncio = { version = "0.20", features = ["tokio-runtime"] }
+async-trait = "0.1"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "2.0.12"
+
+# Utilities
+uuid = { version = "1.0", features = ["v4", "serde"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+futures = "0.3"
+base64 = "0.22.1"
+chrono = { version = "0.4", features = ["serde"] }
+
+[build-dependencies]
+pyo3-build-config = "0.25.0"

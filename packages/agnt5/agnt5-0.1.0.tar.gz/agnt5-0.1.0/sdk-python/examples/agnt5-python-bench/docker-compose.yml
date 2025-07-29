@@ -1,0 +1,122 @@
+# Docker Compose for AGNT5 Python Benchmark Application
+#
+# This extends the main dev environment with the Python benchmark worker
+# Run with: docker-compose -f ../../dev/docker-compose.yml -f docker-compose.yml up
+
+services:
+  # Python Benchmark Worker
+  agnt5-python-bench:
+    container_name: agnt5-python-bench
+    build:
+      context: ../../../../
+      dockerfile: sdk/sdk-python/examples/agnt5-python-bench/Dockerfile
+    environment:
+      # Worker Configuration
+      - AGNT5_SERVICE_NAME=agnt5-python-bench
+      - AGNT5_SERVICE_VERSION=1.0.0
+      - AGNT5_RUNTIME_ENDPOINT=http://agnt5-runtime:8080
+      - AGNT5_LOG_LEVEL=INFO
+      
+      # Development flags
+      - AGNT5_DEV_MODE=true
+      - AGNT5_HOT_RELOAD=false
+      
+      # Telemetry
+      - AGNT5_OTEL_ENDPOINT=http://opentelemetry-collector:4317
+      - AGNT5_ENABLE_TRACING=true
+      - AGNT5_ENABLE_METRICS=true
+      
+      # AI Provider API Keys (optional - will use mock if not provided)
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY:-}
+    volumes:
+      # Mount for live development (optional)
+      - ./:/app/benchmark:ro
+      # Logs and data
+      - agnt5_bench_logs:/app/logs
+    depends_on:
+      agnt5-runtime:
+        condition: service_healthy
+      opentelemetry-collector:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8080/health').raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+    networks:
+      - agnt5-network
+
+  # Benchmark Test Runner (runs tests and exits)
+  agnt5-benchmark-tests:
+    container_name: agnt5-benchmark-tests
+    build:
+      context: ../../../../
+      dockerfile: sdk/sdk-python/examples/agnt5-python-bench/Dockerfile
+    environment:
+      - AGNT5_SERVICE_NAME=agnt5-python-bench-tests
+      - AGNT5_RUNTIME_ENDPOINT=http://agnt5-runtime:8080
+      - AGNT5_LOG_LEVEL=DEBUG
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    command: >
+      bash -c "
+        echo 'Waiting for runtime to be ready...';
+        sleep 30;
+        echo 'Running benchmark tests...';
+        python benchmarks/performance_tests.py;
+        python benchmarks/scalability_tests.py;
+        echo 'Tests completed';
+      "
+    volumes:
+      - ./benchmarks:/app/benchmark/benchmarks:ro
+      - agnt5_bench_results:/app/results
+    depends_on:
+      agnt5-python-bench:
+        condition: service_healthy
+    profiles:
+      - testing
+    networks:
+      - agnt5-network
+
+  # Load Generator for Performance Testing
+  agnt5-load-generator:
+    container_name: agnt5-load-generator
+    image: python:3.11-slim
+    working_dir: /app
+    environment:
+      - AGNT5_RUNTIME_ENDPOINT=http://agnt5-runtime:8080
+      - LOAD_TEST_DURATION=300  # 5 minutes
+      - LOAD_TEST_CONCURRENCY=50
+      - LOAD_TEST_RPS=10
+    command: >
+      bash -c "
+        pip install requests aiohttp asyncio;
+        echo 'Starting load generation in 60 seconds...';
+        sleep 60;
+        python /app/load_generator.py;
+      "
+    volumes:
+      - ./tools/load_generator.py:/app/load_generator.py:ro
+      - agnt5_bench_results:/app/results
+    depends_on:
+      agnt5-python-bench:
+        condition: service_healthy
+    profiles:
+      - load-testing
+    networks:
+      - agnt5-network
+
+volumes:
+  agnt5_bench_logs:
+  agnt5_bench_results:
+
+networks:
+  agnt5-network:
+    external: true
+    name: dev_default

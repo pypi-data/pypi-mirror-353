@@ -1,0 +1,100 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "agnt5"
+version = "0.1.0"
+description = "Python SDK for AGNT5 Platform - Build durable, resilient agent-first applications"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "AGNT5 Team", email = "team@agnt5.com" }
+]
+keywords = ["agent", "workflow", "durable", "ai", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "pydantic>=2.0",
+    "httpx>=0.24.0",
+    "grpcio>=1.53.0",
+    "protobuf>=4.22.0",
+    "tenacity>=8.2.0",
+    "structlog>=23.1.0",
+    "opentelemetry-api>=1.17.0",
+    "opentelemetry-sdk>=1.17.0",
+    "typing-extensions>=4.0.0",
+    "setproctitle>=1.3.6",
+    "maturin>=1.8.6",
+    "aiohttp>=3.12.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.3.0",
+    "ruff>=0.0.261",
+    "mypy>=1.2.0",
+    "types-protobuf>=4.22.0",
+    "maturin>=1.0,<2.0",
+]
+vector = [
+    "numpy>=1.24.0",
+    "faiss-cpu>=1.7.4",
+]
+llm = [
+    "openai>=1.0.0",
+    "anthropic>=0.18.0",
+    "transformers>=4.30.0",
+]
+
+[project.urls]
+"Homepage" = "https://agnt5.com"
+"Documentation" = "https://docs.agnt5.com"
+"Repository" = "https://github.com/agentifyme/agnt5-platform"
+"Issue Tracker" = "https://github.com/agentifyme/agnt5-platform/issues"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "src"
+module-name = "agnt5._core"
+manifest-path = "sdk-python/Cargo.toml"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+
+[dependency-groups]
+dev = [
+    "maturin>=1.8.6",
+]
