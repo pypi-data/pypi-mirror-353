@@ -1,0 +1,1 @@
+# Tests pour bincraft2json 

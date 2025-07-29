@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "pybind11>=2.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bincraft2json"
+version = "0.2.0"
+description = "Python module to decode BinCraft files to JSON"
+authors = [{name = "@aymene69"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pybind11>=2.6.0",
+]
+keywords = ["aviation", "adsb", "bincraft", "json", "decoder"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/aymene69/bincraft2json"
+Repository = "https://github.com/aymene69/bincraft2json.git"
+Issues = "https://github.com/aymene69/bincraft2json/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+bincraft2json = "src/bincraft2json"
+

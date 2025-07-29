@@ -1,0 +1,19 @@
+include README.md
+include README_PYTHON.md
+include LICENSE
+include bincraft2json.hpp
+include json.hpp
+include src/python_bindings.cpp
+include example.py
+recursive-include tests *.py
+recursive-include .github *.yml
+
+# Exclude sensitive files
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .pypirc
+global-exclude *.pypirc
+global-exclude .env
+global-exclude *.key
+global-exclude *.token 
