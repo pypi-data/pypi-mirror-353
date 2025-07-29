@@ -1,0 +1,7 @@
+Flask
+
+[dev]
+sphinx
+
+[test]
+nose
