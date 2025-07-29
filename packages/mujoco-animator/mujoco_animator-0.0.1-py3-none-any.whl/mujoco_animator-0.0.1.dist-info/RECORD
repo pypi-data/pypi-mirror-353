@@ -1,0 +1,12 @@
+mujoco_animator/__init__.py,sha256=XsnbeD3_D2-UvnJoo19sMgaMeNb6vNXNxf8nGqLKehY,111
+mujoco_animator/animator.py,sha256=9Hm80oMJCVwnb3Nv3V8DQfEsnIn-4Frx1HCRPbA4tSE,19268
+mujoco_animator/cli.py,sha256=7jW1YMqeBBXR5wBGdOJo4YOosy1uBRppo1jelvrFoNE,1128
+mujoco_animator/format.py,sha256=K6qKL6BTPWXf7KuD-2a6WX0nCJk-KGmM9hML86pOb1c,5377
+mujoco_animator/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mujoco_animator/viewer.py,sha256=Or54kzILhj-oF--MQ_-afQXpYByvV5HLG6F0HEU242A,10043
+mujoco_animator-0.0.1.dist-info/licenses/LICENSE,sha256=e0NY89DURQrH-iweO4hh1f9lqjXNEIn_pOK1f5NAwfc,1069
+mujoco_animator-0.0.1.dist-info/METADATA,sha256=0hwkmJO6KAjaoffYBzSI3qYIByQW4XC0BF_gLVooUok,1948
+mujoco_animator-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mujoco_animator-0.0.1.dist-info/entry_points.txt,sha256=K9Xe_hFblHWBXmpgYy-_spsrngc6CoVKfPJoesjdxy4,61
+mujoco_animator-0.0.1.dist-info/top_level.txt,sha256=FJYbxqv-pZjRh_1AN5mY3GOLWCdCjMtXU8oZhgzXpSw,16
+mujoco_animator-0.0.1.dist-info/RECORD,,
