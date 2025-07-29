@@ -1,0 +1,26 @@
+[project]
+name = "llmpy-models"
+version = "0.0.1"
+description = "Automatically generated LLM models for llmpy-lib"
+readme = "README.md"
+authors = [
+    { name = "Angelo Zangari", email = "angelo.zangari10@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
+
+[tool.hatch.build]
+packages = ["src/llmpy_models"]
