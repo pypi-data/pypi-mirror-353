@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+tqdm_pandas/tqdm_pandas.egg-info/PKG-INFO
+tqdm_pandas/tqdm_pandas.egg-info/SOURCES.txt
+tqdm_pandas/tqdm_pandas.egg-info/dependency_links.txt
+tqdm_pandas/tqdm_pandas.egg-info/requires.txt
+tqdm_pandas/tqdm_pandas.egg-info/top_level.txt
