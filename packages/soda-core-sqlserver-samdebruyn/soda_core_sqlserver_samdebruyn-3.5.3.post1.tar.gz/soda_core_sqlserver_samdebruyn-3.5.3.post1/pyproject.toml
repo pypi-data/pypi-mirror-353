@@ -1,0 +1,15 @@
+[project]
+name = "soda-core-sqlserver-samdebruyn"
+version = "3.5.3.post1"
+authors = [
+    { name = "Sam Debruyn", email = "sam@debruyn.dev" }
+]
+requires-python = ">=3.9"
+dependencies = ["soda-core==3.5.3.post1", "pyodbc", "azure-identity~=1.17.1"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+license-files = []

@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: soda-core-sqlserver-samdebruyn
+Version: 3.5.3.post1
+Author-email: Sam Debruyn <sam@debruyn.dev>
+Requires-Python: >=3.9
+Requires-Dist: soda-core==3.5.3.post1
+Requires-Dist: pyodbc
+Requires-Dist: azure-identity~=1.17.1
