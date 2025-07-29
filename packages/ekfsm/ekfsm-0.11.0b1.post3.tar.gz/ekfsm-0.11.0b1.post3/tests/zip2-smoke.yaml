@@ -1,0 +1,33 @@
+system_config:
+  name: "DB ZIP2 Test System"
+  slots:
+    - name: SYSTEM_SLOT
+      slot_type: CPCI_S0_SYS
+      desired_hwmodule_type: EKF SC9-TOCCATA
+      desired_hwmodule_name: CPU1
+      attributes:
+        is_master: true
+    - name: SLOT3
+      slot_type: CPCI_S0_PER
+      desired_hwmodule_type: EKF SQ1-TRACK
+      desired_hwmodule_name: SQ1
+      attributes:
+        slot_coding: 0x4
+    - name: SLOT4
+      slot_type: CPCI_S0_PER
+      desired_hwmodule_type: EKF SPV-MYSTIC
+      desired_hwmodule_name: SPV
+      attributes:
+        slot_coding: 0x3
+    - name: SLOT8
+      slot_type: CPCI_S0_PER
+      desired_hwmodule_type: EKF SUR-UART
+      desired_hwmodule_name: SUR
+      attributes:
+        slot_coding: 0x0
+    - name: AUX_SLOT
+      slot_type: CPCI_S0_UTILITY
+      desired_hwmodule_type: EKF CCU
+      desired_hwmodule_name: CCU
+      attributes:
+        slot_coding: 0x7

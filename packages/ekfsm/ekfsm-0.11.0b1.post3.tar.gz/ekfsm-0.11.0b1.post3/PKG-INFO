@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: ekfsm
+Version: 0.11.0b1.post3
+Summary: The EKF System Management Library (ekfsm) is a sensor monitoring suite for Compact PCI Serial devices.
+Author-email: Klaus Popp <klaus.popp@ci4rail.com>, Jan Jansen <jan@ekf.de>, Felix Päßler <fp@ekf.de>
+Requires-Python: >=3.10
+Requires-Dist: anytree
+Requires-Dist: click>=8.0.1
+Requires-Dist: crcmod
+Requires-Dist: gpiod>=2.1.0
+Requires-Dist: hexdump
+Requires-Dist: more-itertools
+Requires-Dist: munch
+Requires-Dist: smbus2
+Requires-Dist: types-pyyaml>=6.0.12.20241230
+Requires-Dist: yamale
+Description-Content-Type: text/markdown
+
+# ekfsm - EKF system management library
+
+Provides access to system management functions on Linux based modular hardware systems,
+such as CompactPCI-Serial systems.
+
+Initial implementation for [DP-ZIP2 CompactPCI-Serial system](https://ekf.atlassian.net/l/cp/KzN2q7KR)
+
+## Features
+
+- System configuration via YAML configuration file
+- Obtain inventory information of the system and its components
+- Obtain sensor information, such as temperature, humidity, voltage, current, accelerometer, gyroscope, etc.
+- Access to system level functions, such as system LEDs, system fan, system power supply, etc.
+- Supports simulation mode for development and testing
+
+## Packaging
+
+The project can be packaged and deployed as a pypi package to the gitlab pypi registry.
+
+The project metadata is partially generated dynamically from the project readme and the auto generated version tag from SCM.
+
+### Build the package
+
+To build the package run `make build`
+
+### Upload package manually to the GITLAB package registry
+
+1. Set up your authentication method and the project URL in your `~/.pypirc` according to [Authenticate with the package registry](https://gitlab.ekf.com/api/v4/projects/407/packages/pypi)
+2. Run `make upload`
+
+Note that the version string which is generated complies to the `setuptools-scm` default versioning scheme and thus the version string will be slightly different from the string generated during the pipeline build if running from a shell in a workspace.
+
+*See also [SetupTools-SCM Documentation](https://setuptools-scm.readthedocs.io/en/latest/) and [SetupTool UserGuide](https://setuptools.pypa.io/en/latest/userguide).*
+
+## Install a package
+
+See instructions given in the packages deployed under [this projects pypi registry](https://gitlab.ekf.com/libs/apis/ekfsm/-/packages/).
+
+## Generating documentation
+
+From the nix shell, run `make docs` to generate the documentation. This will start a local web server to view the generated documentation. It is automatically updated when the source code changes.
+
+The documentation is generated using the `sphinx` tool. The configuration and docs are stored in the `docs` folder.
+
+
+## Remote development on the target
+
+On the remote machine, install recent version of direnv:
+
+```bash
+curl -sfL https://direnv.net/install.sh | bash
+```
+
+Add the following line to your ~/.bashrc or ~/.bash_profile:
+
+```bash
+eval "$(direnv hook bash)"
+```
+
+Install the following extensions in VSCode:
+* cab404.vscode-direnv
+* ms-python.mypy-type-checker
+* mikoz.black-py
+* ms-python.python
+* ms-python.vscode-pylance
+* ms-python.debugpy
+
+From vscode on the host machine, open the project folder on the remote machine via ssh. The direnv extension will automatically load the environment variables from the `.envrc` file.
