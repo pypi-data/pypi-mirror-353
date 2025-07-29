@@ -1,0 +1,10 @@
+simple_repository/__init__.py,sha256=ZtGfRvS804XC9wnm2nsw5dUmuLyfOiw191CCtjhlOdA,135
+simple_repository/exceptions.py,sha256=ml78viK7ldDYt-JKzza-1KaSbW2sGqGKypqKLpPISB0,1015
+simple_repository/protocols.py,sha256=48RXbo5hzcfQiXPRhlSY_3rTO5HdQPdB7HcgmWT0TG4,283
+simple_repository/repository.py,sha256=brocb7Y45sM0UJuI_PqY1DDJh94loiFIq59AnbX701I,11516
+simple_repository/utils.py,sha256=gglKjwCJdloEv-I5984KLgOGWIDZBEwhurqJozg7aq0,438
+simple_repo_asyncsqla-0.1.2.dist-info/METADATA,sha256=oNM76GVgLZEY4T6fuZcB7Ppu9S681V-_yVZj2Kozlow,379
+simple_repo_asyncsqla-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+simple_repo_asyncsqla-0.1.2.dist-info/entry_points.txt,sha256=rH52Buvt4-XxPxNs9hzUeZ7SwITHBawB6VELcexj-00,69
+simple_repo_asyncsqla-0.1.2.dist-info/licenses/License,sha256=q7KJbcPCqUAvkBuI1QNc8Kg9XPfBfnNkLN9WKwudO8U,11
+simple_repo_asyncsqla-0.1.2.dist-info/RECORD,,
