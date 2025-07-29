@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+emailverifier/__init__.py
+smtp_email_validator.egg-info/PKG-INFO
+smtp_email_validator.egg-info/SOURCES.txt
+smtp_email_validator.egg-info/dependency_links.txt
+smtp_email_validator.egg-info/requires.txt
+smtp_email_validator.egg-info/top_level.txt
