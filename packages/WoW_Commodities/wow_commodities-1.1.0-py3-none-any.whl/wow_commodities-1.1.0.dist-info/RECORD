@@ -1,0 +1,10 @@
+app.py,sha256=lupY-LDpQh90tE3LHvZteeWnXBibi3lP8n7W56eF_7I,3651
+src/__about__.py,sha256=TQRCh-uHGIxj_Lfhc5gCznSx3IDdS4dWpyq-CMaNtTU,58
+src/get_commodities.py,sha256=ZS9eYHYeqCCwZAD85bvkb1XEqgGfKNfCSIyOMYDxZFk,826
+src/get_token.py,sha256=0yEUlNz8Qk92e1xfWMaTvCa-lpl6MmU1gW8CX6aEWiA,601
+src/region_locale.py,sha256=wfhEJ1Hq1C8SsMiDRh351WX_oSvxSjCsOklTHz6Lumw,203
+wow_commodities-1.1.0.dist-info/METADATA,sha256=jbiNKPPIrFuv3m9UE73Ugx5o_495Z5IjuS6EmBjEoyQ,5613
+wow_commodities-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+wow_commodities-1.1.0.dist-info/entry_points.txt,sha256=N0DcpyeH-YtVkCo-fyB4YyV40pKoJDF0zut0EzWr1xg,41
+wow_commodities-1.1.0.dist-info/licenses/LICENSE.txt,sha256=pWgb-bBdsU2Gd2kwAXxketnm5W_2u8_fIeWEgojfrxs,7651
+wow_commodities-1.1.0.dist-info/RECORD,,
