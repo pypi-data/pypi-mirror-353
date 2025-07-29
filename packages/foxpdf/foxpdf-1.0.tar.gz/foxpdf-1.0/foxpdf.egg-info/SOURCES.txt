@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+foxpdf/__init__.py
+foxpdf/pdf2text.py
+foxpdf.egg-info/PKG-INFO
+foxpdf.egg-info/SOURCES.txt
+foxpdf.egg-info/dependency_links.txt
+foxpdf.egg-info/top_level.txt
