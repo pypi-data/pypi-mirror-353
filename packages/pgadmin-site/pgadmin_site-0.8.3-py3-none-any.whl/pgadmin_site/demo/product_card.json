@@ -1,0 +1,126 @@
+[
+    {
+        "type": "RectangleFigure",
+        "x1": 10,
+        "y1": 10,
+        "x2": 710,
+        "y2": 130,
+        "fill": "#fff",
+        "stroke": "#222",
+        "stroke_width": 1,
+        "radius": 4
+    },
+    {
+        "type": "TextFigure",
+        "x1": 30,
+        "y1": 45,
+        "x2": 230,
+        "y2": 65,
+        "text": "{product.model_type} | {product.name}",
+        "font": "bold 20px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 30,
+        "y1": 70,
+        "x2": 120,
+        "y2": 90,
+        "text": "Артикул",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 120,
+        "y1": 70,
+        "x2": 220,
+        "y2": 90,
+        "text": "{product.sku}",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 30,
+        "y1": 90,
+        "x2": 320,
+        "y2": 110,
+        "text": "Минимальная стоимость для партнера",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 320,
+        "y1": 90,
+        "x2": 420,
+        "y2": 110,
+        "text": "{product.min_price} руб.",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 30,
+        "y1": 110,
+        "x2": 200,
+        "y2": 130,
+        "text": "Основной материал",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 200,
+        "y1": 110,
+        "x2": 300,
+        "y2": 130,
+        "text": "{product.material}",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 500,
+        "y1": 60,
+        "x2": 600,
+        "y2": 80,
+        "text": "{sum_stage_time} ч.",
+        "font": "20px Arial",
+        "formula": "sum([row['production_stage.stage_time'] for row in get_stages(product.product_id)])"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 20,
+        "y1": 120,
+        "x2": 120,
+        "y2": 140,
+        "text": "Цех: {workshop.name}",
+        "font": "14px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x1": 20,
+        "y1": 150,
+        "x2": 220,
+        "y2": 170,
+        "text": "Время изготовления: {product.production_time} ч.",
+        "font": "14px Arial"
+    },
+    {
+        "type": "ButtonFigure",
+        "x1": 20,
+        "y1": 180,
+        "x2": 140,
+        "y2": 210,
+        "text": "Этапы",
+        "fill": "#67BA80",
+        "text_color": "white",
+        "table": "production_stage",
+        "columns": [
+            {"column": "stage_name", "label": "Этап"},
+            {"column": "stage_time", "label": "Время (ч)"}
+        ],
+        "filters": [
+            {
+                "column": "product_id",
+                "op": "=",
+                "value": "{product.product_id}"
+            }
+        ]
+    }
+] 
