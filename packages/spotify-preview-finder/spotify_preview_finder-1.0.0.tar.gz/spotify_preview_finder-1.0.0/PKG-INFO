@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: spotify-preview-finder
+Version: 1.0.0
+Summary: Get Spotify song preview URLs using Spotipy and web scraping
+Home-page: https://github.com/sonusahu05/spotify-preview-finder
+Author: Sonu Sahu
+Author-email: sonusahu050502@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: spotipy>=2.23.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: beautifulsoup4>=4.12.3
+Requires-Dist: requests>=2.31.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# spotify-preview-finder 🎧
+
+Get Spotify song preview URLs along with song details — even when `preview_url` is not directly provided by the Spotify API!
+
+---
+
+## 🚀 Features
+
+- 🔍 Search for any song by name
+- 🎵 Get Spotify URL + preview stream URLs from the page
+- 🧠 Uses `spotipy` for Spotify API
+- 🕷️ Falls back to scraping `p.scdn.co` links from the Spotify web page
+
+---
+
+## 📦 Installation
+
+```bash
+pip install spotify-preview-finder
