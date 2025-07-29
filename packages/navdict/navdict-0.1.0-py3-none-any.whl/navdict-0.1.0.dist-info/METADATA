@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: navdict
+Version: 0.1.0
+Summary: AN intelligent navigable dictionary
+Author-email: Rik Huygen <rik.huygen@kuleuven.be>
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: rich>=14.0.0
+Requires-Dist: ruamel-yaml>=0.18.12
+Description-Content-Type: text/markdown
+
+# An intelligent navigable dictionary
