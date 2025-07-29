@@ -1,0 +1,7 @@
+sqlglot_vertica/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+sqlglot_vertica/vertica.py,sha256=ywpGLnvBG7ofhsynpo929XkNlS_m1fygL53xROdHg0Y,13801
+vertica_sqlglot_dialect-0.1.1.dist-info/licenses/LICENSE,sha256=ObGPrYMvDD-SpLKQiXcqpU3jDd_qP1iOT76nwnYA0x0,1093
+vertica_sqlglot_dialect-0.1.1.dist-info/METADATA,sha256=A-kzGoQ0Jnd8_N8spAJIB8htfUT2Mr3qi2y3sqGwIno,9465
+vertica_sqlglot_dialect-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vertica_sqlglot_dialect-0.1.1.dist-info/top_level.txt,sha256=jhJpEl1UJWCKaIBT7o8bBYPsaEImLoXjoM8rS2k9yAE,16
+vertica_sqlglot_dialect-0.1.1.dist-info/RECORD,,
