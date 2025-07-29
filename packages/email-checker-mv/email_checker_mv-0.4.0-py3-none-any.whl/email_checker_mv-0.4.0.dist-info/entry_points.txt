@@ -1,0 +1,6 @@
+[console_scripts]
+check_batch = app.runner:run_batch
+check_email = app.cli:run_cli
+get_user_config = app.user_config_manager:show_user_config_entrypoint
+set_user_config = app.user_config_manager:set_user_config_entrypoint
+update_domains = app.utils.update_disposable_domains:update_domains
