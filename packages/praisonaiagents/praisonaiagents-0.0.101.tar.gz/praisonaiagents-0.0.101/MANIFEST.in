@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+recursive-include praisonaiagents *.py
+recursive-include praisonaiagents *.md
+recursive-include praisonaiagents *.txt
+recursive-include praisonaiagents *.json
+recursive-include praisonaiagents *.yaml
+recursive-include praisonaiagents *.yml
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.swp
+global-exclude .DS_Store
+global-exclude .git
+global-exclude .gitignore
