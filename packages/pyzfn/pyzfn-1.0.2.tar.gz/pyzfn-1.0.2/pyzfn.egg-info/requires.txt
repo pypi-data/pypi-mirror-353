@@ -1,0 +1,8 @@
+cmocean~=4.0
+ipykernel~=6.29
+ipython~=9.2
+matplotlib~=3.10
+matplotx~=0.3
+numpy~=2.2
+tqdm~=4.67
+zarr~=2.18
