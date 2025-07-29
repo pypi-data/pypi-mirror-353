@@ -1,0 +1,17 @@
+alonso/__init__.py,sha256=vbC0ysStExEptYRA3SZVoBGFT7ysEDRPnZ9k9NqGMXI,188
+alonso/algorithm.py,sha256=cVsyRQfEPOn-tHdxsTshBro6SjrJ3U0gxUIDROjlTEE,4748
+alonso/app.py,sha256=0j1-pJgQfyoBwBz3AvwRa4iEW9PjTCD28QyX1rIvlKI,4320
+alonso/applogger.py,sha256=fQBo51-TboX1DBqfSxX2P2eKJ5CcyiCq_IVlJTHjxAE,2624
+alonso/batch.py,sha256=BlA4cs_OtmPXh1gmX4fI7Ye10Qtg9pbVgmv1CXW6nFQ,2305
+alonso/merge.py,sha256=ObWIFqVhXycsjFk7pBqgxw55GrbgCysaGjjo1X58Yds,4209
+alonso/parser.py,sha256=Ib4TnWdkQb6A6FA3HHEjZDBb7uD0v9Gabwewqfu4XpQ,2549
+alonso/partition.py,sha256=7RgBCh6daLACnLuVYwvnIwtYARxTByUe_lIjdoDxpII,8515
+alonso/stable.py,sha256=IwINwjd3F7dfoISXlWsNWRkVJzItEojgMyNwzMM7nYc,6577
+alonso/test.py,sha256=8-860bd7cJCpx82T0FDbjesmzHxusi-YbhzOHK8mUyA,5472
+alonso/utils.py,sha256=RmctLB8oDtjf0wKcKFaRvXiRgmtegqfbB1HFFzlpsvE,7674
+alonso-0.0.1.dist-info/licenses/LICENSE,sha256=nUDh1nfa7rfEv1HocpoqPu0JaFnZKpIVh9eM0MgozpM,1067
+alonso-0.0.1.dist-info/METADATA,sha256=cikJZVGVFrn2eIQWom1LEoOzx9Clzv1gGIiq_JSByjg,9396
+alonso-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+alonso-0.0.1.dist-info/entry_points.txt,sha256=JSod2CWtklhiaOFW3masqrgqhXIpVRsbIiprSmS1P7g,98
+alonso-0.0.1.dist-info/top_level.txt,sha256=rOo7SlpYGdic6g55rHDus2d5N2t74H9qamX4yi6z5vw,7
+alonso-0.0.1.dist-info/RECORD,,
