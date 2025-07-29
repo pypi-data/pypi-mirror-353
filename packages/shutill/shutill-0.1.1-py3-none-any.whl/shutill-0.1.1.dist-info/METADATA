@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: shutill
+Version: 0.1.1
+Summary: A small utility library for shutdown-related messages
+Home-page: https://github.com/Bat-sec/shutill
+Author: Bat-sec
+Author-email: bat-sec1337@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# shutill
+
+A small Python utility to handle shutdown-related messages and operations.
+
+## Installation
+
+```bash
+pip install shutill
