@@ -1,0 +1,12 @@
+dsl_spa/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dsl_spa/pipeline/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dsl_spa/pipeline/connector.py,sha256=Zi8O_cmcHO933ZJczTuGBnpHre8RlRo4CYE7Lb36Z60,5010
+dsl_spa/pipeline/pipeline.py,sha256=W1ECc0qzNa0hpIN8AT64Dalwahhw2ymhR4pcUl89t6I,45043
+dsl_spa/pipeline/pipeline_functions.py,sha256=J6yHd8g4Hvd_g7g19dSqe5WglWSOmcT8SBDbkc8LngA,12204
+dsl_spa/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dsl_spa/utils/schema.py,sha256=JhnAbI8RvlwcvdrQb6m9NgXA09cps7QvgR-xZsA8R0k,46011
+dsl_spa-0.1.4.dist-info/licenses/LICENSE,sha256=QrgHmCC7S4kQ5HO2iNsamFY3S616aDSD-ITJtFuFEG0,1093
+dsl_spa-0.1.4.dist-info/METADATA,sha256=2zsa0nrvKkPAXolqGyxYMhiyf42TnxL_K0Xz8BaqQFY,1734
+dsl_spa-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dsl_spa-0.1.4.dist-info/top_level.txt,sha256=GlQwMHRa7boJHKeSAERUq_TP5-e8k8cmigNJBnnatdo,8
+dsl_spa-0.1.4.dist-info/RECORD,,
