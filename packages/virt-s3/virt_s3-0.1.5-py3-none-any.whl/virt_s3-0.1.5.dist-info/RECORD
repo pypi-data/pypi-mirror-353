@@ -1,0 +1,10 @@
+virt_s3/__init__.py,sha256=lVLC0fchHwIbgtyS3IUKi9itPzbIxy7kzMJ4GnvbT6M,1392
+virt_s3/extras.py,sha256=lXWdRokSOJbkmZgSHdlS_zjERxZhCbgThDbXZq5ZiWo,15400
+virt_s3/fs.py,sha256=dQa-zpWZQkZFVKze9dOknrV6dByFttCDAve53C-2EqA,31915
+virt_s3/main.py,sha256=5tSNF6z4KlS6pgKOW3jm59bZS6pvHULCr-denYt0_kw,21890
+virt_s3/s3.py,sha256=ofU7Y3hiW5LpAhKlNoTKbMj2w6MwEwMAUuwoeAtLqPI,66222
+virt_s3/utils.py,sha256=UynnKX334a5styYIjLEUgZoTR4nKURffmT64fQFT6eA,8369
+virt_s3-0.1.5.dist-info/LICENSE,sha256=2RIuq939O2xQT2AcKvgxc4UXhRgoI3NR3TGJVKwJ58E,1073
+virt_s3-0.1.5.dist-info/METADATA,sha256=gTCwE65V0InRvY9gkz8_nYLSac9H-Hu3Lz7FwpeFDqY,8598
+virt_s3-0.1.5.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+virt_s3-0.1.5.dist-info/RECORD,,
