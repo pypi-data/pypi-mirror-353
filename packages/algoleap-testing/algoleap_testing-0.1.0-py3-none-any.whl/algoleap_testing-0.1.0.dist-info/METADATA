@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: algoleap_testing
+Version: 0.1.0
+Summary: Similarity evaluator using Deepevalve
+Author: Aditya Guntur
+Requires-Python: >=3.8
+Requires-Dist: deepeval>=0.22.42
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
