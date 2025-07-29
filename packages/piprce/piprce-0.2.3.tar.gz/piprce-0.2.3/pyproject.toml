@@ -1,0 +1,10 @@
+[project]
+name = "piprce"
+version = "0.2.3"
+dependencies = ["pycryptodome>=3.20.0","cffi"] 
+
+
+
+[build-system]
+requires = ["setuptools", "wheel", "pycryptodome>=3.20.0","cffi"]
+build-backend = "setuptools.build_meta"
