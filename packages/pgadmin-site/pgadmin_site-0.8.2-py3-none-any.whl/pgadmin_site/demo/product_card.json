@@ -1,0 +1,106 @@
+[
+    {
+        "type": "RectangleFigure",
+        "x": 10,
+        "y": 10,
+        "width": 700,
+        "height": 120,
+        "fill": "#fff",
+        "stroke": "#222",
+        "stroke_width": 1,
+        "radius": 4
+    },
+    {
+        "type": "TextFigure",
+        "x": 30,
+        "y": 45,
+        "text": "{product.model_type} | {product.name}",
+        "font": "bold 20px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 30,
+        "y": 70,
+        "text": "Артикул",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 120,
+        "y": 70,
+        "text": "{product.sku}",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 30,
+        "y": 90,
+        "text": "Минимальная стоимость для партнера",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 320,
+        "y": 90,
+        "text": "{product.min_price} руб.",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 30,
+        "y": 110,
+        "text": "Основной материал",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 200,
+        "y": 110,
+        "text": "{product.material}",
+        "font": "16px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 500,
+        "y": 60,
+        "text": "{sum_stage_time} ч.",
+        "font": "20px Arial",
+        "formula": "sum([row['production_stage.stage_time'] for row in get_stages(product.product_id)])"
+    },
+    {
+        "type": "TextFigure",
+        "x": 20,
+        "y": 120,
+        "text": "Цех: {workshop.name}",
+        "font": "14px Arial"
+    },
+    {
+        "type": "TextFigure",
+        "x": 20,
+        "y": 150,
+        "text": "Время изготовления: {product.production_time} ч.",
+        "font": "14px Arial"
+    },
+    {
+        "type": "ButtonFigure",
+        "x": 20,
+        "y": 180,
+        "width": 120,
+        "height": 30,
+        "text": "Этапы",
+        "fill": "#67BA80",
+        "text_color": "white",
+        "table": "production_stage",
+        "columns": [
+            {"column": "stage_name", "label": "Этап"},
+            {"column": "stage_time", "label": "Время (ч)"}
+        ],
+        "filters": [
+            {
+                "column": "product_id",
+                "op": "=",
+                "value": "{product.product_id}"
+            }
+        ]
+    }
+] 
