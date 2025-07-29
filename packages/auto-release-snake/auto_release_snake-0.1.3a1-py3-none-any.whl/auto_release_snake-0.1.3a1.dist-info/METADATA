@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: auto-release-snake
+Version: 0.1.3a1
+Summary: Testing automated releases
+License: MIT
+Author: Jos Verlinde
+Author-email: Jos.Verlinde@Microsoft.com
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# auto-release-snake
