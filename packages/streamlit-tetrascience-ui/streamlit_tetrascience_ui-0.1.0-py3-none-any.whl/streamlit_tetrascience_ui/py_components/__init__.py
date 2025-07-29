@@ -1,0 +1,2 @@
+from .my_component import my_component
+from .histogram_component import histogram_component

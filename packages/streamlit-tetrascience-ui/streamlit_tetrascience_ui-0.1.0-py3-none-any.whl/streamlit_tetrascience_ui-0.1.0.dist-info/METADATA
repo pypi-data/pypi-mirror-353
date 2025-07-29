@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: streamlit-tetrascience-ui
+Version: 0.1.0
+Summary: Tetrascience UI components for Streamlit
+Home-page: https://github.com/vulcancreative/tetrascience-python
+Author: Vulcan at Tetrascience
+Author-email: Vulcan at Tetrascience <dev@vulcan.agency>
+Project-URL: homepage, https://github.com/vulcancreative/tetrascience-python
+Project-URL: repository, https://github.com/vulcancreative/tetrascience-python
+Keywords: streamlit,tetrascience,ui,components
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: streamlit
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# streamlit-tetrascience-ui
+
+Tetrascience UI components for [Streamlit](https://streamlit.io/).
+
+## Installation
+
+```bash
+pip install streamlit-tetrascience-ui
+```
+
+## Usage
+
+```python
+import streamlit as st
+import streamlit_tetrascience_ui as ui
+
+# Example: Simple interactive component
+name = st.text_input("Enter your name:", value="Streamlit")
+count = ui.my_component(name, key="example")
+st.write(f"Button clicked {count} times!")
+
+# Example: Histogram component
+hist_data = [
+    {"label": "A", "values": [1, 2, 3]},
+    {"label": "B", "values": [4, 5, 6]},
+]
+ui.histogram_component(
+    name="My Histogram",
+    dataSeries=hist_data,
+    width=400,
+    height=300,
+    title="Histogram Example",
+    xTitle="Bins",
+    yTitle="Frequency",
+    bargap=0.2,
+    showDistributionLine=True,
+    key="hist1"
+)
+```
+
+## Features
+
+- Custom Streamlit components for Tetrascience UI
+- Easy integration and usage
+- Example components: `my_component`, `histogram_component`
+
+## License
+
+MIT

@@ -1,0 +1,15 @@
+from .utils import declare_component
+
+_component_func = declare_component("histogram_component")
+
+def histogram_component(name, key=None, **kwargs):
+    props = {
+        "name": name,
+        "key": key,
+        **kwargs
+    }
+    component_value = _component_func(comp="histogram_component", props=props)
+
+    # We could modify the value returned from the component if we wanted.
+    # There's no need to do this in our simple example - but it's an option.
+    return component_value
