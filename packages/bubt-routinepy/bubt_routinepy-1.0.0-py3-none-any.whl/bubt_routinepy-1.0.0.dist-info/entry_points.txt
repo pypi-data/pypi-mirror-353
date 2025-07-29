@@ -1,0 +1,2 @@
+[console_scripts]
+routinepy = routinepy.cli.__main__:cli
