@@ -1,0 +1,74 @@
+
+And include an `MIT` (or your license of choice) file in `LICENSE`.
+
+---
+
+### 1.5. Build & Publish (or Install Locally)
+
+> **If you intend to publish to PyPI**  
+>
+> 1. Make sure you have an account on [PyPI](https://pypi.org/).  
+> 2. Install the latest `twine`:
+>    ```bash
+>    pip install --upgrade build twine
+>    ```
+> 3. From the root of your project (where `pyproject.toml` or `setup.py` lives), run:
+>    ```bash
+>    python -m build
+>    ```
+>    This creates two files under `dist/`:  
+>    - `babylai_auth_client-0.1.0-py3-none-any.whl`  
+>    - `babylai_auth_client-0.1.0.tar.gz`  
+> 4. Upload to PyPI:
+>    ```bash
+>    twine upload dist/*
+>    ```
+>    Follow the prompts for username/password or your API token.  
+>
+> Once that completes, anyone can `pip install babylai_auth_client`.  
+
+> **If you only need local installation** (e.g. during development or internal usage):  
+>
+> 1. Inside your package root (where `setup.py` or `pyproject.toml` is), simply run:
+>    ```bash
+>    pip install -e .
+>    ```
+>    This installs it in “editable” mode.  
+>
+> 2. Later, if you bump the version, re‐run the same command or use `pip install .` to create a normal install.  
+
+---
+
+## 2. Create a Django Project + App That Uses `babylai_auth_client`
+
+Let’s assume you want a fresh Django project called `babylai_token_service`. We’ll walk through:
+
+1. Creating a virtual environment  
+2. Installing Django (and DRF + CORS)  
+3. Configuring settings (including your BabylAI credentials)  
+4. Creating a Django app to expose `/api/token/`  
+5. Wiring URLs, error handling, and testing  
+
+---
+
+### 2.1. Set Up a Virtual Environment
+
+```bash
+# 1) Go to a folder where you want the Django project:
+cd ~/projects/
+
+# 2) Create a Python venv (Python 3.9+ recommended)
+python3 -m venv venv-babylai
+source venv-babylai/bin/activate
+
+# 3) Upgrade pip, install Django, DRF, CORS, and your client package
+pip install --upgrade pip
+pip install django djangorestframework django-cors-headers
+
+# 4) If you published babylai_auth_client to PyPI, do:
+pip install babylai_auth_client
+
+#    Otherwise, if you're developing locally, do (from your client code directory):
+# cd path/to/babylai_auth_client
+# pip install -e .
+# cd ~/projects/  # back to where we’ll create the Django project
