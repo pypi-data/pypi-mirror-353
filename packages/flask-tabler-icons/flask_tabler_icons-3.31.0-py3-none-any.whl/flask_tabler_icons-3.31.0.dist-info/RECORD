@@ -1,0 +1,9 @@
+flask_tabler_icons/__init__.py,sha256=JItVaS5gge7EdK6TpVXN9fH89MS2C_mt4jUMiQMKbRE,1518
+flask_tabler_icons/static/tabler_icons/tabler-sprite-filled.svg,sha256=qaCogV1oACdw5znleyYeOMKYwvj7npj9R4oGX-uz-OA,578457
+flask_tabler_icons/static/tabler_icons/tabler-sprite-nostroke.svg,sha256=nCNziqo0a6EYAu6IJJLW2-gN5qUE5DSDH1R2cxq1mrY,1750800
+flask_tabler_icons/templates/tabler_icons/helper.html,sha256=6TUZOcEG8vfJ_mMyl4n2p2AWOYQ34TXJNyHr9TsvQDA,1441
+flask_tabler_icons-3.31.0.dist-info/LICENSE.txt,sha256=Gf8n7S-6iJZmwOOfwAp6v3BEINIwHTpSCzycwmmJFyc,1452
+flask_tabler_icons-3.31.0.dist-info/METADATA,sha256=owgBopRCMGvRVfTrAPEeFB1f0amBEnjn2s1etuVWVMk,3172
+flask_tabler_icons-3.31.0.dist-info/WHEEL,sha256=jB7zZ3N9hIM9adW7qlTAyycLYW9npaWKLRzaoVcLKcM,91
+flask_tabler_icons-3.31.0.dist-info/top_level.txt,sha256=Z6DlPOkTZCdmKJfOcVEg72OOqkSV2uw_KX6WwxqB9jM,19
+flask_tabler_icons-3.31.0.dist-info/RECORD,,
