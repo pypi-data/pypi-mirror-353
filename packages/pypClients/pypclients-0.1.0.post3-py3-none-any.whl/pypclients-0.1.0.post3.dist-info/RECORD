@@ -1,0 +1,9 @@
+pypclients/__init__.py,sha256=Qb5foLF_z3WpdCURkqq4-nvzm-1cCP4NauS2ZnhgazU,538
+pypclients/bitbucket_client.py,sha256=_FKxWu4YbetZtbsymb9axCU0Jp2qUSFIWNy8kkWrgQw,6170
+pypclients/files_client.py,sha256=ep1fhXMSX0IMN4yQsptTILHeJ1vfhsnA2u_nzr4ie10,4948
+pypclients/sql_client.py,sha256=pOLtpE87HGX47GD5WNuQ0bJmuzvEpJg0teSRFw1QwGw,1656
+pypclients/zipfiles_client.py,sha256=b6KIeRPO2NvjU7bISY-H4jVAKxbYiJQc9L-enrAVB_g,4124
+pypclients-0.1.0.post3.dist-info/METADATA,sha256=1sg-E_qUrW5kfU3O-CFS6VndSeOnLeFoS041tnM9oME,2008
+pypclients-0.1.0.post3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pypclients-0.1.0.post3.dist-info/top_level.txt,sha256=vqe1_ITfMU8envwYtBqNtrmpvWwnJbuUhrLR2eeRF3M,11
+pypclients-0.1.0.post3.dist-info/RECORD,,
