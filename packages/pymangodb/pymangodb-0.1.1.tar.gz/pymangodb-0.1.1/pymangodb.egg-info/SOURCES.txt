@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mangodb/__init__.py
+mangodb/core.py
+mangodb/decoder.py
+mangodb/encoder.py
+mangodb/utils.py
+pymangodb.egg-info/PKG-INFO
+pymangodb.egg-info/SOURCES.txt
+pymangodb.egg-info/dependency_links.txt
+pymangodb.egg-info/top_level.txt
+tests/test_core.py
+tests/test_decoder.py
+tests/test_encoder.py
