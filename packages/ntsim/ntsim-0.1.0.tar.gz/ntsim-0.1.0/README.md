@@ -1,0 +1,68 @@
+# NeutrinoTelescopeSimulation
+
+[![PyPI - Version](https://img.shields.io/pypi/v/ntsim.svg)](https://pypi.org/project/ntsim)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ntsim.svg)](https://pypi.org/project/ntsim)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [Running](#running)
+- [Output format](#output_format)
+- [License](#license)
+- [Documentation](https://git.jinr.ru/Baikal/ntsim/-/wikis/home)
+
+## Basic Installation
+
+```console
+pip install ntsim
+```
+
+## Running
+
+NTSim can be run as python module.
+
+```shell
+python -m ntsim -h
+```
+to see the basic command line arguments
+
+### Simulate 2GeV muon in a water volume
+```shell
+python3 -m ntsim --generator ToyGen --ToyGen.particle_pdgid 13 --ToyGen.tot_energy_GeV 2 --H5Writer.h5_output_file="muon_sim"
+```
+
+This will produce a file `"h5_output/muon_sim.h5"` with the information about primary track, secondary produced tracks and energy loss steps of each track.
+
+**Note**: this won't produce hits, unless you give a `--compute-hits` flag, and provide a telescope and detector for simulation 
+
+### Simulate a 1TeV muon in an example telescope with hits
+```shell
+python3 -m ntsim --generator ToyGen --ToyGen.particle_pdgid 13 --ToyGen.tot_energy_GeV 1000 --H5Writer.h5_output_file="1TeV_muon_sim" --compute_hits --telescope=Example1Telescope --detector=Example1SensitiveDetector
+```
+This procudes a file `"h5_output/1TeV_muon_sim.h5"` which, in addition to MC track information, contains the hits, produced in the sensitive detectors.
+
+## Output format
+
+Currently the only output format is the hdf5 file with the following tree structure:
+
+*  `ProductionHeader/`: describe the full information about the run configuration.
+* `geometry/`
+    * `Bounding_Surfaces`: dataset with the geometrical hierarchy of the telescope
+    * `Geometry`: dataset describing the individual modules position and geometry
+* `event_<n>/`: group for each simulated event
+    * `event_header/` general event information (metadata)        
+    * `hits/Hits`: dataset with the hits in the sensitive detectors
+    * `particles/` information about primary particles.
+        * `Primary` dataset for primary particles, to be processed by ParticlePropagator
+        *  `g4_cascade_starters_<n>` datasets, containing secondary particles which start the parametrized cascades
+    * `photons/photons_<n>/`  groups for photons information
+        
+    * `tracks/g4_tracks_<n>` results of the Geant4 propagation 
+
+
+
+## License
+
+`ntsim` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
