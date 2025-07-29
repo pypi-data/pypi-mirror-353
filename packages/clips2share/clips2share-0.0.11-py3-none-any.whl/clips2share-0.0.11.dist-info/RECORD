@@ -1,0 +1,12 @@
+clips2share/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clips2share/clips2share.py,sha256=f_mQaCgAXQvzG2hfT4avwjc4BRobro7R2HBRo_al2m4,13520
+clips2share/qbittorrent_client.py,sha256=_AYKbk-QmoRSYC8cw5E8Pp-FYUioSfwJ9rYK7S29QhI,1314
+clips2share/fonts/DejaVuSans-Bold.ttf,sha256=FXtF2avIr0gYSilooBOBC3uD8bHbgThouzVRQc3LNCw,708920
+clips2share/fonts/DejaVuSans.ttf,sha256=G_3fp-4-IYXnuiEEs3NzIBasmwXQ9r6_TrYQcEPS6YE,759720
+clips2share/templates/default_bbcode.jinja,sha256=nWi_rpMSZfF1o1Uoim9hpo9UWX-M1NY08h1u-wm9UdI,1919
+clips2share-0.0.11.dist-info/licenses/LICENSE,sha256=I-Nnn7r8ApaB3VtSrGcWgir-EHrkpMa9UmGW7z3-Xpc,1060
+clips2share-0.0.11.dist-info/METADATA,sha256=v30fXivKY5aZ7lTh4aBRRmp94uaYp6SOmh5Yvav2InY,11198
+clips2share-0.0.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+clips2share-0.0.11.dist-info/entry_points.txt,sha256=-T7Y79aHD9iSmBr7JwkrHZ2TLFKODIDflynzjaBOGEQ,61
+clips2share-0.0.11.dist-info/top_level.txt,sha256=C9vhIUYV_j2J4tAsI7m407jtPmXRrRcsuj43i63hHCU,12
+clips2share-0.0.11.dist-info/RECORD,,
