@@ -1,0 +1,10 @@
+setuptools
+p01.jsonrpc
+z3c.form
+z3c.pagelet
+z3c.macro
+z3c.template
+
+[test]
+p01.checker
+zope.testing
