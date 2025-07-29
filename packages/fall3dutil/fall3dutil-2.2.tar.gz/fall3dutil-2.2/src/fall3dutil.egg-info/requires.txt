@@ -1,0 +1,9 @@
+datetime
+configparser
+requests
+cdsapi
+zipfile
+logging
+
+[test]
+argparse
