@@ -1,0 +1,62 @@
+============================
+Django MongoDB Backend 5.2.x
+============================
+
+5.2.0 beta 1
+============
+
+*June 4, 2025*
+
+New features
+------------
+
+- Added :class:`~.fields.EmbeddedModelArrayField` for storing a list of model
+  instances.
+
+Bug fixes
+---------
+
+- Fixed crash when loading models with a null value for ``ArrayField``\s where
+  the ``base_field`` uses a database converter.
+
+5.2.0 beta 0
+============
+
+*May 14, 2025*
+
+Initial release from the state of :ref:`django-mongodb-backend 5.1.0 beta 2
+<django-mongodb-backend-5.1.0-beta-2>`.
+
+Regarding new features in Django 5.2,
+:class:`~django.db.models.CompositePrimaryKey` isn't supported.
+
+New features
+------------
+
+*These features won't appear in Django MongoDB Backend 5.1.x.*
+
+- Added :class:`.SearchIndex` and :class:`.VectorSearchIndex` for use on
+  a model's :attr:`Meta.indexes <django.db.models.Options.indexes>`.
+- PyMongo's connection pooling is now used by default. See
+  :ref:`connection-management`.
+
+Backwards incompatible changes
+------------------------------
+
+- The minimum supported version of ``pymongo`` is increased from 4.6 to 4.7.
+- The ``conn_max_age`` parameter of
+  :func:`~django_mongodb_backend.utils.parse_uri` is removed because persistent
+  connections are now used by default.
+
+Bug fixes
+---------
+
+- Added support for a field's custom lookups and transforms in
+  ``EmbeddedModelField``, e.g. ``ArrayField``’s ``contains``,
+  ``contained__by``, ``len``, etc.
+- Fixed the results of queries that use the ``tzinfo`` parameter of the
+  ``Trunc`` database functions.
+- Added support for ``QuerySet.dates()`` and ``datetimes()``.
+- Fixed loading of ``QuerySet`` results for embedded models that have fields
+  that use database converters. For example, a crash for ``DecimalField``:
+  ``ValidationError: ['“1” value must be a decimal number.']``).
