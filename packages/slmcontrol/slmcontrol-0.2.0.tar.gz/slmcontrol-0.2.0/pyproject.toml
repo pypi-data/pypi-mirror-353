@@ -1,0 +1,26 @@
+[project]
+name = "slmcontrol"
+version = "0.2.0"
+description = "Add your description here"
+readme = "docs/README.md"
+authors = [
+    { name = "Marcos Gil", email = "marcosgildeoliveira@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "juliacall>=0.9.23",
+    "juliapkg>=0.1.14",
+    "numpy>=1.25",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mkdocs>=1.6.1",
+    "mkdocs-autorefs>=1.4.1",
+    "mkdocs-material>=9.6.9",
+    "mkdocstrings-python>=1.16.8",
+]

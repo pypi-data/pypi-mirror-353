@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: slmcontrol
+Version: 0.2.0
+Summary: Add your description here
+Author-email: Marcos Gil <marcosgildeoliveira@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: juliacall>=0.9.23
+Requires-Dist: juliapkg>=0.1.14
+Requires-Dist: numpy>=1.25
+Description-Content-Type: text/markdown
+
+# slmcontrol
+
+This is a package that allows one to control a Spatial Light Modulator (SLM) with a simple an intuitive syntax. We support Python >= 3.10 and all major platforms (Windows, MacOS and Linux).
+
+If this package is useful to you, please give it a star on GitHub.
+
+## Links
+
+- [**PyPI**](https://pypi.org/project/slmcontrol/)
+- [**Documentation**](https://marcsgil.github.io/slmcontrol/)
+- [**Source code**](https://github.com/marcsgil/slmcontrol/tree/main)
+
+## Instalation
+
+This package is registered on PyPi, so, o install it, simply run
+
+```
+pip install slmcontrol
+```
+
+on a terminal.
