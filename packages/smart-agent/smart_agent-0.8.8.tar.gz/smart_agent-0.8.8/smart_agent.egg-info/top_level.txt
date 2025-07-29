@@ -1,0 +1,7 @@
+config
+dist
+docs
+examples
+smart_agent
+tests
+venv
