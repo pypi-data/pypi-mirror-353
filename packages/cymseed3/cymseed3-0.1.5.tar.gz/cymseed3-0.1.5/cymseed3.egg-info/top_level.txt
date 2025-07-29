@@ -1,0 +1,5 @@
+build
+cymseed3
+dist
+earthscope
+test
