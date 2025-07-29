@@ -1,0 +1,53 @@
+framework:
+  name: garak
+  pkg_name: garak
+  full_name: Garak
+  description: Garak is an LLM vulnerability scanner.
+  url: https://github.com/NVIDIA/garak/tree/main
+  source: https://gitlab-master.nvidia.com/dl/JoC/competitive_evaluation/core_evals_frameworks/garak
+defaults:
+  command: |
+    cat > garak_config.yaml << 'EOF'
+    plugins:
+      probe_spec: {{config.params.extra.probes}}
+      extended_detectors: true
+      model_type: {% if target.api_endpoint.type == "completions" %}nim.NVOpenAICompletion{% elif target.api_endpoint.type == "chat" %}nim.NVOpenAIChat{% endif %}
+      model_name: {{target.api_endpoint.model_id}}
+      generators:
+        nim:
+          uri: {{target.api_endpoint.url | replace('/chat/completions', '') | replace('/completions', '')}}
+          {% if config.params.temperature is not none %}temperature: {{config.params.temperature}}{% endif %}
+          {% if config.params.top_p is not none %}top_p: {{config.params.top_p}}{% endif %}
+          {% if config.params.max_new_tokens is not none %}max_tokens: {{config.params.max_new_tokens}}{% endif %}
+    system:
+      parallel_attempts: {{config.params.parallelism}}
+      lite: false
+    EOF
+    {% if target.api_endpoint.api_key is not none %}
+    export NIM_API_KEY=${{target.api_endpoint.api_key}} &&
+    {% else %}
+    export NIM_API_KEY=dummy &&
+    {% endif %}
+    export XDG_DATA_HOME={{config.output_dir}} &&
+    garak --config garak_config.yaml --report_prefix=results
+  config:
+    supported_endpoint_types:
+    - chat
+    - completions
+    params:
+      max_new_tokens: 150
+      temperature: 0.1
+      top_p: 0.7
+      parallelism: 32
+  target:
+    api_endpoint: {}  # required to add: url, model_id, api_key
+evaluations:
+- name: garak
+  description: garak
+  defaults:
+    config:
+      type: garak
+      params:
+        task: garak
+        extra:
+          probes: ansiescape.AnsiEscaped,ansiescape.AnsiRaw,atkgen.Tox,continuation.ContinueSlursReclaimedSlurs,dan.Ablation_Dan_11_0,dan.AutoDANCached,dan.DanInTheWild,divergence.Repeat,encoding.InjectAscii85,encoding.InjectBase16,encoding.InjectBase2048,encoding.InjectBase32,encoding.InjectBase64,encoding.InjectBraille,encoding.InjectEcoji,encoding.InjectHex,encoding.InjectMorse,encoding.InjectNato,encoding.InjectROT13,encoding.InjectUU,encoding.InjectZalgo,exploitation.JinjaTemplatePythonInjection,exploitation.SQLInjectionEcho,goodside.Tag,goodside.ThreatenJSON,goodside.WhoIsRiley,grandma.Slurs,grandma.Substances,grandma.Win10,grandma.Win11,latentinjection.LatentInjectionFactSnippetEiffel,latentinjection.LatentInjectionFactSnippetLegal,latentinjection.LatentInjectionReport,latentinjection.LatentInjectionResume,latentinjection.LatentInjectionTranslationEnFr,latentinjection.LatentInjectionTranslationEnZh,latentinjection.LatentJailbreak,latentinjection.LatentWhois,latentinjection.LatentWhoisSnippet,leakreplay.GuardianCloze,leakreplay.GuardianComplete,leakreplay.LiteratureCloze,leakreplay.LiteratureComplete,leakreplay.NYTCloze,leakreplay.NYTComplete,leakreplay.PotterCloze,leakreplay.PotterComplete,lmrc.Bullying,lmrc.Deadnaming,lmrc.QuackMedicine,lmrc.SexualContent,lmrc.Sexualisation,lmrc.SlurUsage,malwaregen.Evasion,malwaregen.Payload,malwaregen.SubFunctions,malwaregen.TopLevel,misleading.FalseAssertion,packagehallucination.JavaScript,packagehallucination.Python,packagehallucination.Ruby,packagehallucination.Rust,phrasing.FutureTense,phrasing.PastTense,promptinject.HijackHateHumans,promptinject.HijackKillHumans,promptinject.HijackLongPrompt,realtoxicityprompts.RTPBlank,snowball.GraphConnectivity,suffix.GCGCached,tap.TAPCached,topic.WordnetControversial,xss.ColabAIDataLeakage,xss.MarkdownImageExfil,xss.MdExfil20230929,xss.StringAssemblyDataExfil
