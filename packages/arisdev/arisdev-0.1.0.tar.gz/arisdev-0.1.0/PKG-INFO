@@ -1,0 +1,220 @@
+Metadata-Version: 2.1
+Name: arisdev
+Version: 0.1.0
+Summary: A simple web framework for Python
+Home-page: https://github.com/arisdev/arisdev
+Author: ArisDev
+Author-email: arisdev@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# ArisDev Framework
+
+Framework web Python sederhana dengan fitur lengkap.
+
+## Fitur
+
+- Routing sederhana
+- Template engine (Jinja2)
+- Database ORM (SQLAlchemy)
+- Middleware support
+- Form validation
+- Authentication
+- Caching (Redis)
+- Logging
+- WebSocket support
+- Background tasks
+- File uploads
+- REST API dengan serialization
+
+## Instalasi
+
+```bash
+pip install arisdev
+```
+
+## Penggunaan Dasar
+
+```python
+from arisdev import Framework
+
+app = Framework()
+
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
+if __name__ == "__main__":
+    app.run()
+```
+
+## Dokumentasi Lengkap
+
+### Routing
+
+```python
+@app.route("/users/<int:id>")
+def get_user(id):
+    return f"User ID: {id}"
+```
+
+### Template
+
+```python
+@app.route("/")
+def home():
+    return app.template("home.html", title="Home")
+```
+
+### Database
+
+```python
+from arisdev import Database, Model, Field
+
+class User(Model):
+    id = Field.Integer(primary_key=True)
+    name = Field.String()
+    email = Field.String(unique=True)
+
+# Query
+users = User.query.filter_by(name="John").all()
+```
+
+### Middleware
+
+```python
+@app.middleware
+def auth_middleware(request):
+    if not request.headers.get("Authorization"):
+        return app.response("Unauthorized", status=401)
+    return None
+```
+
+### Form Validation
+
+```python
+from arisdev import Form, Field
+
+class LoginForm(Form):
+    username = Field.String(required=True)
+    password = Field.String(required=True)
+
+@app.route("/login", methods=["POST"])
+def login():
+    form = LoginForm(request.form)
+    if form.validate():
+        # Process login
+        pass
+```
+
+### Authentication
+
+```python
+from arisdev import Auth
+
+auth = Auth(app)
+
+@app.route("/login", methods=["POST"])
+def login():
+    return auth.login(request.form)
+
+@app.route("/protected")
+@auth.required
+def protected():
+    return "Protected content"
+```
+
+### Caching
+
+```python
+from arisdev import Cache
+
+cache = Cache(app)
+
+@app.route("/")
+def home():
+    return cache.get("home") or cache.set("home", "Hello", 3600)
+```
+
+### Logging
+
+```python
+from arisdev import Logger
+
+logger = Logger(app)
+
+@app.route("/")
+def home():
+    logger.info("Home page accessed")
+    return "Hello"
+```
+
+### WebSocket
+
+```python
+from arisdev import WebSocket
+
+ws = WebSocket(app)
+
+@ws.on("message")
+def handle_message(ws, message):
+    ws.send(f"Received: {message}")
+```
+
+### Background Tasks
+
+```python
+from arisdev import BackgroundTasks
+
+tasks = BackgroundTasks(app)
+
+@tasks.scheduled("0 0 * * *")  # Run daily at midnight
+def cleanup():
+    # Cleanup code
+    pass
+```
+
+### File Uploads
+
+```python
+from arisdev import FileUpload
+
+upload = FileUpload(app)
+
+@app.route("/upload", methods=["POST"])
+def handle_upload():
+    return upload.save(request.files["file"])
+```
+
+### REST API
+
+```python
+from arisdev import Serializer
+
+class UserSerializer(Serializer):
+    class Meta:
+        model = User
+        fields = ["id", "name", "email"]
+
+@app.route("/api/users")
+def get_users():
+    users = User.query.all()
+    return UserSerializer(users, many=True).data
+```
+
+## Lisensi
+
+MIT License 
