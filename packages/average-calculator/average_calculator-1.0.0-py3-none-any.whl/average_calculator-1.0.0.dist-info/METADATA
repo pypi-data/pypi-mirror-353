@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: average_calculator
+Version: 1.0.0
+Summary: A library to calculate the average of marks
+Author: Your Name
+Requires-Python: >=3.6
+
