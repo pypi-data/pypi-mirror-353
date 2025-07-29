@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+mprsync/__init__.py
+mprsync/sync.py
+mprsync.egg-info/PKG-INFO
+mprsync.egg-info/SOURCES.txt
+mprsync.egg-info/dependency_links.txt
+mprsync.egg-info/entry_points.txt
+mprsync.egg-info/top_level.txt
