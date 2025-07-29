@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+dqtool/__init__.py
+dqtool_sayhello.egg-info/PKG-INFO
+dqtool_sayhello.egg-info/SOURCES.txt
+dqtool_sayhello.egg-info/dependency_links.txt
+dqtool_sayhello.egg-info/top_level.txt
