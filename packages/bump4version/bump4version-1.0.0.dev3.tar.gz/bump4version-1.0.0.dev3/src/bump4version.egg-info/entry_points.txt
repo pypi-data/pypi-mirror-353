@@ -1,0 +1,3 @@
+[console_scripts]
+bump4version = bump4version.cli:main
+bv = bump4version.cli:main
