@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+imageaugmentationpipeline.egg-info/PKG-INFO
+imageaugmentationpipeline.egg-info/SOURCES.txt
+imageaugmentationpipeline.egg-info/dependency_links.txt
+imageaugmentationpipeline.egg-info/requires.txt
+imageaugmentationpipeline.egg-info/top_level.txt
