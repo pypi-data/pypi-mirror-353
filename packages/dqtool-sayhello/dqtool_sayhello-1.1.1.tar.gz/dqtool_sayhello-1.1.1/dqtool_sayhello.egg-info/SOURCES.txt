@@ -1,0 +1,6 @@
+pyproject.toml
+setup.py
+dqtool_sayhello.egg-info/PKG-INFO
+dqtool_sayhello.egg-info/SOURCES.txt
+dqtool_sayhello.egg-info/dependency_links.txt
+dqtool_sayhello.egg-info/top_level.txt
