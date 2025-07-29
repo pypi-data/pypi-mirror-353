@@ -1,0 +1,10 @@
+.env
+.DS_Store
+*.pdf
+*.png
+__pycache__
+build/
+*.docx
+*.pptx
+scratch/
+dist/
