@@ -1,0 +1,16 @@
+__init__.py,sha256=1Tk1l0Zj380exEEzhrZTu5yROQqcAA8Cz6-9wCSvl-g,57
+ngit.py,sha256=iSa-enMPtKGd0QI9dHXfhjx_WrNlxVBAEgmXUZI607o,1882
+util.py,sha256=LHDVYsY9BMDo8zftOzRrgY8nepTrSciDVISqolpih5I,315
+commands/__init__.py,sha256=qcmzKHtDO59WhFU3LBq-bHCg4tqlxaAkm27pRABx28c,924
+commands/git.py,sha256=MjFcEgNwIMV9h8FzsmPvUIZ3ftWE3Ice7YDZk-hmSY8,5374
+executor/__init__.py,sha256=3Fpqc07-UNSnj5sl8RyrrE2h8v5m48EFlLF6FCqV2QQ,108
+executor/executor.py,sha256=JsGv2ANUbihLenV-ETJxCjwSya2syRRGg6lbtZ9Do1Q,3683
+ngit_cli-0.0.1.dist-info/licenses/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+translator/__init__.py,sha256=6XiA1lVcrT7l3gqWbGmNDte1Aeib-Y7X57-osIBOOac,67
+translator/offline_translator.py,sha256=psFV1VJxwGFtp7ZyqhLH99hcyc7mhXG5ZqYgZPgvscg,8822
+translator/translator_util.py,sha256=SHI-z8e46nU2wu1Nj6IeOFCH9lYZpHC3hsHWqE--EZs,3948
+ngit_cli-0.0.1.dist-info/METADATA,sha256=edbmnU4Oz8rGLZ5jC20RKtHNawqb7DAZLdAboUvIw68,2947
+ngit_cli-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ngit_cli-0.0.1.dist-info/entry_points.txt,sha256=uKXsT3aNxgTqMf2nTl31ncv-25kE_JU3EnKaXUm_zA4,52
+ngit_cli-0.0.1.dist-info/top_level.txt,sha256=88_bBzzZPE8P07qWMEwjlBpGA3TapIhkNJImSGsb9Xo,48
+ngit_cli-0.0.1.dist-info/RECORD,,

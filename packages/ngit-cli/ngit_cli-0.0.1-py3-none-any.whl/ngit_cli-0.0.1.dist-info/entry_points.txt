@@ -1,0 +1,3 @@
+[console_scripts]
+mgit = ngit:mgit
+ngit = ngit:ngit
