@@ -1,0 +1,14 @@
+GAFOC/__init__.py,sha256=kOYKPa9tsDjDCSOUJ90wACZSOapweMrBDSKUs2tfzT8,478
+GAFOC/exceptions.py,sha256=Dwbz1WWmNbSSGDn_9DrqrO4tmJAi7Iyhp1eJHx-OJ1k,427
+GAFOC/archive/__init__.py,sha256=J5zuS1ADPOXunA3FpShh78gv_fbOpl0laSWk8UrdmIw,119
+GAFOC/archive/archiver.py,sha256=8hZX-XfACWonhtdvJhBu51JnylV7TRVixY_npkLFbTY,3919
+GAFOC/archive/extractor.py,sha256=zRcZ31R3BoT7NpJMaD3IU38Aa2DaNWBD6mT7_vWhCWI,3690
+GAFOC/core/__init__.py,sha256=XnUk-gVcvBNKjjblmeq93KmS-81rfCPlnDu5FyITsoA,136
+GAFOC/core/compression.py,sha256=AEK_YVsE0rF9shIVxE0Xdp_UOqtAD6gfNpxqSJPU9jE,2041
+GAFOC/core/decompression.py,sha256=x5SNcLmLzYWowVzngSlFwHgSg4wu99RzBLQ-iPh1kGE,2823
+GAFOC/core/huffman.py,sha256=ESSId3cxwx2_MxLuZPigcOJFxanWGPs5BDDDHy5w3gA,5857
+GAFOC/core/lz77.py,sha256=966EdOcp5cJhXv8apIyv4d8jwvZCac4F1j9IzgGQJd8,5737
+gafoc-1.0.0.dist-info/METADATA,sha256=mPpOiS3fi0Ehada9IsqxIVyECI5ysdPnCKVtE9pueHQ,1138
+gafoc-1.0.0.dist-info/WHEEL,sha256=0CuiUZ_p9E4cD6NyLD6UG80LBXYyiSYZOKDm5lp32xk,91
+gafoc-1.0.0.dist-info/top_level.txt,sha256=m4BxhCAGu4o0tP2PEaGiRbEQA1VKpzTyXRjWA60mSso,6
+gafoc-1.0.0.dist-info/RECORD,,
