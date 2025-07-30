@@ -1,0 +1,3 @@
+[console_scripts]
+cleanupx = cleanupx:main
+cleanupx-status = cleanupx_core:print_status
