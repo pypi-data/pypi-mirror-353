@@ -1,0 +1,1 @@
+qiskit_pasqal_provider

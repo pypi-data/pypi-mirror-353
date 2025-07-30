@@ -1,0 +1,25 @@
+sudo: false
+
+install:
+  - pip install -U pip setuptools virtualenv wheel
+  - pip install -U tox
+language: python
+script:
+  - tox
+notifications:
+  email: false
+
+jobs:
+  include:
+    - os: linux
+      python: 3.11
+      env: TOXENV=py311
+    - os: linux
+      python: 3.11
+      env: TOXENV=lint
+    - os: linux
+      python: 3.11
+      env: TOXENV=coverage
+    - os: linux
+      python: 3.11
+      env: TOXENV=ecosystem
