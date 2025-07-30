@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: rtcvis
+Version: 0.1.0
+Summary: Tool for visualizing Real Time Calculus (RTC) operations
+License-Expression: MIT
+Project-URL: Repository, https://github.com/epkRichi/rtcvis
+Keywords: math,visualization,education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Dynamic: license-file
+
+# rtcvis
+
+rtcvis is an educational tool that can create interactive visualizations for convolution operations in the min-plus algebra, such as needed for real time calculus (RTC). RTC is a method for performance analysis of real time systems. Note that rtcvis cannot be used for performance analysis however, since it only supports finite curves - for this purpose, you can use the [RTC toolbox from ETH Zurich](https://www.mpa.ethz.ch/). Please note that I'm in no way affiliated with and that this project is in no way endorsed by ETH Zurich.
+
+## Installation
+
+```shell
+pip install rtcvis
+```
+
+## Usage
+
+```python
+from rtcvis import plot_conv
+
+plot_conv()
+```
+
+### Curve Syntax
+
+Curves can be specified using a syntax similar to the one from [RTC toolbox](https://www.mpa.ethz.ch/):
+
+```python
+[(x, y, m), ...], l
+```
+
+- The first argument is a list of points: `x` and `y` are the coordinates of this points and `m` is the slope of the line section starting at this point
+- `l` is the length of the curve, or, in other words, the x coordinate at which the curve ends
+
+Note that
+
+- Curves have to start at x=0
+- Curves are allowed to have discontinuities
+
+
+## Development
+
+```shell
+pip install -e .\[dev\]
+pre-commit install
+```
