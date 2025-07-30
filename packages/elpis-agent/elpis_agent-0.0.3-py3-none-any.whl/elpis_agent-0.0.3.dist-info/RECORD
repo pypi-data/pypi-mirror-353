@@ -1,0 +1,17 @@
+elpis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+elpis/agent.py,sha256=FuZ1c39qD8aNDFOR0zy5Az-IXSXN7ZpZMqOs76SUyuw,2532
+elpis/codebase.py,sha256=AUrdTpJSJFNwWDi-GJejsVahKzimyag4OjpiiNX04gg,7383
+elpis/constants.py,sha256=_LVUa1M5_pHBuLHSB1JyZMoMYY3jlDChxx8Sia6SGsU,3546
+elpis/langgraph_agent.py,sha256=MD4vMPlO65u9_ps3KcS9lDK8HDuimjQFc4Lt2zLMXc8,12146
+elpis/main.py,sha256=HATk1T0teFpvsY1mDKC3KmCnZ0bUclLiLGwFYfDGEpE,3426
+elpis/model_factory.py,sha256=Ixklrd49HOASoCcaHHkeB-YRzCf3HO862wxRfHZK6CA,1151
+elpis/prompts.py,sha256=EM4RrpCUYJ6yo1T2SYzomQDnmjjwsr0URWoKxkk9uF4,28137
+elpis/tools.py,sha256=n35-XA-ATX3s2WU4SZXqaiW0i_8aYV87rHhV9nSjqV4,39719
+elpis/i18n/__init__.py,sha256=48yIA2e0jtal19FlnIkd6rLl8TPRoz5gKJ4tH1zugGo,289
+elpis/i18n/en.py,sha256=SiTicFyfv3A0CY9Io_VIo9DqeiL3Ae2JfhWaTgo1Vwc,770
+elpis/i18n/zh.py,sha256=nUUptiL1BH65t_r5hjlbEuSBpOEu064uVhOwytkuX0U,1560
+elpis_agent-0.0.3.dist-info/METADATA,sha256=y883lYehr4z9EZbJ6pRruFDivtRBFhsxpEHTym6Xchc,17841
+elpis_agent-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+elpis_agent-0.0.3.dist-info/entry_points.txt,sha256=WAdcgV_ZyMrAXT5ISHolTWXWliFfr0W6IjKmpIR4fCo,42
+elpis_agent-0.0.3.dist-info/licenses/LICENSE,sha256=nOyvebgfwoWajoj4MX1ieskN8VREPEPraBgASjE5rkI,1071
+elpis_agent-0.0.3.dist-info/RECORD,,
