@@ -1,0 +1,3 @@
+[console_scripts]
+mcp-server-yfinance = openmarkets.server:main
+openmarkets = openmarkets.server:main
