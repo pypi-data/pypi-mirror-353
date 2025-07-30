@@ -1,0 +1,6 @@
+torch_archs/language/moe.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_archs/vision/vit.py,sha256=QS2ke_HKVBnQQTK7qFZUAWVxITyK0es_rxHt5uPeoag,554
+torch_archs-0.1.0.dist-info/METADATA,sha256=ZnBAklUK0yAHEb629UVSP_9j9yhOShNk5078qhWC_4c,4075
+torch_archs-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+torch_archs-0.1.0.dist-info/top_level.txt,sha256=wB3z9wAuK_VqJH1fBXjrOqhRTdpkr4qbJ4YfmCG97To,12
+torch_archs-0.1.0.dist-info/RECORD,,
