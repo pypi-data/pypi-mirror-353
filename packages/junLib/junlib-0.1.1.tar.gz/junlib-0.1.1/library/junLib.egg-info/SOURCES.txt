@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+library/imports/__init__.py
+library/imports/vlc.py
+library/junLib.egg-info/PKG-INFO
+library/junLib.egg-info/SOURCES.txt
+library/junLib.egg-info/dependency_links.txt
+library/junLib.egg-info/top_level.txt
