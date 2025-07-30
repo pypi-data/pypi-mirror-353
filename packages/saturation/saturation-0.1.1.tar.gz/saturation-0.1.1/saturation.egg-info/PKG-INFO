@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: saturation
+Version: 0.1.1
+Summary: 服务区饱和度分析系统
+Home-page: 
+Author: 应用团队
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: tensorflow
+Requires-Dist: keras
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
