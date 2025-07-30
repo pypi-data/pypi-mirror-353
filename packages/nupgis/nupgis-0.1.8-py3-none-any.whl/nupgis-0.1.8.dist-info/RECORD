@@ -1,0 +1,15 @@
+nupgis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nupgis/ops.py,sha256=CWNnOPVHCS5zYts_Svg3OgMsToqhRDDPVRh7Sk6ceL8,768
+nupgis/struct.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nupgis/validation.py,sha256=1URX2h7Mqm_E6ICKI-JdjYqAJEk9SaK3oBrbdB9r7VI,768
+nupgis/simplification/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nupgis/simplification/douglas_peucker.py,sha256=FagreFHxg_GAkvWPumY3ax19_YIY1VZ_B-HueaZSpwM,941
+nupgis/simplification/lang.py,sha256=ukS-yDSPjoj016exAu4kPDXacxRxNbRQrPo7SwFShNQ,2116
+nupgis/simplification/reduction.py,sha256=44lFKgnaOOtHUCCVEAR6q02Rg_ZpbBEpRNlNTbrjbrA,494
+nupgis/smoothing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nupgis/smoothing/sliding_average.py,sha256=XTgTQX3d5pg848qf2sQ1kTi5N3uHLVBZuBegaVjrdxk,2097
+nupgis-0.1.8.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+nupgis-0.1.8.dist-info/METADATA,sha256=sWXy_zLhPv2PEXA-WfIHwtTDxoQN5hdUNkzRBN25LD0,14838
+nupgis-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nupgis-0.1.8.dist-info/top_level.txt,sha256=N-d-0KdGoSrgF0H3sAXFfFwUJCCcvA455JWJBTJu50M,7
+nupgis-0.1.8.dist-info/RECORD,,
