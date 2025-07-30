@@ -1,0 +1,10 @@
+todo_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+todo_cli/core.py,sha256=rtxWWyVJpP8CDf6zlO3h54uFxkHg5xlzHPkMTruzSik,4217
+todo_cli/main.py,sha256=kIn2LCnj6bLEqjtAr_byOHIItb5VRjaPr-SHHtamw4o,6687
+todo_cli/utils.py,sha256=qHVelHO8LpQO4jxMnNAuRRuVHPXJA-aUye7x8N1jZWY,2903
+todo_cli_x-0.1.5.dist-info/licenses/LICENSE,sha256=5poj5qigwbn6cSLOOvoQOiRirAnh8CDwmljWkYggIfo,1166
+todo_cli_x-0.1.5.dist-info/METADATA,sha256=PshyfkSjpNf8pLFmyZEsbRktEe3fw2xKm5aFkqsPBYM,5519
+todo_cli_x-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+todo_cli_x-0.1.5.dist-info/entry_points.txt,sha256=YVa-5MJrgdBnowY0d73Eb5vwrHvqTgD38C8lWh0H97w,44
+todo_cli_x-0.1.5.dist-info/top_level.txt,sha256=4xaZBzARTw98acNbgoe3IQa-PJJJiui84HlCJ5jJKUs,9
+todo_cli_x-0.1.5.dist-info/RECORD,,
