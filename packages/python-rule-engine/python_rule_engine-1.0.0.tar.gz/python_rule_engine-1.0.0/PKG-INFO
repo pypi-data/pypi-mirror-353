@@ -1,0 +1,84 @@
+Metadata-Version: 2.3
+Name: python-rule-engine
+Version: 1.0.0
+Summary: A rule engine where rules are written in JSON format
+License: MIT
+Keywords: rule-engine,rules,json,python
+Author: Santiago Alvarez
+Author-email: santiago.salvarez@mercadolibre.com
+Requires-Python: >=3.9,<4.0
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Dist: jsonpath-ng (>=1.5.3,<2.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Requires-Dist: pydantic-core (>=2.29.0,<3.0.0)
+Project-URL: Homepage, https://github.com/santalvarez/python-rule-engine
+Description-Content-Type: text/markdown
+
+# python-rule-engine
+
+[![pypi](https://img.shields.io/pypi/v/python-rule-engine.svg)](https://pypi.python.org/pypi/python-rule-engine)
+[![versions](https://img.shields.io/pypi/pyversions/python-rule-engine.svg)](https://github.com/santalvarez/python-rule-engine)
+[![license](https://img.shields.io/github/license/pydantic/pydantic.svg)](https://github.com/pydantic/pydantic/blob/main/LICENSE)
+[![Downloads](https://pepy.tech/badge/python-rule-engine)](https://pepy.tech/project/python-rule-engine)
+[![Downloads Month](https://pepy.tech/badge/python-rule-engine/month)](https://pepy.tech/project/python-rule-engine)
+
+
+
+A rule engine where rules are defined in JSON format. The syntax of the rules belongs to the [json-rules-engine](https://github.com/CacheControl/json-rules-engine) javascript library though it contains some changes to make it more powerfull.
+
+- [Rule Syntax](docs/rules.md)
+- [Operators](docs/operators.md)
+
+## Installation
+```
+pip install python-rule-engine
+```
+
+## Quick Example
+
+```python
+from python_rule_engine import RuleEngine
+
+rule = {
+    "name": "basic_rule",
+    "conditions": {
+        "all": [
+            {
+                # JSONPath support
+                "path": "$.person.name",
+                "operator": "equal",
+                "value": "Lionel"
+            },
+            {
+                "path": "$.person.last_name",
+                "operator": "equal",
+                "value": "Messi"
+            }
+        ]
+    }
+}
+
+obj = {
+    "person": {
+        "name": "Lionel",
+        "last_name": "Messi"
+    }
+}
+
+engine = RuleEngine([rule])
+
+results = engine.evaluate(obj)
+
+```
+
