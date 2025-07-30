@@ -1,0 +1,112 @@
+Metadata-Version: 2.4
+Name: inclupp
+Version: 1.0.1
+Summary: A CLI tool to preprocess and compile C++ files with remote #includes.
+Home-page: https://github.com/LautyDev/inclupp
+Author: LautyDev
+Author-email: git@lauty.dev
+Project-URL: Bug Tracker, https://github.com/LautyDev/inclupp/issues
+Project-URL: Source, https://github.com/LautyDev/inclupp
+Project-URL: Documentation, https://github.com/LautyDev/inclupp#readme
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 📦 Inclu++ — Remote-Aware C++ Preprocessor
+
+**Inclu++** (`inclupp`) is a command-line tool that enhances your C++ workflow by allowing you to `#include` header files **directly from URLs**, just like local files.
+
+🔗 `#include "https://example.com/hello.hpp"`  
+📥 Automatically downloaded and compiled with your source code.
+
+---
+
+## ✨ Features
+
+- 🔍 Detects `#include` directives with URLs
+- 💻 Works for both `C` and `C++` source files  
+- 🌐 Downloads remote header files on the fly  
+- 🗂 Stores them in a temporary directory  
+- ⚙️ Compiles using `g++` behind the scenes  
+- 🎨 Colorful CLI output with live status messages  
+- ✅ Simple and lightweight — no setup needed  
+
+---
+
+## 🚀 Quick Start
+
+```bash
+pip install inclupp
+```
+
+```bash
+inclupp main.cpp
+```
+
+---
+
+## 🧪 Example
+
+### `main.cpp`
+
+```cpp
+#include "https://example.com/hello.hpp"
+
+int main() {
+    hello();
+    return 0;
+}
+```
+
+```bash
+inclupp main.cpp
+```
+
+```
+🔧 Processing source file: main.cpp
+🔄 Downloading: https://example.com/hello.hpp
+✅ Saved to: /tmp/tmpabc123/hello.hpp
+🔨 Compiling the processed file...
+🎉 Compilation successful: main
+```
+
+---
+
+## 🔧 Usage
+
+```bash
+inclupp --version
+inclupp <source_file.c or .cpp>
+```
+
+---
+
+## 📦 Requirements
+
+- Python 3.6+
+- `g++` in PATH
+- Internet connection
+- Python packages: `requests`, `colorama`
+
+---
+
+## 📘 License
+
+MIT License  
+© 2025 LautyDev
