@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: blackspammerbd_termux
+Version: 1.0.1
+Summary: Auto Telegram backup tool for Termux
+Home-page: https://github.com/BlackSpammerBd/blackspammerbd-termux
+Author: BLACK SPAMMER BD
+Author-email: shawponsp6@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# blackspammerbd-termux
