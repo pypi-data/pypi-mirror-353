@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "hexo-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "hexo-mcp-server"
+      ],
+      "env": {
+        "HEXO_DIR": "<YOUR_HEXO_DIRECTORY>"
+      }
+    }
+  }
+}
