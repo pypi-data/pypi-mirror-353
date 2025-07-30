@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+lmdb_simple/__init__.py
+lmdb_simple/core.py
+lmdb_simple.egg-info/PKG-INFO
+lmdb_simple.egg-info/SOURCES.txt
+lmdb_simple.egg-info/dependency_links.txt
+lmdb_simple.egg-info/requires.txt
+lmdb_simple.egg-info/top_level.txt
