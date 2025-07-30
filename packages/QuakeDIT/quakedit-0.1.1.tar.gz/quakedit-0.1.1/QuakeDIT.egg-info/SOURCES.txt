@@ -1,0 +1,6 @@
+setup.py
+QuakeDIT.egg-info/PKG-INFO
+QuakeDIT.egg-info/SOURCES.txt
+QuakeDIT.egg-info/dependency_links.txt
+QuakeDIT.egg-info/requires.txt
+QuakeDIT.egg-info/top_level.txt
