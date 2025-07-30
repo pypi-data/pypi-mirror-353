@@ -1,0 +1,2 @@
+[console_scripts]
+singlefile-mcp = singlefile_mcp_server:run
