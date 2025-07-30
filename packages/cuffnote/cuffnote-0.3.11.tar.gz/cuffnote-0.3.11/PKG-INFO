@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: cuffnote
+Version: 0.3.11
+Summary: Modeling mortgage loan scenarios
+Home-page: https://github.com/bdowdell/cuffnote
+Author: Ben Dowdell
+Author-email: ben.dowdell87@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: numpy-financial
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+# cuffnote
+A python library for simple mortgage calculations
+
+## package modules
+
+1. **cuffnote.mortgages.Mortgage**: The base class represents a plain vanilla mortgage
+1. **cuffnote.mortgages.ExtraMonthlyPrincipal**: Inherits from the base class & allows modelling a mortgage with extra monthly principal payments. The start date of the extra payments does not have to be the same as the start date of the loan.
+1. **cuffnote.mortgages.AnnualLumpPayment**: Inherits from both base class & ExtraMonthlyPrincipal. Allows modelling a mortgage with annual principal lump payments that occur only once a year.
+
+## running unittests using coverage & unittest
+
+Launch the unittests using coverage:
+
+`$ coverage run -m unittest -v tests/test_* ; coverage html`
