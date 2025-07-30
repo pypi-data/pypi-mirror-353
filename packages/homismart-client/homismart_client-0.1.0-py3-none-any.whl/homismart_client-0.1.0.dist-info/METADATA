@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: homismart-client
+Version: 0.1.0
+Summary: Python client for Homismart WebSocket API
+Home-page: https://github.com/krafman/homismart-client
+Author: Adir Krafman
+Author-email: adirkrafman@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/krafman/homismart-client/issues
+Keywords: homismart,smart home,websocket,iot,home automation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: websockets>=10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Homismart Client
+
+This repository contains an unofficial Python library for controlling Homismart smart home devices via their WebSocket API. It provides asynchronous helpers to log in with your Homismart account, discover devices and send commands such as turning switches on or off.
+
+## Installation
+
+1. Clone this repository.
+2. (Optional) create and activate a virtual environment.
+3. Install the package from the project root:
+
+```bash
+pip install .
+```
+
+Dependencies listed in `requirements.txt` will be installed automatically.
+
+## How to Run
+
+Set your Homismart credentials in environment variables:
+
+```bash
+export HOMISMART_USERNAME="your_email@example.com"
+export HOMISMART_PASSWORD="your_password"
+```
+
+You can then run the example script included in the project:
+
+```bash
+python homismart_client/examples/basic_usage.py
+```
+
+The example connects to the Homismart service, lists devices and performs a simple action. Use `HomismartClient` in your own scripts to build custom automations.
+
+## License
+
+This project is licensed under the MIT License.
