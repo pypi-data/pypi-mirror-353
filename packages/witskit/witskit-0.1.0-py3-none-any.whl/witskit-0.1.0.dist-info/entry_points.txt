@@ -1,0 +1,2 @@
+[console_scripts]
+witskit = witskit.cli:app
