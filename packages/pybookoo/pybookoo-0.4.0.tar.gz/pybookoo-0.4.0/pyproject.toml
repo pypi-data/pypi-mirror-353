@@ -1,0 +1,41 @@
+[project]
+name = "pybookoo"
+version = "0.4.0"
+license = "MIT"  # SPDX identifier for MIT License
+description = "Async Python library for Bookoo BLE scales"
+readme = "README.md"
+authors = [
+    { name = "taliexo", email = "mail@taliexo.com" },
+]
+maintainers = [
+    { name = "taliexo", email = "mail@taliexo.com" },
+]
+keywords = ["Bookoo", "Bluetooth", "api", "async", "client"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = ["bleak >= 0.22.0"]
+requires-python = ">= 3.12"
+
+[project.urls]
+Homepage = "https://github.com/taliexo/pybookoo"
+Repository = "https://github.com/taliexo/pybookoo"
+Documentation = "https://github.com/taliexo/pybookoo"
+
+[project.optional-dependencies]
+dev = [
+    "covdefaults == 2.3.0",
+    "coverage == 7.8.2",
+    "syrupy == 4.9.1",
+    "pytest == 8.4.0",
+    "pytest-asyncio == 1.0.0",
+    "pytest-cov == 6.1.1",
+]
+
+[tool.setuptools.package-data]
+pybookoo = ["py.typed"]
