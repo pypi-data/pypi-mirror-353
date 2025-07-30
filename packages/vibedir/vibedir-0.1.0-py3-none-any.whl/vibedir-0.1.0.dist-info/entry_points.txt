@@ -1,0 +1,5 @@
+[console_scripts]
+vibedir = vibedir.main:main
+
+[gui_scripts]
+
