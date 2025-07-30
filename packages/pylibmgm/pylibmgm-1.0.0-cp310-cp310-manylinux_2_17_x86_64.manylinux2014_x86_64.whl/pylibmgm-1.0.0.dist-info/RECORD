@@ -1,0 +1,11 @@
+pylibmgm.libs/libgomp-a34b3233.so.1.0.0,sha256=On6uznIxkRvi-7Gz58tMtcLg-E4MK7c3OUcrWh_uyME,168193
+pylibmgm-1.0.0.dist-info/WHEEL,sha256=sZM_NeUMz2G4fDenMf11eikcCxcLaQWiYRmjwQBavQs,137
+pylibmgm-1.0.0.dist-info/METADATA,sha256=ylLmbRbv5oYw1eeAt2UYTOufVnzf1j-pgurhPfE5spg,7978
+pylibmgm-1.0.0.dist-info/RECORD,,
+pylibmgm/_pylibmgm.cpython-310-x86_64-linux-gnu.so,sha256=d5Ocw3S_S-FVh8drIYTnnO2t7O50v385uvpl2vB-jBc,1851297
+pylibmgm/solver.pyi,sha256=GkSj-oHxMaxyRG0froH6m_vROAakWDhWlm_VlDK5mKk,864
+pylibmgm/__init__.py,sha256=HmNxo5spComIsCvjuEgD6YyDH1qux7PSDanJNLp5nis,337
+pylibmgm/io.cpython-310-x86_64-linux-gnu.so,sha256=rNK01bBxIOQlTt8HmZMngD2qnZmaz7N6sAfvDEDETRg,1628160
+pylibmgm/io.pyi,sha256=r4dAy9Vxy6ptAgNd10uSEE0f2NNs1HkS2mLkbXFr-hY,773
+pylibmgm/solver.py,sha256=9eVgJvmgu4i-xpvUJERj_T0k9XYbRu5wv-ixQxrcT5U,7556
+pylibmgm/__init__.pyi,sha256=H7F8-EgWLqLdjilfMum542Te3ZwDIoVYDW7JA9jtO-g,8234
