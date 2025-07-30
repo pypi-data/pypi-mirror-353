@@ -1,0 +1,2 @@
+[console_scripts]
+ebix = ebix.cli:cli
