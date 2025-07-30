@@ -1,0 +1,21 @@
+---
+default_install_hook_types:
+  - pre-commit
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+        additional_dependencies: ["textual>=2.1.0", "whenever>=0.7.1"]
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.5.29
+    hooks:
+      - id: uv-lock
