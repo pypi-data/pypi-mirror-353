@@ -1,0 +1,2 @@
+[console_scripts]
+promcat = promcat.cli:main
