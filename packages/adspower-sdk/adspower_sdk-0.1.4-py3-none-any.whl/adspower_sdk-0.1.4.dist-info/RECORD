@@ -1,0 +1,11 @@
+adspower/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+adspower/adspowerapi.py,sha256=wLPIwGm6ySdT3NSyJ1xO7JC8o57fEHKRYwYGpYkEP8Y,12616
+adspower/adspowerclean.py,sha256=RBFHir2kjH9kcOmcq4I1OkqNqOC7nHRONsPBpf3T51k,2614
+adspower/adspowermanager.py,sha256=1CUg4QHvCd3cGoqput-i0PMcPIyrjgk-JLqT2Y5w25U,28183
+adspower/settings.py,sha256=2TV2bR4ziwYL_CGfxMNDzoZVIVP1l19NQpTMVprJ21k,525
+adspower/utils.py,sha256=J5P069ZuIRt2SPjIpl9NMFaT-7UNTnpiODEmql92dww,2330
+adspower_sdk-0.1.4.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+adspower_sdk-0.1.4.dist-info/METADATA,sha256=bgAs7HBM90_Iz8auxcLNl33QxP2DEPU_V43BKLH_5QI,2142
+adspower_sdk-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+adspower_sdk-0.1.4.dist-info/top_level.txt,sha256=YVCk-HZ721nqskdO0ull53J8lyflSzCjD6SJZ1Qx2b0,9
+adspower_sdk-0.1.4.dist-info/RECORD,,
