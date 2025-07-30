@@ -1,0 +1,3 @@
+[console_scripts]
+vegrofi = vegrofi.__main__:main
+vegrofi-convert = vegrofi._convert:main
