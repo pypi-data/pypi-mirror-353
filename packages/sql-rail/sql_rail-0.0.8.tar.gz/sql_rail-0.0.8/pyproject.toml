@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling >= 1.26", "setuptools >= 61.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sql_rail"
+version = "0.0.8"
+authors = [
+    { name = "Ajay Anil Kumar", email = "ajay.anilkumar0304@gmail.com"},
+    { name = "Agamdeep Singh", email = "agammessi10@gmail.com"},
+]
+description = "A module to analyze SQL query parameters and suggest corrections based on reference data."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Choose your license
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy",
+    "pydantic",
+    "scikit-learn",
+    "sqlparse",
+    "fuzzywuzzy[speedup]",
+    "python-Levenshtein",
+    "sqlglot"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ajayanilkumar/SQL-GuardRails" 
+"Bug Tracker" = "https://github.com/ajayanilkumar/SQL-GuardRails/issues"
