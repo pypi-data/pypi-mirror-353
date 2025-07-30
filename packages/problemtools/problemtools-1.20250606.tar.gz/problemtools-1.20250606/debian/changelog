@@ -1,0 +1,932 @@
+kattis-problemtools (1.20250606) noble; urgency=medium
+
+  * Fix sample missing from rendered problem statements
+
+ -- Gunnar Kreitz <gkreitz@kattis.com>  Fri, 06 Jun 2025 21:27:25 +0200
+
+kattis-problemtools (1.20250605) noble; urgency=medium
+
+  [ Tagl ]
+  * Set working directory for submission
+
+  [ Per Austrin ]
+  * small fixes to README.md
+
+  [ Tagl ]
+  * Support overwriting directories within submissions with included directories
+
+  [ JoelNiemela ]
+  * Simplify problem2html argparser and add type annotations
+  * Simplify problem2pdf argparser and add type annotations
+  * Add line break for readability
+  * Add type annotations to verifyproblem
+  * Use long name for langparam
+  * Fix potential error
+  * Use tuple destructuring syntax
+  * Don't remove argparser_basic_arguments
+  * Fix CodeFactor errors
+
+  [ Konráð Elí Sigurgeirsson ]
+  * Update README.md
+
+  [ Joel Niemelä ]
+  * Update README.md
+
+  [ JoelNiemela ]
+  * Update kotlin to version 1.8.10
+
+  [ Harry Zhang ]
+  * Fix not showing WA test case verifyproblem.py
+
+  [ Gunnar Kreitz ]
+  * Fix crash in verifyproblem when in or ans files are not utf-8
+
+  [ Pehr Söderman ]
+  * Restructure problem2html
+  * Restructure restrucure problem2pdf
+  * Improve debugging output
+  * Parse args properly.
+  * Reintroduce the get_subgroup, as it is needed for addproblem.
+  * Reintroduce get_attachment_paths, as it is needed for addproblem.
+
+  [ Tobias Meggendorfer ]
+  * Improved logging, fix unicode error, include_dir buildrun
+  * Guard better agains non-unicode feedback
+  * Revert delayed import
+  * Fix missed init, add test case
+
+  [ Maarten Sijm ]
+  * Explicitly set language versions for Java and Kotlin in languages.yaml
+
+  [ Tobias Meggendorfer ]
+  * Restore old format
+
+  [ Gunnar Kreitz ]
+  * Add github action to run pytest and flake8
+  * Remove travis config, point badges to github badge
+  * Check that all symlinks point to something existing within the problem package
+  * Forbid all absolute symlinks
+
+  [ Simon Lindholm ]
+  * Type annotation fixes
+  * Add -j flag for multi-threaded validation
+  * Compile submissions early, improve cleanup
+
+  [ Pehr Söderman ]
+  * Adding sanity checks for file sizes.
+  * Add UUID as an optional field in problem.yaml
+  * Include examples in the manifest
+  * Fixing running of tests
+  * Build debian packages in ci
+  * Cache and add packages
+  * Warn if sample is empty
+
+  [ Fredrik Niemelä ]
+  * Change team to user for default validator
+
+  [ Pehr Söderman ]
+  * Add a dependency on dvisvgm, which was missing
+
+  [ matistjati ]
+  * Add markdown support
+  * Added display math
+  * Add dependencies for markdown
+  * Style markdown tables
+  * Remove temp files
+  * Statement fix
+  * Some refactoring
+  * Added image support in markdown
+  * Added footnote support
+  * Code cleanup
+  * md -> html works
+
+  [ Gunnar Kreitz ]
+  * Remove non-standard judgeerror.txt from example problems
+
+  [ matistjati ]
+  * Make md styling more constistent with latex
+
+  [ Pehr Söderman ]
+  * Bump the language versions for c and c++
+  * Bump the language versions for Java
+
+  [ matistjati ]
+  * md->pdf and Reorganize code
+
+  [ Pehr Söderman ]
+  * GCC should use gnu17
+
+  [ matistjati ]
+  * Better md->pdf tables
+  * Interactive samples for pdf
+  * Remove bplusa
+  * PDF problem name
+  * Add dependencies
+  * Add problem names
+  * Added problem name to test hello package
+  * Improve security by running pandoc without shell capabilities
+  * Refactoring
+  * Even more refactoring
+  * Remove python3-markdown dependency
+  * Add problem id to pdf and small fixes
+
+  [ Pehr Söderman ]
+  * Update languages.yaml
+
+  [ Tagl ]
+  * Run interactive validation with submission's working directory
+
+  [ Matistjati ]
+  * Change Rust compilation flags
+
+  [ Hugo Söderbergh ]
+  * Remove deprecated functionality
+  * add build to .gitignore
+
+  [ JoelNiemela ]
+  * Add special case error message when user output file is empty
+  * Modify error message according to github comment
+
+  [ Hugo Söderbergh ]
+  * add command-line argument, begin generalizing Problem class
+  * small fix
+  * abstract problems further
+  * catch general exception for detecting problem-format
+  * Add some documentation
+  * New abstraction, ProblemPart which makes it easier to implement parts of problems
+  * Problem is no longer an abstract class
+  * ProblemStatement now exists for old and new format
+  * Add TODO for ProblemStatement
+  * Fix issues with ProblemStatement
+  * Add some documentation and some final fixes
+  * Small change
+  * Allow to give class-type for part in Problem.get
+  * Whoops small bug crashed code
+  * Fix bug that crashed multithreading for testcase-validation
+  * Mark ProblemPart.depends_on() as staticmethod
+
+  [ Matistjati ]
+  * Disable html
+  * Change to wikimedia example image
+  * Sanitize image sources
+  * Remove SVG dependency
+  * Better markdown styling
+  * Better sample styling
+  * Add \nextsample and \remainingsamples
+  * Better pdf error handling
+  * Use {{nextsample}} instead of \nextsample
+  * Relax image checking (implied by global regex on filenames)
+  * Add svg dependency
+
+  [ Gunnar Kreitz ]
+  * Explicitly install build-essential, as deb building blows up on it not being installed
+
+  [ Hugo Söderbergh ]
+  * fix issues with PR
+
+  [ Gunnar Kreitz ]
+  * Remove test of verifyproblem.generators (which has been removed)
+
+  [ Hugo Söderbergh ]
+  * Remove bad break-statement and increase consistency in dictionary access
+  * more concise regex
+  * Make Problem constructor default to legacy format
+  * make tests pass
+
+  [ Matistjati ]
+  * Add back warning/error logging
+
+  [ Gunnar Kreitz ]
+  * Add mypy to github workflow
+  * Change type from list to tuple, helping mypy and being clearer
+  * Fix name of exception (old one also worked, as parser does import * from Scanner, but felt weird)
+  * Add type annotations and abstract class markers
+  * Add getProblemPart for when we need to access problem.classes
+  * Add python tooling files (and vim swp files) to gitignore
+  * Fix signatures of run in VIVA and checktestdata to match superclass
+  * Fix/ignore type errors to let mypy catch errors everywhere but generatedata.py
+
+  [ ElliotRipa ]
+  * Make cls templates able work with either problem format
+  * Allow problem statement to use either problem format
+  * Make template.py detect format version instead
+  * Provisional updates
+  * Add formatversion.py
+  * Minor fixes in imports
+  * Move version specific functionality to separate file
+  * Change to flag '-v' for format-version
+  * Add missing parentheses
+  * Use dictionary instead of data objects for format data
+  * Make problem2html.py use -v to specify format version
+  * Add constants for version names
+  * Rollback problemset_0.1.cls
+  * Move initialisation of FORMAT_DATA to setup
+  * Make formatversion.py use dataobjects instead of dicts
+  * Fix documentation
+  * Remove unnecessary initialisation
+
+  [ Matistjati ]
+  * Start sanitization + apply feedback
+  * Better sanitization + lots of tests
+  * problem_statement -> statement
+  * Better md -> pdf sample rendering
+  * Another escape
+  * More careful with images
+  * Make samplexss more focused
+  * Experimentally reuse normal LaTeX rendering
+  * Use problemtools problem2pdf to handle md -> pdf
+  * Cleanup
+  * librsvg out of focus for this PR
+  * Ensure nh3
+  * Remove ghostscript sanitization. If it wasn't used before, it probably isn't needed
+  * Add nh3 to deb build
+  * Linting
+  * Add back ghostscript sanitization
+  * Remove unnecessary test
+
+  [ Gunnar Kreitz ]
+  * Add make clean to clean up support and the mess left by setuptools
+  * Change debian packaging to dh_virtualenv
+  * Update readme, adjusting installation instructions so we can use pip dependencies
+  * Convert from setup.py to pyproject.toml (and use setuptools-scm for versioning)
+  * Hook sdist to make python -m build work on a clean checkout
+  * Update wrapper scripts and README
+  * Update CI workflow to match readme for build requirements (plus build-essentials)
+  * Force dh_virtualenv to use builtin venv (debugging CI crash)
+  * Restructure CI/CD to separate deb building from python unit tests
+  * Stop exposing __version__, users should use importlib.metadata.version instead
+  * Hardcode path to python, as dh_virtualenv fails to discover it in CI
+  * Clean up version parsing. Accept 2023-07-draft and 2023-07 version strings
+  * Add pydantic models for parsing problem.yaml
+  * Limit problem.yaml config to only system defaults
+  * Use new metadata parsing mechanism, and start parsing config for 2023-07.
+  * Bump python version to 3.11
+  * Move tests to outside of the package
+  * Update manifest to include tests support files in sdist, and remove some clutter
+  * Remove old hack for plasTeX argument (we require >= 3.0 now)
+  * Clean up incompletely removed plastex_escape hack. Remove unused variable
+  * Clean up unused variables, old io import, and multiple commands on lines
+  * Clean up unused import and comparison with None
+  * Ruff format
+  * Clean up imports
+  * Fix minor things flagged by ruff
+  * Remove unused variables in tests
+  * Add ruff configuration
+  * Apply ruff formatting
+  * Add ruff pre-commit hook
+  * Replace flake8 with ruff (both linting and formatting)
+  * Fix incorrect formatting of pydantic errors
+  * Move is_interactive and is_scoring to be read from problem metadata directly
+  * Let Problem read and store problem format information. Warn about incomplete 2023-07 support
+  * Fix validator discovery for 2023-07. Run through all validation for 2023-07 (even if broken)
+
+  [ Matistjati ]
+  * Add nh3 as dependency
+  * Fix test import path
+  * Apply ruff formatting
+  * More robust footnote finding
+  * Don't double-escape HTML in samples
+  * Ghostscript fixes and tests
+
+  [ Gunnar Kreitz ]
+  * Fix loading a problem with empty problem.yaml and with no statements
+  * Add utility method to load problem metadata, including names from statements when needed
+  * Use load_metadata in verifyproblem. Add temporary fallback conf to fix crashes when failing to load metadata
+  * Use load_metadata in statement_util
+  * Add apt-get update in workflow to unbreak CI
+
+  [ Matistjati ]
+  * Convert some example problems to 2023-07-draft
+  * Add uuid to guess and oddecho
+  * Better formatting and error for output_validators
+
+  [ Pehr Söderman ]
+  * Add missing build requirements to debian build
+  * Update pyproject
+
+  [ Matistjati ]
+  * Remove now-duplicated import
+
+  [ Gunnar Kreitz ]
+  * Remove (AFAICT, broken) support for ancient tex statements (0.1)
+  * Fix bug where we complained about missing show_test_data_groups for non-legacy
+  * Default language to en. Remove unused --format-version
+  * Pass Template a filename to render, and pass that through to the latex template
+  * Rename problem.md to problem.en.md in tests to follow 2023-07-draft
+  * Refactor of rendering: unify statement finding code, and use Path more
+  * Use statement_util to find statements. Add more checks. Try rendering even when there are multiple statements in a language
+  * Make mypy more picky, also checking PlasTeX usage
+  * Simplify temporary file usage in markdown -> pdf flow
+  * Fix bug where problem2html cd:s to bad directory, crashing validation of multiple problems
+
+  [ Pehr Söderman ]
+  * Update link to kattis controlled domain.
+
+  [ Gunnar Kreitz ]
+  * Replace formatversion.FormatData with a StrEnum
+  * Add some documentation in the readme regarding current state of format versions
+  * Add colorlog to get colors for warnings and errors #312
+  * Add Swedish problem names
+  * Fix the logging plasTeX destroys
+  * Remove accidental commit
+  * Fix misleading error when missing problem statemetns
+  * Improve image handling in markdown statements
+  * Change URL to one that passes filename suffix filter
+  * Restructure error counters. Fix errors happening prior to check being ignored in count.
+  * Fix --bail_on_error and --werror being ignored before check
+  * Refactor problem loading so we can do fatal errors in setup
+  * Check file and directory names per standard
+  * Make missing/compilation failure in grader/output validator fatal
+  * Restore old API for accessing parts of a problem. Simplify part setup
+  * Change type of attachments.attachments from list[str] to list[Path]
+  * Convert Problem.metadata to a property to align better with other naming
+  * Expose computed timelim
+  * Add back problemtools.run.get_tool_path to API
+  * Large restructure of how our docker images are built.
+  * Remove old Dockerfile in root, unused afaict
+  * Add marker to let mypy use our type annotations
+  * Replace authors with Kattis AB (pypi only shows one). Set required python version
+  * Add script to build packages for pypi
+  * Fix incorrect error when verifying different. Add helpful hint when directory for wrong version exists
+  * Use problemtools/githubci image in workflow. Run verifyproblem on all examples.
+  * Check for incompatible types. Warn for unimplemented types
+  * Check format of interaction samples. #277 Don't warn about empty sample when it contains interactions.
+  * Add type methods for all types. Add convenience methods on Problem for easier access
+  * Improve warning for non-standard output validator languages #258
+  * Remove generatedata (never made it into the standard)
+  * Fix pytest dropping a guess.pdf in working directory. Check PDF magic bytes
+  * Add -d flag to update_docker to allow easier testing locally
+  * Fix broken git clone command (`${TAG}` expanded to empty string)
+  * Fix silly error in docker file, causing apt-get update not to run
+  * Add -d option to allow building in a dirty rep (to facilitate development of build scripts)
+  * Workflow that builds and pushes a package to testpypi
+  * Fix version computation when we build pypi packages
+  * Fix syntax error in github workflow file
+  * Fix bug where we crashed if we attempted to load/check twice
+  * Error if problem name exits in a language without a statement
+  * Add utility function uses_default_validator for output validation. Warn/error on multiple validators
+  * Fix new mypy error in mypy 1.16
+  * Fix missing support for imgbasedir in md2html
+  * Fix typo in Dockerfile.full causing it to lack a lot of languages
+  * Remove year from license - IANAL, but AFAICT it's not needed
+  * Add warning to pypi package script pointing to the github action now that that's set up
+  * Change update_docker to default to building from master (but keep :develop tag on docker)
+  * Add convenient way to run docker. Document need to install languages.
+
+ -- Gunnar Kreitz <gkreitz@kattis.com>  Thu, 05 Jun 2025 10:59:57 +0200
+
+kattis-problemtools (1.20231016) jammy; urgency=medium
+
+  [ Don-Khue Le ]
+  * Change examples to new format
+
+  [ mzuenni ]
+  * made script python3.10 compatible
+
+  [ JoelNiemela ]
+  * Add oddecho to the example problems
+  * Remove duplicate source key in problem.yaml
+
+  [ Joel Niemelä ]
+  * Add longer problem deescription for oddecho
+
+  [ Greg Hamerly ]
+  * initial changes for moving to plastex 3.0
+  * problem2html: update to use newer version of plasTeX
+  * instead of try/except, check plasTeX.__version__
+
+  [ osalbahr ]
+  * Edited package names that no longer exist
+
+  [ Greg Hamerly ]
+  * verifyproblem: if the language of an output validator is not from an allowed list, warn the user
+
+  [ Simon Lindholm ]
+  * Handle plastex version diffs by try-catch instead of checking __version__
+
+  [ Bjarki Ágúst Guðmundsson ]
+  * Draft implementation of generators.yaml spec
+  * Fix error accounting when parallelism is used
+  * Use regular YAML loader
+  * Add support for more visualizer extensions
+  * Parse whole command
+  * Chmod to staging directory when running generator
+  * Copy non-.in files along with manual cases
+  * Remove unhelpful "generated no files" warning
+  * Make sure data_directories is initialized
+  * Clean up old code
+  * Handle testcases with None as name correctly
+  * Use first file in implicit generator as entry point
+  * Move visualizer extensions into verifyproblem.py
+  * Number test cases per directory
+  * Add support for testdata.yaml
+  * Make sure empty testdata.yaml is loaded as empty dict
+  * Fix linter warnings
+  * Remove python2 support
+  * Skip invalid problems
+
+  [ Simon Lindholm ]
+  * Don't crash on score = None
+  * Allow negative scores as grader output
+
+  [ Osama Albahrani ]
+  * recommended -> supported?
+
+  [ Tagl ]
+  * First attempt to fix the PAC TLE bug
+  * Forgot to update aggregation
+  * forgot comma
+  * Fix run_submission declaration and typo in sensitive time limit message
+  * Set runtime on low result too
+  * Use regular time limit to break instead of safety margin
+  * Update break logic to consider each time limit
+  * Accidentally inverted the logic, fixed
+
+  [ Greg Hamerly ]
+  * problem2html.py: warn about large generated files
+  * if there are no sub-results, do not call a grader
+  * default_grader: return score with JE
+  * report an error if there are any empty test case groups
+
+  [ Maarten Sijm ]
+  * Make python3 the default for `.py` submissions
+
+  [ Simon Lindholm ]
+  * Fix Debian build on Ubuntu 23.04
+  * Fix adding to PYTHONPATH
+
+  [ Tagl ]
+  * Remove unused variable
+  * Basic support for languages in problem.yaml
+  * Use correct default value for languages
+  * Fix BuildRun
+  * Fix NameError when BuildRun fails
+
+  [ JoelNiemela ]
+  * Set language argument default to None
+  * Remove unused argument title
+  * Remove trailing spaces
+  * Set default value of language to None in problem2pdf
+  * Remove unused argument title from problem2pdf
+  * Fix automatic language detection
+  * Use fstrings instead of % operator
+  * Use fstrings instead of concating strings
+  * Fix typo
+  * Fix CodeFactor error
+  * Explicitly only catch KeyError
+
+  [ Per Austrin ]
+  * [docker] update docker image files and build script
+
+ -- Per Austrin <austrin@kattis.com>  Mon, 16 Oct 2023 14:31:34 +0200
+
+kattis-problemtools (1.20210928) groovy; urgency=medium
+
+  [ Simon Lindholm ]
+  * Warn on missing show_test_data_groups
+
+  [ Pehr Söderman ]
+  * Replace dependency on texlive-latex-recommended with texlive-plain-generic
+
+  [ Per Austrin ]
+  * fix several python3 compatibility issues
+
+  [ Pehr Söderman ]
+  * Remove texlive-generic-recommended
+
+  [ Per Austrin ]
+  * [py3 compatibility] fix crash caused by non-decoded compiler output
+  * fix update_version script to handle -revX versions better
+
+  [ Simon Lindholm ]
+  * Only warn for scoring problems
+
+  [ Greg Hamerly ]
+  * remove cgi, which seems to be causing problems
+
+  [ Tobias Werth ]
+  * Remove duplicate specification of limits in example problem.yaml.
+
+  [ Greg Hamerly ]
+  * use cgi.escape for python2 (i.e. plastex1) only
+  * change file() to open()
+
+  [ Jean Niklas L'orange ]
+  * Use pypy3 for python3 in Dockerfile.icpc image
+
+  [ Greg Hamerly ]
+  * Only AC submissions should have scores.
+
+  [ Mikael Goldmann ]
+  * Init submodule from root Makefile
+
+  [ Pehr Söderman ]
+  * We should install the Python3 version of plastex, as Python2 is EOL.
+
+  [ Greg Hamerly ]
+  * Remove dependencies on python2, move to python3
+  * remove a hack required for python2 plastex
+
+  [ Ragnar Groot Koerkamp ]
+  * Add Interaction environment for problem statements.
+  * Fix bug in guess output validator
+
+  [ Simon Lindholm ]
+  * Warn on missing show_test_data_groups
+  * Only warn for scoring problems
+
+  [ Greg Hamerly ]
+  * Several minor import updates and revert Dockerfile change
+  * replace deprecated optparse with argparse; clean up imports
+  * Fix bug introduced in update_from_old_problemformat.py
+
+  [ Ragnar Groot Koerkamp ]
+  * Allow x.in and y.ans as test data group names
+
+  [ Johan Sannemo ]
+  * Start allowing input_validators instead of input_format_validators per the spec.
+
+  [ Bergur Snorrason ]
+  * A typo made it so that changing from 'input_format_validator'; to 'input_validtors' gave an error because 'no validators were found'. This fixes it
+
+  [ Ragnar Groot Koerkamp ]
+  * Add broken solution
+  * Add clarifying comment
+  * Fix counterexample to be more explicit
+
+  [ Pehr Söderman ]
+  * Special case inf and nan so they are not treated as numbers in the default validator.
+  * Fix build and correctly break makefile on errors
+
+ -- Pehr Söderman <pehrs@kattis.com>  Tue, 28 Sep 2021 17:44:17 +0200
+
+kattis-problemtools (1.20191126-rev1) bionic; urgency=medium
+
+  * fixes to packaging and Docker images for Python 3
+  * various fixes to packaging after py3 was added
+
+ -- Per Austrin <austrin@kattis.com>  Tue, 26 Nov 2019 23:39:08 +0100
+
+kattis-problemtools (1.20191126) bionic; urgency=medium
+
+  [ Per Austrin ]
+  * Add Cobol to default language config
+
+  [ Greg Hamerly ]
+  * This would make problemtools consistent with Kattis.
+
+  [ Simon Lindholm ]
+  * Show input validator output on failure
+  * Require that graders exit with return code 0
+
+  [ Greg Hamerly ]
+  * require plasTeX version 1.0 for python2 compatibility
+
+  [ Simon Lindholm ]
+  * Reset signal dispositions before running exec
+
+  [ Thore Husfeldt ]
+  * Work around pipe2 on non-linux
+
+  [ Greg Hamerly ]
+  * verifyproblem.py: check for invalid characters in data (directories and filenames)
+
+  [ Per Austrin ]
+  * Reenable Python3 in the setup script
+
+  [ Pehr Söderman ]
+  * Build debian for python3
+  * Fixing type checks to use issinstance and be both python2 and python3 compatible.
+  * Removed a type check for long (it will fail on python3, where a separate  long does not exist). Added in a type check for string types instead.
+  * Require python 3.7
+  * Make travis run tests for python 3.7 as well.
+  * Add fsharp to languages.yaml
+
+  [ Per Austrin ]
+  * [latex document class] don't litter sample directory with .pstmp files (fixes #136)
+  * [docker] bump Kotlin version in images to the one currently used in ICPC
+
+ -- Per Austrin <austrin@kattis.com>  Tue, 26 Nov 2019 21:05:14 +0100
+
+kattis-problemtools (1.20190901) bionic; urgency=medium
+
+  [ Greg Hamerly ]
+  * Parenthesize if/else tuples to avoid a crash
+
+  [ Per Austrin ]
+  * a few Python2-compatible Python3 compatibility fixes
+  * Fixes to adapt to interface changes between old and new versions of PlasTeX.
+  * python3 compatiblity: write tex template using Python file objects instead of low-level writes to file descriptor
+  * python3 compat: work around new plastex issue by passing open file object instead of file name to tex parser
+  * remove flawed Template class destructor by making Template a context manager
+  * updates to document class for typesetting sample data for interactive problems
+  * add support for sample interactions in html generation
+  * add sample interactions to guess
+  * fix two small template-related bugs introduced in bdd588e5
+
+ -- Per Austrin <austrin@kattis.com>  Sun, 01 Sep 2019 09:20:18 +0200
+
+kattis-problemtools (1.20190725) bionic; urgency=medium
+
+  [ Per Austrin ]
+  * minor updates to Docker build command, small bump of Kotlin version and don't use previous cached image when building
+
+  [ Simon Lindholm ]
+  * Specify Python 2.7 in .travis.yml
+  * Allow JE in grader output
+  * Update default grader with first_error, worst_error, ignore_sample, accept_if_any_accepted
+  * Validate sanity of grader_flags: ignore_sample
+
+  [ mpsijm ]
+  * Correctly capitalize Mainclass, only change first letter
+
+  [ Simon Lindholm ]
+  * Add partially_accepted directory
+  * Warn when accepted solutions don't get full score
+  * Check that AC solutions get AC on sample
+
+  [ Pehr Söderman ]
+  * Use edition 2018 of rust for compilation
+
+  [ Greg Hamerly ]
+  * replace all os.system calls with subprocess.call
+  * add code_size() to Program class
+  * check return status of subprocess.call properly
+  * specify local directory for build script
+
+ -- Per Austrin <austrin@kattis.com>  Thu, 25 Jul 2019 10:44:42 +0200
+
+kattis-problemtools (1.20190331) bionic; urgency=medium
+
+  [ Per Austrin ]
+  * update docker scripts and docs about config
+  * Use active MathJax CDN in default HTML template. Fixes #117
+
+  [ austrin ]
+  * Update documentation on dependencies in README.md
+
+  [ Per Austrin ]
+  * bugfix to document class: number subfigure references correctly
+
+  [ Simon Lindholm ]
+  * Fix SIGPIPE-related race for interactive problems
+
+ -- Per Austrin <austrin@kattis.com>  Sun, 31 Mar 2019 14:25:09 +0100
+
+kattis-problemtools (1.20190222) bionic; urgency=medium
+
+  [ Per Austrin ]
+  * add a few problemtools Dockerfiles and update release scripts to build+push them
+  * update installation instructions to describe the new official Docker images, and upgrade Docker to second recommended method of running
+  * belated LICENSE update, happy new years
+  * add a config module for enabling more configurability of problemtools
+  * use the new config module to handle programming language config as well
+  * add some basic tests for the config module
+  * add documentation about the new problemtools configuration options
+  * fix old tests of languages module after introduction of separate config module
+
+  [ austrin ]
+  * Fix markdown formatting of docker command
+
+  [ Per Austrin ]
+  * fix python packaging after introduction of config module
+  * follow XDG base dir spec for config file locations
+  * clarify intended usage of problem.yaml configuration
+  * add support for code size limit from problem format spec
+
+  [ Tobias Werth ]
+  * Fix local installation path in README.
+
+  [ Greg Hamerly ]
+  * remove dead code checking for pdf_ok
+
+  [ Per Austrin ]
+  * problem2pdf: replace os.rename by shutil.move so that cross-filesystem moves work Fixes #107
+
+  [ Vaclav Blazej ]
+  * fix bash run scripts
+
+  [ Tobias Werth ]
+  * Add more submissions for the interactive example problem.
+
+  [ Per Austrin ]
+  * display output validator feedback on Judge Error and erroneous Wrong Answers
+  * add command line flag to give control over the cap on the number of additional info lines shown
+  * code formatting cleanup of argparser
+  * Happy new January
+  * if an interactive validator gives JE, always give JE even if the solution also TLE:d/RTE:d
+  * interactive runner: increase size of pipes to 1 MB (see #113)
+  * make setup.py not crash in Python 3 (related to #111)
+  * add a python_requires to setup.py to indicate that we don't support Python 3
+  * add support for Common Lisp
+  * add support for OCaml
+  * add support for Rust
+  * add example submissions for different in Lisp, OCaml and Rust
+  * add Lisp, OCaml and Rust to the languages installed in the 'problemtools/full' Docker image
+
+ -- Per Austrin <austrin@kattis.com>  Fri, 22 Feb 2019 21:53:51 +0100
+
+kattis-problemtools (1.20181111) bionic; urgency=medium
+
+  [ Greg Hamerly ]
+  * Remove extra parenthesis in info message
+
+  [ Simon Lindholm ]
+  * Allow min_score = max_score
+
+  [ Per Austrin ]
+  * add missing dependencies to README.md as reported by @thuvh
+
+  [ Stefan Kraus ]
+  * Don't skip input format validator checks with non-compiling validators
+  * Modify output validator check to match input validator check
+
+  [ Simon Lindholm ]
+  * Extend .gitignore
+  * Reindent interactive.cc
+  * State the condition for the output limit warning
+  * Use validator output if it exits first, for interactive problems
+  * Avoid validator->submission SIGPIPEs
+  * Set runtime = min(runtime, timelim) when validator exits first
+  * Address review comments
+  * Don't leave traces behind when printing \b's
+  * Don't pluralize "1 errors"
+  * Rename sub -> child for testgroups
+  * Add Problem.is_scoring
+  * Use Python3 print syntax
+
+  [ Robin Lee ]
+  * Stub support for kotlin (jvm) target
+
+  [ Per Austrin ]
+  * Adjustments to the way Kotlin is handled
+  * update documentation of languages.yaml format
+
+  [ Simon Lindholm ]
+  * Support test case reuse using symbolic links
+  * Fix setting runtime = timelim
+  * Add a test for the TLE -> WA behavior
+  * Validate grading.objective key
+  * Check that testgroup scores obey 'range'
+  * Warn if subgroups come in surprising order
+  * Add grading.show_test_data_groups flag
+
+  [ Stefan Kraus ]
+  * problem2html.py: Print warning if 'tidy' is not installed.
+
+  [ Greg Hamerly ]
+  * update to VIVA 2.1
+
+  [ Fredrik Niemelä ]
+  * Fix print syntax error
+
+  [ Alexander Scheel ]
+  * Add dependencies on Fedora to README.md
+
+  [ Johan Sannemo ]
+  * Disable pybuild proxy for github.com
+
+  [ william-fiset ]
+  * Added Docker functionality to Kattis problemtools
+  * Updated Dockerfile
+  * Updated Dockerfile removing &&s
+  * install python pip using apt-get
+
+  [ Per Austrin ]
+  * A little cleanup (but no substantive changes) of the Dockerfile and documentation
+  * revert pypy change in languages.yaml that accidentally snuck into the repo
+  * add a Scala solution
+  * fix runoff sentence in documentation
+  * update deb package build dependency from libgmp3-dev to libgmp-dev
+
+  [ Ragnar Groot Koerkamp ]
+  * Add support for Input and Output section in latex statement.
+
+  [ Ludo Pulles ]
+  * Let verifyproblem.sh accept 1 or more problemdirs
+
+  [ Per Austrin ]
+  * update versioning script to produce PEP440-compliant version numbers also for non-release versions
+  * Add mechanism for providing more detailed feedback on obvious errors such as Compile Error
+  * when running verifyproblem on more than one problem package, exit with code 0 only if all packages validate without error
+  * add note to release script about tools used
+
+ -- Per Austrin <austrin@kattis.com>  Sun, 11 Nov 2018 18:56:26 +0100
+
+kattis-problemtools (1.20180426) artful; urgency=medium
+
+  [ Per Austrin ]
+  * fix verifyproblem bug causing crash on empty problem groups
+
+  [ Greg Hamerly ]
+  * Add several tests on input validators.
+  * Fixes based on Per's feedback
+  * Remove duplication of pattern matching regexes
+  * Fix bug where we don't actually add more newlines
+  * Always add at least one space
+
+  [ Simon Lindholm ]
+  * Use C++14
+
+  [ Per Austrin ]
+  * add missing dependency to debian control file
+
+ -- Per Austrin <austrin@kattis.com>  Thu, 26 Apr 2018 19:19:15 +0200
+
+kattis-problemtools (1.20170420) xenial; urgency=medium
+
+  [ Johan Sannemo ]
+  * Add support for new grading settings.
+
+  [ Per Austrin ]
+
+ -- Per Austrin <austrin@kattis.com>  Thu, 20 Apr 2017 19:55:56 +0200
+
+kattis-problemtools (1.20170408) xenial; urgency=medium
+
+  [ Simon Lindholm ]
+  * Support floats in .timelimit
+
+  [ Per Austrin ]
+  * switch checktestdata to release branch
+  * update installation instructions to clarify that repository needs to be cloned
+  * clarify build dependencies
+  * fix formatting
+
+  [ austrin ]
+  * Really fix formatting.
+
+  [ Per Austrin ]
+  * enforce memory limit (via rlimit) for submissions
+  * example submission breaking memory limit
+  * add Scala to languages.yaml
+  * apply time and memory limit to output validators for standard problems (for interactive problems, time and memory limits are not applied correctly)
+  * fix snafus in memory limit capability check
+
+  [ Johan Sannemo ]
+  * Add support for Pascal
+  * Add support for attachments
+
+  [ Per Austrin ]
+
+ -- Per Austrin <austrin@kattis.com>  Sat, 08 Apr 2017 15:03:31 +0200
+
+kattis-problemtools (1.20170202) xenial; urgency=medium
+
+  [ Per Austrin ]
+  * add dh-python as deb dependency
+  * python-yaml is a build dependency since tests depend on it
+
+  [ Pehr Söderman ]
+  * Changing from dmcs to mcs to compile C#
+
+  [ Tobias Werth ]
+  * Fix pip installation instructions.
+
+  [ Robin Lee ]
+  * verifyproblem - exit 1 in case of errors
+
+  [ Per Austrin ]
+  * fix author message feedback file name in validate.h
+
+  [ Thorsten Wißmann ]
+  * Fix python2 calls and shebangs
+  * Update checktestdata to active repo
+
+  [ Per Austrin ]
+  * update release script, git-dch has changed name
+
+ -- Per Austrin <austrin@kattis.com>  Thu, 02 Feb 2017 14:02:12 +0100
+
+kattis-problemtools (1.20160728) trusty; urgency=medium
+
+  * change version numbering scheme slightly
+  * fix use of invalid .name attribute
+  * handle running in an rlimit-restricted environment
+  * add simple test for new limit module
+  * problemset.cls formatting
+  * switch single and double quotes in languages.yaml to avoid escaping of \
+  * add installation via pip as primary recommended way of running problemtools
+  * fix update_version
+  * minor updates to release script
+  * backfix changelog version numbering
+
+ -- Per Austrin <austrin@kattis.com>  Thu, 28 Jul 2016 15:50:26 +0200
+
+kattis-problemtools (1.20160716-rev1) trusty; urgency=medium
+
+  * automatic versioning of the python package from git changelog
+  * include _version.py
+  * new version numbering for deb packaging
+  * move generation of _version.py to shellscript
+  * add a script to make releases
+  * add build status for develop branch
+  * fixes to release scripts
+
+ -- Per Austrin <austrin@kattis.com>  Sat, 16 Jul 2016 22:25:31 +0200
+
+kattis-problemtools (1.20160716) trusty; urgency=low
+
+  * First proper release.
+
+ -- Per Austrin <austrin@kattis.com>  Sat, 16 Jul 2016 19:40:00 +0200

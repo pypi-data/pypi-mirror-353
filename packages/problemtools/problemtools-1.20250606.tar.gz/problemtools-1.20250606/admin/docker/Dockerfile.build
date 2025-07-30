@@ -1,0 +1,24 @@
+# Docker image with all packages needed to build a problemtools .deb
+#
+# Not uploaded anywhere, only used locally during building
+
+ARG PROBLEMTOOLS_VERSION=develop
+FROM problemtools/runreqs:${PROBLEMTOOLS_VERSION}
+
+LABEL maintainer="contact@kattis.com"
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Packages required to build and run problemtools
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    rm -f /etc/apt/apt.conf.d/docker-clean && \
+    apt-get update && apt-get install -y \
+        automake \
+        build-essential \
+        debhelper \
+        dh-virtualenv \
+        dpkg-dev \
+        g++ \
+        git \
+        make \
+        libboost-regex-dev
