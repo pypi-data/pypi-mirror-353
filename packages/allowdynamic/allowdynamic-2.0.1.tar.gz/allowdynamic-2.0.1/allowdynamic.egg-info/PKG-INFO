@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: allowdynamic
+Version: 2.0.1
+Summary: Dynamic variables in Python
+Author: DiamondGotCat
+License: MIT License
+        
+        Copyright (c) 2025 DiamondGotCat
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/DiamondGotCat/allowdynamic
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+[![Upload Python Package](https://github.com/DiamondGotCat/allowdynamic/actions/workflows/python-publish.yml/badge.svg)](https://github.com/DiamondGotCat/allowdynamic/actions/workflows/python-publish.yml)
+
+# allowdynamic
+Dynamic, callable-backed array-like access with optional caching.
+
+## 🔧 Installation
+
+```bash
+pip install allowdynamic
+````
+
+## 🚀 Example
+
+```python
+from allowdynamic import DynamicContainer
+
+def fibonacci(n):
+    if n <= 0: return 0
+    elif n == 1: return 1
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+fib = DynamicContainer(fibonacci)
+
+print(fib[10])          # → 55
+print(fib[5:10])        # → [5, 8, 13, 21, 34]
+print(10 in fib)        # True, if already cached
+```
+
+## 📦 Features
+
+- Array-like access to any function (`container[i]`)
+- Optional result caching (`cacheMode`)
+- Slice support (`container[1:5]`)
+- Manual cache control (`isCached`, `updateCache`, `removeFromCache`, etc.)
+
+## 📄 License
+MIT License
+
+(c) 2025 DiamondGotCat
