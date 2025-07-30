@@ -1,0 +1,7 @@
+mysql_mcp_xu/__init__.py,sha256=JFq9bSGDU5jIXhiGrzhlCeT1ommAmODwwAl-s0QCgs0,88
+mysql_mcp_xu/config.py,sha256=G1eUHnfUzQuU07v57K4ZZ20Jp4NF62mcSb8K6Ev2uFA,798
+mysql_mcp_xu/mcp_server.py,sha256=Pv-6GUkuQO3WRBbXsi9SGxldYRqGUQfcjbz0vvjaIoU,7477
+mysql_mcp_xu-0.0.6.dist-info/METADATA,sha256=8v7KdoIQAUu9RJcumvcVGYYYnxX9zWutx_EtYX3Rakk,3985
+mysql_mcp_xu-0.0.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mysql_mcp_xu-0.0.6.dist-info/entry_points.txt,sha256=jy6k9bvpePLgcjPjkjTkUI9l1-phO65Aq7F7qk47aE0,51
+mysql_mcp_xu-0.0.6.dist-info/RECORD,,
