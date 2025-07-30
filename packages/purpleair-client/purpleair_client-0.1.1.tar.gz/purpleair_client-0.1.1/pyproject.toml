@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "purpleair-client"
+version = "0.1.1"
+description = "System for fetching, storing and displaying air quality data from PurpleAir"
+authors = ["Valentina Hernandez <vahernandezmo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
