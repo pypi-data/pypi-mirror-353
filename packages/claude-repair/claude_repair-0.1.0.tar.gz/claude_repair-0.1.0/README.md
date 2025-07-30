@@ -1,0 +1,239 @@
+# Claude Session Repair Tool
+
+A high-performance CLI tool to find and repair broken Claude conversation sessions. Uses ripgrep for lightning-fast search across all projects and automatically handles multi-session files.
+
+> **Note**: This tool has been tested on macOS. While it should work on Linux and Windows (with WSL), full cross-platform compatibility has not been verified.
+
+## Installation
+
+### From PyPI (Recommended)
+```bash
+pipx install claude-repair
+```
+
+### From Source
+```bash
+git clone https://github.com/cmann/claude-repair.git
+cd claude-repair
+pipx install .
+```
+
+### Install ripgrep (Optional but Recommended)
+
+```bash
+# macOS
+brew install ripgrep
+
+# Ubuntu/Debian
+sudo apt install ripgrep
+
+# Windows (with Chocolatey)
+choco install ripgrep
+
+# Other platforms
+# See: https://github.com/BurntSushi/ripgrep#installation
+```
+
+## Quick Start
+
+```bash
+# Find all broken sessions across all projects
+claude-repair find-broken
+
+# Repair the most recent broken session
+claude-repair repair
+
+# Repair a specific session
+claude-repair repair --session-path /path/to/session.jsonl
+```
+
+## Commands
+
+### `find-broken` - Rapid Session Discovery
+
+Uses ripgrep to search all Claude projects for broken sessions in parallel:
+
+```bash
+claude-repair find-broken
+```
+
+Searches for three error patterns:
+- **API Errors**: `"isApiErrorMessage":true`
+- **Request Aborted**: `"Request was aborted"`
+- **Request Interrupted**: `"[Request interrupted"`
+
+Output shows:
+- Project name
+- Session ID (truncated)
+- Error type
+- Last modified date/time
+- File size
+
+### `repair` - Intelligent Session Repair
+
+```bash
+# Auto-detect and select from broken sessions
+claude-repair repair
+
+# Repair a specific session file
+claude-repair repair --session-path /path/to/session.jsonl
+
+# Skip confirmation prompts
+claude-repair repair --yes
+
+# Disable ripgrep (use slower Python search)
+claude-repair repair --no-rg
+```
+
+#### Multi-Session File Handling
+
+When a file contains multiple sessions, the tool automatically:
+1. Detects all session IDs in the file
+2. Splits sessions into temporary files
+3. Validates each session independently
+4. Shows a status table with:
+   - Session ID
+   - Date of first message
+   - Validation status (Valid/Corrupted)
+   - Resume command
+5. Repairs only corrupted sessions
+6. Saves each session to a separate file
+7. Provides `claude --resume <session_id>` commands
+
+#### Repair Process
+
+1. **Discovery**: If no path provided, searches for broken sessions
+2. **Selection**: Shows top 5 broken sessions for selection
+3. **Loading**: Loads and parses the session file
+4. **Validation**: Checks for orphaned tool_use/tool_result pairs
+5. **Backup**: Creates a `.backup.jsonl` file
+6. **Repair**: Removes problematic messages
+7. **Save**: Preserves original JSON formatting
+8. **Confirm**: Allows testing before deleting backup
+
+### `validate` - Check Session Integrity
+
+```bash
+# Validate a specific session
+claude-repair validate --session-path /path/to/session.jsonl
+
+# Interactive validation
+claude-repair validate
+```
+
+Checks for:
+- Orphaned tool_use blocks
+- Orphaned tool_result blocks
+- API error messages
+- Multi-session files
+
+### `split` - Separate Multi-Session Files
+
+```bash
+# Split a multi-session file
+claude-repair split /path/to/multi-session.jsonl
+
+# Specify output directory
+claude-repair split /path/to/file.jsonl --output /path/to/output/
+```
+
+Creates separate files for each session:
+- `{session_id}.jsonl` for each detected session
+- `unknown.jsonl` for messages without session IDs
+
+## Features
+
+### Performance
+- **Parallel Search**: Uses ripgrep for concurrent pattern matching
+- **Smart Caching**: Deduplicates results across multiple patterns
+- **Fallback Mode**: Python-based search when ripgrep unavailable
+
+### Multi-Session Support
+- **Auto-Detection**: Identifies files containing multiple sessions
+- **Smart Splitting**: Separates sessions while preserving timestamps
+- **Selective Repair**: Only processes corrupted sessions
+- **Bulk Operations**: Repairs multiple sessions in one command
+
+### Error Detection
+- **API Errors**: Messages marked with `isApiErrorMessage`
+- **Aborted Requests**: Incomplete tool operations
+- **Interrupted Sessions**: User-interrupted conversations
+- **Orphaned Tool Uses**: Tool invocations without results
+- **Orphaned Tool Results**: Results without matching invocations
+
+### Safety & Convenience
+- **Automatic Backups**: Creates `.backup.jsonl` before repairs
+- **Format Preservation**: Maintains original JSON structure
+- **Interactive Mode**: Step-by-step guidance
+- **Resume Commands**: Ready-to-use `claude --resume` commands
+- **Validation Mode**: Check without modifying files
+
+## Examples
+
+### Repair Workflow for Multi-Session File
+
+```bash
+$ claude-repair repair --session-path corrupted.jsonl
+
+Checking for multiple sessions in corrupted.jsonl...
+Warning: File contains 3 sessions!
+Splitting sessions for individual repair...
+
+┏━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Index  ┃ Session ID  ┃ Date       ┃ Status      ┃ Resume Command           ┃
+┡━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ 1      │ abc123...   │ 2025-06-07 │ ✓ Valid     │ claude --resume abc123...│
+│ 2      │ def456...   │ 2025-06-06 │ ✗ Corrupted │ claude --resume def456...│
+│ 3      │ ghi789...   │ 2025-06-05 │ ✗ Corrupted │ claude --resume ghi789...│
+└────────┴─────────────┴────────────┴─────────────┴──────────────────────────┘
+
+Found 2 corrupted sessions
+Repair all corrupted sessions? [y/n]: y
+
+✓ Repaired and saved to def456....jsonl
+✓ Repaired and saved to ghi789....jsonl
+✓ All corrupted sessions have been repaired!
+```
+
+## Algorithm Overview
+
+The repair algorithm works in phases:
+
+1. **Discovery**: Parallel search using ripgrep across all projects
+2. **Multi-Session Detection**: Identify files with multiple sessions
+3. **Parsing**: Extract tool_use/tool_result relationships
+4. **Validation**: Find orphaned or problematic message pairs
+5. **Repair**: Remove error messages and orphaned pairs
+6. **Preservation**: Maintain exact JSON formatting
+
+For detailed algorithm documentation, see [docs/repair-algo.md](docs/repair-algo.md).
+
+## Requirements
+
+- Python 3.8+
+- ripgrep (optional but recommended) - 10-100x faster search
+- Claude CLI installed with sessions in `~/.claude/projects/`
+
+### Platform Support
+
+- **macOS**: Fully tested and supported
+- **Linux**: Should work but not extensively tested
+- **Windows**: Should work with WSL or native Python, not tested
+
+The tool expects Claude session files to be in:
+- macOS/Linux: `~/.claude/projects/`
+- Windows: `%USERPROFILE%\.claude\projects\`
+
+## Troubleshooting
+
+### "ripgrep not found" Warning
+The tool will work without ripgrep but search will be slower. Install ripgrep for best performance.
+
+### Multi-Session File Detected
+This is normal - the tool will automatically handle multiple sessions. Each session will be saved to a separate file after repair.
+
+### Session Still Broken After Repair
+Some sessions may have additional corruption beyond tool_use/tool_result issues. Try:
+1. Check for other error patterns in the file
+2. Use `claude-repair validate` to see specific issues
+3. Consider starting a fresh session with `claude --new`

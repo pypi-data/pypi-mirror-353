@@ -1,0 +1,101 @@
+[tool.poetry]
+name = "claude-repair"
+version = "0.1.0"
+description = "High-performance CLI tool to find and repair broken Claude conversation sessions"
+authors = ["Chris Mann <cmann50@me.com>"]
+license = "Apache-2.0"
+packages = [{include = "claude_repair"}]
+readme = "README.md"
+homepage = "https://github.com/cmann/claude-repair"
+repository = "https://github.com/cmann/claude-repair"
+documentation = "https://github.com/cmann/claude-repair#readme"
+keywords = ["claude", "repair", "cli", "conversation", "session", "tool-use", "anthropic"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "0.9.0"
+click = "8.1.7"
+rich = "^13.0.0"
+python-dateutil = "^2.8.0"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.24.0"
+twine = "^4.0.0"
+build = "^1.0.0"
+pytest = "^7.0.0"
+black = "^23.0.0"
+ruff = "^0.1.0"
+
+[tool.poetry.scripts]
+claude-repair = "claude_repair.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+# Development tasks
+format = "black claude_repair"
+lint = "ruff check claude_repair"
+test = "pytest tests/"
+clean = """
+find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true &&
+find . -type f -name '*.pyc' -delete &&
+rm -rf dist/ build/ *.egg-info .pytest_cache .ruff_cache
+"""
+
+# Build tasks
+build = "poetry build"
+check-build = "twine check dist/*"
+
+# Publishing tasks
+publish-test = """
+poetry publish --repository testpypi
+"""
+publish = """
+poetry publish
+"""
+
+# Combined tasks
+release-test = ["clean", "build", "check-build", "publish-test"]
+release = ["clean", "build", "check-build", "publish"]
+
+# Installation tasks
+install-local = "pipx install --force ."
+install-editable = "pip install -e ."
+
+[tool.poe.tasks.bump-version]
+help = "Bump version (patch, minor, major)"
+shell = "poetry version $version && echo 'New version:' && poetry version -s"
+
+[tool.poe.tasks.check]
+help = "Run all checks before release"
+sequence = ["format", "lint", "test", "build", "check-build"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "B", "I"]
+ignore = ["E501"]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/cmann/claude-repair/issues"
