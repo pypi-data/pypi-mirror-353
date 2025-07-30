@@ -1,0 +1,11 @@
+taskcheck/__main__.py,sha256=ipTG4g1qOVQ9QX8jdEC8581DdA38RbXmsPYYpLxfYB0,4247
+taskcheck/common.py,sha256=NisMDt84Bxnc0J_-QDxrHC4UTctZqBtm-oZFEHG9FEg,7939
+taskcheck/ical.py,sha256=OLx_bNVjuu3oIu1bOWB9gd1IOd-xlUXELo8n9XxR0EU,5641
+taskcheck/install.py,sha256=U9KzApJMiQrYWum42mL3pKfSe3bt4W4sJyhWmvnCflE,6190
+taskcheck/parallel.py,sha256=fiue2aTpy-o4VKvrqNZOrEa-DHCwN1uHNezhYJAlONo,20470
+taskcheck/report.py,sha256=eY7Fp3tY94o6Kt0lzgdRfTBZPTrCOAh-VDxMVw72II0,13167
+taskcheck-1.0.0.post2.dist-info/METADATA,sha256=uLNBC_VspQ6Xzh2H8OmDIE7-_pbRSsCk5RYFl0otQ48,10106
+taskcheck-1.0.0.post2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+taskcheck-1.0.0.post2.dist-info/entry_points.txt,sha256=gpIiVQFGh9LYJEnbTOadiCReYYqlGXIPguyQs7uAWLc,54
+taskcheck-1.0.0.post2.dist-info/top_level.txt,sha256=yM-sl4jZGa0XlDimBxgYEe8JouxXgEGR5H6zUuxWI7M,10
+taskcheck-1.0.0.post2.dist-info/RECORD,,
