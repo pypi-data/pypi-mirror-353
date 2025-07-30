@@ -1,0 +1,9 @@
+README.md
+setup.py
+smartchunks/__init__.py
+smartchunks/smartchunks.py
+smartchunks.egg-info/PKG-INFO
+smartchunks.egg-info/SOURCES.txt
+smartchunks.egg-info/dependency_links.txt
+smartchunks.egg-info/top_level.txt
+tests/test_explicit_cases.py
