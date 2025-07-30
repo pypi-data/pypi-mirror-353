@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: mcp-generate-number
+Version: 0.1.3
+Summary: A simple MCP server that generates a random number.
+Requires-Python: >=3.8
+Requires-Dist: fastmcp>=2.6.1
