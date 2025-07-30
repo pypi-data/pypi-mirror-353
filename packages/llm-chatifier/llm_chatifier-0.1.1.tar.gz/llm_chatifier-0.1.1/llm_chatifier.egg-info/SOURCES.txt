@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+chatifier/__init__.py
+chatifier/__main__.py
+chatifier/cli.py
+chatifier/clients.py
+chatifier/detector.py
+chatifier/ui.py
+chatifier/utils.py
+llm_chatifier.egg-info/PKG-INFO
+llm_chatifier.egg-info/SOURCES.txt
+llm_chatifier.egg-info/dependency_links.txt
+llm_chatifier.egg-info/entry_points.txt
+llm_chatifier.egg-info/requires.txt
+llm_chatifier.egg-info/top_level.txt
+tests/test_basic.py
+tests/test_detector.py
