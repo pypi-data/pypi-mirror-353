@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: duckietown-sdk
+Version: 0.1.4
+Summary: UNKNOWN
+Home-page: http://github.com/duckietown/duckietown-sdk
+Author: Andrea F. Daniele
+Author-email: afdaniele@duckietown.com
+License: UNKNOWN
+Description: 
+        duckietown-sdk: The Duckietown Software Development Kit (SDK)
+        =============================================================
+        
+        
+        The Duckietown Software Development Kit (SDK) for Python.
+        
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

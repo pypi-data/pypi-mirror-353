@@ -1,0 +1,2 @@
+duckietown-messages<0.1,>=0.0.16
+PyTurboJPEG<2,>=1.7.3
