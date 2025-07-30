@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+testcodemyyy/__init__.py
+testcodemyyy/core.py
+testcodemyyy.egg-info/PKG-INFO
+testcodemyyy.egg-info/SOURCES.txt
+testcodemyyy.egg-info/dependency_links.txt
+testcodemyyy.egg-info/top_level.txt
