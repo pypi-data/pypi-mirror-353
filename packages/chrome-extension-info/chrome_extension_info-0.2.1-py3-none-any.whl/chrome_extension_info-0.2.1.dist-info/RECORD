@@ -1,0 +1,12 @@
+chrome_extension_info/__init__.py,sha256=rRb0Gk8BQdaOJqDgHwvimhWAem9ci_uFoNj71rrvbrw,580
+chrome_extension_info/client.py,sha256=ce_MC3RKMLyfucoyfdtbqcoReOT08EeTd_P0p3pxl9Y,14297
+chrome_extension_info/exceptions.py,sha256=Uhz7uoR0s7b7xfvrGK4LXjogbCme2BB04dbf51YbwQs,631
+chrome_extension_info/models.py,sha256=9fFYMQ78vNkuLp-44a9LMfSk2VWZoCGCcwIrNTkCZgg,3770
+chrome_extension_info-0.2.1.dist-info/licenses/LICENSE,sha256=tI3ugHI08lek-RMZcUb7sQaBPyQjXYj5ShNaLUyBYWc,1065
+tests/__init__.py,sha256=VAcRIgyeDcL991a6M_Hpo3RJ9wO9DXXIguqhwMF4Mv8,48
+tests/test_client.py,sha256=zHe-5TL-ml1Q8GD5ZWkPEQQ70yq0kh86uy_Snx1DbGc,5760
+tests/test_models.py,sha256=njLnqFHCis6j3yRLNVij5bMBmzGVYewjIjBjVZx0Gks,4722
+chrome_extension_info-0.2.1.dist-info/METADATA,sha256=mDjeiRY8KdiroLgV30N55-GtdcqWjwWaSFaBPJteb2g,6047
+chrome_extension_info-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+chrome_extension_info-0.2.1.dist-info/top_level.txt,sha256=LG-P-aah3YRBUb1jrzeqLxCYoft9-Aifh2j098V8Uic,28
+chrome_extension_info-0.2.1.dist-info/RECORD,,
