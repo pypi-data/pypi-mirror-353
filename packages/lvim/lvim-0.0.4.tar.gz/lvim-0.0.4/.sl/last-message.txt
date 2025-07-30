@@ -1,0 +1,1 @@
+lvim: return if no config at path
