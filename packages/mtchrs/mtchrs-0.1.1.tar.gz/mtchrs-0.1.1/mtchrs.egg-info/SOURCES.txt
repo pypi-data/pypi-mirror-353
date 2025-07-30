@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+mtchrs/__init__.py
+mtchrs/matchers.py
+mtchrs.egg-info/PKG-INFO
+mtchrs.egg-info/SOURCES.txt
+mtchrs.egg-info/dependency_links.txt
+mtchrs.egg-info/top_level.txt
+tests/test_matchers.py
