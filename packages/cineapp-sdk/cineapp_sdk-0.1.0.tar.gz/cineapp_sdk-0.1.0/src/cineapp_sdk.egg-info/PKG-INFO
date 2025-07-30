@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: cineapp_sdk
+Version: 0.1.0
+Summary: A lightweight Python SDK for interacting with the CineAPP REST API
+Author: [Yidhir]
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.11.4
+Requires-Dist: backoff>=2.2.1
+Requires-Dist: numpy>=2.2.4
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: python-dotenv
