@@ -1,0 +1,16 @@
+hypothesize/__init__.py,sha256=dLZHudcv1Cls6-UOVgdHOUEPczrbVMMYFAx40lif42g,123
+hypothesize/utilities.py,sha256=RWCNXTSCvfe75feXfsLaVEBb3pucL4W6RwD5_qd7ysE,51873
+hypothesize/compare_groups_with_single_factor/__init__.py,sha256=f0I7m2XrgcPYpeCC52xSmm_GEuaIAjgUNdetelbMgTw,51
+hypothesize/compare_groups_with_single_factor/_compare_groups_with_single_factor.py,sha256=QV0X-JxJ6aVjUC0QDrZ1_odn6qaBySL1BQwpPSodg4Q,38793
+hypothesize/compare_groups_with_two_factors/__init__.py,sha256=ojTK45Qb7Sw6TINyhBald-FuE0d4QKyScYGkuobQ1uQ,49
+hypothesize/compare_groups_with_two_factors/_compare_groups_with_two_factors.py,sha256=Nsw8Ywtv5cs5eKlQXBO9vljEkhZi6SE2YCJdLACczms,41005
+hypothesize/measuring_associations/__init__.py,sha256=JNlqb_5qWxi-G7sCkNEIrET7Oag-45JX9fk5dmUb1Qo,39
+hypothesize/measuring_associations/_measuring_associations.py,sha256=6g71Plb63vxX4OrfXsGZS1ve_IS0OyELMnSP5ocKbrI,9155
+hypothesize/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hypothesize/tests/build_test_data.py,sha256=b8kwngYePwvrqlNY1HwHh8qpxqIsxGIN1-935uEvhys,5001
+hypothesize/tests/test_funcs.py,sha256=obwcOEteFkQSLCJI1u7riUh5joo3_nfU2uHQRaNWm1E,11279
+hypothesize-1.2.3.dist-info/licenses/LICENSE,sha256=q6P6aQ5NdZ7buu7feDH7h-rrBzT-0yaBBPviqibMV0s,1487
+hypothesize-1.2.3.dist-info/METADATA,sha256=pvFCLgY37X4ihbfTc8Plb9c-b3PvNAiU0NLhZ4HI508,3858
+hypothesize-1.2.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hypothesize-1.2.3.dist-info/top_level.txt,sha256=Fn_blFLo_OebYFOa5rB1jwcdneR2arZgyZds-xLKPds,12
+hypothesize-1.2.3.dist-info/RECORD,,
