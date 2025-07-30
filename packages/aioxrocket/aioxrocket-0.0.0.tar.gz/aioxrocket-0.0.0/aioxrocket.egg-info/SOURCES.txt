@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+aioxrocket/__init__.py
+aioxrocket.egg-info/PKG-INFO
+aioxrocket.egg-info/SOURCES.txt
+aioxrocket.egg-info/dependency_links.txt
+aioxrocket.egg-info/top_level.txt

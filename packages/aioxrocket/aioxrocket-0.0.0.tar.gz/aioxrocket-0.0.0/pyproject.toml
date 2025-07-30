@@ -1,0 +1,7 @@
+[project]
+name = "aioxrocket"
+version = "0.0.0"
+description = "🚀 xRocket client"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
