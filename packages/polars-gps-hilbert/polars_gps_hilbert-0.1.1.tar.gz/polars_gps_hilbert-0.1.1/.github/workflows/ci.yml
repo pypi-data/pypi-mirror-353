@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install UV
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+    
+    - name: Set up Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Install dependencies
+      run: |
+        export PATH="/home/runner/.local/bin:$PATH"
+        uv venv
+        source .venv/bin/activate
+        uv sync --dev
+    
+    - name: Build plugin
+      run: |
+        export PATH="/home/runner/.local/bin:$PATH"
+        source .venv/bin/activate
+        uv run maturin develop --release
+    
+    - name: Run tests
+      run: |
+        export PATH="/home/runner/.local/bin:$PATH"
+        source .venv/bin/activate
+        uv run pytest tests/test_basic.py -v
+        uv run pytest tests/test_performance.py -v

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "polars-gps-hilbert"
+version = "0.1.1"
+description = "⚠️ EXPERIMENTAL: High-performance Polars plugin for GPS trajectory indexing using 3D Hilbert curves. Not for production use."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "maturin>=1.8.6",
+    "numpy>=1.24.4",
+    "polars>=1.30.0",
+    "psutil>=7.0.0",
+    "pytest>=8.3.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest-benchmark>=4.0.0",
+    "pandas>=2.0.0",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "polars_gps_hilbert._polars_gps_hilbert"
+python-source = "python"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest-benchmark>=4.0.0",
+    "pandas>=2.0.0",
+]
