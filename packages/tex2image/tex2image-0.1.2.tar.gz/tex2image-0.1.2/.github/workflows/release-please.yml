@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          release-type: python
+          package-name: tex2image
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: astral-sh/setup-uv@v3
+        if: ${{ steps.release.outputs.release_created }}
+      - run: uv build
+        if: ${{ steps.release.outputs.release_created }}
+      - run: uv publish --trusted-publishing always
+        if: ${{ steps.release.outputs.release_created }}
