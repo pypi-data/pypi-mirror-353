@@ -1,0 +1,38 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "delumps"
+dynamic = ["version"]
+description = "Rust extension module for Scone semantic similarity library"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["HPO", "similarity"]
+authors = [
+    { name = "Daniel Danis", email = "daniel.gordon.danis@protonmail.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+test = ["numpy >= 1.23.0", "pytest >= 8.0.0, <9.0.0"]
+
+[project.urls]
+homepage = "https://github.com/P2GX/delumps"
+documentation = "https://github.com/P2GX/delumps"
+repository = "https://github.com/P2GX/delumps"
+
+[tool]
+
+[tool.maturin]
+manifest-path = "crates/delumps/Cargo.toml"
