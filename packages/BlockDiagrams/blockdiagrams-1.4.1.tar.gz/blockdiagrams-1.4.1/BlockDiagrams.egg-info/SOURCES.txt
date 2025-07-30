@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+BlockDiagrams.egg-info/PKG-INFO
+BlockDiagrams.egg-info/SOURCES.txt
+BlockDiagrams.egg-info/dependency_links.txt
+BlockDiagrams.egg-info/requires.txt
+BlockDiagrams.egg-info/top_level.txt
+blockdiagrams/DiagramBuilder.py
+blockdiagrams/__init__.py
+blockdiagrams.egg-info/PKG-INFO
+blockdiagrams.egg-info/SOURCES.txt
+blockdiagrams.egg-info/dependency_links.txt
+blockdiagrams.egg-info/requires.txt
+blockdiagrams.egg-info/top_level.txt
