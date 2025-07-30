@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+NumScience.egg-info/PKG-INFO
+NumScience.egg-info/SOURCES.txt
+NumScience.egg-info/dependency_links.txt
+NumScience.egg-info/requires.txt
+NumScience.egg-info/top_level.txt

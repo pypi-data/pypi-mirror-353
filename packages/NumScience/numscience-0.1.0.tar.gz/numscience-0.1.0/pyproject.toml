@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NumScience"
+version = "0.1.0"
+authors = [{ name = "xystudio", email = "173288240@qq.com" }]
+description = "Some python Science packages."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+keywords = ["science", "pyplus", "tools", "python"]
+[project.optional-dependencies]
+dev = [ ]
+[project.urls]
+Homepage = "https://github.com/xystudio889/numscience"
