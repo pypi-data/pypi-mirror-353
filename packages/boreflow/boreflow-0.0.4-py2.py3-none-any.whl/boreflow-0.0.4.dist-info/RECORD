@@ -1,0 +1,14 @@
+boreflow/__init__.py,sha256=AC9nleCmq1pte28IwgNfGeVgkn_PuURIpN8Ds-oNtLU,662
+boreflow/enum.py,sha256=NtPox99JfyfQZKr9dd-FXzobvgnXVP30VPo1D4SWb5M,1483
+boreflow/finite_volume_method.py,sha256=edBIOf-5rmN81C4LTjNwlzaDAYinrQlck4yiieE8PVM,9790
+boreflow/geometry.py,sha256=5PPykLAj4zTEitVxi1MnzS-5lZXPwEOoiZXHdSQq7AU,8382
+boreflow/simulation.py,sha256=thwJVvu4LDifbPhXyQhvNXK9LD9wHYQb7IKzG0-t89w,3461
+boreflow/boundary_conditions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boreflow/boundary_conditions/bc_array.py,sha256=wKfhxhk2LZn8V4TEi3X7Fmj9z1QdvyaP_EbBb9IADa8,1378
+boreflow/boundary_conditions/bc_base.py,sha256=2MzjZEOWRsUGSAsCcYQRnuEKWoEBU5Jo9Q3r9njHh-8,3338
+boreflow/boundary_conditions/bc_overtopping.py,sha256=Wy2YT0lGNNzmLkTWzei-gGExFrMHe1JwI_pWabVKBbc,2276
+boreflow/boundary_conditions/bc_wos.py,sha256=KldgcE7rWQVlMiQjRy0OtvSWgIMFB9tBlWVQ6OzrnhM,1307
+boreflow/boundary_conditions/bc_wos_millingen.py,sha256=x7EFq90zYuwbxUd-SXa4_HF-HKkNC1rjmmxM6H6ebE4,1350
+boreflow-0.0.4.dist-info/METADATA,sha256=t954Ijb4BKJQx4RFuJGQdNsHVmguHXGX3-8THy0sQCo,2163
+boreflow-0.0.4.dist-info/WHEEL,sha256=tkmg4JIqwd9H8mL30xA7crRmoStyCtGp0VWshokd1Jc,105
+boreflow-0.0.4.dist-info/RECORD,,
