@@ -1,0 +1,2 @@
+[console_scripts]
+agent-steam = agent_steam.cli:main
