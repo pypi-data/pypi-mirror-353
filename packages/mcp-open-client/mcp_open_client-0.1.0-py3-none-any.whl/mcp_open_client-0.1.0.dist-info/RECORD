@@ -1,0 +1,17 @@
+mcp_open_client/__init__.py,sha256=7obZtDuBp3OErk6n8rJ0ZiE5L56lGfdd3MUwbeSpOpM,93
+mcp_open_client/api.py,sha256=r_6PcMWKsATKfbliasG_JEkPqFniyargAlCxQireXd4,7790
+mcp_open_client/main.py,sha256=agA6qp0Xgwn33GdzfdY0Yq8Pv_ke4DITAoepLZczWK0,4659
+mcp_open_client/state.py,sha256=S8j8PbMHrV781xpb5vL1lBADfSnWruFUqIfZ54rBQuI,14465
+mcp_open_client/assets/favicon/favicon.ico,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcp_open_client/settings/user_settings.json,sha256=I1YRcKUHKkba7aEwB9Wmz0QvJRktG8wsiPjL_MQmynw,210
+mcp_open_client/settings/user_tools.json,sha256=5pPrnQDK7olLrDtHp6nIfq9efiCAb8IZIE-Fg9JiUuA,2287
+mcp_open_client/ui/__init__.py,sha256=F8So0jZVYNE-nAQj7T5-vbcYbjwrFWasrnzOOHu8nBo,27
+mcp_open_client/ui/chat.py,sha256=6DKw2kdRtVZ32L5oWLWEg_yCzFF7ThpCvcB2IC0qUL8,8221
+mcp_open_client/ui/common.py,sha256=aeAMJIL-16jM8E7JfHgDMkXlUa1sB8fv7fLzRJ3wXWU,6901
+mcp_open_client/ui/settings.py,sha256=U8bG3Diwf92dbyZLQPwkM7BAPhI1sKBORfq59z6Mk1I,8076
+mcp_open_client/ui/tools.py,sha256=A_XRnv7Uq-wi7DMoCm6J0UmyR0tmLfB7gKmZtfyqVto,18309
+mcp_open_client-0.1.0.dist-info/METADATA,sha256=w62_DOlNi95MWVfdUfCeoBgWtuaYEaEjLot230GffMg,615
+mcp_open_client-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_open_client-0.1.0.dist-info/entry_points.txt,sha256=fWsOsHNsqgHufEt7SPiRsJwkrn1tttlzzlXQSHQCxds,62
+mcp_open_client-0.1.0.dist-info/top_level.txt,sha256=jDDk7Dl-DETQhL-UaoXXMXXkUdGXEAv86t6HdXbZ1dk,16
+mcp_open_client-0.1.0.dist-info/RECORD,,
