@@ -1,0 +1,7 @@
+AppImageBuilder
+Data
+build
+dev_docs
+hooks
+musclex
+settings
