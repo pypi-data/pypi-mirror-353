@@ -1,0 +1,4 @@
+[console_scripts]
+htv-patch-m3u8=htv_patch_m3u8:main
+htv-search=htv_search:main
+
