@@ -1,0 +1,9 @@
+aws_finops_mcp_server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aws_finops_mcp_server/main.py,sha256=D6SwL4nyxaKIcbf3hQ7IUuk7-rCaxpTOY_rVRs7JeAU,10520
+aws_finops_mcp_server/helpers/profiles.py,sha256=nq5VJkNOMLbC85K6P23v2Z0x8d8lJDgNVVwZHIBB_VE,9195
+aws_finops_mcp_server-0.1.0.dist-info/licenses/LICENSE,sha256=89-0t0fHL7AlRIj_ajYyQNXfhLo4B-E24rD-i_lSXXk,1079
+aws_finops_mcp_server-0.1.0.dist-info/METADATA,sha256=L7QNttjWH1Lq1RIFtmMBQdvYKkkjIDwuSqNoBwpYfMA,12949
+aws_finops_mcp_server-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aws_finops_mcp_server-0.1.0.dist-info/entry_points.txt,sha256=Hz26N9d89kFmvud57-IDcp8nkXChLT6CZE03XZ1WTuM,80
+aws_finops_mcp_server-0.1.0.dist-info/top_level.txt,sha256=-sjktbKK32z1nz0vRQ7tqYXnPlRIB_rzSFiL2uWMLAA,22
+aws_finops_mcp_server-0.1.0.dist-info/RECORD,,
