@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+dist_protected/jitsreport/.pyarmor.ikey
+dist_protected/jitsreport/__init__.py
+dist_protected/jitsreport/core.py
+dist_protected/jitsreport.egg-info/PKG-INFO
+dist_protected/jitsreport.egg-info/SOURCES.txt
+dist_protected/jitsreport.egg-info/dependency_links.txt
+dist_protected/jitsreport.egg-info/requires.txt
+dist_protected/jitsreport.egg-info/top_level.txt
+dist_protected/jitsreport/pyarmor_runtime_000000/__init__.py
+dist_protected/jitsreport/pyarmor_runtime_000000/linux_x86_64/__init__.py
+dist_protected/jitsreport/pyarmor_runtime_000000/linux_x86_64/pyarmor_runtime.so
+dist_protected/jitsreport/pyarmor_runtime_000000/windows_x86_64/__init__.py
+dist_protected/jitsreport/pyarmor_runtime_000000/windows_x86_64/pyarmor_runtime.pyd
