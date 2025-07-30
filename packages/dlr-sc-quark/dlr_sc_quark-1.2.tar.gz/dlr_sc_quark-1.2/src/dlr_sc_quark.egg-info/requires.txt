@@ -1,0 +1,9 @@
+h5py
+scip
+pyscipopt
+numpy<=1.26
+pytest
+networkx
+bidict
+matplotlib
+jupyter
