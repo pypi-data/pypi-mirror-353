@@ -1,0 +1,7 @@
+# Application dependencies
+fastmcp>=2.6.1
+
+# Development and testing dependencies
+pytest
+pytest-asyncio
+uv # For syncing dependencies 
