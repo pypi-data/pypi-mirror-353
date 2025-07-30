@@ -1,0 +1,9 @@
+x_mlps_pytorch/__init__.py,sha256=5eyqqwM2zHpXP7e-8fuTzSUznODWEsq0O7cOVKqzC_A,148
+x_mlps_pytorch/activations.py,sha256=2J6R31ykSQpLQM65WUtSvDhVTobqz4pQ23rnjTQSTS0,2063
+x_mlps_pytorch/ff.py,sha256=9iz6sjG5pGRv498yxfHfyiAX9PLHZYvd_U-geLQwLBw,1352
+x_mlps_pytorch/mlp.py,sha256=f7iVAJTrtMVPvFKnwBk-W0YVD_LOEN65zOIQkZYg0Tc,1370
+x_mlps_pytorch/nff.py,sha256=g6MaxqM1wSY79UNXlOlnzfE5xuuiYFCPUel8LXolHnc,8282
+x_mlps_pytorch-0.0.16.dist-info/METADATA,sha256=gCjrX__3Bfkwyy88CKhmq-IMbdcEQojnzkik5DeQRX0,4641
+x_mlps_pytorch-0.0.16.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+x_mlps_pytorch-0.0.16.dist-info/licenses/LICENSE,sha256=1yCiA9b5nhslTavxPjsQAO-wpOnwJR9-l8LTVi7GJuk,1066
+x_mlps_pytorch-0.0.16.dist-info/RECORD,,
