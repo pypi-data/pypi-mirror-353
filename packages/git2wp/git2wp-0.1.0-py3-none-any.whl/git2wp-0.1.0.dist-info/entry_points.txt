@@ -1,0 +1,3 @@
+[console_scripts]
+git2wp=git2wp.__main__:cli
+
