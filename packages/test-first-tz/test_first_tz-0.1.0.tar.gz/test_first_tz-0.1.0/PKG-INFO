@@ -1,0 +1,14 @@
+Metadata-Version: 2.3
+Name: test-first-tz
+Version: 0.1.0
+Summary: Python библиотеку для поставки внешним клиентам, которая умеет вычислять площадь круга по радиусу и треугльника по трем сторонам\
+Author: Kuznetsov Yuriy
+Author-email: playgun.tv@gmail.com
+Requires-Python: >=3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# test-first-tz
+
