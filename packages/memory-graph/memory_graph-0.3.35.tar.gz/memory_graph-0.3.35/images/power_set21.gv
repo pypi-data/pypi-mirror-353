@@ -1,0 +1,118 @@
+digraph memory_graph {
+	node [shape=plaintext]
+	node139989144331328 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="0"> </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node139989158399552 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> a </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> b </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">2</font></TD><TD BORDER="1"> c </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144331648 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> a </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> b </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">2</font></TD><TD BORDER="1"> c </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144333760 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> a </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> b </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144439488 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> a </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> c </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144442496 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> a </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144451392 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> b </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> c </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144522304 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> b </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144524288 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> c </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989144324032 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"> </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989148001408 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="0"><font color="#505050">2</font></TD><TD BORDER="0"><font color="#505050">3</font></TD><TD BORDER="0"><font color="#505050">4</font></TD><TD BORDER="0"><font color="#505050">5</font></TD><TD BORDER="0"><font color="#505050">6</font></TD><TD BORDER="0"><font color="#505050">7</font></TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1" PORT="ref2"> </TD><TD BORDER="1" PORT="ref3"> </TD><TD BORDER="1" PORT="ref4"> </TD><TD BORDER="1" PORT="ref5"> </TD><TD BORDER="1" PORT="ref6"> </TD><TD BORDER="1" PORT="ref7"> </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989148001408:ref0 -> node139989144331648:table [style=solid]
+	node139989148001408:ref1 -> node139989144333760:table [style=solid]
+	node139989148001408:ref2 -> node139989144439488:table [style=solid]
+	node139989148001408:ref3 -> node139989144442496:table [style=solid]
+	node139989148001408:ref4 -> node139989144451392:table [style=solid]
+	node139989148001408:ref5 -> node139989144522304:table [style=solid]
+	node139989148001408:ref6 -> node139989144524288:table [style=solid]
+	node139989148001408:ref7 -> node139989144324032:table [style=solid]
+	node139989144331968 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> data </TD><TD BORDER="1" STYLE="ROUNDED"> subsets </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node139989144331968:ref0 -> node139989158399552:table [style=solid]
+	node139989144331968:ref1 -> node139989148001408:table [style=solid]
+	node139989143968320 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"> </TD></TR>
+</TABLE>
+> xlabel=list]
+	node139989143969984 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> subsets </TD><TD BORDER="1" STYLE="ROUNDED"> data </TD><TD BORDER="1" STYLE="ROUNDED"> i </TD><TD BORDER="1" STYLE="ROUNDED"> subset </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1"> 0 </TD><TD BORDER="1" PORT="ref2"> </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node139989143969984:ref0 -> node139989148001408:table [style=solid]
+	node139989143969984:ref1 -> node139989158399552:table [style=solid]
+	node139989143969984:ref2 -> node139989143968320:table [style=solid]
+	node139989144303808 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> subsets </TD><TD BORDER="1" STYLE="ROUNDED"> data </TD><TD BORDER="1" STYLE="ROUNDED"> i </TD><TD BORDER="1" STYLE="ROUNDED"> subset </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1"> 1 </TD><TD BORDER="1" PORT="ref2"> </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node139989144303808:ref0 -> node139989148001408:table [style=solid]
+	node139989144303808:ref1 -> node139989158399552:table [style=solid]
+	node139989144303808:ref2 -> node139989143968320:table [style=solid]
+	node139989144308144 [label=<
+<TABLE BORDER="3" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="khaki" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> 0: &lt;module&gt; </TD><TD BORDER="1" STYLE="ROUNDED"> 1: power_set </TD><TD BORDER="1" STYLE="ROUNDED"> 2: get_subsets </TD><TD BORDER="1" STYLE="ROUNDED"> 3: get_subsets </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1" PORT="ref2"> </TD><TD BORDER="1" PORT="ref3"> </TD></TR>
+</TABLE>
+> xlabel=call_stack]
+	node139989144308144:ref0 -> node139989144331328:table [style=solid]
+	node139989144308144:ref1 -> node139989144331968:table [style=solid]
+	node139989144308144:ref2 -> node139989143969984:table [style=solid]
+	node139989144308144:ref3 -> node139989144303808:table [style=solid]
+subgraph { rank=same; node139989144331328 -> node139989144331968 -> node139989143969984 -> node139989144303808[weight=10, style=invis]; }
+subgraph { rank=same; node139989158399552 -> node139989148001408 -> node139989143968320[weight=10, style=invis]; }
+subgraph { rank=same; node139989144331648 -> node139989144333760 -> node139989144439488 -> node139989144442496 -> node139989144451392 -> node139989144522304 -> node139989144524288 -> node139989144324032[weight=10, style=invis]; }
+}
