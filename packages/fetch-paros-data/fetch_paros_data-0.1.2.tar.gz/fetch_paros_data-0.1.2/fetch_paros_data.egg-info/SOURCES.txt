@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+fetch_paros_data/__init__.py
+fetch_paros_data/backup_init.py
+fetch_paros_data.egg-info/PKG-INFO
+fetch_paros_data.egg-info/SOURCES.txt
+fetch_paros_data.egg-info/dependency_links.txt
+fetch_paros_data.egg-info/requires.txt
+fetch_paros_data.egg-info/top_level.txt

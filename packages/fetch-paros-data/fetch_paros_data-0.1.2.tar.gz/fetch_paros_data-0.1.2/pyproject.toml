@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fetch-paros-data"
+version = "0.1.2"  # ← bump every time you upload a new version
+description = "Fetch and process InfluxDB data from PAROS sensors"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Ethan Gelfand", email = "you@example.com"}
+]
+dependencies = [
+    "influxdb-client",
+    "pandas",
+    "scipy",
+    "pytz"
+]
+
+[tool.setuptools]
+packages = ["fetch_paros_data"]
