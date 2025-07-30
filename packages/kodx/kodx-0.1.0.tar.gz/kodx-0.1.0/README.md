@@ -1,0 +1,412 @@
+# Kodx - Containerized LLM Automation
+
+Inspired by [OpenAI Codex](https://chatgpt.com/codex), Kodx implements an isolated environment for LLMs to interact with through shell commands.
+
+## Features
+
+- **Create multiple shell sessions on demand**: Unlike Claude Code or Codex-cli, Kodx allows LLMs to create multiple shell sessions on demand.
+- **Shell Timeout & Partial output**: Each shell command has a timeout and partial output is returned even if the command is not finished yet.
+- **Long-running shell commands**: Kodx supports long-running shell commands, timeout does not automatically kill the command, instead, it will return the partial output. This allows LLMs to start a server in one shell, and then use another shell to interact with the server.
+- **Powered by LLMProc**: Built on top of [LLMProc](https://github.com/cccntu/llmproc) for robust LLM program management and execution.
+- **Docker & Setup Script**: Choose your own Docker image and setup script to initialize the container.
+- **Export**: Export the container changes to the host filesystem for inspection and automation.
+- **Local Directory Support**: Copy local directories into containers for analysis (note: be careful with secrets in the local directory)
+- **Cost Control**: Built-in limits to manage API spending
+- **PTY Support**: Full terminal capabilities including interrupt handling
+- **JSON Output**: Structured results for automation and CI/CD integration
+
+Kodx is production ready and actively maintained.
+## Installation
+
+```bash
+uv pip install kodx
+```
+
+Or run it directly:
+
+```bash
+uvx kodx [OPTIONS]  # Uses default assistant
+uvx kodx PROGRAM_PATH [OPTIONS]  # Uses custom program
+```
+
+## Quick Start
+
+### Default Assistant (New!)
+
+Kodx now includes a built-in general-purpose assistant:
+
+```bash
+# Use default assistant with current directory
+kodx --prompt "analyze this codebase and suggest improvements"
+
+# Use default assistant with clean container
+kodx --repo-dir "" --prompt "create a Flask web application"
+
+# Use default assistant with specific directory
+kodx --repo-dir ./my-project --prompt "run the tests"
+```
+
+### Custom Programs
+
+For specialized tasks, use the production configurations from `.github/config/`:
+
+```bash
+# Code analysis expert (used in GitHub workflows)
+kodx .github/config/kodx-ask-program.yaml --repo-dir . --prompt "review architecture"
+
+# Code implementation expert (used in GitHub workflows)
+kodx .github/config/kodx-code-program.yaml --repo-dir "" --prompt "create FastAPI app"
+```
+
+### Production Example
+
+Here's how Kodx is used in production for automated code implementation (from `.github/workflows/kodx-code.yml`):
+
+```bash
+# Using Kodx from PyPI
+uvx kodx .github/config/kodx-code-program.yaml \
+  --repo-dir . \
+  --prompt-file prompt.txt \
+  --export-dir ./kodx-changes \
+  --cost-limit 2.0 \
+  --json-output-file kodx_result.json
+```
+
+This workflow automatically:
+1. Processes code change requests from GitHub issues/PRs
+2. Runs Kodx with cost controls to implement changes
+3. Exports the modified files to `./kodx-changes`
+4. Creates a PR with the implemented changes
+
+## Documentation
+
+For a map of all technical guides, see [docs/index.md](docs/index.md).
+
+### CLI Interface
+
+```bash
+kodx [PROGRAM_PATH] [OPTIONS]
+```
+
+**Arguments:**
+- `PROGRAM_PATH`: Path to LLM program file (YAML/TOML). If omitted, uses built-in assistant.
+
+**Common Options:**
+- `--repo-dir`: Local directory to copy into container (default: current directory, use `""` for clean container)
+
+**Key Options:**
+- `--prompt`, `-p`: Prompt text (or read from stdin)
+- `--image`: Docker image to use (default: `python:3.11`)
+- `--setup-script`: Setup script to execute in container before task
+- `--export-dir`: Host directory to export container changes
+- `--cost-limit`: Stop execution when cost exceeds this limit in USD
+- `--disable-network-after-setup`: Disconnect container internet access after setup for security isolation
+- `--json`: Output results as JSON for automation
+- `--json-output-file FILE`: Write JSON results to file instead of stdout
+
+### Docker Configuration
+
+You can configure Docker settings directly in your program YAML/TOML files:
+
+```yaml
+# Program file with Docker configuration
+model:
+  name: claude-3-7-sonnet-20250219
+  provider: anthropic
+
+prompt:
+  system: |
+    You are an expert software engineer...
+
+parameters:
+  max_tokens: 20000
+  temperature: 0.7
+
+# Docker configuration section
+docker:
+  image: python:3.12-slim  # Docker image to use
+  disable_network_after_setup: true  # Disconnect internet after setup for security
+  setup_script: |
+    #!/bin/bash
+    apt-get update
+    apt-get install -y git curl
+    pip install pytest black
+```
+
+**Important**: CLI options always take precedence over configuration in the program file. For example, if you specify `--image` or `--setup` on the command line, those values override any `docker.image` or `docker.setup_script` in your YAML/TOML file.
+
+See [docker-config.md](docs/docker-config.md) for detailed documentation on precedence rules.
+- `--quiet`, `-q`: Suppress most output
+
+### Example Programs
+
+Kodx includes several expert programs:
+
+#### Code Analysis
+```bash
+# Repository analysis (production config)
+kodx .github/config/kodx-ask-program.yaml --repo-dir . --prompt "What is the architecture of this project?"
+```
+
+#### Code Implementation
+```bash
+# Code implementation (production config)
+kodx .github/config/kodx-code-program.yaml --repo-dir "" --prompt "Create a REST API with FastAPI"
+```
+
+## Setup Scripts
+
+Kodx supports custom setup scripts to prepare the container environment before LLM execution:
+
+```bash
+# Execute setup script before task
+kodx .github/config/kodx-code-program.yaml --repo-dir . --setup setup.sh --prompt "Run tests"
+```
+
+### Setup Script Features
+
+- **Execution Context**: Scripts run in `/workspace` directory with access to repo files
+- **Shell Scripts Only**: Always executed as `bash /tmp/setup.sh`
+- **Fail Fast**: If setup script fails, entire execution stops
+- **Clean Isolation**: Setup script copied to `/tmp`, automatically cleaned up
+
+### Example Setup Script
+
+```bash
+#!/bin/bash
+# setup.sh
+echo "Installing dependencies..."
+pip install -r requirements.txt
+echo "Setup completed successfully!"
+```
+
+## Export Functionality
+
+Kodx can export container changes to the host filesystem for inspection and GitHub automation:
+
+```bash
+# Export container changes after LLM execution
+kodx .github/config/kodx-code-program.yaml --repo-dir . --prompt "Fix bug" --export-dir ./changes
+```
+
+### Export Features
+
+- **Automatic Export**: Copies entire container workspace to host directory after LLM execution
+- **Smart Detection**: Exports `/workspace/repo` for repository tasks, `/workspace` for clean containers
+- **GitHub Ready**: Perfect for GitHub Actions workflows and PR creation
+- **Directory Creation**: Automatically creates export directory if it doesn't exist
+
+### GitHub Automation Example
+
+See the workflow files under `.github/workflows` for real automation examples.
+
+## Cost Control
+
+Kodx includes built-in cost tracking and budget controls to help manage API expenses:
+
+### Cost Limits
+
+Set a maximum USD cost for execution to prevent runaway costs:
+
+```bash
+# Stop execution if cost exceeds $0.50
+kodx .github/config/kodx-code-program.yaml --repo-dir . --cost-limit 0.50 --prompt "Large task"
+
+# Cost-controlled automation
+kodx .github/config/kodx-ask-program.yaml --repo-dir . --cost-limit 1.00 --json --prompt "Full analysis"
+```
+
+### Cost Reporting
+
+When using `--json` output, cost information is automatically included:
+
+```json
+{
+  "api_calls": 3,
+  "usd_cost": 0.0234,
+  "last_message": "Task completed successfully",
+  "stderr": ["INFO: Analysis complete"],
+  "stop_reason": "end_turn"
+}
+```
+
+### Stop Reasons
+
+Kodx provides clear indicators for why execution stopped:
+
+- `"end_turn"`: Normal completion
+- `"cost_limit_exceeded"`: Hit the specified cost budget
+- `"max_iterations"`: Reached iteration limit
+- `"tool_error"`: Tool execution failed
+
+### GitHub Actions Integration
+
+Cost limits are automatically applied in GitHub workflows:
+
+- **Code implementation**: `--cost-limit 2.0` (up to $2.00)
+- **Q&A responses**: `--cost-limit 1.0` (up to $1.00)
+
+Cost information is displayed in workflow status comments for transparency.
+
+### Available Tools
+
+Kodx provides exactly 2 tools to LLMs:
+
+1. **`feed_chars(chars)`** - Send characters/commands to the shell
+   - Execute commands: `feed_chars("ls -la")`
+   - Create files: `feed_chars("echo 'content' > file.txt")`
+   - Send Ctrl+C: `feed_chars("\\x03")`
+   - Run interactive programs: `feed_chars("python")`
+
+2. **`create_new_shell()`** - Start a fresh shell session
+   - Resets environment state
+   - Useful when shell gets into bad state
+   - Returns to /workspace directory
+
+## LLM Programs
+
+Programs are YAML/TOML files that define the LLM behavior, following llmproc configuration format:
+
+```yaml
+# my-program.yaml
+model:
+  name: claude-sonnet-4
+  provider: anthropic
+
+prompt:
+  system: |
+    You are an expert in [DOMAIN] with access to a Docker container.
+
+    The repository is available at /workspace/repo (if provided).
+    Available tools: feed_chars, create_new_shell
+
+    [Add your specific expertise and instructions]
+
+parameters:
+  max_tokens: 8000
+  temperature: 0.1
+```
+
+### Creating Custom Programs
+
+1. **Copy a production configuration** from `.github/config/` directory
+2. **Modify the system prompt** for your specific use case
+3. **Adjust model parameters** as needed
+4. **Test your program**: `kodx my-program.yaml --repo-dir . --prompt "test"`
+
+## Docker Images
+
+### Requirements
+
+Kodx requires Docker images with the following pre-installed:
+- **Python 3.7+** and **pip**
+- **bash** shell
+- **curl** for internal communication
+
+### Recommended Images
+
+- `python:3.11` (default) - Full Python image with curl and build tools
+- `python:3.12` - Latest Python version with full toolset
+- `python:3.11-slim` - Lightweight option (requires curl installation)
+
+### Custom Images
+
+For custom requirements, create images based on Python base images:
+
+```dockerfile
+FROM python:3.11-slim
+RUN apt-get update && apt-get install -y git build-essential
+# Add your custom tools
+```
+
+Or extend other base images:
+
+```dockerfile
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y python3 python3-pip curl bash git
+# Add your custom setup
+```
+
+
+## GitHub Actions Integration
+
+Kodx is perfect for GitHub Actions workflows with export functionality for automated PR creation:
+
+See `.github/workflows` for sample automation and analysis workflows using Kodx.
+
+## Automation & CI/CD
+
+### JSON Output
+
+When using `--json`, Kodx outputs structured results:
+
+```json
+{
+  "api_calls": 3,
+  "usd_cost": 0.0156,
+  "last_message": "Analysis complete. Found 2 potential issues...",
+  "stderr": ["INFO: Container initialized", "INFO: Analysis complete"],
+  "stop_reason": "end_turn"
+}
+```
+
+
+## Architecture
+
+Kodx is built on these principles:
+
+1. **Minimal Interface** - Only expose essential shell interaction tools
+2. **Explicit Behavior** - No magic defaults, all actions are explicit
+3. **Container Isolation** - Each session gets a clean Docker environment
+4. **Local Directory Focus** - Simple file copying, no git complexity
+5. **llmproc Compatibility** - Follow proven CLI patterns
+
+### Program vs Execution Separation
+
+- **Program files** (YAML/TOML) define LLM behavior and expertise
+- **CLI options** define execution context (container, directory, etc.)
+- **Clean separation** allows reusing programs across different contexts
+
+## Development
+
+```bash
+# Clone and install in development mode
+git clone https://github.com/kodx/kodx
+cd kodx
+pip install -e ".[dev]"
+
+# Run tests (multiple tiers available)
+make test         # Fast unit tests (no Docker required)
+make test-docker  # Integration tests (requires Docker)
+make test-all     # Complete test suite
+
+# Code quality
+make check        # Format and lint code
+make lint         # Check code style
+make format       # Auto-format code
+```
+
+### Testing Tiers
+
+Kodx uses a tiered testing approach:
+
+- **`make test`** - Fast unit tests (~0.2s, no external dependencies)
+- **`make test-docker`** - Docker integration tests (~1-2min, requires Docker)
+- **`make test-system`** - System workflow tests (~2-5min, requires Docker)
+- **`make test-perf`** - Performance benchmarks (~3-10min, requires Docker)
+
+See [TESTING.md](TESTING.md) for detailed testing documentation.
+
+
+## License
+
+Apache License 2.0 - see LICENSE file for details.
+
+## Contributing
+
+Contributions welcome! Please read CONTRIBUTING.md for guidelines.
+
+## Related Projects
+
+- [llmproc](https://github.com/cccntu/llmproc-private) - LLM process management framework
+- [SWE-agent](https://github.com/princeton-nlp/SWE-agent) - AI software engineer
