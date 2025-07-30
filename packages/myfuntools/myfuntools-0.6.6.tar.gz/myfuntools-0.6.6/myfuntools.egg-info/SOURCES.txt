@@ -1,0 +1,14 @@
+MANIFEST.in
+pyproject.toml
+setup.py
+configs/NEWS.TXT
+configs/python313.dll
+configs/set_config.ini
+myfuntools/__init__.py
+myfuntools/hello.py
+myfuntools/welcome.py
+myfuntools.egg-info/PKG-INFO
+myfuntools.egg-info/SOURCES.txt
+myfuntools.egg-info/dependency_links.txt
+myfuntools.egg-info/requires.txt
+myfuntools.egg-info/top_level.txt
