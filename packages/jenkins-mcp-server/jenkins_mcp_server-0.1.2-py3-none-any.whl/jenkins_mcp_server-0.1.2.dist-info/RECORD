@@ -1,0 +1,9 @@
+jenkins_mcp_server/__init__.py,sha256=KNZ1bD9ZGfyZwlv91Ueeega_1lsRDLs2fYQDgNbBdtc,212
+jenkins_mcp_server/config.py,sha256=-Lk-38Gi3DqY4ZnjGJTwqXH3bDt7qo9obx5L8_fhhis,4313
+jenkins_mcp_server/jenkins_client.py,sha256=q5BkF0TuPuS94RLup8Zv31pJ5_Myi3VBiEZQhgjniOs,7424
+jenkins_mcp_server/server.py,sha256=Mcbv_Y6dguGLLVy7PieyzW4koyJQszQRTIvESvA-tr8,16592
+jenkins_mcp_server-0.1.2.dist-info/METADATA,sha256=KCQYnAnY1c0QD4SiytVHMQ-Cr0U8b7aliq7QCYP00Ts,8843
+jenkins_mcp_server-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jenkins_mcp_server-0.1.2.dist-info/entry_points.txt,sha256=n1AeA82tvc2eqDTGOYfEKdbvyRaktX6KH4HpIehPr-8,63
+jenkins_mcp_server-0.1.2.dist-info/licenses/LICENSE,sha256=cCzgEL7YfmYn1sNJNCQ9GZZ_NEADtCZnyvmPQTh6Uh4,1069
+jenkins_mcp_server-0.1.2.dist-info/RECORD,,
