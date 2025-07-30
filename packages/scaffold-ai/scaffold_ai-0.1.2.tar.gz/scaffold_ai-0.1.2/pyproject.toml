@@ -1,0 +1,9 @@
+[project]
+name = "scaffold-ai"
+version = "0.1.2"
+description = "Project scaffolding tool"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.84.0",
+]
