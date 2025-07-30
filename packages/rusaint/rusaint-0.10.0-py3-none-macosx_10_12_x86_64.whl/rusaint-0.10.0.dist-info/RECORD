@@ -1,0 +1,7 @@
+rusaint-0.10.0.dist-info/METADATA,sha256=TuXPF_MCf1Mwrc32jjZlT9dpVr4PnECUvuXIB0-F75A,2860
+rusaint-0.10.0.dist-info/WHEEL,sha256=Z9EvJcq5N96b4rSqg-ys1OmbbWPCugqwpJtF9hM4jHw,103
+rusaint_ffi/__init__.py,sha256=73c78w1Q_TyTc1ozv0ju92stYI_VMVDDU_0zAKc07cU,66
+rusaint_ffi/libuniffi_rusaint_ffi.dylib,sha256=S6hRYShqVHnX84UjdLiRiauSSTj1FEc0R9WM2IpaOyY,9429072
+rusaint_ffi/rusaint.py,sha256=qEWpypbm_wdcYvUqgXVy_tZBoOEoAcldRLCiSwa86bw,207453
+rusaint_ffi/rusaint_ffi.py,sha256=3OcQGSp0_T_p2V-2-za748fFDRyTItMOOVxX55lt-Lo,199002
+rusaint-0.10.0.dist-info/RECORD,,
