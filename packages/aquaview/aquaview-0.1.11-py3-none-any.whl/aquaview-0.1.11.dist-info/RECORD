@@ -1,0 +1,14 @@
+aquaview/__init__.py,sha256=f8YdTgfAhjZm2Tax0ZvAdWIna1Dd5KEis2TJ8ecdMXY,323
+aquaview/client.py,sha256=LKcHxdFceHIsdgOXqubpy3utQaJfRT28AZVkPdFYiLc,549
+aquaview/exceptions.py,sha256=Uu5vd0CbnADSyNcdhqiVTfKcu3ck9I7Q-QwSgeVEaIs,86
+aquaview/utils.py,sha256=bx-AiiA9bo3SMTzh3_681fav6BabSrx-hYGtQCRy7lQ,200
+aquaview/endpoints/__init__.py,sha256=93akzynseJkmuuGLr6oA7zRuxSNkjW6p0Cc_T8z5KVQ,237
+aquaview/endpoints/cdm_data_types.py,sha256=X7_MfEFdpD8nE1Nk8codaeuJkEky3JbGtc87r-xhHuU,77
+aquaview/endpoints/datasets.py,sha256=2xMaCEOPk-JCIYKOaKjKIdFkPKvvUGvLp4V55lNWUoQ,353
+aquaview/endpoints/keywords.py,sha256=hyL64DyJgvqghxjPTiJxBjqz42w7u58t1VI9X7YvdZU,142
+aquaview/endpoints/preview.py,sha256=s_y_-NKowtz5v5TdB8TmlSJS-vwCstL7CkYBcdSx2Sw,156
+aquaview/endpoints/sources.py,sha256=YHRo03A8vmjUTS-C112rLTZUM-tsAfRsvuZHeQVFGQs,63
+aquaview-0.1.11.dist-info/METADATA,sha256=M8XjKQ3Na1s9F9HogmnORFpbjit9qk9a10az8mEwS_8,7139
+aquaview-0.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aquaview-0.1.11.dist-info/top_level.txt,sha256=lTlh9u4K5vehOH9-0Ap9fueJqI5Lc4x9z3CnxnKTCcc,9
+aquaview-0.1.11.dist-info/RECORD,,
