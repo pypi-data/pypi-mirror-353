@@ -1,0 +1,12 @@
+Metadata-Version: 2.3
+Name: oxygent
+Version: 0.0.1
+Summary: Multi-Agent Framework
+Author: jd-oxygen
+Author-email: litianlong26@jd.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
