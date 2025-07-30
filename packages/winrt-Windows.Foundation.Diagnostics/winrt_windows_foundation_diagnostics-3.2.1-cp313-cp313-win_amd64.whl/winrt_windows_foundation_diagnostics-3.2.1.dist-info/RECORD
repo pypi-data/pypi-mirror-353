@@ -1,0 +1,8 @@
+winrt/_winrt_windows_foundation_diagnostics.cp313-win_amd64.pyd,sha256=RB6Ytfy8_-q9sTJ8uUXrCkN8uZRgQKOcmdRH-lEpuEk,388608
+winrt/_winrt_windows_foundation_diagnostics.pyi,sha256=_HvTU8LO2MM61Ji-b8DRZHc3Hctgk5c-6XUURV3oIiU,67033
+winrt/windows/foundation/diagnostics/__init__.py,sha256=PPQdP85crTls_tJp2pZaJfo9Qhus_5tz1vdL9XS_id4,2586
+winrt/windows/foundation/diagnostics/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winrt_windows_foundation_diagnostics-3.2.1.dist-info/METADATA,sha256=cWJfWylICWgfsmsi49tvt4ZRFnNMGplFaQ9k_nT_qXM,1145
+winrt_windows_foundation_diagnostics-3.2.1.dist-info/WHEEL,sha256=qV0EIPljj1XC_vuSatRWjn02nZIz3N1t8jsZz7HBr2U,101
+winrt_windows_foundation_diagnostics-3.2.1.dist-info/top_level.txt,sha256=BzwQb4dZRt0NxCXi10ARjWsox7Asmtf_lXrw_KR-D_E,6
+winrt_windows_foundation_diagnostics-3.2.1.dist-info/RECORD,,
