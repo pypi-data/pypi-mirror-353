@@ -1,0 +1,9 @@
+a2amcp/__init__.py,sha256=lblsS4s201ugY2D5XH4k07yLdmNXnkvB6g0rtQrC50s,1368
+a2amcp/core.py,sha256=qzO3_UeLXp53wJmee2-nc19kQfMvSRxAWN3UTucjp9A,26174
+a2amcp/prompt.py,sha256=l5za35ijekZoQQ6hSCo-gFpvy7IqBiAIo4mvhh1FpN0,17951
+a2amcp/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+a2amcp_sdk-0.1.0.dist-info/licenses/LICENSE,sha256=UrKN1fPMVYsBIjvZo3u0_KEcGq2nKuliFAVKIr7s-HU,1076
+a2amcp_sdk-0.1.0.dist-info/METADATA,sha256=6xIKbN1w9Ma_o4i2_jjpKAaSDwGgG1pHvrikCws1sSc,9569
+a2amcp_sdk-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+a2amcp_sdk-0.1.0.dist-info/top_level.txt,sha256=si5ZfpdOEdUrTgX4QzKye4NujO_cbPxTOYTt1SuAAps,7
+a2amcp_sdk-0.1.0.dist-info/RECORD,,
