@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.py
+pirate/__init__.py
+pirate/utils.py
+pirate.py.egg-info/PKG-INFO
+pirate.py.egg-info/SOURCES.txt
+pirate.py.egg-info/dependency_links.txt
+pirate.py.egg-info/requires.txt
+pirate.py.egg-info/top_level.txt
