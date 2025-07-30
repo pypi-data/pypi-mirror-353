@@ -1,0 +1,15 @@
+click
+tqdm
+flask
+flask-cors
+torch
+transformers
+numpy
+sentence-transformers
+faiss-cpu
+
+[cpu]
+faiss-cpu
+
+[gpu]
+faiss-gpu
