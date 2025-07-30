@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/cemcp/__init__.py
+src/cemcp/cemcp.py
+src/cemcp.egg-info/PKG-INFO
+src/cemcp.egg-info/SOURCES.txt
+src/cemcp.egg-info/dependency_links.txt
+src/cemcp.egg-info/entry_points.txt
+src/cemcp.egg-info/requires.txt
+src/cemcp.egg-info/top_level.txt
