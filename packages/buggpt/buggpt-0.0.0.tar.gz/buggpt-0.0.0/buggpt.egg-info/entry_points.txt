@@ -1,0 +1,2 @@
+[console_scripts]
+buggpt = buggpt.cli:main

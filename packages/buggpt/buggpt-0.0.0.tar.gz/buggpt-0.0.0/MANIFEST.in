@@ -1,0 +1,6 @@
+recursive-include buggpt/gui/server *
+recursive-include buggpt/gui/client *
+recursive-include buggpt/Provider/npm *
+recursive-include buggpt/Provider/gigachat_crt *
+recursive-include buggpt/Provider/you *
+recursive-include buggpt/Provider/har *
