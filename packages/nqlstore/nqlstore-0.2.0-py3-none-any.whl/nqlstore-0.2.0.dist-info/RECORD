@@ -1,0 +1,15 @@
+nqlstore/__init__.py,sha256=KPRrCM7WGn--Mg8D9DFeT_C5_96XxCOAQHLkLcaqesE,544
+nqlstore/_base.py,sha256=UdKIA6zPOCI571aYNflKPcppi5v5BeStP0GG1ppkKIc,3765
+nqlstore/_compat.py,sha256=w0AW3C0F7THm013nOb6_sh7V26ZhfTRd-kX0vsKf6Yo,5717
+nqlstore/_field.py,sha256=7LWLnEPexx2fUlOx_vyJBnGQ9MS2Oyql7EcTPCrRbJ8,16794
+nqlstore/_mongo.py,sha256=zzgmJzw_XC75FpYsAznA3ViT__AOdVCvkUY8kvtLLJw,9496
+nqlstore/_redis.py,sha256=rsVnL058FneLljOKyaWsy0lRAM-QqyEzHSokYW87vtI,10221
+nqlstore/_sql.py,sha256=sONioWAScydspnumkTwL3vukXNoc67hrXJUWMQWhIwA,33004
+nqlstore/query/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nqlstore/query/parsers.py,sha256=Wtbe7xS4HfJfnrJK6XT6YI6PGG0bndTXvTcpN3-A034,26686
+nqlstore/query/selectors.py,sha256=WFzia63UKEYism098j3wyPNT80i8kuQvRsQENFDCVTA,2879
+nqlstore-0.2.0.dist-info/licenses/LICENSE,sha256=SsIJ4S69_BidgST3DLlFUlOenPc05jq69FWs1OLPWCQ,1072
+nqlstore-0.2.0.dist-info/METADATA,sha256=Fvpf8oSuX47BZ-6XlBhcNBllDFRrl3SSxyuKZpnzIhM,14591
+nqlstore-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nqlstore-0.2.0.dist-info/top_level.txt,sha256=8u2PaFRclK5lhr8kil8LVbJaeR1gKT0_Rp9rcR6PUik,9
+nqlstore-0.2.0.dist-info/RECORD,,
