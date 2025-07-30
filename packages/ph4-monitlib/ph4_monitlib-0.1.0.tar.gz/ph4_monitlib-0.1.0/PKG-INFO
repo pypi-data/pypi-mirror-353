@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: ph4-monitlib
+Version: 0.1.0
+Summary: UPS Monitoring library
+Home-page: https://github.com/ph4r05/ph4-monitlib
+Author: Dusan Klinec
+Author-email: dusan.klinec@gmail.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+License-File: LICENSE
+Requires-Dist: setuptools>=1.0
+Requires-Dist: six
+Requires-Dist: future
+Requires-Dist: shellescape
+Requires-Dist: asyncio
+Requires-Dist: ph4-runner>=0.0.5
+Requires-Dist: jsonpath_ng
+Requires-Dist: python-telegram-bot
+Requires-Dist: psutil
+Requires-Dist: pyyaml>=6.0.1
+Provides-Extra: dev
+Requires-Dist: nose; extra == "dev"
+Requires-Dist: pep8; extra == "dev"
+Requires-Dist: tox; extra == "dev"
+Requires-Dist: pypandoc; extra == "dev"
+Provides-Extra: test
+Requires-Dist: mypy; extra == "test"
+Requires-Dist: pre-commit; extra == "test"
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: types-PyYAML; extra == "test"
+Provides-Extra: docs
+Requires-Dist: Sphinx>=1.0; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Requires-Dist: sphinxcontrib-programoutput; extra == "docs"
+
+Monitoring library
+==================
+
+Library contains several utility classes that help with building
+monitoring scripts.
+
+- *Worker*, synchronous, thread-backed worker processing tasks (lambdas)
+  inserted to the queue
+- *AsyncWorker*, asynchronous worker processing coroutines enqueued to
+  the task queue
+- *FiFoComm*, for client-server communication via named pipes (daemon vs
+  notifier comm), use JWT protection (not included)
+- *TcpComm*, for client-server communication via TCP, use JWT protection
+  (not included)
+- *NotifyEmail*, helper for sending notification emails via SMTP server
+  (gmail tested)
+- *TelegramBot*, helper for sending notifications via Telegram, receive
+  messages, send messages
+
+Development
+-----------
+
+Install pre-commit hooks defined by ``.pre-commit-config.yaml``
+
+.. code:: shell
+
+   pip3 install -U pre-commit
+   pre-commit install
+
+Auto fix
+
+.. code:: shell
+
+   pre-commit run --all-files
+
+Plugin version update
+
+.. code:: shell
+
+   pre-commit autoupdate
