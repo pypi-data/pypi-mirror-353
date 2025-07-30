@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: whatsapp-api-wrapper
+Version: 1.0.0
+Summary: A comprehensive, production-ready Python wrapper around the WhatsApp Web API with strongly-typed interfaces, error handling, and automatic retries
+Author-email: Akshat Kushwaha <akshatsingh14272@outlook.com>
+Maintainer-email: Akshat Kushwaha <akshatsingh14272@outlook.com>
+License: MIT
+Project-URL: Homepage, https://github.com/a3ro-dev/whatsapp_api_wrapper
+Project-URL: Documentation, https://github.com/a3ro-dev/whatsapp_api_wrapper/blob/main/docs/comprehensive-guide.md
+Project-URL: Repository, https://github.com/a3ro-dev/whatsapp_api_wrapper.git
+Project-URL: Bug Tracker, https://github.com/a3ro-dev/whatsapp_api_wrapper/issues
+Project-URL: Source Code, https://github.com/a3ro-dev/whatsapp_api_wrapper
+Project-URL: Changelog, https://github.com/a3ro-dev/whatsapp_api_wrapper/blob/main/CHANGELOG.md
+Keywords: whatsapp,api,wrapper,messaging,chat,automation,bot,whatsapp-web,pydantic,httpx
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Communications :: Email
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Networking
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: httpx<1.0.0,>=0.24.0
+Requires-Dist: pydantic<3.0.0,>=2.0.0
+Requires-Dist: tenacity<9.0.0,>=8.0.0
+Requires-Dist: typing-extensions>=4.0.0; python_version < "3.10"
+Provides-Extra: dev
+Requires-Dist: pytest<9.0.0,>=7.0.0; extra == "dev"
+Requires-Dist: pytest-mock<4.0.0,>=3.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio<1.0.0,>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov<6.0.0,>=4.0.0; extra == "dev"
+Requires-Dist: black<25.0.0,>=23.0.0; extra == "dev"
+Requires-Dist: isort<6.0.0,>=5.0.0; extra == "dev"
+Requires-Dist: flake8<8.0.0,>=6.0.0; extra == "dev"
+Requires-Dist: mypy<2.0.0,>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit<4.0.0,>=3.0.0; extra == "dev"
+Requires-Dist: responses<1.0.0,>=0.23.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs<2.0.0,>=1.4.0; extra == "docs"
+Requires-Dist: mkdocs-material<10.0.0,>=9.0.0; extra == "docs"
+Requires-Dist: mkdocstrings[python]<1.0.0,>=0.20.0; extra == "docs"
+Requires-Dist: markdown-include<1.0.0,>=0.8.0; extra == "docs"
+Provides-Extra: async
+Requires-Dist: httpx[http2]<1.0.0,>=0.24.0; extra == "async"
+Requires-Dist: aiofiles<25.0.0,>=23.0.0; extra == "async"
+Provides-Extra: all
+Requires-Dist: whatsapp-api-wrapper[async,dev,docs]; extra == "all"
