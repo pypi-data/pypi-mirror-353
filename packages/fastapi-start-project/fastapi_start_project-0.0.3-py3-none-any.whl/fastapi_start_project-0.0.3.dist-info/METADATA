@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: fastapi-start-project
+Version: 0.0.3
+Summary: Inicializador de proyectos FastAPI con entorno virtual, Docker y más
+Author-email: Edier <edierguerra55@gmail.com>
+License-Expression: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Dynamic: license-file
+
+# FastAPI Generator
+
+🎯 Generador interactivo de aplicaciones FastAPI desde la terminal.
+
+## Uso
+
+```bash
+fastapi-start-app
