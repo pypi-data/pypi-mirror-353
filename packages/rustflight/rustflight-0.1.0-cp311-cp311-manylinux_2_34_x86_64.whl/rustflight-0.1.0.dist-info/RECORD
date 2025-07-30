@@ -1,0 +1,5 @@
+rustflight-0.1.0.dist-info/METADATA,sha256=MknYxGobhqqWp3DuEHByudOn6RUzvko5zf5AqwOu9yc,2218
+rustflight-0.1.0.dist-info/WHEEL,sha256=5ScJWkxvqQ-nWejUF7wRSlmpCfIbKoLj7EbC7UQvwI4,108
+rustflight/__init__.py,sha256=EcYP4SYVNT-dyxHCDeQ02Gwjv3cE-okunZMyz5NjyT8,123
+rustflight/rustflight.cpython-311-x86_64-linux-gnu.so,sha256=OuE1mBi-pyWrBq9NMA5Dm0D20ULmeTIPiJWI_67O8U8,636480
+rustflight-0.1.0.dist-info/RECORD,,
