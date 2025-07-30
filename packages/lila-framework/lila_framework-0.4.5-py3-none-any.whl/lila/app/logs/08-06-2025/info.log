@@ -1,0 +1,351 @@
+2025-06-08 00:50:16 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:16 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:16 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/utils_example.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/metrics, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:50:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:52:36 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:52:37 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:52:37 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:52:37 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:53:10 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:53:10 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:53:10 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:53:13 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:53:29 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:56:56 - INFO - IP: 127.0.0.1, OS: Mac OS, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:56:56 - INFO - IP: 127.0.0.1, OS: Mac OS, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:56:56 - INFO - IP: 127.0.0.1, OS: Mac OS, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:56:56 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:56:56 - INFO - IP: 127.0.0.1, OS: Mac OS, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:43 - INFO - IP: 127.0.0.1, OS: Windows, URL: /docs, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:43 - INFO - IP: 127.0.0.1, OS: Windows, URL: /openapi.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:43 - INFO - IP: 127.0.0.1, OS: Windows, URL: /favicon.ico, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:57:50 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/example, Method: POST | Query Params: {} | Path Params: {} | Body:  | JSON: {'email': 'string', 'password': ''}
+
+
+2025-06-08 00:58:00 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/example, Method: POST | Query Params: {} | Path Params: {} | Body:  | JSON: {'email': 'example@exmple.com', 'password': ''}
+
+
+2025-06-08 00:58:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/users, Method: POST | Query Params: {} | Path Params: {} | Body:  | JSON: {'email': 'example@example.com', 'name': 'stringstringstringstringstringstringstringstringstringstringstring', 'token': '', 'password': ''}
+
+
+2025-06-08 00:58:19 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:19 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:19 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:19 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:19 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:31 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/users, Method: POST | Query Params: {} | Path Params: {} | Body:  | JSON: {'email': 'example@example.com', 'name': 'stringstringstringstringstringstrings', 'token': '', 'password': ''}
+
+
+2025-06-08 00:58:36 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/users, Method: POST | Query Params: {} | Path Params: {} | Body:  | JSON: {'email': 'example2@example.com', 'name': 'stringstringstringstringstringstrings', 'token': '', 'password': ''}
+
+
+2025-06-08 00:58:38 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:38 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:38 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:38 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 00:58:38 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:00:26 - INFO - Application started successfully
+
+
+2025-06-08 01:00:50 - INFO - Application started successfully
+
+
+2025-06-08 01:01:14 - INFO - Application started successfully
+
+
+2025-06-08 01:01:15 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:15 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:15 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:15 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:15 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:24 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:24 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/utils_example.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/img/lila.png, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:36 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/metrics, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:46 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/metrics, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:48 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:48 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:48 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:48 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/material.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:56 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:56 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:56 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:01:56 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:06 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/metrics, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:16 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/metrics, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:18 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/logout, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/login, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:21 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:23 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:23 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:23 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/login, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:23 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:23 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/logout, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/login, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:26 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:28 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:28 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:28 - INFO - IP: 127.0.0.1, OS: Windows, URL: /admin/login, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:28 - INFO - IP: 127.0.0.1, OS: Windows, URL: /.well-known/appspecific/com.chrome.devtools.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:28 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:31 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:31 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/lila.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:31 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/utils_example.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:32 - INFO - IP: 127.0.0.1, OS: Windows, URL: /docs, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:32 - INFO - IP: 127.0.0.1, OS: Windows, URL: /openapi.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:34 - INFO - IP: 127.0.0.1, OS: Windows, URL: /markdown, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:34 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/css/styles.css, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /lila, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:35 - INFO - IP: 127.0.0.1, OS: Windows, URL: /public/js/lila.js, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:02:51 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:03:01 - INFO - IP: 127.0.0.1, OS: Windows, URL: /docs, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:03:01 - INFO - IP: 127.0.0.1, OS: Windows, URL: /openapi.json, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:03:05 - INFO - IP: 127.0.0.1, OS: Windows, URL: /api/users, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
+2025-06-08 01:03:09 - INFO - IP: 127.0.0.1, OS: Windows, URL: /, Method: GET | Query Params: {} | Path Params: {} | Body:  | JSON: {}
+
+
