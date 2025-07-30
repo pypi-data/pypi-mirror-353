@@ -1,0 +1,94 @@
+Metadata-Version: 2.4
+Name: pygame-retro-games
+Version: 0.0.8
+Summary: PyGame Retro Games
+Author-email: David <c0d3@gpobox.net>
+Maintainer-email: David <c0d3@gpobox.net>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/bbc6502/pygames
+Project-URL: Bug Tracker, https://github.com/bbc6502/pygames/issues
+Keywords: games
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Games/Entertainment
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pygame<3.0,>=2.6
+Requires-Dist: numpy<3,>=2.2
+Dynamic: license-file
+
+# PyGame Retro Games
+
+## Installation
+
+    (Optional) Set up a virtual environment:
+    $ pip3 install --upgrade virtualenv
+    $ python3 -m virtualenv pygames
+    $ source pygames/bin/activate
+
+    Install pygames
+    $ pip3 install --upgrade pygame-retro-games
+
+    Run bounce
+    $ bounce
+
+    Run invaders
+    $ invaders
+
+## Games
+
+### Bounce
+
+    Let the snake bounce around the room.
+    Don't let it eat its own tail.
+    See how many segments you can accumulate.
+
+#### Run
+
+    $ python -m pygames bounce
+    or
+    $ bounce
+
+#### Keys
+
+    Left/Right/Up/Down Arrow Keys to change direction.
+
+    Escape to exit the game.
+
+#### Music
+
+    Background Music    - Music by Mykola Sosin from Pixabay
+    Tail Munch          - Sound Effect by freesound_community from Pixabay
+    Bloop               - Sound Effect by floraphonic from Pixabay
+
+### Invaders
+
+    Don't let the invaders land on earth.
+    See how many points you can accumulate.
+
+#### Run
+
+    $ python -m pygames invaders
+    or
+    $ invaders
+
+#### Keys
+
+    Left or Z = Move Left
+    Right or X = Move Right
+    Up or / = Fire
+    P = Pause / Resume
+    L = Low Motion / Normal Motion
+    + or - = Volume Up or Volume Down
+
+    Escape to exit the game.
+
+#### Music
+
+    Laser               - Sound Effect by Ahmed Abdulaal from Pixabay
+    Game Over           - Sound Effect by freesound_community from Pixabay
+    Alien               - Sound Effect by Luca Di Alessandro from Pixabay
