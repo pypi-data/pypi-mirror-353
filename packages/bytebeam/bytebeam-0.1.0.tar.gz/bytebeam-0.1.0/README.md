@@ -1,0 +1,95 @@
+# 🚀 ByteBeam
+
+**ByteBeam** is a lightweight, blazing-fast CLI tool for **transferring files over a local network**. Whether you're on the same Wi-Fi or LAN, ByteBeam lets you send and receive files securely, without needing the internet or third-party tools.
+
+---
+
+## 🔧 Features
+
+- ⚡ **Fast local transfers** — no cloud, just pure LAN speed
+- 🔐 **Secure token-based access control**
+- 🧠 **Can block unnecessary connections** for persistent settings
+- 🐧 **Linux-first** philosophy, perfect for terminal lovers
+
+---
+
+## 📦 Installation
+
+### 📁 Using `.deb` (Debian-based distros)
+
+```bash
+sudo dpkg -i bytebeam_1.0.0-1_amd64.deb
+🧪 From Source
+
+Clone the repo and install dependencies (if any):
+
+git clone https://github.com/yourusername/bytebeam.git
+cd bytebeam
+python3 -m venv venv
+source venv/bin/activate
+pip install .
+
+🖥️ Usage
+📤 Sending a file
+
+bytebeam --send file.txt --port 5000 --token 1234
+
+📥 Receiving a file
+
+bytebeam --receive --port 5000 --token 1234
+
+⚙️ Setting configuration
+
+bytebeam-config --default-port 5000 --default-token 1234
+
+🔑 Command Line Options
+Option	Description
+--send / -s	Path to file to send
+--receive / -r	Receive mode
+--host / -H	IP address to bind (default: 0.0.0.0)
+--port / -p	Port to listen/send on (required)
+--token / -t	Authentication token for secure transfer
+📂 Configuration
+
+ByteBeam supports persistent settings using a config file. This is managed by the bytebeam-config command. Config values are stored in:
+
+~/.config/bytebeam/config.json
+
+🧪 Testing
+
+Run the test suite using pytest:
+
+pytest tests/
+
+📁 Project Structure
+
+bytebeam/
+├── bytebeam/
+│   ├── cli.py           # CLI entry points
+│   ├── transfer.py      # Core file transfer logic
+│   ├── utils.py         # Utility functions
+│   └── __init__.py
+├── tests/               # Test cases
+│   └── ...
+├── requirements.txt
+├── README.md
+└── setup.py
+
+🙋 Author
+
+    Dipanshu Tiwari
+    📧 dipanshutiwari115@gmail.com
+
+🪪 License
+
+This project is licensed under the MIT License.
+Feel free to use, modify, and distribute.
+🌐 Coming Soon
+
+    GUI interface
+
+    QR Code-based file sharing
+
+    Cross-platform support (Windows/macOS)
+
+Made with 💻 and ☕ in Linux.
