@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: webexpythonsdk_async
+Version: 0.1.2
+Summary: An async Webex SDK for Python using httpx and JWT.
+Author-email: Rainux He <rainuxhe@outlook.com>
+Project-URL: Homepage, https://github.com/rainuxhe/WebexPythonSDK-async
+Project-URL: Documentation, https://github.com/rainuxhe/WebexPythonSDK-async#readme
+Project-URL: Repository, https://github.com/rainuxhe/WebexPythonSDK-async.git
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx>=0.23.0
+Requires-Dist: pyjwt>=2.4.0
+Dynamic: license-file
+
+# WebexPythonSDK-async
+
+Basic functionalities are derived from [WebexPythonSDK](https://github.com/WebexCommunity/WebexPythonSDK), but modified to use asynchronous HTTP calls.
+
+## Examples
+
+```python
+from webexpythonsdk_async import AsyncWebexAPI
+import asyncio
+
+token = "YOUR_TOKEN"
+
+api = AsyncWebexAPI(access_token=token)
+
+async def main():
+    async for webhook in api.webhooks.list():
+        print(f"type: {type(webhook)}, {webhook}")
+
+    resp = await api.messages.create(toPersonEmail="raihe@cisco.com", text="Hello World")
+    print(f"type: {type(resp)}, {resp}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Installation
+
+```bash
+python -m pip install webexpythonsdk-async
+```
+
+## Todo
+
+- [ ] Support synchronous calls.
+- [ ] Add more examples.
+- [ ] Remove Python 2 style code.
+- [ ] Add type annotations.
