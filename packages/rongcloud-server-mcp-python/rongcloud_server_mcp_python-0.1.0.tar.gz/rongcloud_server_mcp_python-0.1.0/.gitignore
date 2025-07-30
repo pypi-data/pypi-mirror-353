@@ -1,0 +1,44 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+.pytest_cache
+.ruff_cache
+
+# Virtual environments
+.venv
+.env
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+# IDE specific
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+.DS_Store
+
+# PyCharm specific
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/dataSources.ids
+.idea/shelf/
+.idea/misc.xml
+.idea/modules.xml
+.idea/inspectionProfiles/
+.idea/sqldialects.xml
+
+# VSCode (optional)
+.vscode/
+

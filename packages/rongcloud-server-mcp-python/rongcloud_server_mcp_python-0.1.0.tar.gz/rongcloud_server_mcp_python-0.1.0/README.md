@@ -1,0 +1,161 @@
+# Rcloud MCP Server
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-0.1.0-green.svg)
+![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
+
+
+---
+
+🌐 **[中文版 README](README.zh.md)**
+
+---
+
+## 📌 Project Overview
+
+`rongcloud-server-mcp-python` is an MCP server built on the FastMCP framework, integrating [RongCloud](https://www.rongcloud.cn/) instant messaging services. It supports user management, message sending, group operations, and more.
+
+---
+
+## ✨ Tools
+
+| Tool                         | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| `register_user`              | Register a new user via RongCloud and return the user's token              |
+| `get_user_info`              | Retrieve user information using RongCloud                                  |
+| `send_private_text_message`  | Sends private messages and returns generated message IDs mapped to each recipient user ID |
+| `send_group_text_message`    | Sends group messages and returns generated message IDs mapped to each target group ID |
+| `get_private_messages`       | Retrieves historical private messages between two users within a specified time range |
+| `create_group`               | Creates a new group chat in RongCloud with specified members               |
+| `dismiss_group`              | Permanently deletes a group chat from RongCloud                            |
+| `get_group_members`          | Retrieves the complete member list of an existing group chat in RongCloud  |
+| `join_group`                 | Adds one or more users to a specified group chat via RongCloud             |
+| `quit_group`                 | Removes one or more users from a RongCloud group chat                      |
+| `get_current_time_millis`                 | Get the current time in milliseconds since Unix epoch (January 1, 1970 UTC).                     |
+
+
+---
+
+## ⚙️ Configuration
+
+### 🔧 Environment Variables
+
+| Variable Name             | Required | Default                      | Description                  |
+|---------------------------|----------|------------------------------|------------------------------|
+| `RONGCLOUD_APP_KEY`       | ✅ Yes   | -                            | RongCloud Application App Key |
+| `RONGCLOUD_APP_SECRET`    | ✅ Yes   | -                            | RongCloud Application App Secret |
+| `RONGCLOUD_API_BASE`      | ❌ No    | `https://api-cn.ronghub.com` | RongCloud API base URL        |
+| `RONGCLOUD_API_TIMEOUT`   | ❌ No    | `10`                         | API request timeout (seconds)|
+| `FASTMCP_LOG_LEVEL`       | ❌ No    | `WARNING`                    | Log level (e.g., DEBUG, INFO)|
+
+### 🧪 Example Configuration
+
+```env
+RONGCLOUD_APP_KEY=your_app_key
+RONGCLOUD_APP_SECRET=your_app_secret
+RONGCLOUD_API_BASE=https://api-cn.ronghub.com
+RONGCLOUD_API_TIMEOUT=10
+FASTMCP_LOG_LEVEL=WARNING
+````
+
+### 💻 Claude Desktop Configuration
+
+* **Config file paths:**
+
+  * macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+  * Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+* **Example configuration:**
+
+```json
+{
+  "mcpServers": {
+    "rongcloud-server-mcp": {
+      "command": "uvx",
+      "args": [
+        "rongcloud-server-mcp-python"
+      ],
+      "env": {
+        "RONGCLOUD_APP_KEY": "your_app_key",
+        "RONGCLOUD_APP_SECRET": "your_app_secret",
+        "RONGCLOUD_API_BASE": "https://api-cn.ronghub.com",
+        "RONGCLOUD_API_TIMEOUT": "10"
+      }
+    }
+  }
+}
+```
+
+---
+
+## 🧑‍💻 Development Guide
+
+### 🚀 Quick Start
+
+1. Clone the repository and enter the project directory:
+
+   ```bash
+   git clone https://github.com/your-username/rcloud-server-mcp-python.git
+   cd rcloud-server-mcp-python
+   ```
+
+2. Copy example environment file and edit variables:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit `.env` file to set:
+
+   ```env
+   RONGCLOUD_APP_KEY=your_app_key
+   RONGCLOUD_APP_SECRET=your_app_secret
+   RONGCLOUD_API_BASE=https://api-cn.ronghub.com
+   FASTMCP_LOG_LEVEL=INFO
+   ```
+
+3. Create virtual environment, install dependencies, and start development server:
+
+   ```bash
+   make venv
+   make sync
+   make install
+   make dev
+   ```
+
+> 💡 Run `make help` to see all available commands.
+
+---
+
+### ✅ Running Tests
+
+```bash
+make test     # Run all tests
+make lint     # Check code style and quality
+make fix      # Auto-fix formatting issues
+```
+
+---
+
+## 🤝 Contribution Guide
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add YourFeature'`
+4. Push the branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
+
+> Please ensure the following before submitting:
+>
+> * No errors with `make lint`
+> * All tests pass with `make test`
+> * Code is properly formatted with `make format`
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
