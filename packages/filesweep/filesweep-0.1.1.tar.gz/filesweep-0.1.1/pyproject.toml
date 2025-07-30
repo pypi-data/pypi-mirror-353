@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filesweep"
+dynamic = ["version"]
+description = "A tool for managing and organizing files in a directory"
+readme = "README.md"
+authors = [{name = "Rakshith Kalmadi", email = "rakshithkalmadi@gmail.com"}]
+license = "MIT"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+]
+keywords = ["file management", "file organization", "cleanup", "file scanner"]
+
+[project.urls]
+"Bug Reports" = "https://github.com/rakshithkalmadi/FileSweep/issues"
+"Source" = "https://github.com/rakshithkalmadi/FileSweep"
+
+[project.scripts]
+filesweep = "filesweep:main"
+
+# We'll still rely on setup.py for version handling for now
+# But this file prepares for full migration in the future
