@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+inclupp/__main__.py
+inclupp.egg-info/PKG-INFO
+inclupp.egg-info/SOURCES.txt
+inclupp.egg-info/dependency_links.txt
+inclupp.egg-info/entry_points.txt
+inclupp.egg-info/requires.txt
+inclupp.egg-info/top_level.txt
