@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: alpha-framework
+Version: 0.1.0
+Summary: My awesome Python package
+Author: wangjinliang
+Author-email: wangjinliang219@gmail.com
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
+Dynamic: summary
