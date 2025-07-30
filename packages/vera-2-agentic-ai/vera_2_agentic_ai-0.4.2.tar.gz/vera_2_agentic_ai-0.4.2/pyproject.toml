@@ -1,0 +1,27 @@
+[project]
+name = "vera-2-agentic-ai"
+version = "0.4.2"
+description = ""
+authors = [
+    {name = "Praveen Govindaraj",email = "38414524+Praveengovianalytics@users.noreply.github.com"}
+]
+readme = "README.md"
+packages = [{ include = "vera_2_agentic_ai" }]
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "openai-agents (>=0.0.17,<0.0.18)",
+    "langmem (>=0.0.27,<0.0.28)",
+    "langgraph (>=0.4.8,<0.5.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "aiohttp (>=3.12.11,<4.0.0)",
+    "openai (>=1.84.0,<2.0.0)",
+    "gradio (>=5.33.0,<6.0.0)"
+]
+
+[tool.poetry.scripts]
+vera_2_agentic_ai = "vera_2_agentic_ai.__main__:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
