@@ -1,0 +1,158 @@
+# FastMCP Odoo Accounting Server
+
+A FastMCP server providing secure, read-only access to Odoo 18.3+ Accounting data through the Model Context Protocol.
+
+[![Add to Cursor](https://img.shields.io/badge/Add%20to%20Cursor-8A2BE2?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgMTJDNCAxNi40MTgzIDcuNTgxNzIgMjAgMTIgMjBDMTYuNDE4MyAyMCAyMCAxNi40MTgzIDIwIDEyQzIwIDcuNTgxNzIgMTYuNDE4MyA0IDEyIDRDNy41ODE3MiA0IDQgNy41ODE3MiA0IDEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+)](cursor://settings/mcp/install?name=Odoo%20Accounting%20MCP&config=eyJuYW1lIjoiT2RvbyBBY2NvdW50aW5nIE1DUCIsImNvbW1hbmQiOiJ1dngiLCJhcmdzIjpbImZhc3RtY3Atb2Rvby1hY2NvdW50aW5nIl0sImVudiI6eyJPRE9PX1VSTCI6IiIsIk9ET09fREIiOiIiLCJPRE9PX1VTRVIiOiIiLCJPRE9PX0FQSV9LRVkiOiIifX0=)
+
+## Overview
+
+This MCP server acts as a secure gateway to Odoo Accounting data, providing comprehensive read-only access to partners, accounts, journals, invoices, payments, and financial reports through a clean, type-safe API.
+
+## Features
+
+- **100% Read-Only**: Architecturally incapable of writing data
+- **Comprehensive Coverage**: All core Odoo Accounting entities
+- **Secure by Design**: OAuth 2.1/Bearer JWT authentication
+- **Production-Grade**: Full type hints, >90% test coverage
+- **Multiple Transports**: HTTP, SSE, and stdio support
+
+## Installation
+
+### Via Cursor (Recommended)
+
+Click the "Add to Cursor" button above, then configure your Odoo credentials in Cursor's MCP settings.
+
+### Via pip/uvx
+
+```bash
+# Using uvx (recommended)
+uvx fastmcp-odoo-accounting
+
+# Or using pip
+pip install fastmcp-odoo-accounting
+```
+
+### From Source
+
+1. Clone and set up:
+   ```bash
+   git clone https://github.com/markov-kernel/Odoo-mcp.git
+   cd Odoo-mcp
+   ./setup.sh
+   ```
+
+2. Configure your environment variables:
+   ```bash
+   export ODOO_URL="https://your-company.odoo.com"
+   export ODOO_DB="your_database"
+   export ODOO_USER="api-user@company.com"
+   export ODOO_API_KEY="your_api_key"
+   ```
+
+3. Run the server:
+   ```bash
+   source venv/bin/activate
+   odoo-accounting-mcp run
+   ```
+
+## Configuration
+
+The server requires the following environment variables:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `ODOO_URL` | Your Odoo instance URL | `https://company.odoo.com` |
+| `ODOO_DB` | Odoo database name | `company` |
+| `ODOO_USER` | API user email | `api@company.com` |
+| `ODOO_API_KEY` | API key from Odoo | `your-api-key` |
+
+## Available Tools
+
+### Partner Management
+- `list_partners` - List customers/vendors with filtering
+- `get_partner` - Get detailed partner information
+- `get_partner_balance` - Get partner's account balance
+
+### Account Operations
+- `list_accounts` - Browse chart of accounts
+- `get_account` - Get account details
+- `get_account_balance` - Calculate account balance for date range
+- `list_account_types` - List available account types
+
+### Journal & Entries
+- `list_journals` - List accounting journals
+- `list_journal_entries` - Browse journal entries
+- `get_journal_entry` - Get detailed entry with lines
+- `get_journal_summary` - Journal activity summary
+
+### Invoices & Bills
+- `list_customer_invoices` - List sales invoices
+- `list_vendor_bills` - List purchase bills
+- `get_invoice` - Get detailed invoice/bill
+- `get_overdue_invoices` - Find overdue receivables
+
+### Payments
+- `list_payments` - List payments with filters
+- `get_payment` - Get payment details
+- `get_unreconciled_payments` - Find unmatched payments
+
+### Financial Reports
+- `get_trial_balance` - Generate trial balance
+- `get_profit_and_loss` - P&L statement
+- `get_aged_receivables` - Aging report
+- `get_cash_flow_summary` - Cash flow analysis
+
+## Development
+
+### Testing
+```bash
+# Run all tests
+pytest
+
+# Run only integration tests
+pytest -m integration
+
+# Run with coverage
+pytest --cov=src
+```
+
+### Code Quality
+```bash
+# Lint and format
+ruff check src/
+black src/
+mypy src/
+```
+
+## Architecture
+
+- **Framework**: FastMCP with FastAPI/Uvicorn
+- **Odoo Integration**: Async XML-RPC with retry logic
+- **Authentication**: JWT Bearer tokens (optional)
+- **Type Safety**: Full Pydantic v2 models
+- **Testing**: 60+ integration tests
+
+## Requirements
+
+- Python 3.10+
+- Odoo 18.3+ with API access enabled
+- Read access to accounting modules
+
+## Security
+
+- **Read-Only**: Cannot modify any Odoo data
+- **Scoped Access**: Each tool requires specific JWT scopes
+- **Input Validation**: All inputs sanitized via Pydantic
+- **Error Handling**: Sensitive errors are sanitized
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Contributing
+
+Contributions welcome! Please ensure:
+- All tests pass (`pytest`)
+- Code is formatted (`black src/`)
+- Type hints are correct (`mypy src/`)
+- New features include tests

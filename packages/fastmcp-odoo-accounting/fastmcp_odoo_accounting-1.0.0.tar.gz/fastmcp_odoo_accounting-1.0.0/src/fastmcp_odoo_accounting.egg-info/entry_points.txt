@@ -1,0 +1,2 @@
+[console_scripts]
+odoo-accounting-mcp = fastmcp_odoo_accounting.server:cli
