@@ -1,0 +1,15 @@
+corgi/__init__.py,sha256=-tssJAYlHlfqayYXUL-qZprfwtAGvnEUinZgLsBTnRU,52
+corgi/apps.py,sha256=Pa9cTjmivcWjhRvhvk65gVxausOuRdq7aOW3ytal01c,19695
+corgi/archive/data-old.py,sha256=pCdPP9z6rv0qW3Cstpbcl3CVR84rPvS5ucs9qnvJvWA,10204
+corgi/archive/profiling.py,sha256=Glqm9x_lp8TWsyiqBfPI4ChnIxwrNE0MxT-HI15Ia8I,421
+corgi/archive/tensor.py,sha256=uEeG8YAHcKtBmFdNLEjiBz_NmBysqZCl21WvZvmyyLI,1850
+corgi/archive/transforms.py,sha256=2RVVfI0cHA44n-P5lVrwtWkC6c6U7dAZLewetOUiIkk,7397
+corgi/data.py,sha256=_rLVK7diZcWbnzGy1P173TAqezhcZEehkVe74tzAi2E,13670
+corgi/models.py,sha256=Vvm70U0UvnbbLi3FLVTlZXFI2T6nZWb-LlxfHjYFe8U,17337
+corgi/refseq.py,sha256=CyUCl9wGUy7F1fHrsiH-6BMDcXkV3aX45DdHKtBAkTA,6143
+corgi/seqtree.py,sha256=vhWHLA_Bqg3thLoZ9k0ohSkFHtCixbDNWJKw7LXHdVI,13824
+bio_corgi-0.5.0a2.dist-info/LICENSE,sha256=v-WZ2wGe6mAiEiGrw--j5f6retULnq7WjCS3fAIb3MA,11334
+bio_corgi-0.5.0a2.dist-info/METADATA,sha256=2WxqssjeiV86c97w5wh1d4FmAMJClMt8sqny4B7NsSI,4417
+bio_corgi-0.5.0a2.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+bio_corgi-0.5.0a2.dist-info/entry_points.txt,sha256=mP_ZOq9GSeozJmj4xY3qgHHHvVr8gTzXuxSqEMVbvnw,143
+bio_corgi-0.5.0a2.dist-info/RECORD,,
