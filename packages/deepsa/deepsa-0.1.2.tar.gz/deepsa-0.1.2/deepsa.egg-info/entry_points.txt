@@ -1,0 +1,3 @@
+[console_scripts]
+deepsa-predict = deepsa.cli:predict_cli
+deepsa-train = deepsa.cli:train_cli
