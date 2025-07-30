@@ -1,0 +1,195 @@
+# 🧠 Muffakir RAG 
+
+## Advanced Arabic RAG (Retrieval-Augmented Generation) Library
+
+**Muffakir RAG** is a sophisticated Python library for building Arabic-focused Retrieval-Augmented Generation (RAG) systems. It provides intelligent solutions for document processing, semantic search, and answer generation.
+
+## ✨ Key Features
+
+- 🌟 **Arabic Language Focus**: Optimized specifically for Arabic texts
+- 🤖 **Multi-Provider Support**: Together AI, OpenAI, Groq
+- 📚 **Advanced Document Processing**: PDF, DOCX, TXT with OCR support
+- 🔍 **Smart Retrieval**: Multiple retrieval methods with reranking
+- ⚡ **Easy-to-Use API**: Simple and intuitive interface
+- 🛡️ **Hallucination Check**: Answer validation system
+- 🔄 **Query Transformation**: Automatic query optimization
+- 🔄 **Reranker**: Automatic Reranker
+
+
+## 🚀 Installation
+
+```bash
+pip install muffakir-rag
+```
+
+For development:
+
+```bash
+git clone https://github.com/yourusername/muffakir-rag.git
+cd muffakir-rag
+pip install -e .
+```
+
+## 📖 Quick Start
+
+```python
+from Muffakir import MuffakirRAG
+
+# Configuration
+config = {
+    "data_dir": "path/to/your/documents",
+    "llm_provider": "together",
+    "api_key": "your_api_key_here",
+    "embedding_model": "mohamed2811/Muffakir_Embedding",
+    "k": 5,
+    "query_transformer": True,
+    "hallucination_check": True,
+    "reranking": True
+}
+
+# Initialize system
+rag = MuffakirRAG(config)
+
+# Ask questions
+response = rag.ask("What is the definition of artificial intelligence?")
+print(response["answer"])
+```
+
+## 🔧 Detailed Configuration
+
+### Core Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `data_dir` | Documents directory | Required |
+| `api_key` | API key | Required |
+| `llm_provider` | LLM provider | `"together"` |
+| `embedding_model` | Embedding model | `"mohamed2811/Muffakir_Embedding"` |
+
+### Advanced Parameters
+
+```python
+config = {
+    # Basics
+    "data_dir": "documents/",
+    "api_key": "your_key",
+    "llm_provider": "together",
+    
+    # LLM Settings
+    "llm_model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+    "llm_temperature": 0.0,
+    "llm_max_tokens": 1000,
+    
+    # Text Processing
+    "chunk_size": 600,
+    "chunk_overlap": 200,
+    "chunking_method": "recursive",
+    
+    # Retrieval
+    "retrieval_method": "max_marginal_relevance",
+    "k": 5,
+    "fetch_k": 15,
+    
+    # Features
+    "query_transformer": True,
+    "hallucination_check": True,
+    "reranking": True,
+    "reranking_method": "semantic_similarity"
+}
+```
+
+## 🎯 Advanced Examples
+
+### Document Search
+
+```python
+# Find similar documents
+similar_docs = rag.get_similar_documents(
+    query="Artificial Intelligence",
+    k=3,
+    method="similarity_search"
+)
+
+for doc in similar_docs:
+    print(f"Source: {doc.metadata.get('source', 'N/A')}")
+    print(f"Content: {doc.page_content[:200]}...")
+```
+
+### Adding New Documents
+
+```python
+# Add new documents
+new_documents = ["path/to/new/doc1.pdf", "path/to/new/doc2.docx"]
+success = rag.add_documents(new_documents)
+
+if success:
+    print("Documents added successfully!")
+```
+
+### Custom Parameters
+
+```python
+response = rag.ask(
+    "Your question here",
+    k=10,  # Retrieve 10 documents instead of 5
+    retrieval_method="hybrid",  # Use hybrid search
+    temperature=0.3  # Increase answer creativity
+)
+```
+
+## 🏗️ Project Structure
+
+```
+muffakir-rag/
+├── Muffakir/              # Core component
+├── TextProcessor/         # Text processing
+├── LLMProvider/          # LLM providers
+├── Embedding/            # Text embedding
+├── Generation/           # Answer generation
+├── VectorDB/             # Vector database
+├── Reranker/             # Reranking
+├── RAGPipeline/          # Pipeline management
+├── PromptManager/        # Template management
+└── QueryTransformer/     # Query transformation
+```
+
+## 🔌 Supported Providers
+
+- **Together AI**: `together`
+- **OpenAI**: `openai`
+- **Groq**: `groq`
+- **Open Router**: `open_router`
+
+## 📄 Supported File Types
+
+- 📝 **PDF**: With OCR support for scanned texts
+- 📄 **DOCX**: Microsoft Word documents
+- 📃 **TXT**: Plain text files
+- 🖼️ **Images**: With Azure Computer Vision OCR
+
+
+
+## 📊 Performance Metrics
+
+- ⚡ **Speed**: Fast processing of large documents
+- 🎯 **Accuracy**: Optimized results for Arabic texts
+- 💾 **Memory**: Efficient resource usage
+- 🔄 **Scalability**: Supports thousands of documents
+
+## 🤝 Contributing
+
+I welcome contributions! Please follow these steps:
+
+1. Fork the project
+2. Create a feature branch
+3. Implement improvements
+4. Add tests
+5. Submit Pull Request
+
+
+
+---
+
+<div align="center">
+
+**Built with ❤️ for the Arabic community**
