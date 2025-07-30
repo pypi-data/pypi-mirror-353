@@ -1,0 +1,2 @@
+[console_scripts]
+xiangwen-mcp-demo = xiangwen_mcp_demo:main
