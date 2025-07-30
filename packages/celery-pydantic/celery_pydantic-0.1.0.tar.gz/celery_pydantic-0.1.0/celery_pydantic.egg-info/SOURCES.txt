@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+celery_pydantic/__init__.py
+celery_pydantic/serializer.py
+celery_pydantic.egg-info/PKG-INFO
+celery_pydantic.egg-info/SOURCES.txt
+celery_pydantic.egg-info/dependency_links.txt
+celery_pydantic.egg-info/requires.txt
+celery_pydantic.egg-info/top_level.txt
+tests/test_serializer.py
