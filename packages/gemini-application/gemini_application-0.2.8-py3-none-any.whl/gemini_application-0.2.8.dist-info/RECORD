@@ -1,0 +1,12 @@
+gemini_application/__init__.py,sha256=SZ_xzJaNgZNvSvNO2bvO0d4Jv-ETSJCjyGjXl35lfww,23
+gemini_application/application_abstract.py,sha256=D_ObVJZi2_wT9jYH8VoBrgk65SEhp3XRIeVOtEyX9y0,1290
+gemini_application/chatpopup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gemini_application/chatpopup/chatpopup.py,sha256=5BByJyqspufxMlwpi0WEfstSmw9Kki7i8tvsTrwgvtA,7702
+gemini_application/injectionwell/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gemini_application/injectionwell/injectionwell_monitoring.py,sha256=kapxiHtnVEJhK3HYI5M-aAuWdZGBjOK-PjY_2mSuB48,12152
+gemini_application/productionwell/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gemini_application/productionwell/productionwell_performance.py,sha256=DEme6RsXTuXOS5Z0KGzJHPmUky2NaPtj75C2EitZpFE,11079
+gemini_application-0.2.8.dist-info/LICENSE,sha256=Y_zDMUosI56de95GVglpC19GilDg_0qu5kgmy4XiwKE,33092
+gemini_application-0.2.8.dist-info/METADATA,sha256=YLI24OYWx-SkIaC9Hm1CoMSOXxUog0VHFgzrrcmjSrE,2907
+gemini_application-0.2.8.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+gemini_application-0.2.8.dist-info/RECORD,,
