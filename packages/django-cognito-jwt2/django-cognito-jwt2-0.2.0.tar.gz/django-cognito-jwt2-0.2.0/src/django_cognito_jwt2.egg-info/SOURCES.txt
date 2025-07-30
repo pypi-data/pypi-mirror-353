@@ -1,0 +1,14 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+src/django_cognito_jwt2/__init__.py
+src/django_cognito_jwt2/backend.py
+src/django_cognito_jwt2/validator.py
+src/django_cognito_jwt2.egg-info/PKG-INFO
+src/django_cognito_jwt2.egg-info/SOURCES.txt
+src/django_cognito_jwt2.egg-info/dependency_links.txt
+src/django_cognito_jwt2.egg-info/not-zip-safe
+src/django_cognito_jwt2.egg-info/requires.txt
+src/django_cognito_jwt2.egg-info/top_level.txt
