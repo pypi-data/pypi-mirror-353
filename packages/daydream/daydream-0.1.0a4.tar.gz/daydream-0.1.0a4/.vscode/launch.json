@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug RDS Metrics Tool Call",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/.venv/bin/daydream",
+            "args": [
+                "tools",
+                "call",
+                "metrics_get_metrics_for_node",
+                "aws:aws_rds_database:arn:aws:rds:us-east-1:916150859591:db:sabixvu9dt0qpw",
+                "2025-06-03T00:03:51Z",
+                "2025-06-03T21:03:51Z",
+                "[\"CPUUtilization\"]"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+} 

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "daydream": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "run",
+        "--directory",
+        "/Users/tvd/src/aptible/daydream",
+        "daydream",
+        "start",
+        "--disable-sse"
+      ],
+      "env": {
+        "HOME": "/Users/tvd"
+      },
+      "timeout": 120000
+    }
+  }
+}
