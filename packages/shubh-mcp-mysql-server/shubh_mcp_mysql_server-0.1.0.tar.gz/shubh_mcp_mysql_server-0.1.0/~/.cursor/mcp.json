@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "mysql-server": {
+      "command": "python",
+      "args": [
+        "/home/shubham.rampurkar@brainvire.com/mcp_mysql_server/sql_server/mysql_server_launcher.py"
+      ],
+      "env": {
+        "MYSQL_USER": "root",
+        "MYSQL_PASSWORD": "Hyper@1234",
+        "MYSQL_DATABASE": "CompanyDB"
+      }
+    }
+  }
+} 

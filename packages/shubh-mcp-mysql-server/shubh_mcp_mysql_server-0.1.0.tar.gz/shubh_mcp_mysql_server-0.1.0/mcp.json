@@ -1,0 +1,7 @@
+{
+    "name": "shubh-mcp-mysql-server",
+    "version": "0.1.0",
+    "description": "MySQL server implementation for MCP",
+    "module": "mysql_server.server",
+    "entry_point": "run"
+} 
