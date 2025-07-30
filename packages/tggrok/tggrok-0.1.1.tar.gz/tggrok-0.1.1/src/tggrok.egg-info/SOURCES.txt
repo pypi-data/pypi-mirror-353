@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/__test__.py
+src/tggrok/__init__.py
+src/tggrok/grok.py
+src/tggrok.egg-info/PKG-INFO
+src/tggrok.egg-info/SOURCES.txt
+src/tggrok.egg-info/dependency_links.txt
+src/tggrok.egg-info/requires.txt
+src/tggrok.egg-info/top_level.txt
