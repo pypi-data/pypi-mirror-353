@@ -1,0 +1,8 @@
+rusaint-0.10.0.dist-info/METADATA,sha256=TuXPF_MCf1Mwrc32jjZlT9dpVr4PnECUvuXIB0-F75A,2860
+rusaint-0.10.0.dist-info/WHEEL,sha256=12DdnTS8X4RNQP60xOUoSSjDZjNgrklbprxqLXT2V0Y,105
+rusaint_ffi.libs/libgcc_s-e52197c3.so.1,sha256=vkPW1Auw6CH9Bjk7frmX3hry_1H9c0tRI0Ncyg71WUI,724137
+rusaint_ffi/__init__.py,sha256=W7jkTWYENm2M5fw_m9kgv1YUffyZJXWuLgbSbzXPsGo,66
+rusaint_ffi/libuniffi_rusaint_ffi.so,sha256=nEHsbdyYFZhhnd4yY6z22QUdkVvl_42e6ZIh1dtGfLU,11101921
+rusaint_ffi/rusaint.py,sha256=qEWpypbm_wdcYvUqgXVy_tZBoOEoAcldRLCiSwa86bw,207453
+rusaint_ffi/rusaint_ffi.py,sha256=3OcQGSp0_T_p2V-2-za748fFDRyTItMOOVxX55lt-Lo,199002
+rusaint-0.10.0.dist-info/RECORD,,
