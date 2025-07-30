@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: volant
+Version: 0.0.1
+Summary: Volant Script
+Author: Serban Giuroiu
+Author-email: Serban Giuroiu <giuroiu@gmail.com>
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# Volant
