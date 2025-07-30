@@ -1,0 +1,2 @@
+[console_scripts]
+mdict-mcp = mdict_mcp.server:main
