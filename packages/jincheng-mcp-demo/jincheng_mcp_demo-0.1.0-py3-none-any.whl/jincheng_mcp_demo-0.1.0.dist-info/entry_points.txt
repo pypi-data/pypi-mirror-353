@@ -1,0 +1,2 @@
+[console_scripts]
+jincheng-mcp-demo = jincheng_mcp_demo:main
