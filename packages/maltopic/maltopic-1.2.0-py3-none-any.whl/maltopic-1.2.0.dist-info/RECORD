@@ -1,0 +1,10 @@
+maltopic/__init__.py,sha256=FofzY9oDgly-899_nXi0P9-NJgR4KXRNlwTrdl49F-Q,418
+maltopic/core.py,sha256=dmyVSBN7vUyqJtoqaYX4OE7JRGw6i5_vw79GTG-ckD8,6979
+maltopic/llms/__init__.py,sha256=5UuZCb8Fu1wVq3jPdc8nkJEkNZx__OFh-te_forfm1E,99
+maltopic/llms/openai.py,sha256=-vwvVZZb3QsZ3U2xTKarAKD6jshWYiq0JtgaYx7YVr8,1170
+maltopic/prompts.py,sha256=6SjwlIeoWwx2a5tRR2lOOMWYU5i2Is1UX8dlgBPoEDg,5448
+maltopic/utils.py,sha256=INEwIodLQ2GOcn2Gr9A0ubPBADQNUAMWj5WMYlBVGzg,9330
+maltopic-1.2.0.dist-info/LICENSE,sha256=21ZugVAOA8PkfYcQKLwMwqECTSlKBQBWiotCp2ePv_c,1068
+maltopic-1.2.0.dist-info/METADATA,sha256=hnKGVz1_X8iRDQZ1Jm_0Fz_3J9comOgPb76iyGlWDGA,11243
+maltopic-1.2.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+maltopic-1.2.0.dist-info/RECORD,,
