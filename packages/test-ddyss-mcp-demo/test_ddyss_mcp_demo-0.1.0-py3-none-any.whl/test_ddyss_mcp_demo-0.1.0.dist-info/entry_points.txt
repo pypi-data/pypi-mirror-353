@@ -1,0 +1,2 @@
+[console_scripts]
+test-ddyss-mcp-demo = test_ddyss_mcp_demo:main
