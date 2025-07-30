@@ -1,0 +1,8 @@
+drf_mocker/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+drf_mocker/mixins.py,sha256=q3KKywOTpPEXk2hjW4Lug-V2PiIL4Cj7i-waQnG6mhs,1011
+drf_mocker/views.py,sha256=xChNhoLEYDZBPM4miC2oCqla8gDHweYagvNVvCdnydg,582
+drf_mocker/viewsets.py,sha256=s5rUTBrOBsy6MyO6nKqe4TEEFOqMxAUhN2k5UxNiwRQ,727
+drf_mocker-0.1.0.dist-info/METADATA,sha256=fDXf6LclF9FAz-b4iPgkOQIXQ8kJuS_lP0v5JEO-2hU,3524
+drf_mocker-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+drf_mocker-0.1.0.dist-info/licenses/LICENSE,sha256=vdl2qVIJyqJDbc9n-sj52IXg2AUWl6DLtsIioeuiBG4,1068
+drf_mocker-0.1.0.dist-info/RECORD,,
