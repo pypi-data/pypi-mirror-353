@@ -1,0 +1,13 @@
+README.md
+setup.py
+coding_converse/__init__.py
+coding_converse/__main__.py
+coding_converse/server.py
+coding_converse.egg-info/PKG-INFO
+coding_converse.egg-info/SOURCES.txt
+coding_converse.egg-info/dependency_links.txt
+coding_converse.egg-info/entry_points.txt
+coding_converse.egg-info/requires.txt
+coding_converse.egg-info/top_level.txt
+message_dialog/__init__.py
+message_dialog/dialog_pyqt.py
