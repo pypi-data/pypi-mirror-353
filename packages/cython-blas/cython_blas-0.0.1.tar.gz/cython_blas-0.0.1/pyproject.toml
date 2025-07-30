@@ -1,0 +1,164 @@
+[project]
+name = "cython-blas"
+version = "0.0.1"
+authors = [{ "name" = "Josh Ayers", "email" = "josh@ayers.pw" }]
+license = "MIT"
+license-files = ["LICENSE.txt"]
+description = "Wrappers around OpenBLAS and BLIS."
+readme = "README.rst"
+
+requires-python = ">=3.10"
+dependencies = ["numpy >=2.0"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: C",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Natural Language :: English",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+]
+
+[project.optional-dependencies]
+docs = ["sphinx >=8.1", "sphinx-rtd-theme"]
+dev = [
+    # Docs
+    "sphinx >=8.1",
+    "sphinx-rtd-theme",
+    # Unit tests
+    "pytest",
+    # Linting
+    "deptry",
+    "ruff",
+    "isort",
+    "cython-lint",
+    # Build environment
+    "scipy-openblas64 >=0.3.29",
+    "cython >=3.0.5",
+    "meson-python >=0.17.0",
+    "meson >=1.7.0",
+    "ninja >=1.11",
+    "build",
+    "spin",
+    "click",
+]
+
+[project.urls]
+Repository = "https://github.com/joshayers/cython-blas/"
+
+
+[tool.cibuildwheel]
+build-frontend = "build"
+archs = ["auto64"]
+skip = [
+    "pp*",    # PyPy
+    "*musl*", # muslliunx
+]
+
+[tool.cibuildwheel.linux.environment]
+PKG_CONFIG_PATH = "$PKG_CONFIG_PATH:$(mktemp -d)"
+
+[tool.cibuildwheel.linux]
+before-build = [
+    "pip install -q scipy_openblas64>=0.3.29",
+    "python tools/before_build.py",
+]
+
+[tool.cibuildwheel.windows.environment]
+PKG_CONFIG_PATH = "$PKG_CONFIG_PATH;$(python -c 'import tempfile; print(tempfile.mkdtemp())')"
+CC = "clang"
+CXX = "clang++"
+
+[tool.cibuildwheel.windows]
+before-all = ["pip install -q delvewheel"]
+before-build = [
+    "pip install -q scipy_openblas64>=0.3.29",
+    "python tools/before_build.py",
+]
+repair-wheel-command = [
+    "python tools/repair_wheel_windows.py {dest_dir} {wheel}",
+]
+
+[tool.cython-lint]
+max-line-length = 120
+
+
+[tool.isort]
+atomic = true
+skip_glob = ["*.py"] # isort is only used for Cython files
+line_length = 120
+py_version = 311
+
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = [
+    "examples/*", # Patterns are glob expressions
+]
+lint.select = ["ALL"]
+lint.ignore = [
+    "FBT",     # Boolean traps
+    "PLR2004", # constant value
+    "T201",    # Allow print
+    "TD002",   # No author on TODO
+    "TD003",   # No ticket on TODO
+    "FIX",     # All fixme types (aka, you can have TODOs and FIXMEs in your code.
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "COM812", # missing-trailing-comma
+    "ISC001", # single-line-implicit-string-concatenation
+]
+
+lint.unfixable = [
+    "B007",    # Don't modify unused loop control variable
+    "F401",    # Don't delete unused imports
+    "F841",    # Don't delete unused variables
+    "ERA001",  # Don't delete commented out code
+    "PERF102", # Don't auto-convert .items() to .values()
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"**/tests/**/*.py" = [
+    "ANN201", # Allow no return types in tests
+    "S101",   # Allow asserts in tests
+]
+"**/tests/**/__init__.py" = [
+    "D104", # Don't require docstrings in test packages.
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google" # Accepts: "google", "numpy" or "pep257".
+
+
+[tool.spin]
+package = "cyhon_blas"
+
+[tool.spin.commands]
+"Build" = [".spin/cmds.py:build"]
+"Docs" = [".spin/cmds.py:docs"]
+"Dev" = [
+    ".spin/cmds.py:in_place",
+    ".spin/cmds.py:setup_in_place",
+    ".spin/cmds.py:cython_lint",
+    ".spin/cmds.py:cython_stringfix",
+]
+
+
+[build-system]
+requires = [
+    "meson-python >=0.17.0",
+    "ninja >=1.11",
+    "cython >=3.0.5",
+    "numpy >=2.0",           # need to call numpy.get_include() during build
+]
+build-backend = "mesonpy"
