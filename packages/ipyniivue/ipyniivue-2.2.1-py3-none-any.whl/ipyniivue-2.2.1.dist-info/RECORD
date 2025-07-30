@@ -1,0 +1,13 @@
+ipyniivue/__init__.py,sha256=GMAoMu29eI2wTnJKeqzsSiluETZu1-oMNN2yU-T6u4s,404
+ipyniivue/constants.py,sha256=j3MJieoVCmKao04yWzMzN6xZaQLceJ85aBocTxGRHYU,2254
+ipyniivue/download_dataset.py,sha256=dZ6uS5bWwp14b5Nn122KlwmKUKKH-ZA_G4xm0YkuIIU,3338
+ipyniivue/options_mixin.py,sha256=AtcFNoCnjuZ9wFzkd6-LYz8dUuzwdOMX5OI7k5Z7osQ,24584
+ipyniivue/utils.py,sha256=i3rQ8Pm-oEHbDzLN6lqVCf99-RTkQoWEQT20-yLyVA8,1833
+ipyniivue/widget.py,sha256=eKsLrDlJ9zZaK2o6NucjcAkPx-kjpu1SQ_1jAv7DZik,55538
+ipyniivue/static/colormaps.txt,sha256=W1C0-_rzb1e0460ljWJsDHUXkh6xwAsPw8UI724NSGY,584
+ipyniivue/static/meshShaderNames.txt,sha256=nnuYM5VRE2r_w5p4VuQH29aiGc1L5lWC6BNStdXWFak,102
+ipyniivue/static/widget.js,sha256=XczdHYFlCQknGJt_QrOWw1AKiRcQ82EQ9259gbjnXlc,2167623
+ipyniivue-2.2.1.dist-info/METADATA,sha256=yZp4l28rbR-01R5DLSpRrCLM5hyknD_SS5if-_p5vQo,5326
+ipyniivue-2.2.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ipyniivue-2.2.1.dist-info/licenses/LICENSE,sha256=O_O3XMi8Wzrj8SAyfR2Qh-OADRAKQ6X8awNIra2kEfo,1315
+ipyniivue-2.2.1.dist-info/RECORD,,
