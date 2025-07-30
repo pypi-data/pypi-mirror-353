@@ -1,0 +1,43 @@
+# freshrss api
+
+获取`FreshRSS`数据库中对应`url`的订阅源中已有的`guid`的集合
+
+## 示例
+```python
+if __name__ == "__main__":
+    import asyncio
+
+    async def main():
+        try:
+            links = await api_get_links_by_site_url(
+                freshrss_url='http://rss.example.com/api/greader.php',
+                username='username',
+                api_password='api_password',
+                site_url="https://jandan.net/top#tab=3days",
+                n = 100
+            )
+            print(links)
+        except Exception as e:
+            print(e)
+
+        db_config = {
+            'host': 'host',
+            'port': '5432',
+            'user': 'user',
+            'password': 'password',
+            'base': 'base',
+            'prefix': 'freshrss_userxxx_',
+        }
+
+        try:
+            guids = await pg_get_guids_by_site_url(
+                site_url="https://jandan.net/top#tab=3days",
+                db_config = db_config
+            )
+            print(guids)
+        except Exception as e:
+            print(e)
+
+    asyncio.run(main())
+
+```
