@@ -1,0 +1,8 @@
+embcli_jina/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+embcli_jina/jina.py,sha256=kn28XTh57YLvFSMy4K5Q1yWSqugSqc75axvP1Ik_AIg,4987
+embcli_jina/jina_clip.py,sha256=MAjpwdbGGxp1_gjNSuXFC7WFQ8XmdOwFgoyQzDmHyNY,3500
+embcli_jina/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+embcli_jina-0.1.2.dist-info/METADATA,sha256=rsfuQJ1pM07vIQ4ximgrPiqi6KE4HOpQ6RDuCs8uU3E,9478
+embcli_jina-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+embcli_jina-0.1.2.dist-info/entry_points.txt,sha256=HWJq9jmXnkYHDcMFnIjvlfQ1pPDxoe6-fUXvgEyeCig,67
+embcli_jina-0.1.2.dist-info/RECORD,,
