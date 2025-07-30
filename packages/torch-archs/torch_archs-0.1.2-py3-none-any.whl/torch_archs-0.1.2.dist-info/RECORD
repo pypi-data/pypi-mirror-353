@@ -1,0 +1,9 @@
+torch_archs/base/patches.py,sha256=-Wq_Wr-jWYfyd_ogDy3PUgpUlwOJTM65Bp6Eaamz-ks,1047
+torch_archs/base/attention/gqa.py,sha256=56YBf8i2qLIlJQo-5RcKDY3LYrcj-8AdqLfGEFk4e7g,1143
+torch_archs/language/moe.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_archs/tests/test_base/test_patches.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_archs/vision/vit.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_archs-0.1.2.dist-info/METADATA,sha256=XvnmBcxpDhI33IQLG2iMfk1GlixHiaGuh6ILqp746C4,4075
+torch_archs-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+torch_archs-0.1.2.dist-info/top_level.txt,sha256=wB3z9wAuK_VqJH1fBXjrOqhRTdpkr4qbJ4YfmCG97To,12
+torch_archs-0.1.2.dist-info/RECORD,,
