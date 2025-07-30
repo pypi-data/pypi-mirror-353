@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: dphysicsengine
+Version: 0.1.5
+Summary: Motor físico para simulaciones
+Author-email: David García Díaz <davidgrcdiaz@gmail.com>
+Requires-Python: >=3.7
