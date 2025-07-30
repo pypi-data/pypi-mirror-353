@@ -1,0 +1,23 @@
+ Use pydantic for function validation  (#1610)
+
+# Description
+
+Start using the newly created FunctionYAML for validation in the cdf
+build command.
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Improved
+
+- In the `cdf build` command improved feedback if functions
+configurations is not following the specifications.
+
+## templates
+
+No changes.
