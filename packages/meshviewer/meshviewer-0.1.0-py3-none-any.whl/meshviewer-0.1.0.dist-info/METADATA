@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: meshviewer
+Version: 0.1.0
+Summary: A modern 3D mesh viewer built with ModernGL and GLFW
+Home-page: https://github.com/syedjameel/meshviewer
+Author: Jameel Ahmed Syed
+Author-email: syedjameel9290 [at] gmail [dot] com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: glfw>=2.9.0
+Requires-Dist: moderngl>=5.12.0
+Requires-Dist: numpy>=2.2.0
+Requires-Dist: pyglm>=2.8.0
+Requires-Dist: trimesh>=3.23.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
