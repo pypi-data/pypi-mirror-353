@@ -1,0 +1,7 @@
+embcli_cohere/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+embcli_cohere/cohere_model.py,sha256=N5IqCps0UMFVLZZlfNpJyC8-N-RX_-5-cS5otiXt8o0,4122
+embcli_cohere/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+embcli_cohere-0.1.1.dist-info/METADATA,sha256=8i7DPZ8h_Lr333Ued8lz1BuXtVj_x1Fz7XNjdHD4hp8,8528
+embcli_cohere-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+embcli_cohere-0.1.1.dist-info/entry_points.txt,sha256=5JvJgTv7mAlvLNxXSchiCaLn6E8ZsLPtmdmJb_bNnvA,45
+embcli_cohere-0.1.1.dist-info/RECORD,,
