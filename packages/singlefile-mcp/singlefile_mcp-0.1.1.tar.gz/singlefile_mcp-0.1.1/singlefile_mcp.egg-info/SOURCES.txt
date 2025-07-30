@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+singlefile_mcp_server.py
+singlefile_mcp.egg-info/PKG-INFO
+singlefile_mcp.egg-info/SOURCES.txt
+singlefile_mcp.egg-info/dependency_links.txt
+singlefile_mcp.egg-info/entry_points.txt
+singlefile_mcp.egg-info/requires.txt
+singlefile_mcp.egg-info/top_level.txt
