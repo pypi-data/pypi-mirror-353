@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: VIIRS-orbits
+Version: 1.0.1
+Summary: Orbit Calculation Tool for the Visible Infrared Imaging Radiometer Suite (VIIRS)
+Author-email: "Gregory H. Halverson" <gregory.h.halverson@jpl.nasa.gov>
+Project-URL: Homepage, https://github.com/JPL-Evapotranspiration-Algorithms/VIIRS-orbits
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ephem
+Requires-Dist: geopandas
+Requires-Dist: numpy
+Requires-Dist: pyproj
+Requires-Dist: python-dateutil
+Requires-Dist: rasters
+Requires-Dist: shapely
+Requires-Dist: solar-apparent-time
+Requires-Dist: spacetrack
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: jupyter; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Dynamic: license-file
+
+# VIIRS-orbits
+Orbit Calculation Tool for the Visible Infrared Imaging Radiometer Suite (VIIRS)
