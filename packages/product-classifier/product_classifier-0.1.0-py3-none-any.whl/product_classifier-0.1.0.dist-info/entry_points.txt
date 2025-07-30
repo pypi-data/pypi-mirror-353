@@ -1,0 +1,3 @@
+[console_scripts]
+cnn-bilstm-predict = product_classifier.cli:predict_cli
+cnn-bilstm-train = product_classifier.cli:train_cli
