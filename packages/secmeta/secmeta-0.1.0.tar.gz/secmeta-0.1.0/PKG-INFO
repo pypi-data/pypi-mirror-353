@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: secmeta
+Version: 0.1.0
+Summary: A package for fetching SEC filings data
+Author-email: Philipp Groegor <philipp.groegor+sectool@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/groegor/secmeta
+Project-URL: Bug Tracker, https://github.com/groegor/secmeta/issues
+Keywords: sec,edgar,filings,finance,accounting,accounting research,proxy filings
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: requests
+
+# SEC Meta
+
+A Python package for fetching SEC filings data for companies by ticker or CIK.
+
+## Installation
+
+```bash
+pip install secmeta
+```
+
+## Usage
+### Command Line Interface
+```
+# Get filings for a ticker
+secmeta AAPL -c "Your Name <your@email.com>"
+
+# Get filings for multiple tickers
+secmeta AAPL MSFT GOOGL -c "Your Name <your@email.com>"
+
+# Get filings from a CSV file
+secmeta -i companies.csv -c "Your Name <your@email.com>"
+
+# Filter by form type and date range
+secmeta AAPL --form 10-K --year-from 2020 --year-to 2025 -c "Your Name <your@email.com>"
+
+```
+
+### Python API 
+```
+from secmeta import Submissions
+
+# Get filings by CIK
+df_cik = Submissions(cik="0001288776", form="10-K", name="John Doe", email="example@email.com").to_dataframe()
+
+# Get filings by ticker
+df_ticker = Submissions(ticker="GOOGL", form="10-K", name="John Doe", email="example@email.com").to_dataframe()
+
+# Get filings from a CSV file
+df_csv = Submissions(csv_path="input_companies.csv", form="10-K", name="John Doe", email="example@email.com").to_dataframe()
+```

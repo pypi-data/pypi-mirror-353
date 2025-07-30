@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/secmeta/__init__.py
+src/secmeta/api.py
+src/secmeta/cli.py
+src/secmeta/fetch.py
+src/secmeta/mapping.py
+src/secmeta.egg-info/PKG-INFO
+src/secmeta.egg-info/SOURCES.txt
+src/secmeta.egg-info/dependency_links.txt
+src/secmeta.egg-info/entry_points.txt
+src/secmeta.egg-info/requires.txt
+src/secmeta.egg-info/top_level.txt
