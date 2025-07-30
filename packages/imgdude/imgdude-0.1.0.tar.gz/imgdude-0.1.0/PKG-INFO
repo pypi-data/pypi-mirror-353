@@ -1,0 +1,190 @@
+Metadata-Version: 2.4
+Name: imgdude
+Version: 0.1.0
+Summary: Fast image resizing proxy for Nginx with FastAPI
+Author-email: ASafarzadeh <includesafarof@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/ASafarzadeh/imgdude
+Project-URL: Documentation, https://github.com/ASafarzadeh/imgdude#readme
+Project-URL: Bug Tracker, https://github.com/ASafarzadeh/imgdude/issues
+Project-URL: Source, https://github.com/ASafarzadeh/imgdude
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Multimedia :: Graphics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: pillow>=9.0.0
+Requires-Dist: uvicorn[standard]>=0.23.0
+Requires-Dist: aiofiles>=23.0.0
+Requires-Dist: python-multipart>=0.0.5
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: httpx>=0.24.0; extra == "dev"
+Dynamic: license-file
+
+# ImgDude
+
+[![PyPI version](https://badge.fury.io/py/imgdude.svg)](https://badge.fury.io/py/imgdude)
+[![Python Version](https://img.shields.io/pypi/pyversions/imgdude.svg)](https://pypi.org/project/imgdude/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A high-performance image resizing proxy for Nginx, built with FastAPI. ImgDude provides on-the-fly image resizing with efficient caching capabilities.
+
+## Features
+
+- Dynamic image resizing with aspect ratio preservation
+- Intelligent caching system for optimized performance
+- Seamless Nginx integration
+- Built on FastAPI with async I/O support
+- Simple URL-based resizing API
+- Comprehensive security measures
+- Performance optimizations for production use
+
+## Installation
+
+### PyPI
+
+```bash
+pip install imgdude
+```
+
+### Source
+
+```bash
+git clone https://github.com/ASafarzadeh/imgdude.git
+cd imgdude
+pip install -e .
+```
+
+## Usage
+
+### Basic Server
+
+```bash
+# Default configuration (127.0.0.1:12312)
+imgdude
+
+# Custom configuration
+imgdude --host 0.0.0.0 --port 8080 --media-root /path/to/images --cache-dir /path/to/cache
+```
+
+### Docker Deployment
+
+1. Build and run using Docker Compose:
+
+```bash
+# Update volume paths in docker-compose.yml
+docker-compose up -d
+```
+
+2. Or build and run manually:
+
+```bash
+# Build the image
+docker build -t imgdude .
+
+# Run the container
+docker run -d \
+  -p 12312:12312 \
+  -v /path/to/images:/app/media \
+  -v /path/to/cache:/app/cache \
+  imgdude
+```
+
+### Nginx Integration
+
+Add to your Nginx configuration:
+
+```nginx
+location /images/ {
+    proxy_pass http://127.0.0.1:12312/image/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_cache_valid 200 7d;
+    expires max;
+}
+```
+
+### Image Resizing
+
+Resize images by adding the width parameter:
+
+```
+http://yourdomain.com/images/path/to/image.jpg?w=300
+```
+
+## Configuration
+
+| Setting         | Environment Variable    | Default   | Description              |
+| --------------- | ----------------------- | --------- | ------------------------ |
+| Host            | -                       | 127.0.0.1 | Server host              |
+| Port            | -                       | 12312     | Server port              |
+| Media Root      | IMGDUDE_MEDIA_ROOT      | ./media   | Media directory          |
+| Cache Directory | IMGDUDE_CACHE_DIR       | ./cache   | Cache directory          |
+| Cache Max Age   | IMGDUDE_CACHE_MAX_AGE   | 604800    | Cache duration (seconds) |
+| Max Width       | IMGDUDE_MAX_WIDTH       | 2000      | Maximum image width      |
+| Trusted Hosts   | IMGDUDE_TRUSTED_HOSTS   | \*        | Allowed IP addresses     |
+| Image Workers   | IMGDUDE_IMAGE_WORKERS   | CPU-based | Image processing threads |
+| I/O Workers     | IMGDUDE_IO_WORKERS      | CPU-based | File I/O threads         |
+| Max Connections | IMGDUDE_MAX_CONNECTIONS | 100       | Concurrent connections   |
+| Workers         | IMGDUDE_WORKERS         | 1         | Uvicorn workers          |
+
+## API Reference
+
+- `GET /image/{path}` - Original image
+- `GET /image/{path}?w=WIDTH` - Resized image
+- `GET /cache/stats` - Cache statistics
+- `POST /cache/clean` - Clean expired cache
+- `GET /health` - Health check
+
+## Security
+
+- Trusted host verification
+- CORS protection
+- Path traversal prevention
+- File extension validation
+- Input parameter validation
+- Absolute path blocking
+
+## Performance
+
+- Smart resize skipping
+- Dedicated thread pools
+- Image optimization
+- Cache control headers
+- Size-based cache management
+- Performance monitoring
+
+## Development
+
+```bash
+# Setup
+git clone https://github.com/ASafarzadeh/imgdude.git
+cd imgdude
+python -m venv venv
+source venv/bin/activate
+pip install -e ".[dev]"
+
+# Testing
+pytest
+pytest --cov=imgdude
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
