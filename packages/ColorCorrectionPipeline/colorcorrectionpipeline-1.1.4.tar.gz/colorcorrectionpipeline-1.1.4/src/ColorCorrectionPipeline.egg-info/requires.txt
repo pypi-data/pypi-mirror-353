@@ -1,0 +1,16 @@
+opencv-python
+scikit-learn
+scipy
+numpy
+torch
+ultralytics
+scikit-image
+plotly
+matplotlib
+pandas
+glob2
+statsmodels
+seaborn
+pytest
+colour-science
+colour-checker-detection
