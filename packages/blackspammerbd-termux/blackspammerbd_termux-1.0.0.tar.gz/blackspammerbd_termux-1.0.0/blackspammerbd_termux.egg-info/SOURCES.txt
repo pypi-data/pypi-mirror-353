@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+blackspammerbd/__init__.py
+blackspammerbd/monitor.py
+blackspammerbd_termux.egg-info/PKG-INFO
+blackspammerbd_termux.egg-info/SOURCES.txt
+blackspammerbd_termux.egg-info/dependency_links.txt
+blackspammerbd_termux.egg-info/requires.txt
+blackspammerbd_termux.egg-info/top_level.txt
