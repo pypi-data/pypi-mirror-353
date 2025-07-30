@@ -1,0 +1,15 @@
+fwtv/__init__.py,sha256=I1qJysfWW1Hf-R20wdbITNEESdCUgamBTo92IugxIOo,22
+fwtv/main.py,sha256=AkHBXv0MtFATi0XPk--mcyGfF7sA54fW7LGNv_a5oPE,2629
+fwtv/verifier.py,sha256=LDYor8Aw2zTmjkKsgYJfqc-k_3RI6OiVzEUKfYZTiaw,5402
+fwtv/objects/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwtv/objects/async_converter.py,sha256=v0UtUzuGYBMaoG8qSirJilc2TJtf8FdDqErz0h2GaP8,2486
+fwtv/widgets/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwtv/widgets/login_widget.py,sha256=kfPnGyDHY9sgPxU6V9U7GnzSMlVh0Rm0dbXylJV2Pbw,1966
+fwtv/widgets/settings_widget.py,sha256=gaWnKmF28_-3LditssgX8VmNqEb3-HxsjiDzesm0D20,3024
+fwtv/widgets/table_widget.py,sha256=GM7beajX0jotG3-ywuBQn8QamQiiLKWFdqdE_BGjeLk,6127
+fwtv/widgets/working_time_widget.py,sha256=VUoE9fUSTJbzguWrKlDWJoNVQB_VuJbsYzpP4TKgqOY,6066
+fwtv-2.4.0.dist-info/METADATA,sha256=DdjFUH2WC0-dnj8ScfoqWLur2NTjVrO3_4jtrA6TZlU,2971
+fwtv-2.4.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fwtv-2.4.0.dist-info/entry_points.txt,sha256=E2MjzJ_42qOBqJ9GzK3DO3pMhYbKTNXPm6KDqdwcxO0,58
+fwtv-2.4.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+fwtv-2.4.0.dist-info/RECORD,,
