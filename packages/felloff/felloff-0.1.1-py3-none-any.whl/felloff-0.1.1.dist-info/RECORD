@@ -1,0 +1,9 @@
+felloff/__init__.py,sha256=vUNJA6YuDhTj1ZdL9ETpQqviTnpGRjU1mN4fasdKFPU,178
+felloff/cli.py,sha256=qiwJJeSgPuDLHsfIAJrelMwW7NFilIFp1E3zCKqGwX0,13505
+felloff/frontmatter.py,sha256=TR5DAS_SegRAlW2ycFXXEyf5CGTtmCP02LuUcW-V6Bc,2192
+felloff/reader.py,sha256=pm59gv-z3G6GiWDdbavOoCuUkMkc8CQ6Xpm_WleYeXk,4058
+felloff/writer.py,sha256=9m38kWfpEbD6X6rYyYm_ukJeRoJHwedBUlmLiDcL6BE,2609
+felloff-0.1.1.dist-info/METADATA,sha256=GO3WAtXOOPnbJSZ4n8liq5rRrWn0Vkw6mHSbZuATntI,9052
+felloff-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+felloff-0.1.1.dist-info/entry_points.txt,sha256=YcHQHhVchP6TQS-bXzMDLxz8U_DQr4XGnCIyt0RKtAU,44
+felloff-0.1.1.dist-info/RECORD,,
