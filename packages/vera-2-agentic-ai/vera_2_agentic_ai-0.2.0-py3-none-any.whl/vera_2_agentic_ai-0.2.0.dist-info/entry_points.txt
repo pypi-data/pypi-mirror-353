@@ -1,0 +1,3 @@
+[console_scripts]
+promptvibe=vera_2_agentic_ai.__main__:main
+
