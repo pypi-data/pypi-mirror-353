@@ -1,0 +1,8 @@
+README.md
+main.py
+pyproject.toml
+scaffold_ai.egg-info/PKG-INFO
+scaffold_ai.egg-info/SOURCES.txt
+scaffold_ai.egg-info/dependency_links.txt
+scaffold_ai.egg-info/requires.txt
+scaffold_ai.egg-info/top_level.txt
