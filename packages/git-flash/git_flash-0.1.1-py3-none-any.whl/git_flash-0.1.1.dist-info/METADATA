@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: git-flash
+Version: 0.1.1
+Summary: An AI assistant to handle git commits using FastMCP.
+Author-email: Alosh Denny <aloshdenny@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: fastmcp
+Requires-Dist: google-genai
+Requires-Dist: python-dotenv
+Requires-Dist: rich
+Requires-Dist: typer
