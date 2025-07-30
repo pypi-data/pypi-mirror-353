@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+pybookoo/__init__.py
+pybookoo/bookooscale.py
+pybookoo/const.py
+pybookoo/decode.py
+pybookoo/exceptions.py
+pybookoo/helpers.py
+pybookoo/py.typed
+pybookoo.egg-info/PKG-INFO
+pybookoo.egg-info/SOURCES.txt
+pybookoo.egg-info/dependency_links.txt
+pybookoo.egg-info/requires.txt
+pybookoo.egg-info/top_level.txt
+tests/test_decode.py
