@@ -1,0 +1,10 @@
+simple_vcs/__init__.py,sha256=ic-WO0wttRy6ILvZL1GdR0icHUmNNSoL6fvPjKG00tE,164
+simple_vcs/cli.py,sha256=YZCzSozCNNZGwVdER121cPhpLhJ6miCiSOiqYcfz664,1314
+simple_vcs/core.py,sha256=q4FF7s6y0PRU7cMfq9E32wMsR-jrHBo_8m5qj5heRnM,9771
+simple_vcs/utils.py,sha256=CTd4gDdHqP-dawjtEeKU3csnT-Fe7_SN9a5ENQlo7wk,1202
+simple_vcs-1.0.0.dist-info/licenses/LICENSE,sha256=6o_m1QgCywYf-QZnE6cuLTwu5kVVQn3vJ7JJUd0V_iY,1085
+simple_vcs-1.0.0.dist-info/METADATA,sha256=5tmnxoOajcwq4kXaAbunr1nGrXfjoPRn5V_sZnCN8Ws,5908
+simple_vcs-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+simple_vcs-1.0.0.dist-info/entry_points.txt,sha256=19JeWUvRFzwKF5p_iLQiSwCV3XTgxB7mkTLmFGrc_aY,45
+simple_vcs-1.0.0.dist-info/top_level.txt,sha256=YcaiuqQjjXFL-H62tfC-hTcg-7sWFmLh65zghskauL4,11
+simple_vcs-1.0.0.dist-info/RECORD,,
