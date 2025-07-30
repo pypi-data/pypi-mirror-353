@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+codeawac.egg-info/PKG-INFO
+codeawac.egg-info/SOURCES.txt
+codeawac.egg-info/dependency_links.txt
+codeawac.egg-info/entry_points.txt
+codeawac.egg-info/requires.txt
+codeawac.egg-info/top_level.txt

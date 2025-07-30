@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Build system
+# ---------------------------------------------------------------------------
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ---------------------------------------------------------------------------
+# Project metadata (PEP 621)
+# ---------------------------------------------------------------------------
+[project]
+name = "codeawac"
+version = "0.1.0"
+description = "Code Analysis Tool"
+
+readme = {file = "README.md", content-type = "text/markdown"}
+
+authors = [
+    {name = "Faycal Farhat", email = "faycal.farhat@mail.mcgill.ca"},
+]
+
+# Prefer a LICENSE file instead of an inline string. PyPI will surface it.
+license = {file = "LICENSE"}
+
+classifiers = [
+    "Development Status :: 3 - Alpha",                 # ← optional but helpful
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+requires-python = ">=3.8"
+
+# NOTE: pathlib is part of the standard library (≥ 3.4), so it was removed.
+dependencies = [
+    "pydantic",
+    "pydantic-settings",
+    "typer==0.7.0",
+    "click==8.1.3",
+    "structlog",
+    "openai",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[project.scripts]
+codeviz = "codeviz.cli:app"
+
+# ---------------------------------------------------------------------------
+# Tooling configuration
+# ---------------------------------------------------------------------------
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
