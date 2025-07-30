@@ -1,0 +1,12 @@
+geometry_calculator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+geometry_calculator/factory/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+geometry_calculator/factory/figure_factory.py,sha256=iGOMgRxGwYQMeIxdCc8EWB8Y52QaCBjmVrouFAmKnxw,1166
+geometry_calculator/figure/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+geometry_calculator/figure/circle.py,sha256=pl0mLQIvP0AH6Lfuz9zADzEcdueNPy_Ud0HR1eukt3Y,439
+geometry_calculator/figure/ifigure.py,sha256=gzObBt5ETAtHNsbxSG0HxsOvIC0XO-jDmcH4k-ORd7E,501
+geometry_calculator/figure/triangle.py,sha256=HujKjd05pj6TJBkBlXgLazMQ1-UR5i3MG_DSM_2XlzM,1057
+ruvik_geometry_calculator-1.0.0.dist-info/METADATA,sha256=zDI0xu2Oe8gBr6qUDVoBtbJDcc5BZWwevX1ePpIud2A,3129
+ruvik_geometry_calculator-1.0.0.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+ruvik_geometry_calculator-1.0.0.dist-info/tmptm0np2ml,sha256=aePiPhPT3b5O2BF8P63_7rv01zj_tprodawSpVymNxk,3123
+ruvik_geometry_calculator-1.0.0.dist-info/top_level.txt,sha256=zm8ffKOwKyhpD8lMBUayJ_xzUaiI9ixq0T_Xec4tP2o,20
+ruvik_geometry_calculator-1.0.0.dist-info/RECORD,,
