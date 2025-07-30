@@ -1,0 +1,2 @@
+[console_scripts]
+rongcloud-server-mcp-python = rongcloud_server_mcp:main
