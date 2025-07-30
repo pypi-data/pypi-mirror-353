@@ -1,0 +1,160 @@
+from ngsolve import (
+    BBND,
+    BND,
+    H1,
+    L2,
+    FacetFESpace,
+    Mesh,
+    dx,
+)
+from ngstrefftz import EmbeddedTrefftzFES, L2EmbTrefftzFESpace, TrefftzEmbedding
+
+from ngstSpaceKit import bubbles
+from ngstSpaceKit.trefftz_formulation import TrefftzFormulation
+
+
+def WeakH1(
+    mesh: Mesh,
+    order: int,
+    vertex_conforming: bool,
+    facet_conformity_order: int,
+    trefftz_formulation: TrefftzFormulation | None = None,
+    dirichlet: str = "",
+    dgjumps: bool = False,
+) -> L2EmbTrefftzFESpace:
+    """
+    The WeakH1 space
+    - is continuous on mesh vertices, if `vertex_conforming` is `True`
+    - is conforming up to polynomial degree `conformity_order` across facets
+
+    If there are dofs not occupied by the conformity constraints,
+    you can provide a Trefftz operator to make use of them.
+
+    # Raises
+    - `ValueError`, if `facet_conformity_order > order`
+    """
+    if order < facet_conformity_order:
+        raise ValueError(
+            "facet_conformity_order must not be greater than order"
+        )
+
+    return (
+        RelaxedFacetConforming(
+            mesh,
+            order,
+            facet_conformity_order,
+            trefftz_formulation,
+            dirichlet,
+            dgjumps,
+        )
+        if vertex_conforming
+        else RelaxedCGConformity(mesh, order, facet_conformity_order)
+    )
+
+
+def RelaxedCGConformity(
+    mesh: Mesh,
+    order: int,
+    facet_conformity_order: int,
+    trefftz_formulation: TrefftzFormulation | None = None,
+    dirichlet: str = "",
+    dgjumps: bool = False,
+) -> L2EmbTrefftzFESpace:
+    """
+    The RelaxedCGConformity space
+    is conforming up to polynomial degree `conformity_order` across facets.
+
+    If there are dofs not occupied by the conformity constraints,
+    you can provide a Trefftz operator to make use of them.
+    """
+    if (
+        facet_conformity_order == order - 1
+        and order % 2 == 0
+        or facet_conformity_order == order
+    ):
+        raise NotImplementedError(
+            f"The relaxed CG Conformity space is currently not implemented for order {order} with conformity_order {facet_conformity_order}"
+        )
+
+    fes = L2(mesh, order=order, dgjumps=dgjumps)
+
+    conformity_space = FacetFESpace(
+        mesh, order=facet_conformity_order, dirichlet=dirichlet
+    )
+
+    u = fes.TrialFunction()
+    uc, vc = conformity_space.TnT()
+
+    cop_l = u * vc * dx(element_vb=BND)
+    cop_r = uc * vc * dx(element_vb=BND)
+
+    if trefftz_formulation is not None:
+        eps = trefftz_formulation.trefftz_cutoff
+        top = trefftz_formulation.trefftz_op(fes)
+        trhs = trefftz_formulation.trefftz_rhs(fes)
+    else:
+        eps = 0.0
+        top = None
+        trhs = None
+
+    embedding = TrefftzEmbedding(
+        top=top, trhs=trhs, cop=cop_l, crhs=cop_r, eps=eps
+    )
+
+    rcg = EmbeddedTrefftzFES(embedding)
+    assert type(rcg) is L2EmbTrefftzFESpace, (
+        "The relaxed CG Conformity space should always be an L2EmbTrefftzFESpace"
+    )
+
+    return rcg
+
+
+def RelaxedFacetConforming(
+    mesh: Mesh,
+    order: int,
+    facet_conformity_order: int,
+    trefftz_formulation: TrefftzFormulation | None = None,
+    dirichlet: str = "",
+    dgjumps: bool = False,
+) -> L2EmbTrefftzFESpace:
+    """
+    The Relaxed Facet Conforming space
+    - is continuous on mesh vertices
+    - is conforming up to polynomial degree `conformity_order` across facets
+
+    If there are dofs not occupied by the conformity constraints,
+    you can provide a Trefftz operator to make use of them.
+    """
+    fes = L2(mesh, order=order, dgjumps=dgjumps)
+
+    conformity_space = H1(
+        mesh, order=1, dirichlet=dirichlet
+    ) * bubbles.EdgeBubble(mesh, facet_conformity_order, dirichlet=dirichlet)
+
+    u = fes.TrialFunction()
+    (uc, uc_e), (vc, vc_e) = conformity_space.TnT()
+
+    cop_l = u * vc * dx(element_vb=BBND)
+    cop_r = uc * vc * dx(element_vb=BBND)
+    cop_l += u * vc_e * dx(element_vb=BND)
+    cop_r += uc_e * vc_e * dx(element_vb=BND)
+
+    if trefftz_formulation is not None:
+        eps = trefftz_formulation.trefftz_cutoff
+        top = trefftz_formulation.trefftz_op(fes)
+        trhs = trefftz_formulation.trefftz_rhs(fes)
+    else:
+        eps = 0.0
+        top = None
+        trhs = None
+
+    embedding = TrefftzEmbedding(
+        top=top, trhs=trhs, cop=cop_l, crhs=cop_r, eps=eps
+    )
+
+    rfc = EmbeddedTrefftzFES(embedding)
+    assert type(rfc) is L2EmbTrefftzFESpace, (
+        "The Relaxed Facet Conforming space should always be an L2EmbTrefftzFESpace"
+    )
+
+    return rfc
