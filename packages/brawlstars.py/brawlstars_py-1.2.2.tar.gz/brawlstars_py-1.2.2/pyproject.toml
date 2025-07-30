@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "brawlstars.py"
+version = "1.2.2"
+description = "A basic API wrapper for Brawl Stars."
+authors = ["Ombucha <omkaar.nerurkar@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/Ombucha/brawlstars.py/"
+documentation = "https://brawlstars.readthedocs.io/"
+keywords = ["python", "brawl stars"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+packages = ["brawlstars"]
+
+[tool.poetry.dependencies]
+requests = "*"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Ombucha/brawlstars.py/issues"
