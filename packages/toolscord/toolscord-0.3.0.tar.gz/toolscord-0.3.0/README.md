@@ -1,0 +1,181 @@
+# ToolsCord
+
+A customizable terminal UI library with a centered banner and advanced logging features. ToolsCord provides colorful, styled terminal output with different log types, custom styling, and formatting options.
+
+## Features
+
+- Customizable ASCII art banner display with any text
+- Personal logger style with "{time} • {type} > message" format
+- Various log types with appropriate styling: info, success, warning, error, debug, etc.
+- Rich color palette with 70+ colors including basic ANSI, bright variants, and brand colors
+- Text styling with bold, italic, underline, and more
+- Advanced text coloring with rainbow and gradient effects
+- Customizable bullet styles between time and type
+- Timestamps on log messages
+- Divider lines
+
+## Installation
+
+You can install ToolsCord directly from PyPI:
+
+```bash
+pip install toolscord
+```
+
+## Usage
+
+### Basic Usage
+
+```python
+from toolscord import Logger, display_banner, ToolsCordColors
+
+# Display the default "TOOLS CORD" banner
+display_banner()
+
+# Create a logger instance
+logger = Logger()
+
+# Use different log types
+logger.info("This is an information message")
+logger.success("Operation completed successfully")
+logger.warning("This is a warning message")
+logger.error("An error occurred")
+```
+
+### Customizing the Banner
+
+```python
+from toolscord import display_banner, ToolsCordColors
+
+# Display the banner with custom text
+display_banner("Hello World!")
+
+# Display the banner with different base colors
+display_banner("PYTHON", base_color=ToolsCordColors.TWITTERBLUE)
+
+# Display the banner with both custom text and colors
+display_banner("GITHUB", base_color=ToolsCordColors.GITHUB_PURPLE)
+
+# Use the original TOOLSCORD banner (for backward compatibility)
+from toolscord import display_toolscord_banner
+display_toolscord_banner()
+```
+
+### Colored Text
+
+```python
+from toolscord import red, green, blue, bold, rainbow, gradient
+
+# Simple color functions
+print(red("This text is red"))
+print(green("This text is green"))
+print(bold("This text is bold"))
+
+# Special effects
+print(rainbow("This text has rainbow colors"))
+print(gradient("This text has a gradient", (255,0,0), (0,0,255)))  # Red to blue gradient
+
+# Direct printing functions
+from toolscord import print_success, print_error, print_rainbow
+print_success("Operation completed!")
+print_error("Something went wrong")
+print_rainbow("ToolsCord is awesome! github.com/bhaskarsaikia-17")
+```
+
+### Customizing the Output
+
+```python
+# Create a logger without timestamps
+logger = Logger(show_time=False)
+
+# Use formatting options
+logger.log("Bold text", bold=True)
+logger.log("Underlined text", underline=True)
+logger.log("Custom color", color=ToolsCordColors.PINK)
+logger.log("Twitter Blue color", color=ToolsCordColors.TWITTERBLUE)
+
+# Print a divider
+logger.divider("=", 60, ToolsCordColors.CYAN)
+```
+
+### Logger Usage
+
+```python
+from toolscord import Logger, ToolsCordColors
+
+# Create a logger with default settings
+logger = Logger()
+
+# Basic log types
+logger.info("This is an information message")     # {time} • INFO > This is an information message
+logger.warning("This is a warning message")       # {time} • WARN > This is a warning message
+logger.error("An error occurred")                 # {time} • ERROR > An error occurred
+logger.success("Operation completed")             # {time} • SUCCESS > Operation completed
+
+# Custom bullet style
+logger = Logger(bullet_style="→")
+logger.info("Using arrow bullet style")           # {time} → INFO > Using arrow bullet style
+
+# Try other bullet styles
+logger = Logger(bullet_style="⌁")                 # Zigzag
+logger = Logger(bullet_style="⨠")                 # Square donut
+logger = Logger(bullet_style="‣")                 # Triangle 
+logger = Logger(bullet_style="⁕")                 # Flower
+logger = Logger(bullet_style="⁙")                 # Dot pattern
+
+# Without timestamp
+logger = Logger(show_time=False)
+logger.info("No timestamp shown")                 # INFO > No timestamp shown
+```
+
+### Available Colors
+
+ToolsCord provides a comprehensive range of colors:
+
+```python
+from toolscord import ToolsCordColors
+
+# Basic colors
+ToolsCordColors.BLACK
+ToolsCordColors.RED
+ToolsCordColors.GREEN
+ToolsCordColors.YELLOW
+ToolsCordColors.BLUE
+ToolsCordColors.MAGENTA
+ToolsCordColors.CYAN
+ToolsCordColors.WHITE
+
+# Bright colors
+ToolsCordColors.BRIGHT_RED
+ToolsCordColors.BRIGHT_GREEN
+# ... and more
+
+# Brand colors
+ToolsCordColors.GITHUB_PURPLE
+ToolsCordColors.TWITTERBLUE
+ToolsCordColors.DISCORD_BLURPLE
+ToolsCordColors.SPOTIFY_GREEN
+# ... and more
+
+# Special colors
+ToolsCordColors.ORANGE
+ToolsCordColors.TEAL
+ToolsCordColors.GOLD
+# ... and more
+```
+
+## Example
+
+See `example.py` and `color_demo.py` for a complete demonstration of ToolsCord's features.
+
+## Requirements
+
+- Python 3.6+
+
+## License
+
+MIT
+
+## GitHub
+
+https://github.com/bhaskarsaikia-17/toolscord
