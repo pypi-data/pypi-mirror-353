@@ -1,0 +1,433 @@
+{% extends "base.html" %}
+
+{% block title %}Chat - Llamaball{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="h2">
+            <i class="bi bi-chat-fill text-primary"></i>
+            Chat with Your Documents
+        </h1>
+        <p class="text-muted">
+            Ask questions about your documents using natural language. 
+            Database contains {{ stats.documents }} documents with {{ stats.embeddings }} embeddings.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Chat Interface -->
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-chat-dots"></i> Conversation
+                </h5>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-warning" onclick="clearChat()">
+                        <i class="bi bi-trash"></i> Clear
+                    </button>
+                    <button class="btn btn-sm btn-outline-info" onclick="exportChat()">
+                        <i class="bi bi-download"></i> Export
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div id="chatContainer" class="chat-container">
+                    <div class="message assistant">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-robot text-primary me-2 mt-1"></i>
+                            <div>
+                                <strong>Llamaball Assistant</strong>
+                                <p class="mb-0 mt-1">
+                                    Hello! I'm ready to help you explore your documents. 
+                                    Ask me anything about the content in your knowledge base.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <form id="chatForm" class="d-flex gap-2">
+                    <input type="text" 
+                           id="messageInput" 
+                           class="form-control" 
+                           placeholder="Ask a question about your documents..."
+                           autocomplete="off">
+                    <button type="submit" class="btn btn-primary" id="sendButton">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Settings Panel -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-gear"></i> Chat Settings
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="modelSelect" class="form-label">Chat Model</label>
+                    <select id="modelSelect" class="form-select">
+                        <option value="{{ default_model }}">{{ default_model }}</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="topKRange" class="form-label">
+                        Documents to Retrieve: <span id="topKValue">3</span>
+                    </label>
+                    <input type="range" 
+                           id="topKRange" 
+                           class="form-range" 
+                           min="1" 
+                           max="10" 
+                           value="3">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="temperatureRange" class="form-label">
+                        Temperature: <span id="temperatureValue">0.7</span>
+                    </label>
+                    <input type="range" 
+                           id="temperatureRange" 
+                           class="form-range" 
+                           min="0" 
+                           max="2" 
+                           step="0.1" 
+                           value="0.7">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="maxTokensRange" class="form-label">
+                        Max Tokens: <span id="maxTokensValue">512</span>
+                    </label>
+                    <input type="range" 
+                           id="maxTokensRange" 
+                           class="form-range" 
+                           min="100" 
+                           max="2048" 
+                           step="50" 
+                           value="512">
+                </div>
+                
+                <hr>
+                
+                <div class="mb-3">
+                    <h6><i class="bi bi-info-circle"></i> Session Info</h6>
+                    <small class="text-muted">
+                        Session ID: <code>{{ session_id }}</code><br>
+                        Messages: <span id="messageCount">0</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="bi bi-lightning"></i> Quick Actions
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-primary btn-sm" onclick="askSample('What are the main topics in my documents?')">
+                        <i class="bi bi-question-circle"></i> Main Topics
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm" onclick="askSample('Summarize the key findings')">
+                        <i class="bi bi-file-text"></i> Key Findings
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm" onclick="askSample('What are the most important concepts?')">
+                        <i class="bi bi-lightbulb"></i> Key Concepts
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm" onclick="askSample('Show me code examples')">
+                        <i class="bi bi-code"></i> Code Examples
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let messageCount = 0;
+    let isWaiting = false;
+    
+    // DOM elements
+    const chatContainer = document.getElementById('chatContainer');
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const chatForm = document.getElementById('chatForm');
+    
+    // Settings elements
+    const modelSelect = document.getElementById('modelSelect');
+    const topKRange = document.getElementById('topKRange');
+    const temperatureRange = document.getElementById('temperatureRange');
+    const maxTokensRange = document.getElementById('maxTokensRange');
+    
+    // Value display elements
+    const topKValue = document.getElementById('topKValue');
+    const temperatureValue = document.getElementById('temperatureValue');
+    const maxTokensValue = document.getElementById('maxTokensValue');
+    const messageCountEl = document.getElementById('messageCount');
+    
+    // Load available models
+    fetch('/api/models')
+        .then(response => response.json())
+        .then(data => {
+            modelSelect.innerHTML = '';
+            data.models.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model.name;
+                option.textContent = model.name;
+                if (model.name === '{{ default_model }}') {
+                    option.selected = true;
+                }
+                modelSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Failed to load models:', error));
+    
+    // Update range value displays
+    topKRange.addEventListener('input', () => {
+        topKValue.textContent = topKRange.value;
+    });
+    
+    temperatureRange.addEventListener('input', () => {
+        temperatureValue.textContent = temperatureRange.value;
+    });
+    
+    maxTokensRange.addEventListener('input', () => {
+        maxTokensValue.textContent = maxTokensRange.value;
+    });
+    
+    // Chat form submission
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const message = messageInput.value.trim();
+        if (!message || isWaiting) return;
+        
+        await sendMessage(message);
+    });
+    
+    // Send message function
+    async function sendMessage(message) {
+        if (isWaiting) return;
+        
+        isWaiting = true;
+        messageInput.value = '';
+        updateSendButton(true);
+        
+        // Add user message to chat
+        addMessage(message, 'user');
+        
+        // Add loading message
+        const loadingId = addLoadingMessage();
+        
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    session_id: '{{ session_id }}',
+                    model: modelSelect.value,
+                    top_k: parseInt(topKRange.value),
+                    temperature: parseFloat(temperatureRange.value),
+                    max_tokens: parseInt(maxTokensRange.value)
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            
+            // Remove loading message
+            removeLoadingMessage(loadingId);
+            
+            // Add assistant response
+            addMessage(data.response, 'assistant');
+            
+        } catch (error) {
+            console.error('Chat error:', error);
+            removeLoadingMessage(loadingId);
+            addMessage(`Error: ${error.message}`, 'assistant', true);
+        } finally {
+            isWaiting = false;
+            updateSendButton(false);
+            messageInput.focus();
+        }
+    }
+    
+    // Add message to chat
+    function addMessage(content, role, isError = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${role}`;
+        
+        if (role === 'user') {
+            messageDiv.innerHTML = `
+                <div class="d-flex align-items-start justify-content-end">
+                    <div class="text-end">
+                        <strong>You</strong>
+                        <p class="mb-0 mt-1">${escapeHtml(content)}</p>
+                    </div>
+                    <i class="bi bi-person-fill text-white ms-2 mt-1"></i>
+                </div>
+            `;
+        } else {
+            const iconClass = isError ? 'bi-exclamation-triangle text-danger' : 'bi-robot text-primary';
+            const nameClass = isError ? 'text-danger' : '';
+            const name = isError ? 'Error' : 'Llamaball Assistant';
+            
+            messageDiv.innerHTML = `
+                <div class="d-flex align-items-start">
+                    <i class="${iconClass} me-2 mt-1"></i>
+                    <div>
+                        <strong class="${nameClass}">${name}</strong>
+                        <div class="mb-0 mt-1">${content}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        chatContainer.appendChild(messageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+        
+        messageCount++;
+        messageCountEl.textContent = messageCount;
+    }
+    
+    // Add loading message
+    function addLoadingMessage() {
+        const loadingId = 'loading-' + Date.now();
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message assistant';
+        messageDiv.id = loadingId;
+        messageDiv.innerHTML = `
+            <div class="d-flex align-items-start">
+                <i class="bi bi-robot text-primary me-2 mt-1"></i>
+                <div>
+                    <strong>Llamaball Assistant</strong>
+                    <p class="mb-0 mt-1">
+                        <span class="loading"></span> Thinking...
+                    </p>
+                </div>
+            </div>
+        `;
+        
+        chatContainer.appendChild(messageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+        
+        return loadingId;
+    }
+    
+    // Remove loading message
+    function removeLoadingMessage(loadingId) {
+        const loadingEl = document.getElementById(loadingId);
+        if (loadingEl) {
+            loadingEl.remove();
+        }
+    }
+    
+    // Update send button state
+    function updateSendButton(loading) {
+        if (loading) {
+            sendButton.innerHTML = '<span class="loading"></span>';
+            sendButton.disabled = true;
+        } else {
+            sendButton.innerHTML = '<i class="bi bi-send"></i>';
+            sendButton.disabled = false;
+        }
+    }
+    
+    // Utility functions
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    // Quick action functions
+    function askSample(question) {
+        messageInput.value = question;
+        messageInput.focus();
+    }
+    
+    function clearChat() {
+        if (confirm('Are you sure you want to clear the chat history?')) {
+            const messages = chatContainer.querySelectorAll('.message:not(:first-child)');
+            messages.forEach(msg => msg.remove());
+            messageCount = 0;
+            messageCountEl.textContent = messageCount;
+            showAlert('Chat history cleared', 'success');
+        }
+    }
+    
+    function exportChat() {
+        const messages = Array.from(chatContainer.querySelectorAll('.message')).map(msg => {
+            const isUser = msg.classList.contains('user');
+            const content = msg.querySelector('p, div:last-child').textContent.trim();
+            return {
+                role: isUser ? 'user' : 'assistant',
+                content: content,
+                timestamp: new Date().toISOString()
+            };
+        });
+        
+        const exportData = {
+            session_id: '{{ session_id }}',
+            messages: messages,
+            settings: {
+                model: modelSelect.value,
+                top_k: parseInt(topKRange.value),
+                temperature: parseFloat(temperatureRange.value),
+                max_tokens: parseInt(maxTokensRange.value)
+            },
+            exported_at: new Date().toISOString()
+        };
+        
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+            type: 'application/json'
+        });
+        
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `llamaball-chat-${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        showAlert('Chat exported successfully', 'success');
+    }
+    
+    // Focus on input when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        messageInput.focus();
+    });
+    
+    // Handle Enter key in input
+    messageInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            chatForm.dispatchEvent(new Event('submit'));
+        }
+    });
+</script>
+{% endblock %} 
