@@ -1,0 +1,13 @@
+memoryos/__init__.py,sha256=LaMyUHM7J5KY4HJWWnDXu6dOnWXsObksfGqNANzvdIc,55
+memoryos/long_term.py,sha256=MF_mNVaeVIrQjUJrJQOyBDXhMMFD4DWp8VVCBfbgHR0,7529
+memoryos/memoryos.py,sha256=1Yd1uVg2JnZJCWvigARKdau9wRYypNZXcDeRu6Lowjg,15779
+memoryos/mid_term.py,sha256=5mnquqJ0jD2fpxSKlhiYjPOtARe7gyVDHvJpYMfnvMU,16292
+memoryos/prompts.py,sha256=dRXBTNVfbu6Rzo0R_X9fvXpergcI3UtMK4OhFwg1Ecc,12948
+memoryos/retriever.py,sha256=C5i-7aJH5846WugIE9T8dz0hszIX6ST6waj8NqKff_g,6514
+memoryos/short_term.py,sha256=gDi0k2S4zMqH3Xxv35AFEGaKkg9KVLGUBucxUojTThw,2510
+memoryos/updater.py,sha256=mGqEgM0aQs40wTnZvNLNYdHQnP--gh9XmCuHiZqkGK4,11078
+memoryos/utils.py,sha256=EsjEJBfylDmZ24pTYxz3udMfTazFBfhLeGJMBb9sOFU,10423
+memoryos_baijia-0.1.0.dist-info/METADATA,sha256=5bkHAYT3CdcOT1487Zoqinu_GabJSt_QDzTYcXDRmAI,4185
+memoryos_baijia-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+memoryos_baijia-0.1.0.dist-info/top_level.txt,sha256=DQsBYhKPVDcTbN7KnuuKpLGlaAqe4BIMCe1n1fs3d_M,9
+memoryos_baijia-0.1.0.dist-info/RECORD,,
