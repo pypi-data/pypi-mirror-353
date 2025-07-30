@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: llm-fragments-sourcehut
+Version: 0.1
+Summary: Load SourceHut repository contents as LLM fragments
+Author: Amolith
+License-Expression: Apache-2.0
+Project-URL: Homepage, https://git.sr.ht/amolith/llm-fragments-sourcehut
+Project-URL: Changelog, https://git.sr.ht/amolith/llm-fragments-sourcehut/refs
+Project-URL: Issues, https://todo.sr.ht/~amolith/public-tracker
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: llm
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
