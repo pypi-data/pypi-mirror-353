@@ -1,0 +1,14 @@
+watchdog
+sentence-transformers
+transformers
+lancedb
+python-dotenv
+pydantic
+tiktoken
+pathspec
+mcp[cli]
+
+[dev]
+pytest
+pytest-asyncio
+ruff
