@@ -1,0 +1,84 @@
+name: Update JSON API (recurring job)
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch:
+
+jobs:
+  update-api:
+    defaults:
+      run:
+        shell: bash -l {0}
+    runs-on: ubuntu-latest
+    # Only the upstream repo runs the automatic API update
+    if: |
+      !github.event.repository.fork || github.event_name == 'workflow_dispatch'
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        python-version: "3.11"
+        mamba-version: "*"
+        channels: conda-forge,alchem0x2a,defaults
+        channel-priority: true
+        activate-environment: sparc-api-test
+    - name: Install package
+      run: |
+        pip install -e ".[test]"
+    - name: Generate json api from github master
+      run: |
+        python -m sparc.docparser --git --include-subdirs
+    - name: Env variable for api version
+      run: |
+        python -c "from sparc.api import SparcAPI; import os; ver=SparcAPI('parameters.json').sparc_version; os.system(f'echo API_VERSION={ver} >> $GITHUB_ENV')"
+    - name: Test if json api is newer than current
+      id: probe
+      run: |
+        # exit 0 --> no version change
+        if python .github/workflows/api_version_probe.py; then
+           echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
+        else
+           echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
+        fi
+        echo UPDATE_NEEDED is "${UPDATE_NEEDED}"
+        echo API version is "${API_VERSION}"
+      continue-on-error: true
+    - name: Create or Update Pull Request
+      # Manually disable to make sure it can rerun
+      if: env.UPDATE_NEEDED == 'true'
+      uses: peter-evans/create-pull-request@v7
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: |
+          Update JSON API to version ${{ env.API_VERSION }}
+
+          The commit is created by a scheduled CI job.
+          ""
+        branch: update-api-${{ env.API_VERSION }}
+        title: "[Automated] Update JSON API to version ${{ env.API_VERSION }}"
+        body: |
+          ## Automated JSON API Update
+
+          Hello! This is an automatic pull request to merge the new JSON API to version **${{ env.API_VERSION }}**.
+
+          ### Details
+          - **Workflow Trigger:** Update JSON API (recurring job).
+          - **Reason for Update:** A new JSON schema version was generated that differs from the existing one in the repository.
+
+          ### Notes
+          - If you notice any issues or have questions regarding this update, please reach out to the maintainers.
+
+          # Eliminate unnecessary PRs if not closed
+          delete-branch: true
+          # Prevent PRs on forks
+          base: master
+        delete-branch: true
+        base: master

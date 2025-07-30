@@ -1,0 +1,40 @@
+{% set name = "SPARC-X-API" %}
+{% set version = "1.0.0" %}
+{% set file_ext = "tar.gz" %}
+{% set readme = load_file_regex(load_file="README.md", regex_pattern=".*")[0] %}
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  path: ../
+
+build:
+  noarch: python
+  # Install and include the psp files
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv && cd .. && {{ PYTHON }} -m sparc.download_data"
+  entry_points:
+    - "sparc-ase = sparc.cli:main"
+
+
+requirements:
+  host:
+    - "python>=3.8"
+    - pip
+  run:
+    - "python>=3.8"
+    - "ase>=3.22"
+
+about:
+  home: https://github.com/SPARC-X/{{ name }}
+  license: GNU General Public License v3.0
+  license_family: GPL3
+  license_file: LICENSE
+  summary: A Python API for the SPARC DFT Code
+  description: {{ readme }}
+  doc_url: https://github.com/SPARC-X/{{ name }}/blob/master/README.md
+  dev_url: https://github.com/SPARC-X/{{ name }}
+
+extra:
+  recipe-maintainers: Tian Tian (alchem0x2a@gmail.com)

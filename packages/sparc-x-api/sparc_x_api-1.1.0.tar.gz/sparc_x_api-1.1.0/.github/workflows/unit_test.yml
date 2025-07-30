@@ -1,0 +1,165 @@
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  test-linux:
+    defaults:
+      run:
+        shell: bash -l {0}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.10"
+        mamba-version: "*"
+        channels: conda-forge,defaults
+        channel-priority: true
+        activate-environment: sparc-api-test
+    - name: Install dependencies
+      run: |
+        mamba install -c conda-forge sparc-x
+    - name: Install package
+      run: |
+        pip install -e ".[test]"
+        # Download the external psp data
+        python -m sparc.download_data
+    - name: Lint with flake8
+      run: |
+        echo $CONDA_PREFIX
+        conda info
+        flake8 sparc/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 sparc/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest (without all SPARC examples)
+      run: |
+        export ASE_SPARC_COMMAND="mpirun -n 1 sparc"
+        # Do not use default SPARC doc
+        unset SPARC_DOC_PATH
+        # Run a quicktest
+        python -m sparc.quicktest
+        coverage run -a -m pytest -svv tests/
+        coverage json --omit="tests/*.py"
+        coverage html --omit="tests/*.py"
+        COVERAGE=`cat coverage.json | jq .totals.percent_covered | xargs printf '%.*f' 0`
+        echo "Current coverage is $COVERAGE"
+        echo "COVPERCENT=$COVERAGE" >> $GITHUB_ENV
+    - name: SPARC API version
+      run: |
+        python -c "from sparc.api import SparcAPI; import os; ver=SparcAPI().sparc_version; os.system(f'echo API_VERSION={ver} >> $GITHUB_ENV')"
+    - name: Create badges
+      run: |
+        mkdir -p badges/
+        # A coverage test badge
+        anybadge --value="${COVPERCENT}%" --file=badges/coverage.svg -m "%s" -l "Test Coverage"
+        # A version badge
+        PIPVER=`pip show sparc-x-api | grep Version | cut -d ' ' -f2`
+        anybadge --value=$PIPVER --file=badges/package.svg -l sparc-x-api
+        # api version badge
+        anybadge --value=${API_VERSION} --file=badges/api_version.svg -l "JSON schema version"
+    - name: Manually add git badges and .coverage file
+      run: |
+        # Assuming a badges branch already exists!
+        rm -rf /tmp/*.svg && cp badges/*.svg /tmp/
+        rm -rf /tmp/.coverage && mv .coverage /tmp/
+        git fetch
+        git switch badges || { echo "Could not check out badges branch. Have you created it on remote?"; exit 1; }
+        git pull
+        cp /tmp/*.svg badges/ && git add -f badges/*.svg && rm -rf /tmp/*.svg
+        cp /tmp/.coverage ./ && git add -f .coverage && rm -rf /tmp/.coverage
+        git config --global user.email "alchem0x2a@gmail.com"
+        git config --global user.name "Github Action Bot (badges only)"
+        git commit -m "Update badges and coverge file from run ${RID}" || true
+        git push -u origin badges || true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RID: ${{ github.run_id }}
+
+  parse-sparc-official-examples:
+    defaults:
+      run:
+        shell: bash -l {0}
+    runs-on: ubuntu-latest
+    needs: test-linux
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.10"
+        mamba-version: "*"
+        channels: conda-forge,defaults
+        channel-priority: true
+        activate-environment: sparc-api-test
+    - name: Install dependencies
+      run: |
+        mamba install -c conda-forge sparc-x
+    - name: Install package
+      run: |
+        pip install -e ".[test]"
+        # Download the external psp data
+        python -m sparc.download_data
+    - name: Download SPARC output files to SPARC-master
+      run: |
+        wget https://github.com/SPARC-X/SPARC/archive/refs/heads/master.zip
+        unzip master.zip
+    - name: Test with pytest on official examples
+      run: |
+        export SPARC_TESTS_DIR="./SPARC-master/tests"
+        export ASE_SPARC_COMMAND="mpirun -n 1 sparc"
+        export SPARC_DOC_PATH="./SPARC-master/doc/.LaTeX"
+        python -m pytest -svv tests/test_read_all_examples.py
+
+  test-socket:
+    defaults:
+      run:
+        shell: bash -l {0}
+    runs-on: ubuntu-latest
+    needs: test-linux
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.11"
+        mamba-version: "*"
+        channels: conda-forge,defaults
+        channel-priority: true
+        activate-environment: sparc-api-test
+    - name: Install dependencies
+      run: |
+        mamba install -c conda-forge make compilers openmpi fftw scalapack openblas
+    - name: Install package
+      run: |
+        pip install -e ".[test]"
+        # Download the external psp data
+        python -m sparc.download_data
+    - name: Download SPARC output files to SPARC-master
+      run: |
+        # Use latest SPARC public code with socket support
+        HASH=99e4b7e94ca6f7b4ca1dde9135bea4075b0678f4
+        wget -O SPARC-socket.zip https://codeload.github.com/SPARC-X/SPARC/zip/$HASH
+        unzip SPARC-socket.zip && rm -rf SPARC-socket.zip
+        mv SPARC-$HASH SPARC-socket
+    - name: Compile SPARC with socket
+      run: |
+        cd SPARC-socket/src
+        make clean
+        make -j2 USE_SOCKET=1 USE_MKL=0 USE_SCALAPACK=1 DEBUG_MODE=1
+        ls ../lib
+    - name: Test with pytest
+      run: |
+        ls ./SPARC-socket/lib/sparc
+        PWD=$(pwd)
+        #export SPARC_TESTS_DIR="${PWD}/SPARC-socket/tests"
+        export ASE_SPARC_COMMAND="mpirun -n 1 ${PWD}/SPARC-socket/lib/sparc"
+        export SPARC_DOC_PATH="${PWD}/SPARC-socket/doc/.LaTeX"
+        python -m pytest -svv tests/test_socket.py
