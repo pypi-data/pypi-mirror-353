@@ -1,0 +1,11 @@
+aplotly/__init__.py,sha256=Hy_rP06C0kwOpQtmRboEX2tvSgJs69W7QPwkViZtdQY,237
+aplotly/colors.py,sha256=hiCn0MmRfTTaT5uiw_fbTdcOYr5-ndd-nXEveGt2SmE,4903
+aplotly/io.py,sha256=8TwewF-CkwuKjG2itcEW4eAMx6toCOf0Vb6thTWktH8,2715
+aplotly/plots.py,sha256=fiHlYmzThEHAQUpE-nSTnwVBQbKDPtvp9t9PZbIO2ls,45106
+aplotly/style.py,sha256=7vTFj0TGkZrkVXXo73uHhitHzmxrpTrhLrtrBOpfw4U,2532
+aplotly/utils/return_breakdown.py,sha256=kersRh1Gew-9KT-teFxBnYoAqg3ftOa-C4xbCTUhddg,1393
+aplotly-1.1.25.dist-info/licenses/LICENSE,sha256=WvwiBQtt_VVnf6szbVDxrAuRc6U6TLa7mbnvJSWzMGw,1036
+aplotly-1.1.25.dist-info/METADATA,sha256=d3B-MS8lF9A-1_uYDPlDCPG0lTTC6YQ6agUgPGb-EpQ,2058
+aplotly-1.1.25.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aplotly-1.1.25.dist-info/top_level.txt,sha256=uzdEaj4hRx8QOxDJArdlqQCP5Z1GbuuNx8anMgU3FlI,8
+aplotly-1.1.25.dist-info/RECORD,,
