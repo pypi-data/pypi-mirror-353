@@ -1,0 +1,2 @@
+[console_scripts]
+prometheus-ad-cli = cli:main
