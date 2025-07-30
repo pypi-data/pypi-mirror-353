@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: pae-toolkit
+Version: 0.0.2
+Summary: PAE toolkit
+Author-email: Yanguan02 <yanguan_02@126.com>
+Requires-Python: >=3.11
+Requires-Dist: evalscope[perf]>=0.16.0
+Requires-Dist: modelscope>=1.26.0
+Requires-Dist: msprechecker>=0.0.1
+Requires-Dist: pydantic>=2.11.5
+Requires-Dist: pytest>=8.4.0
+Requires-Dist: typer>=0.16.0
+Description-Content-Type: text/markdown
+
+# PAE toolkit
+
+## Install
+
+
+```bash
+pip install pae-toolkit -i https://pypi.org/simple
+```
+
+
+## Usage
+
+- `pae_toolkit check-mindie-high-preformance-env`
