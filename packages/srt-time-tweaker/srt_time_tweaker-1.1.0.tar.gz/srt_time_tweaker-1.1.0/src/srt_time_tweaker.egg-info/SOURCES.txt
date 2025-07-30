@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/srt_time_tweaker/__init__.py
+src/srt_time_tweaker/__main__.py
+src/srt_time_tweaker/get_timings.py
+src/srt_time_tweaker/srt_time_tweaker.py
+src/srt_time_tweaker/valid_timings_line.py
+src/srt_time_tweaker.egg-info/PKG-INFO
+src/srt_time_tweaker.egg-info/SOURCES.txt
+src/srt_time_tweaker.egg-info/dependency_links.txt
+src/srt_time_tweaker.egg-info/entry_points.txt
+src/srt_time_tweaker.egg-info/top_level.txt

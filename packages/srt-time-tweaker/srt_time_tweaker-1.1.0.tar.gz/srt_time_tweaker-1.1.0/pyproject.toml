@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "srt-time-tweaker"
+version = "1.1.0"
+description = "A no-frills solution for fixing subtitle synchronization issues in SRT (SubRip Subtitle) files by precisely shifting all subtitle timestamps forward or backward using configurable time delays."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "Apache License Version 2.0" }
+authors = [
+  { name = "भाग्य ज्योति (Bhagya Jyoti)" }
+]
+keywords = [ "srt", "time-tweaker", "time-tweak", "time-shift", "subtitle", "video", "audio", "sync", "delay", "subtitle-edit", "srt-editor", "cli" ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Sound/Audio",
+	"Topic :: Utilities",
+    "Development Status :: 5 - Production/Stable"
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/BhagyaJyoti22006/srt-time-tweaker"
+"Repository" = "https://github.com/BhagyaJyoti22006/srt-time-tweaker"
+"Issues" = "https://github.com/BhagyaJyoti22006/srt-time-tweaker/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.scripts]
+srt-time-tweaker = "srt_time_tweaker.__main__:main"
+
