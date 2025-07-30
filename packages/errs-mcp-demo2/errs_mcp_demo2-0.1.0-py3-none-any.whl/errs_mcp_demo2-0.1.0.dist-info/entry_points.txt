@@ -1,0 +1,2 @@
+[console_scripts]
+errs-mcp-demo2 = errs_mcp_demo2:main
