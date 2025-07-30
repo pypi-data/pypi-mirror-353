@@ -1,0 +1,6 @@
+openai
+numpy
+sentence-transformers
+faiss-gpu
+Flask
+httpx[socks]

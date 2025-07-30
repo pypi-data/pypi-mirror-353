@@ -1,0 +1,30 @@
+# 包含必要的项目文件
+include README.md
+include LICENSE
+include pyproject.toml
+include setup.py
+
+# 包含 memoryos 包的所有 Python 文件
+recursive-include memoryos *.py
+
+# 排除 demo 和测试相关文件
+recursive-exclude memdemo *
+recursive-exclude tests *
+recursive-exclude examples *
+exclude memdemo
+exclude tests
+exclude examples
+
+# 排除缓存和临时文件
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude * *.swp
+recursive-exclude * *.swo
+
+# 排除开发配置文件
+exclude .gitignore
+exclude .git*
+exclude tox.ini
+exclude .coverage
+exclude .pytest_cache 
