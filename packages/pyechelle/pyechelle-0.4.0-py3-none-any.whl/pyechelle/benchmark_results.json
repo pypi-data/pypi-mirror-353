@@ -1,0 +1,182 @@
+{
+    "run_1": {
+        "cpu": 1,
+        "exp.time": 0.01,
+        "duration": 0.4930000305175781,
+        "nphot": 94292
+    },
+    "run_2": {
+        "cpu": 1,
+        "exp.time": 0.1,
+        "duration": 0.9615087509155273,
+        "nphot": 942940
+    },
+    "run_3": {
+        "cpu": 1,
+        "exp.time": 1.0,
+        "duration": 5.073032855987549,
+        "nphot": 9429432
+    },
+    "run_4": {
+        "cpu": 1,
+        "exp.time": 10,
+        "duration": 33.68716835975647,
+        "nphot": 94294368
+    },
+    "run_5": {
+        "cpu": 1,
+        "exp.time": 30,
+        "duration": 112.08867001533508,
+        "nphot": 282883108
+    },
+    "run_6": {
+        "cpu": 1,
+        "exp.time": 60,
+        "duration": 267.4017434120178,
+        "nphot": 565766219
+    },
+    "run_7": {
+        "cpu": 2,
+        "exp.time": 0.01,
+        "duration": 4.708230018615723,
+        "nphot": 94292
+    },
+    "run_8": {
+        "cpu": 2,
+        "exp.time": 0.1,
+        "duration": 1.8385460376739502,
+        "nphot": 942940
+    },
+    "run_9": {
+        "cpu": 2,
+        "exp.time": 1.0,
+        "duration": 3.0865731239318848,
+        "nphot": 9429432
+    },
+    "run_10": {
+        "cpu": 2,
+        "exp.time": 10,
+        "duration": 17.62809920310974,
+        "nphot": 94294368
+    },
+    "run_11": {
+        "cpu": 2,
+        "exp.time": 30,
+        "duration": 50.64121961593628,
+        "nphot": 282883108
+    },
+    "run_12": {
+        "cpu": 2,
+        "exp.time": 60,
+        "duration": 99.79115772247314,
+        "nphot": 565766219
+    },
+    "run_13": {
+        "cpu": 4,
+        "exp.time": 0.01,
+        "duration": 5.074816942214966,
+        "nphot": 94292
+    },
+    "run_14": {
+        "cpu": 4,
+        "exp.time": 0.1,
+        "duration": 1.5881710052490234,
+        "nphot": 942940
+    },
+    "run_15": {
+        "cpu": 4,
+        "exp.time": 1.0,
+        "duration": 2.638826370239258,
+        "nphot": 9429432
+    },
+    "run_16": {
+        "cpu": 4,
+        "exp.time": 10,
+        "duration": 11.949301719665527,
+        "nphot": 94294368
+    },
+    "run_17": {
+        "cpu": 4,
+        "exp.time": 30,
+        "duration": 34.02623724937439,
+        "nphot": 282883108
+    },
+    "run_18": {
+        "cpu": 4,
+        "exp.time": 60,
+        "duration": 66.55843782424927,
+        "nphot": 565766219
+    },
+    "run_19": {
+        "cpu": 8,
+        "exp.time": 0.01,
+        "duration": 5.1305248737335205,
+        "nphot": 94292
+    },
+    "run_20": {
+        "cpu": 8,
+        "exp.time": 0.1,
+        "duration": 1.1465916633605957,
+        "nphot": 942940
+    },
+    "run_21": {
+        "cpu": 8,
+        "exp.time": 1.0,
+        "duration": 1.9328482151031494,
+        "nphot": 9429432
+    },
+    "run_22": {
+        "cpu": 8,
+        "exp.time": 10,
+        "duration": 7.099040985107422,
+        "nphot": 94294368
+    },
+    "run_23": {
+        "cpu": 8,
+        "exp.time": 30,
+        "duration": 19.27254629135132,
+        "nphot": 282883108
+    },
+    "run_24": {
+        "cpu": 8,
+        "exp.time": 60,
+        "duration": 39.015931844711304,
+        "nphot": 565766219
+    },
+    "run_25": {
+        "cpu": 12,
+        "exp.time": 0.01,
+        "duration": 1.342038869857788,
+        "nphot": 94292
+    },
+    "run_26": {
+        "cpu": 12,
+        "exp.time": 0.1,
+        "duration": 1.1420223712921143,
+        "nphot": 942940
+    },
+    "run_27": {
+        "cpu": 12,
+        "exp.time": 1.0,
+        "duration": 1.811389684677124,
+        "nphot": 9429432
+    },
+    "run_28": {
+        "cpu": 12,
+        "exp.time": 10,
+        "duration": 7.0689005851745605,
+        "nphot": 94294368
+    },
+    "run_29": {
+        "cpu": 12,
+        "exp.time": 30,
+        "duration": 19.991156101226807,
+        "nphot": 282883108
+    },
+    "run_30": {
+        "cpu": 12,
+        "exp.time": 60,
+        "duration": 38.31539583206177,
+        "nphot": 565766219
+    }
+}
