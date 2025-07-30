@@ -1,0 +1,9 @@
+maxent_disaggregation/__init__.py,sha256=CfAKPvVNUVmBjSYAVh2xNM3CRbBl8ZYCY-2vYb1IO24,576
+maxent_disaggregation/maxent_direchlet.py,sha256=vfHqllLkomOAMMHd9jZQMCZkuSSiydIioyLDLAkxrzs,8910
+maxent_disaggregation/maxent_disaggregation.py,sha256=2D7A69N4w7b520SJMqjQeG1dHEQnlx5io1WGk1yMPvA,13443
+maxent_disaggregation/shares.py,sha256=6eAZGbdQrux2zAPRT-fCW__enne2CoZffvx-5yqkQlM,23390
+maxent_disaggregation-1.0.0.dist-info/licenses/LICENSE,sha256=MFQWQNZn89yKcdmxCLxYMFJQrmGK75zJfLYTFblVKMQ,1084
+maxent_disaggregation-1.0.0.dist-info/METADATA,sha256=CxY9tAASHBNBCg_xJFDJek1q2ETZB9czk4hFhB6lpaw,7253
+maxent_disaggregation-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+maxent_disaggregation-1.0.0.dist-info/top_level.txt,sha256=9-tEpWUrgdfLc5Fx9OwknysabYI1y0mHrC0Po3-aeK0,22
+maxent_disaggregation-1.0.0.dist-info/RECORD,,
