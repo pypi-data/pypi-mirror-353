@@ -1,0 +1,66 @@
+digraph "index" {
+bgcolor="transparent"
+color="#C0C000"
+fontcolor="#FF8000"
+fontname="DejaVu Sans"
+penwidth="2"
+rankdir="RL"
+
+edge [
+fontcolor="#FF4040"
+fontname="DejaVu Sans"
+penwidth="2"
+]
+
+node [
+color="#C0C0C0"
+fontcolor="#FFFFFF"
+fontname="DejaVu Sans"
+style="filled"
+penwidth="2"
+]
+
+{rank="max"
+"" [style="invis"]
+}
+
+/******************************************************************************/
+edge [color="#008000"]
+node [fillcolor="#408040"]
+/******************************************************************************/
+
+subgraph "cluster/build" { label="Build"
+"doc" [label="Documentation"]
+"img" [label="Images"]
+}
+
+subgraph "cluster/live" { label="Live"
+"scan" [label="Scan"]
+}
+
+/******************************************************************************/
+edge [color="#FF0000"]
+node [fillcolor="#303030"]
+/******************************************************************************/
+
+{
+"doc/build/grub" [fontcolor="#8080FF"
+label="GRUB"
+URL="https://www.gnu.org/software/grub/manual/grub/grub.html"
+]
+} -> "doc"
+
+{
+"doc/commands" [fontcolor="#8080FF"
+label="Commands"
+URL="https://www.gnu.org/software/grub/manual/grub/grub.html#Commands"
+]
+"doc/variables" [fontcolor="#8080FF"
+label="Variables"
+URL="https://www.gnu.org/software/grub/manual/grub/grub.html#Environment"
+]
+} -> "doc/build/grub"
+
+/******************************************************************************/
+
+}

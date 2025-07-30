@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+authors = [
+    { name = "Marc Beninca", email = "git@marc.beninca.link" },
+]
+maintainers = [
+    { name = "Marc Beninca", email = "git@marc.beninca.link" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+]
+dependencies = ["rwx"]
+description = "Live Scan Grub Menu"
+dynamic = ["version"]
+keywords = []
+license-files = ["license.md"]
+name = "lsgm"
+readme = "readme.md"
+requires-python = ">= 3.11"
+
+[project.scripts]
+# command = "package.module:function"
+
+[project.urls]
+
+[tool.hatch.version]
+path = "lsgm/__init__.py"
