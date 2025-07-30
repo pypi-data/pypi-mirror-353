@@ -1,0 +1,4 @@
+ezpip
+relpath>=3.0.5
+mulmap
+requests

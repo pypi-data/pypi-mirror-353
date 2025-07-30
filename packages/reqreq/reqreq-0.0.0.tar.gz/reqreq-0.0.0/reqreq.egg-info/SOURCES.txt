@@ -1,0 +1,9 @@
+README.md
+setup.py
+reqreq/__init__.py
+reqreq/test.py
+reqreq.egg-info/PKG-INFO
+reqreq.egg-info/SOURCES.txt
+reqreq.egg-info/dependency_links.txt
+reqreq.egg-info/requires.txt
+reqreq.egg-info/top_level.txt
