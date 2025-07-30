@@ -1,0 +1,2 @@
+[jupyter_client.kernel_provisioners]
+libyt-kernel-provisioner = jupyter_libyt.provisioning.libyt_kernel_provisioner:LibytKernelProvisioner
