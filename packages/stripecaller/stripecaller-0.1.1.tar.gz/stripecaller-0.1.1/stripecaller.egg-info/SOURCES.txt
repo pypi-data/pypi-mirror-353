@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+scripts/call-stripes
+scripts/pileup-stripes
+scripts/stripe-plot
+stripecaller/__init__.py
+stripecaller/callers.py
+stripecaller.egg-info/PKG-INFO
+stripecaller.egg-info/SOURCES.txt
+stripecaller.egg-info/dependency_links.txt
+stripecaller.egg-info/top_level.txt
