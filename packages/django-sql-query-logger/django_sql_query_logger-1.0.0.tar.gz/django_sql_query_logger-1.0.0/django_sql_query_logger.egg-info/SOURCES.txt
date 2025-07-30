@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+django_sql_query_logger.egg-info/PKG-INFO
+django_sql_query_logger.egg-info/SOURCES.txt
+django_sql_query_logger.egg-info/dependency_links.txt
+django_sql_query_logger.egg-info/requires.txt
+django_sql_query_logger.egg-info/top_level.txt
+sql_query_middlewares/__init__.py
+sql_query_middlewares/middlewares.py

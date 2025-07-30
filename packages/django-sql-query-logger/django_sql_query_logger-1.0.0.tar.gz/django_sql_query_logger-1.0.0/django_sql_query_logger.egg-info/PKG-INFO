@@ -1,0 +1,84 @@
+Metadata-Version: 2.4
+Name: django-sql-query-logger
+Version: 1.0.0
+Summary: A simple Django SQL Query Middleware package
+Home-page: https://github.com/Aakash-Pandit/django-sql-query-logger
+Author: Aakash Pandit
+Author-email: aakashpandit366@gmail.com
+Project-URL: Bug Reports, https://github.com/Aakash-Pandit/django-sql-query-logger/issues
+Project-URL: Source, https://github.com/Aakash-Pandit/django-sql-query-logger
+Keywords: django middleware
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=3.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Django SQL Query Logger
+
+django installable package for logger middleware
+
+## Features
+
+- **QueryLoggerMiddleware**: Logs request/response query details
+
+## Installation
+
+```bash
+pip install django-sql-query-logger
+```
+
+## Usage
+
+Add the middleware to your Django settings:
+
+```python
+MIDDLEWARE = [
+    # ... other middleware
+    "sql_query_middlewares.middlewares.QueryLoggerMiddleware",
+    # ... other middleware
+]
+```
+
+## Configuration
+
+No additional configuration required. The middleware will automatically:
+
+- Log request information to the Django logger
+- Add processing time headers to responses
+- Number of sql queries has done in request response cycle
+
+## Requirements
+
+- Django >= 3.2
+- Python >= 3.8
+
+## License
+
+MIT License
