@@ -1,0 +1,2 @@
+[console_scripts]
+railgun-mcp = railgun_mcp.server:main

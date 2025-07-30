@@ -1,0 +1,16 @@
+{
+    "api_key": "your-railgun-api-key-here",
+    "wallet_password": "your-secure-wallet-password",
+    "railgun_api_url": "https://api.railgun.org/v1",
+    "rpc_endpoints": {
+        "ethereum": "https://eth-mainnet.g.alchemy.com/v2/your-alchemy-key",
+        "arbitrum": "https://arb-mainnet.g.alchemy.com/v2/your-alchemy-key",
+        "polygon": "https://polygon-mainnet.g.alchemy.com/v2/your-alchemy-key",
+        "bsc": "https://bsc-dataseed.binance.org/"
+    },
+    "privacy_settings": {
+        "default_relayer_preference": "standard",
+        "auto_shield_threshold": "1000000000",
+        "mixing_enabled": true
+    }
+}

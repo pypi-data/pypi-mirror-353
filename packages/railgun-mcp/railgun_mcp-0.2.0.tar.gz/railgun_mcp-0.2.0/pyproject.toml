@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "railgun-mcp"
+version = "0.2.0"
+description = "MCP server for Railgun privacy protocol - private DeFi made easy"
+readme = "README.md"
+authors = [
+    {name = "Sam Savage", email = "sam@quantdefi.ai"},
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Internet :: WWW/HTTP",
+]
+keywords = ["mcp", "railgun", "privacy", "defi", "ethereum", "web3"]
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/railgun-org/railgun-mcp"
+Documentation = "https://github.com/railgun-org/railgun-mcp#readme"
+Repository = "https://github.com/railgun-org/railgun-mcp"
+Issues = "https://github.com/railgun-org/railgun-mcp/issues"
+
+[project.scripts]
+railgun-mcp = "railgun_mcp.server:main"
+
+[project.optional-dependencies]
+server = [
+    "fastmcp>=0.1.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "isort>=5.12",
+    "mypy>=1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["railgun_mcp*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
