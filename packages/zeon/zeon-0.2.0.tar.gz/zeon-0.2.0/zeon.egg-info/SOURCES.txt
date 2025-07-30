@@ -1,0 +1,9 @@
+README.md
+main.py
+pyproject.toml
+zeon.egg-info/PKG-INFO
+zeon.egg-info/SOURCES.txt
+zeon.egg-info/dependency_links.txt
+zeon.egg-info/entry_points.txt
+zeon.egg-info/requires.txt
+zeon.egg-info/top_level.txt
