@@ -1,0 +1,18 @@
+on: [push]
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    container:
+      image: ${{vars.DOCKER}}debian:bookworm
+    steps:
+    - name: spcd
+      env:
+        SPCD: ${{vars.SPCD}}
+        SPCD_SSH_HOSTS: ${{vars.SPCD_SSH_HOSTS}}
+        SPCD_SSH_KEY: ${{secrets.SPCD_SSH_KEY}}
+        SPCD_TXT_LOCALE: ${{vars.SPCD_TXT_LOCALE}}
+      run: ${{vars.SPCD}}
+
+    - run: spcd-build-project
+    - run: spcd-browse-workspace
+    - run: spcd-synchronize

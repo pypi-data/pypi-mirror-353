@@ -1,0 +1,2 @@
+deb-amd64 https://apt.postgresql.org/pub/repos/apt bookworm-pgdg main
+clean https://apt.postgresql.org

@@ -1,0 +1,2 @@
+set postmirror_script "$var_path/clean.sh"
+set nthreads 16

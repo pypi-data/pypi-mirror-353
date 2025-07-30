@@ -1,0 +1,4 @@
+deb-amd64 https://deb.nodesource.com/node_22.x bookworm main
+deb-amd64 https://deb.nodesource.com/node_20.x bookworm main
+deb-amd64 https://deb.nodesource.com/node_18.x bookworm main
+clean https://deb.nodesource.com

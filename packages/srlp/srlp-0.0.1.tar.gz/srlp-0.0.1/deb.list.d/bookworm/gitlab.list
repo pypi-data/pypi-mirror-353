@@ -1,0 +1,3 @@
+#deb-amd64 https://packages.gitlab.com/gitlab/gitlab-ce/debian bookworm main
+deb-amd64 https://packages.gitlab.com/runner/gitlab-runner/debian bookworm main
+clean https://packages.gitlab.com

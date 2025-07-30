@@ -1,0 +1,2 @@
+deb-amd64 https://download.docker.com/linux/debian bookworm stable
+clean https://download.docker.com

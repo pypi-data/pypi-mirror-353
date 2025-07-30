@@ -1,0 +1,2 @@
+deb-amd64 https://pkgs.zabbly.com/incus/stable bookworm main
+clean https://pkgs.zabbly.com

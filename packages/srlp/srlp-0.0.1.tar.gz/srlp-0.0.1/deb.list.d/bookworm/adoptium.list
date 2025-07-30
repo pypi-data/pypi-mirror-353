@@ -1,0 +1,2 @@
+deb-amd64 https://packages.adoptium.net/deb bookworm main
+clean https://packages.adoptium.net
