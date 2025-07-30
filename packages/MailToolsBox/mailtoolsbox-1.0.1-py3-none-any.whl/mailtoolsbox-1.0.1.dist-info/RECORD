@@ -1,0 +1,11 @@
+MailToolsBox/__init__.py,sha256=H1fJ-fV2D-EuQHj9evB5FeVJ1v75yDJ2h2UlTQxYIFY,202
+MailToolsBox/imapClient.py,sha256=UD0sqKMReELUMKXHcLIa_ECJKSCnmiq92Wyg9IzDu8s,6425
+MailToolsBox/mailSender.py,sha256=-MwEr26sdnEUfFI0xBB0Oi3XVPiYvK_2KbfMvGJUyiE,10259
+mailtoolsbox-1.0.1.dist-info/licenses/LICENSE.txt,sha256=NKZj6iLH7iPLli1xCR6IOwFJsTyrBnljVGzG-572nOo,1084
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_imap_agent.py,sha256=xVlkRvpto2ZS-_vRNEHkhGn3WjwkMZvd5EeplL7RErQ,4506
+tests/test_mail_sender.py,sha256=T_XvNSD5_rkWDuUVPG7yFg69X8wrz3l9H_gSVelpV_g,3036
+mailtoolsbox-1.0.1.dist-info/METADATA,sha256=_8_LtHQvikbQgpNmBgLHKe1CIl4oA-8t49ji2KmY-7Q,7566
+mailtoolsbox-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mailtoolsbox-1.0.1.dist-info/top_level.txt,sha256=tXJUeto2VCf69oxESvcT8CIiHSdYXlYkqPzfBwqApVo,19
+mailtoolsbox-1.0.1.dist-info/RECORD,,
