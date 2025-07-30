@@ -1,0 +1,13 @@
+version: "2"
+services:
+    base:
+        build:
+            context: ./
+            dockerfile: ./docker/Dockerfile
+        volumes:
+            - ./:/home/testuser/as-models
+    python35tests:
+        extends:
+            service: base
+        working_dir: /home/testuser/as-models
+        command: "bash -c 'source ../venvs/venv35/bin/activate && python -m unittest discover || deactivate'"
