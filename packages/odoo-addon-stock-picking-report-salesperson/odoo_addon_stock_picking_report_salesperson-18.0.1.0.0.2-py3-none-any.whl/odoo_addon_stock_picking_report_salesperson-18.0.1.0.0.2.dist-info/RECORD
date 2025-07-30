@@ -1,0 +1,17 @@
+odoo/addons/stock_picking_report_salesperson/README.rst,sha256=bDWqBFZxEFgm9fl_HFlEpGEN1-JYlxxKI0KNcF_RHxY,4147
+odoo/addons/stock_picking_report_salesperson/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+odoo/addons/stock_picking_report_salesperson/__manifest__.py,sha256=tPe6_9NY60p3hu-oHGaTXyz_pF74CTOQHkkruDU4R8w,711
+odoo/addons/stock_picking_report_salesperson/i18n/es.po,sha256=VG4tF4JX02-zW1PlLjbmeiYPSyHpsWXvAK4T0XDxJEE,841
+odoo/addons/stock_picking_report_salesperson/i18n/it.po,sha256=n5wK_lB-4wFIoNEr_6whOVS-7SBZV-8VwwfmjNXZUgI,841
+odoo/addons/stock_picking_report_salesperson/i18n/stock_picking_report_salesperson.pot,sha256=odZQqs8AQZaeI8kPbVQz5p0WvViBVEwdXzL8kUe5UXw,646
+odoo/addons/stock_picking_report_salesperson/readme/CONTRIBUTORS.md,sha256=3EoziQKPrFxNxUar5jSRnvTUq_hIg7XUtl-evMXvsxY,142
+odoo/addons/stock_picking_report_salesperson/readme/DESCRIPTION.md,sha256=11LZRhW6SXWyZjX6YUcOdhrwuJ2Jl2M9jjJ-GDBbR4U,148
+odoo/addons/stock_picking_report_salesperson/readme/USAGE.md,sha256=kyZ4cqIU2wfeMy2sI-4mVum23xWUEbsNts49j8gDzqs,214
+odoo/addons/stock_picking_report_salesperson/report/report_deliveryslip.xml,sha256=SqpfqcE7Mb-MmpBVGZndpyUzwo3n47I6dIJ-csEbeb8,574
+odoo/addons/stock_picking_report_salesperson/report/report_stockpicking_operations.xml,sha256=kukiES_fpeoX25ExYWpLLcRkF9JiCygUX1wYIumy13I,532
+odoo/addons/stock_picking_report_salesperson/static/description/icon.png,sha256=6xBPJauaFOF0KDHfHgQopSc28kKvxMaeoQFQWZtfZDo,9455
+odoo/addons/stock_picking_report_salesperson/static/description/index.html,sha256=K6FxmBQOEDshwbEpGKGd46URapMSez1w95F5GlpZ33U,13918
+odoo_addon_stock_picking_report_salesperson-18.0.1.0.0.2.dist-info/METADATA,sha256=DhdMpiULet4xMBFfjtfZ2vNavudzmJ5p3j1NLv3ba8I,4751
+odoo_addon_stock_picking_report_salesperson-18.0.1.0.0.2.dist-info/WHEEL,sha256=9fEMia4zL7ZuZbnCOrcYogUhmn4XFIVaJ8G4YGI31xc,81
+odoo_addon_stock_picking_report_salesperson-18.0.1.0.0.2.dist-info/top_level.txt,sha256=QE6RBQ0QX5f4eFuUcGgU5Kbq1A_qJcDs-e_vpr6pmfU,4
+odoo_addon_stock_picking_report_salesperson-18.0.1.0.0.2.dist-info/RECORD,,
