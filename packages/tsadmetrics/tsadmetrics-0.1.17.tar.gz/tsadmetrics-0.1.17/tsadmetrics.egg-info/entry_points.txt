@@ -1,0 +1,2 @@
+[console_scripts]
+tsadmetrics-compute = tsadmetrics.scripts.compute_metrics:main
