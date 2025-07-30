@@ -1,0 +1,12 @@
+gedcom7/__init__.py,sha256=W3p-FelMZi0sHYfO2XnD2u1xBbmCMa0bJi_4RDwvr7U,81
+gedcom7/cast.py,sha256=Qr5c12Bf5QovPXmqjN9InyQerdV0mKMbe3HQfTJgm_E,6861
+gedcom7/const.py,sha256=EjXsQGYjrejUf-hR7NxPKAEMK6fQSZEyw3U2F_UhJpQ,91996
+gedcom7/grammar.py,sha256=QZTFaZ7WIwivg0LuKNBYpc9OEpCeiG-RC_M2rwo_-8w,4781
+gedcom7/parser.py,sha256=zWN-Yx4o87z-TyF-QpYnLw-_5Q6-1Wqm9LjmpfTGbSw,1482
+gedcom7/types.py,sha256=G6jMTclfHQm0SXBeaDSDVWn-6uMa5NC1vTodQdctSsY,2401
+gedcom7/util.py,sha256=FJGx5-mSeMxjw9fXwJEWvySRdFa1xCe2gmk8eAXZdes,1806
+gedcom7-0.3.0.dist-info/licenses/LICENSE,sha256=UZzTZGY22j_HPggbHtGPAyOEG9IHas1KhId3QmwI0X0,1069
+gedcom7-0.3.0.dist-info/METADATA,sha256=qju9dhJXQKdp8veO1KaXFLPZRc2OlGIiXHlXkVla8qA,913
+gedcom7-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gedcom7-0.3.0.dist-info/top_level.txt,sha256=yByjRKVYkQ_RpncNBSum_r0qgjLpiHzOE64ov1jU1tE,8
+gedcom7-0.3.0.dist-info/RECORD,,
