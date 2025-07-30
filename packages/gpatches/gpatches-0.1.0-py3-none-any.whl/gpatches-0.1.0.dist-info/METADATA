@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: gpatches
+Version: 0.1.0
+Summary: A tiny tool to diff two graphs
+Author-email: Satoshi Kashima <6world4trigger@example.com>
+License: MIT
+Project-URL: Source Code, https://github.com/superleesa/gpatches
+Keywords: graph,diff,comparison,networkx
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: networkx>=3.5
+Requires-Dist: pydantic>=2.11.5
+
+# gpatches
