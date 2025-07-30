@@ -1,0 +1,14 @@
+illustris/__init__.py,sha256=iY61qzOj0X0wy6ABdit68RupPmmrMuTqaT0P1RKEoIE,151
+illustris/cartesian.py,sha256=2JSyys-2fOp1aFSw8RdzUMLau3vo2qBFhTSt3WCu4Ts,4789
+illustris/cli.py,sha256=VL-dlaUp9zNeCjx6AFrtLX1HYL63JSdN0fTX7QvrsiM,27899
+illustris/groupcat.py,sha256=XgoxONssvphMksxszYWQTPsGR_KGPw6nz1R2r-337Wk,5434
+illustris/lhalotree.py,sha256=gvIwDmZFcX5erCwYzdRalUgdYPyqCUhjrJRuWijbHvo,5997
+illustris/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+illustris/snapshot.py,sha256=_y4yPJySXnyhYWgIWH7Il-QDzuBWwzAzG3buikN6Rsg,10272
+illustris/sublink.py,sha256=F1g-mUwHGFkIajJU6Z7eQHbAcSwBrqUFOEhGp7hqXdQ,8604
+illustris/util.py,sha256=ZjLAbaVe2ud6D5R2sb-LItFND_CrP_YeEzOGJ_ToRr8,971
+illustris-0.1.0.dist-info/METADATA,sha256=7h2GhRcyTfUBnowTV6vKUHAhUnSAQcqm9El1ewGmWj8,12003
+illustris-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+illustris-0.1.0.dist-info/entry_points.txt,sha256=Slx6krRKUT1I3GgI6SLtc9H8h_4glh7mE79UIKcGjnQ,49
+illustris-0.1.0.dist-info/licenses/LICENSE.md,sha256=V49JOC0FBMXCQrzZkRvStygjgir9cOMxZ3TR9u2HCOc,1598
+illustris-0.1.0.dist-info/RECORD,,

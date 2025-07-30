@@ -1,0 +1,2 @@
+[console_scripts]
+illustris = illustris.cli:main
