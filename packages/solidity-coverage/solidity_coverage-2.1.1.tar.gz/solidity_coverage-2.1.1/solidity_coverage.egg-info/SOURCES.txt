@@ -1,0 +1,6 @@
+setup.py
+solidity-coverage/__init__.py
+solidity_coverage.egg-info/PKG-INFO
+solidity_coverage.egg-info/SOURCES.txt
+solidity_coverage.egg-info/dependency_links.txt
+solidity_coverage.egg-info/top_level.txt
