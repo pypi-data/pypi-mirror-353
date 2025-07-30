@@ -1,0 +1,7 @@
+namespaces:
+- doc: Extension for use in the Cone Lab
+  name: conelab
+  schema:
+  - namespace: core
+  - source: conelab.extensions.yaml
+  version: 0.1.0 
