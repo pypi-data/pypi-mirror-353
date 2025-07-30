@@ -1,0 +1,15 @@
+CHANGELOG.md
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+conda-recipe/meta.yaml
+conda-recipe/recipe.yaml
+llamaline/__init__.py
+llamaline/llamaline.py
+llamaline.egg-info/PKG-INFO
+llamaline.egg-info/SOURCES.txt
+llamaline.egg-info/dependency_links.txt
+llamaline.egg-info/entry_points.txt
+llamaline.egg-info/requires.txt
+llamaline.egg-info/top_level.txt
