@@ -1,0 +1,34 @@
+MANIFEST.in
+setup.py
+data/7-01 The Dementors Converge.mp3
+data/7-02 Time Past ／ Saving Buckbeak.mp3
+data/7-03 Lupin's Transformation.mp3
+data/7-04 Buckbeak Saves the Day ／ Watching the Past.mp3
+data/7-05 The Rescue of Sirius.mp3
+data/7-06 Sirius Says Goodbye ／ Turning Time Back.mp3
+data/7-07 Lupin's Departure.mp3
+data/7-08 The Firebolt ／ End Credits.mp3
+data/7-09 The Wizards' Consort (Bonus Track).mp3
+data/7-10 Hogsmeade Candy Box (Bonus Track).mp3
+data/7-11 A Winter's Spell (Bonus Track).mp3
+data/7-12 Lumos [Alternate Version].mp3
+data/7-13 Aunt Marge's Waltz [Alternate Version].mp3
+data/7-14 The Knight Bus [Alternate Version].mp3
+data/7-15 The Apparition on the Train [Alternate Version].mp3
+data/7-16 More Grim and Boggarts [Alternate Version].mp3
+data/7-17 Quidditch, Third Year [Alternate Version].mp3
+data/7-18 Window to the Past (Bonus Track).mp3
+data/7-19 Saving Buckbeak [Alternate Version].mp3
+data/7-20 Lupin's Transformation [Alternate Version].mp3
+data/7-21 Watching the Past [Alternate Version].mp3
+data/7-22 The Dementors Circle (Bonus Track).mp3
+data/7-23 The Patronus Light (Bonus Track).mp3
+data/7-24 The Patronus Power (Bonus Track).mp3
+data/7-25 The Dementors Converge [Alternate Version].mp3
+data/7-26 The Firebolt [Alternate Version].mp3
+data/7-27 Teaser (Bonus Track).mp3
+data/7-28 Trailer (Bonus Track).mp3
+hp3p2.egg-info/PKG-INFO
+hp3p2.egg-info/SOURCES.txt
+hp3p2.egg-info/dependency_links.txt
+hp3p2.egg-info/top_level.txt
