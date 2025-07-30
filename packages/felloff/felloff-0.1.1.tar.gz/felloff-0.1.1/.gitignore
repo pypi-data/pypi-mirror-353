@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: © 2025 scy
+#
+# SPDX-License-Identifier: MIT
+
+/.envrc
+__pycache__/
+*.egg-info/
