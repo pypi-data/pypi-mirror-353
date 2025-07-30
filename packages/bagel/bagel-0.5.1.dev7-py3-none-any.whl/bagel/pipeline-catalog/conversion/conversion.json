@@ -1,0 +1,20 @@
+[
+    {
+        "name": "bidscoin",
+        "versions": [
+            "4.3.2"
+        ]
+    },
+    {
+        "name": "dcm2bids",
+        "versions": [
+            "3.1.0"
+        ]
+    },
+    {
+        "name": "heudiconv",
+        "versions": [
+            "0.12.2"
+        ]
+    }
+]
