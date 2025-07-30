@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+src/tgloader/__init__.py
+src/tgloader/core.py
+src/tgloader/lang.py
+src/tgloader.egg-info/PKG-INFO
+src/tgloader.egg-info/SOURCES.txt
+src/tgloader.egg-info/dependency_links.txt
+src/tgloader.egg-info/requires.txt
+src/tgloader.egg-info/top_level.txt
