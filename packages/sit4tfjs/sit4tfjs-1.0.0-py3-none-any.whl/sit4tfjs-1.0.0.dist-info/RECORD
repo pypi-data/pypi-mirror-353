@@ -1,0 +1,12 @@
+sit4tfjs/__init__.py,sha256=AOA5nEuM-TeMNfQVom0Hnd67mF2bb0d2uI1hmsOMdrY,514
+sit4tfjs/browser_runtime.py,sha256=FdAe7QHsTPZYiGvor8yOwqh2xm2A8dcnLnzvEvDNpzs,22561
+sit4tfjs/core.py,sha256=Iy3tuSQ_PQC7lmOb_cq296aYM3PxxUG493ohKybAh6s,20396
+sit4tfjs/main.py,sha256=VPeEY7oTqfz5PMBPHCunUleuDmiHVohCvqHRYc0-8wA,6568
+sit4tfjs/tfjs_runtime.py,sha256=5LMyqeYbQ6uGo6ZZBl_hCx05CfHC3zNnEw1LAfsCuF0,10798
+sit4tfjs/utils.py,sha256=vzigfuIkeBpTaGnIflfKC86Y1GgR07YMGBkHiJaGqak,8743
+sit4tfjs-1.0.0.dist-info/licenses/LICENSE,sha256=OroiK9YPWmRgWbpD5dNpkQpoC7Vty1D6Cu78V_R6Xrg,1070
+sit4tfjs-1.0.0.dist-info/METADATA,sha256=67DHD3u9CsVHMyJjj-EpnYQVQW6B7LQO7KLga6uvjLk,16354
+sit4tfjs-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sit4tfjs-1.0.0.dist-info/entry_points.txt,sha256=zEGtQhI592Eum9csoizNlaRjkBHmk2ByIJ76-O2EWTs,48
+sit4tfjs-1.0.0.dist-info/top_level.txt,sha256=jUOESdZRb_mrFzt9SxUXV3pYDbvc2HRhZrrUdzAqHu8,9
+sit4tfjs-1.0.0.dist-info/RECORD,,

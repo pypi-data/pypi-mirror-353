@@ -1,0 +1,2 @@
+[console_scripts]
+sit4tfjs = sit4tfjs.main:main
