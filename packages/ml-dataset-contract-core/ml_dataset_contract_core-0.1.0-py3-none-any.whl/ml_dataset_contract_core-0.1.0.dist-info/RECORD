@@ -1,0 +1,12 @@
+ml_dataset_contract/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+ml_dataset_contract/runtime/__init__.py,sha256=I3HIYrlhGJVfrrsdAWG8D8ZYEVWBWkLcuR7Ttxz72Y8,484
+ml_dataset_contract/runtime/base_factory.py,sha256=XAGbp49iTdb_AuoscQYTlOeGgKFgINnSCzBH9T1ZWD8,1089
+ml_dataset_contract/runtime/encoders.py,sha256=gR8jDlvx-lt11ISarVLyQW7GFvkGvQVwqFhOPNhYDC0,765
+ml_dataset_contract/runtime/feature_factory.py,sha256=6A0mvXsCfGXLpok2d92misPFkWq69oCyTBfWCWm7MwQ,623
+ml_dataset_contract/runtime/request_factory.py,sha256=SD3A9GSqml7PEIzEqlfoEc1WS7cizWFwgHZiEd1C-GI,1788
+ml_dataset_contract/runtime/schema.py,sha256=4lQ6St09Ti_vM19Xphhc6lNxoNmEEc-p4at3GBK3DiA,1341
+ml_dataset_contract/runtime/target_factory.py,sha256=L1k3l4To1u4bwKcYwKvnkg5oN7UE0TFGdaZGHwiloSI,620
+ml_dataset_contract_core-0.1.0.dist-info/METADATA,sha256=REhjRWGKMuMjlw6tnY-gdc0ClRSgv2-UeJtx2ygUbYg,3100
+ml_dataset_contract_core-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ml_dataset_contract_core-0.1.0.dist-info/top_level.txt,sha256=VEA3zf2sTdAzeVpK65KqqzwcYuvpnOeX237bBAQOOGM,20
+ml_dataset_contract_core-0.1.0.dist-info/RECORD,,
