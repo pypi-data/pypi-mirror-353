@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "shapi"
+version = "0.2.4"
+description = "from shell to rest, webrtc, grpc API, from bash script to service using local LLM mistral:7b and cookiecutter templates"
+authors = ["Tom Sapletta <info@softreck.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/wronai/shapi"
+repository = "https://github.com/wronai/shapi"
+documentation = "https://wronai.github.io/shapi"
+packages = [{include = "shapi", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+pydantic = "^2.5.0"
+click = "^8.1.7"
+rich = {extras = ["all"], version = "^13.0.0"}
+pyyaml = "^6.0.1"
+
+# Optional dependencies
+python-docx = {version = "^1.1.0", optional = true}
+pypdf = {version = "^3.17.0", optional = true}
+lxml = "^5.1.0"
+python-multipart = {version = "^0.0.6", optional = true}
+fastapi = {version = "^0.104.0", optional = true}
+uvicorn = {version = "^0.24.0", optional = true}
+openai = {version = "^1.3.0", optional = true}
+rich-click = {version = "^1.7.0", optional = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/wronai/shapi"
+"Documentation" = "https://wronai.github.io/shapi"
+"Changelog" = "https://github.com/wronai/shapi/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/wronai/shapi/issues"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+black = "^23.11.0"
+flake8 = "^6.1.0"
+mypy = "^1.7.1"
+isort = "^5.12.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=shapi --cov-report=term-missing"
