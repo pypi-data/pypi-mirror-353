@@ -1,0 +1,7 @@
+pyproject.toml
+whatsapp_api_wrapper.egg-info/PKG-INFO
+whatsapp_api_wrapper.egg-info/SOURCES.txt
+whatsapp_api_wrapper.egg-info/dependency_links.txt
+whatsapp_api_wrapper.egg-info/entry_points.txt
+whatsapp_api_wrapper.egg-info/requires.txt
+whatsapp_api_wrapper.egg-info/top_level.txt

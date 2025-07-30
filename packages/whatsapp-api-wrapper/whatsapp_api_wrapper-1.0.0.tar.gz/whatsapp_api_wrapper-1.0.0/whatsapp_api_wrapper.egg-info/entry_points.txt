@@ -1,0 +1,2 @@
+[console_scripts]
+whatsapp-wrapper = wrapper.cli:main
