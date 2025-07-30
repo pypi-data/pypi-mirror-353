@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: CSA_S16_python
+Version: 0.1.1
+Summary: Steel design equations based on CSA S16.
+Home-page: https://github.com/samrich98/CSA_S16_python.git
+Author: Sam Richardson
+Author-email: sam.richardson@mai.utoronto.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# CSA S16 Python
+
+**CSA_S16_python** is a Python package for structural engineers working with CSA S16:24. It includes a comprehensive set of functions to calculate factored resistances member and connection checks — all in accordance with CSA S16.
+
+This package is designed for use in Jupyter notebooks and web applications, with support for rendered equations via the `handcalcs` and `IPython.display` libraries.
+
+---
+
+## Features
+
+- ...
+
+---
+
+## Installation
+
+```bash
+pip install CSA-S16-python==0.1.1
+```
+---
+
+## Use
+
+```python
+from CSA_S16 import *
+help(CSA_S16) # see available functions
+```
+
+Example of Use
+```python
+T_r = T_r_y_func(1000 * mm, 350 * MPa)
+display(Math(T_r[0])) # see LaTeX from first item
+```
+```python
+T_r[1] # get numerical value from second item
+```
