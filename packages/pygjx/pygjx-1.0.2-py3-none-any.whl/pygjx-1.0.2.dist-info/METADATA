@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pygjx
+Version: 1.0.2
+Summary: pygjx
+Home-page: https://github.com/Azyy629/A-
+Author: Zeng Yuye
+Author-email: 341212429@qq.com
+Platform: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: speedtest-cli
+Requires-Dist: tqdm
+Requires-Dist: requests
+Requires-Dist: opencv-python
+Requires-Dist: pygame
+Requires-Dist: pyautogui
+Requires-Dist: pyinstaller
+Requires-Dist: pip
+Requires-Dist: pywin32
+
+pygjx is a module that integrates multiple commonly used python tools. It was created by Zeng Yuye of China,His phone number is: +8613538790701
