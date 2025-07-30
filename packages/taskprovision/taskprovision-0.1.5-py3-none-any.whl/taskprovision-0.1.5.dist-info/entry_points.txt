@@ -1,0 +1,4 @@
+[console_scripts]
+taskprovision=taskprovision.cli:cli
+taskprovision-shell=taskprovision.cli:shell
+
