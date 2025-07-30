@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen3-autogen-client"
+version = "0.1.3"
+authors = [
+  { name="Shamit Verma", email="oss@shamit.in" },
+]
+description = "A Python client for Qwen and DeepSeek models with AutoGen, supporting structured outputs and function calling."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "autogen-ext[openai]",
+    "python-dotenv",
+    "pydantic",
+    "autogen-core"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/shamitv/autogen-local-llm-client-qwen" # From README attribution
+"Bug Tracker" = "https://github.com/shamitv/autogen-local-llm-client-qwen/issues" # Placeholder, update if you have a specific issue tracker
+
+[tool.setuptools.packages.find]
+where = ["src"]
