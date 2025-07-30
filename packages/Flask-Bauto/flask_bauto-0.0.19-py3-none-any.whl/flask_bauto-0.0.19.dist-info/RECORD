@@ -1,0 +1,8 @@
+flask_bauto/__init__.py,sha256=kefIIcu8Y3J3r0z4Jzc02yIbg5kyKAlKrtNTt61iWV4,25124
+flask_bauto/types.py,sha256=XFHhxt6zwwHLt_6xYIN6hYN9U9N_c-w6hSiCqPpyV1Y,3418
+flask_bauto/templates/bauto/list.html,sha256=tftvTIgxzNXKELG5Uo6ILefvIiLePJhVAriqDfLs2HA,2270
+flask_bauto-0.0.19.dist-info/licenses/LICENSE,sha256=IUP8N_jNFrRhO3C_NT6ULvU3VjbBdKRYishfbHOpJsg,1066
+flask_bauto-0.0.19.dist-info/METADATA,sha256=i_58BCKLLYfdR7ugxM6uh1Ba3lzidrdom-d3WOqbWqM,483
+flask_bauto-0.0.19.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+flask_bauto-0.0.19.dist-info/top_level.txt,sha256=7isJBL8yuVZm4WddCIC3wFSVAsTIST0KTUx-yK6JHOM,12
+flask_bauto-0.0.19.dist-info/RECORD,,
