@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: mada_holidays
+Version: 1.0
+Summary: Un package qui montre tous les jours fériés à Madagascar
+Home-page: https://github.com/Johnathon47/mada_holidays
+Author: TOTOZAFY Johnathon Wesley
+Author-email: hei.johnathon.2@gmail.com
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary

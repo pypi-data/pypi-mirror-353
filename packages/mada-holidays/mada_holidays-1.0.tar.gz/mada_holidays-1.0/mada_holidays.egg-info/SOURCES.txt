@@ -1,0 +1,9 @@
+setup.py
+mada_holidays/__init__.py
+mada_holidays/core.py
+mada_holidays.egg-info/PKG-INFO
+mada_holidays.egg-info/SOURCES.txt
+mada_holidays.egg-info/dependency_links.txt
+mada_holidays.egg-info/top_level.txt
+tests/__init__.py
+tests/test_core.py
