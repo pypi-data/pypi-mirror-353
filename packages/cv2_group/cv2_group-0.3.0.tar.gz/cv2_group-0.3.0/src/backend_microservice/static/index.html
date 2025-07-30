@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root Segmentation & Analysis Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1, h2 { color: #0056b3; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: auto; }
+        .panel { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex: 1; min-width: 300px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="file"], input[type="number"], input[type="text"], textarea, button { /* Added input[type="text"] */
+            width: calc(100% - 22px); /* Account for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 5px; /* Added margin for download buttons */
+        }
+        button:hover { background-color: #0056b3; }
+        .image-display { text-align: center; margin-top: 20px; }
+        .image-display img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0; }
+        .image-section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 8px; background-color: #f9f9f9; } /* New style for sections */
+        .image-section h3 { margin-top: 0; color: #007bff; }
+        .download-btn {
+            background-color: #28a745; /* Green for download */
+            margin-left: 5px;
+            width: auto; /* Allow buttons to size naturally */
+            padding: 8px 15px;
+        }
+        .download-btn:hover { background-color: #218838; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Root Segmentation & Analysis</h1>
+
+    <div class="container">
+        <div class="panel">
+            <h2>Upload Image & Parameters</h2>
+            <form id="uploadForm">
+                <label for="imageUpload">Upload Image (PNG/JPG):</label>
+                <input type="file" id="imageUpload" accept="image/png, image/jpeg" required>
+
+                <label for="username">Your Name/Username (for saving files):</label>
+                <input type="text" id="username" placeholder="e.g., JohnDoe" required>
+
+                <label for="useWatershed">Use Watershed Segmentation:</label>
+                <input type="checkbox" id="useWatershed" checked disabled title="Watershed currently disabled for debugging.">
+                <label for="expectedPlants">Expected Plants:</label>
+                <input type="number" id="expectedPlants" value="5" min="1">
+
+                <label for="roisJson">Regions of Interest (ROIs) JSON:</label>
+                <textarea id="roisJson" rows="10" placeholder="e.g., [{'x': 200, 'y': 500, 'width': 250, 'height': 500}]">
+[
+    {"x": 200, "y": 500, "width": 250, "height": 500},
+    {"x": 750, "y": 500, "width": 250, "height": 500},
+    {"x": 1275, "y": 500, "width": 250, "height": 500},
+    {"x": 1800, "y": 500, "width": 250, "height": 500},
+    {"x": 2325, "y": 500, "width": 250, "height": 500}
+]
+                </textarea>
+                <small>Format: `[{"x": int, "y": int, "width": int, "height": int}, ...]`</small>
+                <br><br>
+                <button type="submit">Analyze Image</button>
+            </form>
+            <div id="statusMessage" class="error"></div>
+        </div>
+
+        <div class="panel">
+            <h2>Results</h2>
+            <div id="imageResults">
+                <div class="image-section">
+                    <h3>Original Input Image:</h3>
+                    <div class="image-display">
+                        <img id="originalBackendImage" src="" alt="Original Image from Backend" style="display: none;">
+                    </div>
+                    <button class="download-btn" data-image-id="originalBackendImage" data-image-type="original_image">Download Original</button>
+                </div>
+
+                <div class="image-section">
+                    <h3>Full-Size Visualizations (on Original Image)</h3>
+                    <div class="image-display">
+                        <h4>ROIs Overlay:</h4>
+                        <img id="fullSizeRoisImage" src="" alt="Full-Size Image with ROIs" style="display: none;">
+                        <button class="download-btn" data-image-id="fullSizeRoisImage" data-image-type="full_size_rois_image">Download ROIs</button>
+                    </div>
+                    <div class="image-display">
+                        <h4>Predicted Mask:</h4>
+                        <img id="fullSizeMaskImage" src="" alt="Full-Size Mask Image" style="display: none;">
+                        <button class="download-btn" data-image-id="fullSizeMaskImage" data-image-type="full_size_mask_image">Download Mask</button>
+                    </div>
+                    <div class="image-display">
+                        <h4>Overlay Image (Mask on Original):</h4>
+                        <img id="fullSizeOverlayImage" src="" alt="Full-Size Overlay Image" style="display: none;">
+                        <button class="download-btn" data-image-id="fullSizeOverlayImage" data-image-type="full_size_overlay_image">Download Overlay</button>
+                    </div>
+                    <div class="image-display">
+                        <h4>Tip & Base Overlay:</h4>
+                        <img id="fullSizeTipBaseImage" src="" alt="Full-Size Image with Tip and Base Markers" style="display: none;">
+                        <button class="download-btn" data-image-id="fullSizeTipBaseImage" data-image-type="full_size_tip_base_image">Download Tip/Base</button>
+                    </div>
+                </div>
+
+                <div class="image-section">
+                    <h3>Cropped Visualizations (on Processed Image)</h3>
+                    <div class="image-display">
+                        <h4>Cropped ROIs Overlay:</h4>
+                        <img id="croppedRoisImage" src="" alt="Cropped Image with ROIs" style="display: none;">
+                        <button class="download-btn" data-image-id="croppedRoisImage" data-image-type="cropped_rois_image">Download Cropped ROIs</button>
+                    </div>
+                    <div class="image-display">
+                        <h4>Cropped Overlay Image (Mask on Cropped):</h4>
+                        <img id="croppedOverlayImage" src="" alt="Cropped Overlay Image" style="display: none;">
+                        <button class="download-btn" data-image-id="croppedOverlayImage" data-image-type="cropped_overlay_image">Download Cropped Overlay</button>
+                    </div>
+                    <div class="image-display">
+                        <h4>Cropped Tip & Base Overlay:</h4>
+                        <img id="croppedTipBaseImage" src="" alt="Cropped Image with Tip and Base Markers" style="display: none;">
+                        <button class="download-btn" data-image-id="croppedTipBaseImage" data-image-type="cropped_tip_base_image">Download Cropped Tip/Base</button>
+                    </div>
+                </div>
+            </div>
+            <h3>Root Analysis Data:</h3>
+            <div id="analysisResults">
+                <p>No analysis performed yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript will be updated in the next part.
+    </script>
+</body>
+</html>
+<script>
+    const uploadForm = document.getElementById('uploadForm');
+    const imageUpload = document.getElementById('imageUpload');
+    const usernameInput = document.getElementById('username'); // NEW JS VAR
+    const originalPreview = document.getElementById('originalPreview'); // Client-side preview (still exists)
+    const originalBackendImage = document.getElementById('originalBackendImage'); // Backend original image
+    const useWatershed = document.getElementById('useWatershed');
+    const expectedPlants = document.getElementById('expectedPlants');
+    const roisJson = document.getElementById('roisJson');
+    const statusMessage = document.getElementById('statusMessage');
+
+    // Full-size image elements (renamed)
+    const fullSizeRoisImage = document.getElementById('fullSizeRoisImage');
+    const fullSizeMaskImage = document.getElementById('fullSizeMaskImage');
+    const fullSizeOverlayImage = document.getElementById('fullSizeOverlayImage');
+    const fullSizeTipBaseImage = document.getElementById('fullSizeTipBaseImage');
+
+    // Cropped image elements (new)
+    const croppedRoisImage = document.getElementById('croppedRoisImage');
+    const croppedOverlayImage = document.getElementById('croppedOverlayImage');
+    const croppedTipBaseImage = document.getElementById('croppedTipBaseImage');
+
+    const analysisResultsDiv = document.getElementById('analysisResults');
+
+    // Display image preview (client-side, before upload)
+    imageUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                originalPreview.src = e.target.result;
+                originalPreview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            originalPreview.src = "";
+            originalPreview.style.display = 'none';
+        }
+    });
+
+    uploadForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        statusMessage.textContent = 'Processing...';
+        // Hide previous results
+        originalBackendImage.style.display = 'none';
+        fullSizeRoisImage.style.display = 'none';
+        fullSizeMaskImage.style.display = 'none';
+        fullSizeOverlayImage.style.display = 'none';
+        fullSizeTipBaseImage.style.display = 'none';
+        croppedRoisImage.style.display = 'none';
+        croppedOverlayImage.style.display = 'none';
+        croppedTipBaseImage.style.display = 'none';
+        analysisResultsDiv.innerHTML = '<p>Processing...</p>';
+
+        const file = imageUpload.files[0];
+        const username = usernameInput.value.trim(); // Get username
+        if (!file) {
+            statusMessage.textContent = 'Please select an image file.';
+            return;
+        }
+        if (!username) {
+            statusMessage.textContent = 'Please enter your name/username.';
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('expected_plants', expectedPlants.value);
+
+        const roisText = roisJson.value.trim();
+        if (roisText) {
+            try {
+                JSON.parse(roisText); // Validate JSON
+                formData.append('rois_json', roisText);
+            } catch (e) {
+                statusMessage.textContent = 'Invalid ROIs JSON format. Please check your input.';
+                console.error('Invalid ROIs JSON:', e);
+                return;
+            }
+        }
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/predict/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                statusMessage.textContent = 'Analysis successful!';
+
+                // Display original image from backend
+                if (result.original_image) {
+                    originalBackendImage.src = 'data:image/png;base64,' + result.original_image;
+                    originalBackendImage.style.display = 'block';
+                }
+
+                // Display full-size images
+                if (result.full_size_rois_image) {
+                    fullSizeRoisImage.src = 'data:image/png;base64,' + result.full_size_rois_image;
+                    fullSizeRoisImage.style.display = 'block';
+                }
+                if (result.full_size_mask_image) {
+                    fullSizeMaskImage.src = 'data:image/png;base64,' + result.full_size_mask_image;
+                    fullSizeMaskImage.style.display = 'block';
+                }
+                if (result.full_size_overlay_image) {
+                    fullSizeOverlayImage.src = 'data:image/png;base64,' + result.full_size_overlay_image;
+                    fullSizeOverlayImage.style.display = 'block';
+                }
+                if (result.full_size_tip_base_image) {
+                    fullSizeTipBaseImage.src = 'data:image/png;base64,' + result.full_size_tip_base_image;
+                    fullSizeTipBaseImage.style.display = 'block';
+                }
+
+                // Display cropped images
+                if (result.cropped_rois_image) {
+                    croppedRoisImage.src = 'data:image/png;base64,' + result.cropped_rois_image;
+                    croppedRoisImage.style.display = 'block';
+                }
+                if (result.cropped_overlay_image) {
+                    croppedOverlayImage.src = 'data:image/png;base64,' + result.cropped_overlay_image;
+                    croppedOverlayImage.style.display = 'block';
+                }
+                if (result.cropped_tip_base_image) {
+                    croppedTipBaseImage.src = 'data:image/png;base64,' + result.cropped_tip_base_image;
+                    croppedTipBaseImage.style.display = 'block';
+                }
+
+                displayAnalysisResults(result.root_analysis_results);
+
+            } else {
+                statusMessage.textContent = 'Error: ' + (result.detail || result.error || 'Unknown error');
+                console.error('API Error:', result);
+            }
+        } catch (error) {
+            statusMessage.textContent = 'Network error or server unreachable.';
+            console.error('Fetch Error:', error);
+        }
+    });
+
+    function displayAnalysisResults(results) {
+        if (!results || results.length === 0) {
+            analysisResultsDiv.innerHTML = '<p>No root analysis results available for the given ROIs.</p>';
+            return;
+        }
+
+        let tableHtml = '<table class="results-table"><thead><tr>';
+        tableHtml += '<th>ROI Index</th><th>ROI Definition (x,y,w,h)</th><th>Length (px)</th><th>Base (row,col)</th><th>Tip (row,col)</th><th>Area (px²)</th><th>Width (px)</th><th>Height (px)</th><th>Centroid (x,y)</th>';
+        tableHtml += '</tr></thead><tbody>';
+
+        results.forEach((item, index) => {
+            const roi = item.roi_definition;
+            const analysis = item.analysis;
+            const stats = analysis.stats;
+
+            tableHtml += `<tr>`;
+            tableHtml += `<td>${item.roi_definition.roi_index !== undefined ? item.roi_definition.roi_index : index}</td>`;
+            tableHtml += `<td>(${roi.x}, ${roi.y}, ${roi.width}, ${roi.height})</td>`;
+            tableHtml += `<td>${analysis.length !== undefined ? analysis.length.toFixed(2) : 'N/A'}</td>`;
+            tableHtml += `<td>${analysis.base_coords ? `[${analysis.base_coords[0]}, ${analysis.base_coords[1]}]` : 'N/A'}</td>`;
+            tableHtml += `<td>${analysis.tip_coords ? `[${analysis.tip_coords[0]}, ${analysis.tip_coords[1]}]` : 'N/A'}</td>`;
+            tableHtml += `<td>${stats && stats.area !== undefined ? stats.area : 'N/A'}</td>`;
+            tableHtml += `<td>${stats && stats.width !== undefined ? stats.width : 'N/A'}</td>`;
+            tableHtml += `<td>${stats && stats.height !== undefined ? stats.height : 'N/A'}</td>`;
+            tableHtml += `<td>${stats && stats.centroid_x !== undefined && stats.centroid_y !== undefined ? `(${stats.centroid_x.toFixed(1)}, ${stats.centroid_y.toFixed(1)})` : 'N/A'}</td>`;
+            tableHtml += `</tr>`;
+        });
+
+        tableHtml += '</tbody></table>';
+        analysisResultsDiv.innerHTML = tableHtml;
+    }
+
+    // --- Download Functionality ---
+    document.addEventListener('click', async function(event) {
+        if (event.target.classList.contains('download-btn')) {
+            const button = event.target;
+            const imageId = button.dataset.imageId;
+            const imageType = button.dataset.imageType;
+            const username = usernameInput.value.trim();
+
+            if (!username) {
+                statusMessage.textContent = 'Please enter your name/username to save files.';
+                return;
+            }
+
+            const imgElement = document.getElementById(imageId);
+            if (!imgElement || !imgElement.src || imgElement.src.startsWith('data:image/png;base64,') === false) {
+                statusMessage.textContent = 'No image data available to download.';
+                return;
+            }
+
+            // Extract base64 data (remove "data:image/png;base64,")
+            const imageData = imgElement.src.split(',')[1];
+
+            statusMessage.textContent = `Saving ${imageType}...`;
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/save-image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        image_data: imageData,
+                        username: username,
+                        image_type: imageType
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMessage.textContent = `Image saved: ${result.message}`;
+                } else {
+                    statusMessage.textContent = 'Error saving image: ' + (result.detail || result.error || 'Unknown error');
+                    console.error('Save API Error:', result);
+                }
+            } catch (error) {
+                statusMessage.textContent = 'Network error during save.';
+                console.error('Save Fetch Error:', error);
+            }
+        }
+    });
+
+</script>
