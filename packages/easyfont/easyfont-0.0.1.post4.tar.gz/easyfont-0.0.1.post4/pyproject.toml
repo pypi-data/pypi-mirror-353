@@ -1,0 +1,30 @@
+[project]
+name = "easyfont"
+version = "0.0.1-4"
+authors = [
+  { name = "ferretsprite", email = "ferret-sprite-goon@duck.com" }
+]
+description = "One line of code, your ideal font is ready — EasyFont."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "importlib-resources>=6.4.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/xx025/easyfont"
+Repository = "https://github.com/xx025/easyfont"
+Documentation = "https://github.com/xx025/easyfont#readme"
+
+[tool.uv]
+index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"easyfont" = ["fonts/*.ttf"]
