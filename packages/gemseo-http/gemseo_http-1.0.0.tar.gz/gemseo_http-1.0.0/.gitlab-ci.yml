@@ -1,0 +1,7 @@
+include:
+  - remote: "https://gitlab.com/gemseo/dev/ci-includes/-/raw/3/main.yml"
+
+.test-all-py-versions:
+  - 39
+  - 310
+  - 311
