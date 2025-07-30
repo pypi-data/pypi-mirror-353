@@ -1,0 +1,7 @@
+microaggregation/__init__.py,sha256=0MrulWXMFy8TrsQOmcgkVzTDD2fcTbbTbwx0i1F8ryI,348
+microaggregation/core.py,sha256=IbFO_Bt9oScwI2XOomrW8gTpZN_UqiHAIwHsOUEB9Ck,3277
+microaggregation/microaggregation_cpp.cp37-win_amd64.pyd,sha256=M0jJzZitGmqD9zbx0vhnaPiwkw74GnYhZF9AyqzbCWA,124928
+microaggregation-0.1.5.dist-info/METADATA,sha256=UZC_uhUmxovSJuQ-VmqwNHONz_R_vM1yCrKxYspv9bs,2250
+microaggregation-0.1.5.dist-info/WHEEL,sha256=slqBGdqRnxanDn00BSYHhryEsWH_8CUurgRUvoMtK_Y,101
+microaggregation-0.1.5.dist-info/top_level.txt,sha256=9_GsXAEtQKdCVLjvNE6UtXqgeX_qht_BLgvIDhopyRw,17
+microaggregation-0.1.5.dist-info/RECORD,,
