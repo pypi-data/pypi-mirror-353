@@ -1,0 +1,42 @@
+[project]
+name = "rich-heatmap"
+version = "0.1.3"
+description = "A simple rich renderable Heatmap."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["rich>=10.0.0"]
+authors = [{ name = "Saul Reynolds-Haertle", email = "saul+pypi@saulrh.com" }]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Framework :: IPython",
+  "Intended Audience :: Developers",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/saulrh/rich_heatmap.git"
+Issues = "https://github.com/saulrh/rich_heatmap/issues"
+
+[dependency-groups]
+dev = [
+  "click>=8.2.1",
+  "cmasher>=1.9.2",
+  "mypy>=1.16.0",
+  "noise>=1.2.2",
+  "python-lsp-server>=1.12.2",
+  "pytype>=2024.10.11",
+]
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
