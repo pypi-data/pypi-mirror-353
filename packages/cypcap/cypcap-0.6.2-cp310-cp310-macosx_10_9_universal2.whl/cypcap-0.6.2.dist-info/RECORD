@@ -1,0 +1,9 @@
+cypcap/_cypcap.cpython-310-darwin.so,sha256=dMsTSonv0IVrTEpxJnXgAZ0srWN2lXL98v8Ywn04ZNE,1045808
+cypcap/__init__.py,sha256=g2awQUT0mSJ6TkuegtbYPaNxexfhmzCpksTX5fL8B8I,115
+cypcap/bpf.cpython-310-darwin.so,sha256=nboPcbAjH92jj_An9f4QNLmezBtcunkWXwRB7AOcgWE,163808
+cypcap-0.6.2.dist-info/RECORD,,
+cypcap-0.6.2.dist-info/WHEEL,sha256=nc924w4TUhRiaM6-2LHWgVO2LgkOLXLUotVVlNPrJ7M,141
+cypcap-0.6.2.dist-info/top_level.txt,sha256=FqIcokTzoEXDlVTptMMsjtTJq6-pwj4-5QRGpNdhGbQ,7
+cypcap-0.6.2.dist-info/METADATA,sha256=JeKcRIFBREwPSyH2nOZiFyB0c46aOTa06qSm6896JDc,3431
+cypcap-0.6.2.dist-info/licenses/LICENSE,sha256=7Rf1K-4rb7jgmpa0f5MpGemyVHypA-rlCHlaYZd6CIY,1519
+cypcap-0.6.2.dist-info/licenses/NOTICE,sha256=s4W2i-JhzOZAijRPJ9M8UWw_nbLUehPAx6J50V0CaiQ,30042
