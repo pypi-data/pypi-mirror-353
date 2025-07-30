@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+matrix_multiply/__init__.py
+matrix_multiply/core.py
+matrix_multiply_lib.egg-info/PKG-INFO
+matrix_multiply_lib.egg-info/SOURCES.txt
+matrix_multiply_lib.egg-info/dependency_links.txt
+matrix_multiply_lib.egg-info/top_level.txt
+tests/__init__.py
+tests/test_matrix.py
