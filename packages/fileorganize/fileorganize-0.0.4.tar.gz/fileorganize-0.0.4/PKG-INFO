@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: fileorganize
+Version: 0.0.4
+Summary: Utility functions for corpus and experiment file management in Python
+Author-email: Keith Johnson <kjohnson@berkeley.edu>, Ronald Sprouse <ronald@berkeley.edu>
+License-Expression: BSD-3-Clause
+Project-URL: Homepage, https://github.com/phonetics-projects/file-organization
+Project-URL: Issues, https://github.com/phonetics-projects/file-organization/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.0
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: pandas
+Dynamic: license-file
+
+============
+fileorganize
+============
+
+Utility functions for corpus and experiment file management in Python.
+
+============
+Installation
+============
+
+.. code-block:: Python
+		
+  pip install fileorganize
+
+=============
+Documentation
+=============
+
+========
+Examples
+========
+
+.. code-block:: Python
+
+  from fileorganize import dir_to_df
+
+  # Get all files in `mypath` as a dataframe
+  df = dir_to_df(mypath)
+
+  # Get all `.wav` files in `mypath` as a dataframe
+  df = dir_to_df(mypath, fnpat=r'\.wav$')
+
+  # Get all `.wav` files in `mypath` and extract named captures as
+  # categorical `subj` and `token` columns
+  df = dir_to_df(
+      mypath,
+      fnpat=r'(?P<subj>[A-Z]+\d+)-(?P<token>\d+)\.wav$'
+  )
+
+.. code-block:: Python
+
+  from fileorganize import today_YYYYMMDD, timestamp_now
+
+  # Get today's date in YYYYMMDD format
+  todaystr = today_YYYYMMDD()
+
+  # Get timestamp as YYYY-MM-DDTHHMMSS string and UTC offset for current
+  # the current datetime
+  tstamp, utcoffset = timestamp_now()
+
+.. code-block:: Python
+
+  from fileorganize import cp_backup
+
+  # Copy a file to a backup directory with a version number
+  copyname = cp_backup(origfile, backupdir)

@@ -1,0 +1,38 @@
+[build-system]
+requires = ['setuptools >= 77.0.3', 'wheel']
+build-backend = "setuptools.build_meta"
+
+[project]
+name = 'fileorganize'
+authors = [{name = "Keith Johnson", email = "kjohnson@berkeley.edu"},
+            {name = "Ronald Sprouse", email = "ronald@berkeley.edu"} 
+]
+description = "Utility functions for corpus and experiment file management in Python"
+readme = "README.rst"
+requires-python = ">= 3.0"
+dynamic = ["version"]
+
+dependencies = [
+    'pandas'
+]
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'Operating System :: OS Independent',
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering',
+]
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/phonetics-projects/file-organization"
+Issues = "https://github.com/phonetics-projects/file-organization/issues"
+
+[tool.setuptools]
+packages = [
+    'fileorganize'
+]
+
+[tool.setuptools.dynamic]
+version = {attr="fileorganize.__version__"}
+
