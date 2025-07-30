@@ -1,0 +1,26 @@
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+include pyproject.toml
+include setup.py
+include production_example.py
+
+# Include banyan package
+recursive-include banyan *.py
+
+# Exclude development and build files
+exclude .DS_Store
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.so
+recursive-exclude * *.dylib
+prune build
+prune dist
+prune *.egg-info
+prune .git
+prune .pytest_cache
+prune htmlcov
+exclude .gitignore
+exclude .coverage
+exclude tox.ini 
