@@ -1,0 +1,12 @@
+CdfsunriseDataCollection/_login.py,sha256=YQsSG0tiwn1PixnKqkMet_NZSywAcz9GW84xBI6rg-8,4211
+CdfsunriseDataCollection/_types.py,sha256=-lhqd0N_C8VD--uUhNtCDxfDqzdjepg6qcgEHOADaJY,283
+CdfsunriseDataCollection/collector.py,sha256=v9uIs09QWTxaZT-vgRI1erlrp1JEdxbhHIWcWQ1g9HY,1377
+CdfsunriseDataCollection/goods_analysis/_types.py,sha256=YO9d5fC8G-iW1ZRccJ0PWaYmX7Zvw1F8DqdAl_R4C74,1704
+CdfsunriseDataCollection/goods_analysis/_utils.py,sha256=d_3umAfWRVbb5dvk-AUtks-v6StdquuIfRsyMlRgHY8,3442
+CdfsunriseDataCollection/goods_analysis/brand.py,sha256=PYEuAAn1Fo3F3mZHlpP1fLqJrj6sHsSN03X9s5ytK2c,8459
+CdfsunriseDataCollection/goods_analysis/goods_analysis.py,sha256=bqsHJ7p8pe3v5PxZoD9QcIV-arnZ6OKcz00DMJ49Tm4,771
+CdfsunriseDataCollection/goods_analysis/ranking.py,sha256=IGTx2UlLXabldxYufVpIGQJvwwmHmyEYCWFAHXvqF8o,14489
+cdfsunrise_data_collection-1.0.4.dist-info/LICENSE,sha256=2WBFRDkPFOL_ziurNDZfZOiE4N450Ik8KmseJwnvle0,1069
+cdfsunrise_data_collection-1.0.4.dist-info/METADATA,sha256=SYC_L2J55CNemUI2DnBw0XLT7hEUs2XL1Z3Om1Ej6Hw,563
+cdfsunrise_data_collection-1.0.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+cdfsunrise_data_collection-1.0.4.dist-info/RECORD,,
