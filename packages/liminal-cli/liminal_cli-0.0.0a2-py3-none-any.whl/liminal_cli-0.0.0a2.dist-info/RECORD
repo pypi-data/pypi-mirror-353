@@ -1,0 +1,12 @@
+liminal/__init__.py,sha256=MC596UWgD_mG2GZc6gJL-pJ6JncCRCNpp1kLhskhm7w,32
+liminal/cli.py,sha256=dJouGih1n2qfqEDidaE2_hvnd0QWccc73MEYAyDYxhs,434
+liminal/config.py,sha256=iWYU2tcQdImO16YIbXZuX_2YRGJWj1BKpAt82Hd8j10,220
+liminal/env.py,sha256=HwXlzY1M7h8onwkaaY-tG8M2Wj6ykPFL_LpcOLoL354,9405
+liminal/hack.py,sha256=rOfLfnqTpEMpYK5UzmqszGwNK2mhVd0pnfW1ysI9ZJ8,4209
+liminal/installer.py,sha256=cUv_HfRwrHqJtGW17fC33POf6MIMNjwUR8j8hLGVQzY,12681
+liminal/standalone_install_wrapper.py,sha256=WWtDVwRxkbNzHXHgUoNU6_bITUjU5dWJoZjdhm40OuI,8394
+liminal_cli-0.0.0a2.dist-info/METADATA,sha256=omXfZjMG8-VTvTZbDNDbDcgBJSNH_lFIzFFHlfUbHXU,274
+liminal_cli-0.0.0a2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+liminal_cli-0.0.0a2.dist-info/entry_points.txt,sha256=IDb1A_flFbA_2ujap9y6viZCUmsYfxmz1xiDn4e6uiQ,47
+liminal_cli-0.0.0a2.dist-info/top_level.txt,sha256=IjhkLfMU-5pBJ4-q9PaV3AScEb1_ep01xI2qa9P1Hsk,8
+liminal_cli-0.0.0a2.dist-info/RECORD,,
