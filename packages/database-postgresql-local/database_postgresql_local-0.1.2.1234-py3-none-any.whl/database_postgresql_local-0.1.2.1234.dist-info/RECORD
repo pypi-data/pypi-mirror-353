@@ -1,0 +1,12 @@
+database_postgresql_local/__init__.py,sha256=zoclCN8mUJrL26mZ4J-xYIJUpU85MxDq5Eq8E4LcJ-8,35
+database_postgresql_local/connector.py,sha256=p3Iu0-3TQXg8OQCO5_D_tEc4fthfwsmgFebSCnwhUE0,6416
+database_postgresql_local/constants_src.py,sha256=oa2RK1CG7bFE0Lt5USVfSR_4OAF33vdYtNu6EoWQmlg,1619
+database_postgresql_local/cursor.py,sha256=po4GPXo4V4zGjLFrp00psPQ45wAiXfo0gYSt4IatMYo,5152
+database_postgresql_local/generic_crud_postgresql.py,sha256=WSAJSOlv1gq3gHG3AgMgv020RLfHetb0BzdqSyYu31g,52370
+database_postgresql_local/table_columns.py,sha256=wOedYTaOU3mPDP-8ooVbsFJbad_QDyi8x4HdHTSryDs,101
+database_postgresql_local/table_definition.py,sha256=i_sEO31Ataj5KcfFAHoEc1oplPX_KYpIEX5qdg0OJ0I,108
+database_postgresql_local/utils.py,sha256=v1WnNnR1Bqyuw-P-46v_X4dDkZK9Xurq3vS6tsNQs-4,8632
+database_postgresql_local-0.1.2.1234.dist-info/METADATA,sha256=jXyvA8dl8MOgOUb31len1Y9c_3PBzvk5wEJUXNLvBgw,722
+database_postgresql_local-0.1.2.1234.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+database_postgresql_local-0.1.2.1234.dist-info/top_level.txt,sha256=-fQwEAJMMDqJZ5-k9liyhoNXbj52QwRiB02paws2fu4,26
+database_postgresql_local-0.1.2.1234.dist-info/RECORD,,
