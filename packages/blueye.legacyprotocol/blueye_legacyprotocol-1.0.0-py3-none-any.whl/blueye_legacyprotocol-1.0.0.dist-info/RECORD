@@ -1,0 +1,17 @@
+blueye/legacyprotocol/__init__.py,sha256=guzPt5_CdVy1NAqRUng-1am-7vOn-RjCkerF1CdkXxY,394
+blueye/legacyprotocol/exceptions.py,sha256=ISV0ZGan_1F3icFkqQo_x2TUX87BXvW0NPz8XN4FLIA,1329
+blueye/legacyprotocol/tcp_client.py,sha256=PXU_2i8GKOWh2IBxNHxr87dKg1DPCm83kKaisYyRqDM,5204
+blueye/legacyprotocol/tcp_protocol_class.py,sha256=0m1wQlCrPa2J9Fc5tsd8xLuU7Oi1nLKu8f_3ODVjebc,37722
+blueye/legacyprotocol/udp_client.py,sha256=mrNdpFviRc68GtV51QnxNq7URD6owcKKIs4GDeomS_o,2693
+blueye/legacyprotocol/udp_protocol_dict.py,sha256=3OHNIgI1PdRL5n3nLj2Jv54LzNlyyCALlRZa5uWufa8,21727
+blueye/legacyprotocol/udp_protocol_parser.py,sha256=ZeJV__qLcSh8xHqGjAVL1KP5bJOg9DweKRu_I9j8hh4,3838
+blueye_legacyprotocol-1.0.0.dist-info/licenses/LICENSE,sha256=46mU2C5kSwOnkqkw9XQAJlhBL2JAf1_uCD8lVcXyMRg,7652
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_protocol.py,sha256=K1ebKMu6kSJ1GRPQIu9Jrq3PEamYGg75RA0dYOHdosM,9851
+tests/test_protocol_data.py,sha256=wdT1UPnqeiutf54sP6PHLU7pJc_Db6daQH1os4cswjQ,822
+tests/test_tcp_client.py,sha256=DNQYAvEMsX99pOcJs9pEgTRcWmUH6CmToyqIx1Pyysg,12520
+tests/test_udp_client.py,sha256=SVRLMXaaz6q8lYVkWj0NMFzyqJE3so2oEi0wIMbuy_Y,3236
+blueye_legacyprotocol-1.0.0.dist-info/METADATA,sha256=27gr_nLi8hsBfEgfZd51sW7_9r8htU2E6iFC44ObI9M,9521
+blueye_legacyprotocol-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+blueye_legacyprotocol-1.0.0.dist-info/top_level.txt,sha256=LMKk8WPZJi9jq9EWNNyXSnsg_yKZ5WPkZauH4eQ42N0,13
+blueye_legacyprotocol-1.0.0.dist-info/RECORD,,
