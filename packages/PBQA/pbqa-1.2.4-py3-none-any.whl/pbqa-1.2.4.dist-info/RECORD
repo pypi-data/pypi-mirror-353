@@ -1,0 +1,8 @@
+PBQA/__init__.py,sha256=1DaXQ0ptAhOyOXVG1jOr8qh1RHE3uB7UHVZMCYk5e6c,39
+PBQA/db.py,sha256=zRvtEaA4D1Gx1mCTAzABXefu0RTfT39RIZvR3i8AIAc,40394
+PBQA/llm.py,sha256=2Mng54e8tyK5k1dblw4cMWMCy9-dgPHM3iw3i49Sy5I,28416
+pbqa-1.2.4.dist-info/licenses/LICENSE,sha256=QQT-iCFE6sL08vt_udON-GvIvkdevbkddwOMA57FlbA,1069
+pbqa-1.2.4.dist-info/METADATA,sha256=rp9v3svi4wtZNLSrvpNk__yNrcmeq01yXycdZEQREl8,11913
+pbqa-1.2.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pbqa-1.2.4.dist-info/top_level.txt,sha256=0yCd8AUMMV-cZlDPRDB9UiWDI_jGz6OdmoFV0NZJvmY,5
+pbqa-1.2.4.dist-info/RECORD,,
