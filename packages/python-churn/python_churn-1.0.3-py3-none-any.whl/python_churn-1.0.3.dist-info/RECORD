@@ -1,0 +1,9 @@
+churn/__init__.py,sha256=zdpSqYSY6XQBYCid4Zx9RIt3xwD8mCbKYXAntWF2x7s,239
+churn/__main__.py,sha256=srJgev-uDoevDo5kOx2Khc3ywDVe3dzZnsgoozSRgI8,2753
+churn/batch.py,sha256=mpZ444-cNorl54QFZZFfAxohTg_FlE7mcf4LrJo1E1U,3622
+churn/configurator.py,sha256=DO5lXGZDfdUDz7YGH0082wpe_o4YLs-fRwnsbCo3NFE,3660
+churn/task.py,sha256=UlibLDUHMX8ODllfYM_Q5CCe3MZLbfykAtdcb1F6FKs,3225
+python_churn-1.0.3.dist-info/METADATA,sha256=Ux38iNZpmy0ETCkfEqIVkKA7C9w4jT-lwPknh5NBRl0,1712
+python_churn-1.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+python_churn-1.0.3.dist-info/licenses/LICENSE,sha256=7AGP_vFrjro_b8PjafUnXu8KhZIFEBm59ge6YBh2Qbs,1141
+python_churn-1.0.3.dist-info/RECORD,,
