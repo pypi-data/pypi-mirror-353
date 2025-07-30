@@ -1,0 +1,993 @@
+# About Diss
+
+[![pipeline status](https://gitlab.com/kmc3-xpp/diss-ioc/badges/master/pipeline.svg)](https://gitlab.com/kmc3-xpp/diss-ioc/-/commits/master)
+[![coverage report](https://gitlab.com/kmc3-xpp/diss-ioc/badges/master/coverage.svg)](https://gitlab.com/kmc3-xpp/diss-ioc/-/commits/master)
+[![Latest Release](https://gitlab.com/kmc3-xpp/diss-ioc/-/badges/release.svg)](https://gitlab.com/kmc3-xpp/diss-ioc/-/releases)
+
+[[_TOC_|levels=2]]
+
+Diss (Detector Interface Simple, Stuipd) is a
+[pure-Python](https://github.com/caproto/caproto)
+implementation of an
+[EPICS](https://epics-controls.org/)
+[IOC](https://docs.epics-controls.org/en/latest/getting-started/creating-ioc.html)
+for imaging detectors.
+
+It was developed and tested with a Dectris Eiger2X 500K detector
+from early 2024 (the one with the "double-trigger feature").
+But apart from its initial pedigree, there's nothing that
+explicitly ties Diss to Dectris, or Eiger detectors in particular.
+
+In fact, one of the [design goals](#design-considerations) was 
+[easy adaptation to other detector types](#implemening-detector-backends).
+It even features a [simulated detector backend](#simulated-detector-backend)
+for testing and demonstration purposes.
+
+# Quick Introduction
+## Obtaining Diss-Ioc
+
+The general ways of obtaining and running Diss are,
+in order of preference:
+
+- via Podman/Docker, run as container, you're most likely to obtain
+  the most recent release:
+  ```
+  $ podman run -ti --rm registry.gitlab.com/kmc3-xpp/diss-ioc:latest --version
+  ...
+  ```
+
+- via PyPI you'll generally obtain a working version, but in particular
+  given Diss's as-of-yet work-in-progress nature, PyPI packages might
+  not be updated very regularly:
+  ```
+  $ pip install diss-ioc
+  $ diss-ioc --version
+  ...
+  ```
+
+- download directly from
+  [Diss's Gitlab.com repo](https://gitlab.com/kmc3-xpp/diss-ioc)
+  and run locally, in particular if you wish to hack away or contribute to Diss:
+  ```
+  $ git clone https://gitlab.com:kmc3-xpp/diss-ioc
+  $ pip install -e ./diss-ioc
+  $ diss-ioc --version
+  ...
+  ```
+
+For our examples, we'll be demonstrating the use of a locally installed Diss
+(i.e. methods 2 or 3) for brevity purposes, although our *preferred* way
+of running it for our own production setup is definitely 1 :-)
+
+## A "Hello, World" Example
+
+To ensure that Diss is, indeed, installed as ready to operate, you can start 
+a test session using the built-in simulated detector. Diss has a fairly
+verbose logging output to stdout, which will testify to it continuously
+delivering images approximately once per second:
+
+```
+$ DISS_DEVICE_BACKEND=sim DISS_EPICS_PREFIX=DISS:example: diss-ioc
+```
+
+<details>
+  <summary>Click to view "Hello-World" logging output</summary>
+  
+```
+INFO:diss_ioc.application:name=IocApplication version=0.1.1.dev37+g4dbda67.d20250603
+INFO:diss_ioc.application:object="<class 'diss_ioc.devices.sim.DeviceEngine'>" module="diss_ioc.devices.sim" class="DeviceEngine"
+INFO:diss_ioc.application:msg="Auto-acquire 1.0"
+INFO:diss_ioc:msg="Waiting for initialization" state="INIT"
+INFO:diss_ioc.controller:Config(initialized="False" configured="False")
+INFO:diss_ioc.controller:msg="State switch" old=INIT new=WARMUP
+INFO:diss_ioc:msg="Waiting for initialization" state="WARMUP"
+INFO:diss_ioc.devices.sim:device=diss_ioc.devices.sim num_images=4 image_size=255x133 pixel_size=6.751254795578274e-05x2.6932472806324603e-06 channels="['kyxh', 'ezvk', 'vqxp', 'wgur']"
+INFO:diss_ioc.controller:msg="Detector initialized"
+INFO:diss_ioc.controller:Config(initialized="True" configured="False")
+INFO:diss_ioc.controller:msg="Received detector config update"
+INFO:diss_ioc.controller:msg="State switch" old=WARMUP new=READY
+INFO:diss_ioc:msg="Detector ready" state="READY"
+INFO:diss_ioc.pvgroup:msg="Registering channel with EPICS" channel="kyxh"
+INFO:diss_ioc.pvgroup:msg="Registering channel with EPICS" channel="ezvk"
+INFO:diss_ioc.pvgroup:msg="Registering channel with EPICS" channel="vqxp"
+INFO:diss_ioc.pvgroup:msg="Registering channel with EPICS" channel="wgur"
+INFO:diss_ioc.pvgroup:msg="Extra dynamic info" length=16
+INFO:diss_ioc:pv="DISS:example:state"
+INFO:diss_ioc:pv="DISS:example:ssqcnt"
+INFO:diss_ioc:pv="DISS:example:uuid"
+INFO:diss_ioc:pv="DISS:example:numid"
+INFO:diss_ioc:pv="DISS:example:acquire"
+INFO:diss_ioc:pv="DISS:example:duration"
+INFO:diss_ioc:pv="DISS:example:cancel"
+INFO:diss_ioc:pv="DISS:example:clear"
+INFO:diss_ioc:pv="DISS:example:error"
+INFO:diss_ioc:pv="DISS:example:kyxh:asize0"
+INFO:diss_ioc:pv="DISS:example:kyxh:asize1"
+INFO:diss_ioc:pv="DISS:example:kyxh:asize2"
+INFO:diss_ioc:pv="DISS:example:kyxh:enerj"
+INFO:diss_ioc:pv="DISS:example:kyxh:image"
+INFO:diss_ioc:pv="DISS:example:ezvk:asize0"
+INFO:diss_ioc:pv="DISS:example:ezvk:asize1"
+INFO:diss_ioc:pv="DISS:example:ezvk:asize2"
+INFO:diss_ioc:pv="DISS:example:ezvk:enerj"
+INFO:diss_ioc:pv="DISS:example:ezvk:image"
+INFO:diss_ioc:pv="DISS:example:vqxp:asize0"
+INFO:diss_ioc:pv="DISS:example:vqxp:asize1"
+INFO:diss_ioc:pv="DISS:example:vqxp:asize2"
+INFO:diss_ioc:pv="DISS:example:vqxp:enerj"
+INFO:diss_ioc:pv="DISS:example:vqxp:image"
+INFO:diss_ioc:pv="DISS:example:wgur:asize0"
+INFO:diss_ioc:pv="DISS:example:wgur:asize1"
+INFO:diss_ioc:pv="DISS:example:wgur:asize2"
+INFO:diss_ioc:pv="DISS:example:wgur:enerj"
+INFO:diss_ioc:pv="DISS:example:wgur:image"
+INFO:diss_ioc:pv="DISS:example:start_ts"
+INFO:diss_ioc:pv="DISS:example:acq_td"
+INFO:diss_ioc:msg="IOC running" prefix="DISS:example:""
+INFO:diss_ioc.application:msg="Auto-acquire is activated with fixed duration" duration="1.0"
+INFO:diss_ioc.controller:msg="Received detector config update"
+INFO:diss_ioc.devices.sim:msg="Sim acquire start"
+INFO:diss_ioc.frame:msg="New collector" uuid="5f380458-f991-4413-9486-f874540cf5ac ssqcnt=0"
+INFO:diss_ioc.controller:msg="State switch" old=READY new=INTEGRATE
+INFO:diss_ioc.devices.sim:msg="Sim acquire done"
+INFO:diss_ioc.controller:msg="State switch" old=INTEGRATE new=PROCESS
+INFO:diss_ioc.controller:msg="State switch" old=PROCESS new=READY
+INFO:diss_ioc.application:msg="Auto-acquire is activated with fixed duration" duration="1.0"
+INFO:diss_ioc.devices.sim:msg="Sim acquire start"
+INFO:diss_ioc.frame:msg="New collector" uuid="e8916156-c22e-4cac-b739-741f1c6ba3ca ssqcnt=1"
+INFO:diss_ioc.controller:msg="State switch" old=READY new=INTEGRATE
+```
+</details>
+
+See the [reference](#reference) section on more systematic information
+of which [environment variables](#startup-environment-options) are available
+to your for tweaking, and which
+[EPICS process variables](#available-epics-process-variables)
+you can use with Diss.
+
+For production deployment you'd most certainly want to choose a different
+backend using `DISS_DEVICE_BACKEND` and set auto-acquire to `0`. Also,
+you might want to set up other
+[device-specific environment variables](#list-of-supported-devices).
+
+## Viewer-Only Mode
+
+If you've installed Diss via PyPI, an application `diss-view` has been
+installed along. It implements the very same logic (backend, state machine, ...)
+as the IOC application, but instead of forwarding image data to EPICS, it
+uses Matplotlib to display all incoming images. This can be used together
+with auto-acquire mode for rapid view of detector images:
+
+```
+$ DISS_DEVICE_BACKEND=sim DISS_AUTO_ACQUIRE=1 diss-view
+```
+
+This should result in a window similar to the following (check your Matplotib
+and PyQT installation if you encounter displaying errors):
+
+  ![Diss Viewer](./doc/screenshots/diss-view.png "Diss Viewer Example"){width=50%}
+
+Note that this is more of a debugging and verification tool, it likely
+has no production value beyond rapidly viewing detector output.
+
+## Deploying Diss-Ioc As A Service
+
+We suggest deploying Diss-Ioc as container, via Podman, using
+[Quadlets](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html).
+Of course, deploying as a regular, native systemd service is also 
+possible.
+
+Update the `Environment` part accordingly.
+
+<details>
+  <summary> `/etc/containers/systemd/diss-ioc.container` for deployment via Podman+Systemd</summary>
+
+```
+[Install]
+WantedBy=default.target
+
+[Service]
+TimeoutStartSec=300
+Restart=always
+RestartSec=60
+
+[Unit]
+Description=Diss-IOC
+After=network-online.target
+StartLimitBurst=10
+StartLimitIntervalSec=9
+
+[Container]
+Image=registry.gitlab.com/kmc3-xpp/diss-ioc:latest
+Pull=always
+AutoUpdate=registry
+Environment=DISS_DEVICE_BACKEND=eiger
+Environment=DISS_EPICS_PREFIX=DISS:eiger:
+Environment=EIGER_DEVICE_MODE=snapshot
+Environment=EIGER_DEVICE_HOST=10.128.7.13
+```
+</details>
+
+<details>
+  <summary> `/etc/systemd/system/diss-ioc.service` for deployment as native Systemd service</summary>
+  
+```
+[Install]
+WantedBy=default.target
+
+[Service]
+TimeoutStartSec=300
+Restart=always
+RestartSec=60
+
+[Unit]
+Description=Diss-IOC
+After=network-online.target
+StartLimitBurst=10
+StartLimitIntervalSec=9
+
+[Service]
+ExecStart=/usr/bin/diss-ioc
+Environment=DISS_DEVICE_BACKEND=eiger
+Environment=DISS_EPICS_PREFIX=DISS:eiger:
+Environment=EIGER_DEVICE_MODE=snapshot
+Environment=EIGER_DEVICE_HOST=10.128.7.13
+```
+</details>
+
+## Data Post-Processing And Storage
+
+The most common post-processing step is retrieving and actually *saving*
+image data to disk. We suggest using [CAspy](https://gitlab.com/kmc3-xpp/caspy).
+For a realistic setup, try starting Diss as shown in the example below
+(again, substituting the DISS_DEVICE_BACKEND for something suitable to your setup).
+Write down one of the channel names that `diss-ioc` is exporting for you
+(channel names are randomized in sim mode), e.g. "dvsu" in the example
+below.
+```
+$ DISS_DEVICE_BACKEND=sim DISS_EPICS_PREFIX=DISS:example: diss-ioc
+...
+INFO:diss_ioc.pvgroup:msg="Registering channel with EPICS" channel="dvsu"
+...
+```
+
+Then in another terminal, use the channel name to start a CAspy session
+to display and save the data:
+```
+$ caspy --from-epics prefix=DISS:example:dsvu:                         \
+                     image=image num=asize0 width=asize1 height=asize2 \
+                     when=\"DISS:example:acquire==0\"                  \
+        --demote width height --reshape width height --slice 0         \
+        { --to-hdf5 my-data.h5#{tag} --to-plot }
+```
+
+Note that this time around, we haven't activated auto-acquire mode. This
+is closer to what a real-life example would look like.
+But therefore, in yet another terminal, you need trigger an acquisition
+by writing `1` to the EPICS-variable `DISS:example:acquire`:
+
+```
+$ caput DISS:example:acquire 1
+```
+
+Diss will now deliver an image, and CAspy will save the first image of
+channel "dsvu" to the local file "my-data.h5", in a dataset named "image",
+as soon as it arrives. Note the fact that CAspy was explicitly instructed
+to wait for `DISS:example:acquire` to become 0 again before it actually
+starts sending data through its processing pipeline.
+
+We defer to the [CAspy documentation](https://gitlab.com/kmc3-xpp/caspy)
+for many more recipes on how to process EPICS data, e.g. from Diss.
+
+# Reference
+## Startup Environment Options
+
+There are general-purpose environment variables that control the behavior
+of the Diss framework as a whole, and there are device-specific
+variables.
+
+Here's a list of the general-purpose specific variables:
+
+- `DISS_EPICS_PREFIX` the EPICS prefix of the IOC, including the trailing colon
+  (e.g. "DISS:detector:")
+- `DISS_AUTO_ACQUIRE` if this is set to 1 or "yes", the IOC will continuously
+  self-trigger new image acquisitions according to whatever trigger mechanism the
+  detector was set up with; note that this happens on the
+  [state-machine](#fundamental-concepts) level, not the IOC level, but the
+  `:ACQUIRE` PV flag of the IOC will still accurtely reflect the acquisition
+  cycle
+- `DISS_DEVICE_BACKEND` describes the device backend to use, as a single string
+   (e.g. "sim" or "eiger"); see [here](#list-of-supported-devices) for a
+   list of built-in support; also supports a `<module>:<class>` notation in order
+   to load and use 3rd-party device drivers that are not necessarily distributed
+   as part of Diss, for example: `diss_ioc.devices.sim:DeviceEngine`.
+
+The device-specific variables are referred to together with the
+[list of supported devices](#list-of-supported-devices).
+
+## Available EPICS Process-Variables
+
+All Diss PVs are under a common prefix (e.g. "DISS:detector:", see also
+[environment variables](#startup-environment-variables) for details).
+This includes the trailing `:`, and will be referred to as `{prefix}`
+in the following.
+
+There are a number of top-level PVs directly under `{prefix}` that control
+general behavior:
+- `{prefix}state` this is a read-only all-caps string representing the current
+  state of the [Diss state automaton](#fundamental-concepts); device
+- `{prefix}acquire` this is a read-write variables which is 0 most of the
+  time, jumping to 1 when the device is currently acquiring an image;
+  you can trigger an acquisition by directly setting this to 1
+  (and yes, it will jump to 0 by itself when acquisition is done
+  and image data is available for retrieval via EPICS)
+- `{prefix}duration` image acquisition time in seconds; note that
+  depending on your device backend, other
+  [environment variables](#list-of-supported-devices),
+  like `EIGER_GATING_FREQUENCY`, might need to be set correctly
+- `{prefix}cancel` if this is set to 1 during the ACQUIRE state,
+  acquisition will be cancelled and image data deleted, with
+  the state machine returning to the READY state
+- `{prefix}error` if the state is ERROR, this is a string that
+  will give a hint to the first error currently blocking operation
+- `{prefix}clear` if the state is ERROR, setting this to 0
+  will clear the current error from the list and force the device
+  into READY state; if any error(s) persist, the state machine
+  will re-enter ERROR state, so it is generally safe, and desired
+  operation procedure, to set this to 0 as a first meaure for error
+  recovery.
+
+## List Of Supported Devices
+
+These devices are directly built into and distributed with the Diss ecosystem:
+
+### `eiger` **Dectris Eiger2 X-Ray Detector**
+
+It reacts to the following environment variables
+- `EIGER_DEVICE_HOST` host name or IP of the Eiger control computer
+  (e.g. "10.128.7.13")
+- `EIGER_API_PORT` the port on the host computer to connect to in order
+  to access Eiger's HTTP API, defaults to "80"
+- `EIGER_STREAM_PORT` port on the host computer to connect to for CBOR2
+  image data retrieval, defaults to "31001"
+- `EIGER_DEVICE_MODE` this is a high-level operation specification for 
+  the Eiger2 X-Ray device; the actual setup of the Eiger device is a
+  fairly comprehensive list of options, *including*, but not limited
+  to, the Eiger trigger mode; use either one of:
+  - "snapshot" for internally triggered images
+  - "sinlge" for Eiger's "extg" external-trigger mode, single-image
+  - "double" for Eiger's "extg" external-trigger mode, double-image.
+    This will require two trigger signals in rapid succession,
+	and it's a (relatively new, as of 2024) feature of the Eiger detectors,
+	used e.g. in pump-probe experiments, to collect images both in 
+	pumped and umpumped states.
+- `EIGER_GATING_FREQUENCY` this is only used for either "single" or "double"
+  imaging modes (i.e. external trigger), and only to calculate exposure times.
+  This is because Eiger2 actually doesn't actually count time
+  in external trigger mode, it counts trigger pulses instead.
+  And for this to translate to an accurate
+  "acquistion time" in seconds, Diss needs to know the frequency with which
+  your trigger pulses arrive, in Hz.
+- `EIGER_X2_THRESHOLD1_ENERGY` and  `EIGER_X2_THRESHOLD1_ENERGY` set the
+  threshold energies for the multi-channel feature if the Eiger2 detectors.
+  If this isn't specified, the threshold energies aren't touched and the
+  detector will use whatever it was programmed with via other means.
+  Note that setting the THRESHOLD2 energy will *explicitly* also
+  enable threshold 2 mode via the corresponding Eiger API key.
+- `EIGER_IMAGE_OVERDUE` this is the time to wait for incoming images
+  past the actual integration time. For "snapshot" mode, this should be
+  set to a fairly low value (5 seconds is default). For any of
+  the external-trigger modes, the default is on the order of minutes.
+  The optimal value really depends on your particular setup (i.e. how
+  long do you want Diss to keep waiting for a trigger signal?)
+  Setting this to 0 disables
+  image-overdue detection, but then your IOC will stay forever in ACQUIRE
+  state if the trigger pulse never arrives; on timeout, the IOC will enter
+  ERROR state and requires user acknowledgement via the "...:clear" PV
+  to continue operation.
+	
+Eiger2 channels, currently hard-coded, are the following:
+- `threshold_1`, `threshold_2`, ... the exact number depends on how many
+  different imaging channels your Eiger2 supports (typucally, there appear
+  to be 2)
+	
+Meta-information for each of the Eiger2 channels
+(available as PV under `{prefix}:{channel}:{meta}`:
+- `threshold_energy` the threshold energy, in eV, for the respective
+  channel; when this is set, the data is written to the Eiger2 API
+  immediately, regardless of the current Diss state.
+
+### `sim` **A Built-in Device Simulator**
+
+This delivers random data, in a random image geometry, with a random
+number of images, and a random number of channels (up to 4), with
+random names. It is meant for testing only.
+
+It doesn't take any specific environment variables.
+
+Each channel has an `enerj` meta-field. This is chosen somewhat
+deliberately to match any other existing *real* defice fields -- you
+simply should *not* rely on the sim-device to resemple any real
+device in any aspect, except for the fact that it produces images.
+
+
+### `pylon` (work in progress)
+
+For Basler Pylon cameras (GigE).
+
+### `miniquant` (work in progress)
+
+For PicoQuant HydraHarp series photon-counting devices.
+
+## Implementing Detector Backends
+
+This is how a barebone device looks like, paraphrased from
+the `sim` device. [Details of Diss internals](#fundamental-concepts)
+are also helpful in understanding this example.
+
+<details>
+  <summary>
+  Custom driver backend example (click to expand)
+  </summary>
+
+```python
+from diss_ioc.controller import *
+from diss_ioc.devices.base import *
+from numpy.random import rand as a_rand
+import uuid
+
+
+class MyDeviceEngine(DeviceEngineBase):
+
+    def __init__(self, *a, sim_dict=None, **kw):
+        super().__init__(*a, **kw)
+
+
+    async def startup(self, *a, **kw):
+       ''' Called once at the beginning, for custom async startup tasks '''
+       pass
+
+
+    async def teardown(self):
+       ''' Called once at the end, for custom shutdown tasks '''
+       pass
+
+
+    @command_task(Command.Initialize)
+    async def _run_initialize(self, cmd):
+        '''
+	"Initialize" the fake device with something that resembles useful data.
+	'''
+		
+        self._config = s = DeviceConfig()
+	s.channels = [                          ## two channels
+            ChannelConfig('1st'),
+            ChannelConfig('2nd')
+        ]
+        s.num_images = 3                        ## 3 images per channel
+        s.image_size = [ 256, 512 ]             ## image size
+        s.pixel_size = [ 0.01, 0.01 ]           ## meta-information (?)
+
+
+    @command_task(Command.Acquire)
+    async def _run_acquire(self, cmd, duration=None):
+        ''' Run acquisition procedure '''
+
+        self._do_cancel = False
+        series_uuid = uuid.uuid4()
+
+        # initiate new image series
+        self.push_event(StartDateEvent(None, series_uuid))
+
+        # push 3 sets of images, 2 channels each
+        for i in range(3):
+            img_pack = ImageDataEvent(i, series_uuid, time.time(), duration)
+            img_pack.add_image(self._config.channels[0].label, a_rand(*self._config.image_size))
+            img_pack.add_image(self._config.channels[1].label, a_rand(*self._config.image_size))
+            self.push_event(img_pack)
+
+            # This is just to demonstrate cancelling, real-life example would be more complex
+            if self._do_cancel:
+                self.push_event(CancelDataEvent(series_uuid=data_start.uuid))
+                return
+
+        # conclude image series
+        self.push_event(EndDataEvent(series_uuid))
+
+
+    @command_task(Command.ChannelAdjust)
+    async def _run_channel_adjust(self, channel_name=None, **params):
+        '''
+        Would set metadata parameters.
+	
+        We don' have any channel meta-data in this barebones example,
+        but if we had, this would be the place to implement writing
+        to device / reading back the data.
+		
+        But if we had, we'd have to update the main state loop when done:
+          self.push_event(ChannelStateEvent(channel_name, **...)
+        '''
+
+        self.push_event(ErrorEvent('Metadata not supported'))
+
+
+    @command_task(Command.Cancel)
+    async def _run_cancel(self, cmd):
+        '''
+        Sets "cancel" marker to current exposure, it's up to the
+        _run_acquire() what it actually does with this.
+        '''
+        self._cancel_acquisition = True
+
+
+    @query_handler(Query.IsInitialized):
+    def _q_init(self, event):
+        ''' Returns current initialization state '''
+         return InitStateEvent(self._is_initialized)
+
+
+    @query_handler(Query.GetConfig):
+    def _q_config(self, event):
+        ''' Returns device config, or fails if not yet initialized '''
+	if hasattr(self, "_config"):
+            return ConfigStateEvent(self._config)
+        ErrorEvent(f'Device not initialized')
+
+
+    @query_handler(Query.GetRuntime)
+    def _q_runtime(self, event):
+        ''' Returns runtime data '''
+        return RuntimeStateEvent(DeviceRuntime())
+```
+</details>
+
+How to use:
+- copy the code above (or something similar) and make it available
+  as a Python module on your computer (e.g. as `mydevice.py`)
+- run `diss-ioc` with the the environment variable `DISS_DEVICE_BACKEND`
+  set to your module/class: `mydevice:MyDeviceEngine`
+
+Essentially, these are the things that make a custom Diss device
+backend tick:
+
+- subclassing `DeviceEngineBase` -- this is important, as messaging
+  queue code depnds on this
+
+- make sure all commands are served properly,
+  see `@command_task` decorators;
+  command tasks are asyncio tasks, execute in parallel to the state
+  machine, and which the state machine controls and operates, which
+  "do stuff" with the detector and can take as long as necessary
+  provided they don't block synchronously.
+
+- make sure to support all queries, see the `@query_handler`
+  decorator: query handlers are one-off actions that run *inside*
+  every state machine loop run, and which must finish as soon
+  as possible (they block execution on the state machine until
+  they're finished).
+
+- make sure to provide the required `ImageStart`, `ImageData`
+  and `ImageEnd` succession of events (or `ImageCancel` in case
+  the exposure is being cancelled -- in which case any further
+  `ImageData` or `ImageEnd` events must be dropped).
+
+- make sure to propagate errors through the event system back
+  to the state machine, where it'll end up being handled by
+  the ERROR state logics -- this is an essential part of Diss's
+  ["do or die" philosophy](#design-philosophy).
+
+# Design, Philosophy, Diss Internals
+## Why Yet Another Detector IOC?
+
+There already exist a number of
+[well-established frameworks](https://github.com/areaDetector/areaDetector)
+for imaging detector control via EPICS -- why another one?
+
+Often the aim is to support a too large amount of competing usage
+scenarii in one application.
+We see a lot of focus on offering and upholding complex data
+post-processing capabilities and storage to many backends.
+We acknowledge the merit of such design decisions *if and when* they
+work flawlessly. But when they don't, they fail ungracefully,
+continuing a dysfunctional form of operation with unsuitable
+error reporting, in extreme cases even when core features like
+the detector itself or storage backends have failed.
+
+Meanwhile, most of the additional tasks can easily be offloaded to other
+3rd-party tools and libraries today.
+In particular the Python scientific ecosystem has a vast and vibrant
+community, supporting well-polished and highly-performing modern
+libraries for computation, storage, and data management at all scales.
+This makes it unnecessary 
+
+The reasonable expectation for software is to perform as instructed,
+or to fail unambiguously.
+
+This is why the focus with Diss is on
+[doing *one* thing *well*](https://en.wikipedia.org/wiki/Unix_philosophy),
+namely retrieval of images from a detector,
+rather than complicating things by adding features.
+
+
+## Fundamental Concepts
+### General Design Considerations
+The general ideas we try to adhere to are:
+
+- do one thing well:
+  the task is acquire images from a device and publish them via EPICS
+- do or die: if the process continues to operate, you can rely on it
+  to perform as requested
+- integrate well: make modern deployment processes easy, e.g. via
+  systemd, containers, offer extensive logging
+- extend easily: for the EPICS PV interface focus on the lowest common
+  denominator with all detectors capable of meeting experiment requirements
+  rather than supporting individual features of devices; push responsibility
+  for device-specific configuration onto the backends
+  (see also [what Diss isn't good for](#limitations-and-quirds))
+  
+As a deliberate design decision, we generally *hide* information
+about the internal and specific setup required of a device. The
+Software layers relying on Diss for imaging should, ideally,
+never even know if the detectors were swapped.
+
+The Diss detector model offers the following:
+- acquisition: ability to request images with a specified integration time
+- repetition: ability to acquire *sets of multiple images* instead of
+  just single snapshots
+- channeling: ability to deliver more than one version of a specific image,
+  per acquisition (this is usally used by X-ray detectors with built-in
+  sensitivity to different wavelengths)
+- channel parametrization: you can set specific channel parameters
+  through EPICS, but Diss's operation doesn't depend on those parameters;
+  they're just pass-through information.
+  
+What Diss doesn't offer:
+- triggers: we don't care how your device decides *when* to trigger an
+  image, whether it's internally or by external signal... set your
+  experiment up as you wish, Diss will deliver the images when the
+  detector has them ready.
+- mode configuration: we don't care about the acquisition specifics of your
+  device... the device driver backend should prepare all cofiguration
+  during initialization, e.g. through environment variables evaluated
+  at start; and when the configuration doesn't meet your requirements? --
+  close the application, restart it with different parameters.
+- storage: retrieve the images via EPICS -- do it via localhost connections,
+  if think you need to "worry about performance"
+- image processing, region-of-interest calculation, fitting, integration:
+  Python can do that for you,
+  see [rapid integration recpies](#data-post-processing-and-storage) for
+  rapid adaptations, and
+  [extending the application model](#applications) and
+  [writing custom device backends](#devices) if your needs
+  surpass what Diss can offer out-of-the-box.
+
+### Data Flow & State Machine
+
+The general data flow through Diss is from the *Device* (i.e. detector),
+through the *Controller*, to the *Application*:
+
+```mermaid
+flowchart TD
+    A[Device] <-->| events| C{Controller}
+    C -->|data| D[Application]
+    D --> |cmd| C
+```
+
+This structure is
+intended to abstract away device access, so that backends are easily
+replaceable.
+
+### Controller, Events, Queue
+
+The *Controller* enforces protocol centrally,
+so error detection and handling remain robust regardless of the backend.
+It communicates with the device backend by means of a *Queue*
+by which both components communicate -- which is a list of events
+passing back and forth.
+
+At its core, the *Controller* is a state automaton:
+
+```mermaid
+stateDiagram-v2
+    [*] --> INIT
+    INIT --> WARMUP
+    WARMUP --> READY
+    READY --> ACQUIRE
+    ACQUIRE --> PROCESS
+	ACQUIRE --> CANCEL
+	PROCESS --> READY
+	CANCEL --> READY
+	WARMUP --> ERROR
+    READY --> ERROR
+	ACQUIRE --> ERROR
+	PROCESS --> ERROR
+	ERROR --> READY
+```
+
+The current state is represented in an
+[exposed PV](#available-epics-process-variables),
+and is one of the central sources of information
+that any application connecting to Diss should
+constantly observe.
+
+The meaning of each state and its interaction with
+the device is shown, but 
+interaction with the application layer is omitted
+for clarity:
+
+- `INIT` starting up and checking the hardware state.
+  Diss tries to gracefully handle "cold starts", i.e.
+  adapt to the current state of the hardware if possible.
+  Transition diagram to WARMUP or READY, depending on the
+  value of the initial state:
+  ```mermaid
+  sequenceDiagram
+    Controller->>+Device: QueryRequest(GetState)
+    Device-->>+Controller: InitStateEvent
+  ```
+- `WARMUP` handles explicit initialization of the device,
+  if necessary. Transition diagram:
+  ```mermaid
+  sequenceDiagram
+    Controller->>+Device: CommandRequest(Initialize)
+    Device-->>+Controller: CommandResultState
+    loop 
+      Controller->>+Device: Request.GetState
+      Device-->>+Controller: InitStateEvent(True)
+    end
+  ```
+- `READY` controller is prepared to issue new acquisition
+  commands. At this point the hardware is required
+  expected to be "hot" and ready for operation.
+  Transition diagram:
+  ```mermaid
+  sequenceDiagram
+    Controller->>+Device: CommandRequest(Acquire)
+    Device-->>+Controller: CommandResultState
+    Device->>+Controller: StartDataEvent
+  ```
+- `ACQUIRE` waits for hardware to perform the imaging operation,
+  and gradually delivers image data as it pours in.
+  Transition diagram:
+  ```mermaid
+  sequenceDiagram
+    loop
+      Device->>+Controller: ImagetDataEvent
+    end
+    Controller->>+Device: EndDataEvent / CancelDataEvent
+  ```
+- `PROCESS` handles the image data flow *away* from the conroller,
+  to the application, generally to be published via EPICS.
+  We suggest that any more customized processing be handled in
+  an external process (e.g. CAspy), but if tight integration with
+  the cycle is required, this is where it should happen.
+  Transitions back to READY after data delivery callbacks
+  are executed.
+- `CANCEL` stops/cancels a running acquisition,
+  discarding the data. The transition is always
+  to READY after triggering proper cleanup.
+- `ERROR` is entered when a well-defined misbehavior occurs that
+  Diss in principle knows how to remedy, but which requires user
+  intervention or at least
+  [acknowledgement](#available-epics-process-variables)
+  (e.g. unexpected device state detected, timeouts, etc).
+  Unconditionally transitions to READY once the error queue
+  is cleared. If the error condition persists, the backend
+  will re-trigger entering the error state.
+
+An additional error state, `FAIL`, is omitted above for clarity.
+It can be entered from any of the above states. It represents
+an unrecoverable error state. Unlike ERROR, there's no consistent
+or defined way out of FAIL, and the application exits immediately.
+
+There is also constant communication not depicted in the diagrams
+above, but is a central for feedback from the device running in the
+background regardless of the state: retrieving of
+configuration data (in the initial phase), or runtime data
+("redular" operation phase):
+```mermaid
+sequenceDiagram
+    loop
+      Controller->>+Device: QueryRequest(GetConfig/GetRuntime)
+      Device-->>+Controller: ConfigStateEvent / RuntimeStateEvent
+    end
+```
+
+We stress that configuration data is retrieved only in the beginning.
+This is intentional, a central design element in Diss is that
+device setup is considered "quasi-static". This means that, beyond
+runtime elements relevant to image acquisition, there is no altering
+of settings like triggering, number of images, geometry etc. It
+is the backend's responsibility to ensure this, e.g. by checking at
+appropriate times and queueing an error otherwise.
+
+Events described in the diagrams are defined
+in [`diss_ioc.even`](src/diss_ioc/event.py).
+The only time
+you're ever going to be interested in it is as a developer,
+debugging Diss or extending its capabilities to include
+[new device backends](#implementing-device-backends).
+But as an overview, they can be classified as follows:
+
+- **Request Events** are initiated from the application part of
+  of Diss, and are intended to make the device "do something"
+  or "say something" that wouldn't necessarily
+  happen if it hadn't been explicitly requested
+- **State Events** are pieces of structured information from
+  the device aimed towards the application; mostly, not not
+  necessarily always, they are answers to request events
+- **Data Events** are similar to state events in that they're
+  generated by the device, aimed towards the application; but
+  they're not created as response to a query, they govern
+  and structure the payload stream (i.e. the detector images).
+
+Request events can be further subdivided into:
+
+- **Queries** as state-reporting events (i.e. "read-only"),
+  which don't change device
+  status; queries request information, i.e. actively probe the device,
+  but they're expected to not alter the device's
+  behavior, e.g. by triggering or cancelling exposure. Currently
+  the following queries are part of the API:
+  - *IsInitialized* fetches current hardware initialization state (True/False)
+  - *GetConfig* fetches the actual initial configuration values
+  - *GetRuntime* fetches operational metadata values
+- **Commands** as state-altering events which make the device
+  require specific actions. Currently the following commands
+  make up the Diss event API:
+  - *Initialize* triggers an initialization of the hardware backend.
+    What exactly that entails is responsibility of the backend.
+  - *Acquire* triggers a new image acquisition.
+  - *Cancel* aborts the current image acquisition process.
+  - *Clear* resets any existing / active error buffers.
+  - *ChannelAdjust* sends data pertaining to a channel metadata.
+
+The data events that structure the transfer of images from hardware
+to application are:
+- **StartData** sent at the beginning of a new imaging cycle. Doesn't
+  contain any data, just meta information to identify the acquisition.
+- **ImageData** sent once for every image. Contains all the images for
+  every involved channel. Diss is very picky about how many ImageData
+  events to expect -- anything out of line results in an error state.
+- **EndData** sent at the end of an imaging operation.
+- **CancelData** sent alternatively when an imaging operation is
+  to be cancelled. After CancelData, no other ImageData or EndData
+  must be sent.
+
+### Devices And Applications
+
+We've already explained a great deal about *Devices* in the
+[implementing backends](#implementing-detector-backends) section,
+respectively the [events and queues](#controller-events-queue)
+section above.
+
+The other side is the *Application*, i.e. where the data goes,
+respectively where commands initially come from. For the IOC part
+of Diss, this is the EPICS front-end. (For Diss View, this would
+be the Matplotlib display.)
+
+The exact design of the data and control model in this part are
+still a work-in-progess. But essentially, there are different callback
+mechanisms for several types of data:
+
+- incoming data hooks: these are key-value containers (Python `dict()`)
+  that bind one "tag", to the corresponding scalar or array.
+  Typically, the tags are channel names, and the data are the pixel
+  arrays in person. Additional information, such as timestamps,
+  are also available.
+  
+- channel metadata hooks: these contain infromation of channel
+  metadata, when available.
+  
+- state hooks: the *Controller* allows hooking directly into
+  its event loop, by means of callbacks to be executed on every
+  loop run of a particular state. These are used internally quite
+  heavily. Currently they are a preferred method for significantly
+  extending Diss's functionality. Internal documentation comments
+  quite extensively on how these hooks work and how they can
+  influence state transitions, and is a must-read for anyone
+  using them.
+  
+There are also properties of the *Controller* that can be read.
+They contain static information (like configuration data, once
+it's available), as well as runtime infomation -- most prominently
+the current state and errors.
+
+If you have a use case for implementing your own application model
+on top of Diss, we encourage you to get in contact with us. While
+this "library-like approach" is one of the intended uses for Diss,
+and most design decisions we've made are to explicitly support this,
+things are still "rough around the edges".
+
+## Limitations And Quirks
+
+**Point-and-shoot**
+
+Diss was developed with "point-and-shoot" style data acquisition
+in mind: this means that you'd usually set up all your positioners
+to their specific values, hold still, and instruct the detector
+to perform a measurement *while holding still* for the time
+it takes to perform the measurement. Diss would then wait for your
+image, and publish the data via EPICS as it arrives.
+
+**Frame rate**
+
+Typical imaging repetition rates at which Diss operates are large
+fractions of seconds (e.g. hundreds of milliseconds) up to minutes.
+(This obviously also depends on how fast your detector is able
+to trigger and obtain new images.)
+But Diss's underlying data model is a 3D array, meaning that it is
+able to retrieve a multiple images taken in rapid succession, if your
+device backend supports this. The limitation is that it *always* needs
+to be *the same* number of multiple images.
+
+The limitation is ultimately the EPICS Channel Access state machine,
+which is capable of operating at dozens of "frames per second" on a
+fairly modern computer -- but not faster.
+
+As such, Diss isn't designed, and will likely utterly fail, for
+high-repetition rate experiments. Diss also wasn't tested with any
+"fly-mode measurements" applications yet. There's nothing that
+*fundamentally* prevents Diss from working in fly-mode experiments,
+if the repetition rate satisfies your demands.
+
+One major challenge would be to make sure that every frame that gets
+capture by Diss also ends up in storage. This is usually not an issue
+and works well, on average, for repetition rate on a second-, or
+large sub-second-scale.
+
+For very small sub-second-scale, you'd probably need to
+[roll out your own application model](#applications) and integrate
+storage directly into the Diss main loop.
+The good news is that this is indeed *one* of the intended Diss
+usage scenarii (although not the mainstream one), and as such, Diss
+internals are fairly modular and optimized to be re-knit together
+into different user-specific application models. Feel free
+to contact us if you need advice.
+
+**Device configuration**
+
+Diss is deliberately designed to *not* support for on-line
+configuration of device settings via EPICS. This is where most
+other frameworks fail to implement satisfactory safe guards
+and error handling concepts -- which is easily understandable,
+given that device operation models vary *immensely* form model
+to model, and there's no real common denominator.
+
+Instead, we suggest that you prepare different pre-set configuration
+models for different setups or your device. You can then either
+start `diss-ioc` manually, depeding on your requirements; or you
+can set up systemd service cascades, using tools like `caguard` 
+and `caspy` ad-hoc IOCs to control which preset is active in
+your EPICS network at a given time. This may seem cumbersome,
+but is actually a more reliable setup: if configured properly,
+it can guarantee that if your system is available, it 100% operates
+as expected, as opposed to failing in subtle and non-obvious ways.
+
+## What's next?
+
+- Refining application model API: see above, there's a lot of
+  potential in making customized applications based on the internal
+  Diss API more accessible. We see this as one of the strong points,
+  since most one-size-fits-all kind of detector control applications
+  do only mediocre jobs of *everything*, instead of a good job of
+  *anything*. The only way out is to make customization easier.
+  
+- Stabilizing maintainership: this is an application developed
+  and actively used at the KMC3 beamline of BESSY -- out of necessity.
+  Access to expensive hardware (e.g. X-Ray detectors) is *obviously*
+  necessary, as is the ability to use it for scientific purposes.
+  As usual and typical for scientific positions, the head developer 
+  is on a time-limited contract. Eventually, support will abruptly end,
+  even if the code will still linger around for a while.
+  
+  A small but dedicated community would help maintain Diss for longer,
+  as would financing of personnell resources.
+  
+  (Also, I -- the head developer -- was an IT developer with many years of
+  experience in my previous life. I am available after, and possibly during,
+  my current the HZB contract as a constutant or sword for hire.
+  You can get a hold of me at florin.diss(at)selfmx.net.)
+  
+- Debugging, debugging, debugging... yes, it happens, but sometimes things
+  go awry ¯\\_(ツ)\_/¯

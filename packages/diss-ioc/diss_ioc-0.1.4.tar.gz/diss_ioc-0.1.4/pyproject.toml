@@ -1,0 +1,80 @@
+[build-system]
+requires = [
+    "setuptools>=80.0",
+    "setuptools_scm[toml]>=8.3"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+license = "GPL-3.0-or-later"
+license-files = [ ]
+name = "diss-ioc"
+authors = [
+    { name = "Matthias Rössle", email = "matthias.roessle@helmholtz-berlin.de" },
+    { name = "Florin Boariu", email = "florin.pt@rootshell.ro" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering"
+]
+dependencies = [
+    "caproto",
+    "opentelemetry-api",
+    "opentelemetry-exporter-otlp",
+    "aiohttp",
+    "pyyaml",
+    "cbor2",
+    "numpy",
+    "dectris-compression",
+    "zmq",
+]
+dynamic = ["version"]
+description = "CAproto-based pure-Python EPICS IOC for imaging detectors"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = []
+
+
+[project.urls]
+Source = "https://gitlab.com/kmc3-xpp/yadi-ioc"
+Issues = "https://gitlab.com/kmc3-xpp/yadi-ioc/-/issues"
+
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-asyncio"
+]
+display = [
+    "matplotlib"
+]
+all = [
+    "diss-ioc[test,display]"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -s"
+asyncio_mode = "auto"
+log_cli = true
+testpaths = [ "test" ]
+
+[tool.coverage.run]
+branch = true
+command_line = "pytest"
+include = [ "src/diss_ioc/" ]
+source_pkgs = [ "diss_ioc" ]
+omit = [ "./test/*" ]
+
+[tool.setuptools_scm]
+write_to = "src/diss_ioc/_version.py"
+
+[project.scripts]
+diss-ioc = "diss_ioc.ioc:main"
+diss-view = "diss_ioc.viewer:main"
