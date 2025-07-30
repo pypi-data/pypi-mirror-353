@@ -1,0 +1,2 @@
+[console_scripts]
+meshviewer = meshviewer.viewer:main
