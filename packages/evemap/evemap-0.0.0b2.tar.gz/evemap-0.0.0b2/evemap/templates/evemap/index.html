@@ -1,0 +1,23 @@
+{% extends 'evemap/base.html' %}
+{% load i18n %}
+{% load bootstrap %}
+{% load static %}
+{% load humanize %}
+
+{% block details %}
+<div id="map" style="width: 100%; height: calc(100vh - 100px);"></div>
+<div id="popup" class="ol-popup" style="display: none;"></div>
+{% endblock %}
+
+{% block extra_javascript %}
+<script type="application/javascript" src="{% static 'js/ol.js' %}"></script>
+<script type="application/javascript" src="{% static 'js/evemap.js' %}"></script>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/ol.css' %}">
+<link rel="stylesheet" href="{% static 'css/evemap.css' %}">
+{% endblock %}
+
+{% block extra_script %}
+{% endblock %}
