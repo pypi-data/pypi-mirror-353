@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/beginning_package006/__init__.py
+src/beginning_package006/main.py
+src/beginning_package006.egg-info/PKG-INFO
+src/beginning_package006.egg-info/SOURCES.txt
+src/beginning_package006.egg-info/dependency_links.txt
+src/beginning_package006.egg-info/top_level.txt
