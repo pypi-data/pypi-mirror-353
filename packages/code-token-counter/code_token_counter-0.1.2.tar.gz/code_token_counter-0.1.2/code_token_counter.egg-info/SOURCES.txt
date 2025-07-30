@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+code_token_counter.egg-info/PKG-INFO
+code_token_counter.egg-info/SOURCES.txt
+code_token_counter.egg-info/dependency_links.txt
+code_token_counter.egg-info/entry_points.txt
+code_token_counter.egg-info/requires.txt
+code_token_counter.egg-info/top_level.txt
+codebase_token_counter/__init__.py
+codebase_token_counter/__main__.py
+codebase_token_counter/token_counter.py
+tests/__init__.py
+tests/test_repository.py
+tests/test_token_counter.py
