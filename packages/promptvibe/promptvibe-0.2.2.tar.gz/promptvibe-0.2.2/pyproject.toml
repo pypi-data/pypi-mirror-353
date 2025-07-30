@@ -1,0 +1,23 @@
+[project]
+name = "promptvibe"
+version = "0.2.2"
+description = "Optimize the user prompt"
+authors = [
+    {name = "Praveen Govindaraj",email = "38414524+Praveengovianalytics@users.noreply.github.com"}
+]
+license = {text = "Apache Licence 2"}
+readme = "README.md"
+packages = [{ include = "promptvibe" }]
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "dspy (>=2.6.27,<3.0.0)",
+    "gradio (>=5.33.0,<6.0.0)"
+]
+
+[tool.poetry.scripts]
+promptvibe = "promptvibe.__main__:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
