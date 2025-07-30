@@ -1,0 +1,6 @@
+fsspec>=2025.3.2
+llm>=0.24
+
+[test]
+pytest
+pytest-httpx

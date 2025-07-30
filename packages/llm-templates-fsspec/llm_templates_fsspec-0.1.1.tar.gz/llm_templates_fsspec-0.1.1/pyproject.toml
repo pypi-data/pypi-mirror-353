@@ -1,0 +1,29 @@
+[project]
+    name            = "llm-templates-fsspec"
+    version         = "0.1.1"
+    description     = "Load LLM templates from local paths and cloud storage (S3, GCS, Azure) using any supported fsspec URL scheme."
+    readme          = "README.md"
+    authors         = [{ name = "Mario-César Señoranis" }]
+    requires-python = ">=3.11"
+    dependencies    = ["fsspec>=2025.3.2", "llm>=0.24"]
+    license         = { text = "Apache-2.0" }
+    classifiers     = ["License :: OSI Approved :: Apache Software License"]
+
+[build-system]
+    requires      = ["setuptools"]
+    build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+    dev = ["pytest>=8.3.5", "pyyaml>=6.0.2"]
+
+    [project.urls]
+        Homepage  = "https://github.com/mariocesar/llm-templates-fsspec"
+        Changelog = "https://github.com/mariocesar/llm-templates-fsspec/releases"
+        Issues    = "https://github.com/mariocesar/llm-templates-fsspec/issues"
+        CI        = "https://github.com/mariocesar/llm-templates-fsspec/actions"
+
+    [project.entry-points.llm]
+        templates_github = "llm_templates_fsspec"
+
+    [project.optional-dependencies]
+        test = ["pytest", "pytest-httpx"]

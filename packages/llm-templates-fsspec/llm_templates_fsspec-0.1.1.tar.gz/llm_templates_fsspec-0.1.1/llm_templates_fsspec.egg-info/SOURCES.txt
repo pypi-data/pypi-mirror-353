@@ -1,0 +1,9 @@
+README.md
+llm_templates_fsspec.py
+pyproject.toml
+llm_templates_fsspec.egg-info/PKG-INFO
+llm_templates_fsspec.egg-info/SOURCES.txt
+llm_templates_fsspec.egg-info/dependency_links.txt
+llm_templates_fsspec.egg-info/entry_points.txt
+llm_templates_fsspec.egg-info/requires.txt
+llm_templates_fsspec.egg-info/top_level.txt
