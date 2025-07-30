@@ -1,0 +1,9 @@
+LICENSE
+setup.py
+test/test.py
+yiwo_request.egg-info/PKG-INFO
+yiwo_request.egg-info/SOURCES.txt
+yiwo_request.egg-info/dependency_links.txt
+yiwo_request.egg-info/not-zip-safe
+yiwo_request.egg-info/requires.txt
+yiwo_request.egg-info/top_level.txt

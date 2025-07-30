@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: yiwo_request
+Version: 0.1
+Summary: yiwo_request
+Home-page: 
+Author: vecharm
+Author-email: 
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
