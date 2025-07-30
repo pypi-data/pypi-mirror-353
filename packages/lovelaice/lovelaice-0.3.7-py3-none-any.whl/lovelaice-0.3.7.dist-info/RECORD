@@ -1,0 +1,11 @@
+lovelaice/__init__.py,sha256=sLwtROgzHQr2ELAzDvQdUjq7we9Ci3785zOzRCz6Uro,28
+lovelaice/cli.py,sha256=oFNAkN5pieayNIBfL3I3r7pF2dzW91EAUg7aqF_s5hs,6440
+lovelaice/config.py,sha256=vwYJhjYbTQhNIxanYFF1hfOn_2A_uHWGAJhB0GgN0W0,2045
+lovelaice/core.py,sha256=vdMfFxzCIMCjhxwPm4HwrwAJaNskjqPTaIis0kgbYnY,976
+lovelaice/models.py,sha256=lBpe511H6ZxxNACsl7OV_pKbNrptZ2GzrpzNkKl03nc,88
+lovelaice/tools.py,sha256=CdRsxlre-IXqDYNfMYnRuoWr6u8gIFzjX3hoa6bQRBg,5970
+lovelaice-0.3.7.dist-info/METADATA,sha256=Jv205HjuLrNT-eGn7MjTus4V_2pg3L2eNVAa3Ibdf9U,10780
+lovelaice-0.3.7.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+lovelaice-0.3.7.dist-info/entry_points.txt,sha256=LqLbUXy_R1krcgaOAmA97oGRIQFYyNup1zM792YrtlA,48
+lovelaice-0.3.7.dist-info/licenses/LICENSE,sha256=8Do7YXcZxxT4jfb9ayneIQ4V5pTvJaRmD2MKDx-wY94,1079
+lovelaice-0.3.7.dist-info/RECORD,,
