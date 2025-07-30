@@ -1,0 +1,3 @@
+include stocksim/simulation.pyx
+include README.md
+include LICENSE
