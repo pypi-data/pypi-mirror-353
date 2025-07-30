@@ -1,0 +1,12 @@
+pyfilehandlers/__init__.py,sha256=yKNwFEMsSAjptWPz49EIVCLDwSQyfq67C7l-pi_wOhM,175
+pyfilehandlers/file_dat.py,sha256=zDwgVuFFWv8nRaaD34vU6h9BayCvqg5L8Kjdc8rYAvE,678
+pyfilehandlers/file_extension.py,sha256=_PwxjKnswUOUtiG8b-8FfeQ2B657kX4_1m8fYSguJFA,1519
+pyfilehandlers/file_handler.py,sha256=uCpQcGvfsgYxiSsbG8BMxp4GYvH98Ps0a9dLbxgCFx8,8663
+pyfilehandlers/file_json.py,sha256=-YhAOg-HmCWSVxp-sDD-0B91-0j28sDwi_5vpUXVYr4,2279
+pyfilehandlers/file_minecraft_dat.py,sha256=3qbd8I-nHZ7h9u9tkjQJohgHhTXzbu7CMnMsFYtUkWM,2328
+pyfilehandlers/file_txt.py,sha256=ew5F7C2ncDOLp4i8mX_Kfe5_xVewIb3evdXwZIdgNr0,2402
+pyfilehandlers/file_yaml.py,sha256=IZe_OZaXpX-juidbnFTfS9daOy9zFhIQu1mc1e-NdAs,2352
+pyfilehandlers-1.0.2.dist-info/METADATA,sha256=QRg8e0YC45qcvovr7lRiyfUThw6VZY2CGkxiLwrC0KA,703
+pyfilehandlers-1.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pyfilehandlers-1.0.2.dist-info/licenses/LICENSE,sha256=yKN9guJ8uodK0MS5tphe4WIBZaWsMTn0ibIV3o2OJzY,1091
+pyfilehandlers-1.0.2.dist-info/RECORD,,
