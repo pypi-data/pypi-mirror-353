@@ -1,0 +1,3 @@
+[console_scripts]
+wdp = src.cli:cli
+wifi-densepose = src.cli:cli
