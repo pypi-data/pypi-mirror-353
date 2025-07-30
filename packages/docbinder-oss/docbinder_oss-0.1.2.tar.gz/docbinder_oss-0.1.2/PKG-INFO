@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: docbinder_oss
+Version: 0.1.2
+Summary: DocBinder Open Source Shared Library
+Author-email: Paolo Leonard <paolo@snappylab.dev>, Christophe Beke <christophe@snappylab.dev>
+License-File: LICENSE
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# Welcome!
+
+We are just getting started. 
