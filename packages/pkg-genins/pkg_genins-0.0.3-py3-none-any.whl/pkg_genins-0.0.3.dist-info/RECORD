@@ -1,0 +1,7 @@
+pkg_genins/__init__.py,sha256=hoRncBlMXEGvSX2MqvV4vC3a-l3-mVpqfQ5b8hNglLU,282
+pkg_genins/generate_instruction.py,sha256=sewt6UpyaGL9pkYrQTjd1retMD530Ici36Ck4NlJI2c,5448
+pkg_genins/utils.py,sha256=plFG1LJ3fskTEWrM_XX82_cLvL05n38kdtFI-Ti0dTE,6416
+pkg_genins-0.0.3.dist-info/METADATA,sha256=5lEHykega-zUhWAWcxyPfaH5W8Y9m1E4m2bSlUC5oMQ,449
+pkg_genins-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pkg_genins-0.0.3.dist-info/top_level.txt,sha256=mQxM-iPriXnAiJQ1rm-YqVQ3ZVrgfYuiQ1P9Le8saLo,11
+pkg_genins-0.0.3.dist-info/RECORD,,
