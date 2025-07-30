@@ -1,0 +1,3 @@
+[console_scripts]
+search-tool=search_tool.cli:main
+
