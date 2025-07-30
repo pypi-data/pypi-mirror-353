@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+simple_semantic_chunker.egg-info/PKG-INFO
+simple_semantic_chunker.egg-info/SOURCES.txt
+simple_semantic_chunker.egg-info/dependency_links.txt
+simple_semantic_chunker.egg-info/requires.txt
+simple_semantic_chunker.egg-info/top_level.txt
