@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: goodmem-client
+Version: 1.0.1
+Summary: GoodMem API
+Home-page: 
+Author: GoodMem API Support
+Author-email: support@goodmem.io
+License: Apache 2.0
+Keywords: OpenAPI,OpenAPI-Generator,GoodMem API
+Description-Content-Type: text/markdown
+Requires-Dist: urllib3<3.0.0,>=2.1.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+    API for interacting with the GoodMem service, providing vector-based memory storage and retrieval with multiple embedder support. The service enables creation of memory spaces, storing memories with vector representations, and efficient similarity-based retrieval.
+    
