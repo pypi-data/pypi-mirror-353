@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: collabllm
+Version: 0.0.4
+Summary: (Oral @ ICML 2025) CollabLLM: From Passive Responders to Active Collaborators
+Author-email: Shirley Wu <shirwu@stanford.edu>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Wuyxin/collabllm
+Project-URL: Issues, https://github.com/Wuyxin/collabllm/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: accelerate
+Requires-Dist: bitsandbytes
+Requires-Dist: datasets
+Requires-Dist: huggingface-hub
+Requires-Dist: litellm
+Requires-Dist: nltk
+Requires-Dist: numpy
+Requires-Dist: openai
+Requires-Dist: pandas
+Requires-Dist: peft
+Requires-Dist: python-dotenv
+Requires-Dist: rich
+Requires-Dist: scipy
+Requires-Dist: tiktoken
+Requires-Dist: tokenizers
+Requires-Dist: torch
+Requires-Dist: tqdm
+Requires-Dist: trl==0.18.1
+Requires-Dist: transformers
+Requires-Dist: vllm
+Requires-Dist: wandb
+Dynamic: license-file
+
+# CollabLLM: From Passive Responders to Active Collaborators (ICML 2025 Oral)
+
+[Paper](https://cs.stanford.edu/~shirwu/files/collabllm_v1.pdf)
+
+# Installation
+
+```bash
+conda create -n collabllm python=3.10
+pip install collabllm
+```
+You can further install additional packages for customized metric, such as `bigcodebench`. 
+
+# Quick Start
+
+`notebook_tutorials/`
+
+`scripts/`
+
+# Citation
+If you use this code in your research, please cite the following paper:
+
+```bibtex
+@inproceedings{
+    collabllm,
+    title={CollabLLM: From Passive Responders to Active Collaborators},
+    author={Shirley Wu and Michel Galley and 
+            Baolin Peng and Hao Cheng and 
+            Gavin Li and Yao Dou and Weixin Cai and 
+            James Zou and Jure Leskovec and Jianfeng Gao
+            },
+    booktitle={ICML},
+    year={2025}
+}
+```
