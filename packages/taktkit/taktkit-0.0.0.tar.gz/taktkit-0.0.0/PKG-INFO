@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: taktkit
+Version: 0.0.0
+Summary: Style and asset kit for Flask/Django projects with a focus on visual agility
+Author: DashKit
+Project-URL: homepage, https://dashkit.dev/taktkit
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
