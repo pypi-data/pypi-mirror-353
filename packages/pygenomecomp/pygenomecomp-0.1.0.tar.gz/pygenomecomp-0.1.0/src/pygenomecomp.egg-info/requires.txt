@@ -1,0 +1,4 @@
+biopython>=1.80
+pandas>=1.5
+setuptools>=75.3.2
+svgwrite>=1.4
