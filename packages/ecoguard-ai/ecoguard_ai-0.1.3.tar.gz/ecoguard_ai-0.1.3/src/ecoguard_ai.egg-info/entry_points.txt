@@ -1,0 +1,2 @@
+[console_scripts]
+ecoguard = ecoguard_ai.cli:main
