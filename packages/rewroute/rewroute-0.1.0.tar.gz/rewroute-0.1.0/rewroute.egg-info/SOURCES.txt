@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+rewroute/__init__.py
+rewroute.egg-info/PKG-INFO
+rewroute.egg-info/SOURCES.txt
+rewroute.egg-info/dependency_links.txt
+rewroute.egg-info/requires.txt
+rewroute.egg-info/top_level.txt
