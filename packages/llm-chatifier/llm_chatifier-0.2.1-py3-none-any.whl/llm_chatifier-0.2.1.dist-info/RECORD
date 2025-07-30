@@ -1,0 +1,12 @@
+chatifier/__init__.py,sha256=fWQaRIUz_Mg6Q9DtbHi-oQSe10f7_864LSrzr0EslnU,378
+chatifier/__main__.py,sha256=Hb-VO0fho31tRotdfXy_4NopSnngrdFWRa7xwHG79bs,135
+chatifier/cli.py,sha256=FcPC6kgCfvUo8p5YEILDkNOkIuaSXlGTrl5eXlF3_HQ,13648
+chatifier/clients.py,sha256=lnaPJ_5pjK2ehfIvWxQ0VO97zpZQuBBD-4aoae6FVnE,34205
+chatifier/detector.py,sha256=MuuDeyzUSPdvHloPOjgDdnigfUpDCpN76F3BLcapSyQ,8282
+chatifier/ui.py,sha256=AjHS8emR9fN9h_CjY7fu9EVg8Z9_lq3JxNC4z7Jf19I,8046
+chatifier/utils.py,sha256=Q7zQGs9e4_nOCFXzMJtmNFukzowVg2vrRdvd3dAbhTg,10607
+llm_chatifier-0.2.1.dist-info/METADATA,sha256=4XlQvQcfSzI2Fl4tAlgK-L0ueBcbiJzVU1320kYDPl8,3233
+llm_chatifier-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+llm_chatifier-0.2.1.dist-info/entry_points.txt,sha256=BVEB0FoS3ntzFW8BasKCm1mnNKzGsDxZm-KNfkwbfWI,53
+llm_chatifier-0.2.1.dist-info/top_level.txt,sha256=ZR-7W9JAL-BHdGoS4kqkNeSIZs_t8EaSZ_lIwyz193k,10
+llm_chatifier-0.2.1.dist-info/RECORD,,
