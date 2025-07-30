@@ -1,0 +1,12 @@
+src/__init__.py,sha256=QphVEqq1czns6FLjB2feS6ls_zkqpGsyEDghO7Rt27o,69
+src/cli.py,sha256=QNsMcntb0yf_JX1jl7jbmhE5iO7M05_DJKgP8ZoBAY4,4999
+src/logger.py,sha256=wxc8CTVPIoiTCQmcG2c2JLEeSOP8BZKii3_WaDlbAos,1670
+src/settings.py,sha256=kR8-1RkZyobnWRW57uhvhAEn8N7xPVDvugXC6RLLLv8,5963
+src/service/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/service/collector.py,sha256=ovtYdnKLwt7tUG74gRmOp-4zsq92Y5e0lNH-3QTKTMk,3678
+src/service/summarizer.py,sha256=DBRt_HzxPNngM7gQzKDzlfF7qGA9bCF7oO1AbnAFCmc,11465
+pulldoc-0.1.1.dist-info/METADATA,sha256=c5qvPIfKU_7EU5mf9ExJAQQQBjsb2LJ73QDgzYga_g8,750
+pulldoc-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pulldoc-0.1.1.dist-info/entry_points.txt,sha256=-93HoCQss7bMEjSCxPqwhImPBaWNSqgQpJt40YqG1sA,40
+pulldoc-0.1.1.dist-info/licenses/LICENSE,sha256=r0NVbCoYM_ohxAx8eBXqSqiI6WpvN-XGHI6RCCFfEaA,1069
+pulldoc-0.1.1.dist-info/RECORD,,
