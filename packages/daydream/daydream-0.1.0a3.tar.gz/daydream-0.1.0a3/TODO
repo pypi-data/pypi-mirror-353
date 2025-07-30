@@ -1,0 +1,125 @@
+
+
+move to: uvx daydream configure, as a first step that figures out plugins
+- run this first
+- go through plugin install
+--> ensure each plugin has basic auth that works
+- ask what clients they want to configure (Claude, Amazon Q)
+- maybe run the build graph
+- then ask if they want to (re)launch Claude now
+
+
+make sure daydream works with:
+- config.yaml that doesn't have plugins.aws.settings key (i.e. that's an empty dict)
+- no aws access
+- handle TokenRetrievalError (`aws sso logout`)
+
+turn off logs by default in `client configure claude`
+
+README:
+- document installation
+- document client setup
+- document plugins
+- document config.yaml
+- move to `uvx daydream` commands in README
+
+Ensure the install process works
+--> maybe make a test runner?
+--> https://click.palletsprojects.com/en/latest/testing/
+--> https://python-cli-test-helpers.readthedocs.io/en/latest/other.html#click-cli-testing
+
+metrics retrieval can easily blow out the context
+
+Ben ambience investigation: https://claude.ai/share/f4812739-8912-43ce-a7e6-fb0f11b571af
+
+-----------
+sabixvu9dt0qpw
+
+
+aptible-impersonate org https://auth.aptible.com/organizations/ORG_ID bash -c 'aptible login --sso $APTIBLE_ACCESS_TOKEN'
+
+for dev (i think....)
+how are the requests performing for the workithealth-webwc-sadwxn lb? start with by searching for that id
+
+
+
+
+- Add HOME env var to the client configure mcp config (aws creds will need it)
+- make sure client configure --profile= works
+
+
+                             │ NoCredentialsError: Unable  │                    
+                             │ to locate credentials       │                    
+
+
+[05/28/25 14:59:23] ERROR    Error calling tool 'ping':      tool_manager.py:129
+                             PermissionError: [Errno 1]                         
+                             Operation not permitted                            
+
+
+
+daydream client [configure|logs] [claude|amazon-q]
+--> other ones: amazon Q, cursor, vscode, claude-code (if different), chatgpt?, windsurf ide, devin.ai
+data dog integration is asked for a lot
+--> there is an existing integration for deploy-api with data dog
+--> https://www.notion.so/aptible/Datadog-1ca509e56b4180d78310cb95e3094924
+--> built that integration for pure storage, so we could model their services from EKS & EC2 (for dynamic dashboard product)
+--> data dog mcp to start? https://github.com/winor30/mcp-server-datadog or https://github.com/GeLi2001/datadog-mcp-server or https://github.com/didlawowo/mcp-collection
+sentry integration
+--> sentry mcp to start? https://docs.sentry.io/product/sentry-mcp/
+codebase could help
+--> github mcp? to start https://github.com/github/github-mcp-server
+librechat as electron, or at least dmg???
+can we review vpc flow logs to build associations between resources in aws?
+fix aiobotocore fd leak
+ask for snowflake access to support AI anomaly RCA investigations
+--> lookup_alb tool from Michael
+--> https://aptible.slack.com/archives/C08MU93L201/p1747225377597609?thread_ts=1747224621.405979&cid=C08MU93L201
+LICENSE
+- https://aptible.slack.com/archives/C08MU93L201/p1745590311009429
+
+
+Bug bash notes:
+- README: `uvx daydream` doesn't work until we publish to pip :(
+- people ran into issues with the space in application support folder name when creating the claude config
+--> `daydream mcp configure claude` will help!
+- people also ran into issues with the /path/to/repo in the MCP claude config
+--> `daydream mcp configure claude` will help!
+- people were unable to build graph due to access denied errors
+- alex wasn't sure what to do once claude was open and mcp was working
+- doing customer exploration requires `aptible impersonate`
+--> https://github.com/aptible/aptible-impersonate
+- failed to get metrics, then made up metrics LOL
+--> specific error in logs: `Error calling tool 'get_metrics_for_node'` when getting metrics for an aptible app.
+--> from Marc: https://claude.ai/share/05f10a06-fa59-451b-a171-7ceb0392d65a
+--> from Alex: https://aptible.slack.com/files/U08N0786S5P/F08TGHW7BBL/image.png
+- people didn't know where to look when mcp ran into an error
+--> maybe `daydream mcp logs claude` ???
+
+-------
+
+
+
+release it!
+- use a new repo
+- fastMCP is our server
+- https://gofastmcp.com/patterns/testing
+- test all the tools @tool
+- use daydream for the name
+- maybe github creds?
+- ensure uvx works
+- ruff / todo formatting & fixing
+- pr testing & release testing
+- calver bump tooling
+--> 0.1.calver
+- zizmor
+- make a demo graph
+- and test with it
+
+
+---
+- setup pancake (logs prereq)
+- config logs https://aptible.slack.com/archives/C08MU93L201/p1747163109354579?thread_ts=1747160127.144029&cid=C08MU93L201
+- skip aws resources that we don't have access to
+- stream the graph 
+

@@ -1,0 +1,38 @@
+digraph {
+nodesep=1;
+node [shape=box, style="rounded,filled", fontname=Helvetica, margin=0.25];
+"aptible:aptible_service" [fillcolor="#2c44d2", fontcolor="#ffffff"];
+"aptible:aptible_vhost" [fillcolor="#d2732c", fontcolor="#ffffff"];
+"aptible:aptible_container" [fillcolor="#2c8bd2", fontcolor="#ffffff"];
+"aptible:aptible_database" [fillcolor="#5b2cd2", fontcolor="#ffffff"];
+"aws:aws_classic_load_balancer" [fillcolor="#a32cd2", fontcolor="#ffffff"];
+"aptible:aptible_aws_instance" [fillcolor="#d22cba", fontcolor="#ffffff"];
+"aws:aws_ec2_instance" [fillcolor="#2cd2d2", fontcolor="#000000"];
+"aptible:aptible_disk" [fillcolor="#d2ba2c", fontcolor="#ffffff"];
+"aws:aws_ebs_volume" [fillcolor="#d22c2c", fontcolor="#ffffff"];
+"aptible:aptible_app" [fillcolor="#a3d22c", fontcolor="#000000"];
+"aptible:aptible_deployment" [fillcolor="#d22c73", fontcolor="#ffffff"];
+"aws:aws_rds_database" [fillcolor="#5bd22c", fontcolor="#ffffff"];
+"aws:aws_alb_target_group" [fillcolor="#2cd244", fontcolor="#ffffff"];
+"aws:aws_application_load_balancer" [fillcolor="#2cd28b", fontcolor="#ffffff"];
+"aptible:aptible_service" -> "aptible:aptible_vhost" [label="exposed_via"];
+"aptible:aptible_service" -> "aptible:aptible_container" [label="deployed_as"];
+"aptible:aptible_service" -> "aptible:aptible_database" [label="component_of"];
+"aptible:aptible_service" -> "aptible:aptible_app" [label="component_of"];
+"aptible:aptible_vhost" -> "aws:aws_classic_load_balancer" [label="receives_traffic_from"];
+"aptible:aptible_vhost" -> "aws:aws_application_load_balancer" [label="receives_traffic_from"];
+"aptible:aptible_container" -> "aptible:aptible_aws_instance" [label="running_on"];
+"aptible:aptible_container" -> "aws:aws_ec2_instance" [label="running_on"];
+"aws:aws_classic_load_balancer" -> "aws:aws_ec2_instance" [label="routes_to"];
+"aptible:aptible_aws_instance" -> "aws:aws_ec2_instance" [label=represents];
+"aws:aws_ec2_instance" -> "aws:aws_ebs_volume" [label="has_volume"];
+"aptible:aptible_disk" -> "aptible:aptible_database" [label="component_of"];
+"aptible:aptible_disk" -> "aws:aws_ebs_volume" [label=represents];
+"aptible:aptible_disk" -> "aws:aws_ec2_instance" [label="mounted_to"];
+"aptible:aptible_app" -> "aptible:aptible_app" [label="depends_on"];
+"aptible:aptible_app" -> "aptible:aptible_database" [label="depends_on"];
+"aptible:aptible_deployment" -> "aptible:aptible_app" [label="initiated_for"];
+"aws:aws_rds_database" -> "aws:aws_rds_database" [label="is_replica_of"];
+"aws:aws_alb_target_group" -> "aws:aws_application_load_balancer" [label="routes_requests_for"];
+}
+
