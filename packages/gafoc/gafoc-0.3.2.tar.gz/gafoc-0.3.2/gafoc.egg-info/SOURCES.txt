@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+archive/__init__.py
+archive/archiver.py
+archive/extractor.py
+core/__init__.py
+core/compression.py
+core/decompression.py
+core/huffman.py
+core/lz77.py
+gafoc.egg-info/PKG-INFO
+gafoc.egg-info/SOURCES.txt
+gafoc.egg-info/dependency_links.txt
+gafoc.egg-info/top_level.txt
+test/TEST.PY
