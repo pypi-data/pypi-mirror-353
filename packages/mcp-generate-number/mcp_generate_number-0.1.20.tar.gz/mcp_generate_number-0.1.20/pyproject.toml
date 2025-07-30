@@ -1,0 +1,22 @@
+[project]
+name = "mcp-generate-number"
+version = "0.1.20"
+description = "An MCP server to generate random numbers and strings."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [{ name = "Toby Willcocks", email = "toby@cursor.dev" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+]
+dependencies = [
+    "fastmcp"
+]
+
+[project.scripts]
+mcp-generate-number = "mcp_generate_number.server:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta" 
