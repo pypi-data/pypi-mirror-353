@@ -1,0 +1,4 @@
+[console_scripts]
+inceptor=inceptor.cli:cli
+inceptor-shell=inceptor.cli:shell
+
