@@ -1,0 +1,3 @@
+[console_scripts]
+hotkeys-async-demo = async_demo:main
+hotkeys-sync-demo = sync_demo:main
