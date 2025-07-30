@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: PyBazooStore
+Version: 1.1.0
+Summary: PyBazooStore 🐍✨
+Author: MohammadReza
+Author-email: narnama.room@gmail.com
+Project-URL: صفحه من ❤️, https://apicode.pythonanywhere.com/
+Project-URL: سایت اصلی 🌐, https://webapp.bazoostore.ir/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PyBazooStore
+
+بسم الله الرحمن الرحیم
+
+کتابخانه غیررسمی جستجوی ربات در سرویس بازواستور
+
+در این کتابخانه بجای نام ربات از واژه ی فارسی آن استفاده شده یعنی بازو
+
+نوشته شده با ❤️ توسط محمدرضا
