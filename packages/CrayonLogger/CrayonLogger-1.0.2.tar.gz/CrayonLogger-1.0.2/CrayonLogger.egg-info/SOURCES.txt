@@ -1,0 +1,7 @@
+README.md
+setup.py
+CrayonLogger/__init__.py
+CrayonLogger.egg-info/PKG-INFO
+CrayonLogger.egg-info/SOURCES.txt
+CrayonLogger.egg-info/dependency_links.txt
+CrayonLogger.egg-info/top_level.txt
