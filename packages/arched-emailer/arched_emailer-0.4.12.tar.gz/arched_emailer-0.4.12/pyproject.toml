@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.11.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arched_emailer"
+dynamic = ["version"]
+description = "A emailing python library"
+readme = "README.md"
+readme-content-type = "text/markdown"
+requires-python = ">=3.10"
+dependencies = [
+  "concurrent-log-handler>=0.9.27",
+  "flask>=3.1.1",
+  "requests>=2.32.3",
+  "smtpymailer>=0.1.10",
+  "flask-login==0.6.3",
+  "appdirs==1.4.4",
+
+]
+license = { text = "MIT" }
+authors = [
+  { name = "lewis", email = "lewis@arched.dev" },
+]
+urls = { Home = "https://github.com/lewis-morris/arched_emailer" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.hatch.version]
+path = "arched_emailer/arched_emailer.py"
+attr = "__version__"
+
+[dependency-groups]
+dev = [
+    "hatch>=1.14.1",
+]
