@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: smugify
+Version: 0.1.0
+Summary: One-import utility library for Python: logs, alerts, APIs, CLI, all smug.
+Home-page: https://github.com/Vu2n/smugify
+Author: Vu2n
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/plain
+Requires-Dist: requests
+Requires-Dist: win10toast; platform_system == "Windows"
+
+smugify: because why should you try harder?

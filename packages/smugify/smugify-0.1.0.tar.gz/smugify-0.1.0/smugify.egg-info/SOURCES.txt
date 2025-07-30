@@ -1,0 +1,7 @@
+README.md
+setup.py
+smugify.egg-info/PKG-INFO
+smugify.egg-info/SOURCES.txt
+smugify.egg-info/dependency_links.txt
+smugify.egg-info/requires.txt
+smugify.egg-info/top_level.txt
