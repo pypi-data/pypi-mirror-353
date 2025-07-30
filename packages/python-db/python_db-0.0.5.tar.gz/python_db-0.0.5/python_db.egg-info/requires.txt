@@ -1,0 +1,5 @@
+argparse
+jtutils
+python-csv
+python-service
+mysqlclient

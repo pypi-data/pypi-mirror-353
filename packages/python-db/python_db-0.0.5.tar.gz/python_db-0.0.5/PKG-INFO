@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: python-db
+Version: 0.0.5
+Summary: Placeholder description
+Home-page: https://github.com/jasontrigg0/python-db
+Download-URL: https://github.com/jasontrigg0/python-db/tarball/0.0.5
+Author: Jason Trigg
+Author-email: jasontrigg0@gmail.com
+Requires-Dist: argparse
+Requires-Dist: jtutils
+Requires-Dist: python-csv
+Requires-Dist: python-service
+Requires-Dist: mysqlclient
+Dynamic: author
+Dynamic: author-email
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
