@@ -1,0 +1,2 @@
+[console_scripts]
+fulcra-context-mcp = fulcra_mcp.main:main
