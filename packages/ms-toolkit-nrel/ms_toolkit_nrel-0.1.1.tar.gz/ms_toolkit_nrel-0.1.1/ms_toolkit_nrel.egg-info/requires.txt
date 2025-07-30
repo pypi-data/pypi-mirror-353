@@ -1,0 +1,6 @@
+numpy
+joblib
+gensim
+scikit-learn
+requests
+tqdm
