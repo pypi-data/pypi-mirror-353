@@ -1,0 +1,43 @@
+name: Run Checks
+
+on: [push, pull_request]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  run-checks:
+    name: Run checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Run checks
+        run: uv run pre-commit run --all-files --show-diff-on-failure
+
+  run-tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wntrblm/nox@main
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Run tests
+        run: nox -s test -- -vv
+
+      - name: Run doctest
+        run: nox -s doctest -- -vv
