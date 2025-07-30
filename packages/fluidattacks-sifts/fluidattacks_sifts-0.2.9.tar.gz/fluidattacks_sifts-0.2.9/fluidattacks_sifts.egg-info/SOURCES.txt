@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+fluidattacks_sifts.egg-info/PKG-INFO
+fluidattacks_sifts.egg-info/SOURCES.txt
+fluidattacks_sifts.egg-info/dependency_links.txt
+fluidattacks_sifts.egg-info/entry_points.txt
+fluidattacks_sifts.egg-info/requires.txt
+fluidattacks_sifts.egg-info/top_level.txt
+sifts/__init__.py
+sifts/__main__.py
+sifts/py.typed
+sifts/static/model_parameters.yaml
+sifts/static/typology_embedding.json
