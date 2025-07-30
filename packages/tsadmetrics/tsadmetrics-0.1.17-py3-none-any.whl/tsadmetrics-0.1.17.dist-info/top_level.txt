@@ -1,0 +1,6 @@
+docs
+docs_api
+docs_manual
+entorno
+tests
+tsadmetrics
