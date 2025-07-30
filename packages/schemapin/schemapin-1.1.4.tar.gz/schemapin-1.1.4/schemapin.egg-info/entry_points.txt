@@ -1,0 +1,4 @@
+[console_scripts]
+schemapin-keygen = tools.keygen:main
+schemapin-sign = tools.schema_signer:main
+schemapin-verify = tools.verify_schema:main
