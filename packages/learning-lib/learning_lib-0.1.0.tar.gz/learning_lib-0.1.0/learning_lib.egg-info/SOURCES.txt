@@ -1,0 +1,7 @@
+setup.py
+learning_lib/__init__.py
+learning_lib/main.py
+learning_lib.egg-info/PKG-INFO
+learning_lib.egg-info/SOURCES.txt
+learning_lib.egg-info/dependency_links.txt
+learning_lib.egg-info/top_level.txt
