@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: media-calc
+Version: 0.2.0
+Summary: An efficient Python library for calculating the arithmetic mean of a list of numbers
+Author: Omardev29
+Author-email: omaroficial365@gmail.com
+License: MIT
+Project-URL: Source Code, https://github.com/Omardev29/media-calc
+Project-URL: Bug Tracker, https://github.com/Omardev29/media-calc/issues
+Keywords: mathematics,statistics,average,mean,calculator
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
+
+# media-calc
+
+A simple and efficient Python library for calculating the arithmetic mean of a list of numbers.
+
+## Description
+
+This library provides a simple yet robust function to calculate the arithmetic mean of a list of numbers. It's ideal for:
+- Basic statistical analysis
+- Data processing
+- Educational projects
+- Simple mathematical calculations
+
+## Installation
+
+```bash
+pip install media-calc
+```
+
+## Usage
+
+```python
+from media import media
+
+# Calculate average of a list of numbers
+numbers = [1, 2, 3, 4, 5]
+result = media(numbers)
+print(result)  # Output: 3.0
+
+# Handle empty list
+empty = []
+result = media(empty)
+print(result)  # Output: 0
+```
+
+## Features
+
+- Calculate arithmetic mean of a list of numbers
+- Handle empty lists (returns 0)
+- Simple and easy to use
+
+## License
+
+This project is licensed under the MIT License.

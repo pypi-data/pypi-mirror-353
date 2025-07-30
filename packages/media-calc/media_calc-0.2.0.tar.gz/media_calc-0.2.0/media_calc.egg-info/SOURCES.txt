@@ -1,0 +1,8 @@
+README.txt
+setup.py
+media/__init__.py
+media/funciones.py
+media_calc.egg-info/PKG-INFO
+media_calc.egg-info/SOURCES.txt
+media_calc.egg-info/dependency_links.txt
+media_calc.egg-info/top_level.txt
