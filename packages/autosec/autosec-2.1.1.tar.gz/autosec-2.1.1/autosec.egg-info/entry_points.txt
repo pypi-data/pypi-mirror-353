@@ -1,0 +1,3 @@
+[console_scripts]
+autocred = autosec.cli:autocred_cli
+autolog = autosec.cli:autolog_cli
