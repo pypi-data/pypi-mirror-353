@@ -1,0 +1,10 @@
+gradio_motioncanvasplayer/__init__.py,sha256=dp37GwSZHI9FYcSj5iOt9miJ64MKRIlgrgHmh17JMX4,86
+gradio_motioncanvasplayer/motioncanvasplayer.py,sha256=8U5AHPo6cf_nLHsrk9Mahn1A9oTMiXi4ekm2q2RCY6c,6585
+gradio_motioncanvasplayer/motioncanvasplayer.pyi,sha256=0Tm7sz0zWaL910Gyha2S6_IAlSO2K6wKsQbiHu8BlTc,18553
+gradio_motioncanvasplayer/templates/component/index.js,sha256=jkcXmr-P3TYU9gH-D0FUxADeZVapGKFMTMoW3LHEx4M,657766
+gradio_motioncanvasplayer/templates/component/style.css,sha256=jJD53nREl686uuBcnwH9x5PDaKVuAJlhieKX9dzVOxg,1480045
+gradio_motioncanvasplayer/templates/example/index.js,sha256=vSxBQzNUzJ_m5YNVEj1EGWwic3DuGi6sP2b2AQltLq0,1776
+gradio_motioncanvasplayer/templates/example/style.css,sha256=EzznrGq1I3G47_ePZ5nVZSyc72-R1WMc2EOS5Tj_tGE,47
+gradio_motioncanvasplayer-0.0.2.dist-info/METADATA,sha256=HW3PtdDYsotZCOK9HOye6P1zf_cA5UOtNsZhfZ5yoBA,12277
+gradio_motioncanvasplayer-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gradio_motioncanvasplayer-0.0.2.dist-info/RECORD,,
