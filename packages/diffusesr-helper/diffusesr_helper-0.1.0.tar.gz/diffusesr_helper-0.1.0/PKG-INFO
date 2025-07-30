@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: diffusesr_helper
+Version: 0.1.0
+Summary: Python wrapper around a shared library
+Author: HuggingFace
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
