@@ -1,0 +1,22 @@
+[project]
+name = "fuelpricesqld"
+version = "0.1.0.dev1"
+description = ""
+authors = [{ name = "Your Name", email = "you@example.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "sqlalchemy (>=2.0.41,<3.0.0)",
+    "geoalchemy2 (>=0.17.1,<0.18.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "polars (>=1.30.0,<2.0.0)",
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.13"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
