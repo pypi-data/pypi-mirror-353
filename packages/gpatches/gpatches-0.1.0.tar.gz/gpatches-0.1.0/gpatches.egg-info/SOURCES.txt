@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+gpatches/__init__.py
+gpatches.egg-info/PKG-INFO
+gpatches.egg-info/SOURCES.txt
+gpatches.egg-info/dependency_links.txt
+gpatches.egg-info/requires.txt
+gpatches.egg-info/top_level.txt
+tests/test___init__.py
