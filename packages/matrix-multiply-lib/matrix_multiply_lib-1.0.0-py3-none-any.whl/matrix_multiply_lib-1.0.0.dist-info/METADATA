@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: matrix-multiply-lib
+Version: 1.0.0
+Summary: A matrix multiplication library
+Home-page: https://github.com/JamesJokDutAkuei/matrix_multiply_lib.git
+Author: James Jok Dut Akuei
+Author-email: jokditakeerleek@gmail.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# Matrix Multiply Library
+
+A Python library for matrix multiplication supporting matrices of different dimensions.
+
+## Installation
+
+```bash
+pip install matrix-multiply-lib
+```
+##Usage
+```bash
+from matrix_multiply import Matrix, matrix_multiply
+
+# Create matrices
+matrix_a = Matrix([[1, 2], [3, 4]])
+matrix_b = Matrix([[5, 6], [7, 8]])
+
+# Method 1: Using Matrix class
+result = matrix_a * matrix_b
+print(result)
+
+# Method 2: Using convenience function
+result = matrix_multiply([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+print(result)

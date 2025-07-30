@@ -1,0 +1,9 @@
+matrix_multiply/__init__.py,sha256=cF7i04utHFpU9pAk_Dwj6CDg3ZsmOtHrzpEe6t3mfjk,104
+matrix_multiply/core.py,sha256=JT6LOJps-iyJLIn2xA-GfNEiDlG_LcgL5Ha-PcrtKcQ,1970
+matrix_multiply_lib-1.0.0.dist-info/licenses/LICENSE,sha256=WAweni7zDLWQoko-8SgrddTt8CVMk7E4RlxB26wtzyM,1074
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_matrix.py,sha256=77JSBrOzNtEwl97Prl725IfsecbiXkquCd_XkHP2zJY,1275
+matrix_multiply_lib-1.0.0.dist-info/METADATA,sha256=ehNj5OtDU2_SKH5l5ZRIPTPE9WFkZX8muR0PZLy5xAY,1536
+matrix_multiply_lib-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+matrix_multiply_lib-1.0.0.dist-info/top_level.txt,sha256=lEsw5yEYtfhERFpTkXHW2JOshjMZwi9f9r-5CcMheck,22
+matrix_multiply_lib-1.0.0.dist-info/RECORD,,
