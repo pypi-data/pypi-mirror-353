@@ -1,0 +1,15 @@
+cirq-core>=1.4.1
+deprecation
+h5py>=3.10.0
+networkx
+numpy>=1.26
+pubchempy
+requests~=2.32.2
+scipy~=1.15
+sympy
+
+[resources]
+pyscf
+jax~=0.4.38
+jaxlib~=0.4.38
+ase
