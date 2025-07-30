@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/doc_relax.egg-info/PKG-INFO
+src/doc_relax.egg-info/SOURCES.txt
+src/doc_relax.egg-info/dependency_links.txt
+src/doc_relax.egg-info/entry_points.txt
+src/doc_relax.egg-info/requires.txt
+src/doc_relax.egg-info/top_level.txt
+src/relax/__init__.py
+src/relax/__version__.py
+src/relax/relax.py
+src/relax/RelaxCore/RelaxCore.py
+src/relax/RelaxCore/__init__.py
