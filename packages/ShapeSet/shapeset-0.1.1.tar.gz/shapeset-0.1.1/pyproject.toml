@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ShapeSet"
+version = "0.1.1"
+description = "This package helps generate datasets of simple shapes like squares, circles, triangles, etc. for computer vision tasks."
+readme = "README.md"
+authors = [
+    { name = "Manideep Reddy Enugala", email = "enugalamanideepreddy99@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "tqdm",
+    "pytest",
+    "pillow"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]

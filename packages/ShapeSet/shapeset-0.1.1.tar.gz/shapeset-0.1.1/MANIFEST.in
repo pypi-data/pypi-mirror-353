@@ -1,0 +1,16 @@
+# MANIFEST.in
+
+# Include the README file
+include README.md
+
+# Include the license file
+include LICENSE
+
+# Include all Python files in the package
+recursive-include your_package_name *.py
+
+# Include data files (if any)
+recursive-include your_package_name/data *
+
+# Exclude tests (optional)
+prune tests

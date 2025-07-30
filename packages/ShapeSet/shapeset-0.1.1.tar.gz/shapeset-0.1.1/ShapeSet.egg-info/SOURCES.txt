@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+ShapeSet.egg-info/PKG-INFO
+ShapeSet.egg-info/SOURCES.txt
+ShapeSet.egg-info/dependency_links.txt
+ShapeSet.egg-info/requires.txt
+ShapeSet.egg-info/top_level.txt
+shapes/__init__.py
+shapes/dataset.py
+shapes/utils.py

@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: ShapeSet
+Version: 0.1.1
+Summary: This package helps generate datasets of simple shapes like squares, circles, triangles, etc. for computer vision tasks.
+Author-email: Manideep Reddy Enugala <enugalamanideepreddy99@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2024 MANIDEEPU REDDY
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: tqdm
+Requires-Dist: pytest
+Requires-Dist: pillow
+Dynamic: license-file
+
+# ShapeSet
+
+[![ShapeSet PyPI Publish](https://github.com/enugalamanideepreddy/ShapeSet/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/enugalamanideepreddy/ShapeSet/actions/workflows/pypi-publish.yml)
+
+SHapeSet is a package designed to simplify and streamline your workflow for [briefly describe the main purpose or functionality of your package, e.g., "data processing", "API integration", etc.].
+
+## Features
+
+- Easy to use
+- Lightweight and efficient
+- Flexible data generation
+- Scalable in data size
+
+## Installation
+
+```bash
+pip install ShapeSet
+```
+<!-- _Replace with the correct command for your package manager._ -->
+
+## Usage
+
+```python
+from ShapeSet import dataset
+
+# Example usage
+dataset.generate(
+        class_names,
+        num_train,
+        num_val,
+        image_size,
+        output_dir,
+        seed
+)
+```
+
+## Note
+
+Therefore, the minimum allowable image size is **80x80 pixels**.  
+If you use a smaller size, you may get a `ValueError: empty range for randrange()`.
+
+**Recommendation:**  
+Use `image_size >= 80` in your tests and dataset generation.
+
+<!-- _Replace with a relevant code snippet for your package._ -->
+
+<!-- ## Documentation
+
+See the [official documentation](link-to-docs) for detailed usage and API reference. -->
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
