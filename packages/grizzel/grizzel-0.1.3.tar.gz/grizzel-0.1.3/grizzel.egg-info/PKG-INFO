@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: grizzel
+Version: 0.1.3
+Summary: A simple text cleaning utility using NLTK and BeautifulSoup
+Home-page: https://pypi.org/project/grizzel/
+Author: Ratul Sur
+Author-email: your@email.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: nltk
+Requires-Dist: beautifulsoup4
+
+# text_cleaner
+
+A lightweight Python package to clean and normalize raw text data using NLTK, BeautifulSoup, and Unicode handling.
+
+##  Features
+
+- Removes HTML, URLs, numbers, punctuation, and non-ASCII characters
+- Strips and normalizes all types of whitespace (including invisible Unicode spaces)
+- Tokenizes, removes stopwords, and lemmatizes words
+- Uses NLTK and BeautifulSoup under the hood
+
+---
+
+##  Installation
+
+```bash
+pip install greedigut
