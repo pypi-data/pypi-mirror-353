@@ -1,0 +1,7 @@
+README.md
+setup.py
+domreducer.egg-info/PKG-INFO
+domreducer.egg-info/SOURCES.txt
+domreducer.egg-info/dependency_links.txt
+domreducer.egg-info/requires.txt
+domreducer.egg-info/top_level.txt
