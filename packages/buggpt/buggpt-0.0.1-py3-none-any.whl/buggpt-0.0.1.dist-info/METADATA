@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: buggpt
+Version: 0.0.1
+Summary: A free and open source API for accessing various large language models
+Home-page: https://github.com/yourusername/buggpt
+Author: Tekky
+Author-email: <support@buggpt.ai>
+Project-URL: Source Code, https://github.com/yourusername/buggpt
+Project-URL: Bug Tracker, https://github.com/yourusername/buggpt/issues
+Keywords: python,chatbot,reverse-engineering,openai,chatbots,gpt,language-model,gpt-3,gpt3,openai-api,gpt-4,gpt4,chatgpt,chatgpt-api,openai-chatgpt,chatgpt-free,chatgpt-4,chatgpt4,chatgpt4-api,free,free-gpt,buggpt
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: aiohttp
+Requires-Dist: brotli
+Requires-Dist: pycryptodome
+Requires-Dist: nest-asyncio
+Provides-Extra: all
+Requires-Dist: curl-cffi>=0.6.2; extra == "all"
+Requires-Dist: certifi; extra == "all"
+Requires-Dist: browser-cookie3; extra == "all"
+Requires-Dist: duckduckgo-search>=5.0; extra == "all"
+Requires-Dist: beautifulsoup4; extra == "all"
+Requires-Dist: platformdirs; extra == "all"
+Requires-Dist: aiohttp-socks; extra == "all"
+Requires-Dist: pillow; extra == "all"
+Requires-Dist: cairosvg; extra == "all"
+Requires-Dist: werkzeug; extra == "all"
+Requires-Dist: flask; extra == "all"
+Requires-Dist: fastapi; extra == "all"
+Requires-Dist: uvicorn; extra == "all"
+Requires-Dist: nodriver; extra == "all"
+Requires-Dist: python-multipart; extra == "all"
+Requires-Dist: pywebview; extra == "all"
+Requires-Dist: plyer; extra == "all"
+Requires-Dist: setuptools; extra == "all"
+Requires-Dist: odfpy; extra == "all"
+Requires-Dist: ebooklib; extra == "all"
+Requires-Dist: openpyxl; extra == "all"
+Requires-Dist: markitdown[all]; extra == "all"
+Provides-Extra: api
+Requires-Dist: loguru; extra == "api"
+Requires-Dist: fastapi; extra == "api"
+Requires-Dist: uvicorn; extra == "api"
+Requires-Dist: python-multipart; extra == "api"
+Provides-Extra: files
+Requires-Dist: beautifulsoup4; extra == "files"
+Requires-Dist: odfpy; extra == "files"
+Requires-Dist: ebooklib; extra == "files"
+Requires-Dist: openpyxl; extra == "files"
+Requires-Dist: markitdown[all]; extra == "files"
+Provides-Extra: gui
+Requires-Dist: werkzeug; extra == "gui"
+Requires-Dist: flask; extra == "gui"
+Requires-Dist: beautifulsoup4; extra == "gui"
+Requires-Dist: pillow; extra == "gui"
+Requires-Dist: duckduckgo-search>=5.0; extra == "gui"
+Provides-Extra: image
+Requires-Dist: pillow; extra == "image"
+Requires-Dist: cairosvg; extra == "image"
+Requires-Dist: beautifulsoup4; extra == "image"
+Provides-Extra: local
+Requires-Dist: gpt4all; extra == "local"
+Provides-Extra: search
+Requires-Dist: beautifulsoup4; extra == "search"
+Requires-Dist: pillow; extra == "search"
+Requires-Dist: duckduckgo-search>=5.0; extra == "search"
+Provides-Extra: slim
+Requires-Dist: curl-cffi>=0.6.2; extra == "slim"
+Requires-Dist: certifi; extra == "slim"
+Requires-Dist: browser-cookie3; extra == "slim"
+Requires-Dist: duckduckgo-search>=5.0; extra == "slim"
+Requires-Dist: beautifulsoup4; extra == "slim"
+Requires-Dist: aiohttp-socks; extra == "slim"
+Requires-Dist: pillow; extra == "slim"
+Requires-Dist: werkzeug; extra == "slim"
+Requires-Dist: flask; extra == "slim"
+Requires-Dist: fastapi; extra == "slim"
+Requires-Dist: uvicorn; extra == "slim"
+Requires-Dist: python-multipart; extra == "slim"
+Requires-Dist: markitdown[docx,pdf,pptx]; extra == "slim"
+Provides-Extra: webview
+Requires-Dist: pywebview; extra == "webview"
+Requires-Dist: platformdirs; extra == "webview"
+Requires-Dist: plyer; extra == "webview"
+Requires-Dist: cryptography; extra == "webview"
+
