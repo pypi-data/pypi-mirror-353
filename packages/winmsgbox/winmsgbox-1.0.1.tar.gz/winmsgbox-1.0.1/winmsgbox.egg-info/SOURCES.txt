@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+winmsgbox/__init__.py
+winmsgbox.egg-info/PKG-INFO
+winmsgbox.egg-info/SOURCES.txt
+winmsgbox.egg-info/dependency_links.txt
+winmsgbox.egg-info/top_level.txt

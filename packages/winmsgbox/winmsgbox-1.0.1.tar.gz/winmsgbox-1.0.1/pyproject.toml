@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "winmsgbox"
+version = "1.0.1"
+description = "A simple wrapper for Windows' MessageBoxW in Python"
+urls = { "Homepage" = "https://github.com/luluwaffless/winmsgbox" }
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "luluwaffless" }]
+requires-python = ">=3.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "License :: OSI Approved :: GNU Affero General Public License v3"
+]
