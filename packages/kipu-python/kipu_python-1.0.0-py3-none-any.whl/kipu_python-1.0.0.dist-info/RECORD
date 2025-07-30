@@ -1,0 +1,16 @@
+kipu/README.md,sha256=K-ju11LyVYvbCRDOgwT3IMKLHKqnAYfqvS3BAoeX5Ik,8868
+kipu/__init__.py,sha256=3Z_VvsBlcpV_naeLpy5Zw33-io6KnsnrdRVckn-v7VA,1981
+kipu/auth.py,sha256=xM-05FoTYskzPVl73Pd2OOEsRJOWwCia0pCxgusDreo,3967
+kipu/base_client.py,sha256=L30QujzhHAwPOq7DU9AUzOB5dhXnILc7QTVXN4MAh6g,7126
+kipu/cli.py,sha256=d36gaOXlyGqgTzGvDzBVoeKu4_vaytrrMFnlGHy9ic8,6751
+kipu/client.py,sha256=oAp6OCGqi_ah1O8G3pmegftngcZrWPbiAiI53Q-egrw,50751
+kipu/examples.py,sha256=MB8IJbLl7aGViHbP23UT65VhO5Cyd7UABzl9iEJQvnU,10826
+kipu/exceptions.py,sha256=pjgDz-btxQ17aujFzyR7mXwNffT7EuC8qv9PGzZR2uw,972
+kipu/flattener.py,sha256=7HXORIE6UZHggHPYLDXYe1vyw4RIQd-XuFRxBmpdxUg,4465
+kipu/py.typed,sha256=Ptrx6PU2H815JHZJxESj27JOVQfc2UJgWY2kf89qCX8,73
+kipu_python-1.0.0.dist-info/licenses/LICENSE,sha256=e5HfgTuS2eVZ0QI7iVVZud37hzBhmplyuRwUnfBYUHI,1089
+kipu_python-1.0.0.dist-info/METADATA,sha256=so2bxlei9omt7dwbK9an-QGcBOV5JVkRj4bYGZJ8_Fs,10505
+kipu_python-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kipu_python-1.0.0.dist-info/entry_points.txt,sha256=GC0g6kSvAdN_xA-x4fXsYLmkbe5FG_-37UlDEYZV0B4,43
+kipu_python-1.0.0.dist-info/top_level.txt,sha256=4rRz7vmiF7ga4aJvQM5U_mtwucTCINVamFp0li_kSWk,5
+kipu_python-1.0.0.dist-info/RECORD,,
