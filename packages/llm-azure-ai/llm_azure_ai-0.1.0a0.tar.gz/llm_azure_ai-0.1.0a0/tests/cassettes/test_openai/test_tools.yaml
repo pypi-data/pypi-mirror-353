@@ -1,0 +1,159 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"user","content":"Two names for a pet pelican"}],"model":"gpt-4o-mini","stream":false,"tools":[{"type":"function","function":{"name":"pelican_name_generator","description":null,"parameters":{"properties":{},"type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '248'
+      content-type:
+      - application/json
+      host:
+      - ai-mai5814854386848515.openai.azure.com
+      user-agent:
+      - AzureOpenAI/Python 1.77.0
+      x-stainless-arch:
+      - arm64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - MacOS
+      x-stainless-package-version:
+      - 1.77.0
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.12.9
+    method: POST
+    uri: https://ai-mai5814854386848515.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-12-01-preview
+  response:
+    body:
+      string: '{"choices":[{"content_filter_results":{},"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"annotations":[],"content":null,"refusal":null,"role":"assistant","tool_calls":[{"function":{"arguments":"{}","name":"pelican_name_generator"},"id":"call_kiLGuQSxNEYangxJYvVVHwcK","type":"function"},{"function":{"arguments":"{}","name":"pelican_name_generator"},"id":"call_GzB6kXj2V65sa0yYdiroCVue","type":"function"}]}}],"created":1749152282,"id":"chatcmpl-BfAhW7Co7G1WE6vFfKH3OFX4ekBFg","model":"gpt-4o-mini-2024-07-18","object":"chat.completion","prompt_filter_results":[{"prompt_index":0,"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"detected":false,"filtered":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}}}],"system_fingerprint":"fp_57db37749c","usage":{"completion_tokens":46,"completion_tokens_details":{"accepted_prediction_tokens":0,"audio_tokens":0,"reasoning_tokens":0,"rejected_prediction_tokens":0},"prompt_tokens":40,"prompt_tokens_details":{"audio_tokens":0,"cached_tokens":0},"total_tokens":86}}
+
+        '
+    headers:
+      Content-Length:
+      - '1162'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jun 2025 19:38:02 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      apim-request-id:
+      - 32f52f78-6156-4c22-9136-a33e2de58710
+      azureml-model-session:
+      - d020-20250530230727
+      cmp-upstream-response-duration:
+      - '734'
+      x-accel-buffering:
+      - 'no'
+      x-content-type-options:
+      - nosniff
+      x-ms-deployment-name:
+      - gpt-4o-mini
+      x-ms-region:
+      - East US
+      x-ratelimit-limit-requests:
+      - '1000'
+      x-ratelimit-limit-tokens:
+      - '100000'
+      x-ratelimit-remaining-requests:
+      - '998'
+      x-ratelimit-remaining-tokens:
+      - '99982'
+      x-request-id:
+      - 665efe7c-0ad9-4924-8ae1-8e482d19cd64
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"user","content":"Two names for a pet pelican"},{"role":"assistant","tool_calls":[{"type":"function","id":"call_kiLGuQSxNEYangxJYvVVHwcK","function":{"name":"pelican_name_generator","arguments":"{}"}},{"type":"function","id":"call_GzB6kXj2V65sa0yYdiroCVue","function":{"name":"pelican_name_generator","arguments":"{}"}}]},{"role":"tool","tool_call_id":"call_kiLGuQSxNEYangxJYvVVHwcK","content":"Charles"},{"role":"tool","tool_call_id":"call_GzB6kXj2V65sa0yYdiroCVue","content":"Sammy"}],"model":"gpt-4o-mini","stream":false,"tools":[{"type":"function","function":{"name":"pelican_name_generator","description":null,"parameters":{"properties":{},"type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '686'
+      content-type:
+      - application/json
+      host:
+      - ai-mai5814854386848515.openai.azure.com
+      user-agent:
+      - AzureOpenAI/Python 1.77.0
+      x-stainless-arch:
+      - arm64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - MacOS
+      x-stainless-package-version:
+      - 1.77.0
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.12.9
+    method: POST
+    uri: https://ai-mai5814854386848515.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-12-01-preview
+  response:
+    body:
+      string: '{"choices":[{"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"protected_material_code":{"detected":false,"filtered":false},"protected_material_text":{"detected":false,"filtered":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}},"finish_reason":"stop","index":0,"logprobs":null,"message":{"annotations":[],"content":"Here
+        are two names for your pet pelican: Charles and Sammy!","refusal":null,"role":"assistant"}}],"created":1749152283,"id":"chatcmpl-BfAhX2CJIaTNYLZWUof1vE7nHHxnr","model":"gpt-4o-mini-2024-07-18","object":"chat.completion","prompt_filter_results":[{"prompt_index":0,"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"detected":false,"filtered":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}}}],"system_fingerprint":"fp_57db37749c","usage":{"completion_tokens":16,"completion_tokens_details":{"accepted_prediction_tokens":0,"audio_tokens":0,"reasoning_tokens":0,"rejected_prediction_tokens":0},"prompt_tokens":102,"prompt_tokens_details":{"audio_tokens":0,"cached_tokens":0},"total_tokens":118}}
+
+        '
+    headers:
+      Content-Length:
+      - '1272'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jun 2025 19:38:03 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      apim-request-id:
+      - ea25f8aa-e018-4374-9fe6-d06c6cfc4b0a
+      azureml-model-session:
+      - d066-20250530120700
+      cmp-upstream-response-duration:
+      - '460'
+      x-accel-buffering:
+      - 'no'
+      x-content-type-options:
+      - nosniff
+      x-ms-deployment-name:
+      - gpt-4o-mini
+      x-ms-region:
+      - East US
+      x-ratelimit-limit-requests:
+      - '1000'
+      x-ratelimit-limit-tokens:
+      - '100000'
+      x-ratelimit-remaining-requests:
+      - '998'
+      x-ratelimit-remaining-tokens:
+      - '99982'
+      x-request-id:
+      - f727186f-1477-4852-ba61-12a5b0946e53
+    status:
+      code: 200
+      message: OK
+version: 1

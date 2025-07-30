@@ -1,0 +1,29 @@
+[project]
+name = "llm-azure-ai"
+version = "0.1.0a0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Marco Petersen", email = "m@rcopetersen.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "azure-ai-inference>=1.0.0b9",
+    "llm>=0.26",
+    "openai>=1.77.0",
+    "pydantic>=2.11.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "pytest-recording>=0.13.4",
+    "ruff>=0.11.8",
+]
+
+[project.entry-points.llm]
+markov = "llm_azure_ai"

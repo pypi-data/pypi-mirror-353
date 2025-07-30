@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: '{"input":["Hello world"],"model":"text-embedding-3-small","encoding_format":"base64"}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '85'
+      content-type:
+      - application/json
+      host:
+      - ai-mai5814854386848515.openai.azure.com
+      user-agent:
+      - AzureOpenAI/Python 1.77.0
+      x-stainless-arch:
+      - arm64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - MacOS
+      x-stainless-package-version:
+      - 1.77.0
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.12.9
+    method: POST
+    uri: https://ai-mai5814854386848515.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-12-01-preview
+  response:
+    body:
+      string: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\":
+        \"embedding\",\n      \"index\": 0,\n      \"embedding\": \"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\"\n
+        \   }\n  ],\n  \"model\": \"text-embedding-3-small\",\n  \"usage\": {\n    \"prompt_tokens\":
+        2,\n    \"total_tokens\": 2\n  }\n}\n"
+    headers:
+      Content-Length:
+      - '8414'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 Jun 2025 22:21:20 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      access-control-allow-origin:
+      - '*'
+      apim-request-id:
+      - e55741df-50b8-428b-97f8-03d48c431d95
+      azureml-model-session:
+      - d011-20250512072110
+      x-content-type-options:
+      - nosniff
+      x-envoy-upstream-service-time:
+      - '23'
+      x-ms-client-request-id:
+      - e55741df-50b8-428b-97f8-03d48c431d95
+      x-ms-deployment-name:
+      - text-embedding-3-small
+      x-ms-region:
+      - East US
+      x-ratelimit-limit-tokens:
+      - '150000'
+      x-ratelimit-remaining-tokens:
+      - '149994'
+      x-request-id:
+      - 1235eb1f-46ab-4e37-8c0f-4da0335f62e7
+    status:
+      code: 200
+      message: OK
+version: 1

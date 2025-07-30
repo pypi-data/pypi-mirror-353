@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: llm-azure-ai
+Version: 0.1.0a0
+Summary: Add your description here
+Author-email: Marco Petersen <m@rcopetersen.com>
+Requires-Python: >=3.12
+Requires-Dist: azure-ai-inference>=1.0.0b9
+Requires-Dist: llm>=0.26
+Requires-Dist: openai>=1.77.0
+Requires-Dist: pydantic>=2.11.4

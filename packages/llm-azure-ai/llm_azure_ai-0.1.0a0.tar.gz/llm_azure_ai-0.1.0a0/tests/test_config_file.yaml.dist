@@ -1,0 +1,22 @@
+chat_models:
+- model_id: azure/ai-inference-model
+  sdk: ai_inference
+  sdk_config:
+    endpoint: %your-endpoint%
+    credential: %your-credential%
+    model_name: %your-model-name%
+- model_id: azure/openai-model
+  sdk: openai
+  sdk_config:
+    api_version: %your-api-version%
+    endpoint: %your-endpoint%
+    credential: %your-credential%
+    model_name: %your-model-name%
+embedding_models:
+- model_id: azure/openai-embedding-model
+  sdk: openai
+  sdk_config:
+    api_version: %your-api-version%
+    endpoint: %your-endpoint%
+    credential: %your-credential%
+    model_name: %your-model-name%

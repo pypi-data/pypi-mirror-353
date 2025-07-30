@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: '{"messages": [{"role": "user", "content": "Say hello. All lowercase, no
+      punctuation."}], "stream": false, "model": "gpt-4o-mini"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - azsdk-python-ai-inference/1.0.0b9 Python/3.12.9 (macOS-15.5-arm64-arm-64bit)
+      x-ms-client-request-id:
+      - 4a5639d2-424c-11f0-8795-399a7b2fc723
+    method: POST
+    uri: https://ai-mai5814854386848515.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview
+  response:
+    body:
+      string: '{"choices":[{"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"protected_material_code":{"detected":false,"filtered":false},"protected_material_text":{"detected":false,"filtered":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}},"finish_reason":"stop","index":0,"logprobs":null,"message":{"annotations":[],"content":"hello","refusal":null,"role":"assistant"}}],"created":1749155588,"id":"chatcmpl-BfBYqq4WYn7xhxOH0HUPyVy28sJyp","model":"gpt-4o-mini-2024-07-18","object":"chat.completion","prompt_filter_results":[{"prompt_index":0,"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"detected":false,"filtered":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}}}],"system_fingerprint":"fp_57db37749c","usage":{"completion_tokens":2,"completion_tokens_details":{"accepted_prediction_tokens":0,"audio_tokens":0,"reasoning_tokens":0,"rejected_prediction_tokens":0},"prompt_tokens":16,"prompt_tokens_details":{"audio_tokens":0,"cached_tokens":0},"total_tokens":18}}
+
+        '
+    headers:
+      Content-Length:
+      - '1215'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jun 2025 20:33:08 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      apim-request-id:
+      - 31d846b9-4399-41a5-ac62-0644200f446d
+      azureml-model-session:
+      - d021-20250530230727
+      cmp-upstream-response-duration:
+      - '276'
+      x-accel-buffering:
+      - 'no'
+      x-content-type-options:
+      - nosniff
+      x-ms-client-request-id:
+      - 4a5639d2-424c-11f0-8795-399a7b2fc723
+      x-ms-deployment-name:
+      - gpt-4o-mini
+      x-ms-region:
+      - East US
+      x-ratelimit-limit-requests:
+      - '1000'
+      x-ratelimit-limit-tokens:
+      - '100000'
+      x-ratelimit-remaining-requests:
+      - '997'
+      x-ratelimit-remaining-tokens:
+      - '99979'
+      x-request-id:
+      - f623c49f-62fb-466c-b865-d7791ca577eb
+    status:
+      code: 200
+      message: OK
+version: 1
