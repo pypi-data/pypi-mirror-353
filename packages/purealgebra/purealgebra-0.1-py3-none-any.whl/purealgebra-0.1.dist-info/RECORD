@@ -1,0 +1,9 @@
+purealgebra/__init__.py,sha256=S0bEsmfw11-e1G5W75hwa47tOchFsQMpvdNnlgCxJA0,248
+purealgebra/basic.py,sha256=RwYPbxf-jrjJvJJasoxoxC-8ROt5YlVpqjscTn0L1hU,210
+purealgebra/linear_algebra.py,sha256=8rtwYZmHcp-AKEdhPnmp7E_Q1veUotNb5di6yF6Rlxs,1082
+purealgebra/polynomial.py,sha256=eNlKY6h8fkKOU-ce0UmU7RRgbQN7Gm95yEbNTaVNsRw,348
+purealgebra/solver.py,sha256=P-l_WHlxbJ7AwaYY0W6n1B1bfgFH8IYA5E1hZqHCSFo,563
+purealgebra-0.1.dist-info/METADATA,sha256=papn27Nor2zmSVXW9Rcc7ltzGFJMXTOyXJsg14rKeCo,1707
+purealgebra-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+purealgebra-0.1.dist-info/top_level.txt,sha256=kkl1sqONMlsOtScqMssO76pYA69qDQbo9ods3_LCdD0,12
+purealgebra-0.1.dist-info/RECORD,,
