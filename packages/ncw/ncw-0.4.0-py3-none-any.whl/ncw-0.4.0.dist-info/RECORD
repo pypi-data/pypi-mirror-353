@@ -1,0 +1,11 @@
+ncw/__init__.py,sha256=C9IX04YUCtzPmZZx93Axj_Qh_gm9MendnmqxfmgT8kA,409
+ncw/__main__.py,sha256=NeyjpTRFGnjs9YVcFXWN5H53l4hNUT06KFM349s_ArE,2113
+ncw/cache.py,sha256=QGIUMrPVaKdKxUrAT_wviRnea_wBwsRuc9pUkmCmn4Q,7606
+ncw/commons.py,sha256=yVCr-CePo_ps-R9BM6CLfZYnVrvjZoVAPmyZwPQuNN4,2587
+ncw/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ncw/wrappers.py,sha256=cHGLmKxJrD_Sdh5fRYZ5Rxw2ywG1sRFv7Ex6hYe6lOo,7449
+ncw-0.4.0.dist-info/METADATA,sha256=4YytxF4ZMhAlBel7GpmWwHfB7CGUaMk9DZH1MlioA6Q,3520
+ncw-0.4.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ncw-0.4.0.dist-info/entry_points.txt,sha256=Ddlk5OsrA3r1H-FDDD8g2_NZJ_vuoM-AkaAiNB55o_Q,42
+ncw-0.4.0.dist-info/licenses/LICENSE,sha256=867pxriiObx28vCU1JsRtu3H9kUKyl54e0-xl1IIv3Y,913
+ncw-0.4.0.dist-info/RECORD,,
