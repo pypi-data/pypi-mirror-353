@@ -1,0 +1,14 @@
+svs/__init__.py,sha256=_Cu4_WhOT3xu8PsHvFNbZHvbznhvlx3LLaC_dwR7qY4,409
+svs/kb.py,sha256=qP-AKdzYjCpsXktwPLnrCB7A4ZSU8-WmdBCa4LUp_AY,66841
+svs/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+svs/types.py,sha256=Lsv9lLskJ3yD4T5RmNGqWoAuv-cTF3rxjXrZe8KeRRc,6023
+svs/util.py,sha256=QhMKwYJdA3eK5B5q1kuotrLrqeBeaYbOWFjFDeKZWts,9353
+svs/embeddings/__init__.py,sha256=trV1juzZo-mh3AKftQ-vhf_ZjkG7xR_MdHKd3_xwTQo,1221
+svs/embeddings/mock.py,sha256=J3JFSRF6DXeZF4an33mHhHe-HzuGf0a4Og-Iv7paB30,443
+svs/embeddings/ollama.py,sha256=vqPEORxU3JUbc7yBsFozUK0-VIrL3FfJmJ0hNdfvOAc,2487
+svs/embeddings/openai.py,sha256=aPApXlmcLrsVf_c0ZEN4-7fkoyMcWeV45wchlBJcheE,2739
+svs/embeddings/util.py,sha256=midfFVZckxjqoFt9WJxCoZR2GSLqlYp2r6AQnJJ6kJ0,1129
+svs-0.7.4.dist-info/METADATA,sha256=Mzr0eTM706w78PoEecmx2xOzI6UQXSVJ-zmugFmdJsI,8917
+svs-0.7.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+svs-0.7.4.dist-info/licenses/LICENSE.txt,sha256=1EUQGcf0n-3H5Zmk_eMV8x8DnKdWzJz71SGTm0JVeYM,1096
+svs-0.7.4.dist-info/RECORD,,
