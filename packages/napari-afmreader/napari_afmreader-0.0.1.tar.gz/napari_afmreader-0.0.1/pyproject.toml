@@ -1,0 +1,209 @@
+[build-system]
+requires = [
+  "setuptools>=45",
+  "setuptools_scm[toml]>=6.2"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "napari-afmreader"
+description = "Napari plugin using AFMReader to load various Atomic Force Microscopy Images."
+readme = "README.md"
+license = {text = "GNU GPLv3 only"}
+dynamic = ["version"]
+authors = [
+  {name = "TopoStats Team", email = "topostats@sheffield.ac.uk"},
+  {name = "Max Gamill", email = "mcgamill1@sheffield.ac.uk"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: napari",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+keywords = [
+  "afm",
+  "image processing",
+  "napari",
+]
+requires-python = ">=3.10"
+dependencies = [
+  "afmreader",
+  "magicgui",
+  "napari[all]",
+  "qtpy",
+  "tox",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/AFM-SPM/napari-afmreader/issues"
+"Documentation" = "https://github.com/AFM-SPM/napari-afmreader#README.md"
+"Source Code" = "https://github.com/AFM-SPM/napari-afmreader"
+"User Support" = "https://github.com/AFM-SPM/napari-afmreader/issues"
+
+[project.entry-points."napari.manifest"]
+napari-afmreader = "napari_afmreader:napari.yaml"
+
+[project.optional-dependencies]
+tests = [
+  "pytest",
+  "pytest-cov",
+  "pytest-qt",
+  "qtpy",
+]
+dev = [
+  "black",
+  "codespell",
+  "pre-commit",
+  "pylint",
+  "ruff",
+]
+pypi = [
+  "build",
+  "setuptools_scm[toml]",
+  "wheel",
+]
+
+[tool.setuptools]
+package-dir = { "" = "napari-afmreader/src" }
+
+[tool.setuptools.packages.find]
+where = ["napari-afmreader/src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
+
+[tool.setuptools_scm]
+write_to = "_version.py"
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.venv
+  )/
+)
+'''
+target-version = ['py310', 'py311', 'py312']
+
+[tool.codespell]
+skip = '*.top,*.spm,*.stp'
+count = ''
+quiet-level = 3
+
+[tool.ruff]
+line-length = 120
+lint.select = [
+  "A", # flake8-builtins
+  "B", # flake8-bugbear
+  "C", #
+  "D", # pydocstyle
+  "E", # pycodestyle error
+  "F",
+  "I", # isort
+  "NPY", # numpy
+  "PT", # flake8-pytest-style
+  "PTH", # flake8-use-pathlib
+  "R",
+  "S", #flake8-bandit
+  "W", # pycodestyle warning
+  "U",
+  "UP", # pyupgrade
+]
+lint.ignore = [
+  "A005",
+  "B905",
+  "E501",
+  "S101",
+  "S403",
+]
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".mypy_cache",
+  ".pants.d",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "napari-afmreader/src/napari_afmreader_tests/_tests/resources/*",
+  "node_modules",
+  "venv",
+  "*vendored*",
+  "*_vendor*",
+  "_version*",
+  "*.ipynb",
+]
+target-version = "py310"
+lint.fixable = [
+  "A", # flake8-builtins
+  "B", # flake8-bugbear
+  "C", #
+  "D", # pydocstyle
+  "E", # pycodestyle error
+  "F",
+  "I", # isort
+  "NPY", # numpy
+  "PT", # flake8-pytest-style
+  "PTH", # flake8-use-pathlib
+  "R",
+  "S", #flake8-bandit
+  "W", # pycodestyle warning
+  "U",
+  "UP", # pyupgrade
+]
+lint.unfixable = []
+lint.extend-select = ["NPY201"]
+preview = false
+lint.flake8-quotes.docstring-quotes = "double"
+lint.isort.case-sensitive = true
+lint.pydocstyle.convention = "numpy"
+lint.flake8-pytest-style.fixture-parentheses = true
+
+[tool.numpydoc_validation]
+checks = [
+  "all", # Perform all check except those listed below
+  "ES01",
+  "EX01",
+  "PR10", # Conflicts with black formatting
+  "SA01",
+]
+exclude = [  # don't report on objects that match any of these regex
+    "\\.undocumented_method$",
+    "\\.__repr__$",
+    "^test_",
+    "^conftest",
+    "^conf$",
+    "_version*",
+]
+override_SS05 = [  # override SS05 to allow docstrings starting with these words
+    "^Process ",
+    "^Assess ",
+    "^Access ",
+]
+
+[tool.coverage.run]
+source = ["napari_afmreader"]
+omit = [
+  "_version.py",
+  "*tests*",
+  "**/__init__*",
+]

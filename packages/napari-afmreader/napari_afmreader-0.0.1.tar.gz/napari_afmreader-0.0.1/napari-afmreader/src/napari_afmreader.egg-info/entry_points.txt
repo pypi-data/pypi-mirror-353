@@ -1,0 +1,2 @@
+[napari.manifest]
+napari-afmreader = napari_afmreader:napari.yaml
