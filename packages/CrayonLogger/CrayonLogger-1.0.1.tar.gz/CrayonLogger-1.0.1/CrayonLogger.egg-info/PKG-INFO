@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: CrayonLogger
+Version: 1.0.1
+Summary: Um logger colorido com interface gráfica em Tkinter e suporte a decoradores.
+Author: Leonardo Nery
+Author-email: leonardonery616@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Debuggers
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# CrayonLogger
+
+Um logger decorador inteligente e colorido com suporte a terminal, arquivo e GUI via Tkinter.
+
+## Instalação
+
+```bash
+pip install crayonlogger
