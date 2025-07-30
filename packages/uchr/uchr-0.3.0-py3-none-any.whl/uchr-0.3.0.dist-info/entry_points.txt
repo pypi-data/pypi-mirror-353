@@ -1,0 +1,3 @@
+[console_scripts]
+uchr=unicode_tools.uchr:uchr
+

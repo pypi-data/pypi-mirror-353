@@ -1,0 +1,11 @@
+unicode_tools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unicode_tools/database.py,sha256=WqPBF7Rmyq74ONv3awcuUsSQkB5hGJZ3MB2v7rbQsck,11329
+unicode_tools/db.py,sha256=G2y13GA_XdoV13Lmy-wcPEQ93-QdU03tWRrL6ALYyhs,4463
+unicode_tools/normalize.py,sha256=ZeybMGBIWTaQjjyrg75DNsqyNwM_4p4SAqn2Wfm23QU,3560
+unicode_tools/search.py,sha256=ovhGPTFzXuRs0YX_ljhzttTqw5IC20WAtOcwEexn4DM,2636
+unicode_tools/uchr.py,sha256=qAutAuD8hNnMnhpulxveYkiIVTcvEzMqQg6O3OPFNQQ,6807
+uchr-0.3.0.dist-info/LICENSE,sha256=9btWvx8-OK73XlFie43RPuK8tWhKKu_IcEjqtVQjC-c,1068
+uchr-0.3.0.dist-info/METADATA,sha256=5ddxWmIyOvFMbNZBF8cu8vrFAimPbKMSkxz5dtVSBhc,7977
+uchr-0.3.0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+uchr-0.3.0.dist-info/entry_points.txt,sha256=l5mV9P_tkP_q8Z4_rGP1CbP7vV2dyMTos6C-jwzkR3c,48
+uchr-0.3.0.dist-info/RECORD,,
