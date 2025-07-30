@@ -1,0 +1,2 @@
+[console_scripts]
+pickaxe-mcp-web-search = main:main
