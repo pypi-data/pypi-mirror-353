@@ -1,0 +1,180 @@
+# 🎉 fetti: TOML-Powered Environment Injection
+
+[![PyPI - Version](https://img.shields.io/pypi/v/fetti.svg)](https://pypi.org/project/fetti)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fetti.svg)](https://pypi.org/project/fetti)
+[![codecov](https://codecov.io/gh/lykhvar/fetti/branch/main/graph/badge.svg)](https://codecov.io/gh/lykhvar/fetti)
+
+**fetti** is a lightweight CLI tool that loads environment variables from a TOML
+configuration file and executes any command with those variables injected. Think
+of it as `dotenv` for your TOML files, supercharged with live command execution
+and namespacing.
+
+---
+
+## ✨ Core Features
+
+*   **TOML Configuration:** Leverages the clear and structured
+    [TOML format](https://toml.io/) for defining environment variables.
+*   **Seamless Command Execution:** Run any command or script, and `fetti` will provide it with the configured environment.
+*   **Variable Interpolation:** Define dynamic values using `${VAR_NAME}` syntax. Variables can reference:
+    *   Other values from the same (flattened) TOML configuration.
+    *   Existing operating system environment variables.
+*   **Namespace Scoping:** Isolate specific sections of your configuration using the `-n/--namespace` option (e.g., load only variables from a `[database]` section).
+*   **Automatic Key Flattening:** Nested TOML tables are automatically converted into flat environment variable names. For example, `[service.db]` with key `host` becomes `SERVICE_DB_HOST`. Keys are uppercased, and levels are joined by underscores (`_`).
+*   **Verbose Mode:** Use `-v/--verbose` to see which variables are being injected.
+*   **Minimal & Fast:** Built with Python and `click`, aiming for efficiency with minimal dependencies. Requires Python 3.11+ (for built-in `tomllib`).
+
+---
+
+## 📦 Installation
+
+Ensure you have Python 3.11+ installed.
+
+```bash
+pip install fetti
+```
+
+*(For Python versions older than 3.11, `fetti` will also install the `toml` package if `tomllib` is not available in the standard library.)*
+
+---
+
+## ⚙️ CLI Usage
+
+```bash
+fetti [OPTIONS] FILE -- COMMAND [ARGS]...
+```
+
+**Arguments:**
+
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| `FILE`    | Path to your TOML configuration file.                  |
+| `COMMAND` | The command to execute after loading the environment.  |
+| `ARGS...` | Any arguments for the `COMMAND`.                       |
+
+**Options:**
+
+| Flag                   | Description                                                                     |
+| :--------------------- | :------------------------------------------------------------------------------ |
+| `-n, --namespace NAME` | Use only a specific top-level section (table) from the TOML file.               |
+| `-k, --key NAME`       | Use only a specific second-level section (subtable) from the TOML file.               |
+| `-v, --verbose`        | Print the environment variables loaded from TOML before running the command.    |
+| `-h, --help`           | Show the help message and exit.                                                 |
+
+**Note:** The `--` separator is crucial. Everything *after* it is considered part of the command to be executed.
+
+---
+
+## 🧪 Quick Start Example
+
+Given a `config.toml`:
+
+```toml
+# config.toml
+APP_VERSION = "1.0"
+
+[database]
+host = "localhost"
+port = 5432
+user = "admin"
+# Interpolates other values from this 'database' scope once flattened
+url = "postgres://${DATABASE_USER}@${DATABASE_HOST}:${DATABASE_PORT}/mydb"
+
+[api_service]
+# Interpolates from OS environment if API_KEY_SECRET is set there
+# Otherwise, if API_KEY_SECRET is also in this config, it uses that.
+key = "${API_KEY_SECRET}"
+```
+
+**1. Load variables from the `database` namespace:**
+
+```bash
+fetti config.toml -n database -- python my_script.py
+```
+
+Inside `my_script.py`:
+
+```python
+import os
+
+print(f"DB URL: {os.environ.get('DATABASE_URL')}")
+# Output (example): DB URL: postgres://admin@localhost:5432/mydb
+print(f"App Version (not loaded): {os.environ.get('APP_VERSION')}") # Will be None
+```
+
+**2. Load all variables (no namespace):**
+
+```bash
+# Assuming API_KEY_SECRET is "mysecret" in your OS environment
+export API_KEY_SECRET="mysecret"
+fetti config.toml -- env | grep -E "(DATABASE_URL|APP_VERSION|API_SERVICE_KEY)"
+```
+
+Output:
+
+```
+APP_VERSION=1.0
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USER=admin
+DATABASE_URL=postgres://admin@localhost:5432/mydb
+API_SERVICE_KEY=mysecret
+```
+
+---
+
+## 🛠 Advanced: Nested Configuration & Interpolation
+
+`fetti` handles nested TOML tables by flattening their keys.
+
+Consider `settings.toml`:
+
+```toml
+# settings.toml
+project_name = "AwesomeProject"
+
+[service.auth]
+issuer = "auth.example.com"
+token_expiry_minutes = 60
+
+[service.env.db]
+host = "db.internal"
+port = 5432
+# Interpolation uses already flattened keys from this config:
+# SERVICE_AUTH_ISSUER, PROJECT_NAME, SERVICE_ENV_DB_PORT
+# It will also check os.environ if a var isn't in the TOML.
+connection_string = "user@${SERVICE_ENV_DB_HOST}:${SERVICE_ENV_DB_PORT}/${PROJECT_NAME}?issuer=${SERVICE_AUTH_ISSUER}"
+```
+
+**Run with the `service` namespace:**
+
+```bash
+fetti settings.toml -n service -- printenv | grep -E "(SERVICE_AUTH_ISSUER|SERVICE_ENV_DB_CONNECTION_STRING)"
+```
+
+Expected Output:
+
+```
+SERVICE_AUTH_ISSUER=auth.example.com
+SERVICE_ENV_DB_HOST=db.internal
+SERVICE_ENV_DB_PORT=5432
+SERVICE_ENV_DB_CONNECTION_STRING=user@db.internal:5432/AwesomeProject?issuer=auth.example.com
+```
+
+---
+
+## 💡 How Interpolation Works
+
+1.  When `fetti` encounters `${VAR_NAME}` in a string value from your TOML file:
+2.  It first looks for `VAR_NAME` among the other flattened keys derived *from your TOML file*.
+3.  If not found there, it looks for `VAR_NAME` in the existing operating system environment variables.
+4.  If `VAR_NAME` is not found in either location, it's replaced with an empty string.
+5.  The interpolation is a single pass. For chained dependencies (e.g., `A=${B}`, `B=${C}`),
+    ensure `B` appears or is processed before `A` if `B` itself is also defined in the TOML.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
