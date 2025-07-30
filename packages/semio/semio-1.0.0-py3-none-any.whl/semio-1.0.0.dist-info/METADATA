@@ -1,0 +1,36 @@
+Metadata-Version: 2.3
+Name: semio
+Version: 1.0.0
+Summary: The engine that powers semio.
+License: AGPL-3.0-or-later
+Author: Ueli Saluz
+Author-email: ueli@semio-tech.com
+Maintainer: Ueli Saluz
+Maintainer-email: ueli@semio-tech.com
+Requires-Python: >=3.13,<3.14
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: fastapi[standard] (>=0.115.12,<0.116.0)
+Requires-Dist: graphene (>=3.4.3,<4.0.0)
+Requires-Dist: graphene-pydantic (>=0.6.1,<0.7.0)
+Requires-Dist: graphene-sqlalchemy (>=3.0.0rc2,<4.0.0)
+Requires-Dist: jinja2 (>=3.1.6,<4.0.0)
+Requires-Dist: lark (>=1.2.2,<2.0.0)
+Requires-Dist: loguru (>=0.7.3,<0.8.0)
+Requires-Dist: networkx (>=3.5,<4.0)
+Requires-Dist: numpy (>=2.2.6,<3.0.0)
+Requires-Dist: openai (>=1.83.0,<2.0.0)
+Requires-Dist: pint (>=0.24.4,<0.25.0)
+Requires-Dist: pydantic (>=2.11.5,<3.0.0)
+Requires-Dist: pyside6 (>=6.9.1,<7.0.0)
+Requires-Dist: python-dotenv (>=1.1.0,<2.0.0)
+Requires-Dist: pytransform3d (>=3.14.1,<4.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: sqlalchemy (>=2.0.41,<3.0.0)
+Requires-Dist: sqlmodel (>=0.0.24,<0.0.25)
+Requires-Dist: starlette (>=0.46.2,<0.47.0)
+Requires-Dist: starlette-graphene3 (>=0.6.0,<0.7.0)
+Requires-Dist: uvicorn[standard] (>=0.34.3,<0.35.0)
+Project-URL: Homepage, https://github.com/usalu/semio
+Project-URL: Repository, https://github.com/usalu/semio
