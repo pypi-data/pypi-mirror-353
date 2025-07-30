@@ -1,0 +1,9 @@
+sayaka-0.3.0.dist-info/METADATA,sha256=TLfp66chuCtES8Iz_6wL4LHHoVHL3rAfEDEq0emgDoY,2880
+sayaka-0.3.0.dist-info/WHEEL,sha256=q7wQuuLF3Wf37kPvdOw6GyhvyvSy97yv-4o7K0-XKZc,106
+sayaka-0.3.0.dist-info/licenses/LICENSE,sha256=i_2k5e4IyYFsKcNchRYRZ72EgFELATKfnVOheY8l_ho,1066
+sayaka.libs/libgcc_s-e52197c3.so.1,sha256=vkPW1Auw6CH9Bjk7frmX3hry_1H9c0tRI0Ncyg71WUI,724137
+sayaka/__init__.py,sha256=sZLrPcIWO2aP3uLi4uJZUUjuOEmQc-kIy2rYr0En3Pg,373
+sayaka/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sayaka/sayaka.cpython-39-aarch64-linux-gnu.so,sha256=dYotUdtAx5t6cC31W5O7dNqqxpwetuZ3PraSngOWUgg,789121
+sayaka/sayaka.pyi,sha256=PSxP_bCKIZYMlwzVajphJCPYg-zI6MNy_T6ipYaiVUw,680
+sayaka-0.3.0.dist-info/RECORD,,
