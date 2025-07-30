@@ -1,0 +1,9 @@
+turboedit/__init__.py,sha256=i2365CfTeQdsjMxGEROCZK-1H9db8RfX8BybvPnDHFo,78
+turboedit/bindings.py,sha256=V0PJaRz_dbvbHOcikB5c2GI43eS26tU-7gWp8iPSqN0,5735
+turboedit/lib/libnvec.dll,sha256=uJDWA5WOHhRtk5bFnhoOMw0xjTZ1y9zkdTM7AYuT4is,70791
+turboedit/lib/libopenblas.dll,sha256=P9zK8AVAdPWXlhOog7CU25Clc5XcfqMdX9gYwia6Kh8,51064539
+turboedit-0.1.7.dist-info/licenses/LICENSE,sha256=MJmntLKioBMpkJ-7UYM5u7fAROCEwJcMJE5ZjNiCHZc,1093
+turboedit-0.1.7.dist-info/METADATA,sha256=3qEg1y16nRGSOV8AIzFSfw9htuNxXtGr5fatbfT3jNA,3625
+turboedit-0.1.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+turboedit-0.1.7.dist-info/top_level.txt,sha256=O0mTWGhWjfTCheFtOBOczHa26vEm81c8jsLRoFM7ANk,10
+turboedit-0.1.7.dist-info/RECORD,,
