@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pydbox/__init__.py
+pydbox.egg-info/PKG-INFO
+pydbox.egg-info/SOURCES.txt
+pydbox.egg-info/dependency_links.txt
+pydbox.egg-info/requires.txt
+pydbox.egg-info/top_level.txt
+pydbox/tesi/__init__.py
+pydbox/tesi/tesi.py
