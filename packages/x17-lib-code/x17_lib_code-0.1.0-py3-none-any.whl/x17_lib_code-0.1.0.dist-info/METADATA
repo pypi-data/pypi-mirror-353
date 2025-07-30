@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: x17-lib-code
+Version: 0.1.0
+Summary: A semantic AST-based documentation engine for python
+Author-email: Xing Xing <x.xing.work@gmail.com>
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: x17-lib-base
