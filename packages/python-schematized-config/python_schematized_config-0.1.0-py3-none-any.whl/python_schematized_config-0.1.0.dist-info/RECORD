@@ -1,0 +1,10 @@
+python_schematized_config-0.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+schematized_config/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+schematized_config/_modidx.py,sha256=z77WMAsq9BBiLFG3zt5N-ln46FttaH8un-adGFTU2MM,4763
+schematized_config/cli.py,sha256=36-H-Fm6RMoF-F3NB2y-W1Y3Dov5bGWzEoXlBVuEJ_Y,5528
+schematized_config/core.py,sha256=lxtlfRJGojo-XhsfDP3VfqUiTF5bYstw7O042GR795g,8382
+python_schematized_config-0.1.0.dist-info/METADATA,sha256=isZbtfV6MMuYgWZDJ8TXhUlg0kVhP9h5A6PUtzV6dCY,4094
+python_schematized_config-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+python_schematized_config-0.1.0.dist-info/entry_points.txt,sha256=7gbQ_o9K3MwUytPmWIVZm8MOgSWIEuwyrRhmV5qU9Mo,126
+python_schematized_config-0.1.0.dist-info/top_level.txt,sha256=DEaCc4ypGyBNI2HViqvfgFk_FYQh_pxt8F_RH6vZTkA,19
+python_schematized_config-0.1.0.dist-info/RECORD,,
