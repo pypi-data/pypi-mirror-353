@@ -1,0 +1,12 @@
+
+[all]
+flask
+apscheduler
+
+[dev]
+build
+twine
+
+[scheduler]
+apscheduler
+flask
