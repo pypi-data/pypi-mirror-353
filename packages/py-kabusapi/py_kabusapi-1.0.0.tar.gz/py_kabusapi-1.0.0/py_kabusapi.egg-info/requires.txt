@@ -1,0 +1,6 @@
+requests
+ipython
+ruff
+pydantic
+websocket-client
+pytest
