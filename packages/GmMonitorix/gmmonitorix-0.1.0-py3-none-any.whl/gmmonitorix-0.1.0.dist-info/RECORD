@@ -1,0 +1,12 @@
+GmMonitorix/CGI.py,sha256=Vea3WNSn8hxhCxjCbgLxzCBHa_qSmt4SGyBSxGUQU6g,4085
+GmMonitorix/__init__.py,sha256=DDMDcuSxiHJ735bPtckZHycG6Csf3T5wjGH0USiTqQc,9283
+GmMonitorix/__main__.py,sha256=Kfa5IRIyL22IcLflgMcwZgmg6SnCXkPkXisEnHUQ4WM,92
+GmMonitorix/conf.py,sha256=_ryKpjH5Y8xWzIbLjtcNdt05lt8pRgOriPIW8UboeLA,1635
+GmMonitorix/net.py,sha256=NF8aEFXDH4UMOX7BaAcnkCSFPQwyEAgQgnm9mH3GuEk,12008
+GmMonitorix/system.py,sha256=oJQVKkFSYgjEBMZroe3Edl4UbrI85yKHzgW1q3HO4rI,19820
+gmmonitorix-0.1.0.dist-info/licenses/COPYING,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+gmmonitorix-0.1.0.dist-info/METADATA,sha256=tTcQ0HtXQhqCxzyIeV5ypNiy-MhCSVjTTM0DoGP6lU0,2804
+gmmonitorix-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gmmonitorix-0.1.0.dist-info/entry_points.txt,sha256=NhqKuAFil9xhuckhswfvrH3IV14Y_Jet-owVGZD-_bk,53
+gmmonitorix-0.1.0.dist-info/top_level.txt,sha256=0No_sP-mwW0Dbx6LRoLZLnrlkqfPnKd5CKOKf_HoVDM,12
+gmmonitorix-0.1.0.dist-info/RECORD,,
