@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: prometheus-anomaly-detection-lstm
+Version: 0.2.3
+Summary: A system for detecting anomalies in time series data collected from Prometheus using an LSTM autoencoder.
+Author-email: AiLab <vpuhoff9@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/vpuhoff/prometheus-anomaly-detection-lstm
+Project-URL: Repository, https://github.com/vpuhoff/prometheus-anomaly-detection-lstm
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: pandas
+Requires-Dist: pyyaml
+Requires-Dist: diskcache
+Requires-Dist: scikit-learn
+Requires-Dist: joblib
+Requires-Dist: tensorflow
+Requires-Dist: matplotlib
+Requires-Dist: prometheus-client
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Dynamic: license-file
