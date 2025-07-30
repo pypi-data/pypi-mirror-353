@@ -1,0 +1,39 @@
+MANIFEST.in
+setup.py
+data/6-01 Lumos! (Hedwig's Theme) [Film Version].mp3
+data/6-02 Aunt Marge's Waltz.mp3
+data/6-03 Parents' Portrait And The Empty Playground.mp3
+data/6-04 The Knight Bus [Extended Version].mp3
+data/6-05 Monster Book And Discussing Black.mp3
+data/6-06 Apparition On The Train [Film Version].mp3
+data/6-07 Double Trouble.mp3
+data/6-08 Trouble Takes Many Forms.mp3
+data/6-09 Rainy Nights, Dementors And Birds.mp3
+data/6-10 The Courtyard And Sir Cadogan.mp3
+data/6-11 The Hippogriff Lesson.mp3
+data/6-12 Befriending The Hippogriff.mp3
+data/6-13 Buckbeak's Flight.mp3
+data/6-14 The Grim ／ The Newspaper.mp3
+data/6-15 The Boggarts.mp3
+data/6-16 On The Bridge - Remembering Mother.mp3
+data/6-17 The Portrait Gallery.mp3
+data/6-18 The Big Doors And The Great Hall Ceiling.mp3
+data/6-19 Page 394 And Quidditch, Third Year.mp3
+data/6-20 A Walk In The Woods And Bird's Flight.mp3
+data/6-21 The Snowball Fight.mp3
+data/6-22 The Three Broomsticks.mp3
+data/6-23 Summoning The Patronus.mp3
+data/6-24 Buckbeak's Fate And The Marauder's Map.mp3
+data/6-25 About Pettigrew ／ The Crystal Ball.mp3
+data/6-26 The Executioner.mp3
+data/6-27 The Walk To Buckbeak.mp3
+data/6-28 The Sentence.mp3
+data/6-29 Chasing Scabbers.mp3
+data/6-30 The Whomping Willow.mp3
+data/6-31 Confrontation In The Shrieking Shack.mp3
+data/6-32 Sirius And Harry.mp3
+data/6-33 The Werewolf Scene.mp3
+hp3p1.egg-info/PKG-INFO
+hp3p1.egg-info/SOURCES.txt
+hp3p1.egg-info/dependency_links.txt
+hp3p1.egg-info/top_level.txt
