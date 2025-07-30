@@ -1,0 +1,21 @@
+[workspace]
+
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+authors = ["Daniel Danis <daniel.gordon.danis@protonmail.com>"]
+rust-version = "1.70"
+repository = "https://github.com/P2GX/delumps"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1.0.86"
+criterion = "0.5.1"
+flate2 = "1.0.30"                                                  # To read the compressed IC MICA dict
+ndarray = "0.15.6"
+numpy = "0.21.0"
+ontolius = { version = "0.5.1", features = ["csr", "pyo3"] }
+phenotypes = "0.1.2"
+pyo3 = { version = "0.21.2", features = ["abi3-py310", "anyhow"] }

@@ -1,0 +1,30 @@
+[package]
+name = "delumps"
+version = "0.1.10"
+description = "Rust extension module for Scone semantic similarity library"
+keywords = ["HPO", "similarity"]
+readme = "README.md"
+publish = false   # we *do* publish the Python library though..
+authors.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+edition.workspace = true
+license.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "delumps"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow.workspace = true
+flate2.workspace=true
+numpy.workspace = true
+ontolius.workspace = true
+phenotypes.workspace = true
+scone = { path = "../scone", version = "0.1.9" }
+
+
+[dependencies.pyo3]
+workspace = true
+features = ["abi3", "anyhow", "extension-module"]
