@@ -1,0 +1,13 @@
+setuptools>=41.6.0
+inwx-domrobot>=3.2.0
+acme>=3.0.0
+certbot>=3.0.0
+
+[CNAME]
+dnspython
+
+[idna]
+idna
+
+[test]
+pytest
