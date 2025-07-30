@@ -1,0 +1,11 @@
+README.md
+setup.py
+jokes_programming/__init__.py
+jokes_programming/funny_asks.py
+jokes_programming/run.py
+jokes_programming.egg-info/PKG-INFO
+jokes_programming.egg-info/SOURCES.txt
+jokes_programming.egg-info/dependency_links.txt
+jokes_programming.egg-info/entry_points.txt
+jokes_programming.egg-info/requires.txt
+jokes_programming.egg-info/top_level.txt

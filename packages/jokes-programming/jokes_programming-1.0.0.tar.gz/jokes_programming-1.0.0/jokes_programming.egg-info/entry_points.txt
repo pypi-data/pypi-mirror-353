@@ -1,0 +1,2 @@
+[console_scripts]
+jokes_programming = jokes_programming.run:run
