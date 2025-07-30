@@ -1,0 +1,11 @@
+physics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+physics/collisions.py,sha256=x2Yo0p0Zq4duf1eNVHpn4BGZhA1ItC6Y_5StfLz9CCw,5045
+physics/color.py,sha256=oM4sBzDKwgICR4s8y8GZeKGY-5X4EziIPRU-KkJzXLM,181
+physics/objects.py,sha256=SlusVSM7-06vIaU37l6uQT_yk8DHVlvwLX4FWmvDA3w,4793
+physics/rendering.py,sha256=MYNQQIjKYxRruWkFLif8v1ouY1svnzD1OOhakFPmHNw,796
+physics/vector.py,sha256=jqMniBjMhRGwKotehKPheH6vThX9P38m857mU0GZ8C8,1405
+physics/world.py,sha256=WlFrrd4oQwFquzsOGIQa-FMAPQEGkQm71aezQU1t-8E,1574
+dphysicsengine-0.1.11.dist-info/METADATA,sha256=CemJ8TOFqDQyu4PLNB92bzZ8_u_yWvFA-vLYIqXCqYA,211
+dphysicsengine-0.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dphysicsengine-0.1.11.dist-info/top_level.txt,sha256=aws060Zz-1h0Kx76JzcE1gLA_AfS1lrRtTCsyUYwDvM,8
+dphysicsengine-0.1.11.dist-info/RECORD,,
