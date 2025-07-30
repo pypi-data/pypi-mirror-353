@@ -1,0 +1,6 @@
+fastapi[standard]>=0.115.12
+fastmcp>=2.7.0
+fulcra-api>=0.1.26
+httpx>=0.28.1
+mcp[cli]>=1.9.3
+structlog>=25.4.0
