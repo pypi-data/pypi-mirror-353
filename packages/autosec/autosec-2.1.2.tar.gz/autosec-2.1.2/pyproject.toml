@@ -1,0 +1,37 @@
+[project]
+name = "autosec"
+version = "2.1.2"
+description = "A collection of utilities for security operations and automation."
+authors = [
+	{ name = "Dylan Diamond", email = "dylandiamond1997@outlook.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+	"cryptography",
+	"python-dotenv",
+	"requests"
+]
+
+[project.scripts]
+autocred = "autosec.cli:autocred_cli"
+autolog = "autosec.cli:autolog_cli"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+build_command = "python -m pip install build && python -m build --sdist --wheel ."
+commit_parser = "conventional"
+version_source = "commits"
+upload_to_pypi = true
+upload_to_pypi_repository = "pypi"
+
+[tool.semantic_release.commit_parser_options]
+minor_tags = ['feat', 'minor']
+patch_tags = ['fix', 'patch', 'chore', 'typo', 'docs', 'refactor', 'bug']
+parse_squash_commits = true
+ignore_merge_commits = true
