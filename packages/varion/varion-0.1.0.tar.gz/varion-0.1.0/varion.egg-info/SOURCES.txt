@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+varion/__init__.py
+varion/core.py
+varion.egg-info/PKG-INFO
+varion.egg-info/SOURCES.txt
+varion.egg-info/dependency_links.txt
+varion.egg-info/requires.txt
+varion.egg-info/top_level.txt
