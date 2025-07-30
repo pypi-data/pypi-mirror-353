@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: toprint
+Version: 0.1.32
+Summary: 2print/toprint: Python library for printing and converting between HTML, PDF, ZPL, and image formats with printer support. Also known as 2print or to-print.
+Home-page: https://github.com/text2doc/toPrint
+Author: Tom Softreck
+Author-email: info@softreck.dev
+Project-URL: Bug Reports, https://github.com/text2doc/toPrint/issues
+Project-URL: Source, https://github.com/text2doc/toPrint
+Project-URL: Documentation, https://github.com/text2doc/toPrint#readme
+Project-URL: Changelog, https://github.com/text2doc/toPrint/releases
+Keywords: printing,pdf,html,zpl,label,printer,conversion,2print,2-print,print2,print-2,toprint,to-print,html2print,html-to-print,html2pdf,html-to-pdf,html2zpl,html-to-zpl,html2img,html-to-image,html2doc,html-to-doc,html2docx,html-to-docx,html2md,html-to-md,html2markdown,html-to-markdown,html2xml,html-to-xml,html2json,html-to-json,pdf2print,pdf-to-print,pdf2html,pdf-to-html,pdf2zpl,pdf-to-zpl,pdf2img,pdf-to-image,pdf2doc,pdf-to-doc,pdf2docx,pdf-to-docx,pdf2md,pdf-to-md,pdf2markdown,pdf-to-markdown,pdf2xml,pdf-to-xml,pdf2json,pdf-to-json,zpl2print,zpl-to-print,zpl2pdf,zpl-to-pdf,zpl2html,zpl-to-html,zpl2img,zpl-to-image,zpl2doc,zpl-to-doc,zpl2docx,zpl-to-docx,zpl2md,zpl-to-md,zpl2markdown,zpl-to-markdown,zpl2xml,zpl-to-xml,zpl2json,zpl-to-json,img2print,image-to-print,img2pdf,image-to-pdf,img2html,image-to-html,img2zpl,image-to-zpl,img2doc,image-to-doc,img2docx,image-to-docx,img2md,image-to-md,img2markdown,image-to-markdown,img2xml,image-to-xml,img2json,image-to-json,doc2print,doc-to-print,doc2pdf,doc-to-pdf,doc2html,doc-to-html,doc2zpl,doc-to-zpl,doc2img,doc-to-image,doc2docx,doc-to-docx,doc2md,doc-to-md,doc2markdown,doc-to-markdown,doc2xml,doc-to-xml,doc2json,doc-to-json,md2print,markdown-to-print,md2pdf,markdown-to-pdf,md2html,markdown-to-html,md2zpl,markdown-to-zpl,md2img,markdown-to-image,md2doc,markdown-to-doc,md2docx,markdown-to-docx,md2xml,markdown-to-xml,md2json,markdown-to-json,document-conversion,file-conversion,format-conversion,document-processing,document-generation,report-generation,label-printing,barcode,qrcode,thermal-printing,zebra,zpl-printer,weasyprint,pdf-generation,label-maker,document-automation,print-automation,batch-printing,bulk-printing,template-printing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Printing
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Multimedia :: Graphics :: Graphics Conversion
+Classifier: Topic :: Office/Business :: Office Suites
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.txt
+Requires-Dist: weasyprint>=53.0
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: reportlab>=3.6.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# toPrint
+python package for html, pdf, zpl printing
