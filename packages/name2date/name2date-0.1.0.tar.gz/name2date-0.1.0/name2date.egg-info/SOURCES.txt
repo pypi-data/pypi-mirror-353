@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+name2date/__init__.py
+name2date/__main__.py
+name2date/cli.py
+name2date/core.py
+name2date.egg-info/PKG-INFO
+name2date.egg-info/SOURCES.txt
+name2date.egg-info/dependency_links.txt
+name2date.egg-info/entry_points.txt
+name2date.egg-info/top_level.txt
+tests/__init__.py
+tests/test_parse_filename.py
+tests/test_update_file_modification_time.py
