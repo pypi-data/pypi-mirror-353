@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: sak1620
+Version: 0.1.2
+Summary: A short description of your amazing package.
+Author-email: Shreya Alok <alok.shreya1620@gmail.com>
+Project-URL: Homepage, https://github.com/sak1620/sak1620
+Project-URL: Bug Tracker, https://github.com/sak1620/sak1620/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: numpy>=1.20
