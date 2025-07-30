@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+ColorCorrectionPipeline/__init__.py
+ColorCorrectionPipeline/ccp.py
+ColorCorrectionPipeline/key_functions.py
+ColorCorrectionPipeline/models.py
+ColorCorrectionPipeline/quick_run.py
+ColorCorrectionPipeline.egg-info/PKG-INFO
+ColorCorrectionPipeline.egg-info/SOURCES.txt
+ColorCorrectionPipeline.egg-info/dependency_links.txt
+ColorCorrectionPipeline.egg-info/requires.txt
+ColorCorrectionPipeline.egg-info/top_level.txt
+ColorCorrectionPipeline/FFC/FF_correction.py
+ColorCorrectionPipeline/FFC/__init__.py
+tests/test_core.py
