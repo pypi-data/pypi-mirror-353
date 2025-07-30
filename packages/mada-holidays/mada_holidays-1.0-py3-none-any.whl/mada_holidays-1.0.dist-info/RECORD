@@ -1,0 +1,8 @@
+mada_holidays/__init__.py,sha256=mxkwnBpRm6LTPovSb5fTJvc3ygYIorstvg31l9tsa50,53
+mada_holidays/core.py,sha256=K9C9nOXNatb-qEjRhKugv5YvzCs4fagPPTmTlByj1HA,562
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_core.py,sha256=_TeMOyzIYIrYQ9H-Bk_NGFZ94mAmzhun43z6VOW3woM,205
+mada_holidays-1.0.dist-info/METADATA,sha256=NW_I0bGpKz-2OoW01tb5rhP8kSmHKgZVvxUdx-dRnQ4,376
+mada_holidays-1.0.dist-info/WHEEL,sha256=zaaOINJESkSfm_4HQVc5ssNzHCPXhJm0kEUakpsEHaU,91
+mada_holidays-1.0.dist-info/top_level.txt,sha256=6kkgPzokipcqpIjV6NUcUCNWjuyW7e4rbY7fVCsqrTE,20
+mada_holidays-1.0.dist-info/RECORD,,
