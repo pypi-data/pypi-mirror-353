@@ -1,0 +1,16 @@
+tellabot/__init__.py,sha256=8yhuuBZS4K8x8D2c5omUZY8zyO_zQXXRHQ8_PZSo_I8,144
+tellabot/cli.py,sha256=O4tsn7KgnwTmOzMDmNA_DtMTJWu5ocj_uuM8j_XwWr4,7375
+tellabot/utils.py,sha256=aMEku6eI-0ztFQM2Yip6h6GKsCl--KKbPdx3GGqEQyk,429
+tellabot/templates/main_template/.env.example,sha256=IsT1KTV_GfcnRM5sHO3CzknO6phpJS8kal9oqJTVr4Q,172
+tellabot/templates/main_template/.gitignore,sha256=9Pb5pmy7tz0TXu3IR7TxS-ttBgQ_S3wjTEFrIRd9Bh4,27
+tellabot/templates/main_template/README.md,sha256=SmeyAWE-pNpamG633U9ELsuqbTWYnjJgYLiACqSIYH4,410
+tellabot/templates/main_template/requirements.txt,sha256=2-8BUUCZYQQ4FW5zSjL8_8nlIWZPrF_PX5HzPTIcwnc,83
+tellabot/templates/main_template/run.py,sha256=V6y2L6DN7yKiFRMJU4BIk3pW2WjxMsHTMJ3KiB57hp0,690
+tellabot/templates/main_template/app/__init__.py,sha256=5bMgd_7N6bKHwjHL3WIh8jm1bKuRDU8bQlEdx7txyx0,1202
+tellabot/templates/main_template/app/bot.py,sha256=p1x7x4xYN0mYbbK5e6UxcmPGtblrVDJr-CX9nMnAICc,1106
+tellabot/templates/main_template/app/handlers.py,sha256=9sMisPNfNnin1EZLdNUxTLEgtIDll4folycqLznkoJY,490
+tellabot-0.1.4.dist-info/METADATA,sha256=jxsHjE2Rsl5riJBTZ_TtVqj75nNTeS2kZrhivRXr2f4,1127
+tellabot-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tellabot-0.1.4.dist-info/entry_points.txt,sha256=K1Rv-nJ7vG7hgmN__6N6429NCAxi1_sqlcxH9zEPxyA,46
+tellabot-0.1.4.dist-info/top_level.txt,sha256=pFje2zsX7qa8AjVownB6VAhS0t-_Y7PoykBu3TrzODM,9
+tellabot-0.1.4.dist-info/RECORD,,
