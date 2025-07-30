@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: mysql-mcp-xu
+Version: 0.0.4
+Summary: MySQL MCP Server
+Author-email: xmq <xmqsvip@qq.com>
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastmcp>=2.7.0
+Requires-Dist: mysql-connector-python>=9.3.0
+Requires-Dist: python-dotenv>=1.1.0
+
+# mysql_mcp_xu
