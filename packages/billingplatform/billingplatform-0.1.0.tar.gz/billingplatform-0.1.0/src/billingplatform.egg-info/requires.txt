@@ -1,0 +1,5 @@
+requests
+
+[pypi_deploy]
+build
+twine
