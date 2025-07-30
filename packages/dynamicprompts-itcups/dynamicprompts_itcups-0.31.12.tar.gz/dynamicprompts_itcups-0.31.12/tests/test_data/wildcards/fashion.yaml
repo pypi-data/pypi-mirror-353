@@ -1,0 +1,140 @@
+clothing:
+  style:
+    - "{
+        1980s_fashion
+        | 1990s_fashion
+        | Aristocratic_clothes
+        | Formal_clothes
+        | Goth_fashion, { Pastel_Goth | Perky_Goth}
+        | Pun
+        | Raver
+        | Sportswear
+        | Streetwear, {Hip_Hop | Techwear}
+        | y2k_fashion
+        | bodycon
+        | decora
+        | french_girly
+        | gothic_punk
+        | gurokawa
+        | kogal
+        | manba_gyaru
+        | jirai_kei
+        | lolita_fashion, {gothic_lolita | classic_lolita | qi_lolita | wa_lolita | sweet_lolita}
+        | tenshi_kaiwai
+        | yami_kawaii
+        | balletcore
+        | e-girl
+        | emo_fashion
+      }"
+  head:
+    - "{
+        beret
+        | coif
+        | jester_cap
+        | picture_hat
+        | mob_cap
+        | mini_witch_hat
+        | witch_hat
+        | straw_hat
+        | sun_hat
+        | mini_top_hat
+        | veil
+      }"
+  arms:
+    - "{
+        bracelet
+        | armlet
+        | arm_ribbon
+        | arm_warmers 
+      }"
+  gloves:
+    - "{
+        Elbow_gloves
+        | Fingerless_gloves
+        | Striped_gloves
+        | Glove_bow
+        | Frilled_gloves
+        | latex_gloves
+        | lace_gloves
+        | See-through_gloves
+      }"
+  hair:
+    - "{
+        hair_ornament
+        | hair_bow
+        | hairclip
+        | hair_ribbon
+        | hairband
+        | 0.1::hair_bobbles
+      }"
+  eyewear:
+    - "{
+        glasses
+        | mini_eyewear
+        | opaque_glasses
+        | rimless_eyewear
+        | semi-rimless_eyewear
+        | sunglasses
+        | monocle
+      }"
+
+  neck:
+    - "{
+        necklace
+        | choker
+        | slave_collar
+        | bowtie
+        | neck_ribbon
+        | neck_bell
+        | neck_ring
+      }"
+  legs:
+    - "{
+        thighhighs
+        | thigh_socks
+        | socks
+        | <lora:leggings_v2.6-pony:0.2> textured_leggings, leggings
+        | fishnets
+        | bow_legwear
+        | cross-laced_legwear
+        | fluffy_legwear
+        | knit_legwear
+        | ribbed_legwear
+        | seamed_legwear
+        | shiny_legwear
+        | toeless_legwear
+        | anklet
+      }"
+    - "{
+        skirt
+        | blouse
+        | jacket
+        | lingerie
+        | shibari
+        | 0.1:: latex_bodysuit
+        | swimsuit
+        | bikini
+        | miniskirt
+        | underwear
+        | bra
+        | dress
+        | cosplay
+        | babydoll
+        | camisole
+        | chemise
+        | corset
+        | gimp_suit
+      }"
+      
+  
+  modifiers:
+    - "{
+        {0.1::torn_clothes}
+      }"
+  mandatory:
+    - "{
+        {[_\\s]?thighhigh[s]?:: {0.2::torn_thighhighs}},
+        {[_\\s]?legging[s]?:: {0.2::torn_leggings}}
+      }"
+
+

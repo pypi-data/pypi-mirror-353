@@ -1,0 +1,98 @@
+condition_state:
+  - abandoned
+  - crumbling
+  - derelict
+  - dilapidated
+  - rotting
+  - flooded
+  - frozen
+  - burned-out
+  - overgrown
+  - peeling
+  - weathered
+  - damp
+  - deserted
+  - isolated
+
+architectural_style:
+  - soviet
+  - gothic
+  - victorian
+  - brutalist
+  - art_deco
+  - rustic
+  - minimalist
+  - industrial
+  - geometric
+  - symmetrical
+
+general_ambiance:
+  - spooky
+  - strange
+  - eerie
+  - mysterious
+  - quaint
+  - cozy
+  - cluttered
+  - silent
+  - echoing
+  - bustling
+  - claustrophobic
+  - expansive
+
+age_time_period:
+  - ancient
+  - medieval
+  - modern
+  - futuristic
+  - vintage
+  - retro
+  - timeworn
+
+lighting:
+  - dimly-lit
+  - neon-lit
+  - glowing
+  - shadowy
+  - foggy
+  - smoky
+
+cleanliness:
+  - "{
+    0.4::dusty
+    | 2::sterile
+    | 0.1::filthy
+    | 2::pristine
+    | 0.2::grimy
+    | 0.1::soot-stained
+    }"
+
+material_texture:
+  - moss-covered
+  - ivy-clad
+  - sandy
+  - muddy
+  - snow-covered
+  - stone-carved
+  - metallic
+
+environmental_interaction:
+  - weather-beaten
+  - sun-baked
+  - rain-soaked
+  - wind-swept
+
+mystical_supernatural:
+  - haunted
+  - enchanted
+  - cursed
+  - sacred
+  - unholy
+  - magical
+
+technological:
+  - cybernetic
+  - automated
+  - rusted
+  - polished
+  - holographic

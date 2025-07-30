@@ -1,0 +1,157 @@
+girl_sexual_themes:
+  professions:
+    - "{
+        academician
+        | acrobat
+        | alchemist
+        | baker
+        | ballerina
+        | barmaid
+        | bartender
+        | belly dancer
+        | chef
+        | clown
+        | circus_performer
+        | courtesan
+        | dancer
+        | detective
+        | diver
+        | druidess
+        | emergency_responder
+        | farmer
+        | firefighter
+        | flight_attendant
+        | fortune_teller
+        | geisha
+        | harlot
+        | high_priestess
+        | housekeeper
+        | influencer
+        | librarian
+        | magicianess
+        | fashion_model
+        | muse
+        | nurse
+        | paramedic
+        | priestess
+        | security_officer
+        | shamaness
+        | skateboarder
+        | sorceress
+        | spy
+        | stewardess
+        | superheroine
+        | surfer
+        | teacher
+        | vlogger
+        | waitress
+        | waitstaff
+        | witch
+        | singer
+      }"
+  
+  monster_girls:
+      mechanical:
+        - "{
+            android_girl
+            | clockwork_doll
+            | cyborg_girl
+            | mecha_musume
+            | robot_girl
+          }"
+      animals:
+        - "{
+            2::centaur
+            | cow_girl
+            | cat_girl
+            | horse_girl
+            | 2::harpy
+            | 2::fox_girl 
+            | kitsune
+            | tanuki_girl
+            | wolf_girl
+            | 2::rabbit_girl 
+            | mouse_girl
+            | raccoon_girl
+            | sheep_girl
+            | squirrel_girl 
+            | deer_girl
+            | 2::bird_girl 
+            | 2::bat_girl 
+            | 2::owl_girl
+          }"
+      reptile:
+        - "{
+            gecko_girl
+            | dragon_girl
+            | gorgon
+            | 2::lamia
+            | lizard_girl
+            | 2::medusa
+            | naga
+            | salamander_girl
+            | snake_girl
+          }"
+      insects:
+        - "{
+              ant_girl
+              | arachne
+              | bee_girl
+              | beetle_girl
+              | mantis_girl
+              | butterfly_girl
+              | 2::moth_girl
+              | scorpion_girl
+              | spider_girl
+          }"
+      plants:
+        - "{
+              alraune
+              | flower_girl
+              | mushroom_girl
+              | plant_girl
+          }"
+      undead:
+        - "{
+            dullahan_girl
+            | 2::banshee
+            | (ghost_girl:1.8)
+            | lich_girl
+            | 0.1::reaper_girl
+            | wraith_girl
+          }"
+      fantasy:
+        - "{
+            angel
+            | cupid
+            | 2::demon_girl
+            | dryad
+            | 2::fairy
+            | lilith
+            | 2::nymph
+            | oni
+            | 3::succubus
+            | valkyrie
+            | 2::vampire
+            | wendigo_girl
+            | femme_fatale
+            | ice_girl
+            | fire_girl
+            | lightning_girl
+            | 2::slime_girl
+          }"
+      aqua:
+        - "{
+            kraken_girl
+            | 2::mermaid
+            | 2::octopus_girl
+            | siren
+            | orca_girl
+            | shark_girl
+            | scylla
+          }"
+
+
+
+
+

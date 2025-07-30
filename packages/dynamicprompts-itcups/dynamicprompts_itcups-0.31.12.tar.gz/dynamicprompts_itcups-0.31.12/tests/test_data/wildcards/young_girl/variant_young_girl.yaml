@@ -1,0 +1,176 @@
+template_person:
+  first_girl:
+    - "
+        {0.2::monster_girl, (__girl_sexual_themes/monster_girls/**__:2)}
+        ( __**/young_girl_person_1/age__ :1.4),
+        {0.2::
+          __**/young_girl_person_1/head/horns/types__,
+          __**/young_girl_person_1/head/horns/size__,
+          {0.2::__**/young_girl_person_1/head/horns/appearance__},
+          __**/young_girl_person_1/head/horns/color__,
+        }
+
+        (__**/young_girl_person_1/head/hair/types__,
+        __**/young_girl_person_1/head/hair/size__,
+        {0.2::__**/young_girl_person_1/head/hair/appearance__},
+        {0.3::__**/young_girl_person_1/head/hair/color__}:1.3),
+
+        {0.3::
+          (__**/young_girl_person_1/head/makeup/types__,
+          __**/young_girl_person_1/head/makeup/size__,
+          {0.6::{1-4$$__**/young_girl_person_1/head/makeup/appearance__}},
+          __**/young_girl_person_1/head/makeup/color__:1.3),
+        }
+
+        ({0-3$$__**/young_girl_person_1/head/face_features__}:1.1),
+
+        {0.5::
+          __**/young_girl_person_1/head/brows/types__,
+          __**/young_girl_person_1/head/brows/size__,
+          {0.3::__**/young_girl_person_1/head/brows/appearance__},
+          {0.3::__**/young_girl_person_1/head/brows/color__},
+        }
+
+        {eyes_open::
+          {0.3::
+            (__**/young_girl_person_1/head/pupil/types__,
+            __**/young_girl_person_1/head/pupil/size__,
+            {0.2::__**/young_girl_person_1/head/pupil/appearance__},
+            {0.2::__**/young_girl_person_1/head/pupil/color__},
+          :1.2)}
+
+          __**/young_girl_person_1/head/eyes/types__,
+          __**/young_girl_person_1/head/eyes/size__,
+          {0.3::{1-2$$__**/young_girl_person_1/head/eyes/appearance__}},
+          {0.3::__**/young_girl_person_1/head/eyes/color__},
+        }
+        __**/young_girl_person_1/head/eyelashes/types__,
+        __**/young_girl_person_1/head/eyelashes/size__,
+        {0.3::__**/young_girl_person_1/head/eyelashes/appearance__},
+        {0.3::__**/young_girl_person_1/head/eyelashes/color__},
+
+        {0.3::
+          (__**/young_girl_person_1/head/sclera/types__,
+          __**/young_girl_person_1/head/sclera/size__,
+          {0.3::__**/young_girl_person_1/head/sclera/appearance__},
+          {0.3::__**/young_girl_person_1/head/sclera/color__,}:1.2)
+        }
+
+        {0.5::
+          __**/young_girl_person_1/head/ears/types__,
+          __**/young_girl_person_1/head/ears/size__,
+          {0.3::__**/young_girl_person_1/head/ears/appearance__},
+          {0.3::__**/young_girl_person_1/head/ears/color__},
+        }
+
+        {(tongue_out|open_mouth)::
+          __**/young_girl_person_1/head/tongue/types__,
+          __**/young_girl_person_1/head/tongue/size__,
+          __**/young_girl_person_1/head/tongue/appearance__,
+          __**/young_girl_person_1/head/tongue/color__,
+        }
+        {(tongue_out|open_mouth)::
+          __**/young_girl_person_1/head/teeth/types__,
+          __**/young_girl_person_1/head/teeth/size__,
+         {0.1:: __**/young_girl_person_1/head/teeth/appearance__},
+          __**/young_girl_person_1/head/teeth/color__,
+        }
+
+        (__**/young_girl_person_1/body/size__:1.4),
+        (__**/young_girl_person_1/body/appearance__:1.3),
+        (__**/young_girl_person_1/body/skin/color__:1.1),
+        {0.35::(__**/young_girl_person_1/body/skin/appearance__:1.2)},
+
+        {0.2::
+          __**/young_girl_person_1/body/wings/types__,
+          __**/young_girl_person_1/body/wings/size__,
+          {0.2::__**/young_girl_person_1/body/wings/appearance__},
+          {0.3::__**/young_girl_person_1/body/wings/color__},
+        }
+
+        __**/young_girl_person_1/body/shoulders/types__,
+        __**/young_girl_person_1/body/shoulders/size__,
+        {0.3::__**/young_girl_person_1/body/shoulders/appearance__},
+        __**/young_girl_person_1/body/shoulders/color__,
+
+
+        {0.1::__**/young_girl_person_1/body/arms/types__},
+        __**/young_girl_person_1/body/arms/size__,
+        {0.5::__**/young_girl_person_1/body/arms/appearance__},
+        __**/young_girl_person_1/body/arms/color__,
+
+        {^((?!arm_wings).)*$::
+          __**/young_girl_person_1/body/hands/types__,
+          __**/young_girl_person_1/body/hands/size__,
+          {0.2::__**/young_girl_person_1/body/hands/appearance__},
+          {0.2::__**/young_girl_person_1/body/hands/color__},
+
+          {0.4::__**/young_girl_person_1/body/nails/types__},
+          {0.4::__**/young_girl_person_1/body/nails/size__},
+          {0.2::__**/young_girl_person_1/body/nails/appearance__},
+          {0.3::__**/young_girl_person_1/body/nails/color__},
+        }
+
+        __**/young_girl_person_1/body/tits/types__,
+        __**/young_girl_person_1/body/tits/size__,
+        {0.4::__**/young_girl_person_1/body/tits/appearance__},
+        {0.2::__**/young_girl_person_1/body/tits/color__},
+
+        __**/young_girl_person_1/body/nipples/types__,
+        __**/young_girl_person_1/body/nipples/size__,
+        {0.5::__**/young_girl_person_1/body/nipples/appearance__},
+        {0.5::__**/young_girl_person_1/body/nipples/color__},
+
+        __**/young_girl_person_1/body/butt/types__,
+        __**/young_girl_person_1/body/butt/size__,
+        {0.5::__**/young_girl_person_1/body/butt/appearance__},
+        {0.5::__**/young_girl_person_1/body/butt/color__},
+
+        ({0.1::__**/young_girl_person_1/body/legs/types__,}
+        __**/young_girl_person_1/body/legs/size__,
+        {0.5::__**/young_girl_person_1/body/legs/appearance__},
+        {0.5::__**/young_girl_person_1/body/legs/color__}:1.2),
+
+        __**/young_girl_person_1/body/feet/types__,
+        __**/young_girl_person_1/body/feet/size__,
+        {0.5::__**/young_girl_person_1/body/feet/appearance__},
+        {0.5::__**/young_girl_person_1/body/feet/color__},
+
+        __**/young_girl_person_1/body/toes/types__,
+        __**/young_girl_person_1/body/toes/size__,
+        {0.4::__**/young_girl_person_1/body/toes/appearance__},
+        {0.4::__**/young_girl_person_1/body/toes/color__},
+
+        __**/young_girl_person_1/body/tail/types__,
+        __**/young_girl_person_1/body/tail/size__,
+        {0.4::__**/young_girl_person_1/body/tail/appearance__},
+        {0.5::__**/young_girl_person_1/body/tail/color__},
+
+
+        {1futanari:: 
+          __**/young_girl_person_1/body/penis/types__,
+          __**/young_girl_person_1/body/penis/size__,
+          {0.4::__**/young_girl_person_1/body/penis/appearance__},
+          {0.4::__**/young_girl_person_1/body/penis/color__},
+        }
+        {0.3::(__**/young_girl_person_1/body/pubic_hair__:1.2)},
+
+
+        (__**/young_girl_person_1/mandatory__:1.2),
+        __**/young_girl_person_1/piercing__,
+        __**/young_girl_person_1/piercing_helpers__,
+
+        {^((?!fur).)*$::
+          {0.2::body_blush},
+          {0.2::sweat},
+          {0.2::body_freckles},
+          {0.2::tattoo}
+          {0.2::body_markings}
+          {0.5::{
+              wet_skin
+              | oily_skin
+              | shiny_skin
+            }
+          }
+        }
+      "

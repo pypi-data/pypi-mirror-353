@@ -1,0 +1,656 @@
+young_girl_person_1:
+  # TODO! colored skin/gradient
+  # xenotypes
+  xenotype:
+    - "{
+        monster_girl
+        | animal_ears
+        | human
+      }"
+  age:
+    - "{
+        3::toddler
+        | 2::child
+        | 2::teen
+        | milf
+      }"
+  head:
+    horns:
+      types:
+        - "{
+            horns
+            | single_horn
+          }"
+      size:
+        - "{
+            small_horns
+            | long_horns
+            | large_horns
+            | huge_horns
+          }"
+      appearance:
+        - "{
+            asymmetrical_horns
+            | mismatched_horns
+            | spiked_horns 
+            | translucent_horns 
+            | broken_horns 
+            | holographic_horns
+            | curved_horns
+          }"
+      color:
+        - "{
+            multicolored_horns
+            | gradient_horns
+            | two-tone_horns
+          }"
+      
+    hair:
+      types:
+        - "{
+            pixie_cut
+            | bob_cut
+            | inverted_bob
+            | bowl_cut
+            | undercut
+            | flipped_hair
+            | wolf_cut| buzz_cut
+            | side_shaved
+            | twintails
+            | pony_tail
+            | braid
+            | bob_cut
+            | bangs
+            | topknot
+            | braided_hair_rings
+          }"
+      size:
+        - "{
+            very_short_hair
+            | chin_length_hair 
+            | ear_length_hair
+            | short_hair
+            | long_hair
+            | ankle_length_hair
+            | absurdly_long_hair
+          }"
+      appearance:
+        - "{
+            fluffy_hair
+            | { hair_over_eyes | hair_between_eyes }
+            | bangs, { swept_bangs | blunt_bangs}
+            | { neat_hair | messy_hair | bed_hair }
+            | { thick_hair | thin_hair }
+            | hair_flaps 
+            | cowlick
+            | voluminous_hair
+            | {curly_hair | spiky_hair | wavy_hair | straight_hair | drill_hair }
+            | shiny_hair
+            | ahoge
+          }"
+      color:
+        - "{
+            multicolored_hair
+            | colored_inner_hair
+            | colored_tips 
+            | gradient_hair
+            | colored_hair
+            | streaked_hair
+          }"
+    makeup:
+      types:
+        - "{
+            makeup
+            | heavy_makeup
+          }"
+      size:
+      appearance:
+        - "{eye_shadow
+            | glitter_makeup
+            | eyeliner
+            | lipstick
+            | face_paint
+          }"
+      color:
+    face_features:
+      - "{
+          face_blush
+          | slightly_long_nose
+          | wide_face
+          | long_face
+          | small_nose
+          | forehead
+          | beauty_mark
+          | freckles
+        }"
+    brows:
+      types:
+        - "{
+            thick_eyebrows
+            | thick_eyebrows
+            | thin_eyebrows
+            | v-shaped_eyebrows
+          }"
+      size:
+      appearance:
+      color:
+    eyes:
+      size:
+        - "{
+            small_eyes
+            | big_eyes
+            | very_big_eyes
+            | huge_eyes
+          }"
+      appearance:
+        - "{
+            extra_eyes
+            | slanted_eyes
+            | {downturned_eyes | upturned_eyes}
+            | bags_under_eyes
+            | heterochromia
+            | { prosthetic_eye | cybernetic_eye | eyepatch}
+          }"
+      color:
+    pupil:
+      types:
+        - "{
+            symbol-shaped_pupils
+            | heart-shaped_pupils
+            | bright_pupils
+            | 2::slit_pupils
+            | star_shaped_pupils
+            | cross_shaped_pupils
+            | 2.5::horizontal_pupils
+            | x-shaped_pupils
+            | mismatched_irises
+            | no_pupils
+          }"
+      size:
+      appearance:
+        - "{
+            constricted_pupils
+            | dilated_pupils
+            | mismatched_pupils
+            | {ringed_eyes | dashed_eyes | squiggle_eyes | lens_eye | pixel_eyes}
+            | blank_eyes
+            | flaming_eyes
+            |  eye_glitter 
+            | mechanical_eye
+          }" # cleanup this
+      color:
+        - "{
+            rainbow_eyes 
+          }"
+    eyelashes:
+      size:
+        - "{
+            eyelashes
+            | long_eyelashes
+          }"
+      appearance:
+        - "{
+            thick_eyelashes
+          }"
+      color:
+        - "{
+            white_eyelashes
+            | colored_eyelashes
+          }"
+    sclera:
+      appearance:
+        - "{
+            glowing_sclera
+          }"
+      color:
+        - "{
+            colored_sclera, {black_sclera | blue_sclera | red_sclera | green_sclera | orange_sclera} 
+            | colored_sclera, multicolored_sclera
+            | colored_sclera, mismatched_sclera
+          }"
+    ears:
+      types:
+        - "{
+            animal_ears, no_human_ears
+            | pointy_ears
+            | very_long_ears
+          }"
+
+    tongue:
+      size:
+        - "{
+            medium_tongue
+            | small_tongue
+            | fat_tongue
+            | long_tongue
+            | very_long_tongue
+          }"
+      appearance:
+        - "{
+            forked_tongue
+            | tongue_piercing
+            | colored_tongue
+          }"
+    teeth:
+      types:
+      - "{
+          sharp_teeth
+          | teeth
+          | fangs
+          | long_fangs
+        }"
+      size:
+      appearance:
+        - "{
+            braces
+            | tooth_gap
+          }"
+      color:
+  body:
+    size:
+      - "{
+          {(toddler|child|teen)::
+            {
+              midget
+              | very_short
+              | short
+            }
+          }
+          {milf:: 
+            {
+              very_short
+              | short
+              | tall
+              | very_tall
+              | giantess
+            }
+          }
+        }"
+    appearance:
+      - "{
+          2::emaciated
+          | 3::skinny
+          | 2::petite
+          | 0.2::muscular
+          | chubby
+          | plump
+        }"
+    skin:
+      color:
+        - "{
+            very_light_skin
+            | dark_colored_skin
+            | brown_skin
+            | black_skin
+            | colored_skin
+            | pure_white_skin
+          }"
+      appearance:
+        - "{
+            2::tanned_skin, {0-1$$tanned_lines}
+            | 0.5::scales, {0.3::colored_scales}
+            | 0.5::scaly_skin, {0.3::colored_scales}
+            | (furry_female:1.6), (fur:1.2)
+            | metallic_skin
+            | translucent_skin
+            | cybernetic_implants 
+            | glowing_skin
+            | slimy_skin
+            | exoskeleton
+            | feathers
+            | 0.2::(doll_joints:1.5), ({plastic_skin | rubbery_skin}:1.5)
+            | 0.2::scar 
+          }" # CLEAN THIS
+    wings:
+      types:
+        - "{
+            bat_wings
+            | moth_wings
+            | angel_wings
+            | demon_wings
+            | feathered_wings
+            | bird_wings
+            | insect_wings
+            | dragon_wings
+            | fake_wings
+            | metal_wings 
+          }"
+      size:
+        - "{
+            oversized_wings
+            | mini_wings
+          }"
+
+      color:
+        - "{
+            multicolored_wings
+            | gradient_wings
+          }"
+
+      appearance:
+        - "{
+            | transparent_wings
+            | torn_wings
+            | spiked_wings
+          }"
+
+    shoulders:
+    arms:
+      types:
+        - "{
+            multiple_arms
+            | mechanical_arms
+            | prosthetic_arm
+            | 0.08::{^((?!wings).)*$::arm_wings}
+          }"
+      appearance:
+        - "{
+            | gradient_arms
+           },
+            {0.1::armpits} 
+          "
+    hands:
+      size:
+        - "{small_hands}"
+      appearance:
+        - "{
+            gradient_hands
+            | webbed_hands
+          }"
+    nails:
+      size:
+        - "{
+            small_fingernails
+            | long_fingernails
+            | very_long_fingernails
+          }"
+      appearance:
+        - "{
+            sharp_fingernails
+            | claws
+            | fake_nails
+          }"
+      color:
+        - "{
+            multicolored_nails
+            | nail_polish
+            | gradient_nails
+          }"
+    tits:
+      size:
+        - "{
+            flat_chest
+            | small_breasts
+            | medium_breasts
+            | big_breasts
+          }"
+      appearance:
+        - "{
+            perky_breasts
+            | pointy_breasts
+          }"
+    nipples:
+      appearance:
+        - "{
+            puffy_nipples 
+            | perky_nipples
+            | 0.2::inverted_nipples
+          }"
+
+    butt:
+      size:
+        - "{
+            flat_ass
+            | big_butt
+            | narrow_hips
+            | bubble_butt
+            | thick_thighs
+          }"
+      appearance:
+    legs:
+      types:
+        - "{
+            multiple_legs
+          }"
+      size:
+        - "{
+            very_short_legs
+            | short_legs
+            | long_legs
+            | very_long_legs
+          }"
+      appearance:
+        - "{
+            skinny_legs
+            | thin_legs
+            | slim_legs
+          },
+          {0.05::prosthetic_leg}
+          {0.1::gradient_legs}
+          "
+    feet:
+      size:
+        - "{
+            tiny_feet
+            | small_feet
+            | long_feet
+          }"
+
+      appearance:
+        - "{
+            gradient_feet
+          }"
+    toes:
+      size:
+        - "{
+            long_toenails
+          }"
+      color:
+      appearance:
+        - "{
+            toenail_polish
+            | sharp_toenails
+          }"
+
+    tail:
+      types:
+        - "{
+            tail
+            | cat_tail
+            | fox_tail
+            | wolf_tail
+            | fake_tail
+            | dog_tail
+            | shark_tail
+            | bird_tail
+            | squirrel_tail
+            | mechanical_tail
+            | racoon_tail
+            | animal_tail
+            | lizard_tail
+            | dragon_tail
+            | mouse_tail
+            | demon_tail
+            | fish_tail
+          }"
+        
+      appearance:
+        - "{
+            multiple_tails
+            | two_tails
+            | fluffy_tail
+            | thick_tail
+            | thin_tail
+            | bushy_tail
+            | curled_tail
+          }"
+
+      size:
+        - "{
+            Short_tail
+            | long_tail
+          }"
+
+      color:
+        - "{
+            multicolored_tail
+            | gradient_tail
+          }"
+    vagina:
+      size:
+        - "{
+          }"
+      types:
+        - "{
+
+          }"
+      appearance:
+        - "{
+          }"
+      color:
+        - "{
+          }"
+    penis:
+      size:
+        - "{
+            {(toddler|child)::
+              {
+                2::very_small_penis
+                | 3::small_penis
+              }
+            }
+            {teen::
+                2::very_small_penis
+                | 3::small_penis
+                | big_penis
+                |
+            }
+            {milf:: 
+              {
+                | big_penis
+                | 0.3::huge_penis
+                | 0.2::large_penis
+                | 0.1::gigantic_penis
+              }
+            }
+          }"
+
+      types:
+        - "{
+            curved_penis
+            | fat_penis
+          }"
+        
+      appearance:
+        - "{
+            veiny_penis
+            |swollen_penis
+            |(spiked_penis:0.4)
+          }"
+    pubic_hair:
+      - "{
+          {{1.2::little|thin|1.5::trimmed|medium|0.8::sparse|0.2::bushy}_female_pubic_hair}
+        }"
+  mandatory:
+    - "{
+        {animal_ears::strong_animal_features}|{animal_ears::subtle_animal_features}},
+        {(furry_female|animal_ears)::{0.3::animal_feet},{0.3::animal_hands}},
+        {(chubby|[^:]plump[^_])::(belly:0.8), <lora:chubby girl:1>}, {muscular::{0.3::abs}, {0.5::narrow_waist}}, {(emaciated|skinny)::{0.8::(ribs:0.7)}, hip_bones, narrow_waist}, {petite::{0.3::(ribs:0.7)}, {0.4::narrow_waist}}
+        {0.4::groin_tendon},
+        {0.4::hip_dips},
+        {0.4::deep_skin},
+        {0.3::plump_labia},
+        {0.2::{fat_mons | cleft_of_venus}},
+        {0.05::dark labia},
+        {0.2::erect clitoris},
+        {animal_ears::{0.6::animal_ears_fluff},
+        {gradient (arms|legs|hands|feet)::<lora:Gradient_Skin_V3:0.4>},
+        {(horn | horns)::(reddened_skin_at_horn_roots:1.3), subtle_pore_details, (skin_stretched_around_protrusion:1.4), intricate_keratin_texture, (slight_swelling_around_horns:1.5), {0.3::hair_strands_clinging_to_horn_grooves}},
+        {[_\\s]?tail[s]?:: smooth_tail_transition_around_tail_root, <lora:Tail_holeTail_anus:0.5>},
+        {colored_sclera::<lora:Solid:0.8>}
+        {(colored_skin|colored_scales)::<lora:Colored_Skin-Pony-V1.0:1>}
+        {(thick_thighs|bubble_butt|big_butt)::<lora:thicc_v1.4-pony:1>}
+      }"
+
+  piercing:
+    - "{{piercing | 0.6::multiple_piercings}}"
+  piercing_helpers:
+    - "__**/young_girl_person_1/piercing_types__,
+        __**/young_girl_person_1/piercing_face__,
+        __**/young_girl_person_1/piercing_ears__,
+        __**/young_girl_person_1/piercing_body__,
+        __**/young_girl_person_1/piercing_nipples__,
+        {0.4::{animal_ears::animal_ear_piercing}},
+        {0.4::{[_\\s]?tail[s]?::tail_piercing}},
+        {0.4::{[_\\s]?horn[s]?::horn_piercing}}
+      "
+
+  piercing_types:
+    - "{piercing::
+        {
+          face_piercing,
+          | ear_piercing
+          | body_piercing,
+          | nipple_piercing
+          | pussy_piercing, {0.5::clitoris_piercing}
+          | penis_piercing, {0.5::frenulum_piercing}
+        },
+        {multiple_piercings::
+          {
+            2-6$$face_piercing,
+            | ear_piercing
+            | body_piercings
+            | nipple_piercing
+            | pussy_piercing, {0.5::clitoris_piercing}
+            | penis_piercing, {0.5::frenulum_piercing}
+          }
+        }
+      }"
+  piercing_face:
+    - "{piercing::
+        {
+          nose_piercing, {0-2$$bridge_piercing | nose_ring}
+          | mouth_piercing
+          | cheek_piercing
+          | lip_piercing, {0.3::labret_piercing}
+          | chin_piercing
+          | eyebrow_piercing
+        },
+        {multiple_piercings::
+          {
+            2-6$$nose_piercing, {0-2$$bridge_piercing | nose_ring}
+            | mouth_piercing
+            | cheek_piercing
+            | lip_piercing, {0.3::labret_piercing}
+            | chin_piercing
+            | eyebrow_piercing
+          }
+        }
+      }"
+  piercing_ears:
+    - "{ear_piercing::{
+        0-6$$helix_piercing
+        | conch_piercing
+        | rook_piercing
+        | industrial_piercing
+        | spiked_ear_piercing
+        | barbell_ear_piercing
+      }}
+      {ear_piercing::{
+        2-6$$helix_piercing
+        | conch_piercing
+        | rook_piercing
+        | industrial_piercing
+        | spiked_ear_piercing
+        | barbell_ear_piercing
+      }}"
+  piercing_body:
+    - "{body_piercings::{
+          collarbone_piercing
+          | navel_piercing
+      }}"
+
+  piercing_nipples:
+    - barbell_nipple_piercing, nipple_bar
+    - nipple_piercing
+    - nipple_jewelry

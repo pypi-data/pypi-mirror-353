@@ -1,0 +1,442 @@
+young_girl_clothing_1:
+  style:
+    - "{
+        1980s_fashion
+        | 1990s_fashion
+        | Aristocratic_clothes
+        | Formal_clothes
+        | Goth_fashion, { Pastel_Goth | Perky_Goth}
+        | Pun
+        | Raver
+        | Sportswear
+        | Streetwear, {Hip_Hop | Techwear}
+        | y2k_fashion
+        | bodycon
+        | decora
+        | french_girly
+        | gothic_punk
+        | gurokawa
+        | kogal
+        | manba_gyaru
+        | jirai_kei
+        | lolita_fashion, {gothic_lolita | classic_lolita | qi_lolita | wa_lolita | sweet_lolita}
+        | tenshi_kaiwai
+        | yami_kawaii
+        | balletcore
+        | e-girl
+        | emo_fashion
+      }"
+  head:
+    - "{
+        beret
+        | coif
+        | jester_cap
+        | picture_hat
+        | mob_cap
+        | mini_witch_hat
+        | witch_hat
+        | straw_hat
+        | sun_hat
+        | mini_top_hat
+        | veil
+      }"
+  arms:
+    - "{
+        bracelet
+        | armlet
+        | arm_ribbon
+        | arm_warmers 
+      }"
+  gloves:
+    - "{
+        Elbow_gloves
+        | Fingerless_gloves
+        | Striped_gloves
+        | Glove_bow
+        | Frilled_gloves
+        | latex_gloves
+        | lace_gloves
+        | See-through_gloves
+      }"
+  rings_only:
+    - "{
+        ring
+        | multiple_rings
+      }"
+  hair:
+    - "{
+        hair_ornament
+        | hair_bow
+        | hair_rings
+        | hairclip
+        | hair_ribbon
+        | hairband
+        | 0.2::hair_bobbles
+      }"
+
+  earwear:
+    - earrings
+    - hoop_earrings
+    - stud_earrings 
+    - star_earrings 
+    - heart_earrings
+    - tassel_earrings
+    - cross_earrings
+    - multiple_earrings 
+    - flower_earrings
+    - sphere_earrings 
+    - crescent_earrings
+    - skull_earrings 
+  eyewear:
+    - "{
+        glasses
+        | mini_eyewear
+        | opaque_glasses
+        | rimless_eyewear
+        | semi-rimless_eyewear
+        | sunglasses
+        | monocle
+      }"
+  neck:
+    - "{
+        necklace
+        | choker
+        | slave_collar
+        | bowtie
+        | neck_ribbon
+        | neck_bell
+        | neck_ring
+      }"
+  clothes_sexy_light:
+    - "{
+        swimsuit
+        | unitard 
+        | athletic_leotard 
+        | cutout_leotard
+        | underwear
+        | control_top_pantyhose
+        | sheer_to_waist_pantyhose
+        | bodystocking
+        | fishnet_bodystocking
+        | plunging_bodysuit
+        | harness
+      }"
+  clothes_sexy_heavy:
+    - "{
+        gimp_suit
+        | latex_bodysuit
+        | latex_catsuit
+      }"
+  dress_light:
+    - "{
+        babydoll
+        | lingerie
+        | camisole
+        | glitter_dress
+        | chemise
+      }"
+  coat:
+    - "{
+        labcoat
+        | robe
+        | trench_coat
+        | cropped_jacket
+        | pea_coat
+        | bolero_jacket
+        | kimono
+        | bathrobe
+      }"
+  torso:
+    - "{
+        corset
+        | blouse
+        | cropped_tank_top
+        | cropped_camisole
+        | halter_crop_top
+      }"
+  torso_over:
+    - "{
+        leather_jacket
+        | jacket
+        | tshirt
+        | button_up_shirt
+        | vest
+        | mesh_top
+        | apron
+      }"
+
+  torso_underwear:
+    - "{
+        | bra
+        | bralette
+        | pushup_bra
+        | sports_bra
+        | strapless_bra
+        | bow_bra 
+        | lace-trimmed_bra 
+        | frilled_bra
+        | cat_lingerie
+        | striped_bra
+        | open_bra
+        | belt_bra
+        | string_bra
+        | bikini_bra
+        | micro_bikini
+        | plaid_bra
+        | micro_bra
+        | tape_on_nipples
+        | bandaids_on_nipples
+      }"
+  legs_underwear:
+    - "{
+        bikini_panties,
+        cheeky_panties,
+        boyshorts,
+        lace_panties,
+      }"
+  legs_under:
+    - "{
+        thighhighs
+        | thigh_socks
+        | opaque_tights
+        | sheer_tights
+        | patterned_tights
+        | 3::socks
+        | <lora:leggings_v2.6-pony:0.2> textured_leggings, leggings
+        | fishnets
+        | bow_legwear
+        | cross-laced_legwear
+        | fluffy_legwear
+        | knit_legwear
+        | ribbed_legwear
+        | seamed_legwear
+        | shiny_legwear
+        | toeless_legwear
+        | stockings
+        | yoga_pants
+        | sheer_leggings
+        | latex_leggings
+        | patterned_leggings
+        | anklet
+      }"
+  legs_over:
+    - "{
+        skirt,
+        | miniskirt
+        | microskirt
+        | hakama_skirt
+        | pleated_skirt
+        | long skirt
+        | frilled_skirt
+        | pencil_skirt
+        | high-waist_skirt
+        | suspender_skirt
+        | layered_skirt
+        | bikini_skirt
+        | showgirl_skirt
+        | medium_skirt
+        | bubble_skirt
+        | print_skirt
+        | multicolored_skirt
+        | torn_skirt
+        | checkered_skirt
+        | see-through_skirt
+        | ribbon-trimmed_skirt
+        | lowleg_skirt
+        | vertical-striped_skirt
+        | fur-trimmed_skirt
+        | circle_skirt
+        | lace-trimmed_skirt
+        | kimono_skirt
+        | bow_skirt
+        | polka_dot_skirt
+        | 1.5::half-skirt
+      }"
+  legs_over_cover:
+    - "{
+        pants
+        | shorts
+        | cargo_pants
+        | sweatpants
+        | culottes
+      }"
+  naked_accessories:
+    - "{
+        bandaid_on_pussy
+        | maebari
+        | bandaid_on_face 
+        | bandaid_on_leg
+        | bandaid_on_nose 
+        | bandaid_on_knee 
+        | bandaid_on_cheek 
+        | bandaids_on_nipples
+        | bandaid_on_arm 
+        | crossed_bandaids
+        | bandaid_on_thigh 
+        | bandaid_on_hand 
+        | bandaid_on_stomach
+        | sticker_on_face
+        | lipstick_mark
+      }"
+  feet:
+    toes:
+      - "{
+          toe_ring
+        }"
+    footwear:
+      high_heels:
+        boots:
+          - thigh_high_boots
+          - heeled_boots
+          - go-go_boots
+        sandals:
+          - heeled_sandals
+        special_types:
+          - burlesque_heels
+          - fetish_boots
+      low_heels:
+        basic_types:
+          - slingbacks
+          - mules
+        boots:
+          - ankle_boots
+          - cowboy_boots
+        sandals:
+          - t-strap
+          - slide_sandals
+        traditional:
+          - huaraches
+      wedges:
+        basic_types:
+          - wedges
+        sandals:
+          - wedge_heel
+          - platform_sandals  # Some styles
+
+      platforms:
+        basic_types:
+          - platforms
+        sandals:
+          - platform_sandals
+        athletic:
+          - platform_sneakers  # Implied variant
+        special_types:
+          - cyberpunk_boots
+          - gothic_lolita_shoes
+
+      flats:
+        boots:
+          - combat_boots
+          - rain_boots
+          - snow_boots
+          - flat_boots
+          - sock_boots
+        sandals:
+          - flip_flops
+          - flat_sandals
+          - espadrilles
+        athletic:
+          - sneakers
+          - athletic_shoes
+          - running_shoes
+          - tennis_shoes
+          - basketball_shoes
+          - skate_shoes
+          - wrestling_shoes
+        traditional:
+          - geta
+          - zori
+          - okobo
+          - clogs
+          - mojari
+          - kolhapuri
+        seasonal:
+          - ugg_boots
+          - winter_boots
+          - jelly_shoes
+          - water_shoes
+        special_types:
+          - pointe_shoes
+          - tap_shoes
+ 
+
+      # special_types:
+      #   - pointe_shoes
+      #   - tap_shoes
+      #   - character_shoes
+      #   - burlesque_heels
+      #   - fetish_boots
+      #   - lace-up_boots
+      #   - victorian_boots
+      #   - gothic_lolita_shoes
+      #   - cyberpunk_boots
+      #   - futuristic_shoes
+
+      # features:
+      #   - high_heels
+      #   - low_heels
+      #   - kitten_heels
+      #   - chunky_heels
+      #   - wedge_heel
+      #   - platform_sole
+      #   - open_toe
+      #   - peep_toe
+      #   - closed_toe
+      #   - pointed_toe
+      #   - round_toe
+      #   - square_toe
+      #   - strappy
+      #   - buckle
+      #   - lace-up
+      #   - zipper
+      #   - slip-on
+      #   - velcro
+      #   - fishnet_footwear
+      #   - transparent_shoes
+
+      # materials:
+      #   - leather_shoes
+      #   - patent_leather
+      #   - suede_shoes
+      #   - fabric_shoes
+      #   - mesh_shoes
+      #   - plastic_shoes
+      #   - rubber_shoes
+      #   - fur_boots
+      #   - velvet_shoes
+      #   - satin_shoes
+      #   - crystal_shoes
+
+      # accessories:
+      #   - legwarmers
+      #   - toe_rings
+      #   - anklet
+      #   - foot_chain
+      #   - shoe_jewelry
+      #   - shoe_buckles
+      #   - shoe_charms
+      #   - shoe_bows
+      #   - shoelace_bells
+
+  tail_specific:
+    - "{
+      }"
+  horn_specific:
+    - "{
+        horn_ornament
+      }"
+
+  # special:
+  #   training_bra_loli
+  modifiers:
+    - "{
+        {0.1::torn_clothes}
+      }"
+  mandatory:
+    - "{
+        {[_\\s]?thighhigh[s]?:: {0.2::torn_thighhighs}},
+        {[_\\s]?stocking[s]?::garter_belts}
+        {[_\\s]?legging[s]?:: {0.2::torn_leggings}}
+      }"
+
+
