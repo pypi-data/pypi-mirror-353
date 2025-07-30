@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include LoreWeave *.yaml *.json *.sh *.md
+recursive-include src *.py
