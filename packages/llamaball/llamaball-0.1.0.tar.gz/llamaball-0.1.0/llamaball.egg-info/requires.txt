@@ -1,0 +1,8 @@
+typer[all]
+ollama
+numpy
+tiktoken
+prompt_toolkit
+markdown-it-py
+tqdm
+rich
