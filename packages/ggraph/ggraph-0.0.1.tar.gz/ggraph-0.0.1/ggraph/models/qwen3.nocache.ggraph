@@ -1,0 +1,71 @@
+model Qwen3 {
+    tensors {
+        input_tokens: I32, [params.context.n_ctx], is_input
+        input_positions: I32, [params.context.n_ctx], is_input
+        kq_mask: F32, [params.context.n_ctx, params.context.n_ctx], is_input
+    }
+
+    graph {
+        layer_input = get_rows(token_embd.weight, input_tokens)
+        repeat cur_layer = params.model.n_layer {
+            self_attention_input = layer_input
+
+            # layer nor
+            cur = mul(rms_norm(layer_input, params.model.f_norm_rms_eps), blk.%d.attn_norm.weight)
+
+            # self attention
+
+            # project q, k, and v
+            qCur = mul_mat(blk.%d.attn_q.weight, cur)
+            kCur = mul_mat(blk.%d.attn_k.weight, cur)
+            vCur = mul_mat(blk.%d.attn_v.weight, cur)
+
+            # reshape to group q, k, and v by attention head
+            qCur = reshape_3d(qCur, params.model.n_embd_head_v, params.model.n_head, params.context.n_ctx)
+            kCur = reshape_3d(kCur, params.model.n_embd_head_v, params.model.n_head_kv, params.context.n_ctx)
+            vCur = reshape_3d(vCur, params.model.n_embd_head_v, params.model.n_head_kv, params.context.n_ctx)
+
+            # norm
+            qCur = mul(rms_norm(qCur, params.model.f_norm_rms_eps), blk.%d.attn_q_norm.weight)
+            kCur = mul(rms_norm(kCur, params.model.f_norm_rms_eps), blk.%d.attn_k_norm.weight)
+            
+            # apply RoPE
+            qCur = rope(qCur, input_positions, params.model.n_rot, 2, params.model.n_ctx, params.context.rope_freq_base, params.context.rope_freq_scale, params.context.yarn_ext_factor, params.context.yarn_attn_factor, params.context.yarn_beta_fast, params.context.yarn_beta_slow)
+            kCur = rope(kCur, input_positions, params.model.n_rot, 2, params.model.n_ctx, params.context.rope_freq_base, params.context.rope_freq_scale, params.context.yarn_ext_factor, params.context.yarn_attn_factor, params.context.yarn_beta_fast, params.context.yarn_beta_slow)
+            
+            q = permute(qCur, 0, 2, 1, 3)
+            k = permute(kCur, 0, 2, 1, 3)
+            v = permute(vCur, 0, 2, 1, 3)
+
+            # calculate attention scores
+            kq = mul_mat(k, q)
+            kq_softmax = soft_max(kq, kq_mask, 1.0/sqrt(params.model.n_embd_head_v))
+
+            kqv = mul_mat(cont(transpose(v)), kq_softmax)
+            kqv = permute(kqv, 0, 2, 1, 3)
+            kqv = cont_2d(kqv, params.model.n_embd_head_v * params.model.n_head, params.context.n_ctx)
+
+            attention = mul_mat(blk.%d.attn_output.weight, kqv)
+
+            # fully connected
+            ffn_inp = add(self_attention_input, attention)
+
+            # ffn norm
+            cur = mul(rms_norm(ffn_inp, params.model.f_norm_rms_eps), blk.%d.ffn_norm.weight)
+
+            # up * silu(gate) * down + residual
+            tmp = mul_mat(blk.%d.ffn_up.weight, cur)
+            cur = mul_mat(blk.%d.ffn_gate.weight, cur)
+            cur = silu(cur)
+            cur = mul(cur, tmp)
+            cur = mul_mat(blk.%d.ffn_down.weight, cur)
+            layer_input = add(ffn_inp, cur)
+        }
+
+        # do final norm
+        cur = mul(rms_norm(layer_input, params.model.f_norm_rms_eps), output_norm.weight)
+
+        # lm_head
+        output = mul_mat(output.weight, cur)
+    }
+}

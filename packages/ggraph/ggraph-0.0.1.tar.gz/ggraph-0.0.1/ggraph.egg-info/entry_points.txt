@@ -1,0 +1,2 @@
+[console_scripts]
+ggraph-cli = ggraph.cli:main
