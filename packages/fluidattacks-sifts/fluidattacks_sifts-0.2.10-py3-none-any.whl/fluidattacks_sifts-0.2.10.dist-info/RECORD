@@ -1,0 +1,10 @@
+sifts/__init__.py,sha256=0zyrAio8ZWksg0hdeSz9oZRv0bJRaRqVFBFJmPdC3dQ,71
+sifts/__main__.py,sha256=Ax6NdH9Yet_ulKr85eu86vw_c6hAX1NKUaUQCPUP8Xc,74
+sifts/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sifts/static/model_parameters.yaml,sha256=KbD-c1lR-P3hnTSXLZ2dd7v8xCCYREafaU5K7yz6Uek,8290
+sifts/static/typology_embedding.json,sha256=jjcIg0D4BsZzSd9j8qphNEVPhg0kU8gn-0PtbEiOQfI,15145392
+fluidattacks_sifts-0.2.10.dist-info/METADATA,sha256=AivUh-OFQftly-Ez7rBpbz3edQFzhmYa6c7-enwk7IU,3687
+fluidattacks_sifts-0.2.10.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fluidattacks_sifts-0.2.10.dist-info/entry_points.txt,sha256=ct-Gbqoim0qXd0B1-F7jV_yFxyfxanZSt2XW-4yz7Ag,49
+fluidattacks_sifts-0.2.10.dist-info/top_level.txt,sha256=vvN1dWl5y-Xmx9xgU2JA_TnMUDSxpaxN9DidOYSLvFA,6
+fluidattacks_sifts-0.2.10.dist-info/RECORD,,
