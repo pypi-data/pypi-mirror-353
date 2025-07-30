@@ -1,0 +1,81 @@
+Metadata-Version: 2.4
+Name: og
+Version: 0.0.5
+Summary: Frequent itemsets -- fp-tree naeseth
+Home-page: https://github.com/t-c-w/og
+Author: Thor Whalen
+License: apache-2.0
+Platform: any
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# og
+Frequent itemsets -- fp-tree naeseth
+
+To install:	```pip install og```
+
+## Overview
+The `og` package provides a Python implementation of the FP-growth algorithm for finding frequent itemsets in transactional data sets. This method is efficient and scalable, making it suitable for large data sets where traditional apriori-based methods may be too slow. It constructs a compressed representation of the dataset, the FP-tree, which is then used to extract frequent itemsets directly.
+
+## Features
+- Efficiently find frequent itemsets without candidate generation.
+- Return itemsets along with their support counts if desired.
+- Handle any iterable of iterables as input for transactions.
+
+## Usage
+
+### Basic Usage
+To use the `find_frequent_itemsets` function, you need to provide a list of transactions and a minimum support threshold. Here is a simple example:
+
+```python
+from og import find_frequent_itemsets
+
+# Sample transactions
+transactions = [
+    ['milk', 'bread', 'butter'],
+    ['beer', 'bread'],
+    ['milk', 'bread'],
+    ['butter', 'beer'],
+    ['bread', 'butter'],
+    ['milk', 'butter'],
+    ['milk', 'bread', 'butter', 'beer']
+]
+
+# Finding itemsets with a minimum support of 3
+result = list(find_frequent_itemsets(transactions, minimum_support=3))
+print(result)
+```
+
+### Including Support Counts
+If you want to include the support counts of the itemsets in the results, set `include_support=True`:
+
+```python
+# Finding itemsets with support counts
+result_with_support = list(find_frequent_itemsets(transactions, minimum_support=3, include_support=True))
+print(result_with_support)
+```
+
+## Classes and Functions
+
+### `FPTree`
+This class represents an FP-tree structure that can store transaction items. It supports adding transactions, and provides methods to access the nodes and items.
+
+### `FPNode`
+Represents a node in an FP-tree. Each node contains a count of occurrences, links to child nodes, and a reference to its parent node.
+
+### `find_frequent_itemsets`
+A function to find frequent itemsets in the given transactions using the FP-growth algorithm. It can optionally return the support count for each itemset.
+
+#### Parameters:
+- **transactions**: An iterable of iterable items. Each inner iterable represents a transaction.
+- **minimum_support**: An integer specifying the minimum number of occurrences for an itemset to be considered frequent.
+- **include_support**: A boolean flag that, when set to True, includes the support count of each itemset in the results.
+
+## Development and Contributions
+Contributions to the `og` package are welcome. You can contribute in several ways including providing feedback, reporting bugs, and submitting feature requests or pull requests.
+
+For more detailed contribution guidelines, please refer to the official repository documentation.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
