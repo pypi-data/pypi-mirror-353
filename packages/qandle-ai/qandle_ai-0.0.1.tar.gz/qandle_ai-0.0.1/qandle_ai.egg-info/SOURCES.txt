@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+qandle_ai/__init__.py
+qandle_ai/qandle_client.py
+qandle_ai.egg-info/PKG-INFO
+qandle_ai.egg-info/SOURCES.txt
+qandle_ai.egg-info/dependency_links.txt
+qandle_ai.egg-info/requires.txt
+qandle_ai.egg-info/top_level.txt
