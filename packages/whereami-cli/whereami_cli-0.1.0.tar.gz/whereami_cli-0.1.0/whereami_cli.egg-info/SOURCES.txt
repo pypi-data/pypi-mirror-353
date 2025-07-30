@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+whereami_cli.egg-info/PKG-INFO
+whereami_cli.egg-info/SOURCES.txt
+whereami_cli.egg-info/dependency_links.txt
+whereami_cli.egg-info/entry_points.txt
+whereami_cli.egg-info/requires.txt
+whereami_cli.egg-info/top_level.txt
