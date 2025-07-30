@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pyAsciiEngine
+Version: 0.0.2
+Summary: Ascii games engine
+Home-page: https://github.com/Arizel79/PyConsoleEngine
+Author: Arizel79
+Author-email: arizel79@gmail.com
+License: UNKNOWN
+Project-URL: Documentation, https://github.com/Arizel79/PyConsoleEngine
+Keywords: ascii
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# PyConsoleEngine
+Docs here...
+
+
