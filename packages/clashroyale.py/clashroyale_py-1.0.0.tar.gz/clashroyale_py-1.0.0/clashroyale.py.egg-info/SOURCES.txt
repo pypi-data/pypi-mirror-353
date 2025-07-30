@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.py
+clashroyale/__init__.py
+clashroyale/client.py
+clashroyale/endpoints.py
+clashroyale/exceptions.py
+clashroyale/models.py
+clashroyale/utils.py
+clashroyale.py.egg-info/PKG-INFO
+clashroyale.py.egg-info/SOURCES.txt
+clashroyale.py.egg-info/dependency_links.txt
+clashroyale.py.egg-info/requires.txt
+clashroyale.py.egg-info/top_level.txt

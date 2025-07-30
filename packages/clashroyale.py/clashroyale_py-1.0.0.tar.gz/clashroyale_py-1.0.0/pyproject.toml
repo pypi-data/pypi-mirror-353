@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "clashroyale.py"
+version = "1.0.0"
+description = "A basic API wrapper for Clash Royale."
+authors = ["Ombucha <omkaar.nerurkar@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/Ombucha/clashroyale.py/"
+documentation = "https://clashroyalepy.readthedocs.io/"
+keywords = ["python", "clash royale"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+packages = ["clashroyale"]
+
+[tool.poetry.dependencies]
+requests = "*"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Ombucha/clashroyale.py/issues"
