@@ -1,0 +1,8 @@
+matplotlib
+
+[dev]
+pytest
+pre-commit
+mypy
+black
+build
