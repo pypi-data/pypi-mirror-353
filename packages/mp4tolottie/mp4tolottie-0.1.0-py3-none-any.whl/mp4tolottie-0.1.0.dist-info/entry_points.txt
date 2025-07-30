@@ -1,0 +1,2 @@
+[console_scripts]
+mp4tolottie = mp4tolottie.cli:main
