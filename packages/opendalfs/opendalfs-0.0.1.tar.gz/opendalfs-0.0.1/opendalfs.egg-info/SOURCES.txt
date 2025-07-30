@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+./opendalfs/__init__.py
+./opendalfs/decorator.py
+./opendalfs/file.py
+./opendalfs/fs.py
+opendalfs/__init__.py
+opendalfs/decorator.py
+opendalfs/file.py
+opendalfs/fs.py
+opendalfs.egg-info/PKG-INFO
+opendalfs.egg-info/SOURCES.txt
+opendalfs.egg-info/dependency_links.txt
+opendalfs.egg-info/requires.txt
+opendalfs.egg-info/top_level.txt

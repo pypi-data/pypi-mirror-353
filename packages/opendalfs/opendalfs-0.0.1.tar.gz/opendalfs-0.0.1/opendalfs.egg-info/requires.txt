@@ -1,0 +1,15 @@
+fsspec
+opendal
+
+[all]
+opendalfs[dev,test]
+
+[dev]
+ruff
+
+[test]
+pytest
+pytest-asyncio
+pytest-cov
+s3fs
+boto3
