@@ -1,0 +1,2 @@
+[console_scripts]
+pygetpapers1 = pygetpapers1.pygetpapers1:main
