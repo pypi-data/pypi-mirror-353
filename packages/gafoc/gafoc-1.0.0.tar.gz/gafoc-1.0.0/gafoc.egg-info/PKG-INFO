@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: gafoc
+Version: 1.0.0
+Summary: Advanced file compression library
+Home-page: https://github.com/gafoo173/Calculators
+Author: Gafoo
+Author-email: gafarssprts@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# GAFOC - Advanced File Compression Library
+
+![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
+![License]()
+
+GAFOC is a Python library for file compression and archiving using hybrid LZ77 and Huffman coding algorithms.
+
+## Features
+
+- Hybrid compression combining LZ77 and Huffman coding
+- Adjustable compression levels (1-9)
+- Single file compression
+- Multi-file archive creation and extraction
+- Efficient memory usage
+- Error handling and data validation
+
+## Installation
+
+```bash
+pip install gafoc
