@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.py
+douyin_live_chat/__init__.py
+douyin_live_chat/core copy.py
+douyin_live_chat/core.py
+douyin_live_chat.egg-info/PKG-INFO
+douyin_live_chat.egg-info/SOURCES.txt
+douyin_live_chat.egg-info/dependency_links.txt
+douyin_live_chat.egg-info/requires.txt
+douyin_live_chat.egg-info/top_level.txt
+douyin_live_chat/protobuf/__init__.py
+douyin_live_chat/protobuf/douyin.proto
+douyin_live_chat/protobuf/douyin.py
+douyin_live_chat/protobuf/readme.md

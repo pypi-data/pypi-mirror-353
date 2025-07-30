@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: douyin-live-chat
+Version: 1.0.1
+Summary: Douyin Live Chat Fetcher
+Author: bubu
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Requires-Dist: requests>=2.31.0
+Requires-Dist: betterproto>=2.0.0b6
+Requires-Dist: websocket-client>=1.7.0
+Requires-Dist: mini_racer>=0.12.4
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+A package for fetching Douyin live chat messages
