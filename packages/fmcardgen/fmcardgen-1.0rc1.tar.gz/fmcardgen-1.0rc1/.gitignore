@@ -1,0 +1,5 @@
+.vscode/
+config.yaml
+.coverage
+htmlcov/
+.python-version
