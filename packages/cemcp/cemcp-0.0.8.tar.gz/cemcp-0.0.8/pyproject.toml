@@ -1,0 +1,20 @@
+[project]
+name = "cemcp"
+version = "0.0.8"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.9.3",
+]
+[tool.hatch.build]
+packages = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cemcp"]
+
+[project.scripts]
+cemcp = "cemcp:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
