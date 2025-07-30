@@ -1,0 +1,7 @@
+chonkie[all]<1.1.0,>=1.0.0
+
+[dev]
+ruff
+pytest>=6.0
+pytest-cov
+mypy
