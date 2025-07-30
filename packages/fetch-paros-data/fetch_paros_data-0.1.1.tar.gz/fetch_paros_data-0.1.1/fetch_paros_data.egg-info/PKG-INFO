@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: fetch_paros_data
+Version: 0.1.1
+Summary: Fetch and process InfluxDB data from PAROS sensors
+Author: Ethan Gelfand
+License: MIT
+Requires-Python: >=3.7
+Requires-Dist: influxdb-client
+Requires-Dist: pytz
+Requires-Dist: pandas
+Requires-Dist: scipy
+Dynamic: author
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
