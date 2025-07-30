@@ -1,0 +1,2 @@
+[console_scripts]
+whereami = get_location:get_current_location
