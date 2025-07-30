@@ -1,0 +1,6 @@
+fastgl-0.1.8.dist-info/RECORD,,
+fastgl-0.1.8.dist-info/WHEEL,sha256=CqZPjTy1IUUe-ETskI-vXakRfBLRRrjizpVUM4gjdh8,129
+fastgl-0.1.8.dist-info/METADATA,sha256=iP-TKqaMnUvXAMu94dwVpa5z9Jn1eZtQ57_bTzHcakU,3718
+fastgl/_fastgl.pypy311-pp73-darwin.so,sha256=IeW377_WkMOkFVBqYCpZdpVS9jSePBP3F5q65dnqdsE,331344
+fastgl/__init__.py,sha256=-NkZszWaksS0PiCeoP-5uLeSbVEIqeWtfL_0GBtLko4,786
+fastgl/.dylibs/libomp.dylib,sha256=2ZJQh_5VzBRzYj7LHfcL7W9zzpouzwQzIV4wazSxvrs,824608
