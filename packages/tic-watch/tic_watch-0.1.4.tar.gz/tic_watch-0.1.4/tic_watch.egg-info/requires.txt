@@ -1,0 +1,7 @@
+fastapi
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-asgi
+azure-monitor-opentelemetry-exporterpyjwt>=2.6.0
+starlette>=0.27.0
