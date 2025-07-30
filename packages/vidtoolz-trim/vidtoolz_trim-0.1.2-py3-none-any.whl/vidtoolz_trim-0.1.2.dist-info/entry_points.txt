@@ -1,0 +1,2 @@
+[vidtoolz_plugins]
+trim = vidtoolz_trim:trim_plugin
