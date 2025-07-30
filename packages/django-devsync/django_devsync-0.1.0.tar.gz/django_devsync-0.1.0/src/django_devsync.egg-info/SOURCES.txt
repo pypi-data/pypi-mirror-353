@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/django_devsync/__init__.py
+src/django_devsync/__main__.py
+src/django_devsync/main.py
+src/django_devsync.egg-info/PKG-INFO
+src/django_devsync.egg-info/SOURCES.txt
+src/django_devsync.egg-info/dependency_links.txt
+src/django_devsync.egg-info/entry_points.txt
+src/django_devsync.egg-info/requires.txt
+src/django_devsync.egg-info/top_level.txt

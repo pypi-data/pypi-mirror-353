@@ -1,0 +1,2 @@
+[console_scripts]
+devsync = django_devsync.main:main

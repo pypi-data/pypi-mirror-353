@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-devsync"
+version = "0.1.0"
+description = "Wipe migrations, reset the dev database, and sync Django models — for dev mode only."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "django>=4.0"
+]
+
+[project.scripts]
+devsync = "django_devsync.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["django_devsync"]
