@@ -1,0 +1,2 @@
+[console_scripts]
+flatexpy = flatexpy_core:main
