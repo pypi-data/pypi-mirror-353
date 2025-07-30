@@ -1,0 +1,19 @@
+[project]
+name = "jincheng-mcp-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "qinjincheng2", email = "qinjincheng2@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.9.3",
+]
+
+[project.scripts]
+jincheng-mcp-demo = "jincheng_mcp_demo:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
