@@ -1,0 +1,10 @@
+wagtail_f_richtext/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wagtail_f_richtext/apps.py,sha256=QIL8uh9siBLIzzHertbrSzadZxf1vJZ9wkWDEW5B9Ss,185
+wagtail_f_richtext/parser.py,sha256=ZASm2ynaMbz1YYXHzxow6JIVFrFbaoXfjGLDNQc5ofA,4878
+wagtail_f_richtext/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wagtail_f_richtext/templatetags/frichtext_tags.py,sha256=3AcgxqTAp001CeaUm6bhXRV0dZOTsho1gwN4vQRhpbw,2183
+wagtail_f_richtext-1.2.0.dist-info/licenses/LICENSE,sha256=GCrdzz4e7im-SUiq8w4uET0Dipnv_d4B908CbKTSs30,1072
+wagtail_f_richtext-1.2.0.dist-info/METADATA,sha256=F1b9sBi1pu7jmWcef7BZV941-7srDFMmPr7rDRT9aag,11263
+wagtail_f_richtext-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wagtail_f_richtext-1.2.0.dist-info/top_level.txt,sha256=uKWbFt_LzYLf2wDVozTecXr50qJO5ykVypLdppFLV7Y,19
+wagtail_f_richtext-1.2.0.dist-info/RECORD,,
