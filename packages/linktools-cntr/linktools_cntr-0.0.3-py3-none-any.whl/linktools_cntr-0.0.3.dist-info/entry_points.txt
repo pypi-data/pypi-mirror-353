@@ -1,0 +1,8 @@
+[console_scripts]
+ct-cntr = linktools_cntr.__main__:command.main
+
+[linktools_scripts]
+ct-cntr = linktools_cntr.__main__:command.main
+
+[linktools_updater]
+ct-cntr = linktools_cntr.update:command.main
