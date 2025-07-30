@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+mftfwscan.egg-info/PKG-INFO
+mftfwscan.egg-info/SOURCES.txt
+mftfwscan.egg-info/dependency_links.txt
+mftfwscan.egg-info/entry_points.txt
+mftfwscan.egg-info/top_level.txt
