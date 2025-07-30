@@ -1,0 +1,9 @@
+dutchsoils/__init__.py,sha256=kwIZkY50QgBiiskyx4QMSnrHmLaV0rEWQLo00XJyBOA,53
+dutchsoils/data/soilprofiles_BodemkaartBofek.csv,sha256=9XI44aurYwa6XPtVOjCtIE0oxBRtpS9-CaBe7HLvsXE,456055
+dutchsoils/plot.py,sha256=tJzxj6xgX4_H8LwdJwd13uedsz0SAp9HttjO1OKAmWI,10453
+dutchsoils/soilmap.py,sha256=jDXihU6XD3f4d0swNXS1lSjLm5rH57KKAY-9AFDKAXc,10627
+dutchsoils/soilprofile.py,sha256=_QXUbHwUVjAEV7MM_I5JTdAHaB2AIMzLywdz2z-2w5w,9928
+dutchsoils-0.1.3.dist-info/LICENSE,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+dutchsoils-0.1.3.dist-info/METADATA,sha256=t4bS0V_5VnvbWlJaW7Itmk5wVgJItkNQ7EcEHiKYrWk,3267
+dutchsoils-0.1.3.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+dutchsoils-0.1.3.dist-info/RECORD,,
