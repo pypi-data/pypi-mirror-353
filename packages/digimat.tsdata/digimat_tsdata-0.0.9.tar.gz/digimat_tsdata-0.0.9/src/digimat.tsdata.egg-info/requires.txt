@@ -1,0 +1,8 @@
+digimat.units
+pytz
+numpy
+pandas
+matplotlib
+openpyxl
+requests
+setuptools

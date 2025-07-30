@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: digimat.tsdata
+Version: 0.0.9
+Summary: Digimat TSData Wrapper
+Home-page: https://www.digimat.ch
+Author: Frederic Hess
+Author-email: fhess@st-sa.ch
+License: PSF
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: digimat.units
+Requires-Dist: pytz
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: openpyxl
+Requires-Dist: requests
+Requires-Dist: setuptools
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+=====================
+Python digimat.tsdata
+=====================
+
+Python 3 wrapper around the Digimat TSData engine.
