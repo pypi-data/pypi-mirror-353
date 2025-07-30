@@ -1,0 +1,21 @@
+[project]
+name = "ppmm"
+version = "1.2.1"
+description = "一个简单的pip镜像管理工具"
+authors = [{ name = "XuLan", email = "xuzn@msn.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.6"
+
+[project.scripts]
+mm = "ppmm.cli:main"
+
+[project.urls]
+repository = "https://github.com/LanMist/ppmm"
+
+[tool.hatch.build]
+include = ["ppmm/*.py", "ppmm/data.json"]
+
+[build-system]
+requires = ["hatchling>=1.8"]
+build-backend = "hatchling.build"
