@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: tellabot
+Version: 0.1.3
+Summary: ⚡ Framework to scaffold Telegram bots with Flask, Supabase, and Admin panel
+Home-page: https://mechatemesgenportfolio.vercel.app/
+Author: Mecha Temesgen
+Author-email: ililnaafbarihe94@proton.me
+License: MIT
+Project-URL: Documentation, https://mechatemesgenportfolio.vercel.app/
+Project-URL: Source, https://github.com/yourusername/tellabot
+Project-URL: Tracker, https://github.com/yourusername/tellabot/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Environment :: Console
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
