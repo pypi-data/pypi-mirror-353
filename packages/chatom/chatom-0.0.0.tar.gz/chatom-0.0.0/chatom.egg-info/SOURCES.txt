@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+chatom.egg-info/PKG-INFO
+chatom.egg-info/SOURCES.txt
+chatom.egg-info/dependency_links.txt
+chatom.egg-info/top_level.txt
