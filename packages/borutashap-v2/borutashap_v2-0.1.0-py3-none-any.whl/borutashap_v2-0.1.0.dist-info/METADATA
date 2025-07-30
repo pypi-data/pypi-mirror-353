@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: borutashap-v2
+Version: 0.1.0
+Summary: An efficient, refactored, and modernized implementation of the Boruta-Shap feature selection algorithm. Scikit-learn compatible and performance-optimized.
+Author-email: Zhiyuan <ambiyuan@gmail.com>
+Project-URL: Homepage, https://github.com/Zhiyuan-Fan/BorutaShapV2
+Project-URL: Bug Tracker, https://github.com/Zhiyuan-Fan/BorutaShapV2/issues
+Keywords: feature selection,boruta,shap,xgboost,lightgbm,machine learning
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: shap>=0.40.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: tqdm
+Dynamic: license-file
