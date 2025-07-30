@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: terminological_ontological_coverage
+Version: 1.0.1
+Summary: A package for keyword and ontology comparison.
+Author: Anna Sofia Lippolis
+Keywords: keywords ontology comparison
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: PyMuPDF
+Requires-Dist: rdflib
+Requires-Dist: rake-nltk
+Requires-Dist: keybert
+Requires-Dist: pandas
+Requires-Dist: argparse
+Requires-Dist: transformers
+
+# Terminological and Ontological Coverage
+
+Terminological and Ontological Coverage is a package designed for keyword and ontology comparison. This package allows users to extract keywords from documents using various methods and compare their coverage against specified ontologies.
+
+## Features
+
+- Extract keywords using:
+  - **RAKE**
+  - **Rake-NLTK**
+  - **KeyBERT**
+- Compare extracted keywords against one or more ontologies.
+- Calculate and display weighted keyword coverage.
+- Output results to CSV files.
+- Optionally use custom keywords and scores.
+
+## Installation
+
+Install the package using `pip`:
+
+```bash
+pip install terminological-ontological-coverage
