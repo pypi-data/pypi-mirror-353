@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest:*)",
+      "Bash(uv run:*)",
+      "Bash(make:*)",
+      "Bash(git remote get-url:*)",
+      "Bash(mv:*)",
+      "Bash(find:*)",
+      "Bash(sed:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": []
+  }
+}
