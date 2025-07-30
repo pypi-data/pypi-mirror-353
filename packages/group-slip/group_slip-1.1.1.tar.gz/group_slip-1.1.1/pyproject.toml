@@ -1,0 +1,23 @@
+[project]
+name = "group-slip"
+version = "1.1.1"
+description = ""
+authors = [
+    {name = "6vi7ms",email = "6vi7ms@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pillow (>=11.2.1,<12.0.0)",
+    "opencv-python (>=4.11.0.86,<5.0.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)",
+    "easyocr (>=1.7.2,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+group-slip = "group_slip.main:main"
