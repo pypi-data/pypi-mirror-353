@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest tests/test_cfn.py -k \"remove_dependencies\" -xvs)",
+      "Bash(uv run pytest:*)",
+      "Bash(make format)",
+      "Bash(make:*)",
+      "Bash(uv run:*)",
+      "Bash(mv:*)",
+      "Bash(rg:*)",
+      "Bash(pytest:*)"
+    ],
+    "deny": []
+  }
+}
