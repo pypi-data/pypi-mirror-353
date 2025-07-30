@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+real_random/__init__.py
+real_random/core.py
+real_random.egg-info/PKG-INFO
+real_random.egg-info/SOURCES.txt
+real_random.egg-info/dependency_links.txt
+real_random.egg-info/requires.txt
+real_random.egg-info/top_level.txt
+tests/test_core.py
