@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+Gestao_Imoveis/__init__.py
+Gestao_Imoveis/gestão_de_imóveis.py
+gestao_imoveis.egg-info/PKG-INFO
+gestao_imoveis.egg-info/SOURCES.txt
+gestao_imoveis.egg-info/dependency_links.txt
+gestao_imoveis.egg-info/top_level.txt
