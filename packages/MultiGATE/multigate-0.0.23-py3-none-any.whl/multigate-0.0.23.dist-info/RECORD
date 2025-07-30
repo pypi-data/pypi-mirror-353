@@ -1,0 +1,12 @@
+MultiGATE/MultiGATE.py,sha256=zTW4jJZxXNCIZqkiBwUTqbi8g3j1jSz9XUoMRQM4MzQ,6346
+MultiGATE/Train_MultiGATE.py,sha256=I2N6h7IqDHfPMqP0oAsAW-rb70sBcG_KFxJDm7umzr4,10172
+MultiGATE/WNN_comp.py,sha256=z84jnAjc-g9XBMCsIxtJ4CXc2DPdfMssCzogFJMQD58,9227
+MultiGATE/__init__.py,sha256=utI0CiupbkwQZUx6wxnuKjLYeaBFUuet_DYdjMYgoBQ,416
+MultiGATE/genomics.py,sha256=xrXgF49t3LYhc-YBZYeOt2ZnXSiaIfil_5zeNEHk79A,6775
+MultiGATE/model_MultiGATE.py,sha256=VEVXO9IXeB2sfXB3I2Uh0ieX3vKYKRoo1-y0fvG2GR4,14414
+MultiGATE/utils.py,sha256=IWi3YwmiBNWETkim8BxOI20mJhExsgArdCVC2sxKhdg,32188
+multigate-0.0.23.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+multigate-0.0.23.dist-info/METADATA,sha256=st8s9DH_5ypV_IeWvBgSY0WhU2nI7lXXMNJdRMRnpwA,2121
+multigate-0.0.23.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+multigate-0.0.23.dist-info/top_level.txt,sha256=OSREvWf-Hp6aY4oDwfBiBscLACUMCBJ0-K8ws7Aybvk,10
+multigate-0.0.23.dist-info/RECORD,,
