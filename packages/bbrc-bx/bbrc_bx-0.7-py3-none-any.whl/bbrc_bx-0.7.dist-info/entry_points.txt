@@ -1,0 +1,3 @@
+[console_scripts]
+bx = bx.cli:cli_bx
+dump = bx.cli:cli_dump
