@@ -1,0 +1,8 @@
+README.md
+setup.py
+strtovar/__init__.py
+strtovar/main.py
+strtovar.egg-info/PKG-INFO
+strtovar.egg-info/SOURCES.txt
+strtovar.egg-info/dependency_links.txt
+strtovar.egg-info/top_level.txt
