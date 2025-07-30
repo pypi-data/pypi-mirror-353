@@ -1,0 +1,7 @@
+camoufox[geoip]
+beartype
+
+[test]
+pytest
+pytest-asyncio
+pytest-xdist
