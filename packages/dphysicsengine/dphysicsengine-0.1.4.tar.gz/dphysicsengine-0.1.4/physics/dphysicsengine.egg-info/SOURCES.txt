@@ -1,0 +1,11 @@
+pyproject.toml
+./physics/dphysicsengine.egg-info/PKG-INFO
+./physics/dphysicsengine.egg-info/SOURCES.txt
+./physics/dphysicsengine.egg-info/dependency_links.txt
+./physics/dphysicsengine.egg-info/requires.txt
+./physics/dphysicsengine.egg-info/top_level.txt
+physics/dphysicsengine.egg-info/PKG-INFO
+physics/dphysicsengine.egg-info/SOURCES.txt
+physics/dphysicsengine.egg-info/dependency_links.txt
+physics/dphysicsengine.egg-info/requires.txt
+physics/dphysicsengine.egg-info/top_level.txt
