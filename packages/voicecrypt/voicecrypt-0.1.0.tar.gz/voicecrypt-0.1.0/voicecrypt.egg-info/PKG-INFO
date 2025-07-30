@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: voicecrypt
+Version: 0.1.0
+Summary: Encrypt and decrypt audio files as text for secure voice messaging.
+Author-email: Your Name <your@email.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: cryptography>=41.0.0
+
+# voicecrypt
+
+Encrypt and decrypt audio files as text for secure voice messaging.
+
+## Features
+- Encrypt audio files (WAV, MP3, etc.) to text files using AES encryption
+- Decrypt encrypted text files back to audio
+- Password-based encryption (PBKDF2)
+- Simple API
+
+## Installation
+```sh
+pip install cryptography
+```
+
+## Usage
+```python
+from voicecrypt import encrypt_audio, decrypt_audio
+
+encrypt_audio('input.wav', 'encrypted.txt', password='mysecret')
+decrypt_audio('encrypted.txt', 'restored.wav', password='mysecret')
+```
+
+## License
+MIT 

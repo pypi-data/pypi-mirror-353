@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+tests/test_core.py
+voicecrypt/__init__.py
+voicecrypt/core.py
+voicecrypt.egg-info/PKG-INFO
+voicecrypt.egg-info/SOURCES.txt
+voicecrypt.egg-info/dependency_links.txt
+voicecrypt.egg-info/requires.txt
+voicecrypt.egg-info/top_level.txt
