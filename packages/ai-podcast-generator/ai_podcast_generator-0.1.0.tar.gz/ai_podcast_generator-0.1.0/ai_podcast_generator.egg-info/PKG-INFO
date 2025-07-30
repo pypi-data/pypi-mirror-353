@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: ai-podcast-generator
+Version: 0.1.0
+Summary: A Python package to generate AI-powered podcasts in Hindi, Marathi, or English using Gemini API.
+Author-email: Harsh Moreshwar Kale <harshmkale.2004@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Harshk133/ai_podcast_generator
+Project-URL: Repository, https://github.com/Harshk133/ai_podcast_generator.git
+Project-URL: Issues, https://github.com/Harshk133/ai_podcast_generator/issues
+Keywords: podcast,ai,text-to-speech,gemini,hindi,marathi,english
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyaudio>=0.2.17
+Requires-Dist: pydub>=0.25.1
+Requires-Dist: google-generativeai>=2.0.0
+Dynamic: license-file
+
+AI Podcast Generator
+A Python package to generate AI-powered podcasts in Hindi, Marathi, or English using the Gemini API. Create engaging podcasts on any topic with customizable rounds and output options (save to MP3 or play immediately).
+Installation
+pip install ai-podcast-generator
+
+Usage
+from ai_podcast_generator import PodcastGenerator
+
+# Initialize with your Gemini API key
+pg = PodcastGenerator(api_key="YOUR_GEMINI_API_KEY", language="english")
+
+# Generate a podcast
+pg.run_podcast(
+    topic="AngularJS vs ReactJS",
+    num_rounds=2,
+    output=True,  # Save to MP3
+    output_path="angular_vs_react.mp3"
+)
+
+Features
+
+Supports Hindi, Marathi, and English languages.
+Customizable number of Q&A rounds.
+Option to save podcast as MP3 or play immediately.
+Uses Gemini AI for script generation and text-to-speech.
+
+Requirements
+
+Python 3.10+
+Gemini API key
+Dependencies: pyaudio, pydub, google-generativeai
+
+License
+MIT License
+Contributing
+Contributions welcome! Please open an issue or PR on GitHub.

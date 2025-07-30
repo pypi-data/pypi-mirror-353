@@ -1,0 +1,3 @@
+pyaudio>=0.2.17
+pydub>=0.25.1
+google-generativeai>=2.0.0
