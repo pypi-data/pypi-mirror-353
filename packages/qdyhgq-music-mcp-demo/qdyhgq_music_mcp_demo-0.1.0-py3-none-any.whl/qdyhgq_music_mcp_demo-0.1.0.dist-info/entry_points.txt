@@ -1,0 +1,2 @@
+[console_scripts]
+qdyhgq-music-mcp-demo = qdyhgq_music_mcp_demo:main
