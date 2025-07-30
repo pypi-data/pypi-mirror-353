@@ -1,0 +1,2 @@
+[console_scripts]
+llmdebugger = llmdebugger.cli:main
