@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/dealuz/__init__.py
+src/dealuz/core.py
+src/dealuz/definitions.py
+src/dealuz.egg-info/PKG-INFO
+src/dealuz.egg-info/SOURCES.txt
+src/dealuz.egg-info/dependency_links.txt
+src/dealuz.egg-info/requires.txt
+src/dealuz.egg-info/top_level.txt
