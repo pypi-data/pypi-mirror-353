@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simulate_damage"
+version = "0.1.4"
+description = "Simulate ancient DNA deamination damage on paired-end FASTQ files"
+readme = "README.md"
+authors = [
+    { name="Andrew Tedder", email="a.tedder@bradford.ac.uk" }
+]
+license = {text = "MIT"}
+requires-python = ">=3.7"
+dependencies = ["biopython"]
+
+[project.urls]
+Homepage = "https://github.com/atedder/simulate_damage"
+Source = "https://github.com/atedder/simulate_damage"
+Tracker = "https://github.com/atedder/simulate_damage/issues"
+
+[project.scripts]
+simulate_damage = "simulate_damage.simulate_damage:run"
