@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: atar
+Version: 1.0.15
+Summary: A CLI tool for AI tasks such as dataset handling, training, and validation.
+Home-page: https://github.com/otman-dev/atar-cli
+Author: MOUHIB Otman
+Author-email: mouhib.otm@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ultralytics
+Requires-Dist: roboflow
+Requires-Dist: supervision
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# ATAR CLI
+
+ATAR CLI is a command line interface that wraps common tasks for training and
+running YOLOv8 based fire detection models. It provides a simple interactive
+menu to download datasets, start and resume training, validate models and run
+live or video based detection.
+
+## Installation
+
+The project can be installed from source using `pip`:
+
+```bash
+pip install -e .
+```
+
+The tool requires Python 3.7+ and depends on packages such as `ultralytics`,
+`roboflow` and `supervision`.
+
+## Usage
+
+After installation run the CLI with:
+
+```bash
+atar-cli
+```
+
+The following menu options are available:
+
+1. **Download RoboFlow training dataset** – Fetch a dataset from Roboflow.
+2. **Train** – Start a new training run using a selected model and dataset.
+3. **Resume existing training** – Continue a previous training run.
+4. **Validate** – Evaluate a trained model on a validation dataset.
+5. **Live Test** – Run detection on frames from a webcam.
+6. **Test on an existing file** – Perform detection on a saved video file.
+7. **Quit** – Exit the CLI.
+
+Select an option by entering the corresponding number. Some options will ask for
+additional input such as dataset paths or model names.
+
+## Development
+
+Install the development requirements and run the test suite with `pytest` to
+ensure everything works as expected.
+
+```bash
+pip install -r requirements.txt  # if available
+pytest -q
+```
+
+Contributions are welcome! Feel free to open issues or pull requests on the
+[GitHub repository](https://github.com/otman-dev/atar-cli).
