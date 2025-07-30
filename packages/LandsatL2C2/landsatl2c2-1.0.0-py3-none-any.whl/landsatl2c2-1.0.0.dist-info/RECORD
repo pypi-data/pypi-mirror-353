@@ -1,0 +1,13 @@
+LandsatL2C2/EEAPI.py,sha256=LdDQlw9Lg1KgfKir6q62_sJ9991cZ95pL15TJRrocxQ,29432
+LandsatL2C2/LandsatL2C2.py,sha256=r1OpLmZT8afCzbGeEfhvFgbZ_2q7k4ShXdy4G9MG3Yo,64123
+LandsatL2C2/M2M_credentials.py,sha256=zhgfYVOwvGilwKbCBKiq-Ef8z1diPWH1kLqaT4ZrwtQ,574
+LandsatL2C2/UTM.py,sha256=wuVVpZXY8U2sRbWas8-Wep-QAVewRWC1pWg0kRclxQE,651
+LandsatL2C2/WRS2Descending.py,sha256=EuYt_lYzeHGLmlm6QcEKkxwtUgE5TPZtu4-4LzSuusg,4254
+LandsatL2C2/__init__.py,sha256=ZV-fySnLrdc9y7LFek2NxZ3q8LyrceWSWCYk3DGBo3U,175
+LandsatL2C2/credentials.py,sha256=D-QvLi8Nw7PdUUMt9V8QwaL8IiwGdqbL6nfLx0i_IW0,1768
+LandsatL2C2/transform.py,sha256=gxvLksWOgwa2nJJsIHICY2oLTgqll-7yp_8ihV36fws,3679
+landsatl2c2-1.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+landsatl2c2-1.0.0.dist-info/METADATA,sha256=IOjprNN54eFTW4Tr-Y93As1xHstFot_T3VBPq-AfgE8,1063
+landsatl2c2-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+landsatl2c2-1.0.0.dist-info/top_level.txt,sha256=nLMWsGkGrKNBdJQuRfzSWgiZTnEd1qnBfeOGxy_hg9c,12
+landsatl2c2-1.0.0.dist-info/RECORD,,
