@@ -1,0 +1,14 @@
+safelz4-0.0.3.dist-info/METADATA,sha256=yPXqDZEjr8O8V-8eAcYjJCsS9Zmhw1kIy1S1Mrz8lZ0,10570
+safelz4-0.0.3.dist-info/WHEEL,sha256=YBxTPgux3EpqRUs41VsGbxWNCQEdpwhnB_ShQiS8dvY,90
+safelz4-0.0.3.dist-info/licenses/LICENCE.md,sha256=ZTmsZdvJC1dzMiCYqWsxKh8s1H4Q8Uh8qE6mnim4JXw,1072
+safelz4/__init__.py,sha256=ndsD4TAAwwsfo7aLkztk6hfJOInxJz4dT-NiWeiqJ-M,661
+safelz4/__main__.py,sha256=HX4MrDFp3XQJC-6BmcAv_LjtfdQ5rN3NW-zEmKNW6t0,38
+safelz4/_safelz4_rs.pyd,sha256=DbZBJBLldYvDHnnU87CZcdtCq-N-uYg_LU8bVXI2EWk,473600
+safelz4/block/__init__.py,sha256=wFRhpySeEVBjKLIEH8CfgEfljG0JGtP8APdbpPS-tgY,981
+safelz4/block/__init__.pyi,sha256=Fhh3qOSMMghmeD6Ps6MjWdxAdLvNzc3PtW27BQCv9uQ,4428
+safelz4/error/__init__.py,sha256=k1LL1HDGbqBAjGDkpSK5sdaqcDu-ZMHUiRFb2ZLnTLo,487
+safelz4/error/__init__.pyi,sha256=isycedn1jc6AyvQOWBt8iXSjM12Jn-I8vj_JJf73oOg,774
+safelz4/frame/__init__.py,sha256=VknjA6RlrYBIQMJVV0jA0vH66Y47S7x6YCu6ZuqTRfk,11307
+safelz4/frame/__init__.pyi,sha256=ZQ7d6NvfnMqxGILgVyUnSXI8tFEm627_oXEerual0VQ,19900
+safelz4/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+safelz4-0.0.3.dist-info/RECORD,,
