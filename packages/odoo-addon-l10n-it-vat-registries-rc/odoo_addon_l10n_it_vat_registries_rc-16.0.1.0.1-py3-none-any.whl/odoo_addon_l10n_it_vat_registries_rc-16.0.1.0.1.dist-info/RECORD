@@ -1,0 +1,14 @@
+odoo/addons/l10n_it_vat_registries_rc/README.rst,sha256=eMRfAUKK8PkztbpptHnr9kByE4eMwp0V898L3vDuKi0,3358
+odoo/addons/l10n_it_vat_registries_rc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+odoo/addons/l10n_it_vat_registries_rc/__manifest__.py,sha256=_y6GaFSiXl1eIkg3v6YrblObC_YWbwC6d62zogfDXO4,751
+odoo/addons/l10n_it_vat_registries_rc/i18n/it.po,sha256=JRbzsU2o4rQnOPElORj1r6h-_XrB5WwVU-6nRtlfMQg,850
+odoo/addons/l10n_it_vat_registries_rc/i18n/l10n_it_vat_registries_rc.pot,sha256=o1iMo51N18h0v8kNhpaMl7KAUN88fvpgkaRnDHpCqyc,671
+odoo/addons/l10n_it_vat_registries_rc/readme/CONTRIBUTORS.md,sha256=KTYWGBZrsVhZOun1PzkyMfwGWomsNucTIDaSZmyoqXk,21
+odoo/addons/l10n_it_vat_registries_rc/readme/DESCRIPTION.md,sha256=ZWHITqAFYMp8hwxVNWG5xIOq_cx1I7ftgzw2huO-JWo,150
+odoo/addons/l10n_it_vat_registries_rc/report/report_registro_iva.xml,sha256=SEmQxkTNPDMCSmfnB27e9U14MKt7QY3UPC0QXlzi6RQ,1807
+odoo/addons/l10n_it_vat_registries_rc/static/description/icon.png,sha256=6xBPJauaFOF0KDHfHgQopSc28kKvxMaeoQFQWZtfZDo,9455
+odoo/addons/l10n_it_vat_registries_rc/static/description/index.html,sha256=Fqnh28XOVEErlEjevbyqFdDbY4lh2MxNzNehJrggbLw,12672
+odoo_addon_l10n_it_vat_registries_rc-16.0.1.0.1.dist-info/METADATA,sha256=KslzvwFab57HiRiPbIp9kgBn-6wfhLgvFhnQSowGBqw,4091
+odoo_addon_l10n_it_vat_registries_rc-16.0.1.0.1.dist-info/WHEEL,sha256=9fEMia4zL7ZuZbnCOrcYogUhmn4XFIVaJ8G4YGI31xc,81
+odoo_addon_l10n_it_vat_registries_rc-16.0.1.0.1.dist-info/top_level.txt,sha256=QE6RBQ0QX5f4eFuUcGgU5Kbq1A_qJcDs-e_vpr6pmfU,4
+odoo_addon_l10n_it_vat_registries_rc-16.0.1.0.1.dist-info/RECORD,,
