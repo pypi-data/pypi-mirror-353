@@ -1,0 +1,2 @@
+[console_scripts]
+asimov-jinja-runner = asimov_jinja_module.runner:main
