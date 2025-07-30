@@ -1,0 +1,3 @@
+[console_scripts]
+flowchem = flowchem.__main__:main
+flowchem-autodiscover = flowchem.utils.device_finder:main
