@@ -1,0 +1,5 @@
+IPython
+pyperclip
+python-telegram-bot
+python-dotenv
+redis
