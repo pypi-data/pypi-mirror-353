@@ -1,0 +1,12 @@
+def eqe(a,b):
+    return a==b
+def neq(a,b):
+    return a!=b
+def gre(a,b):
+    return a>b
+def les(a,b):
+    return a<b
+def geq(a,b):
+    return a>=b
+def leq(a,b):
+    return a<=b
