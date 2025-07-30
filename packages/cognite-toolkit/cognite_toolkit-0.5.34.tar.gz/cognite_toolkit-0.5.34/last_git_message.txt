@@ -1,0 +1,34 @@
+[prep CDF-24745, CDF-24554, CDF-24555] 👷Refactor Dump Command (#1592)
+
+# Description
+
+Stacked on #1591, #1589, #1588
+
+Context: Toolkit supports dumping assets/timeseries to csv/parquet (and
+yaml). This is the culmination of the three PRs mentioned above. It
+moves out the pieces, writing to file, interactive select, looking up
+metadata keys from the dump command. The goal to use these pieces in
+other commands, as well as add support for dumping other resources that
+are not asset centric.
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Improved
+
+- The `cdf dump timeseries/assets` now has a standardized order for
+columns.
+- The `cdf dump timeseries/assets` now splits into multiple files if the
+size is above 128MB.
+- [performance] The `cdf dump timeseries/assets` no longer writes files
+twice to ensure all columns are the same. Now, it looks up column
+headers before starting the dump process.
+
+## templates
+
+No changes.
