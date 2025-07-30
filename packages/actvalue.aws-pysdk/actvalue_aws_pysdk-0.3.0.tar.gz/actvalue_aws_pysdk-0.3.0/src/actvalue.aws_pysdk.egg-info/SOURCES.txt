@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/actvalue.aws_pysdk.egg-info/PKG-INFO
+src/actvalue.aws_pysdk.egg-info/SOURCES.txt
+src/actvalue.aws_pysdk.egg-info/dependency_links.txt
+src/actvalue.aws_pysdk.egg-info/requires.txt
+src/actvalue.aws_pysdk.egg-info/top_level.txt
+src/aws_pysdk/__init__.py
+src/aws_pysdk/s3.py
+src/aws_pysdk/session.py
+src/aws_pysdk/ssm.py
