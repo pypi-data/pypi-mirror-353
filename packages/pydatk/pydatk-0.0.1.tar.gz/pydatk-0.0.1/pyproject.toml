@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools >= 80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydatk"
+version = "0.0.1"
+authors = [
+  { name="pydatk", email="dev@pydatk.com" },
+]
+description = "pydatk"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://www.pydatk.com"
+Documentation = "https://www.pydatk.com"
+Repository = "https://github.com/pydatk/pydatk"
+Discussion = "https://github.com/pydatk/pydatk/discussions"
+Issues = "https://github.com/pydatk/pydatk/issues"
+Changelog = "https://github.com/pydatk/pydatk/blob/main/CHANGELOG.md"
