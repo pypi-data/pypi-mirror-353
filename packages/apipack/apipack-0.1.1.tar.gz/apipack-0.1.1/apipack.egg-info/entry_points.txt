@@ -1,0 +1,9 @@
+[apipack.plugins]
+cli = apipack.plugins.builtin.cli:CliPlugin
+graphql = apipack.plugins.builtin.graphql:GraphQLPlugin
+grpc = apipack.plugins.builtin.grpc:GrpcPlugin
+rest = apipack.plugins.builtin.rest:RestPlugin
+websocket = apipack.plugins.builtin.websocket:WebSocketPlugin
+
+[console_scripts]
+apipack = apipack.cli:main
