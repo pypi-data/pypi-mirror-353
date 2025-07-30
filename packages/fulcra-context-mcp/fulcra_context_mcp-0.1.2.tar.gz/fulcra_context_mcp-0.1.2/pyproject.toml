@@ -1,0 +1,28 @@
+[project]
+name = "fulcra-context-mcp"
+version = "0.1.2"
+description = "Fulcra Context MCP Server"
+license = "Apache-2.0"
+authors = [
+    {name = "Brandon Creighton", email = "brandon@fulcradynamics.com"},
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "fastmcp>=2.7.0",
+    "fulcra-api>=0.1.26",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.9.3",
+    "structlog>=25.4.0",
+]
+
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+
+[project.scripts]
+fulcra-context-mcp = "fulcra_mcp.main:main"
