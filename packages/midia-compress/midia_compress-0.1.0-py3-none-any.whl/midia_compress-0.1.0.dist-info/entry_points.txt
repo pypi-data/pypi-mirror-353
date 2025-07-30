@@ -1,0 +1,3 @@
+[console_scripts]
+midia-compress=midia_compress.cli:app
+
