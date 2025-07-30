@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: nuru-clock
+Version: 0.1.0
+Summary: A clock utility for Neuro-sama.
+Author-email: KTrain5369 <contact@ktrain5369.me>
+License: GNU GPL v3
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: neuro_api==1.0.0
+Requires-Dist: pytz==2025.2
+Requires-Dist: python-dotenv==1.1.0
+Dynamic: license-file
+
+# Nuru Clock
+
+(Not the clock that Neuro actually uses, that's way more basic.)
+
+Note: This project was made more as a way of putting my understanding of the Neuro Game API into a different language than just TypeScript. Hence why it's basic and also redundant.
+
+## Features
+
+- Gets the current time in any timezone.
+- Gets the current time in Unix.
+
+<!--[See the documentation](../docs/) for more.-->
+
+<!-- todo: implement countdown timer, stopwatch(?), alarms -->
