@@ -1,0 +1,107 @@
+Metadata-Version: 2.4
+Name: jupyter_libyt
+Version: 0.3.0
+Summary: A Jupyter kernel provisioner for libyt
+Project-URL: Homepage, https://github.com/yt-project/jupyter_libyt
+Author-email: Shin-Rong Tsai <turquoisea.tsai@gmail.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2023, Shin-Rong Tsai
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: AUTHORS.md
+License-File: LICENSE
+Keywords: jupyter,jupyterlab,jupyterlab-extension,kernel,libyt,libyt_kernel
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 4
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: jupyter-client<9,>=7.0.0
+Description-Content-Type: text/markdown
+
+# Jupyter libyt
+
+[![PyPI version](https://badge.fury.io/py/jupyter-libyt.svg)](https://badge.fury.io/py/jupyter-libyt)
+
+This is a Jupyter provisioner for [`libyt`](https://github.com/yt-project/libyt) kernel.
+
+- **Jupyter Project**: https://jupyter.org/
+- **yt**: https://yt-project.org/
+- **libyt Repo**: https://github.com/yt-project/libyt
+- **libyt Doc**: https://libyt.readthedocs.io/en/latest/
+
+### Install
+
+- From PyPI:
+  ```bash
+  pip install jupyter-libyt
+  ```
+- From source:
+  ```bash
+  git clone https://github.com/yt-project/jupyter_libyt.git
+  cd jupyter_libyt
+  jlpm install      # make sure JupyterLab is already installed
+  jlpm run build
+  pip install .
+  ```
+
+### Uninstall
+
+```bash
+# uninstall the package
+pip uninstall jupyter-libyt
+
+# remove the kernelspec folder
+rm -rf $<python-prefix>/share/jupyter/kernels/libyt_kernel
+```
+
+### Change Log
+
+#### 0.3.0
+
+- Nothing changed, version bumped to match `libyt`/`yt_libyt`.
+
+#### 0.2.0
+
+- Drop support for Python 3.7.
+- Support JupyterLab >= 4.0.0 and Jupyter Notebook >= 7.0.0.
+- Add the frontend:
+  - Send notification and block it when `interrupt`/`restart`/`restart and run all` buttons are
+    clicked to avoid unwanted action showing.
+  - Send notification and block it when the interrupt and restart kernel menu are clicked to avoid
+    unwanted action showing.
+
+#### 0.1.0
+
+- Provide only the kernel provisioner for libyt kernel.

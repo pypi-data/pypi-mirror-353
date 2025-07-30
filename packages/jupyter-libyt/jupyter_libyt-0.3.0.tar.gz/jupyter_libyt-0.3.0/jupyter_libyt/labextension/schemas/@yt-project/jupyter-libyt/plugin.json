@@ -1,0 +1,22 @@
+{
+  "title": "@yt-project/jupyter-libyt",
+  "description": "@yt-project/jupyter-libyt settings.",
+  "jupyter.lab.toolbars": {
+    "Notebook": [
+      {
+        "name": "interrupt",
+        "command": "jupyter-libyt:interrupt"
+      },
+      {
+        "name": "restart",
+        "command": "jupyter-libyt:restart"
+      },
+      {
+        "name": "restart-and-run",
+        "command": "jupyter-libyt:restart-run-all"
+      }
+    ]
+  },
+  "additionalProperties": false,
+  "type": "object"
+}

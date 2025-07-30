@@ -1,0 +1,106 @@
+[build-system]
+requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-nodejs-version>=0.3.2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_libyt"
+authors = [
+    {name = "Shin-Rong Tsai", email = "turquoisea.tsai@gmail.com"}
+]
+description = "A Jupyter kernel provisioner for libyt"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+keywords = ["jupyter", "jupyterlab", "jupyterlab-extension", "kernel", "libyt", "libyt_kernel"]
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "Framework :: Jupyter :: JupyterLab :: Extensions",
+    "Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3"
+]
+dependencies = ["jupyter-client>=7.0.0,<9"]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/yt-project/jupyter_libyt"
+
+[project.entry-points."jupyter_client.kernel_provisioners"]
+libyt-kernel-provisioner = "jupyter_libyt.provisioning.libyt_kernel_provisioner:LibytKernelProvisioner"
+
+[tool.hatch.version]
+source = "nodejs"
+
+[tool.hatch.build.hooks.version]
+path = "jupyter_libyt/_version.py"
+
+[tool.hatch.build.hooks.custom]
+# used to call hatch_build.py
+
+[tool.hatch.build.targets.sdist]
+include = ["jupyter_libyt"]
+artifacts = ["jupyter_libyt/labextension"]
+exclude = [".github", "binder"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"jupyter_libyt/labextension" = "share/jupyter/labextensions/@yt-project/jupyter-libyt"
+"install.json" = "share/jupyter/labextensions/@yt-project/jupyter-libyt/install.json"
+
+[tool.hatch.build.hooks.jupyter-builder]
+dependencies = ["hatch-jupyter-builder>=0.5"]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = [
+    "jupyter_libyt/labextension/static/style.js",
+    "jupyter_libyt/labextension/package.json",
+]
+skip-if-exists = ["jupyter_libyt/labextension/static/style.js"]
+
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+build_cmd = "build:prod"
+npm = ["jlpm"]
+
+[tool.hatch.build.hooks.jupyter-builder.editable-build-kwargs]
+build_cmd = "install:extension"
+npm = ["jlpm"]
+source_dir = "src"
+build_dir = "jupyter_libyt/labextension"
+
+[tool.jupyter-releaser.options]
+version_cmd = "hatch version"
+
+[tool.jupyter-releaser.hooks]
+before-build-npm = [
+    "python -m pip install 'jupyterlab>=4.0.0,<5'",
+    "jlpm",
+    "jlpm build:prod"
+]
+before-build-python = ["jlpm clean:all"]
+
+### tools config ###
+[tool.check-wheel-contents]
+ignore = ["W002"]
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+combine_as_imports = true
+skip_gitignore = true
+#skip = [""]  # use default settings for now
+
+#[tool.mypy]
+#;python_version = 3.7
+#;warn_unused_configs = True
+#;show_error_context = True
+#;pretty = True
+#;namespace_packages = True
+#;check_untyped_defs = True
