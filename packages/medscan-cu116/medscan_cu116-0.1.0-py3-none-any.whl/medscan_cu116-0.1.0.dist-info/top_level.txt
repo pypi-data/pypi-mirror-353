@@ -1,0 +1,5 @@
+build
+dist
+examples
+medscan
+testje_moet_nog_gecleaned_en_verwijderd_worden
