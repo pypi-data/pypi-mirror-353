@@ -1,0 +1,3 @@
+[console_scripts]
+weekly=weekly.cli:main
+
