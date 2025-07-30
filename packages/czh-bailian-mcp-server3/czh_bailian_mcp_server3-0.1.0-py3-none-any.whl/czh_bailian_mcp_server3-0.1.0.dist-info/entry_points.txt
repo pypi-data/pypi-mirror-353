@@ -1,0 +1,2 @@
+[console_scripts]
+czh-bailian-mcp-server3 = czh_bailian_mcp_server3:main
