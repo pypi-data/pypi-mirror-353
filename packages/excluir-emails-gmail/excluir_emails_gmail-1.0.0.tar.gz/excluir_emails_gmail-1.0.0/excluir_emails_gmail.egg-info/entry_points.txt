@@ -1,0 +1,2 @@
+[console_scripts]
+excluir-emails-gmail = app:main

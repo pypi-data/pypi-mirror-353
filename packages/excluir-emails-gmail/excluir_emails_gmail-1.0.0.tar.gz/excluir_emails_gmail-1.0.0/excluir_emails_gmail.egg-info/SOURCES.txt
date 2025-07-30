@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+excluir_emails_gmail.egg-info/PKG-INFO
+excluir_emails_gmail.egg-info/SOURCES.txt
+excluir_emails_gmail.egg-info/dependency_links.txt
+excluir_emails_gmail.egg-info/entry_points.txt
+excluir_emails_gmail.egg-info/requires.txt
+excluir_emails_gmail.egg-info/top_level.txt
