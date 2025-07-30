@@ -1,0 +1,14 @@
+irods2dataverse/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+irods2dataverse/avu2json.py,sha256=U-DgSlAfrHCcQtG95XnkW2XxSDdrIsp6o8KlAQaCM6c,7675
+irods2dataverse/cli_input.py,sha256=VoRlz8xRLM0czhzMo6jaTScWVJRApgFaoUkIHc5khSs,5079
+irods2dataverse/customClass.py,sha256=i67Bs2wgBPVB0pArbYIhyzXISn5llgA13K2jJW67d4A,2298
+irods2dataverse/direct_upload.py,sha256=5912sHOo6a6fkhvn0IsTdJa6Cv5lKj0s9o7YyIhcanc,4522
+irods2dataverse/from_irods.py,sha256=matYdcIomEJ-475SetwkOUbPaFMuxNEAPoq5FIQkZ0o,5875
+irods2dataverse/metadatablocks.py,sha256=dG1byx9-0VwvsPh786HRKAvWbC8pauMFcKlf9ulv1Vs,10505
+irods2dataverse/to_dataverse.py,sha256=SncAQQMh4712I_3qWHb4X3QVkOUpb8kDUhWq8RL1FMY,5170
+irods2dataverse/userScript.py,sha256=Wtv5VXDi2BgJZZj15idTYquuq-ty92BZbbGRAUfUgQE,15301
+irods2dataverse-0.0.4.dist-info/licenses/LICENSE,sha256=J73jR2UD5mFAi6MY1FUjrvNVeP31KTvsNXvJVNY09Bc,1066
+irods2dataverse-0.0.4.dist-info/METADATA,sha256=xfwf3PHABPWdAWTml_cyUshezqzoBQ_fy8dHH-RV93s,7181
+irods2dataverse-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+irods2dataverse-0.0.4.dist-info/top_level.txt,sha256=SihMPDMQGAFIcllYqa7jIAfi6wvJlDfVsDxHPj8xM4s,16
+irods2dataverse-0.0.4.dist-info/RECORD,,
