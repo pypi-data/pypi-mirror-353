@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+teamspeak_mcp/__init__.py
+teamspeak_mcp/__main__.py
+teamspeak_mcp/server.py
+teamspeak_mcp.egg-info/PKG-INFO
+teamspeak_mcp.egg-info/SOURCES.txt
+teamspeak_mcp.egg-info/dependency_links.txt
+teamspeak_mcp.egg-info/entry_points.txt
+teamspeak_mcp.egg-info/requires.txt
+teamspeak_mcp.egg-info/top_level.txt
