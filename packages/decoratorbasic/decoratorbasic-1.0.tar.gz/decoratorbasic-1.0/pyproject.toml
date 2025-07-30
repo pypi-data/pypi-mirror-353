@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decoratorbasic"
+version = "1.0"
+description = "Simple tools for creating and managing decorators in Python."
+license = { text = "MIT" }
+requires-python = ">=3"
+authors = [
+  { name = "TahsinCr", email = "TahsinCr@outlook.com" }
+]
+keywords = ["decoratorbasic", "decorator", "basic", "definator", "xcollection"]
+classifiers = [
+  "Typing :: Typed",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+readme = {file = "README-pypi.md", content-type = "text/markdown" }
+dependencies = [
+    "callabletype>=1.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/TahsinCr/python-decoratorbasic"
+Source = "https://github.com/TahsinCr/python-decoratorbasic"
+
+[tool.setuptools]
+py-modules = ["decoratorbasic"]
