@@ -1,0 +1,17 @@
+rotaeno_stablizer-1.0.0.dist-info/METADATA,sha256=feuqLEEPTeFoo66_jI8cZrq9xD8P23wFSzyqNsJQTgg,4287
+rotaeno_stablizer-1.0.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+rotaeno_stablizer-1.0.0.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+rotaeno_stablizer-1.0.0.dist-info/licenses/LICENSE,sha256=fTqV5eBpeAZO0_jit8j4Ref9ikBSlHJ8xwj5TLg7gFk,7817
+rotaeno_stablizer/__init__.py,sha256=q6J6byL0ka93VC_hXfcIobOKBOrsb5bC-5HjCxyXGoE,12530
+rotaeno_stablizer/__main__.py,sha256=3gEAsbAvlFxcL8wW4yBhnvjgo7hHoqJWJ2AZe0qFOb4,6936
+rotaeno_stablizer/background.py,sha256=exUR8u0yd68a3N3CGJgJgeiKrnU5ktK7Cv9395uQlwo,4949
+rotaeno_stablizer/cli.py,sha256=31nyEqdr81wlvvRLfB5RDghWBsCSyvPkl1cq0xxqaUQ,3005
+rotaeno_stablizer/config.py,sha256=jMeR9qOZWURS1ypv3ofRK-OXOlbkNuwGZc3gx8GK468,1076
+rotaeno_stablizer/ffmpeg.py,sha256=J0E0rFWYStxlinn6fs_aAMx8uZ22a34WfFwbUWr521k,8718
+rotaeno_stablizer/gui.py,sha256=qn1SJHdfiIr9CoA9iKIHnqWBtVcoCU6G-DiBlOx-jcc,21495
+rotaeno_stablizer/log.py,sha256=_nZjmSnYHTW70kfVmuaQCxWdxtMZC3G7QZNCnl0j5Nc,292
+rotaeno_stablizer/logo.png,sha256=Qc7hh30Zoxzx9ykMw95MgXWZldKx_l4HMQCzVhUrGbo,87204
+rotaeno_stablizer/rotaeno_logo_black.png,sha256=6lU9VqW-tr1shTMrMoiVfOylkppNAJ5pGLbeS4TMZ3Y,11747
+rotaeno_stablizer/rotation_calc.py,sha256=cqwRopAqrTngwUAyv4eJpyUcMUnuStcm3_VNXC-Vgj8,4813
+rotaeno_stablizer/utils.py,sha256=oiDHCcdLm9XlIHyb57LxAjIGfCa-69prrIXNd_cCOVE,2244
+rotaeno_stablizer-1.0.0.dist-info/RECORD,,
