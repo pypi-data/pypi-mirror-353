@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: genoa
+Version: 0.1.0
+Author: MrPsyghost
+Author-email: shivaypuri2000@gmail.com
+Requires-Dist: torch>=2.5.1
+Requires-Dist: rich>=14.0.0
+
