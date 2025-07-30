@@ -1,0 +1,8 @@
+lockss/pybasic/__init__.py,sha256=oNqF2XvMGruAJn3JJJHni3MX72Hwmv9pW9C1YHf2g9A,1679
+lockss/pybasic/cliutil.py,sha256=UK-Z82LWW4t0aJqcqT79E3t6806q0pKREW_Lm_BEdxs,8034
+lockss/pybasic/errorutil.py,sha256=OJqRGOjzKK8_OTJCq77u0_XZ5ti2BoVidk5jSTMB6xg,1882
+lockss/pybasic/fileutil.py,sha256=O_EcxobrHPLeD7lAlvtYOkd0R2NOIvpGK6mZOZTxyG4,2856
+lockss_pybasic-0.1.0.dev14.dist-info/LICENSE,sha256=O9ONND4uDxY_jucI4jZDf2liAk05ScEJaYu-Al7EOdQ,1506
+lockss_pybasic-0.1.0.dev14.dist-info/METADATA,sha256=JjYlda28TysulP8Mu-rAAIvKqDpjqEtWaNw7yYyppJs,696
+lockss_pybasic-0.1.0.dev14.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+lockss_pybasic-0.1.0.dev14.dist-info/RECORD,,
