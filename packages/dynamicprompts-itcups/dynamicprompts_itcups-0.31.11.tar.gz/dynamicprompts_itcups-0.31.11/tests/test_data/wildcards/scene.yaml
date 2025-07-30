@@ -1,0 +1,179 @@
+lightning:
+  - warm_lighting
+  - cold_lighting
+  - multiple_lighting_sources
+  - darklight
+  - dark
+  - dim_lighting
+
+genres:
+  fantasy:
+    - high_fantasy
+    - dark_fantasy
+    - urban_fantasy
+    - mythological
+    - fairy_tale
+    - sword & sorcery
+    - low_magic
+    - heroic_fantasy
+    - magical
+    - fantasy_post-apocalyptic
+  historical:
+    - medieval
+    - dark_ages
+    - feudal
+    - crusades
+    - viking_age
+    - renaissance
+    - monastic
+    - merchant_cities
+    - peasant_life
+    - samurai_era
+    - colonial
+    - bronze_age
+    - industrial_revolution
+    - golden_age_of_piracy
+  sci-fi:
+    - cyberpunk
+    - sci-fi
+    - futuristic
+    - space
+    - lunar
+    - martian
+    - alien_world
+    - mythic_sci-fi
+    - retrofuture
+  punk_genres:
+    - steampunk
+    - dieselpunk
+    - atompunk
+    - nanopunk
+    - biopunk
+    - clockpunk
+    - teslapunk
+    - cyber_victorian
+    - solarpunk
+  apocalyptic:
+    - post-apocalyptic
+    - apocalyptic
+  dystopian/utopian:
+    - dystopian
+    - utopian
+    - hopepunk
+  horror:
+    - spooky
+  western:
+    - western
+    - space_western
+    - horror-western
+  noir:
+    - noir
+    - steampunk_noir
+  surreal:
+    - surreal
+    - dreamlike
+    - psychedelic
+    - whimsical
+    - liminal_spaces
+    - uncanny_valley
+  mood/themes:
+    - comedy
+    - tragic
+    - romantic
+    - mysterious
+    - festive
+    - tranquil
+    - chaotic
+  superhero:
+    - superhero
+  settings:
+    - industrial
+    - military
+    - underwater
+    - nature
+    - urban
+    - rural
+    - subterranean
+    - aerial
+    - aquatic
+    - desert
+    - arctic
+    - tropical
+    - temperate
+    - volcanic
+  other:
+    - cyber-medieval
+    - road_trip
+    - slice_of_life
+    - urban_crime
+    - political_thriller
+    - cybercrime
+    - spy_thriller
+    - magic_industrial_revolution
+    - retro
+styles:
+  - gothic
+  - baroque
+  - minimalist
+  - abstract
+  - photorealistic
+  - cartoonish
+  - anime
+  - pixel_art
+  - low_poly
+  - hand-drawn
+  - oil_painting
+  - watercolor
+  - sketch
+  - pencil_drawing
+  - charcoal
+  - pastel
+  - digital_art
+  - 3d_render
+  - matte_painting
+  - concept_art
+  - storybook
+  - comic_book
+  - graphic_novel
+  - film_noir
+  - black_and_white
+  - sepia_tone
+  - art_deco
+  - bauhaus
+  - impressionist
+color_atmosphere:
+  - vibrant_colors
+  - muted_colors
+  - pastel_colors
+  - neon
+  - fluorescent
+  - gloomy
+  - bright
+  - dark
+  - light
+  - shadowy
+  - ethereal
+  - otherworldly
+  - anachronistic
+  - earthy_natural_tones
+  - metallic_shine
+  - rich_jewel_tones
+  - minimalist_white
+  - warm_colors
+  - cool_colors
+  - neutral_colors
+  - sepia
+  - monochrome
+  - high_contrast
+  - desaturated
+  
+time_of_day:
+ - sunrise
+ - morning
+ - afternoon
+ - day
+ - noon
+ - dusk
+ - dawn
+ - evening
+ 

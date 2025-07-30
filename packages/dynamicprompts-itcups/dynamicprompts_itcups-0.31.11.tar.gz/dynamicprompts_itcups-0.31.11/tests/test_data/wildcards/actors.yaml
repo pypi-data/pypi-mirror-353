@@ -1,0 +1,135 @@
+# actors:
+#   children_weighted:
+#     - "{
+#         3::toddler
+#         |2::child
+#         |1::teen
+#       }"
+
+#   children:
+#     - toddler
+#     - child
+#     - teen
+#   gender:
+#     - futanari
+#     - shemale
+#     - newhalf
+#     - boy
+#     - girl
+
+#   gender_multiple:
+#     - boys
+#     - girls
+
+
+#     legs_together,  spread_legs
+#   legs_over_head 
+#   crossed_legs
+#   legs_behind_head
+#   bend_knees
+#   knees_to_chest
+#   knees_together_feet_apart
+#   knees_apart_feet_together
+#   leg_hold
+#   crossed_ankles
+#   leg_lift
+#   split
+#   knees_up
+#   pigeon-toed
+#   <lora:legdangle:0.2>, dangling_legs, leg_dangle}, {toes_up| toes
+#   wiggling_toes
+#   toe_scrunch, curled_toes
+#   dorsiflexion
+#   plantar_flexion}
+
+#   hands_position:
+#       hands_in_the_air
+#       hands_above_head
+#       hands_reaching_towards_viewer
+#       outstretched_arms
+#       outstretched_arm
+#       hands_up
+#       dangling_arms
+#       spread_arms| arm_at_side
+#       arms_at_sides
+#       reaching
+#       shrugging}, {curled_fingers
+#       spread_fingers
+#       hand_piece_sign
+#       holding_condom
+#       holding_sextoy
+#       holding_smartphone
+#       holding_gamepad
+#       holding_underwear
+#       hands_on_breasts
+#       hands_on_feet
+#       hands_spreading_anus, spread_anus
+#       hands_on_own_hips
+#       hands_on_own_face
+#       hands_on_own_chest
+#       hands_on_own_knees 
+#       hands_on_own_cheeks
+#       hands_on_own_crotch 
+#       hands_on_own_shoulders
+#       hands_on_own_thighs 
+#       belly_grab
+#       holding_hands
+#       hands_behind_back},
+
+#   position:
+#   - stuck
+#   - stuck_in_the_wall
+#   - holding_object
+#   - leaning_against
+#   - sitting_on
+#   - lying_down
+#   - reaching_out
+#   - dynamic_pose
+#   - static_pose
+
+#     - on_back
+#     - on_side
+#     - standing
+#     - leaning_forward, leaning_to_the_side
+#     - On_stomach
+#   person:
+#     - female_domination
+#     - dominatrix
+#     - struggling
+#     - eager
+#     - submissive
+#     - trance
+#     - fetal_position
+#     - upright_straddle
+#     - thigh_straddling
+#     - all_fours
+#     - bowlegged_pose
+#     - chest_stand
+#     - chest_stand_handstand
+#     - triplefold
+#     - ruppelbend
+#     - frontbend 
+#     - high_kick
+#     - pretzel_pose
+#     - scorpion_pose
+#     - standing_split
+#     - sitting_split| oversplit
+#     - quadfold
+#     - squatting
+#     - upside-down
+#     - headstand
+#     - handstand
+#     - arched_back
+#     - bent_back
+#     - bent_over
+#     - leaning_back
+#     - leaning_forward
+#     - slouching
+#     - sway_back
+#     - twisted_torso
+#     - folded
+#     - chained
+#   clothes:
+#     - nude
+#     - partialy_clothed
+#     - clothed

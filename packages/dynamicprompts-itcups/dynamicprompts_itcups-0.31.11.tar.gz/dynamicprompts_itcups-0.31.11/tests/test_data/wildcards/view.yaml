@@ -1,0 +1,97 @@
+view:
+  camera_postion:
+    - view_from_above
+    - view_from_below
+    - view_from_from_side
+    - close_up_view
+    - pov
+
+  subject_count:
+    - solo
+    - duo
+    - trio
+    - group
+    - multiple_people
+
+  perspective_focus:
+    - looking_at_viewer
+    - looking_away
+    - looking_up
+    - looking_down
+    - profile_view
+    - three_quarter_view
+
+  frame_coverage:
+    - upper_body
+    - lower_body
+    - head_only
+    - bust
+    - full_body
+
+  camera_body_focus:
+    - legs_focus
+    - feet_focus
+    - thigh_focus
+    - ass_focus
+    - breasts_focus
+    - eye_focus
+    - hand_focus
+    - navel_focus
+    - pussy_focus
+    - sole_focus
+    - penis_focus
+
+  camera_angles:
+    - dramatic_angle
+    - low_angle
+    - high_angle
+    - eye_level
+    - bird_view
+    - worm_view
+    - front_view
+    - back_view
+    - side_view
+    - dutch_angle
+    - over_the_shoulder
+    - from_above
+    - from_below
+    - tilted_frame
+    - wide_shot
+    - close_up
+    - extreme_close_up
+    - medium_shot
+    - long_shot
+    - aerial_view
+    - fisheye_lens
+
+  body_camera_angles:
+    - "{
+        dramatic_angle
+        | low_angle
+        | high_angle
+        | 0.2::worm_view
+        | back_view
+        | side_view
+        | over_the_shoulder
+        | from_above
+        | from_below
+        | from_behind
+        | front_view
+        | under_shot
+        | cowboy_shot
+        | 0.2::close_up
+        | 0.1::extreme_close_up
+        | pov
+      }"
+
+  character_focus:
+    - solo_focus
+    - duo_focus
+    - group_focus
+
+  unordered:
+    - spread_legs
+    - clothes_lift
+    - clothes_pull
+    - pantyshot
+    - upskirt
