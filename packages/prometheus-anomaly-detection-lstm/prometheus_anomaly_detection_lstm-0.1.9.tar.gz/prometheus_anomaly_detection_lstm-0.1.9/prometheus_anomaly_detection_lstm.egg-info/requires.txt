@@ -1,0 +1,9 @@
+requests
+pandas
+pyarrow
+pyyaml
+scikit-learn
+joblib
+tensorflow
+matplotlib
+prometheus-client
