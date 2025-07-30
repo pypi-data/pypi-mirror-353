@@ -1,0 +1,10 @@
+.aider*
+.env
+.*.swp
+AGENTS.md
+CLAUDE.md
+CONVENTIONS.md
+__pycache__/
+bugs/
+build/
+dist/
