@@ -1,0 +1,2 @@
+[console_scripts]
+serial-midi-bridge = serial_midi_bridge.serial_midi_bridge:main
