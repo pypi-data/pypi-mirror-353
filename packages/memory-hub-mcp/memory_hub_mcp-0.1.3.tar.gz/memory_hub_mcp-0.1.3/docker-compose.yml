@@ -1,0 +1,77 @@
+
+
+services:
+  # Qdrant vector database
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: memory-hub-qdrant
+    ports:
+      - "6333:6333"      # HTTP API
+      - "6334:6334"      # gRPC API (optional)
+    volumes:
+      - qdrant_storage:/qdrant/storage
+      - ./qdrant_config:/qdrant/config
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/6333' || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Memory Hub FastAPI application
+  memory-hub:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: memory-hub-api
+    ports:
+      - "8000:8000"      # FastAPI + MCP endpoint
+    volumes:
+      # Development: Mount source code for hot reloading
+      - ./:/app:rw
+      # Persist assets and logs
+      - ./assets:/app/assets
+    environment:
+      # Qdrant connection (internal Docker network)
+      - QDRANT_URL=http://qdrant:6333
+      
+      # LM Studio connection (host machine)
+      # Use host.docker.internal to reach host services from container
+      - LM_STUDIO_BASE_URL=http://host.docker.internal:1234/v1
+      
+      # Performance optimizations (from config.py)
+      - ENABLE_QUANTIZATION=true
+      - ENABLE_TENANT_OPTIMIZATION=true
+      - MIN_SCORE_THRESHOLD=0.60
+      - ENABLE_GEMMA_SUMMARIZATION=true
+      
+      # Development settings
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    # Development: Override for hot reloading
+    # Uncomment the next 2 lines for development mode
+    # command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    # user: "1000:1000"  # Use your host user ID to avoid permission issues
+
+volumes:
+  # Persistent storage for Qdrant data
+  qdrant_storage:
+    driver: local
+
+networks:
+  default:
+    name: memory-hub-network 
