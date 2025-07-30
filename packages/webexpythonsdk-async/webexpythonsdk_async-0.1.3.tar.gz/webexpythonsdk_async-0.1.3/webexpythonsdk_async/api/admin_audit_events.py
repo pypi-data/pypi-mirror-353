@@ -1,0 +1,105 @@
+from webexpythonsdk_async.generator_containers import generator_container
+from webexpythonsdk_async.restsession import AsyncRestSession
+from webexpythonsdk_async.utils import check_type, dict_from_items_with_values
+
+
+API_ENDPOINT = "adminAudit/events"
+OBJECT_TYPE = "admin_audit_event"
+
+
+class AdminAuditEventsAPI:
+    """Admin Audit Events API.
+
+    Wraps the Webex Admin Audit Events API and exposes the API as native
+    Python methods that return native Python objects.
+
+    """
+
+    def __init__(self, session, object_factory):
+        """Init a new AdminAuditEventsAPI object with the provided AsyncRestSession.
+
+        Args:
+            session(AsyncRestSession): The RESTful session object to be used for
+                API calls to the Webex service.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+
+        """
+        check_type(session, AsyncRestSession)
+
+        self._session = session
+        self._object_factory = object_factory
+
+    # @generator_container
+    async def list(
+        self,
+        orgId: str,
+        _from: str,
+        to: str,
+        actorId=None,
+        max=100,
+        offset=0,
+        **request_parameters,
+    ):
+        """List Organizations.
+
+        This method supports Webex's implementation of RFC5988 Web
+        Linking to provide pagination support.  It returns a generator
+        container that incrementally yields all audit events returned by the
+        query.  The generator will automatically request additional 'pages' of
+        responses from Webex as needed until all responses have been returned.
+        The container makes the generator safe for reuse.  A new API call will
+        be made, using the same parameters that were specified when the
+        generator was created, every time a new iterator is requested from the
+        container.
+
+        Args:
+            orgId(str): List events in this organization, by ID.
+            _from(str): List events which occurred after a specific
+                date and time.
+            to(str): List events which occurred before a specific date
+                and time.
+            actorId(str): List events performed by this person, by ID.
+            max(int): Limit the maximum number of events in the response. The
+                maximum value is 200.
+            offset(int): Offset from the first result that you want to fetch.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            GeneratorContainer: A GeneratorContainer which, when iterated,
+            yields the organizations returned by the Webex query.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            ApiError: If the Webex cloud returns an error.
+        """
+        check_type(orgId, str)
+        check_type(_from, str)
+        check_type(to, str)
+        check_type(actorId, str, optional=True)
+        check_type(max, int)
+        check_type(offset, int)
+
+        params = dict_from_items_with_values(
+            request_parameters,
+            orgId=orgId,
+            _from=_from,
+            to=to,
+            actorId=actorId,
+            max=max,
+            offset=offset,
+        )
+
+        if _from:
+            params["from"] = params.pop("_from")
+
+        # API request - get items
+        # items = await self._session.get_items(API_ENDPOINT, params=params)
+
+        # # Yield AdminAuditEvent objects created from the returned JSON objects
+        # for item in items:
+        #     yield self._object_factory(OBJECT_TYPE, item)
+        async for item in self._session.get_items(API_ENDPOINT, params=params):
+            yield self._object_factory(OBJECT_TYPE, item)
