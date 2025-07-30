@@ -1,0 +1,222 @@
+Metadata-Version: 2.3
+Name: redoc
+Version: 0.1.7
+Summary: Multi-Level Docuemtn converter from pdf to xml or html and json , from json+html to xml or pdf or doc or epub, with OCR and Generator powered by Ollama Mistral:7b
+License: Apache-2.0
+Keywords: ai,architecture,llm,ollama,solution-generator,mistral
+Author: Tom Sapletta
+Author-email: info@softreck.dev
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: System :: Systems Administration
+Provides-Extra: cli
+Provides-Extra: cloud
+Provides-Extra: dev
+Provides-Extra: export
+Provides-Extra: server
+Provides-Extra: visualization
+Requires-Dist: click (>=8.1.7,<9.0.0) ; extra == "cli"
+Requires-Dist: dataclasses-json (>=0.6.3,<0.7.0)
+Requires-Dist: fastapi (>=0.104.0,<0.105.0) ; extra == "server"
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0) ; extra == "export"
+Requires-Dist: mkdocs-material-extensions (>=1.3.1,<2.0.0)
+Requires-Dist: mkdocs-material[imaging] (>=9.6.14,<10.0.0) ; extra == "dev"
+Requires-Dist: pathlib (>=1.0.1,<2.0.0)
+Requires-Dist: pydantic (>=2.5.0,<3.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0) ; extra == "cli"
+Requires-Dist: python-multipart (>=0.0.6,<0.0.7) ; extra == "cli"
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0) ; extra == "cli"
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: rich (>=13.7.0,<14.0.0) ; extra == "cli"
+Requires-Dist: tabulate (>=0.9.0,<0.10.0) ; extra == "cli"
+Requires-Dist: typing-extensions (>=4.8.0,<5.0.0)
+Requires-Dist: uvicorn (>=0.24.0,<0.25.0) ; extra == "server"
+Project-URL: Bug Tracker, https://github.com/text2doc/redoc/issues
+Project-URL: Changelog, https://github.com/text2doc/redoc/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://text2doc.github.io/redoc
+Project-URL: Discussions, https://github.com/text2doc/redoc/discussions
+Project-URL: Homepage, https://github.com/text2doc/redoc
+Project-URL: Repository, https://github.com/text2doc/redoc
+Description-Content-Type: text/markdown
+
+# Redoc - Universal Document Converter
+
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+Redoc is a powerful, modular document conversion framework that enables seamless transformation between various document formats including PDF, HTML, XML, JSON, DOCX, and EPUB. It features OCR capabilities and AI-powered content generation using Ollama Mistral:7b.
+
+## 🌟 Features
+
+- **Multi-format Support**: Convert between PDF, HTML, XML, JSON, DOCX, and EPUB
+- **Template-based Processing**: Use JSON+HTML templates for dynamic document generation
+- **OCR Integration**: Extract text from scanned documents and images
+- **Modular Architecture**: Easily extendable with custom converters and processors
+- **AI-Powered**: Leverage Ollama Mistral:7b for intelligent content generation
+- **Batch Processing**: Process multiple documents efficiently
+- **CLI & API**: Command-line interface and Python API for easy integration
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Install with pip
+pip install redoc
+
+# Or install from source
+git clone https://github.com/text2doc/redoc.git
+cd redoc
+pip install -e .
+```
+
+### Basic Usage
+
+```python
+from redoc import Redoc
+
+# Initialize the converter
+converter = Redoc()
+
+# Convert PDF to JSON
+result = converter.convert('document.pdf', 'json')
+
+# Convert HTML+JSON template to PDF
+template = {
+    "template": "invoice.html",
+    "data": {
+        "invoice_number": "INV-2023-001",
+        "date": "2023-11-15",
+        "total": "$1,200.00"
+    }
+}
+converter.convert(template, 'pdf', output_file='invoice.pdf')
+```
+
+## 📚 Supported Conversions
+
+| From \ To | PDF | HTML | XML | JSON | DOCX | EPUB |
+|-----------|-----|------|-----|------|------|------|
+| PDF       | ❌  | ✅   | ✅  | ✅   | ✅   | ✅   |
+| HTML      | ✅  | ❌  | ✅  | ✅   | ✅   | ✅   |
+| XML       | ✅  | ✅   | ❌  | ✅   | ✅   | ✅   |
+| JSON      | ✅  | ✅   | ✅  | ❌   | ✅   | ✅   |
+| DOCX      | ✅  | ✅   | ✅  | ✅   | ❌   | ✅   |
+| EPUB      | ✅  | ✅   | ✅  | ✅   | ✅   | ❌   |
+
+## 🏗️ Project Structure
+
+```
+redoc/
+├── src/
+│   └── redoc/
+│       ├── __init__.py          # Package initialization
+│       ├── core.py             # Core conversion logic
+│       ├── converters/         # Format-specific converters
+│       │   ├── base.py         # Base converter class
+│       │   ├── pdf_converter.py
+│       │   ├── html_converter.py
+│       │   ├── xml_converter.py
+│       │   ├── json_converter.py
+│       │   ├── docx_converter.py
+│       │   └── epub_converter.py
+│       ├── ocr/                # OCR functionality
+│       ├── templates/          # Default templates
+│       └── utils/              # Utility functions
+├── tests/                      # Test suite
+├── examples/                   # Usage examples
+├── docs/                       # Documentation
+├── pyproject.toml              # Project configuration
+└── README.md                   # This file
+```
+
+## 🔧 Advanced Usage
+
+### Using Templates
+
+```python
+from redoc import Redoc
+
+converter = Redoc()
+
+# Convert JSON+HTML template to PDF
+converter.convert(
+    {
+        "template": "invoice.html",
+        "data": {
+            "invoice_number": "INV-2023-001",
+            "date": "2023-11-15",
+            "items": [
+                {"description": "Web Design", "quantity": 1, "price": 1200}
+            ],
+            "total": 1200
+        }
+    },
+    'pdf',
+    output_file='invoice.pdf'
+)
+```
+
+### OCR Processing
+
+```python
+from redoc import Redoc
+
+converter = Redoc()
+
+# Extract text from scanned PDF with OCR
+result = converter.ocr('scanned_document.pdf')
+print(result['text'])
+
+# Convert scanned document to searchable PDF
+converter.ocr('scanned_document.pdf', output_file='searchable.pdf')
+```
+
+### AI-Powered Content Generation
+
+```python
+from redoc import Redoc
+
+converter = Redoc()
+
+# Generate document using AI
+result = converter.generate(
+    "Create a professional invoice for web design services",
+    format='pdf',
+    style='professional',
+    output_file='ai_invoice.pdf'
+)
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to contribute to this project.
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+
+For any questions or suggestions, please contact [info@softreck.dev](mailto:info@softreck.dev).
+
+---
+
+<div align="center">
+  Made with ❤️ by Text2Doc Team
+</div>
+

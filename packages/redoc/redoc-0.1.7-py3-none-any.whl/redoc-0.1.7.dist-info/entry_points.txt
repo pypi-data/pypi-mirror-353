@@ -1,0 +1,4 @@
+[console_scripts]
+redoc=redoc.cli:cli
+redoc-shell=redoc.cli:shell
+
