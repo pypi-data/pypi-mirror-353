@@ -1,0 +1,12 @@
+PyRoGap/Form.py,sha256=jQctY0Vq8SZJJGbWIxJ2VtdFMe4aFGo6ImJW7ClWQuY,576
+PyRoGap/GapBot.py,sha256=PZmMxFr8rEiXfvVQf4J_K_DlETLzU8cR9g9ZKO2Y3Kk,8603
+PyRoGap/GetChatGap.py,sha256=FGD_NJwXNe_y5MuFhJqbBiygwBo_lcTB89dbDSuig1k,16246
+PyRoGap/InlineKeyboard.py,sha256=rY3vXta44nVIPaG28fkGVNws6doV8-2p09jDrxbgA2U,993
+PyRoGap/Message.py,sha256=pIbD_G7MfnW10YWIV7KiCjjix2WZSksRYWSNUIulkQk,2187
+PyRoGap/ReplyKeyboardMarkup.py,sha256=TRfsmWKJNY0GdZanPHPVCV6_ZxMs3vm8svW2q1DEYEs,819
+PyRoGap/__init__.py,sha256=HAZnnurDCC_VlO9R6EDZbvz5nh6V4Bg6ZKjhOgeCjCU,985
+pyrogap-1.0.0.dist-info/licenses/LICENSE,sha256=rITk2xHdyHdNawU35gWY02banBF2sGhCJE8IH8bia7I,7308
+pyrogap-1.0.0.dist-info/METADATA,sha256=NzJRUgIc0v1tizlXjxiBpNxEeMFMYLXuXgEE8m6zWrk,2090
+pyrogap-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyrogap-1.0.0.dist-info/top_level.txt,sha256=4H_EhfrDj5EbX2RLkPMilKrI1nx-jtgg0WRseQt3YXo,8
+pyrogap-1.0.0.dist-info/RECORD,,

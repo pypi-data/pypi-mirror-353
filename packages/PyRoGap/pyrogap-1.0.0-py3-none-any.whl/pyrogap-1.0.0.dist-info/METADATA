@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: PyRoGap
+Version: 1.0.0
+Summary: This library helps you in building bots on the Gap messenger. PyRoGap is one of the best bot development libraries for Gap, and with it, you can create various types of bots. 🐍✨
+Home-page: https://pyrogap.pythonanywhere.com/
+Author: MohammadReza
+Author-email: narnama.room@gmail.com
+Project-URL: مستندات کتابخانه 📚, https://pyrogap.pythonanywhere.com/
+Project-URL: صفحه من ❤️, https://apicode.pythonanywhere.com/
+Project-URL: مستندات ربات های گپ 📚, https://my.gap.im/doc/botplatform
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PyRoGap
+
+
+بسم الله الرحمن الرحیم
+
+📚 معرفی کتابخانه ساخت ربات در پیام‌رسان گپ
+کتابخانه‌ای ساده، قدرتمند و کاربرپسند برای ساخت ربات‌های هوشمند در پیام‌رسان گپ 🚀
+
+با این کتابخانه، توسعه‌دهندگان عزیز می‌تونن به راحتی و بدون دردسر، ربات‌های اختصاصی خودشون رو با امکانات متنوع و انعطاف‌پذیر بسازن و به گپ اضافه کنن.
+ساختار کتابخانه طوری طراحی شده که حتی اگر تازه‌کار باشی، بتونی خیلی سریع شروع کنی و اگر حرفه‌ای هستی، بتونی پروژه‌های پیچیده‌تر رو مدیریت کنی .
+
+https://my.gap.im/doc/botplatform
+
+نوشته شده با ❤️ توسط محمدرضا
