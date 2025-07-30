@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Other
+.DS_Store
+*.log
+tests/
+mcp-generate-number.egg-info/
+build/
+dist/
+temp_venv/ 
