@@ -1,0 +1,23 @@
+[project]
+name = "brick-mason-databricks"
+dynamic = [ "version", "readme", "dependencies", "requires-python" ]
+description = "Core functionality for the brick-mason API."
+authors = [{name="Rusty Swayne"}]
+
+[tool.poetry]
+version = "0.1.0"
+readme = ["README.md"]
+packages = [
+   { include = "brickmason" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyyaml = "^6.0.2"
+pyspark = { version = "*", optional = true }
+brick-mason-core = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
