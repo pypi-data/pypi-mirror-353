@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/documenter/__init__.py
+src/documenter/__main__.py
+src/documenter.egg-info/PKG-INFO
+src/documenter.egg-info/SOURCES.txt
+src/documenter.egg-info/dependency_links.txt
+src/documenter.egg-info/entry_points.txt
+src/documenter.egg-info/requires.txt
+src/documenter.egg-info/top_level.txt
