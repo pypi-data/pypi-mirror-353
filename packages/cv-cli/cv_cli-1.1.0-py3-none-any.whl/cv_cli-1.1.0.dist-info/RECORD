@@ -1,0 +1,13 @@
+cv_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cv_cli/cli.py,sha256=-uk1eKInJ3H5g8zUuTDBqsavgIgSsvVe2_JuI3nO-n0,5906
+cv_cli/constants.py,sha256=gIQQCMZRrMfQK6pbPZmPjGV7wa4Y7YAhc9vb7H3FguE,432
+cv_cli/git.py,sha256=IGoT6bWqzT47kxRm4NiBuqcdruKhppqYxcsUjVXePBs,2183
+cv_cli/io.py,sha256=fTYeOzYi7OBvpjQ6HYtOhF-VCRpgesqdDy0w8Cz9rSw,1947
+cv_cli/profiles.py,sha256=x_fsd81FtBVnELgx5zXCPkWg4yIkpU-zyztVLParZoU,1487
+cv_cli/render.py,sha256=S7Ep_GGnd5W3ylpDlRB-62giThAcm4l011Bitb5dGkY,2883
+cv_cli/templates.py,sha256=VuKbwv6leBlHBtAX57m1WGcpX4LejlT4P2haJyVYwC4,1692
+cv_cli-1.1.0.dist-info/METADATA,sha256=szYXwZGF4ZE9SXOsglRMRezqEx7ff4Z_GlhlGJw7qJs,3353
+cv_cli-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cv_cli-1.1.0.dist-info/entry_points.txt,sha256=ldqmTlN5MN8kdL8WRMNtWvSU6X37lkhlZWEZL475YDw,43
+cv_cli-1.1.0.dist-info/licenses/LICENSE,sha256=Fj9-Uq017Wv7uyRlQJx7QapHUydZYcn6G3Fe99w-r5M,1089
+cv_cli-1.1.0.dist-info/RECORD,,
