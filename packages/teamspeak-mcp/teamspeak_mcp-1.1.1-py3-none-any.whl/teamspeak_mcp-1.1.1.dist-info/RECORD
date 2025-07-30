@@ -1,0 +1,9 @@
+teamspeak_mcp/__init__.py,sha256=iPxV6MjvOBAuMhVyZyuy4tOeJfWYx92SXh0R6YB_tBQ,84
+teamspeak_mcp/__main__.py,sha256=0NAbqeur5_ktymopOgieTk2D0LLykaCL73JNiIoQo0s,204
+teamspeak_mcp/server.py,sha256=S7Nt0BqyyTwDh3VcBbdHuR8Hwp7e0KKongrF-RFrF-I,36093
+teamspeak_mcp-1.1.1.dist-info/licenses/LICENSE,sha256=5s_hF2dsJ30P7NrSGy-SaCSdBquwkPcknHzVJ4qUrZ0,1071
+teamspeak_mcp-1.1.1.dist-info/METADATA,sha256=uBfVecc_gXCBVy_CW1tQgpTiAG5SgyrjEZ9TwSmpb4I,13837
+teamspeak_mcp-1.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+teamspeak_mcp-1.1.1.dist-info/entry_points.txt,sha256=x5oEitAN6sBFBoRpZjnQx21ajfVH4SKC9OGkEWFAIfo,60
+teamspeak_mcp-1.1.1.dist-info/top_level.txt,sha256=3FZ8XeySgjyV-8Nymy66FW_o9ruRHQF3ex8jgPnDv2U,14
+teamspeak_mcp-1.1.1.dist-info/RECORD,,
