@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+function_timing_decorator/__init__.py
+function_timing_decorator/timer.py
+function_timing_decorator.egg-info/PKG-INFO
+function_timing_decorator.egg-info/SOURCES.txt
+function_timing_decorator.egg-info/dependency_links.txt
+function_timing_decorator.egg-info/requires.txt
+function_timing_decorator.egg-info/top_level.txt
+tests/test_timer.py

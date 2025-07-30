@@ -1,0 +1,21 @@
+[project]
+name = "function-timing-decorator"
+version = "0.1.1"
+description = "A professional-grade Python decorator to measure function execution time"
+authors = [
+    { name="Gurnoor Singh Saini", email="sainigurnoor511@gmail.com" }
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.7"
+dependencies = [
+    "rich>=13.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Sainigurnoor511/function-timing-decorator"
+"Repository" = "https://github.com/Sainigurnoor511/function-timing-decorator"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
