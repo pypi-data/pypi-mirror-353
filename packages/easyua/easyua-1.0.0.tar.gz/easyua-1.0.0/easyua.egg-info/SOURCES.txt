@@ -1,0 +1,5 @@
+setup.py
+easyua.egg-info/PKG-INFO
+easyua.egg-info/SOURCES.txt
+easyua.egg-info/dependency_links.txt
+easyua.egg-info/top_level.txt
