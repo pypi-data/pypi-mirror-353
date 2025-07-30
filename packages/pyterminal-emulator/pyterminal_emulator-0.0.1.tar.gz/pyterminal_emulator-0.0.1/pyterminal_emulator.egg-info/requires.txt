@@ -1,0 +1,14 @@
+requests
+pycurl
+os
+subprocess
+shutil
+stat
+platform
+shlex
+tarfile
+gzip
+shutil
+zipfile
+sys
+io

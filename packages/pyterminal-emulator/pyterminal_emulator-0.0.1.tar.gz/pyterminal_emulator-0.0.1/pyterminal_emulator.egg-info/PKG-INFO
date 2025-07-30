@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: pyterminal-emulator
+Version: 0.0.1
+Summary: A Linux Terminal Emulator development Package for various os
+Home-page: https://github.com/ap1311/
+Author: Aarav Shah
+Author-email: aaravprogrammers@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Topic :: System :: Shells
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: requests
+Requires-Dist: pycurl
+Requires-Dist: os
+Requires-Dist: subprocess
+Requires-Dist: shutil
+Requires-Dist: stat
+Requires-Dist: platform
+Requires-Dist: shlex
+Requires-Dist: tarfile
+Requires-Dist: gzip
+Requires-Dist: shutil
+Requires-Dist: zipfile
+Requires-Dist: sys
+Requires-Dist: io
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+hi hello this is pyterminal
