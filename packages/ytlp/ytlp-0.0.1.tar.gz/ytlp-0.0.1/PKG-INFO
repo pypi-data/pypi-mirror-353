@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: ytlp
+Version: 0.0.1
+Summary: YouTube Local Profile
+Author-email: Marc Beninca <git@marc.beninca.link>
+Maintainer-email: Marc Beninca <git@marc.beninca.link>
+License-File: license.md
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Requires-Dist: rwx
+Description-Content-Type: text/markdown
+
+# YouTube Local Profile

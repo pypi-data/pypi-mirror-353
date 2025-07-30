@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+authors = [
+    { name = "Marc Beninca", email = "git@marc.beninca.link" },
+]
+maintainers = [
+    { name = "Marc Beninca", email = "git@marc.beninca.link" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+]
+dependencies = ["rwx"]
+description = "YouTube Local Profile"
+dynamic = ["version"]
+keywords = []
+license-files = ["license.md"]
+name = "ytlp"
+readme = "readme.md"
+requires-python = ">= 3.11"
+
+[project.scripts]
+# command = "package.module:function"
+
+[project.urls]
+
+[tool.hatch.version]
+path = "ytlp/__init__.py"
+
+[tool.pydoclint]
+allow-init-docstring = true
+quiet = true
+skip-checking-short-docstrings = false
+style = "sphinx"
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+ignore = ["COM812", "D203", "D213", "ISC001"]
+select = ["ALL"]
