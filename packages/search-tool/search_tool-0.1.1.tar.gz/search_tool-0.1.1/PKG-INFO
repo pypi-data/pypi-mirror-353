@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: search-tool
+Version: 0.1.1
+Summary: Tool and library for searching the web and return results
+Author: Wensheng Wang
+Author-email: wenshengwang@gmail.com
+Requires-Python: >=3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: dev
+Requires-Dist: black (>=22.0.0) ; extra == "dev"
+Requires-Dist: flake8 (>=4.0.0) ; extra == "dev"
+Requires-Dist: mypy (>=0.950) ; extra == "dev"
+Requires-Dist: playwright (>=1.52.0,<2.0.0)
+Requires-Dist: pydantic (>=2.11.4,<3.0.0)
+Requires-Dist: pytest (>=7.0.0) ; extra == "dev"
+Project-URL: Homepage, https://github.com/wensheng/search-tool
+Project-URL: Repository, https://github.com/wensheng/search-tool.git
+Description-Content-Type: text/markdown
+
+# Search-Tool
+
+A simple Python package that provides tool for search.
+
+## Installation
+
+```bash
+pip install search-tool
+```
+
