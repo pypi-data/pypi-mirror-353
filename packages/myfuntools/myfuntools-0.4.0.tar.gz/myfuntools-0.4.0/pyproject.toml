@@ -1,0 +1,9 @@
+[project]
+name = "myfuntools"
+version = "0.4.0"
+dependencies = ["cffi","cryptography"] 
+
+
+[build-system]
+requires = ["setuptools", "wheel","cffi","cryptography"]
+build-backend = "setuptools.build_meta"
