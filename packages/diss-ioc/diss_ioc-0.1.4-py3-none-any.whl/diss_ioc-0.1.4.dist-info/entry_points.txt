@@ -1,0 +1,3 @@
+[console_scripts]
+diss-ioc = diss_ioc.ioc:main
+diss-view = diss_ioc.viewer:main
