@@ -1,0 +1,14 @@
+wgpu>=0.21.1
+requests
+numpy
+Pillow
+
+[dev]
+numpy
+pytest
+ruff
+imageio
+wheel
+setuptools
+twine
+glfw
