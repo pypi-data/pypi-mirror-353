@@ -1,0 +1,10 @@
+jquantstats/__init__.py,sha256=0jbOr3ct9pg8tyxhJoB_9eYcwi8tCRljEMfQXU4oy0k,1816
+jquantstats/_data.py,sha256=HuE4dXajWtFk4vnvMQi1FT-L_T8EriV8hoLdRtsXq7w,8163
+jquantstats/_plots.py,sha256=ZUshUTiCk8E2QIb0ShiHu1nAo3l_RJ0LPlH52uIv29Y,7377
+jquantstats/_reports.py,sha256=-85_nhBM73rJ1wQm-k3WJzGxSYPae_s5XxFlKiBhiJ8,1757
+jquantstats/_stats.py,sha256=Rm_79NS43LlkPiigA2CgFj2zG7lAZEe-Y1DTrjgP-w0,20335
+jquantstats/api.py,sha256=Q2QLE26ILR3ZXXPFYG61CVm0gKTDFZR4Oh9Vaw33Ymo,9462
+jquantstats-0.0.21.dist-info/METADATA,sha256=7dPihi155EtW0GUU1Hq9D1FClS3_JhIdMaOmXR5x2I0,4968
+jquantstats-0.0.21.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jquantstats-0.0.21.dist-info/licenses/LICENSE.txt,sha256=CeipvOyAZxBGUsFoaFqwkx54aPnIKEtm9a5u2uXxEws,10142
+jquantstats-0.0.21.dist-info/RECORD,,
