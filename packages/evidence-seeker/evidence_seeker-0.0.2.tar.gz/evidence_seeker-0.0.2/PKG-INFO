@@ -1,0 +1,556 @@
+Metadata-Version: 2.4
+Name: evidence-seeker
+Version: 0.0.2
+Summary: EvidenceSeeker Boilerplate
+Project-URL: Documentation, https://github.com/debatelab/evidence-seeker#readme
+Project-URL: Issues, https://github.com/debatelab/evidence-seeker/issues
+Project-URL: Source, https://github.com/debatelab/evidence-seeker
+Author-email: Gregor Betz <3662782+ggbetz@users.noreply.github.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: <3.13,>=3.8
+Requires-Dist: aiohappyeyeballs==2.4.3
+Requires-Dist: aiohttp==3.11.7
+Requires-Dist: aioitertools==0.12.0
+Requires-Dist: aiosignal==1.3.1
+Requires-Dist: aiosqlite==0.20.0
+Requires-Dist: alembic==1.14.0
+Requires-Dist: annotated-types==0.7.0
+Requires-Dist: anyio==4.6.2.post1
+Requires-Dist: argon2-cffi-bindings==21.2.0
+Requires-Dist: argon2-cffi==23.1.0
+Requires-Dist: arize-phoenix-evals==0.17.5
+Requires-Dist: arize-phoenix-otel==0.6.1
+Requires-Dist: arize-phoenix==6.0.0
+Requires-Dist: arrow==1.3.0
+Requires-Dist: asttokens==3.0.0
+Requires-Dist: async-lru==2.0.4
+Requires-Dist: async-timeout==5.0.1
+Requires-Dist: attrs==24.2.0
+Requires-Dist: authlib==1.3.2
+Requires-Dist: babel==2.16.0
+Requires-Dist: beautifulsoup4==4.12.3
+Requires-Dist: bleach==6.2.0
+Requires-Dist: build==1.2.2.post1
+Requires-Dist: cachetools==5.5.0
+Requires-Dist: certifi==2024.8.30
+Requires-Dist: cffi==1.17.1
+Requires-Dist: charset-normalizer==3.4.0
+Requires-Dist: click==8.1.7
+Requires-Dist: comm==0.2.2
+Requires-Dist: cryptography==44.0.0
+Requires-Dist: dataclasses-json==0.6.7
+Requires-Dist: debugpy==1.8.9
+Requires-Dist: decorator==5.1.1
+Requires-Dist: defusedxml==0.7.1
+Requires-Dist: deprecated==1.2.15
+Requires-Dist: dirtyjson==1.0.8
+Requires-Dist: distro==1.9.0
+Requires-Dist: exceptiongroup==1.2.2
+Requires-Dist: executing==2.1.0
+Requires-Dist: fastapi==0.115.5
+Requires-Dist: fastjsonschema==2.21.1
+Requires-Dist: filelock==3.16.1
+Requires-Dist: filetype==1.2.0
+Requires-Dist: fqdn==1.5.1
+Requires-Dist: frozenlist==1.5.0
+Requires-Dist: fsspec==2024.10.0
+Requires-Dist: googleapis-common-protos==1.66.0
+Requires-Dist: graphql-core==3.2.5
+Requires-Dist: greenlet==3.1.1
+Requires-Dist: grpc-interceptor==0.15.4
+Requires-Dist: grpcio==1.68.1
+Requires-Dist: h11==0.14.0
+Requires-Dist: httpcore==1.0.7
+Requires-Dist: httpx==0.27.2
+Requires-Dist: huggingface-hub==0.26.3
+Requires-Dist: idna==3.10
+Requires-Dist: importlib-metadata==8.5.0
+Requires-Dist: iniconfig==2.0.0
+Requires-Dist: instructorembedding==1.0.1
+Requires-Dist: ipykernel==6.29.5
+Requires-Dist: ipython==8.30.0
+Requires-Dist: ipywidgets==8.1.5
+Requires-Dist: isoduration==20.11.0
+Requires-Dist: jedi==0.19.2
+Requires-Dist: jinja2==3.1.4
+Requires-Dist: jiter==0.7.1
+Requires-Dist: joblib==1.4.2
+Requires-Dist: json5==0.10.0
+Requires-Dist: jsonpickle==4.0.0
+Requires-Dist: jsonpointer==3.0.0
+Requires-Dist: jsonschema-specifications==2024.10.1
+Requires-Dist: jsonschema==4.23.0
+Requires-Dist: jupyter-client==8.6.3
+Requires-Dist: jupyter-console==6.6.3
+Requires-Dist: jupyter-core==5.7.2
+Requires-Dist: jupyter-events==0.10.0
+Requires-Dist: jupyter-lsp==2.2.5
+Requires-Dist: jupyter-server-terminals==0.5.3
+Requires-Dist: jupyter-server==2.14.2
+Requires-Dist: jupyter==1.1.1
+Requires-Dist: jupyterlab-pygments==0.3.0
+Requires-Dist: jupyterlab-server==2.27.3
+Requires-Dist: jupyterlab-widgets==3.0.13
+Requires-Dist: jupyterlab==4.2.6
+Requires-Dist: llama-cloud==0.1.5
+Requires-Dist: llama-index-agent-openai==0.4.0
+Requires-Dist: llama-index-callbacks-arize-phoenix==0.3.0
+Requires-Dist: llama-index-cli==0.4.0
+Requires-Dist: llama-index-core==0.12.1
+Requires-Dist: llama-index-embeddings-huggingface==0.5.2
+Requires-Dist: llama-index-embeddings-instructor==0.3.0
+Requires-Dist: llama-index-embeddings-ollama==0.6.0
+Requires-Dist: llama-index-embeddings-openai==0.3.0
+Requires-Dist: llama-index-embeddings-text-embeddings-inference==0.3.0
+Requires-Dist: llama-index-indices-managed-llama-cloud==0.6.2
+Requires-Dist: llama-index-legacy==0.9.48.post4
+Requires-Dist: llama-index-llms-openai-like==0.3.0
+Requires-Dist: llama-index-llms-openai==0.3.2
+Requires-Dist: llama-index-multi-modal-llms-openai==0.3.0
+Requires-Dist: llama-index-program-openai==0.3.1
+Requires-Dist: llama-index-question-gen-openai==0.3.0
+Requires-Dist: llama-index-readers-file==0.4.0
+Requires-Dist: llama-index-readers-llama-parse==0.4.0
+Requires-Dist: llama-index-utils-huggingface==0.3.0
+Requires-Dist: llama-index-utils-workflow==0.3.0
+Requires-Dist: llama-index==0.12.1
+Requires-Dist: llama-parse==0.5.15
+Requires-Dist: loguru==0.7.3
+Requires-Dist: mako==1.3.6
+Requires-Dist: markupsafe==3.0.2
+Requires-Dist: marshmallow==3.23.1
+Requires-Dist: matplotlib-inline==0.1.7
+Requires-Dist: mistune==3.0.2
+Requires-Dist: mpmath==1.3.0
+Requires-Dist: multidict==6.1.0
+Requires-Dist: mypy-extensions==1.0.0
+Requires-Dist: nbclient==0.10.1
+Requires-Dist: nbconvert==7.16.4
+Requires-Dist: nbformat==5.10.4
+Requires-Dist: nest-asyncio==1.6.0
+Requires-Dist: networkx==3.4.2
+Requires-Dist: nltk==3.9.1
+Requires-Dist: notebook-shim==0.2.4
+Requires-Dist: notebook==7.2.2
+Requires-Dist: numpy==2.1.3
+Requires-Dist: nvidia-cublas-cu12==12.4.5.8
+Requires-Dist: nvidia-cuda-cupti-cu12==12.4.127
+Requires-Dist: nvidia-cuda-nvrtc-cu12==12.4.127
+Requires-Dist: nvidia-cuda-runtime-cu12==12.4.127
+Requires-Dist: nvidia-cudnn-cu12==9.1.0.70
+Requires-Dist: nvidia-cufft-cu12==11.2.1.3
+Requires-Dist: nvidia-curand-cu12==10.3.5.147
+Requires-Dist: nvidia-cusolver-cu12==11.6.1.9
+Requires-Dist: nvidia-cusparse-cu12==12.3.1.170
+Requires-Dist: nvidia-cusparselt-cu12==0.6.2
+Requires-Dist: nvidia-nccl-cu12==2.21.5
+Requires-Dist: nvidia-nvjitlink-cu12==12.4.127
+Requires-Dist: nvidia-nvtx-cu12==12.4.127
+Requires-Dist: ollama==0.4.7
+Requires-Dist: openai==1.55.1
+Requires-Dist: openinference-instrumentation-llama-index==3.0.4
+Requires-Dist: openinference-instrumentation==0.1.19
+Requires-Dist: openinference-semantic-conventions==0.1.12
+Requires-Dist: opentelemetry-api==1.28.2
+Requires-Dist: opentelemetry-exporter-otlp-proto-common==1.28.2
+Requires-Dist: opentelemetry-exporter-otlp-proto-grpc==1.28.2
+Requires-Dist: opentelemetry-exporter-otlp-proto-http==1.28.2
+Requires-Dist: opentelemetry-exporter-otlp==1.28.2
+Requires-Dist: opentelemetry-instrumentation==0.49b2
+Requires-Dist: opentelemetry-proto==1.28.2
+Requires-Dist: opentelemetry-sdk==1.28.2
+Requires-Dist: opentelemetry-semantic-conventions==0.49b2
+Requires-Dist: overrides==7.7.0
+Requires-Dist: packaging==24.2
+Requires-Dist: pandas==2.2.3
+Requires-Dist: pandocfilters==1.5.1
+Requires-Dist: parso==0.8.4
+Requires-Dist: pexpect==4.9.0
+Requires-Dist: pillow==11.0.0
+Requires-Dist: pip-tools==7.4.1
+Requires-Dist: platformdirs==4.3.6
+Requires-Dist: pluggy==1.5.0
+Requires-Dist: prometheus-client==0.21.0
+Requires-Dist: prompt-toolkit==3.0.48
+Requires-Dist: propcache==0.2.0
+Requires-Dist: protobuf==5.29.0
+Requires-Dist: psutil==6.1.0
+Requires-Dist: ptyprocess==0.7.0
+Requires-Dist: pure-eval==0.2.3
+Requires-Dist: pyarrow==18.1.0
+Requires-Dist: pycparser==2.22
+Requires-Dist: pydantic-core==2.23.4
+Requires-Dist: pydantic==2.9.2
+Requires-Dist: pygments==2.18.0
+Requires-Dist: pypdf==5.1.0
+Requires-Dist: pyproject-hooks==1.2.0
+Requires-Dist: pytest==8.3.3
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: python-json-logger==2.0.7
+Requires-Dist: python-multipart==0.0.19
+Requires-Dist: pytz==2024.2
+Requires-Dist: pyvis==0.3.2
+Requires-Dist: pyyaml==6.0.2
+Requires-Dist: pyzmq==26.2.0
+Requires-Dist: referencing==0.35.1
+Requires-Dist: regex==2024.11.6
+Requires-Dist: requests==2.32.3
+Requires-Dist: rfc3339-validator==0.1.4
+Requires-Dist: rfc3986-validator==0.1.1
+Requires-Dist: rpds-py==0.22.0
+Requires-Dist: safetensors==0.4.5
+Requires-Dist: scikit-learn==1.5.2
+Requires-Dist: scipy==1.14.1
+Requires-Dist: send2trash==1.8.3
+Requires-Dist: sentence-transformers==2.7.0
+Requires-Dist: six==1.16.0
+Requires-Dist: sniffio==1.3.1
+Requires-Dist: soupsieve==2.6
+Requires-Dist: sqlalchemy==2.0.36
+Requires-Dist: sqlean-py==3.47.0
+Requires-Dist: stack-data==0.6.3
+Requires-Dist: starlette==0.41.3
+Requires-Dist: strawberry-graphql==0.243.1
+Requires-Dist: striprtf==0.0.26
+Requires-Dist: sympy==1.13.1
+Requires-Dist: tenacity==8.5.0
+Requires-Dist: terminado==0.18.1
+Requires-Dist: threadpoolctl==3.5.0
+Requires-Dist: tiktoken==0.8.0
+Requires-Dist: tinycss2==1.4.0
+Requires-Dist: tokenizers==0.20.3
+Requires-Dist: tomli==2.2.1
+Requires-Dist: torch==2.6.0
+Requires-Dist: tornado==6.4.2
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: traitlets==5.14.3
+Requires-Dist: transformers==4.46.3
+Requires-Dist: triton==3.2.0
+Requires-Dist: types-python-dateutil==2.9.0.20241003
+Requires-Dist: typing-extensions==4.12.2
+Requires-Dist: typing-inspect==0.9.0
+Requires-Dist: tzdata==2024.2
+Requires-Dist: uri-template==1.3.0
+Requires-Dist: urllib3==2.2.3
+Requires-Dist: uvicorn==0.32.1
+Requires-Dist: wcwidth==0.2.13
+Requires-Dist: webcolors==24.11.1
+Requires-Dist: webencodings==0.5.1
+Requires-Dist: websocket-client==1.8.0
+Requires-Dist: websockets==14.1
+Requires-Dist: wheel==0.45.1
+Requires-Dist: widgetsnbextension==4.0.13
+Requires-Dist: wrapt==1.16.0
+Requires-Dist: yarl==1.18.0
+Requires-Dist: zipp==3.21.0
+Description-Content-Type: text/markdown
+
+# EvidenceSeeker App Boilerplate <!-- omit in toc -->
+
+An RAG-based LLM workflow for disambiguating claims and fact-checking them relative to a given database. :female_detective:
+
+---
+
+## Table of Contents <!-- omit in toc -->
+- [About this repository](#about-this-repository)
+- [:rocket: Getting started](#rocket-getting-started)
+  - [Installment](#installment)
+  - [Setting up your EvidenceSeeker](#setting-up-your-evidenceseeker)
+- [:book: The EvidenceSeeker Workflow](#book-the-evidenceseeker-workflow)
+- [:wrench: Used third-party tools](#wrench-used-third-party-tools)
+- [:gear: License](#gear-license)
+
+---
+
+## About this repository
+
+This repository is part of **[KIdeKu](https://compphil2mmae.github.io/research/kideku/)**, a current research project at **Karlsruhe Institute of Technology**.
+
+KIdeKu is sponsored by the **Federal Ministry for Family Affairs, Senior Citizens, Woman and Youth ([BMFSFJ](https://www.bmfsfj.de/bmfsfj))**.
+
+The base features have been implemented as part of the event **[wahl.exe](https://www.wahlexe.de/en/)** in December 2024.
+
+[![BMFSFJ](https://www.eiz-rostock.de/wp-content/uploads/2018/11/BMFSFJ-gef%C3%B6rdert-vom.jpg)](https://www.bmfsfj.de/bmfsfj)
+
+## :rocket: Getting started
+
+### Installment
+
+1. Clone repository
+2. run `hatch shell` **or** `pip install -e </path/to/repo>`
+3. To install all dependencies, run `pip install -r </path/to/requirements.txt>`
+
+### Setting up your EvidenceSeeker
+
+The workflow consists of four steps:
+1. **[(Logico-semantic) Preprocessing](#1-logico-semantic-pre-processing-bookmark_tabs)**
+2. **[(Evidence) Retrieval](#2-evidence-retrieval-open_file_folder)**
+3. **[(Evidence) Confirmation Analysis](#3-evidential-confirmation-analysis-mag_right)**
+4. **[(Evidence) Aggregation](#4-evidence-aggregation-writing_hand)**
+
+For more information on the individual steps on a conceptual level, consider the section **[The EvidenceSeeker Workflow](#the-evidenceseeker-workflow)** in this README.
+
+The four steps of the workflow are reflected in the folder structure of the source code in `src/evidence-seeker/`.
+
+##### Configs <!-- omit in toc -->
+
+The specific workflow can be modified with the use of configs.
+
+For each of the four steps a config class is defined in the `config.py` file in the corresponding folders.
+
+The default values of the configs defined in the `config.py` files can be modified either by passing individual arguments to the constructor when constructing a config object, e.g.:
+
+```python
+claim_preprocessing_config = ClaimPreprocessingConfig(timeout=240, language = "EN")
+```
+
+For how to use predefined configs stored as YAML files, refer to the following section.
+
+##### Workflow execution <!-- omit in toc -->
+
+The execution of each workflow step is implemented in the classes defined in the `base.py` file in the corresponding folders.
+
+The execution of the workflow as a whole is implemented in `src/evidence_seeker/evidence_seeker.py`. An object of the class `EvidenceSeeker` is initialized either with a given set of config objects or the default configs:
+
+```python
+preprocessing_config = ClaimPreprocessingConfig(timeout=240)
+
+retrieval_config = RetrievalConfig(
+    index_persist_path="../TMP/APUZ/storage/index",
+)
+
+pipeline = EvidenceSeeker(preprocessing_config=preprocessing_config, retrieval_config=retrieval_config)
+```
+
+The EvidenceSeeker can also be initialized with configs stored in YAML files:
+
+```python
+pipeline = EvidenceSeeker(preprocessing_config="/path/to/preprocessing_config.yaml", retrieval_config=retrieval_config)
+```
+
+When called with a claim, the EvidenceSeeker object executes the workflow for that specific claim and returns the results as a list of dictionaries (in `src/evidence_seeker/datamodels.py`):
+
+```python
+example_input = "Climate change is the greatest threat to humanity."
+results = await pipeline(example_input)
+```
+
+The keys of the `dict` objects in the returned list correspond to the attributes of the `CheckedClaim` class defined in `src/evidence_seeker/datamodels.py`.
+
+For an in-depth example for the pipeline execution, refer to `notebooks/test_whole_pipeline_new.ipynb`.
+
+> [!TIP]
+> For more examples and insights into how the individual steps are executed, refer to the Jupyter notebooks in the folder `notebooks`.
+
+##### Models <!-- omit in toc -->
+
+The model to be used by a the **Preprocessing** and **Confirmation Analysis** can be specified with the `used_model_key` field in the corresponding config. The model key for the refers to a one of possibly many models defined in the `models` field of the config.
+
+E.g.:
+```python
+class ClaimPreprocessingConfig(pydantic.BaseModel):
+    #...
+    used_model_key: str = "model_2"
+    #...
+    models: Dict[str, Dict[str, Any]] = pydantic.Field(
+        default_factory=lambda: {
+            "model_1": {
+                #...
+            },
+            "model_2": {
+                "name": "Mistral-7B-Instruct-v0.2",
+                "description": "HF inference API",
+                "base_url": "https://api-inference.huggingface.co/v1/",
+                "model": "mistralai/Mistral-7B-Instruct-v0.2",
+                "api_key_name": "HF_TOKEN_EVIDENCE_SEEKER",
+                "backend_type": "openai",
+                "max_tokens": 1024,
+                "temperature": 0.2,
+            },
+            #...
+        }
+    )
+```
+
+The `api_key_name` field revers to the name of of an environment variable storing the API key for the model.
+
+Currently, the config for the **Retrieval** step can only contain one possible model. Again, the `api_key_name` refers to an environment variable. The keys `embed_base_url` and `embed_model_name` contain the relevant information for the model used for the embeddings.
+
+##### Databases <!-- omit in toc -->
+
+Setting up the database is also done with the configs. 
+
+The `DocumentRetriever` builds an index based on a locally stored database, using the embeddings model defined in the config.
+
+```python
+config = RetrievalConfig(
+    document_input_dir="../TMP/APUZ/corpus", #Path to your local folder containing the database files
+    index_persist_path="../TMP/APUZ/storage/index", #Storage path for saving index (Optional)
+)
+```
+
+Alternatively, use the key `document_input_files` for a list of paths to the input files given as strings.
+
+For a list of supported file types in the database, refer to the [LlamaIndex documentation](https://docs.llamaindex.ai/en/stable/module_guides/loading/simpledirectoryreader/).
+
+## :book: The EvidenceSeeker Workflow
+
+The following is an overview of the default workflow implemented by EvidenceSeeker and its individual steps:
+
+```mermaid
+graph LR;
+    IC[Input Claim] --> LSP(Logico-Semantic<br/>Pre-Processing);
+    LSP --> C1[Clarified<br/>ClaimPair 1];
+    LSP --> etc[...];
+    C1 --> ER(Retrieval of<br/>Relevant<br/>Documents);
+    ER --> ECA(Evidential<br/>Confirmation<br/>Analysis);
+    ECA --> EA(Evidence<br/>Aggregation);
+    EA --> Verbalization;
+    etc -----> Verbalization
+```
+
+#### 1. Logico-Semantic Pre-Processing :bookmark_tabs:  <!-- omit in toc -->
+
+The workflow starts with a given input claim. This claim first has to be disambiguated with 'logico-semantic pre-processing'. This step results in different interpretations of the original claims, so-called 'clarified claims', and their negations.
+
+```mermaid
+graph LR;
+    C[Input Claim] --> LSP1(LSP-1);
+    C --> LSP2(LSP-2);
+    C --> LSP3(LSP-3);
+    C --> LSP4(LSP-4);
+    LSP1 --> LSP5(LSP-5);
+    LSP2 --> LSP5;
+    LSP3 --> LSP5;
+    LSP4 --> LSP5;
+    LSP5 --> LSP6(LSP-6);
+    LSP6 --> CP1[Clarified<br/>ClaimPair 1];
+    LSP6 --> CP2[Clarified<br/>ClaimPair 2];
+    LSP6 --> etc[...];
+```
+To produce these clarified claims, the model is prompted to analyze and list (`LSP-5`) all normative (`LSP-1`), descriptive (`LSP-2`) and ascriptive (`LSP-3`) statements contained in the original claim.
+
+The model is then prompted to negate the clarified claims (`LSP-6`), resulting in pairs of clarified claims and their negations. 
+
+```yaml
+- name: LSP-1
+  description: |
+    Instruct the assistant to carry out free-text analysis of normative content.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    Before we proceed with retrieving evidence items, we carefully analyse the claim. Your task is to contribute to this preparatory analysis, as detailed below.
+    In particular, you should  
+    1. thoroughly discuss whether the claim contains or implies normative statements, such as value judgements, recommendations, or evaluations -- if so, try to identify them and render them in your own words;
+    2. watch out for ambiguity and vagueness during your discussion, making alternative interpretations explicit.
+- name: LSP-2
+  description: |
+    Instruct the assistant to carry out free-text analysis of factual content.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    Before we proceed with retrieving evidence items, we carefully analyse the claim. Your task is to contribute to this preparatory analysis, as detailed below.
+    In particular, you should  
+    1. thoroughly discuss whether the claim contains or implies factual or descriptive statements, which can be verified or falsified by empirical observation or scientific analysis and which may include, for example, descriptive reports, historical facts, or scientific claims -- if so, try to identify them and render them in your own words;
+    2. watch out for ambiguity and vagueness during your discussion, making alternative interpretations explicit.
+- name: LSP-3
+  description: |
+    Instruct the assistant to carry out free-text analysis of ascriptions.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    Before we proceed with retrieving evidence items, we carefully analyse the claim. Your task is to contribute to this preparatory analysis, as detailed below.
+    In particular, you should  
+    1. thoroughly discuss whether the claim contains ascriptions, that is, whether the claim ascribes a given statement to a person or organisation (e.g., as something the person has said, believes, acts on etc.) rather than plainly asserting that statement straightaway  -- if so, try to identify which statements are ascribed to whom exactly and in which ways;
+    2. watch out for ambiguity and vagueness during your discussion, making alternative interpretations explicit.
+- name: LSP-4
+  description: |
+    Instruct the assistant to carry out free-text analysis of uncertainty.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    Before we proceed with retrieving evidence items, we carefully analyse the claim. Your task is to contribute to this preparatory analysis, as detailed below.
+    In particular, you should  
+    1. thoroughly discuss the strength of the claim, that is, whether the claim unequivocally states a proposition as true (or false), or whether it's content is more nuanced, e.g. by including modal qualifiers, such as "might", "could", "probably", "possibly", "likely", "unlikely", "certainly", "maybe", etc. -- if so, try to describe the quality and stremgth of the claim as clearly as possible;
+    2. watch out for ambiguity and vagueness during your discussion, making alternative interpretations explicit.
+- name: LSP-5
+  description: |
+    Instruct the assistant to identify the normative content, the factual assertion, and the ascriptions contained in a claim.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    Building on our previous analysis, I want you to to identify the normative, the factual, and the ascriptive content of the claim. In particular, you should  
+    1. List all normative statements, such as value judgements, recommendations, or evaluations, contained in the claim;
+    2. List all factual or descriptive statements, which can be verified or falsified by empirical observation or scientific analysis, contained in the claim;
+    3. List all ascriptions, that is, statements ascribed to a person or organisation, contained in the claim.
+- name: LSP-6
+  description: |
+    Instruct assistant to negate the factual and ascriptive claims.
+  prompt: |
+    The following claim has been submitted for fact-checking.
+    <claim>{claim}</claim>
+    That claim contains the following factual and ascriptive statements:
+    <factual>{factual}</factual>
+    <ascriptive>{ascriptive}</ascriptive>
+    Your task is to provide the opposite of each of these statement in clear and unequivocal language. Do so by generating a list of statements that express these negations.
+```
+
+### 2. Evidence Retrieval :open_file_folder:<!-- omit in toc -->
+
+> [!NOTE]
+> By default, **only clarified claims containing ascriptive and descriptive statements** are considered in the remaining steps.
+
+For each clarified claim, [node sentence window/document retrieval](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/MetadataReplacementDemo/) is used to find relevant evidence items in a pre-defined database.
+
+### 3. Evidential Confirmation Analysis :mag_right:<!-- omit in toc -->
+
+We frame confirmation analysis as a rich textual entailment task. We assess the degree to which a single evidence item (retrieved in previous step):
+
+1. entails the claim, and
+2. entails the negation of the claim.
+
+This gives us a degree of confirmation of the claim by the evidence item, which ranges between -1 and 1.
+
+We do this for each evidence item retrieved and each claim.
+
+### 4. Evidence Aggregation :writing_hand: <!-- omit in toc -->
+
+For each clarified claim, we aggregate the results from the Evidental Confirmation Analysis
+
+```yaml
+{
+    "claim_id": "claim_id",  
+    "n_evidence": 823, // number of relevant evidence items found
+    "degree_of_confirmation": -0.21, // average degree of confirmation of the claim by the evidence items
+    "evidential_uncertainty": 0.32, // variance of degrees of confirmation
+}
+```
+
+and **verbalize** these results.
+
+## :wrench: Used third-party tools
+
+This project relies on the following libraries, amongst others:
+
+- **[LLamaIndex](https://docs.llamaindex.ai/en/stable/)** for the implementation of the workflow.
+- **[Pydantic](https://pydantic.dev/)** for modeling the configs and checked claims.
+- **[Phoenix](https://phoenix.arize.com/)** for testing the pipelines with the Jupyter Notebooks in `notebooks`.
+
+All dependencies can furthermore be found in the `pyproject.toml` or the `requirements.txt`.
+
+## :gear: License
+
+The project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+Copyright © 2024-2025 [DebateLab](https://debatelab.philosophie.kit.edu/index.php) at KIT.
