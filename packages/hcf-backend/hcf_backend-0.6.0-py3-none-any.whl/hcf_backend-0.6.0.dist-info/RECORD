@@ -1,0 +1,11 @@
+hcf_backend/__init__.py,sha256=on1MKLNaReNKwd5LhaodfAuIRZkfveyT5gtI2_hiGv4,80
+hcf_backend/backend.py,sha256=AgsfUvmjsvPacUtQMQY_t4e7oGUVRCb-qBnkb1t37bk,14936
+hcf_backend/manager.py,sha256=8sD8K3eQUM7sS2udYtHlsuyM02lVQuUPukwUTzLr4uI,4877
+hcf_backend/utils/__init__.py,sha256=xLw6kQ4p33Yal2MpK8J-xHcsqh8jKBXNYMp2N2tVpl8,1545
+hcf_backend/utils/crawlmanager.py,sha256=c_pz4hAlUsTuBQsBZRymPyPRwxJ6ibft2tJscWKBdK4,4049
+hcf_backend/utils/hcfpal.py,sha256=ol1CQZA28j0dzdsZ0wvly4uUn32Ofqj8N1Ka7a78XEU,14724
+hcf_backend-0.6.0.dist-info/licenses/LICENSE,sha256=C0mo1T2-5y1JsaO-CtC0j3cQaAYNA7YH1yS76COGqq0,1478
+hcf_backend-0.6.0.dist-info/METADATA,sha256=qGJ9YoFHNew45oyICb81ktCI1GkHh_dQ-gjviQZY3qk,3185
+hcf_backend-0.6.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hcf_backend-0.6.0.dist-info/top_level.txt,sha256=INM-hj5d8zuh-ExpsbBdmdg1vz8xZkXC1OC8hrroK1Q,12
+hcf_backend-0.6.0.dist-info/RECORD,,
