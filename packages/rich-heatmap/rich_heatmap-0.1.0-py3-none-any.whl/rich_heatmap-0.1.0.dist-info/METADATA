@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: rich-heatmap
+Version: 0.1.0
+Summary: A simple rich renderable Heatmap.
+Project-URL: Repository, https://github.com/saulrh/rich_heatmap.git
+Project-URL: Issues, https://github.com/saulrh/rich_heatmap/issues
+Author-email: Saul Reynolds-Haertle <saul+pypi@saulrh.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: rich>=14.0.0
+Description-Content-Type: text/markdown
+
+# rich_heatmap
