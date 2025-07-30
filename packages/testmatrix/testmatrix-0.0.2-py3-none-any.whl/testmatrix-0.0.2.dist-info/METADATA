@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: testmatrix
+Version: 0.0.2
+Summary: A matrix server sanity tester
+Author-email: Sebastian Spaeth & contributors <Sebastian@SSpaeth.de>
+License-Expression: AGPL-3.0-or-later
+Project-URL: Homepage, https://codeberg.org/spaetz/testmatrix
+Project-URL: issues, https://codeberg.org/spaetz/testmatrix/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: license-file
