@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - uv build
+    sources:
+      - src/**/*
+      - pyproject.toml
+      - uv.lock
+    generates:
+      - dist/*.tar.gz
+      - dist/*.whl
+
+  publish:
+    deps: [build]
+    cmds:
+      - uv publish
