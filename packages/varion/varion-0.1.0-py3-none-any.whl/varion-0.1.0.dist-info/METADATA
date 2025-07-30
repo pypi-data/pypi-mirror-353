@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: varion
+Version: 0.1.0
+Summary: High-quality hybrid random number generator for scientific computing
+Home-page: https://github.com/brightminding/varion
+Author: BrightMinding
+Author-email: contact@brightminding.org
+Project-URL: Source, https://github.com/brightminding/varion
+Project-URL: Tracker, https://github.com/brightminding/varion/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: numba
+Dynamic: license-file
+
+# Varion
+
+Varion is a hybrid random number generator designed for scientific use.
