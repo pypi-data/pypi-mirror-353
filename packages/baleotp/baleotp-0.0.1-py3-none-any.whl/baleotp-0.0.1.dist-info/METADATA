@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: baleotp
+Version: 0.0.1
+Summary: A simple OTP request sender for Bale messenger
+Author-email: Ali NabiPour <noyan.joun.89@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/username/baleotp
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8.0
+Dynamic: license-file
+
+# BaleOTP
+A library for sending otp in the messenger "Bale"
