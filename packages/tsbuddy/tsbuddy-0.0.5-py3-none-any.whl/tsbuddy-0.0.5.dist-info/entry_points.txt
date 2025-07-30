@@ -1,0 +1,4 @@
+[console_scripts]
+aosdl = tsbuddy.aosdl.aosdl:main
+aosdl-ga = tsbuddy.aosdl.aosdl:lookup_ga_build
+tsbuddy = tsbuddy.tsbuddy:main
