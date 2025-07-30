@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: runvenv
+Version: 0.1.1
+Summary: run python scripts or modules in a venv
+Author-email: Philipp Unger <philipp.unger.1988@gmail.com>
+License-Expression: MIT
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+## runvenv
+
+run python scripts or modules in a venv with a single command
