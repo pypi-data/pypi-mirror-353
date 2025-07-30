@@ -1,0 +1,303 @@
+{
+  "title": "クリーンアーキテクチャ設計に基づいたベース資材の作成",
+  "body": "# Summery\r\nrequester相当のアプリについて、クリーンアーキテクチャ(ないしオニオンアーキテクチャ)を適用したディレクトリ構成で雛形を作成した\r\n\r\n# what is done\r\n- クリーンアーキテクチャを適用したディレクトリ構成になっていること\r\n- cmdを通して各層のファイルで定義された処理（ログ出力のみでOK）が呼び出しできること\r\n- （その他）ローカル操作用でdocker-composeを用いたdevcontainer環境の立ち上げができるように各種ファイル追加\r\n\r\n# what is not done\r\n- 実際の処理や細かいビジネスロジックは実装しない\r\n- テストは書かない\r\n- 並行処理は考慮しない\r\n\r\n# Comment\r\n- 各層での処理責務がわかる資料：https://opetech.esa.io/posts/10650",
+  "modified_files": [
+    {
+      "filename": ".devcontainer/dc-requester/.env.example",
+      "status": "added",
+      "changes": 13,
+      "patch": "@@ -0,0 +1,13 @@\n+REDIS_HOST=\n+REDIS_PORT=\n+REDIS_SENTINEL_MASTER_NAME=\n+REDIS_SENTINEL=\n+TIME_OVER_HOUR=\n+\n+BING_ADS_API_VERSION=\n+BING_ADS_API_BASE_PATH=\n+\n+OPELAKE_AWS_ACCESS_KEY_ID=\n+OPELAKE_AWS_SECRET_ACCESS_KEY=\n+OPELAKE_AWS_DEFAULT_REGION=\n+AWS_S3_BUCKET_OPELAKE_SEARCH="
+    },
+    {
+      "filename": ".devcontainer/dc-requester/devcontainer.json",
+      "status": "added",
+      "changes": 69,
+      "patch": "@@ -0,0 +1,69 @@\n+{\n+    \"name\": \"for-docker-compose-opelake-bing-requester\",\n+    \"dockerComposeFile\": \"docker-compose.yml\",\n+    \"service\": \"app\",\n+    \"workspaceFolder\": \"/workspace\",\n+    // \"remoteUser\": \"vscode\",\n+    \"updateContentCommand\": \"./.devcontainer/requester/initCommand.sh\",\n+    \"containerEnv\": {\n+        \"PYTHONPATH\": \"/workspace/requester\"\n+    },\n+    \"customizations\": {\n+        \"vscode\": {\n+            \"extensions\": [\n+                \"ms-python.python\",\n+                \"ms-python.debugpy\",\n+                \"ms-python.vscode-pylance\",\n+                \"ms-vscode.makefile-tools\",\n+                \"tamasfe.even-better-toml\",\n+                \"github.copilot\",\n+                \"charliermarsh.ruff\",\n+                \"ms-vsliveshare.vsliveshare\",\n+                \"usernamehw.errorlens\",\n+                \"streetsidesoftware.code-spell-checker\",\n+                \"shardulm94.trailing-spaces\",\n+                \"github.vscode-github-actions\",\n+                \"fill-labs.dependi\"\n+            ],\n+            \"settings\": {\n+                \"files.exclude\": {\n+                    \"**/*.egg-info\": true,\n+                    \"**/__pycache__\": true\n+                },\n+                \"files.insertFinalNewline\": true,\n+                \"[python]\": {\n+                    \"editor.defaultFormatter\": \"charliermarsh.ruff\",\n+                    \"editor.formatOnSave\": true,\n+                    \"editor.codeActionsOnSave\": {\n+                        \"source.fixAll\": \"explicit\",\n+                        \"source.organizeImports\": \"explicit\"\n+                    }\n+                },\n+                \"python.languageServer\": \"Pylance\",\n+                \"python.analysis.typeCheckingMode\": \"strict\",\n+                \"python.testing.pytestArgs\": [\n+                    \".\"\n+                ],\n+                \"python.testing.unittestEnabled\": false,\n+                \"python.testing.pytestEnabled\": true,\n+                \"cSpell.ignoreRegExpList\": [\n+                    // 一部の日本語を誤検知するらしい\n+                    \"[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+\"\n+                     // よく使いそう\n+                    ,\"hoge\"\n+                    ,\"fuga\"\n+                    ,\"piyo\"\n+                     // opelake独自\n+                    ,\"opelake\"\n+                    ,\"webback\"\n+                    // ライブラリ\n+                    ,\"fastapi\"\n+                    ,\"pydantic\"\n+                    ,\"httpx\"\n+                    ,\"respx\"\n+                ]\n+            }\n+        }\n+    },\n+    \"mounts\": []\n+}"
+    },
+    {
+      "filename": ".devcontainer/dc-requester/docker-compose.yml",
+      "status": "added",
+      "changes": 19,
+      "patch": "@@ -0,0 +1,19 @@\n+version: \"3.0\"\n+\n+services:\n+  app:\n+    image: python:3.13-bullseye\n+    command: sleep infinity\n+    env_file:\n+      - .env\n+    volumes:\n+      - ../..:/workspace:cached\n+    depends_on:\n+      - redis\n+\n+  # Redisコンテナ\n+  redis:\n+    image: redis:7.4\n+    # テスト用のRedisに接続したい場合はコメントアウトを外してください (ポート番号変更自由)\n+    # ports:\n+    #   - \"6379:6379\""
+    },
+    {
+      "filename": ".devcontainer/dc-requester/initCommand.sh",
+      "status": "added",
+      "changes": 2,
+      "patch": "@@ -0,0 +1,2 @@\n+# /bin/bash\n+cd requester && pip install -e .[dev]"
+    },
+    {
+      "filename": "requester/.gitignore",
+      "status": "added",
+      "changes": 132,
+      "patch": "@@ -0,0 +1,132 @@\n+# Byte-compiled / optimized / DLL files\n+__pycache__/\n+*.py[cod]\n+*$py.class\n+\n+# C extensions\n+*.so\n+\n+# Distribution / packaging\n+.Python\n+build/\n+develop-eggs/\n+dist/\n+downloads/\n+eggs/\n+.eggs/\n+lib/\n+lib64/\n+parts/\n+sdist/\n+var/\n+wheels/\n+pip-wheel-metadata/\n+share/python-wheels/\n+*.egg-info/\n+.installed.cfg\n+*.egg\n+MANIFEST\n+\n+# PyInstaller\n+#  Usually these files are written by a python script from a template\n+#  before PyInstaller builds the exe, so as to inject date/other infos into it.\n+*.manifest\n+*.spec\n+\n+# Installer logs\n+pip-log.txt\n+pip-delete-this-directory.txt\n+\n+# Unit test / coverage reports\n+htmlcov/\n+.tox/\n+.nox/\n+.coverage\n+.coverage.*\n+.cache\n+nosetests.xml\n+coverage.xml\n+*.cover\n+*.py,cover\n+.hypothesis/\n+.pytest_cache/\n+\n+# Translations\n+*.mo\n+*.pot\n+\n+# Django stuff:\n+*.log\n+local_settings.py\n+db.sqlite3\n+db.sqlite3-journal\n+\n+# Flask stuff:\n+instance/\n+.webassets-cache\n+\n+# Scrapy stuff:\n+.scrapy\n+\n+# Sphinx documentation\n+docs/_build/\n+\n+# PyBuilder\n+target/\n+\n+# Jupyter Notebook\n+.ipynb_checkpoints\n+\n+# IPython\n+profile_default/\n+ipython_config.py\n+\n+# pyenv\n+.python-version\n+\n+# pipenv\n+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.\n+#   However, in case of collaboration, if having platform-specific dependencies or dependencies\n+#   having no cross-platform support, pipenv may install dependencies that don't work, or not\n+#   install all needed dependencies.\n+#Pipfile.lock\n+\n+# PEP 582; used by e.g. github.com/David-OConnor/pyflow\n+__pypackages__/\n+\n+# Celery stuff\n+celerybeat-schedule\n+celerybeat.pid\n+\n+# SageMath parsed files\n+*.sage.py\n+\n+# Environments\n+.env\n+.venv\n+env/\n+venv/\n+ENV/\n+env.bak/\n+venv.bak/\n+\n+# Spyder project settings\n+.spyderproject\n+.spyproject\n+\n+# Rope project settings\n+.ropeproject\n+\n+# mkdocs documentation\n+/site\n+\n+# mypy\n+.mypy_cache/\n+.dmypy.json\n+dmypy.json\n+\n+# Pyre type checker\n+.pyre/\n+\n+# IntelliJ\n+.idea/"
+    },
+    {
+      "filename": "requester/cmd/access_token/run_main.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.access_token.fetch_access_token_usecase import FetchAccessTokenUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(FetchAccessTokenUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/cmd/assets/run_add.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.assets.add_usecase import AddUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(AddUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/cmd/assets/run_main.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.assets.download_usecase import DownloadUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(DownloadUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/cmd/master/run_main.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.master.get_usecase import GetUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(GetUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/cmd/reports/run_add.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.reports.add_usecase import AddUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(AddUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/cmd/reports/run_main.py",
+      "status": "added",
+      "changes": 25,
+      "patch": "@@ -0,0 +1,25 @@\n+import logging\n+\n+from injector import Injector\n+\n+from di.injector import AppModule\n+from usecases.reports.download_usecase import DownloadUsecase\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+def main():\n+    # DI\n+    injector = Injector([AppModule()])\n+    usecase = injector.get(DownloadUsecase)\n+\n+    usecase.execute()\n+\n+    logger.info(\"done\")\n+\n+    return\n+\n+\n+if __name__ == \"__main__\":\n+    main()"
+    },
+    {
+      "filename": "requester/config/config.py",
+      "status": "added",
+      "changes": 26,
+      "patch": "@@ -0,0 +1,26 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")\n+        self.port = os.environ.get(\"REDIS_PORT\", \"default_value\")\n+        self.sentinel_master_name = os.environ.get(\"REDIS_SENTINEL_MASTER_NAME\", \"default_value\")\n+        self.use_sentinel = os.environ.get(\"REDIS_SENTINEL\", \"default_value\")\n+        self.time_over_hour = int(os.environ.get(\"TIME_OVER_HOUR\", \"0\"))\n+\n+\n+class BingAPIConfig:\n+    def __init__(self):\n+        self.api_version = os.environ.get(\"BING_ADS_API_VERSION\", \"default_value\")\n+        self.base_path = os.environ.get(\"BING_ADS_API_BASE_PATH\", \"default_value\")\n+\n+\n+class FileStorageConfig:\n+    def __init__(self):\n+        self.access_key_id = os.environ.get(\"OPELAKE_AWS_ACCESS_KEY_ID\", \"default_value\")\n+        self.secret_access_key = os.environ.get(\"OPELAKE_AWS_SECRET_ACCESS_KEY\", \"default_value\")\n+        self.region_name = os.environ.get(\"OPELAKE_AWS_DEFAULT_REGION\", \"default_value\")\n+        self.bucket = os.environ.get(\"AWS_S3_BUCKET_OPELAKE_SEARCH\", \"default_value\")"
+    },
+    {
+      "filename": "requester/di/injector.py",
+      "status": "added",
+      "changes": 50,
+      "patch": "@@ -0,0 +1,50 @@\n+from injector import Binder, Injector, Module, singleton\n+\n+from config.config import BingAPIConfig, DatabaseConfig, FileStorageConfig\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+from domain.services.file_storage_service import FileStorageService\n+from infrastructure.api.bing_client import BingClient\n+from infrastructure.aws.s3_client import S3Client\n+from infrastructure.persistence.redis_queue_repository import RedisQueueRepository\n+from usecases.access_token.fetch_access_token_usecase import FetchAccessTokenUsecase\n+from usecases.assets.add_usecase import AddUsecase as AssetsAddUsecase\n+from usecases.assets.download_usecase import DownloadUsecase as AssetsDownloadUsecase\n+from usecases.master.get_usecase import GetUsecase as MasterGetUsecase\n+from usecases.reports.add_usecase import AddUsecase as ReportsAddUsecase\n+from usecases.reports.download_usecase import DownloadUsecase as ReportsDownloadUsecase\n+\n+\n+class AppModule(Module):\n+    \"\"\"\n+    依存関係を設定するモジュール\n+    \"\"\"\n+\n+    def configure(self, binder: Binder):\n+        database_config = DatabaseConfig()\n+        bing_api_config = BingAPIConfig()\n+        file_storage_config = FileStorageConfig()\n+        # コンフィグのバインディング\n+        binder.bind(DatabaseConfig, to=database_config, scope=singleton)\n+        binder.bind(BingAPIConfig, to=bing_api_config, scope=singleton)\n+        binder.bind(FileStorageConfig, to=file_storage_config, scope=singleton)\n+\n+        # リポジトリとインフラ層のバインディング\n+        binder.bind(QueueRepository, to=RedisQueueRepository, scope=singleton)\n+\n+        # サービスとインフラ層のバインディング\n+        binder.bind(BingService, to=BingClient, scope=singleton)\n+        binder.bind(FileStorageService, to=S3Client, scope=singleton)\n+\n+        # ユースケースのバインディング\n+\n+        binder.bind(FetchAccessTokenUsecase, to=FetchAccessTokenUsecase, scope=singleton)\n+        binder.bind(AssetsAddUsecase, to=AssetsAddUsecase, scope=singleton)\n+        binder.bind(AssetsDownloadUsecase, to=AssetsDownloadUsecase, scope=singleton)\n+        binder.bind(MasterGetUsecase, to=MasterGetUsecase, scope=singleton)\n+        binder.bind(ReportsAddUsecase, to=ReportsAddUsecase, scope=singleton)\n+        binder.bind(ReportsDownloadUsecase, to=ReportsDownloadUsecase, scope=singleton)\n+\n+\n+# Injectorインスタンスをエントリーポイントで利用可能にする\n+injector = Injector([AppModule()])"
+    },
+    {
+      "filename": "requester/domain/entities/job.py",
+      "status": "added",
+      "changes": 6,
+      "patch": "@@ -0,0 +1,6 @@\n+class Job:\n+    def __init__(self, id: int):\n+        self.id = id\n+\n+    def hoge(self):\n+        return"
+    },
+    {
+      "filename": "requester/domain/entities/job_step.py",
+      "status": "added",
+      "changes": 6,
+      "patch": "@@ -0,0 +1,6 @@\n+class JobStep:\n+    def __init__(self, job_id: int):\n+        self.job_id = job_id\n+\n+    def hoge(self):\n+        return None"
+    },
+    {
+      "filename": "requester/domain/repositories/queue_repository.py",
+      "status": "added",
+      "changes": 27,
+      "patch": "@@ -0,0 +1,27 @@\n+from abc import ABC, abstractmethod\n+\n+from domain.entities.job import Job\n+from domain.entities.job_step import JobStep\n+\n+\n+class QueueRepository(ABC):\n+    @abstractmethod\n+    def save_access_token(self, access_token: str):\n+        pass\n+\n+    @abstractmethod\n+    def get_access_token(self) -> str:\n+        pass\n+\n+    @abstractmethod\n+    ## TODO: ドメインエンティティを返すか、ドメインエンティティのリストで返すか\n+    def fetch_job(self) -> Job:\n+        pass\n+\n+    ## TODO: ドメインエンティティを返すか、ドメインエンティティのリストで返すか\n+    def fetch_job_step(self) -> JobStep:\n+        pass\n+\n+    @abstractmethod\n+    def register_task(self):\n+        pass"
+    },
+    {
+      "filename": "requester/domain/services/bing_service.py",
+      "status": "added",
+      "changes": 35,
+      "patch": "@@ -0,0 +1,35 @@\n+from abc import ABC, abstractmethod\n+\n+\n+class BingService(ABC):\n+    @abstractmethod\n+    def get_access_token(self) -> str:\n+        pass\n+\n+    @abstractmethod\n+    def get_master_data(self):\n+        pass\n+\n+    @abstractmethod\n+    def schedule_asset_data_generation(self):\n+        pass\n+\n+    @abstractmethod\n+    def monitor_asset_data_generation_status(self):\n+        pass\n+\n+    @abstractmethod\n+    def download_asset_data(self):\n+        pass\n+\n+    @abstractmethod\n+    def schedule_report_generation(self):\n+        pass\n+\n+    @abstractmethod\n+    def monitor_report_generation_status(self):\n+        pass\n+\n+    @abstractmethod\n+    def download_report(self):\n+        pass"
+    },
+    {
+      "filename": "requester/domain/services/file_storage_service.py",
+      "status": "added",
+      "changes": 7,
+      "patch": "@@ -0,0 +1,7 @@\n+from abc import ABC, abstractmethod\n+\n+\n+class FileStorageService(ABC):\n+    @abstractmethod\n+    def save_file(self):\n+        pass"
+    },
+    {
+      "filename": "requester/infrastructure/api/bing_client.py",
+      "status": "added",
+      "changes": 51,
+      "patch": "@@ -0,0 +1,51 @@\n+import logging\n+\n+from injector import inject\n+\n+from config.config import BingAPIConfig\n+from domain.services.bing_service import BingService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+## 命名微妙。BingRequesterとかにしてhttp client生成部分は切り出したいかも\n+class BingClient(BingService):\n+    @inject\n+    def __init__(\n+        self,\n+        config: BingAPIConfig,\n+    ):\n+        return\n+\n+    def get_access_token(self) -> str:\n+        logger.info(\"successfully got access token\")\n+        return \"access_token\"\n+\n+    def get_master_data(self):\n+        logger.info(\"successfully done master api request\")\n+        return\n+\n+    def schedule_asset_data_generation(self):\n+        logger.info(\"successfully done asset-data-generating api request\")\n+        return\n+\n+    def monitor_asset_data_generation_status(self):\n+        logger.info(\"successfully done asset-data-status-monitoring api request\")\n+        return\n+\n+    def download_asset_data(self):\n+        logger.info(\"successfully done asset-data-downloading api request\")\n+        return\n+\n+    def schedule_report_generation(self):\n+        logger.info(\"successfully done report-generating api request\")\n+        return\n+\n+    def monitor_report_generation_status(self):\n+        logger.info(\"successfully done report-status-monitoring api request\")\n+        return\n+\n+    def download_report(self):\n+        logger.info(\"successfully done report-downloading api request\")\n+        return"
+    },
+    {
+      "filename": "requester/infrastructure/aws/s3_client.py",
+      "status": "added",
+      "changes": 23,
+      "patch": "@@ -0,0 +1,23 @@\n+import logging\n+\n+from injector import inject\n+\n+from config.config import FileStorageConfig\n+from domain.services.file_storage_service import FileStorageService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+## 命名微妙。S3Requesterとかにしてaws client生成部分は切り出したいかも\n+class S3Client(FileStorageService):\n+    @inject\n+    def __init__(\n+        self,\n+        config: FileStorageConfig,\n+    ):\n+        return\n+\n+    def save_file(self):\n+        logger.info(\"successfully saved file to s3 \")\n+        return"
+    },
+    {
+      "filename": "requester/infrastructure/persistence/db_client/redis_client.py",
+      "status": "added",
+      "changes": 26,
+      "patch": "@@ -0,0 +1,26 @@\n+from redis import Redis\n+from redis.sentinel import Sentinel\n+\n+\n+def make_redis_cli(host=\"localhost\", port=6379, sentinel_master_name=None, use_sentinel=False, db=0):\n+    if use_sentinel:\n+        redis_cli = Sentinel([(host, port)]).master_for(sentinel_master_name, db=db)\n+    else:\n+        redis_cli = Redis(host, port, db)\n+\n+    redis_cli.ping()\n+\n+    return redis_cli\n+\n+\n+def make_redis_cli_multi_db(host=\"localhost\", port=6379, sentinel_master_name=None, use_sentinel=False, db_n=0):\n+    if use_sentinel:\n+        s = Sentinel([(host, port)])\n+        clients = [s.master_for(sentinel_master_name, db=db) for db in range(db_n)]\n+    else:\n+        clients = [Redis(host, port, db) for db in range(db_n)]\n+\n+    # MEMO: confirm client at least 1 for reason any db use same host and port\n+    clients[0].ping()\n+\n+    return tuple(clients)"
+    },
+    {
+      "filename": "requester/infrastructure/persistence/redis_queue_repository.py",
+      "status": "added",
+      "changes": 62,
+      "patch": "@@ -0,0 +1,62 @@\n+import logging\n+\n+from injector import inject\n+\n+# from typing import Union, Optional\n+from config.config import DatabaseConfig\n+from domain.entities.job import Job\n+from domain.entities.job_step import JobStep\n+from domain.repositories.queue_repository import QueueRepository\n+\n+# from infrastructure.persistence.db_client.redis_client import make_redis_cli\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class RedisQueueRepository(QueueRepository):\n+    @inject\n+    def __init__(\n+        self,\n+        config: DatabaseConfig,\n+    ):\n+        self.config = config\n+        ## TODO: コンストラクタでコネクションオブジェクト生成するより、エントリポイント側で生成してrepositoryに注入する方が良さそう？\n+        # self.redis_cli = make_redis_cli(\n+        #     host=host,\n+        #     port=int(port) if isinstance(port, str) else port,\n+        #     sentinel_master_name=sentinel_master_name,\n+        #     use_sentinel= use_sentinel,\n+        #     ## TODO: strtoboolのimport元特定\n+        #     # use_sentinel=strtobool(use_sentinel) if isinstance(use_sentinel, str) else use_sentinel or False,\n+        #     db=db,\n+        # )\n+        return\n+\n+    def save_access_token(self, access_token: str):\n+        logger.info(\"successfully saved access token\")\n+        return\n+\n+    def get_access_token(self) -> str:\n+        logger.info(\"successfully got access token\")\n+\n+        return \"access_token\"\n+\n+    def fetch_job(self) -> Job:\n+        logger.info(\"successfully fetched job\")\n+\n+        ## TODO: 可変のドメインエンティティを返却する\n+        job = Job(12345)\n+        return job\n+\n+    def fetch_job_step(self) -> JobStep:\n+        logger.info(\"successfully fetched job step\")\n+\n+        ## TODO: 可変のドメインエンティティを返却する\n+        job_step = JobStep(12345)\n+        return job_step\n+\n+    def register_task(self):\n+        logger.info(\"successfully registered task\")\n+\n+        return"
+    },
+    {
+      "filename": "requester/pyproject.toml",
+      "status": "modified",
+      "changes": 1,
+      "patch": "@@ -19,6 +19,7 @@ dependencies = [\n     \"pydantic-settings==2.5.2\",\n     \"httpx==0.28.1\",\n     \"requests==2.32.3\",\n+    \"injector==0.22.0\",\n ]\n \n [project.optional-dependencies]"
+    },
+    {
+      "filename": "requester/tests/.gitkeep",
+      "status": "added",
+      "changes": 0,
+      "patch": null
+    },
+    {
+      "filename": "requester/usecases/access_token/fetch_access_token_usecase.py",
+      "status": "added",
+      "changes": 27,
+      "patch": "@@ -0,0 +1,27 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class FetchAccessTokenUsecase:\n+    @inject\n+    def __init__(self, bing_service: BingService, queue_repository: QueueRepository):\n+        self.bing_service = bing_service\n+        self.queue_repository = queue_repository\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## アクセストークンの払い出し要求\n+        access_token = self.bing_service.get_access_token()\n+\n+        ## タスクの登録\n+        self.queue_repository.save_access_token(access_token)\n+\n+        return"
+    },
+    {
+      "filename": "requester/usecases/assets/add_usecase.py",
+      "status": "added",
+      "changes": 38,
+      "patch": "@@ -0,0 +1,38 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class AddUsecase:\n+    @inject\n+    def __init__(\n+        self,\n+        queue_repository: QueueRepository,\n+        bing_service: BingService,\n+    ):\n+        self.queue_repository = queue_repository\n+        self.bing_service = bing_service\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## タスクの取得\n+        _ = self.queue_repository.fetch_job_step()\n+\n+        ## アクセストークンの取得\n+        ## TODO: 取得サイクル検討する\n+        _ = self.queue_repository.get_access_token()\n+\n+        ## 媒体API実行\n+        self.bing_service.schedule_asset_data_generation()\n+\n+        ## タスクの登録\n+        self.queue_repository.register_task()\n+\n+        return"
+    },
+    {
+      "filename": "requester/usecases/assets/download_usecase.py",
+      "status": "added",
+      "changes": 45,
+      "patch": "@@ -0,0 +1,45 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+from domain.services.file_storage_service import FileStorageService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class DownloadUsecase:\n+    @inject\n+    def __init__(\n+        self,\n+        queue_repository: QueueRepository,\n+        bing_service: BingService,\n+        file_storage_service: FileStorageService,\n+    ):\n+        self.queue_repository = queue_repository\n+        self.bing_service = bing_service\n+        self.file_storage_service = file_storage_service\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## タスクの取得\n+        _ = self.queue_repository.fetch_job_step()\n+\n+        ## アクセストークンの取得\n+        ## TODO: 取得サイクル検討する\n+        _ = self.queue_repository.get_access_token()\n+\n+        ## 媒体API実行\n+        self.bing_service.monitor_asset_data_generation_status()\n+        self.bing_service.download_asset_data()\n+\n+        ## ファイル保存\n+        self.file_storage_service.save_file()\n+\n+        ## タスクの登録\n+        self.queue_repository.register_task()\n+\n+        return"
+    },
+    {
+      "filename": "requester/usecases/master/get_usecase.py",
+      "status": "added",
+      "changes": 44,
+      "patch": "@@ -0,0 +1,44 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+from domain.services.file_storage_service import FileStorageService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class GetUsecase:\n+    @inject\n+    def __init__(\n+        self,\n+        queue_repository: QueueRepository,\n+        bing_service: BingService,\n+        file_storage_service: FileStorageService,\n+    ):\n+        self.queue_repository = queue_repository\n+        self.bing_service = bing_service\n+        self.file_storage_service = file_storage_service\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## タスクの取得\n+        _ = self.queue_repository.fetch_job()\n+\n+        ## アクセストークンの取得\n+        ## TODO: 取得サイクル検討する\n+        _ = self.queue_repository.get_access_token()\n+\n+        ## 媒体API実行\n+        self.bing_service.get_master_data()\n+\n+        ## ファイル保存\n+        self.file_storage_service.save_file()\n+\n+        ## タスクの登録\n+        self.queue_repository.register_task()\n+\n+        return"
+    },
+    {
+      "filename": "requester/usecases/reports/add_usecase.py",
+      "status": "added",
+      "changes": 38,
+      "patch": "@@ -0,0 +1,38 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class AddUsecase:\n+    @inject\n+    def __init__(\n+        self,\n+        queue_repository: QueueRepository,\n+        bing_service: BingService,\n+    ):\n+        self.queue_repository = queue_repository\n+        self.bing_service = bing_service\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## タスクの取得\n+        _ = self.queue_repository.fetch_job_step()\n+\n+        ## アクセストークンの取得\n+        ## TODO: 取得サイクル検討する\n+        _ = self.queue_repository.get_access_token()\n+\n+        ## 媒体API実行\n+        self.bing_service.schedule_report_generation()\n+\n+        ## タスクの登録\n+        self.queue_repository.register_task()\n+\n+        return"
+    },
+    {
+      "filename": "requester/usecases/reports/download_usecase.py",
+      "status": "added",
+      "changes": 45,
+      "patch": "@@ -0,0 +1,45 @@\n+import logging\n+\n+from injector import inject\n+\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+from domain.services.file_storage_service import FileStorageService\n+\n+logger = logging.getLogger(__name__)\n+logging.basicConfig(level=logging.INFO)\n+\n+\n+class DownloadUsecase:\n+    @inject\n+    def __init__(\n+        self,\n+        queue_repository: QueueRepository,\n+        bing_service: BingService,\n+        file_storage_service: FileStorageService,\n+    ):\n+        self.queue_repository = queue_repository\n+        self.bing_service = bing_service\n+        self.file_storage_service = file_storage_service\n+\n+    def execute(self):\n+        logger.info(\"usecase started\")\n+\n+        ## タスクの取得\n+        _ = self.queue_repository.fetch_job_step()\n+\n+        ## アクセストークンの取得\n+        ## TODO: 取得サイクル検討する\n+        _ = self.queue_repository.get_access_token()\n+\n+        ## 媒体API実行\n+        self.bing_service.monitor_report_generation_status()\n+        self.bing_service.download_report()\n+\n+        ## ファイル保存\n+        self.file_storage_service.save_file()\n+\n+        ## タスクの登録\n+        self.queue_repository.register_task()\n+\n+        return"
+    },
+    {
+      "filename": "requester/utils/.gitkeep",
+      "status": "added",
+      "changes": 0,
+      "patch": null
+    }
+  ],
+  "review_comments": [
+    {
+      "id": 1887959972,
+      "body": "ゆくゆく掃除した方がいいがひとまずは他プロジェクトから丸ぱくり",
+      "diff_hunk": "@@ -0,0 +1,132 @@\n+# Byte-compiled / optimized / DLL files"
+    },
+    {
+      "id": 1887964859,
+      "body": "例えばassets用, reports用とクラスを分けてもいいが、同じ記述増えそうなのでひとまず1つのクラスで定義",
+      "diff_hunk": "@@ -0,0 +1,50 @@\n+from injector import Binder, Injector, Module, singleton\n+\n+from config.config import BingAPIConfig, DatabaseConfig, FileStorageConfig\n+from domain.repositories.queue_repository import QueueRepository\n+from domain.services.bing_service import BingService\n+from domain.services.file_storage_service import FileStorageService\n+from infrastructure.api.bing_client import BingClient\n+from infrastructure.aws.s3_client import S3Client\n+from infrastructure.persistence.redis_queue_repository import RedisQueueRepository\n+from usecases.assets.add_usecase import AddUsecase as AssetsAddUsecase\n+from usecases.assets.download_usecase import DownloadUsecase as AssetsDownloadUsecase\n+from usecases.fetch_access_token_usecase import FetchAccessTokenUsecase\n+from usecases.master.get_usecase import GetUsecase \n+from usecases.reports.add_usecase import AddUsecase as ReportsAddUsecase\n+from usecases.reports.download_usecase import DownloadUsecase as ReportsDownloadUsecase\n+\n+\n+class AppModule(Module):"
+    },
+    {
+      "id": 1887983960,
+      "body": "preなくなったのでJobStepだけでも良いかもだが、masterがどういう形になるかまだ考えきれていないので一旦残しておく",
+      "diff_hunk": "@@ -0,0 +1,6 @@\n+class Job:"
+    },
+    {
+      "id": 1887987424,
+      "body": "別にいいんだけど `dc` って `devcontainer` の略？ｗ",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1887988273,
+      "body": "後々使う時にコメント解除するかもね",
+      "diff_hunk": "@@ -0,0 +1,19 @@\n+version: \"3.0\"\n+\n+services:\n+  app:\n+    image: python:3.13-bullseye\n+    command: sleep infinity\n+    env_file:\n+      - .env\n+    volumes:\n+      - ../..:/workspace:cached\n+    depends_on:\n+      - redis\n+\n+  # Redisコンテナ\n+  redis:\n+    image: redis:7.4\n+    # テスト用のRedisに接続したい場合はコメントアウトを外してください (ポート番号変更自由)\n+    # ports:\n+    #   - \"6379:6379\""
+    },
+    {
+      "id": 1887988873,
+      "body": "https://www.toptal.com/developers/gitignore\r\n一応基本的にはこのサイトでPythonで検索して出てきたやつに必要に応じて追加してた感じですね\r\n\r\n",
+      "diff_hunk": "@@ -0,0 +1,132 @@\n+# Byte-compiled / optimized / DLL files"
+    },
+    {
+      "id": 1887988890,
+      "body": "一旦docker compose専用の環境を作る方針で",
+      "diff_hunk": "@@ -0,0 +1,69 @@\n+{\n+    \"name\": \"for-docker-compose-opelake-bing-requester\","
+    },
+    {
+      "id": 1887989003,
+      "body": "掃除っていうより\r\nhttps://www.toptal.com/developers/gitignore/\r\n\r\nこっから吐き出すほうがいいかもね。\r\n＋ちょっと追加みたいな。",
+      "diff_hunk": "@@ -0,0 +1,132 @@\n+# Byte-compiled / optimized / DLL files"
+    },
+    {
+      "id": 1887990954,
+      "body": "結局dataclassとかは使わない？",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")\n+        self.port = os.environ.get(\"REDIS_PORT\", \"default_value\")\n+        self.sentinel_master_name = os.environ.get(\"REDIS_SENTINEL_MASTER_NAME\", \"default_value\")\n+        self.use_sentinel = os.environ.get(\"REDIS_SENTINEL\", \"default_value\")\n+        self.time_over_hour = int(os.environ.get(\"TIME_OVER_HOUR\", \"0\"))"
+    },
+    {
+      "id": 1887992670,
+      "body": "`default_value` 入ったところでうまく動かないので意識しなくていいんじゃないかな。\r\npydantic使わないでos使っていくなら `os.environ[\"REDIS_HOST\"]` でもう環境変数なけりゃエラー出していいんじゃない。すぐ出るでしょきっと",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")"
+    },
+    {
+      "id": 1887993912,
+      "body": "後から俺がコメントしててむっちゃ被ってる話している",
+      "diff_hunk": "@@ -0,0 +1,132 @@\n+# Byte-compiled / optimized / DLL files"
+    },
+    {
+      "id": 1887994214,
+      "body": "docker composeです！",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1887994697,
+      "body": "そのプレフィックスなくてもいいんじゃないかなぁ思ったけどどうだろ",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1887995594,
+      "body": "実際に環境変数使った処理実装をするタイミングでこの辺りも固めていきたいと思ってます！\r\n（現段階ではとりあえず雛形っていうレベルを目指していたので）",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")\n+        self.port = os.environ.get(\"REDIS_PORT\", \"default_value\")\n+        self.sentinel_master_name = os.environ.get(\"REDIS_SENTINEL_MASTER_NAME\", \"default_value\")\n+        self.use_sentinel = os.environ.get(\"REDIS_SENTINEL\", \"default_value\")\n+        self.time_over_hour = int(os.environ.get(\"TIME_OVER_HOUR\", \"0\"))"
+    },
+    {
+      "id": 1887995857,
+      "body": "おｋ",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")\n+        self.port = os.environ.get(\"REDIS_PORT\", \"default_value\")\n+        self.sentinel_master_name = os.environ.get(\"REDIS_SENTINEL_MASTER_NAME\", \"default_value\")\n+        self.use_sentinel = os.environ.get(\"REDIS_SENTINEL\", \"default_value\")\n+        self.time_over_hour = int(os.environ.get(\"TIME_OVER_HOUR\", \"0\"))"
+    },
+    {
+      "id": 1887996267,
+      "body": "ここも同様で、「一旦雛形を」くらいの感覚だったので、後々詰めたいと思ってます！\r\nhttps://github.com/CyberAgentAI/opelake-bing/pull/2#discussion_r1887995594",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")"
+    },
+    {
+      "id": 1887996520,
+      "body": "おｋ",
+      "diff_hunk": "@@ -0,0 +1,25 @@\n+import os\n+\n+## 各classのフィールド名は一旦仮置き\n+\n+\n+class DatabaseConfig:\n+    def __init__(self):\n+        self.host = os.environ.get(\"REDIS_HOST\", \"default_value\")"
+    },
+    {
+      "id": 1887999818,
+      "body": "・docker compose使ったdevcontainerを正式採用するにあたって、CIの件などまだ検討しきれてない点がある\r\n・ただ開発早く進めるにあたってredisをローカルで立ち上げられる環境は欲しい\r\n・無印の方とディレクトリ分けたい\r\nという意図であえてプレフィックスつけてます！\r\n（２ファイルに分ける前提だと、どのみちファイル名の方で命名衝突するので・・・）",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1888001729,
+      "body": "devcontainerの設定はrequestとapiで各々1つずつでいいんじゃないのかなぁと思ったけど、一旦そのままでいいっす",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1888003880,
+      "body": "ゆくゆくはどちらか消して（多分docker composeの方を採用する）統合する前提です！",
+      "diff_hunk": ""
+    },
+    {
+      "id": 1888011651,
+      "body": "備忘の意味も兼ねてissueには切り出しておきます！\r\nhttps://github.com/CyberAgentAI/opelake-bing/issues/4",
+      "diff_hunk": ""
+    }
+  ],
+  "issue_comments": [],
+  "number": 2,
+  "created_at": "2024-12-09T09:08:40+00:00",
+  "updated_at": "2024-12-17T07:31:26+00:00"
+}
