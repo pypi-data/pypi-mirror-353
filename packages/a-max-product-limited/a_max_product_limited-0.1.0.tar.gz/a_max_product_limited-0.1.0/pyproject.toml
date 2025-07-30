@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name ="a-max-product-limited"
+# Use lowercase and dashes only if needed for PyPI
+version = "0.1.0"
+description = "A package containing company information and 10 products."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Avinash S", email = "avinash.s@gmail.com" }
+]
+requires-python = ">=3.7"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/yourusername/companyname"
+
+
