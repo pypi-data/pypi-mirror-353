@@ -1,0 +1,13 @@
+requests
+pandas
+pyyaml
+diskcache
+scikit-learn
+joblib
+tensorflow
+matplotlib
+prometheus-client
+
+[dev]
+build
+twine
