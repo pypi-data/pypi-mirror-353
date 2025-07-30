@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.py
+beepy/__init__.py
+beepy/make_sound.py
+beepy.egg-info/PKG-INFO
+beepy.egg-info/SOURCES.txt
+beepy.egg-info/dependency_links.txt
+beepy.egg-info/not-zip-safe
+beepy.egg-info/requires.txt
+beepy.egg-info/top_level.txt
