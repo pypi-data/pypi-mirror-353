@@ -1,0 +1,11 @@
+pygenomecomp/__init__.py,sha256=FLi_OtG4-VoHmnYOyLC35eXAfI43a0JOsqb6f_YSQ-M,1134
+pygenomecomp/annotation.py,sha256=p6NLuSxohu5pp_Sc3BvYZ9PWXYhcV3TKYv7qTNX4HD4,3768
+pygenomecomp/blast.py,sha256=nY2qNDF9BxHKEsYThvBkV14cQeEciNnJAYL17-lauHY,2440
+pygenomecomp/main.py,sha256=RjWca9e0Op9zptQiX2dSMFaHBXawNL8_YIAkmde9hUA,7056
+pygenomecomp/plot.py,sha256=x-I8RlnGZR0QMuBFwSIt6BkU7blEg58ymiUZNnMj1X0,10138
+pygenomecomp-0.1.0.dist-info/licenses/LICENSE,sha256=eHTtjqm-NnwtlXrKaHnth2BRty4iX2fItfTEnFdX-yc,1067
+pygenomecomp-0.1.0.dist-info/METADATA,sha256=fm9wjalRBw2wdjwzONhGqkLpHlICy0O5VCDKMx-uK1c,6395
+pygenomecomp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pygenomecomp-0.1.0.dist-info/entry_points.txt,sha256=9s8dTbA5dYN7UbwcCgucL-SS8ZrkTolKErOwpF5ozf4,56
+pygenomecomp-0.1.0.dist-info/top_level.txt,sha256=0kc_NB1ChCCQQEEBkvg5nnUaVRkv68hUjVdkQQUsntc,13
+pygenomecomp-0.1.0.dist-info/RECORD,,
