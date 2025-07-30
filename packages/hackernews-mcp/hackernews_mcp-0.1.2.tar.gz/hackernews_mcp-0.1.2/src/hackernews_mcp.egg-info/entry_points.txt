@@ -1,0 +1,2 @@
+[console_scripts]
+hackernews-mcp = hackernews_mcp_service.client:main_cli
