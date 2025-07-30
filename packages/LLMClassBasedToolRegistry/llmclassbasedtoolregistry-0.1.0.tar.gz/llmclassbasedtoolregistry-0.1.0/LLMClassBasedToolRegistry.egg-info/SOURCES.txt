@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+LLMClassBasedToolRegistry.egg-info/PKG-INFO
+LLMClassBasedToolRegistry.egg-info/SOURCES.txt
+LLMClassBasedToolRegistry.egg-info/dependency_links.txt
+LLMClassBasedToolRegistry.egg-info/requires.txt
+LLMClassBasedToolRegistry.egg-info/top_level.txt
+tests/test_basic.py
+toolregistry/__init__.py

@@ -1,0 +1,16 @@
+[project]
+name = "LLMClassBasedToolRegistry"
+version = "0.1.0"
+description = "A lightweight tool registry system for function metadata, tagging, and OpenAI compatibility"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "bathonSpidey", email = "bathonbhats@gmail.com" }]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
