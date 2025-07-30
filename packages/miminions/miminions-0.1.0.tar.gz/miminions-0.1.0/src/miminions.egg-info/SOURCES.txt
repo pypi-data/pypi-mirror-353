@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/miminions/__init__.py
+src/miminions/main.py
+src/miminions.egg-info/PKG-INFO
+src/miminions.egg-info/SOURCES.txt
+src/miminions.egg-info/dependency_links.txt
+src/miminions.egg-info/top_level.txt
+src/miminions/core/__init__.py
