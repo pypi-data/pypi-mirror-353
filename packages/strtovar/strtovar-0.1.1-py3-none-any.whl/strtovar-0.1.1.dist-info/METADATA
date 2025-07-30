@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: strtovar
+Version: 0.1.1
+Summary: converting string name to variable
+Author: chetan
+Author-email: chetansuthar734@gmail.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary
