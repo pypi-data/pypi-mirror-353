@@ -1,0 +1,11 @@
+uv-0.7.12.data/scripts/uv,sha256=w3OqrjvsAfhXRhcs9PSkYd4wBn3dAgwDB-M0qQt7BgI,36126908
+uv-0.7.12.data/scripts/uvx,sha256=Sfl2ZADyy8IQmyvyUsE9xZYXuvBKC4o_AaJi4uS6GQ4,338932
+uv-0.7.12.dist-info/METADATA,sha256=OIngEDoW7Voy38S0UordbIRXuG2dNP0qbHe0esNu-rA,11864
+uv-0.7.12.dist-info/WHEEL,sha256=imcxIt-2JPIc9H8jxFoAlrBS8mGrzchIM3gqBpy5JKU,126
+uv-0.7.12.dist-info/licenses/LICENSE-APACHE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+uv-0.7.12.dist-info/licenses/LICENSE-MIT,sha256=hg49eoa4TmpwEsemNfxk30dc68bM403-tzpZguxYF2w,1077
+uv/__init__.py,sha256=DLA95X6E43S_PG_aShLgH2Mx0Os_P31OmoGXrS2Mc30,778
+uv/__main__.py,sha256=KpQzYxynHumchP1HpZVMkrQ2ezhueQah5hKZKNpgrA4,1055
+uv/_find_uv.py,sha256=Ex5cWUd99JaRxBcCmA061zYGYVXOxZLNqPy8-FYhnAo,1036
+uv/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uv-0.7.12.dist-info/RECORD,,
