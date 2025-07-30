@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: compress_and_upload_to_do_spaces
+Version: 0.1.2
+Summary: Python service for compressing and uploading images to DigitalOcean Spaces
+Author-email: Johannes <you@example.com>
+License-Expression: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: boto3
+Requires-Dist: tinify
+Requires-Dist: requests
+
+
+# Upload Service
+
+Python service for compressing and uploading images to DigitalOcean Spaces.
