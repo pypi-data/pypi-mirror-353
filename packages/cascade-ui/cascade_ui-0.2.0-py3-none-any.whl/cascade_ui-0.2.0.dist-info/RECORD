@@ -1,0 +1,13 @@
+cascade_ui/__init__.py,sha256=6oL9q-p8X6aCVFFyLZvYINhIycdcOvRAbYxXh-Tj4bQ,697
+cascade_ui/app.py,sha256=d2i7zB841gZBx0FfqYL91WyIKqZdN7qgJTwltis8lDM,2774
+cascade_ui/server.py,sha256=FkSJeF-AisDSFS2yBOEQmiUxzFuBROr3dJr2VF_-Lz0,7759
+cascade_ui/web/dist/index.html,sha256=FGjSvAryDRfG2jg35hVootEib2pnamuC8e02xV9FDv8,798
+cascade_ui/web/dist/logo.svg,sha256=mbOZAc8WC-Ymd9zR977JrPvAw4DPGMLv0WDmZBz--LI,2141
+cascade_ui/web/dist/assets/index-925b43c0.css,sha256=kltDwDV3_7iniiX4UHDHSTw_xE_Ic8q6t7I1bPYy3hY,461391
+cascade_ui/web/dist/assets/index-cb28c666.js,sha256=pRbYHGqoRKmC52M-cHg4sIbvg0-yqVxQPH2HJlwoUJk,1577505
+cascade_ui/web/dist/assets/logo-99b39901.svg,sha256=mbOZAc8WC-Ymd9zR977JrPvAw4DPGMLv0WDmZBz--LI,2141
+cascade_ui-0.2.0.dist-info/licenses/LICENSE,sha256=Sw--aA072MRE2BwOCiJhDYyRVbjCBVgnqtmmUoh-9_w,11328
+cascade_ui-0.2.0.dist-info/METADATA,sha256=4X5KPmyKP9_BTs9afN4FW-TcoKDxso7BCujz9BOBJTc,1232
+cascade_ui-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cascade_ui-0.2.0.dist-info/top_level.txt,sha256=EJuiAEQHOgZz-c_YrXVXRqvRN3IrmepMESh9rbH7C5Y,11
+cascade_ui-0.2.0.dist-info/RECORD,,
