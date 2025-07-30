@@ -1,0 +1,10 @@
+loadpup/__init__.py,sha256=f5Q1q8gDN7ScmjQF_F__vv_tv2YAYHYcfF4FkfCpgYs,1417
+loadpup/benchmark_base.py,sha256=SLhHAsySr2p-sa3jg_fxmOrgIUW5EoenJZCwueOntww,9069
+loadpup/cli.py,sha256=GTYg1z5qunDbsuA3RbOYqsR_EwuTVFaIxeiPW7EzpT8,11857
+loadpup/dify_benchmark.py,sha256=04lnEcUGBisbBlgrF8yfSDFzAdXDL290Lwz6To3qfP8,13854
+loadpup/main.py,sha256=hotLMMU3Jw5KvcP4JUNAgTrfyQg8nFRw4pGzyJ3C4QA,6962
+loadpup/openai_benchmark.py,sha256=3i7V9wPpKSzxrth3kQeiZH1RIY6Lhb2A0_-OyqUcrEI,13034
+loadpup-1.0.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+loadpup-1.0.0.dist-info/METADATA,sha256=vOB_rUL_0pDn7xxnjIz6pGgvoUrmKBzOmQXNPV2T3AA,9749
+loadpup-1.0.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+loadpup-1.0.0.dist-info/RECORD,,
