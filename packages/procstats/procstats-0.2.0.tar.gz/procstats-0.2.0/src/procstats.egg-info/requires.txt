@@ -1,0 +1,8 @@
+psutil>=5.9.0
+dill>=0.3.0
+
+[gpu]
+pynvml>=11.0.0
+
+[test]
+pytest>=7.0.0
