@@ -1,0 +1,9 @@
+gbox/__init__.py,sha256=C4IxwX5xrbTInPDGZWu9ptHtRMmMk4n2WQE8ulu-XBs,651
+gbox/base.py,sha256=IHSBfgoIBqWWcjDKaqD4CyoX9u3lJSu0cG85ZLYVyWU,27387
+gbox/ellipse.py,sha256=wdXyCTYPQtDqpIXIwnMQ_YatZvLJBJTb1Q-mqRIhUmY,21937
+gbox/lines.py,sha256=UleThIKcoH0H7jiW7cw-Pyn5AIy7fxZeX0WobRXfNY4,2063
+gbox-0.2.0.dist-info/licenses/LICENSE,sha256=Jtn7DUnIHLX8fVwAUAU6-A18WNGVF7ciHXnFpLtN-Uw,1069
+gbox-0.2.0.dist-info/METADATA,sha256=_ihNl-uL6styx2J9Lr1Cw-p19soLxu73_b8NE--8tDI,1928
+gbox-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gbox-0.2.0.dist-info/top_level.txt,sha256=Rk4K-Si_j4Y9YapebPNDeS6ZKQ1WohWVNtyJQ_7gdfo,5
+gbox-0.2.0.dist-info/RECORD,,
