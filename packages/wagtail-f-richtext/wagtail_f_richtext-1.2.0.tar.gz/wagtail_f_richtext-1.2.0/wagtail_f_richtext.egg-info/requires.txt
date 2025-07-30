@@ -1,0 +1,7 @@
+Wagtail>=5.2
+
+[development]
+ruff>=0.11.13
+
+[testing]
+coverage

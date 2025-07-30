@@ -1,0 +1,48 @@
+[project]
+name = "wagtail-f-richtext"
+version = "1.2.0"
+description = "An alternative Wagtail richtext filter that applies classes or styles to rich text HTML content."
+readme = "README.md"
+keywords = ["wagtail", "richtext", "filter", "html", "class", "style"]
+authors = [
+    {name = "Nick Moreton", email = "nickmoreton@me.com"}
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Framework :: Wagtail",
+    "Framework :: Wagtail :: 5",
+    "Framework :: Wagtail :: 6",
+    "Framework :: Wagtail :: 7",
+]
+requires-python = ">=3.9"
+dependencies =[
+    "Wagtail>=5.2",
+]
+
+[project.optional-dependencies]
+development = [
+    "ruff>=0.11.13",
+]
+testing = [
+  "coverage"
+]
+
+[project.urls]
+Repository = "https://github.com/wagtail-packages/wagtail-f-richtext"
+Issues = "https://github.com/wagtail-packages/wagtail-f-richtext/issues"
+Changelog = "https://github.com/wagtail-packages/wagtail-f-richtext/blob/release/CHANGELOG.md"

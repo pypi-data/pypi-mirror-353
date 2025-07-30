@@ -1,0 +1,16 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+tests/test_parser.py
+wagtail_f_richtext/__init__.py
+wagtail_f_richtext/apps.py
+wagtail_f_richtext/parser.py
+wagtail_f_richtext.egg-info/PKG-INFO
+wagtail_f_richtext.egg-info/SOURCES.txt
+wagtail_f_richtext.egg-info/dependency_links.txt
+wagtail_f_richtext.egg-info/requires.txt
+wagtail_f_richtext.egg-info/top_level.txt
+wagtail_f_richtext/templatetags/__init__.py
+wagtail_f_richtext/templatetags/frichtext_tags.py
