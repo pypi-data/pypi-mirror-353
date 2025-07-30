@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: bezrabotnyiwhisper
+Version: 0.1.0
+Summary: Client for whisper.bezrabotnyi.com
+Author: roomhacker
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+Requires-Dist: requests
+Requires-Dist: faster-whisper
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# whisperclient
+
+Python-клиент для сервиса голосовой расшифровки Whisper.
+
+## Установка
+```bash
+pip install whisperclient  # после публикации
+```
+
+## Использование
+```python
+from whisperclient import transcribe_sync
+text = transcribe_sync("audio.ogg")
+print(text)
+```
