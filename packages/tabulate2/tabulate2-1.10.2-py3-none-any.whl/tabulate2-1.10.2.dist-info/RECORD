@@ -1,0 +1,10 @@
+tabulate/__init__.py,sha256=iBJ3vkZDRbKh2X3udfo_1cuKszvOjSEkAwrWGnkG3YM,106138
+tabulate/version.py,sha256=LL6lhQRGBkmRpliyNQjVgcSQHW8YznRS_4maT2CsAX8,590
+tabulate2/__init__.py,sha256=wAM_UuT6wPi__GVkKtjhymqEqxFXW3OpRC0I2G3o3B8,107826
+tabulate2/version.py,sha256=ZZotZaAHZLQpUbluKdflOdS3L2PXkwW4zjx5S54w6mA,414
+tabulate2-1.10.2.dist-info/LICENSE,sha256=6bNViQPkNRfsJ2Pin2Vklflp5xvKRIstLq03fwc0T6U,1100
+tabulate2-1.10.2.dist-info/METADATA,sha256=EkBsIj1lyNLER3q9QAGkrx9H_mghN5ng0dEqaGupec0,41210
+tabulate2-1.10.2.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+tabulate2-1.10.2.dist-info/entry_points.txt,sha256=oUKm3evyL64rIhd9JcEG9V6cJkCsM4mspCEGK8zvOjE,46
+tabulate2-1.10.2.dist-info/top_level.txt,sha256=MvlVdCDd0z1I1Qxi31_E_DPjYxhZCFFr1fXwda8NSsk,10
+tabulate2-1.10.2.dist-info/RECORD,,
