@@ -1,0 +1,2 @@
+[console_scripts]
+wgpu-shadertoy = wgpu_shadertoy.cli:main_cli
