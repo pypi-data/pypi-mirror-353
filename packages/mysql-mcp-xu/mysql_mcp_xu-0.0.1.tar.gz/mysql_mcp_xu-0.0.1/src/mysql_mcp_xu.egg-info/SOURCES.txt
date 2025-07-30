@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/config.py
+src/mysql_mcp_xu.py
+src/mysql_mcp_xu.egg-info/PKG-INFO
+src/mysql_mcp_xu.egg-info/SOURCES.txt
+src/mysql_mcp_xu.egg-info/dependency_links.txt
+src/mysql_mcp_xu.egg-info/requires.txt
+src/mysql_mcp_xu.egg-info/top_level.txt
