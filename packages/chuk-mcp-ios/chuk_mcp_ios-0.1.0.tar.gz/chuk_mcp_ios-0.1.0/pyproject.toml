@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chuk-mcp-ios"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "chuk-mcp-runtime>=0.3",
+    "fb-idb>=1.1.7",
+    "pillow>=11.2.1",
+    "pydantic>=2.11.5",
+    "requests>=2.32.3",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]  # Change from "." to "src"
+include = ["chuk_mcp_iosy*"]
+
+[project.scripts]
+# Main entry points - clean command structure
+chuk-mcp-ios = "chuk_mcp_ios.main:main"
+ios-control = "chuk_mcp_ios.cli.main:main"
+ios-mcp = "chuk_mcp_ios.mcp.main:main"
+ios-device-control = "chuk_mcp_ios.cli.main:main"
+ios-simulator = "chuk_mcp_ios.cli.main:main"
