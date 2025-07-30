@@ -1,0 +1,71 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="agent-sprint-testkit",
+    version="0.3.1",
+    description="AgentSprint TestKit - Professional AI agent evaluation with OpenAI Evals integration",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    author="ASTK Team",
+    author_email="admin@blackbox-dev.com",
+    url="https://github.com/stanhus/ASTK",
+    packages=find_packages(),
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: Other/Proprietary License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Topic :: Software Development :: Testing",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.9",
+    install_requires=[
+        "langchain>=0.1.0",
+        "langchain-openai>=0.0.2",
+        "langchain-core>=0.1.0",
+        "pydantic>=2.0.0",
+        "click>=8.0.0",
+        "opentelemetry-api>=1.20.0",
+        "opentelemetry-sdk>=1.20.0",
+        "psutil>=5.9.0",
+        "python-dotenv>=1.0.0",
+        "requests>=2.28.0",
+        "aiohttp>=3.8.0",
+        "pyyaml>=6.0.0",
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=7.0.0",
+            "pytest-asyncio>=0.21.0",
+            "pytest-cov>=4.0.0",
+            "black>=23.0.0",
+            "isort>=5.12.0",
+            "mypy>=1.0.0",
+        ],
+        "docker": [
+            "docker>=6.0.0",
+        ],
+        "evals": [
+            "openai>=1.50.0",
+            "pandas>=2.0.0",
+            "plotly>=5.0.0",
+            "numpy>=1.24.0",
+        ],
+    },
+    entry_points={
+        "console_scripts": [
+            "astk=astk.cli:main_wrapper",
+            "astk-benchmark=astk.cli:benchmark_wrapper",
+            "astk-run=astk.cli:run_wrapper",
+        ],
+    },
+    include_package_data=True,
+    package_data={
+        "astk": ["templates/*.yaml", "templates/*.py"],
+    },
+)
