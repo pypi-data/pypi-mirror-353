@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: bomiot_check
+Version: 0.3.0
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
+Summary: A Python package for MAC address validation and encryption
+Keywords: Bomiot,bomiot
+Author-email: Bomiot <Singosgu@gmail.com>
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+1
