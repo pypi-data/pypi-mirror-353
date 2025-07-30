@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-generate-number = mcp_generate_number.server:main
