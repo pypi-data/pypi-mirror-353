@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: devobs
+Version: 0.1.0
+Summary: CLI for obsessed developers.
+Home-Page: https://github.com/lasuillard/devobs
+Author: Yuchan Lee <lasuillard@gmail.com>
+Author-email: Yuchan Lee <lasuillard@gmail.com>
+License: MIT
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# devobs
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/lasuillard/devobs/actions/workflows/ci.yaml/badge.svg)](https://github.com/lasuillard/devobs/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/lasuillard/devobs/graph/badge.svg?token=VlANvU6qUC)](https://codecov.io/gh/lasuillard/devobs)
+
+CLI for obsessed developers.
+
