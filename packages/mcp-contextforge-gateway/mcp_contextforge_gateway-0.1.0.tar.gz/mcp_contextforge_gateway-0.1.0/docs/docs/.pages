@@ -1,0 +1,9 @@
+nav:
+  - "🏠 Home": index.md
+  - "🧭 Overview": overview
+  - "🧰 Using": using
+  - "🚀 Deployment": deployment
+  - "🛡️ Manage": manage
+  - "💻 Development": development
+  - "🧪 Testing": testing
+  - "📐 Architecture": architecture

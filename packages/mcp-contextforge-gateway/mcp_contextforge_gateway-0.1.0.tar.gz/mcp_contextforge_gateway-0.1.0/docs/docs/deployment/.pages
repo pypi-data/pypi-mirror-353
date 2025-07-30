@@ -1,0 +1,14 @@
+title: Deployment
+nav:
+  - index.md
+  - local.md
+  - container.md
+  - compose.md
+  - kubernetes.md
+  - openshift.md
+  - minikube.md
+  - helm.md
+  - google-cloud-run.md
+  - ibm-code-engine.md
+  - aws.md
+  - azure.md
