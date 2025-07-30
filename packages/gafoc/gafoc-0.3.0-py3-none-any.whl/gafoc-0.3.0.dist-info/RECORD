@@ -1,0 +1,14 @@
+archive/__init__.py,sha256=J5zuS1ADPOXunA3FpShh78gv_fbOpl0laSWk8UrdmIw,119
+archive/archiver.py,sha256=U4b4G_aDT9xGXeorVghNrFYJpiHl3F9JVmzs9HnBL28,2885
+archive/extractor.py,sha256=LFZDZb85xYqwnIsfW3OgQqTzZg2bg-y469r3mNyqvwU,2898
+core/__init__.py,sha256=XnUk-gVcvBNKjjblmeq93KmS-81rfCPlnDu5FyITsoA,136
+core/compression.py,sha256=AEK_YVsE0rF9shIVxE0Xdp_UOqtAD6gfNpxqSJPU9jE,2041
+core/decompression.py,sha256=zVCGOVFa9zCAqLoMWHxTQaqyYzuaKyixhlJUavgf_Bw,1881
+core/huffman.py,sha256=6m7_Ac3OP_cSibMVy6JZxT7Lgzzg0xtds8ThJfvMbhw,5856
+core/lz77.py,sha256=hCYq_mUeYIy6zMJ7hpOa9RhfCT0o6fwO6-YzzQTD4ak,4227
+gafoc-0.3.0.dist-info/licenses/LICENSE,sha256=RO3gPWQR0Gt9OugH11PSiibJq9Y-PCRa9VAL_9hRvKc,1070
+gafoc-0.3.0.dist-info/METADATA,sha256=2etrD4QTpMlWfq5WOPkf-TkePlFyW4b_P7VWcfIDGbg,1184
+gafoc-0.3.0.dist-info/WHEEL,sha256=0CuiUZ_p9E4cD6NyLD6UG80LBXYyiSYZOKDm5lp32xk,91
+gafoc-0.3.0.dist-info/entry_points.txt,sha256=ZmA0KTpSknzgaguhRCLyZuLgaB8MWE7zUmAjAiXMRUQ,41
+gafoc-0.3.0.dist-info/top_level.txt,sha256=jmZTJt7nNv0zBnC8YWhxHVgEPNvGHnntrXajMoqARzg,13
+gafoc-0.3.0.dist-info/RECORD,,
