@@ -1,0 +1,13 @@
+# MANIFEST.in for GAFOC
+
+# Include the main documentation and license files
+include README.md
+include LICENSE
+
+# IMPORTANT: Recursively include all Cython source files (.pyx).
+# This is critical for users who will build the package from source.
+recursive-include GAFOC *.pyx
+
+# It's also good practice to include any C header files (.h) you might
+# add in the future. This line doesn't hurt if there are none.
+recursive-include GAFOC *.h

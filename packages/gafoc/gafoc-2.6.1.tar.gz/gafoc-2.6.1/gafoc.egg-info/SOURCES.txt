@@ -1,0 +1,21 @@
+MANIFEST.in
+README.md
+setup.py
+D:/My Projects/PIPS/GAFOC/core/huffman.c
+GAFOC/__init__.py
+GAFOC/exceptions.py
+GAFOC/core/huffman.c
+GAFOC/archive/__init__.py
+GAFOC/archive/archiver.py
+GAFOC/archive/extractor.py
+GAFOC/core/__init__.py
+GAFOC/core/compression.py
+GAFOC/core/decompression.py
+GAFOC/core/huffman.c
+GAFOC/core/huffman.pyx
+gafoc.egg-info/PKG-INFO
+gafoc.egg-info/SOURCES.txt
+gafoc.egg-info/dependency_links.txt
+gafoc.egg-info/not-zip-safe
+gafoc.egg-info/requires.txt
+gafoc.egg-info/top_level.txt
