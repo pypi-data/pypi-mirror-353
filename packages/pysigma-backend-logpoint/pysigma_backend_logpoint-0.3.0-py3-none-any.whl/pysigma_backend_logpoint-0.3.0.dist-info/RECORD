@@ -1,0 +1,11 @@
+sigma/backends/logpoint/__init__.py,sha256=2CmYKbH-BXCiZnhSWQ-Zbdhl5kWGToc5qPn-qRwfCTk,66
+sigma/backends/logpoint/logpoint.py,sha256=gYuWegt1YTbgJbAFO8ViuWZeV7I0bbqRk7pDH1L-5_o,10605
+sigma/pipelines/logpoint/__init__.py,sha256=PZGnlAuBtOGY3KafQI2DfEQgSgffsmpd9WEHRS9IuI8,291
+sigma/pipelines/logpoint/azure.py,sha256=apDZQ-gqv5PTExCDPWOfB6CmimhiNkT8WE2W6aF6p-U,3243
+sigma/pipelines/logpoint/logpoint_mapping.py,sha256=9S8dYmXDYwaHMlNVHg1qLLFgMiC69n29K86fBEGg4EE,87376
+sigma/pipelines/logpoint/m365.py,sha256=AX8sMFTUpPu--ymwLu9MNyzkNe9R_uEoOt9kFc5l3Hc,1917
+sigma/pipelines/logpoint/windows.py,sha256=aNr0OrwhPNkB55D3egJ7bq55zebiQqHPIXpYVq6GPsY,11281
+pysigma_backend_logpoint-0.3.0.dist-info/LICENSE,sha256=IMF9i4xIpgCADf0U-V1cuf9HBmqWQd3qtI3FSuyW4zE,26526
+pysigma_backend_logpoint-0.3.0.dist-info/METADATA,sha256=IIwKMYmYM-PYjcx9Nx1PJOYwz8vC3RBOy9rRSlTnWsk,3960
+pysigma_backend_logpoint-0.3.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pysigma_backend_logpoint-0.3.0.dist-info/RECORD,,
