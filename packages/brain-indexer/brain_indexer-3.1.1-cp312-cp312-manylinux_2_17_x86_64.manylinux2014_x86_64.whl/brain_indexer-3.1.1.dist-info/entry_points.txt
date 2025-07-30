@@ -1,0 +1,6 @@
+[console_scripts]
+brain-indexer-nodes = brain_indexer.commands:brain_indexer_nodes
+brain-indexer-synapses = brain_indexer.commands:brain_indexer_synapses
+brain-indexer-circuit = brain_indexer.commands:brain_indexer_circuit
+brain-indexer-compare = brain_indexer.commands:brain_indexer_compare
+
