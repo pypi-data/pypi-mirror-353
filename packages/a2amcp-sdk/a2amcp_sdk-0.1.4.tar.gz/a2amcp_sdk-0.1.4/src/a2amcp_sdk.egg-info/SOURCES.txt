@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/a2amcp/__init__.py
+src/a2amcp/core.py
+src/a2amcp/prompt.py
+src/a2amcp/py.typed
+src/a2amcp_sdk.egg-info/PKG-INFO
+src/a2amcp_sdk.egg-info/SOURCES.txt
+src/a2amcp_sdk.egg-info/dependency_links.txt
+src/a2amcp_sdk.egg-info/requires.txt
+src/a2amcp_sdk.egg-info/top_level.txt
