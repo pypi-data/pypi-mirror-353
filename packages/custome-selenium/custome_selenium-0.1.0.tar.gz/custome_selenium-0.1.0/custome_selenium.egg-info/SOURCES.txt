@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+custome-selenium/__init__.py
+custome-selenium/coreapp.py
+custome_selenium.egg-info/PKG-INFO
+custome_selenium.egg-info/SOURCES.txt
+custome_selenium.egg-info/dependency_links.txt
+custome_selenium.egg-info/requires.txt
+custome_selenium.egg-info/top_level.txt
