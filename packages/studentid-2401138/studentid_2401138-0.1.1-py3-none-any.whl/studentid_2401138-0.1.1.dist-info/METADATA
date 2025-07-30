@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: studentid_2401138
+Version: 0.1.1
+Summary: A simple package that shows my student ID
+Author: Sabin
+Author-email: sabin@dsu.ac.kr
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: summary
+
+# studentid_2401138
+
+A simple Python package that displays my student ID.
