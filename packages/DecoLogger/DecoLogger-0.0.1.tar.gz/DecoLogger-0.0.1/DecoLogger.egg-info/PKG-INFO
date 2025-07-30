@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: DecoLogger
+Version: 0.0.1
+Summary: It is the DecoLogger
+Home-page: https://github.com/chogamy/DecoLogger
+Author: chogamy
+Author-email: gamy0315@gmail.com
+Keywords: logger,decorator,time,error
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
