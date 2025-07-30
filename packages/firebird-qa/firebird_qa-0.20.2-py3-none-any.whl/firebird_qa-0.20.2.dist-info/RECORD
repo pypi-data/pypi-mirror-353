@@ -1,0 +1,9 @@
+firebird/qa/__about__.py,sha256=hrXXcyDAwHjLiQfVEiGZCnTnUGV3LVmfGBPmHqBMeeQ,139
+firebird/qa/__init__.py,sha256=_76W7tEkwtIMC1KD1DuKFsQU6VY9xZOOGVTZU5MSD00,1882
+firebird/qa/fbtconv.py,sha256=A2pN5gzpX1_n5q4wslGTO6LRTNF0QrWiI73ATcKIhXg,19703
+firebird/qa/plugin.py,sha256=5YJjsdV0QVOY8xHPDBV1V4FwYJz-pYgvEkb0mTSIzcc,126691
+firebird_qa-0.20.2.dist-info/METADATA,sha256=UlSNA8bLReaO3USOd3oWuu3UJArt0S8scVqglWert1A,8283
+firebird_qa-0.20.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+firebird_qa-0.20.2.dist-info/entry_points.txt,sha256=J_SkVfxrK6J83TFzJCf6S2rrwLBXwC3eld1evhBT2Ho,96
+firebird_qa-0.20.2.dist-info/licenses/LICENSE,sha256=YTwIXyaFd_rWEk_eESM50PgPUc87Lw_H2uBr_Z-6_KY,1068
+firebird_qa-0.20.2.dist-info/RECORD,,
