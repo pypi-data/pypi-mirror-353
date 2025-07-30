@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: ttyp
+Version: 0.1.3
+Summary: CLI typing test
+Requires-Dist: prompt-toolkit>=3.0.51
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# ttype
+Typing test in your terminal.
