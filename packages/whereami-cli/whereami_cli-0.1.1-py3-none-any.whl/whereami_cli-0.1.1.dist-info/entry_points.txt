@@ -1,0 +1,2 @@
+[console_scripts]
+whereami = whereami_cli.location:get_current_location
