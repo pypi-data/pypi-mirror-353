@@ -1,0 +1,3 @@
+[console_scripts]
+sqlalchemy_schema=sqlalchemy_schema.command.main:main
+
