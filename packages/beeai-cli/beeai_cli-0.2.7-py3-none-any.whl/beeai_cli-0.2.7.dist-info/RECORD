@@ -1,0 +1,17 @@
+beeai_cli/__init__.py,sha256=365G9pvRjNDqGHeM0Qfo4ILhI4PIgmfSEerD5HZ8mKk,2339
+beeai_cli/api.py,sha256=uLZzqH-Mn97RSMWJt2Bpd0LLrle0kQyuBsyu6b1x6m4,5120
+beeai_cli/async_typer.py,sha256=4PSXDfbGfNSgxwZnwQY1_j4acUr5cuTJSVLfcya6S54,3932
+beeai_cli/configuration.py,sha256=PLtJTSA0I_0Ne1tYjy9p_Cn6WVtlAknNVLvIvfvjNYI,1387
+beeai_cli/console.py,sha256=6B_augyUdYBbDCzIXmQHuVau_sVq0DE3_4ysT35Q-U8,691
+beeai_cli/utils.py,sha256=6NDZzOfOJCfIb3yoYB93FlWAIIV3jEuIeiHhFzbs1Bk,10239
+beeai_cli/commands/__init__.py,sha256=06nwsBUjOVTl5ImtwuAanuF6zoS39Q_ao7j7zSBk0c8,602
+beeai_cli/commands/agent.py,sha256=olM7mR74g7nRizXhbBsKwvpdKV8hMHWjmCD0l3ZaZRU,26369
+beeai_cli/commands/build.py,sha256=JV8kmDt2iy9WKQAbZtU7Y4vwoDQ3Z3lqi01huZCh9Lg,5210
+beeai_cli/commands/env.py,sha256=k7Cf7I8XhGJMSavKadd4k0zdJDrpWL8sybTKqPj8h_g,19758
+beeai_cli/commands/platform.py,sha256=Grz-n0-JMCEMyeeVwYYPhr-4bCONs4wK4BOI3ob715w,18446
+beeai_cli/data/.gitignore,sha256=W0urBl_DVtzJyKHGXo53wMVzMPJseiK9RMn46No6i70,14
+beeai_cli/data/helm-chart.tgz,sha256=a0EuIv8WG8jcyizl6RIiYyYvMSOdUxNhEM_8iKL2HSQ,109168
+beeai_cli-0.2.7.dist-info/METADATA,sha256=qrkX0W6MhVaaQjb4lFRvtl9EJaNJMT9g52KALBlmQdk,706
+beeai_cli-0.2.7.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+beeai_cli-0.2.7.dist-info/entry_points.txt,sha256=rXVGta1RsSjP93CodUKYZkVxDObBo8tSMxxxtaPZ8MU,40
+beeai_cli-0.2.7.dist-info/RECORD,,
