@@ -1,0 +1,183 @@
+# Environment variables
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+*.env
+
+# SpecStory - ignore everything
+.specstory/
+.specstory
+.specstory/**/*
+.specstory/history/
+.specstory/history/*.md
+.specstory/.what-is-this.md
+
+# Rust
+core_engine/target/
+**/*.rs.bk
+Cargo.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Node.js / TypeScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Next.js
+.next/
+out/
+
+# Nuxt.js
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Redis dump file
+dump.rdb
+
+# Logs
+logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_store
+.ds_store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Docker
+docker-compose.override.yml
+
+# Documentation builds
+docs/_build/
+site/
+
+# Certificates
+*.pem
+*.key
+*.crt
+
+# IDE files
+*.sublime-project
+*.sublime-workspace
+.vscode/settings.json
+
+# Backup files
+*.bak
+*.backup
+
+# Testing
+.coverage
+.pytest_cache/
+coverage/
+test-results/

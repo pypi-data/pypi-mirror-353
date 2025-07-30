@@ -1,0 +1,208 @@
+# Momentum SDK
+
+Lightweight Python SDK for Momentum's prompt compression engine.
+
+## Installation
+
+```bash
+pip install momentum-sdk
+```
+
+## Quick Start
+
+```python
+from momentum_sdk import compress, stats
+
+# Option 1: Set API key via environment variable
+# export MOMENTUM_API_KEY="your-api-key"
+
+# Option 2: Configure programmatically
+from momentum_sdk import configure
+configure(api_key="your-api-key")
+
+# Compress a prompt
+test = "Imagine you are an experienced Ethereum developer tasked with creating a smart contract for a blockchain messenger. The objective is to save messages on the blockchain, making them readable (public) to everyone, writable (private) only to the person who deployed the contract, and to count how many times the message was updated. Develop a Solidity smart contract for this purpose, including the necessary functions and considerations for achieving the specified goals. Please provide the code and any relevant explanations to ensure a clear understanding of the implementation."
+compressed = compress(test, context="gpt-4o")
+
+# Feed to your model
+import openai
+response = openai.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": compressed}]
+)
+
+# Get compression stats
+meta = stats(compressed)
+print(f"Original: {meta['original_tokens']} tokens")
+print(f"Compressed: {meta['compressed_tokens']} tokens")
+print(f"Saved: {meta['bytes_saved']} bytes ({meta['compression_ratio']:.1%} compression)")
+```
+
+## Configuration
+
+### Method 1: Environment Variables (Recommended)
+
+```bash
+# Required
+export MOMENTUM_API_KEY="your-api-key"
+
+# Optional
+export MOMENTUM_MODE="remote"  # or "local"
+export MOMENTUM_API_BASE_URL="https://api.momentum.ai"
+export MOMENTUM_TELEMETRY="disabled"  # or "enabled"
+```
+
+### Method 2: Programmatic Configuration
+
+```python
+from momentum_sdk import configure
+
+configure(
+    api_key="your-api-key",
+    mode="remote",
+    timeout_seconds=30,
+    cache_enabled=True
+)
+```
+
+### Method 3: Configuration Files
+
+The SDK looks for configuration in these locations (in order):
+1. `~/.momentum/config.json` or `~/.momentum/config.yaml`
+2. `.momentum.json` or `.momentum.yaml` in current directory
+3. Environment variables
+
+Example config file (`~/.momentum/config.json`):
+```json
+{
+  "api_key": "your-api-key",
+  "mode": "remote",
+  "cache_enabled": true,
+  "cache_ttl_seconds": 3600
+}
+```
+
+## API Reference
+
+### configure(api_key, mode="remote", **kwargs)
+
+Configure the Momentum SDK.
+
+**Arguments:**
+- `api_key` (str): Your Momentum API key
+- `mode` (str): "remote" or "local"
+- `**kwargs`: Additional configuration options
+
+### compress(prompt, context="gpt-4o", binary=False)
+
+Compress a prompt for efficient token usage.
+
+**Arguments:**
+- `prompt` (str): Text to compress
+- `context` (str): Target model context (e.g., "gpt-4o", "claude-3")
+- `binary` (bool): If True, return raw bytes; if False, return text-safe string
+
+**Returns:** Compressed prompt ready to feed to the model
+
+**Raises:**
+- `AuthenticationError`: If API key is missing or invalid
+- `CompressionError`: If compression fails
+- `NetworkError`: If network request fails
+- `RateLimitError`: If rate limit exceeded
+
+### stats(compressed)
+
+Get detailed compression metrics.
+
+**Arguments:**
+- `compressed` (str): Compressed text from compress()
+
+**Returns:** Dictionary with:
+- `original_tokens`: Token count before compression
+- `compressed_tokens`: Token count after compression
+- `compression_ratio`: Ratio of compression achieved
+- `bytes_saved`: Difference in UTF-8 byte length
+- `estimated_cost_usd`: Approximate cost savings
+- `model`: Context argument used
+- `mode`: Execution path used ("local" or "remote")
+- `timestamp`: ISO-8601 UTC timestamp
+
+## Modes
+
+### Remote Mode (default)
+Uses Momentum's hosted compression service. Requires API key.
+
+### Local Mode
+Uses embedded Rust engine for zero-latency compression. Requires:
+1. Install SDK with native extensions: `pip install momentum-sdk[local]`
+2. Set mode: `export MOMENTUM_MODE=local` or `configure(mode="local")`
+
+## Error Handling
+
+```python
+from momentum_sdk import compress, MomentumError, AuthenticationError
+
+try:
+    compressed = compress(prompt)
+except AuthenticationError:
+    print("API key is required. Set MOMENTUM_API_KEY environment variable.")
+except MomentumError as e:
+    print(f"Error: {e}")
+```
+
+Common errors:
+- `AuthenticationError`: Missing or invalid API key
+- `CompressionError`: Compression failed
+- `NetworkError`: Network or server issues
+- `RateLimitError`: Rate limit exceeded
+
+## Examples
+
+### Basic Usage
+```python
+from momentum_sdk import configure, compress
+
+configure(api_key="your-api-key")
+compressed = compress("Your long prompt here", context="gpt-4o")
+print(compressed)
+```
+
+### With Different Models
+```python
+# For different AI models
+compressed_gpt = compress(prompt, context="gpt-4o")
+compressed_claude = compress(prompt, context="claude-3")
+compressed_llama = compress(prompt, context="llama-2")
+```
+
+### Getting Compression Stats
+```python
+compressed = compress("A very long prompt that needs compression...")
+stats_data = stats(compressed)
+
+print(f"Compression ratio: {stats_data['compression_ratio']:.1%}")
+print(f"Tokens saved: {stats_data['original_tokens'] - stats_data['compressed_tokens']}")
+print(f"Estimated cost savings: ${stats_data['estimated_cost_usd']:.4f}")
+```
+
+## Development
+
+```bash
+# Clone the repo
+git clone https://github.com/momentum-ai/momentum-core
+cd momentum-core/sdk
+
+# Install dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black momentum_sdk tests
+ruff momentum_sdk tests
+```
+
+## License
+
+MIT 
