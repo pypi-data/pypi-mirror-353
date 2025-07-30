@@ -1,0 +1,2 @@
+[console_scripts]
+mftfwscan = mftfwscan.main:main
