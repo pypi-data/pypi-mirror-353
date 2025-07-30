@@ -1,0 +1,8 @@
+requests
+pyfiglet
+
+[dev]
+pyfiglet
+
+[test]
+pytest
