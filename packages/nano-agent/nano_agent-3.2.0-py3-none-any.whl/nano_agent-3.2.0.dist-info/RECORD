@@ -1,0 +1,10 @@
+nano/__init__.py,sha256=ZA6jwQHEOmH5DsAS8rLoPFNnjlL9Np8JJhskUDEYAbU,48
+nano/agent.py,sha256=KL8joiNlRRXaE2__-ksMKXgv2pc77A3qX9lRS3eFqWA,13155
+nano/cli.py,sha256=tpqrLE-mPF0M1GkhVPCROrQ5rbHhCTIfLQBNuVAwyrE,2396
+nano/tools.py,sha256=lCCp5ZO6znycTMMZzuApeGR3k2d45xPoSwYdX4kwGKs,3854
+nano/utils.py,sha256=1Ire1koNI1R4dU6qF3qdm-qnRtlEp0HboeUMmwGU1Nc,661
+nano_agent-3.2.0.dist-info/METADATA,sha256=-i4iydbs1pcY9c2oL7wV6C72ZbzNuFMcmJnRbzEfq6Y,10157
+nano_agent-3.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nano_agent-3.2.0.dist-info/entry_points.txt,sha256=CmlTQuIuL2AO1LWpU0K_5X6njX3ZD9DYnRW022KThQk,45
+nano_agent-3.2.0.dist-info/top_level.txt,sha256=qpOO4V_zN0L3OOAQkwnUAZ1pT525kO9QkOakR7EMWgY,5
+nano_agent-3.2.0.dist-info/RECORD,,
