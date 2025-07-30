@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+server.py
+8000_cherry_mcp.egg-info/PKG-INFO
+8000_cherry_mcp.egg-info/SOURCES.txt
+8000_cherry_mcp.egg-info/dependency_links.txt
+8000_cherry_mcp.egg-info/requires.txt
+8000_cherry_mcp.egg-info/top_level.txt
