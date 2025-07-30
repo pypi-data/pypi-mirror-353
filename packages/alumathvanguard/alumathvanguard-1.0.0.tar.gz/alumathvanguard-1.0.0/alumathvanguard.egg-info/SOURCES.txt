@@ -1,0 +1,11 @@
+README.md
+setup.py
+alumathvanguard/__init__.py
+alumathvanguard/matrix_ops.py
+alumathvanguard.egg-info/PKG-INFO
+alumathvanguard.egg-info/SOURCES.txt
+alumathvanguard.egg-info/dependency_links.txt
+alumathvanguard.egg-info/requires.txt
+alumathvanguard.egg-info/top_level.txt
+tests/__init__.py
+tests/test_matrix_ops.py
