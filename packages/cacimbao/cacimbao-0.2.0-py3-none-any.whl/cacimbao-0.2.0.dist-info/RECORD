@@ -1,0 +1,13 @@
+cacimbao/__init__.py,sha256=JnDqlLTdCpsFmWk7bn-DqNOd_NvSep_GKFclSRcmF_0,141
+cacimbao/data_preparation.py,sha256=9_ULtvSE5yvSA5hq-47t3QjHPtQZDYFM_11vrLuqqbE,2860
+cacimbao/datasets.py,sha256=atceY-4IfHk8ff1UNFHH5ORJnd_3xduQD7kMBXpR6nM,7031
+cacimbao/data/aldeias-indigenas/aldeias-indigenas-08062025.parquet,sha256=JKAKZI9Kni04_MKhiUX7by2g-zIu_siXjwOTlOTkpGg,140999
+cacimbao/data/aldeias-indigenas/datapackage.json,sha256=h7T5SMW262Ry-qHy3mljbchNRk1Stlqsf-HD0qoqfrk,1185
+cacimbao/data/pescadores-e-pescadoras-profissionais/datapackage.json,sha256=tOSkmuKmYmJYf8XT5zBAI_Q8kE9F0i1Bil3Gjn5drf4,909
+cacimbao/data/pescadores-e-pescadoras-profissionais/pescadores-e-pescadoras-profissionais-07062025.parquet,sha256=C5TSXR5JGr66oh20Vydy8zBHslq4M6nJN0op2lkQOPc,3119861
+cacimbao/data/salario-minimo/datapackage.json,sha256=f5_1v-c5T1FZHJR5TMeXTvIDoq-Sf8d11gFndVUoGYc,636
+cacimbao/data/salario-minimo/salario-minimo-real-vigente-04062025.parquet,sha256=UlW1oNhnDnY5SCUAMLYPMqfocBc32OHpJz38F1onWL0,13183
+cacimbao-0.2.0.dist-info/METADATA,sha256=kfvxRZj58C4caJFI9Q5E-O_wABZO5wjrHynnq2DEbuw,1681
+cacimbao-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cacimbao-0.2.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+cacimbao-0.2.0.dist-info/RECORD,,
