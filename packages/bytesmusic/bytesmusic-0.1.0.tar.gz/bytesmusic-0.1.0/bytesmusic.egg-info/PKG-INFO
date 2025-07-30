@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: bytesmusic
+Version: 0.1.0
+Summary: A music metadata library for Python.
+Author: Chromax Software
+License: ISC
+License-File: LICENSE
+Dynamic: author
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary

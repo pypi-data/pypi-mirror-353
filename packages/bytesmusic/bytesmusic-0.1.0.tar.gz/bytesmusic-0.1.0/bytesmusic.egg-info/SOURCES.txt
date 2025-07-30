@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+bytesmusic/__init__.py
+bytesmusic.egg-info/PKG-INFO
+bytesmusic.egg-info/SOURCES.txt
+bytesmusic.egg-info/dependency_links.txt
+bytesmusic.egg-info/top_level.txt
