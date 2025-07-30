@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+dfalchemy/__init__.py
+dfalchemy/converters.py
+dfalchemy/generators.py
+dfalchemy/utils.py
+dfalchemy.egg-info/PKG-INFO
+dfalchemy.egg-info/SOURCES.txt
+dfalchemy.egg-info/dependency_links.txt
+dfalchemy.egg-info/requires.txt
+dfalchemy.egg-info/top_level.txt

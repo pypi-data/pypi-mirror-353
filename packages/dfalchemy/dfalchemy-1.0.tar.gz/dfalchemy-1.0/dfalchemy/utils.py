@@ -1,0 +1,54 @@
+import pandas as pd
+
+def save_df(df, filename="dataframe.csv"):
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Please pass a dataframe")
+
+    if not filename.endswith(".csv"):
+        filename += ".csv"
+    df.to_csv(filename, index=False)
+
+
+def info(df):
+    print("📊 DataFrame Overview")
+    print("-" * 30)
+    print(f"Shape: {df.shape[0]} rows × {df.shape[1]} columns\n")
+
+    print("🧱 Column Types")
+    print(df.dtypes)
+    print()
+
+    print("❓ Missing Values")
+    missing = df.isnull().sum()
+    percent_missing = (missing / len(df)) * 100
+    missing_df = pd.DataFrame({
+        'Missing': missing,
+        'Percent (%)': percent_missing.round(2)
+    })
+    print(missing_df[missing_df['Missing'] > 0] if missing.sum() else "No missing values\n")
+
+    print("🔢 Numeric Column Means")
+    numeric_cols = df.select_dtypes(include=['int', 'float']).columns
+    if len(numeric_cols):
+        print(df[numeric_cols].mean().round(2))
+    else:
+        print("No numeric columns.\n")
+
+    print("👁 Preview")
+    print(df.head(5))
+
+
+def drop_empty_cols(df):
+    return df.dropna(axis=1, how='all')
+
+
+def about():
+    print("📦 DFAlchemy")
+    print("——————————————")
+    print("A Python module to easily generate, convert, and manage pandas DataFrames.")
+    print()
+    print("👨‍💻 Created by: Bhavya Soni")
+    print("🔖 Version: 0.1.0")
+    print("🔗 GitHub: https://github.com/zGamingTechz/DFAlchemy")
+    print()
+    print("Designed to help teachers and devs save time and focus on insights, not boilerplate.")
