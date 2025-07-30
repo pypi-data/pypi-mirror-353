@@ -1,0 +1,7 @@
+orjson
+
+[all]
+pydantic>=1.8.0
+
+[pydantic]
+pydantic>=1.8.0
