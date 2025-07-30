@@ -1,0 +1,17 @@
+fabricatio_anki-0.1.1.data/scripts/apc,sha256=I7onVLtDR_VjsmuQlxVero2qj9Kp1hfLnoZGtdexwzk,6735552
+fabricatio_anki-0.1.1.dist-info/METADATA,sha256=GIASlFZXY_q_82Uj4NkyNzxGB8Kl6avaaUieXllhHaU,2913
+fabricatio_anki-0.1.1.dist-info/WHEEL,sha256=OZYXF4emuP5o7uCHyen8StXv3k74AF7eDhQe1rxgOqQ,108
+fabricatio_anki-0.1.1.dist-info/licenses/LICENSE,sha256=yDZaTLnOi03bi3Dk6f5IjhLUc5old2yOsihHWU0z-i0,1067
+fabricatio_anki/__init__.py,sha256=el9E7e2isUPkF605H-XA8S4u5yO3Lg_6eLrABOytDzo,113
+fabricatio_anki/actions/__init__.py,sha256=K_wUrSgu0Rjo0NEcO-2NnxmxAg4L01KLrokkb5NajGE,42
+fabricatio_anki/capabilities/__init__.py,sha256=LdJE4VScf9zuaDr0CULEg62BDSBdyL-BzxfW3O6FUOo,47
+fabricatio_anki/capabilities/generate_deck.py,sha256=dfJIwXE4by7X8iX-2S0cQLq_qn045yMp3hbchEuF6ZQ,9051
+fabricatio_anki/config.py,sha256=MIJj_rysC4ON2W71VZ8BDiMiX0PNBL_XyB8hqoI--t8,1997
+fabricatio_anki/models/__init__.py,sha256=iPaYW2zDRfcCrNw0TE9E9OS5Zd0VhESbWiOcpdbOW8U,41
+fabricatio_anki/models/deck.py,sha256=Pqv_lY4JNTuzjzSXhgdm4k5cUTfnT-FqbCU73EBTdfM,4961
+fabricatio_anki/models/template.py,sha256=TYBZ30ua2MDWmZ3RqyysNC1qzcTCQGks5D2qwxr8b48,2508
+fabricatio_anki/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricatio_anki/rust.cpython-313-x86_64-linux-gnu.so,sha256=V8dA2jcxPgZD32Ek497fwsa6y7LgA-6QYyaKls08JAo,6259840
+fabricatio_anki/rust.pyi,sha256=MJXj2hTZFZatO1IpbUCEuo1qoIEKYxINm07kgcpHuKA,17472
+fabricatio_anki/workflows/__init__.py,sha256=TMouxyStwyPGDTLYv2Ip6GZzXI-pqdIOneCSXA4LZ0Q,44
+fabricatio_anki-0.1.1.dist-info/RECORD,,
