@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "product-classifier"
+version = "0.1.0"
+description = "CNN+BiLSTM hybrid architecture for product classification"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Turgut Guvercin", email = "turgut430@gmail.com"}
+]
+maintainers = [
+    {name = "Turgut Guvercin", email = "turgut430@gmail.com"}
+]
+keywords = [
+    "deep learning",
+    "nlp", 
+    "text classification",
+    "cnn",
+    "lstm",
+    "product classification",
+    "pytorch",
+    "machine learning"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research", 
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9", 
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=1.9.0",
+    "numpy>=1.21.0",
+    "safetensors>=0.3.0",
+    "huggingface-hub>=0.15.0",
+    "gensim>=4.0.0",
+    "scikit-learn>=1.0.0",
+    "tqdm>=4.60.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "isort>=5.0",
+    "mypy>=0.900"
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme>=1.0",
+    "myst-parser>=0.15"
+]
+all = [
+    "cnn-bilstm-classifier[dev,docs]"
+]
+
+[project.urls]
+Homepage = "https://github.com/turgutguvercin/cnn-bilstm-classifier"
+
+[project.scripts]
+cnn-bilstm-train = "product_classifier.cli:train_cli"
+cnn-bilstm-predict = "product_classifier.cli:predict_cli"
+
+[tool.setuptools.packages.find]
