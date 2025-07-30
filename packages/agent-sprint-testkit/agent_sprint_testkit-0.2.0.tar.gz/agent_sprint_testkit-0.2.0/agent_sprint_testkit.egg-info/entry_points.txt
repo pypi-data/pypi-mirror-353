@@ -1,0 +1,4 @@
+[console_scripts]
+astk = astk.cli:main_wrapper
+astk-benchmark = astk.cli:benchmark_wrapper
+astk-run = astk.cli:run_wrapper
