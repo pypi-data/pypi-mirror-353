@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+taiz.egg-info/PKG-INFO
+taiz.egg-info/SOURCES.txt
+taiz.egg-info/dependency_links.txt
+taiz.egg-info/requires.txt
+taiz.egg-info/top_level.txt
+taizun/__init__.py
+taizun/nlp.py
+taizun/utils.py
+taizun/vision.py
