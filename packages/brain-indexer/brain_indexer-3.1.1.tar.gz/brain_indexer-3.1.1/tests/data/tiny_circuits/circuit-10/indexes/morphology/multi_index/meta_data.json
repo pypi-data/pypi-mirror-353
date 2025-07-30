@@ -1,0 +1,11 @@
+{
+  "element_type": "morphology",
+  "multi_index": {
+    "heavy_data_path": "multi_index"
+  },
+  "version": 0,
+  "extended": {
+    "dataset_path": "../../../nodes.h5",
+    "population": null
+  }
+}

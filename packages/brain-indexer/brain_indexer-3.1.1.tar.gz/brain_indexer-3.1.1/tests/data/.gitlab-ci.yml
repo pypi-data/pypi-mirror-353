@@ -1,0 +1,4 @@
+noop:
+  stage: test
+  script:
+    - echo "CI passed."

@@ -1,0 +1,57 @@
+name: Basic Integrity Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows running this workflow manually from the Actions tab.
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            compiler: [gcc, g++]
+
+          - os: ubuntu-22.04
+            compiler: [clang, clang++]
+
+          - os: macos-13
+            compiler: [clang, clang++]
+
+    env:
+      CC: ${{ matrix.compiler[0] }}
+      CXX: ${{ matrix.compiler[1] }}
+
+    steps:
+      # Checks-out the repository.
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Configure build
+        run: |
+          cmake -DCMAKE_INSTALL_PREFIX=build/install \
+                -DCMAKE_BUILD_TYPE=Release \
+                -DCMAKE_C_COMPILER=${CC} \
+                -DCMAKE_CXX_COMPILER=${CXX} \
+                -B build \
+                .
+
+      - name: Build everything
+        run: |
+          cmake --build build --parallel $(nproc)
+
+      - name: Install ZisaSFC
+        run: |
+          cmake --install build
+
+      - name: Run tests
+        run: |
+          ctest --test-dir build

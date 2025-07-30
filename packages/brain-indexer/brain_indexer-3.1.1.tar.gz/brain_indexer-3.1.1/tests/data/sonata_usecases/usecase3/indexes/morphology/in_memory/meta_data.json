@@ -1,0 +1,14 @@
+{
+  "version": 0,
+  "element_type": "morphology",
+  "multi_population": {
+    "populations": {
+      "NodeA": {
+        "index_path": "NodeA"
+      },
+      "NodeB": {
+        "index_path": "NodeB"
+      }
+    }
+  }
+}

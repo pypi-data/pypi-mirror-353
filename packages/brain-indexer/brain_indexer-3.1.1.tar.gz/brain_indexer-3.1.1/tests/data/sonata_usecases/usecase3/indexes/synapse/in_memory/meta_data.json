@@ -1,0 +1,14 @@
+{
+  "version": 0,
+  "element_type": "synpase",
+  "multi_population": {
+    "populations": {
+      "NodeA__NodeA__chemical": {
+        "index_path": "NodeA__NodeA__chemical"
+      },
+      "NodeB__NodeB__chemical": {
+        "index_path": "NodeB__NodeB__chemical"
+      }
+    }
+  }
+}
