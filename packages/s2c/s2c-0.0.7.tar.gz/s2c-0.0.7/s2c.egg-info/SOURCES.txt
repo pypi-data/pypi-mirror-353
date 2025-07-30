@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+client/__init__.py
+client/main.py
+s2c.egg-info/PKG-INFO
+s2c.egg-info/SOURCES.txt
+s2c.egg-info/dependency_links.txt
+s2c.egg-info/entry_points.txt
+s2c.egg-info/requires.txt
+s2c.egg-info/top_level.txt
+server/__init__.py
+server/main.py
+tests/test_camera.py
