@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+allowdynamic/__init__.py
+allowdynamic/__main__.py
+allowdynamic/container.py
+allowdynamic.egg-info/PKG-INFO
+allowdynamic.egg-info/SOURCES.txt
+allowdynamic.egg-info/dependency_links.txt
+allowdynamic.egg-info/top_level.txt
