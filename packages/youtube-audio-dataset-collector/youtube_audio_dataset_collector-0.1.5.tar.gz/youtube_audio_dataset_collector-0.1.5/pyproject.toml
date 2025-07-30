@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-audio-dataset-collector"
+dynamic = ["version"]
+authors = [
+    {name = "Ranjan Shettigar", email = "theloko.dev@gmail.com"}
+]
+description = "A comprehensive tool for downloading, processing, and transcribing audio from YouTube videos and playlists for machine learning datasets"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "yt-dlp>=2023.1.6",
+    "pydub>=0.25.1",
+    "google-generativeai>=0.3.0",
+    "python-dotenv>=0.19.0",
+    "tqdm>=4.64.0",
+    "numpy>=1.21.0",
+    "soundfile>=0.12.1",
+]
+
+[tool.setuptools]
+packages = ["youtube_audio_collector"]
