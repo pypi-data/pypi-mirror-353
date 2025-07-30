@@ -1,0 +1,9 @@
+VIIRS_orbits/VIIRS_orbits.py,sha256=cFAe0rjmU_I-CtvhXKRI_TY6Oi6MGpbJ3cgkpiXkwu0,13030
+VIIRS_orbits/__init__.py,sha256=X_GFmWwX-elUJ70dARMONpaYcfFTeWaBd6srhCa_YgM,28
+VIIRS_orbits/credentials.py,sha256=D-QvLi8Nw7PdUUMt9V8QwaL8IiwGdqbL6nfLx0i_IW0,1768
+VIIRS_orbits/spacetrack_credentials.py,sha256=fqkRPl_ZBjl90OBMTVMUMjOtYG9WyAp2_6PIqHuxooI,903
+viirs_orbits-1.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+viirs_orbits-1.0.0.dist-info/METADATA,sha256=q2yhbmI2kTpH1yvp-rPYIGf26rLivB6aIMKE5CebDxE,1090
+viirs_orbits-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+viirs_orbits-1.0.0.dist-info/top_level.txt,sha256=fTxQMQGsWDu-9Bz67ZizdLZ2RWCyZoEsVHSUxn5CUJA,13
+viirs_orbits-1.0.0.dist-info/RECORD,,
