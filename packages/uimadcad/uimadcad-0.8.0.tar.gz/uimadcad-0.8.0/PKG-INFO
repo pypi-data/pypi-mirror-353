@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: uimadcad
+Version: 0.8.0
+Summary: user-friendly graphical environment for madcad
+Author-email: jimy byerley <jimy.byerley@gmail.com>
+Requires-Python: >= 3.8
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Topic :: Scientific/Engineering
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Environment :: X11 Applications :: Qt
+License-File: LICENSE
+Requires-Dist: pymadcad[ply, stl] >= 0.13
+Requires-Dist: pyqt5 >= 5.11
+Requires-Dist: pyyaml >= 6
+Requires-Dist: pnprint >= 1.2
+Project-URL: Home, https://madcad.netlify.com
+Project-URL: Repository, https://github.com/jimy-byerley/uimadcad
