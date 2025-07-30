@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: PyLibMS
+Version: 2.0.2
+Summary: Python library built for the libMessageStudio (LMS) proprietary file formats from Nintendo. Supports MSBT, MSBP, and MSBF.
+Author: AbdyyEee
+License: Copyright 2025 AbdyyEee
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Project-URL: Documentation, https://github.com/AbdyyEee/PylibMS/wiki
+Project-URL: Repository, https://github.com/AbdyyEee/PylibMS
+Keywords: nintendo,msbf,msbt,msbp,modding,lms,libmessagestudio
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML==6.0.1
+Dynamic: license-file
+
+# PylibMS
+Python library built in Python 3.10+ or the libMessageStudio (LMS) proprietary file formats from Nintendo. Supports MSBT, MSBP, and MSBF. Games that work with the library, including but not limited to:
+* Tomodachi Life 
+* Nintendo Badge Arcade
+* The Legend of Zelda: A Link Between Worlds
+* Animal Crossing: Amiibo Festival
+* Super Mario 3D World
+* Super Mario 3D Land.
+# Features and Usage
+See [the wiki](https://github.com/AbdyyEee/PylibMS/wiki) for explanations and examples on how to use the library.
+# Installation
+```
+pip install PylibMS
+```
+Python version must be `>=3.10.`
