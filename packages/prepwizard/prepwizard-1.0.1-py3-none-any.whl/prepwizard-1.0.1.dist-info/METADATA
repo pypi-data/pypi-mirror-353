@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: prepwizard
+Version: 1.0.1
+Summary: 🧙‍♂️ Magical ML preprocessing that transforms your data with a wave of code
+Home-page: https://github.com/AbdouMagico/prepwizard
+Author: AbdouMagico
+Author-email: abderahmane.ainouche@ensia.edu.dz
+Project-URL: Bug Reports, https://github.com/AbdouMagico/prepwizard/issues
+Project-URL: Source, https://github.com/AbdouMagico/prepwizard
+Project-URL: Documentation, https://prepwizard.readthedocs.io/
+Keywords: machine-learning preprocessing data-science ml pipeline data-preparation
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: scikit-learn>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: flake8>=4.0; extra == "dev"
+Requires-Dist: mypy>=0.900; extra == "dev"
+Provides-Extra: full
+Requires-Dist: matplotlib>=3.3.0; extra == "full"
+Requires-Dist: seaborn>=0.11.0; extra == "full"
+Requires-Dist: plotly>=5.0.0; extra == "full"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# ML Preprocessor Base
+
+Universal ML preprocessing base class for any machine learning project.
+
+## Installation
+
+```bash
+pip install ml-preprocessor-base
