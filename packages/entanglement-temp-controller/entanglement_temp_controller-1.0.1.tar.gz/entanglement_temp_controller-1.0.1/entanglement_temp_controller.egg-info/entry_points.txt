@@ -1,0 +1,2 @@
+[console_scripts]
+entaglement-temp-controller = app:main
