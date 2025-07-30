@@ -1,0 +1,3 @@
+[console_scripts]
+apsbss = apsbss.apsbss:main
+apsbss_makedb = apsbss.apsbss_makedb:main
