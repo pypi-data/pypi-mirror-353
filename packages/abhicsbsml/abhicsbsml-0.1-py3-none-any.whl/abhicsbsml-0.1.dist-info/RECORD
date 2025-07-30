@@ -1,0 +1,11 @@
+abhicsbsml/__init__.py,sha256=KKH8TEcacUR2PfLcbyvrj4rWewW6hO4LDZqiGvQUnao,126
+abhicsbsml/classification.py,sha256=gwTPqTB6_nhdEzqRU0dgUvEYEwT3dtnqKsrs6pPF4WM,593
+abhicsbsml/clustering.py,sha256=WBY0pLHdk8hgUWXVyvajYzAHvcFoBWCFPhuVXs-o1jA,551
+abhicsbsml/faces.py,sha256=xPn7vT3lCxAvUpS4Uvib9epbAtJ2dA-uoS2YJ8RQ3eY,482
+abhicsbsml/regression.py,sha256=09Vc6Suk2s9SaqIMCmJkDsnBLSCGt8vOpaf6tqx8t1w,623
+abhicsbsml/visuals.py,sha256=KZ7iqjSbGASDombsqPrP1TlJtaU19Zwa8RSNlHlbaSk,284
+abhicsbsml-0.1.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+abhicsbsml-0.1.dist-info/METADATA,sha256=_U6C99QWC5oilmJhFa_ciLJgWU14azJ6SgUSJwJHQeI,272
+abhicsbsml-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+abhicsbsml-0.1.dist-info/top_level.txt,sha256=GLbDbEJkDwGyAyzh7VjRMWWVFItIw3ajHPVF5GQMOYY,11
+abhicsbsml-0.1.dist-info/RECORD,,
