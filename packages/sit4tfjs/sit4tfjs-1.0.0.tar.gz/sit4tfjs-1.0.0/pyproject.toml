@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sit4tfjs"
+version = "1.0.0"
+description = "Simple Inference Test for TensorFlow.js. A benchmark inference speed testing tool for TensorFlow.js models."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Katsuya Hyodo", email = "rmsdh122@yahoo.co.jp"}
+]
+maintainers = [
+    {name = "Katsuya Hyodo", email = "rmsdh122@yahoo.co.jp"}
+]
+keywords = [
+    "tensorflow",
+    "tensorflowjs",
+    "tfjs",
+    "benchmark",
+    "inference",
+    "performance",
+    "testing",
+    "deep learning",
+    "machine learning",
+    "neural network",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "numpy>=1.19.0",
+    "tensorflowjs>=4.0.0",
+    "rich>=10.0.0",
+    "psutil>=5.8.0",
+]
+
+[project.optional-dependencies]
+tensorflow = [
+    "tensorflow>=2.10.0",
+]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/PINTO0309/sit4tfjs"
+Repository = "https://github.com/PINTO0309/sit4tfjs.git"
+
+[project.scripts]
+sit4tfjs = "sit4tfjs.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sit4tfjs*"]
+exclude = ["tests*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
