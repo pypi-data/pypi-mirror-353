@@ -1,0 +1,6 @@
+entityframe-0.1.7.dist-info/RECORD,,
+entityframe-0.1.7.dist-info/WHEEL,sha256=Fky1cyMs_8esKsnKPngp_Hy_s5CLtdNJqmfZzrpnUyc,132
+entityframe-0.1.7.dist-info/METADATA,sha256=V9X8IfYCsH0W0NrGDb1hbmjGj4h-zJreSg7R1klo_Xc,4880
+entityframe-0.1.7.dist-info/licenses/LICENSE,sha256=8hFvoCYO4GouNycv7DoGdO7BI1912zFaC7RUC7UtMb0,1070
+entityframe/__init__.py,sha256=rWvcNjResx-UDljivieoDu9c2CGP8PXfjt8NV0s120I,2821
+entityframe/_rust.cpython-310-darwin.so,sha256=w7wH7E0UmIWxu7jb2atIlTWj_kQyX0wmlvx7Xz0KwyI,633200
