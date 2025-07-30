@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+xcuba/__init__.py
+xcuba/tasa_cambio.py
+xcuba/vps_costo.py
+xcuba.egg-info/PKG-INFO
+xcuba.egg-info/SOURCES.txt
+xcuba.egg-info/dependency_links.txt
+xcuba.egg-info/requires.txt
+xcuba.egg-info/top_level.txt
