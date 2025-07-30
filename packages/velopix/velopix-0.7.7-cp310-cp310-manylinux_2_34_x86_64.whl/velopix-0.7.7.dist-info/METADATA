@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: velopix
+Version: 0.7.7
+Requires-Dist: numpy>=2.0.2
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: scipy>=1.13.1
+Requires-Dist: scikit-learn>=1.6.1
+Requires-Dist: typing-extensions==4.14.0
+License-File: LICENSE
+Summary: CERN VeloPix Detector Framework & Hyperparameter Optimiser
+Keywords: rust,python,velopix,CERN,particle physics,physics,maturin,lhcb,track reconstruction,optimisation
+Author: Sven Hockers
+Author-email: Sven Hockers <svenhockers1@gmail.com>
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/SvenHockers/velopix
+
+# TODO Write this
