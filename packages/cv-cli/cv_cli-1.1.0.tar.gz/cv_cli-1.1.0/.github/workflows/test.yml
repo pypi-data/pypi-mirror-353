@@ -1,0 +1,26 @@
+name: Test
+on:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up python
+        uses: actions/setup-python@v4
+        
+      - name: Install dependencies
+        run: |
+          pip install -e .
+          pip install pytest pytest-cov
+          
+      - name: Run tests with cover
+        run: |
+          pytest --cov=cv_cli
+          
+      - name: Codecov badge
+        uses: codecov/codecov-action@v3
