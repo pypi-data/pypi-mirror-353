@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: custome-selenium
+Version: 0.1.1
+Summary: custom selenium
+Author-email: Thoang <nhothoang@gmail.com>
+License-Expression: GPL-3.0-only
+Project-URL: Documentation, https://github.com/NhoThoang/QA_phone_automation/blob/main/README.md
+Project-URL: Source, https://github.com/NhoThoang/QA_phone_automation.git
+Project-URL: Tracker, https://github.com/NhoThoang/QA_phone_automation/issues
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: selenium>=4.10.0
+Dynamic: license-file
+
+# custome selenium là viết dùng selenium để tái chế lại:
+## Mục đích:
+dự án này là custom lại selenium cho dễ dùng 
+👉 **Nếu các bạn test có các issue quay lại video hay tạo issue trên repore này rồi gửi cho mình mình sex fix nhé !**
+## Lưu ý:

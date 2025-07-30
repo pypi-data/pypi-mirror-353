@@ -1,0 +1,24 @@
+[project]
+name = "custome-selenium"
+version = "0.1.1"
+description = "custom selenium"
+readme = "README.md"
+license = "GPL-3.0-only"
+authors = [
+    { name = "Thoang", email = "nhothoang@gmail.com" }
+]
+dependencies = [
+    "selenium>=4.10.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/NhoThoang/QA_phone_automation/blob/main/README.md"
+Source = "https://github.com/NhoThoang/QA_phone_automation.git"
+Tracker = "https://github.com/NhoThoang/QA_phone_automation/issues"
+
+[tool.setuptools]
+packages = ["custome-selenium"]  # Thêm tên package chính xác vào đây nếu cần
+
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
