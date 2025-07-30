@@ -1,0 +1,2 @@
+[console_scripts]
+cesaret = main:main
