@@ -1,0 +1,108 @@
+Metadata-Version: 2.4
+Name: bfrvc
+Version: 0.2.1
+Summary: A Retrieval-based Voice Conversion (RVC) and Text-to-Speech (TTS) tool
+Author-email: BF667 <festyus09@gmail.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2025, BFNF
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Homepage, https://github.com/BF667/bfrvc
+Project-URL: Repository, https://github.com/BF667/bfrvc
+Project-URL: Issues, https://github.com/BF667/bfrvc/issues
+Keywords: voice-conversion,tts,audio-processing,rvc,machine-learning
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: <3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: requests<2.32.0,>=2.31.0
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: wget>=3.2
+Requires-Dist: ffmpeg-python>=0.2.0
+Requires-Dist: faiss-cpu==1.7.3
+Requires-Dist: librosa==0.9.2
+Requires-Dist: scipy==1.11.1
+Requires-Dist: soundfile==0.12.1
+Requires-Dist: noisereduce>=3.0.0
+Requires-Dist: pedalboard>=0.7.4
+Requires-Dist: stftpitchshift>=1.5.1
+Requires-Dist: soxr>=0.3.7
+Requires-Dist: omegaconf>=2.0.6; sys_platform == "darwin"
+Requires-Dist: numba==0.61.0; sys_platform == "darwin" or sys_platform == "win32"
+Requires-Dist: numba>=0.60.0; sys_platform == "linux"
+Requires-Dist: torch==2.7.0
+Requires-Dist: torchaudio==2.7.0
+Requires-Dist: torchvision>=0.17.0
+Requires-Dist: torchcrepe==0.0.23
+Requires-Dist: torchfcpe
+Requires-Dist: einops>=0.7.0
+Requires-Dist: transformers==4.44.2
+Requires-Dist: matplotlib==3.7.2
+Requires-Dist: tensorboard>=2.16.2
+Requires-Dist: certifi>=2023.7.22; sys_platform == "darwin"
+Requires-Dist: antlr4-python3-runtime==4.8; sys_platform == "darwin"
+Requires-Dist: tensorboardX>=2.6.2
+Requires-Dist: edge-tts==6.1.9
+Requires-Dist: pypresence>=4.3.0
+Requires-Dist: beautifulsoup4>=4.12.2
+Provides-Extra: plotting
+Requires-Dist: matplotlib>=3.7.2; extra == "plotting"
+Dynamic: license-file
+
+# BFRVC 
+
+
+A simple, high-quality voice conversion tool package 
+
+
+# Introduction
+
+
+BFRVC is a powerful voice conversion tool focused on simplicity, quality, and performance. Whether you're an artist, developer, or researcher, BFRVC offers a straightforward platform for high-quality voice transformations.
+
+
+# How to install
+
+```
+pip install bfrvc -u
+```
+
+# How to run
+
+```
+bfrvc -h
+```
