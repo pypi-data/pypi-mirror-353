@@ -1,0 +1,12 @@
+mongo_memory/__init__.py,sha256=hMNHcqKYQqmus9rynJOyIS1OdFEJ_L93zjwfrdDjx-k,207
+mongo_memory/cli.py,sha256=iDMQ6O0SydP8T9IRzU95mqBQ7kBeXAJVm-3VBR3J69A,110
+mongo_memory/main.py,sha256=1bQJFFQHqGFMDoChB8Q9dewUlz8tPHeF-uEz-kimM-I,7642
+mongo_memory/mongo_connector.py,sha256=hJTvyuheG5hypyhe5KbqnsvnzrcgWQPwD-ns8KxDKRs,22972
+mongo_memory/constants/__init__.py,sha256=o68-nPZjnDfUkGHYg1geWxrq7_bf8d1-sC8dmnIIjsk,164
+mongo_memory/constants/instructions.py,sha256=vUgZ4HRvinypo_HrcMXPnBSdMLiHfwJPVv6PrRZy9V8,589
+mongo_memory/constants/usage_guide.py,sha256=yYIA0EWcVHfGbJBvaHQMA34YsH2PbN5Bd6GT9DJ6i-Q,8768
+mongo_memory-0.1.13.dist-info/METADATA,sha256=p199ZdO7MUN7L_T25slo962Xj9oCWnOXyCWl94i-exs,6062
+mongo_memory-0.1.13.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mongo_memory-0.1.13.dist-info/entry_points.txt,sha256=VJI7l4kOsL-t45XwR9QvfaoFzxOGtAWXTYIx550DQo8,98
+mongo_memory-0.1.13.dist-info/licenses/LICENSE,sha256=joVHC7XYc7nBE8tRsWg-ADJE-QGkso87is3PXmvRyeY,1073
+mongo_memory-0.1.13.dist-info/RECORD,,
