@@ -1,0 +1,2 @@
+[console_scripts]
+visual-selection = visual_selection.__main__:run
