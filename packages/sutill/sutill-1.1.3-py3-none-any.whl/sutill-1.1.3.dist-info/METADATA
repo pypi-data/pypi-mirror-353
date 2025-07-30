@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: sutill
+Version: 1.1.3
+Summary: Python wrapper around a shared library
+Author: HuggingFace
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
