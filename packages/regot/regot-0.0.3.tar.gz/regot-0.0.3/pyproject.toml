@@ -1,0 +1,30 @@
+[project]
+name = "regot"
+version = "0.0.3"
+description = "Regularized Optimal Transport"
+authors = [
+  {name = "Yixuan Qiu", email = "yixuanq@gmail.com"},
+  {name = "Chenrui Wang", email = "iamwangchenrui@gmail.com"}
+]
+maintainers = [
+  {name = "Yixuan Qiu", email = "yixuanq@gmail.com"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">= 3.10"
+dependencies = [
+    "numpy >= 1.23.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/yixuan/regot-python"
+Issues = "https://github.com/yixuan/regot-python/issues"
+
+[build-system]
+requires = ["requests ~= 2.31.0", "pybind11 ~= 2.13.0", "py-cpuinfo ~= 9.0.0", "setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+# Only build on CPython
+build = "cp*"
+
