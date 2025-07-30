@@ -1,0 +1,6 @@
+IPython
+pyperclip
+python-telegram-bot
+python-dotenv
+asyncio
+nest-asyncio
