@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: nextrpg
+Version: 0.1.1
+Summary: Build your next RPG (Role Playing Game).
+Home-page: https://github.com/yx-z/nextrpg
+Author: yx-z
+Author-email: yx-z <yx-z@outlook.com>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame-ce
+Requires-Dist: pygbag
+Requires-Dist: pytmx
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# nextrpg
+
+Build your next RPG (Role Playing Game).
+
+## Installation
+
+```bash
+pip install nextrpg
+```
+## Example
+
+Work in progress.
+
+## Features
+
+Work in progress.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
