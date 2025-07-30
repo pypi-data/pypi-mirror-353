@@ -1,0 +1,19 @@
+include CHANGES.rst
+include COPYRIGHT.txt
+include LICENSES.txt
+include README.rst
+include README_PYPI.rst
+include README_CN.md
+include INSTALL_CN.md
+include RELEASE_NOTES_CN.md
+include PACKAGING_GUIDE_CN.md
+include SUPERVISOR_USAGE_CN.md
+include tox.ini
+include supervisor/version.txt
+include supervisor/scripts/*.py
+include supervisor/skel/*.conf
+recursive-include supervisor/tests/fixtures *.conf *.py
+recursive-include supervisor/ui *.html *.css *.png *.gif
+include docs/Makefile
+recursive-include docs *.py *.rst *.css *.gif *.png
+recursive-exclude docs/.build *

@@ -1,0 +1,7 @@
+
+[:python_version < "3.8"]
+setuptools
+
+[testing]
+pytest
+pytest-cov
