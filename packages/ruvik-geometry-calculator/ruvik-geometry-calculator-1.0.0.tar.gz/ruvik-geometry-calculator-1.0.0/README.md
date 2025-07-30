@@ -1,0 +1,75 @@
+# Geometry Calculator Library
+
+![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
+
+Простая, но мощная библиотека для вычисления площадей геометрических фигур, реализованная с применением принципов ООП и SOLID.
+
+## 📦 Установка
+
+```bash
+pip install ruvik-geometry-calculator
+```
+
+## 🌟 Основные функции
+
+### Круг
+```python
+from geometry_calculator.figure.circle import Circle
+
+circle = Circle(radius=5)
+print(f"Площадь: {circle.area():.2f}")  # 78.54
+```
+
+### Треугольник
+```python
+from geometry_calculator.figure.triangle import  Triangle
+
+triangle = Triangle(3, 4, 5)
+print(f"Площадь: {triangle.area():.2f}")  # 6.00
+print(f"Прямоугольный: {triangle.is_right()}")  # True
+```
+
+## 🏭 Фабрика фигур
+```python
+from geometry_calculator.factory.figure_factory import FigureFactory
+
+# Создание через фабрику
+circle = FigureFactory.create_circle(10)
+triangle = FigureFactory.create_triangle(5, 12, 13)
+
+# Универсальный метод
+figure = FigureFactory.create_figure("circle", 7)
+```
+
+## 🛠️ Расширение библиотеки
+1. Создайте новый класс, унаследованный от `Figure`
+2. Реализуйте методы:
+```python
+class Square(Figure):
+    def __init__(self, side):
+        self.side = side
+    
+    def area(self):
+        if not self._is_valid():
+            raise ValueError("Некорректные параметры квадрата")
+        return self.side ** 2
+    
+    def _is_valid(self):
+        return self.side > 0
+```
+3. Добавьте метод в фабрику
+
+## 📊 Поддерживаемые фигуры
+| Фигура      | Параметры           | Особенности         |
+|-------------|---------------------|---------------------|
+| Круг        | radius              | -                   |
+| Треугольник | side1, side2, side3 | Проверка на прямоугольность |
+
+
+## 🤝 Как внести вклад
+1. Форкните репозиторий
+2. Создайте ветку (`git checkout -b feature/AmazingFeature`)
+3. Сделайте коммит (`git commit -m 'Add some AmazingFeature'`)
+4. Запушьте (`git push origin feature/AmazingFeature`)
+5. Откройте Pull Request
+```
