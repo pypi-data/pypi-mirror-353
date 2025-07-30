@@ -1,0 +1,6 @@
+videosdk/plugins/aws/__init__.py,sha256=uTlgDS7xeoRDlGZuxdCmX8_1a_zECjMPhOkCPWjK8r0,119
+videosdk/plugins/aws/aws_nova_sonic_api.py,sha256=cgQzzGChcc4QgPTGaofFmHYPVZSEOx0HsLCMYxVHfY8,27630
+videosdk/plugins/aws/version.py,sha256=2GWffEF1rjyrveUGdfR8y3cl3JUnX0gJjr8Ryy_u4JQ,21
+videosdk_plugins_aws-0.0.4.dist-info/METADATA,sha256=JOgNPTBSmRT2TVUJQmWruH3goS9P-lgp3Ys8lvWTOmc,1012
+videosdk_plugins_aws-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+videosdk_plugins_aws-0.0.4.dist-info/RECORD,,
