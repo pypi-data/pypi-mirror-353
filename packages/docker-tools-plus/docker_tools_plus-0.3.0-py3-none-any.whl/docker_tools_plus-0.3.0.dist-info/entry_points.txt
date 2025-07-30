@@ -1,0 +1,3 @@
+[console_scripts]
+docker-tools=docker_tools_plus.cli:cli
+
