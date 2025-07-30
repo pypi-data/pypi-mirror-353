@@ -1,0 +1,15 @@
+jsonifyer/__init__.py,sha256=qf7A2xjtkUX4uPzhUKg_KQ7VETNZsoyPFI-27Izv4jQ,485
+jsonifyer/api.py,sha256=hjvTciLzkQkRHVCMa1udqekdNH8H06O5HskW_pSzPA4,4737
+jsonifyer/config.py,sha256=GUpXSRGyRmz7Ikkru7pc6qnsVQRGNXKUTsgj9S-Kk3o,2085
+jsonifyer/config_loader.py,sha256=5dExssMeMJw8MEIgO1o9WvTCbGtRUYmHta1a9NLR5x4,2390
+jsonifyer/main.py,sha256=ECUQwiu-z9STEulx1v5cXleRWqLjKeBC85Imr5dzWrg,9220
+jsonifyer/converter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jsonifyer/converter/csv_converter.py,sha256=f_0sw1i70L2aPMfqfvylIw37poKDRdhvgRJ-ko76n7I,627
+jsonifyer/converter/python_converter.py,sha256=Q33c1woCnpOglBiH2SPOSFyHIP2jnJOrykf_X3CtJNs,12097
+jsonifyer/converter/xslt_converter.py,sha256=E1blMbcHX70FbVMlscwrrv4YCEIxXsc8GRTsBr_2Qco,5132
+jsonifyer-0.1.6.dist-info/licenses/LICENSE,sha256=w9yN_f7vKMfXkphf_7FjL6hV-F3z9jCrlLrXhwj_xBc,1072
+jsonifyer-0.1.6.dist-info/METADATA,sha256=ayCaDDRGzDMlrNfJcXY_8SWcAL4D8i5pkIZQbFKGSEI,5182
+jsonifyer-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jsonifyer-0.1.6.dist-info/entry_points.txt,sha256=aLKUDPhXXg1KWTRHGe1JADqFL2TJIDstQPwWcMPtR5o,46
+jsonifyer-0.1.6.dist-info/top_level.txt,sha256=y_WqXK8enf3pBqcCqbxJT_bk7wsSsgVry8-F3UKoVfo,10
+jsonifyer-0.1.6.dist-info/RECORD,,
