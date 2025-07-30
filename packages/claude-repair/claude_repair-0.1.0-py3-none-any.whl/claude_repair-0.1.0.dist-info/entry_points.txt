@@ -1,0 +1,3 @@
+[console_scripts]
+claude-repair=claude_repair.cli:main
+
