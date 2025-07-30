@@ -1,0 +1,5 @@
+linktools
+GitPython
+jinja2
+pyyaml
+linktools>=0.8.14
