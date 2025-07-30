@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: buggpt
+Version: 0.0.1
+Summary: A free and open source API for accessing various large language models
+Home-page: https://github.com/yourusername/buggpt
+Author: Tekky
+Author-email: <support@buggpt.ai>
+Project-URL: Source Code, https://github.com/yourusername/buggpt
+Project-URL: Bug Tracker, https://github.com/yourusername/buggpt/issues
+Keywords: python,chatbot,reverse-engineering,openai,chatbots,gpt,language-model,gpt-3,gpt3,openai-api,gpt-4,gpt4,chatgpt,chatgpt-api,openai-chatgpt,chatgpt-free,chatgpt-4,chatgpt4,chatgpt4-api,free,free-gpt,buggpt
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/plain
+Provides-Extra: all
+Provides-Extra: slim
+Provides-Extra: image
+Provides-Extra: webview
+Provides-Extra: api
+Provides-Extra: gui
+Provides-Extra: search
+Provides-Extra: local
+Provides-Extra: files
+License-File: LICENSE
