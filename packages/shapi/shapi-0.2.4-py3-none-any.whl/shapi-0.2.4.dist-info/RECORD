@@ -1,0 +1,14 @@
+shapi/__init__.py,sha256=njtsGnRMBYAp5gDYok-oZcr_bB2sLdye6Qf3QaghETo,374
+shapi/cli.py,sha256=aTDeMomQewnYry39BUJYjWeetGNzWF2pGlQ18gXSDJU,4307
+shapi/core.py,sha256=S4CtS9cq1jmmH2Cm6qyME3osruAg9sC3KX0VlYYQCVs,6092
+shapi/exceptions.py,sha256=mNMSBP5n-K4OCZd5ACLhRk8kv1s_BO_2BDiGzuBWsGU,641
+shapi/generator.py,sha256=FyDuikdZP1c3vuJko2d3pMTWblA9W1qv2ATFy60jbrQ,4166
+shapi/protocols/__init__.py,sha256=6_QRZ2g9_3qAjh4HaIMqqV7a90WlOBL06eL4fADga6I,218
+shapi/protocols/grpc.py,sha256=_-8hdLjhCaBY-uKS1zIyGeGGbBxZPy1tDJ2shr7q01Q,1383
+shapi/protocols/rest.py,sha256=_9tHwf22EqvZ02WaLfJ-FsZW8yXDijqB4kVOGscWDgM,1427
+shapi/protocols/webrtc.py,sha256=qDApnpPL1DLtCEGkpiyKsLaagiO5TnW2XVHnGbG76Fw,3751
+shapi/templates.py,sha256=gHGRScjf3nsNqwPlx3-hqde-CARqCRg_3zt7KAL-QlI,7406
+shapi-0.2.4.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+shapi-0.2.4.dist-info/METADATA,sha256=UnLJz5G4V-XgZJ1ia2G4iR8xASlRjsQG8Eej9Q-WMuo,6770
+shapi-0.2.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+shapi-0.2.4.dist-info/RECORD,,
