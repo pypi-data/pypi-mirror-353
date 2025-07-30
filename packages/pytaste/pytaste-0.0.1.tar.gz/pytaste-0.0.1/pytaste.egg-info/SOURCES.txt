@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+pytaste/__init__.py
+pytaste.egg-info/PKG-INFO
+pytaste.egg-info/SOURCES.txt
+pytaste.egg-info/dependency_links.txt
+pytaste.egg-info/top_level.txt

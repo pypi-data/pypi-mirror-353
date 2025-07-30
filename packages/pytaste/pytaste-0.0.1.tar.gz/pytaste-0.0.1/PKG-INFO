@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: pytaste
+Version: 0.0.1
+Summary: Placeholder for an upcoming Python library.
+Author-email: Sean Read <seanread@tstmkr.co>
+Project-URL: Homepage, https://github.com/tastemaker-music
+Project-URL: Bug Tracker, https://github.com/tastemaker-music
+Keywords: placeholder,coming soon,reserve,your project name
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# PyTaste (Coming Soon!)
+
+This package name is currently reserved on PyPI for an exciting new Python library.
+
+Please check back soon for updates!
+
+---
+
+**Project Repository:** [https://github.com/tastemaker-music](https://github.com/tastemaker-music)
