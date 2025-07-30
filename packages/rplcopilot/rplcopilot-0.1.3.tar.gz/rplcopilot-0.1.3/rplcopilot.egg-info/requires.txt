@@ -1,0 +1,10 @@
+typer
+openai
+python-dotenv
+requests
+langchain
+langchain-openai
+faiss-cpu
+rich
+langchain-community
+pypdf
