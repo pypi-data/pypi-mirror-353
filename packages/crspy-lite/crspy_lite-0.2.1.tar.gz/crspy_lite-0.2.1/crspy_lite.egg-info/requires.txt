@@ -1,0 +1,7 @@
+pandas
+numpy
+matplotlib
+bokeh
+beautifulsoup4
+lxml
+scipy
