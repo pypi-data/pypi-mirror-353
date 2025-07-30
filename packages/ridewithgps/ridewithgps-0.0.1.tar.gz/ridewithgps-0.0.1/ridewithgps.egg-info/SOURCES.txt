@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+setup.py
+ridewithgps/__init__.py
+ridewithgps/base.py
+ridewithgps/ratelimiter.py
+ridewithgps/ridewithgps.py
+ridewithgps.egg-info/PKG-INFO
+ridewithgps.egg-info/SOURCES.txt
+ridewithgps.egg-info/dependency_links.txt
+ridewithgps.egg-info/top_level.txt
+tests/test_base.py
+tests/test_ratelimiter.py
