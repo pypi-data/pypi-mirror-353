@@ -1,0 +1,2 @@
+[console_scripts]
+name2date = name2date.cli:main

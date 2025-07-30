@@ -1,0 +1,13 @@
+name2date/__init__.py,sha256=JhfNLz2nuJVKLRwwBxy-jOzLKX1ZNsrktaEJ7SLGlN4,285
+name2date/__main__.py,sha256=LBzjlcQ5htJQJH15RB20revxB6yTx_wC24WaatQBE6Y,179
+name2date/cli.py,sha256=7ycVuGOjZbJe4iOiKfa_WAn3RWiulFAIvvFoaHJ0NIQ,1192
+name2date/core.py,sha256=OVFl_3CvlaEYrfoTcEoBQuvOSnld5DcqXZG0fpOeWVc,3744
+name2date-0.1.0.dist-info/licenses/LICENSE,sha256=7_Wi4QESTxOgMibd-0yDnKYHyFIyD2AlcyW3L3gTeEU,1074
+tests/__init__.py,sha256=FUDf-J9mIIjmlt44kSVrMNPVclU7V-C_HQogv1ZFaB0,36
+tests/test_parse_filename.py,sha256=3inJfynA0cTrPGXMVHbEvJYv-9ngs3hi7rR5kttpppY,1465
+tests/test_update_file_modification_time.py,sha256=sSEF_wosL2_0PKirlxa5ZSOX-dGq3Glm9hOd9rmTRWQ,2729
+name2date-0.1.0.dist-info/METADATA,sha256=SEKVgUQxdSM4gUk0uEswmvU23eI3a5fLOxh7ghDf3fU,4504
+name2date-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+name2date-0.1.0.dist-info/entry_points.txt,sha256=dxo8RJZXdt69oV-MX7PLZdER2A_l_iflvw72zg5W6wA,49
+name2date-0.1.0.dist-info/top_level.txt,sha256=Zf_z90vLO63GE2hlESCK0C8EvocU4vulWPqNesaFpnA,16
+name2date-0.1.0.dist-info/RECORD,,
