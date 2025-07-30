@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+iant_studio/__init__.py
+iant_studio/generator.py
+iant_studio.egg-info/PKG-INFO
+iant_studio.egg-info/SOURCES.txt
+iant_studio.egg-info/dependency_links.txt
+iant_studio.egg-info/top_level.txt
+tests/test_generator.py
