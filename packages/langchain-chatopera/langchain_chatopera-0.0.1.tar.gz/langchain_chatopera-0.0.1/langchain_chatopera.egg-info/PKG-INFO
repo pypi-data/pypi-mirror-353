@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: langchain-chatopera
+Version: 0.0.1
+Summary: build Agent Services by integrating chatopera cloud services with langchain via tool calling
+Home-page: https://github.com/chatopera/langchain-chatopera
+Author: Chatopera DevOps Team
+Author-email: info@chatopera.com
+License: Apache License, version 2.0
+Keywords: agent,chatbot,AI,NLP
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: Chinese (Traditional)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+License-File: LICENSE
+
+
+langchain_chatopera
+=====================
+
+build Agent Services by integrating chatopera cloud services with langchain via tool calling
+
+https://github.com/chatopera/langchain-chatopera
+
