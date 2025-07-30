@@ -1,0 +1,2 @@
+[console_scripts]
+failextract = failextract.cli:main
