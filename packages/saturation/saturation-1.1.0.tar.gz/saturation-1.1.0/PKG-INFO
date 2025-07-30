@@ -1,0 +1,316 @@
+Metadata-Version: 2.4
+Name: saturation
+Version: 1.1.0
+Summary: 服务区饱和度分析系统
+Home-page: 
+Author: 应用团队
+Keywords: traffic analysis,saturation,prediction,machine learning
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.0.0
+Requires-Dist: numpy>=1.18.0
+Requires-Dist: scikit-learn>=0.22.0
+Requires-Dist: matplotlib>=3.1.0
+Requires-Dist: tensorflow>=2.0.0
+Requires-Dist: keras>=2.3.0
+Requires-Dist: scipy>=1.4.0
+Requires-Dist: scikit-fuzzy>=0.4.2
+Requires-Dist: packaging>=20.0
+Requires-Dist: scikit-opt>=0.6.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 服务区饱和度分析系统
+
+![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+本系统用于高速公路服务区饱和度分析，包含数据处理、聚类分析、分类判别、流量分析、饱和度分析和预测模型六个主要功能模块。通过系统封装的API接口，用户可以轻松地分析和预测服务区的饱和度情况。
+
+## 1. 功能特点
+
+- **数据处理**：清洗和预处理原始ETC数据
+- **聚类分析**：对处理后的数据进行聚类分析
+- **分类判别**：基于聚类结果和速度数据进行分类判别
+- **流量分析**：分析车流量特征，计算不同类型车辆的流量
+- **饱和度分析**：计算服务区饱和度，评估服务区运营状态
+- **预测模型**：基于历史数据预测未来饱和度趋势
+
+## 2. 安装方法
+
+### 2.1 使用pip安装
+
+```bash
+pip install saturation
+```
+
+### 2.2 从源码安装
+
+```bash
+git clone <项目仓库URL>
+cd 服务区饱和度分析
+pip install -e .
+```
+
+## 3. 快速开始
+
+### 3.1 基本用法
+
+```python
+from saturation import analyze_saturation, predict_saturation
+
+# 分析饱和度
+result = analyze_saturation(
+    ke_flow_filename="ke_flow1.csv", 
+    huo_flow_filename="huo_flow1.csv"
+)
+print(f"饱和度分析结果保存在：{result}")
+
+# 预测未来饱和度
+prediction = predict_saturation(
+    input_filename="flow-kehuo-adjusted.xlsx",
+    epochs=100,
+    batch_size=64
+)
+print(f"预测评估指标：RMSE={prediction['rmse']:.4f}, MAE={prediction['mae']:.4f}")
+```
+
+### 3.2 使用自定义路径
+
+新版本支持自定义输入输出路径，您可以使用以下方式指定数据文件的路径：
+
+```python
+from saturation import controller
+
+# 方法1：使用全局设置
+controller.set_data_dir("./my_data")
+controller.set_output_dir("./my_results")
+
+# 处理数据
+processed_file = controller.process_data(
+    input_file="G006550002000620010.csv",
+    output_file="processed_data.csv"  # 可选，不指定则使用默认名称
+)
+
+# 分析饱和度
+saturation_result = controller.analyze_saturation(
+    ke_flow_file="ke_flow1.csv",
+    huo_flow_file="huo_flow1.csv",
+    output_file="saturation_result.csv"  # 可选
+)
+
+# 方法2：创建控制器实例
+ctrl = controller.SaturationController(
+    data_dir="./another_data_dir",
+    output_dir="./another_output_dir"
+)
+
+# 使用控制器实例进行分析
+result = ctrl.analyze_flow(
+    input_file="speed_current.csv"
+)
+
+# 预测饱和度
+prediction = ctrl.predict_saturation(
+    input_file="flow-kehuo-adjusted.xlsx",
+    output_model="my_model.h5",  # 可选，指定模型保存路径
+    epochs=100,
+    batch_size=64
+)
+```
+
+### 3.3 使用高级API
+
+```python
+from saturation import api
+
+# 配置数据目录
+data_dir = api.configure_data_directory('./my_data')
+
+# 处理原始数据
+api.process_raw_data(
+    input_file="G006550002000620010.csv",
+    data_dir=data_dir
+)
+
+# 分析车辆流量
+api.analyze_flow(
+    input_file="speed_current1.csv",
+    data_dir=data_dir
+)
+
+# 分析饱和度
+api.analyze_saturation_level(
+    ke_flow_file="ke_flow1.csv",
+    huo_flow_file="huo_flow1.csv",
+    data_dir=data_dir
+)
+
+# 执行完整分析流程
+results = api.run_complete_pipeline(
+    input_file="G006550002000620010.csv",
+    data_dir=data_dir
+)
+```
+
+### 3.4 使用专门的流量分析API
+
+```python
+from saturation import flow_api
+
+# 分析内部和外部流量
+inner_path, outer_path = flow_api.analyze_inner_outer_flow(
+    input_file="speed_current.csv"
+)
+
+# 按车辆类型分析流量
+ke_inner, ke_outer, huo_inner, huo_outer = flow_api.analyze_vehicle_type_flow(
+    input_file="speed_current.csv"
+)
+```
+
+### 3.5 使用专门的预测API
+
+```python
+from saturation import prediction_api
+
+# 预测未来饱和度
+result = prediction_api.predict_future_saturation(
+    input_file="flow-kehuo-adjusted.xlsx",
+    epochs=100,
+    batch_size=32
+)
+
+# 加载已有模型进行预测
+predictions = prediction_api.load_model_and_predict(
+    model_file="saturation_model.h5",
+    input_file="new_data.xlsx"
+)
+
+# 使用自定义参数
+result = prediction_api.run_prediction_with_custom_params(
+    input_file="flow-kehuo-adjusted.xlsx",
+    model_params={'lstm_units': 128, 'time_steps': 10},
+    training_params={'epochs': 200}
+)
+```
+
+## 4. 命令行工具
+
+系统还提供了命令行工具，可以直接在终端中使用：
+
+```bash
+# 执行完整分析流程
+saturation-analyze --all
+
+# 仅执行饱和度分析
+saturation-analyze --analyze
+
+# 指定自定义路径
+saturation-analyze --input my_data.csv --output my_results.csv
+
+# 预测饱和度
+saturation-predict --input flow-kehuo-adjusted.xlsx --epochs 100
+
+# 分析流量
+saturation-flow
+```
+
+## 5. 数据要求
+
+系统需要在数据目录下存放以下格式的数据文件：
+
+- **原始ETC数据**：包含车辆ID、通过时间、车辆类型等信息
+- **车辆通行数据**：上下行车辆的匹配数据
+- **流量数据**：不同类型车辆的流量数据
+
+### 5.1 车辆类型编码
+
+| 编码 | 车辆类型 |
+|------|---------|
+| 1-4 | 客车 |
+| 11-16 | 货车 |
+| 21-26 | 作业车 |
+
+## 6. API参考文档
+
+详细的API文档请参考 [docs/user_guide.md](docs/user_guide.md)
+
+## 7. 示例代码
+
+可以在 `examples` 目录下找到更多示例代码：
+
+- `basic_usage.py`：基本使用示例
+- `advanced_analysis.py`：高级分析示例
+- `custom_paths_example.py`：自定义路径示例
+- `custom_prediction.py`：自定义预测示例
+
+## 8. 开发说明
+
+### 8.1 目录结构
+
+```
+服务区饱和度分析/
+├── result/              # 数据存储目录
+├── saturation/          # 主程序包
+│   ├── __init__.py      # 包初始化
+│   ├── api.py           # 主API接口
+│   ├── controller.py    # 控制器模块
+│   ├── flow_api.py      # 流量分析专用API
+│   ├── prediction_api.py # 预测专用API
+│   ├── main.py          # 主程序入口
+│   ├── flow.py          # 流量分析模块
+│   ├── utils/           # 工具模块
+│   │   ├── __init__.py
+│   │   ├── file_utils.py # 文件操作工具
+│   │   └── config.py    # 配置管理
+│   ├── enJud/           # 入口判断模块
+│   │   ├── __init__.py
+│   │   ├── data_process.py  # 数据处理
+│   │   ├── julei.py     # 聚类分析
+│   │   ├── fenleipanbie.py  # 分类判别
+│   │   └── ...
+│   ├── satAna/          # 饱和度分析模块
+│   │   ├── __init__.py
+│   │   └── saturation.py  # 饱和度分析
+│   └── pre/             # 预测模块
+│       ├── __init__.py
+│       ├── 预测模型.py   # 预测模型
+│       └── *.h5         # 模型文件
+├── examples/            # 示例代码
+├── docs/                # 文档
+└── setup.py             # 安装配置
+```
+
+### 8.2 依赖项
+
+- Python 3.7+
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- tensorflow
+- keras
+- scipy
+- scikit-fuzzy
+- scikit-opt
+
+## 9. 许可证
+
+本项目遵循 MIT 许可证 
