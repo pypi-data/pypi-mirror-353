@@ -1,0 +1,17 @@
+meilisearch_mcp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+meilisearch_mcp/__main__.py,sha256=9it1my_mM7xBpDh79QSi7FAvZD3Vki3GQFPJIDZw_zs,64
+meilisearch_mcp/client.py,sha256=W3KbGYtVBBfu3qO_aUuR4AM4dcqi8VwsfVDAJUDPdtA,4167
+meilisearch_mcp/documents.py,sha256=_ivJILoNvjA9v7kqNfj73EDjFQfCl1ekkDgiMuSqQMQ,4817
+meilisearch_mcp/indexes.py,sha256=Gy61ePQt4yTYB3vLqnituhOUiVLEoEDXai23UUG-cz8,2009
+meilisearch_mcp/keys.py,sha256=vijEfqJn3TgEvUzRYhZkOOpyC4_4KPBQIP-e-0BK8g4,1587
+meilisearch_mcp/logging.py,sha256=vrmbND7_Kl5M5BIaVoBhNUPKpr7qd9rksfprQlM3G7Q,3934
+meilisearch_mcp/monitoring.py,sha256=K5N_90fRRFAHYLnkctE4gjXlNrKMHCOmWci6o7Hy3f4,2996
+meilisearch_mcp/server.py,sha256=LBqyY3oBwJ92_3aTchRYcFzm6Md39VA8BEcXnHMNFms,25833
+meilisearch_mcp/settings.py,sha256=1map5CqOMXrEZYTSjLcAgUwWtuJO0YJsNFv_apdOCxc,1819
+meilisearch_mcp/tasks.py,sha256=Qa7CmkPq45TWpJm8r2Np4VZpT9sGKcKgu7cfUk0LtDw,2079
+meilisearch_mcp-0.5.0.dist-info/licenses/LICENSE,sha256=gomdDYuCMG-MKUzi-tETXZSaGnBA5oVzkLdyt2YQOlQ,1067
+meilisearch_mcp-0.5.0.dist-info/METADATA,sha256=GyP_qDuatvTPYSfHRlKHRbLPgp42VqUIFO0dEBx7ojA,284
+meilisearch_mcp-0.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+meilisearch_mcp-0.5.0.dist-info/entry_points.txt,sha256=WxOkyAThVr4QO-r7iFlV7oG09ketRs7PTEK9mtrF2mU,64
+meilisearch_mcp-0.5.0.dist-info/top_level.txt,sha256=ErTg8mEX7_YgEzLxlU8Gm1Z1pHDarpT7hGxKkS-D538,16
+meilisearch_mcp-0.5.0.dist-info/RECORD,,
