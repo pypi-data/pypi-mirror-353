@@ -1,0 +1,10 @@
+gdrive_fsspec/__init__.py,sha256=FqgGMsVSkNi1eMAWFwzRPw7Cqx79g7L_Pl_-Svon1RQ,178
+gdrive_fsspec/_version.py,sha256=iB5DfB5V6YB5Wo4JmvS-txT42QtmGaWcWp3udRT7zCI,511
+gdrive_fsspec/core.py,sha256=FEnWsJWyFMSqWYC7p57QtffiPcSqIuaPVrGOAAtYOfs,16113
+gdrive_fsspec/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gdrive_fsspec/tests/test_core.py,sha256=crUQxAzu92WEt9QKTIVYh7VYsQU-y-lX0LY_QM19mdE,1477
+gdrive_fsspec-0.2.0.dist-info/licenses/LICENSE,sha256=LcNUls5TpzB5FcAIqESq1T53K0mzTN0ARFBnaRQH7JQ,1513
+gdrive_fsspec-0.2.0.dist-info/METADATA,sha256=0d-5KtXG5fdGReZ6gIfb5xfzgI1_BjXwI14TaBr8KsM,5336
+gdrive_fsspec-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gdrive_fsspec-0.2.0.dist-info/top_level.txt,sha256=l1A45p-UbYY1A3FrKDYgSGeH4xuJDeoJDYMbfnDf44w,14
+gdrive_fsspec-0.2.0.dist-info/RECORD,,
