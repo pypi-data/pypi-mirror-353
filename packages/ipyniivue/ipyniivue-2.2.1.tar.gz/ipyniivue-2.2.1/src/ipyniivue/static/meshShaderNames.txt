@@ -1,0 +1,14 @@
+Crevice
+Diffuse
+Edge
+Flat
+Harmonic
+Hemispheric
+Matcap
+Matte
+Outline
+Phong
+Rim
+Silhouette
+Specular
+Toon
