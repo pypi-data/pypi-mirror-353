@@ -1,0 +1,11 @@
+imgdude/__init__.py,sha256=W_XCh0vIXcq-t8jCEtI7W24trXRBjeflAJrvvFIJXQI,95
+imgdude/_version.py,sha256=0oAKhENR-Bj54d-984RcOXtg4sTzOEyyGnPSFaaAiVQ,103
+imgdude/cache.py,sha256=2QyvfKFxti9F_G17QwjGG0lrFDjDwO6APmEMdD5nF9U,11773
+imgdude/cli.py,sha256=r0XzbK1PjYuwaoPzBjc4Q04pheO2idlEEOBIQ_7p0-A,5371
+imgdude/main.py,sha256=JxTszLwsyny7ekzAkRLyey-8G3L-uhMFZmYNltmJeYg,13967
+imgdude-1.0.1.dist-info/licenses/LICENSE,sha256=Sudk0QhO9p7Nx3dH51VJBMni5uhw2w__IDl4LT0vYh0,1069
+imgdude-1.0.1.dist-info/METADATA,sha256=bPXO9UHL-qAUZnQ1Ff9Z1J-HpWTQ2txJd2IMjYhzBso,10497
+imgdude-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+imgdude-1.0.1.dist-info/entry_points.txt,sha256=x1Zm8XDa9MA0D5yRwepvnzR8l_4w2-OoSfJ2_t9FKrc,45
+imgdude-1.0.1.dist-info/top_level.txt,sha256=qmPtWochk9kfgmOEEPnPr9V5jm7YHXqTA5d9dbloI9Q,8
+imgdude-1.0.1.dist-info/RECORD,,
