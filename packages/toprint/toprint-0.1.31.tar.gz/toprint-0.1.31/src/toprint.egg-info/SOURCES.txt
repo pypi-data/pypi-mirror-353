@@ -1,0 +1,14 @@
+AUTHORS.txt
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/toPrint/__init__.py
+src/toPrint/_version.py
+src/toPrint/toPrint.py
+src/toprint.egg-info/PKG-INFO
+src/toprint.egg-info/SOURCES.txt
+src/toprint.egg-info/dependency_links.txt
+src/toprint.egg-info/entry_points.txt
+src/toprint.egg-info/requires.txt
+src/toprint.egg-info/top_level.txt
