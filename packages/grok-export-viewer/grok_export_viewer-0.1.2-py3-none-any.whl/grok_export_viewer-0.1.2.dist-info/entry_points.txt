@@ -1,0 +1,2 @@
+[console_scripts]
+grok-export-viewer = grok_export_viewer.cli:main
