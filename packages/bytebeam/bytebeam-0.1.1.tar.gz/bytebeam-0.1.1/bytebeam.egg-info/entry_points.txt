@@ -1,0 +1,3 @@
+[console_scripts]
+bytebeam = bytebeam:main
+bytebeam-config = bytebeam:config
