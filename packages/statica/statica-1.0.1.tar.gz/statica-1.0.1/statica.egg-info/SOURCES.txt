@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+statica/__init__.py
+statica/core.py
+statica/exceptions.py
+statica.egg-info/PKG-INFO
+statica.egg-info/SOURCES.txt
+statica.egg-info/dependency_links.txt
+statica.egg-info/top_level.txt
+tests/test_statica.py
