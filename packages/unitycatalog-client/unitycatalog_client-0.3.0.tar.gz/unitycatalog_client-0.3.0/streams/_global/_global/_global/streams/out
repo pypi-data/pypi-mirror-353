@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0mExecuting version update script: bash /Users/johan.lasperas/unitycatalog/clients/python/build/update-python-versions.sh[0m
+[0m[[0m[0minfo[0m] [0m[0mVersion update script executed successfully[0m
+[0m[[0m[0minfo[0m] [0m[0mCopied setup.py to /Users/johan.lasperas/unitycatalog/clients/python/target/setup.py.[0m
+[0m[[0m[0minfo[0m] [0m[0mCopied README.md to /Users/johan.lasperas/unitycatalog/clients/python/target/README.md.[0m
+[0m[[0m[0minfo[0m] [0m[0mCopied pyproject.toml to /Users/johan.lasperas/unitycatalog/clients/python/target/pyproject.toml.[0m
+[0m[[0m[0minfo[0m] [0m[0mTarget directory /Users/johan.lasperas/unitycatalog/clients/python/target/src/unitycatalog already exists. Deleting it to overwrite.[0m
+[0m[[0m[0minfo[0m] [0m[0mSuccessfully deleted existing target directory at /Users/johan.lasperas/unitycatalog/clients/python/target/src/unitycatalog[0m
+[0m[[0m[0minfo[0m] [0m[0mEnsured target directory exists at /Users/johan.lasperas/unitycatalog/clients/python/target/src[0m
+[0m[[0m[0minfo[0m] [0m[0mMoved 'unitycatalog' from /Users/johan.lasperas/unitycatalog/clients/python/target/unitycatalog to /Users/johan.lasperas/unitycatalog/clients/python/target/src/unitycatalog[0m
+[0m[[0m[0minfo[0m] [0m[0mOpenAPI Python client generation completed.[0m
