@@ -1,0 +1,20 @@
+[project]
+name = "crawlio-py"
+version = "0.1.3"
+description = "Python SDK for the Crawlio web scraping API"
+authors = [
+    { name = "Kishan Sharma", email = "kisshan07@outlook.com" }
+]
+
+readme = "README.md"  
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.7"
+dependencies = [
+    "requests"
+]
+
+[project.urls]
+Homepage = "https://crawlio.xyz"
+Documentation = "https://github.com/weekend-dev-labs/crawlio-py"
+Source = "https://github.com/weekend-dev-labs/crawlio-py"
