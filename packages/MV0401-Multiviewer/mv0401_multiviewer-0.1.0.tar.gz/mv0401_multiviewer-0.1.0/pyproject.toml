@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MV0401-Multiviewer"
+version = "0.1.0"
+description = "Python Telnet wrapper for the MV0401 device"
+authors = [{ name = "Justin Faulk" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["telnetlib-313-and-up"]
+license = "MIT"
+
+[tool.setuptools]
+packages = ["mv0401"]
