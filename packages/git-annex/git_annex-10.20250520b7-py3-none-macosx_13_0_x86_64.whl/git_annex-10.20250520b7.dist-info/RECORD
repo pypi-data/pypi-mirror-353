@@ -1,0 +1,9 @@
+git_annex-10.20250520b7.dist-info/RECORD,,
+git_annex-10.20250520b7.dist-info/WHEEL,sha256=t8-DKnJfepUo9FJkB326cNmgcclXLL9dCI5lMlbtBYM,131
+git_annex-10.20250520b7.dist-info/entry_points.txt,sha256=BI1LqRvI7ETq6hOuPgaT9O9cmmHJwYS3SthvRoNS43s,146
+git_annex-10.20250520b7.dist-info/METADATA,sha256=3Qq5Tei9qanu4UtYmAY_tdbC8Gv7yVHvIceri3H-mG8,5319
+git_annex/__init__.py,sha256=71NXukas5SOL6UI65o830T-lAx4QC8h6B1PcYTRxL3g,1869
+git_annex/magic.mgc,sha256=k3uuA_TERpsqrPFAOMzTlXA4TvTtRsqD2c7LZSdJmZc,10355472
+git_annex/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+git_annex/git-annex,sha256=xSvp8zSm1WjADltE2kVeq_13toYRIcX7Un18DYpe4sM,57801632
+git_annex/.dylibs/libmagic.1.dylib,sha256=MOOLzfUp4Zo2yWQIxh9Svn9fEDug9HJtvBmvp9h4Gvo,182688
