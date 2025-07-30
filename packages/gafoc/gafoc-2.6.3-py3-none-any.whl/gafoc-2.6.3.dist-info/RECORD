@@ -1,0 +1,16 @@
+GAFOC/LICENSE,sha256=RO3gPWQR0Gt9OugH11PSiibJq9Y-PCRa9VAL_9hRvKc,1070
+GAFOC/README.md,sha256=jIhRXhz10sHlliQUMdyRQQit4pXeNzYlieH-6I2FQQg,7
+GAFOC/__init__.py,sha256=kOYKPa9tsDjDCSOUJ90wACZSOapweMrBDSKUs2tfzT8,478
+GAFOC/exceptions.py,sha256=Dwbz1WWmNbSSGDn_9DrqrO4tmJAi7Iyhp1eJHx-OJ1k,427
+GAFOC/archive/__init__.py,sha256=J5zuS1ADPOXunA3FpShh78gv_fbOpl0laSWk8UrdmIw,119
+GAFOC/archive/archiver.py,sha256=0Dqs_Mn7o4LVDlrCy2kg4uBaJxfCofNylVjcKPXtGMM,3419
+GAFOC/archive/extractor.py,sha256=X7KbZv9aIJ0X1xqrs-HGGCrnucx2e5-kPXasuezTkEo,4881
+GAFOC/core/__init__.py,sha256=XnUk-gVcvBNKjjblmeq93KmS-81rfCPlnDu5FyITsoA,136
+GAFOC/core/compression.py,sha256=fVdPFYTGSNBwljyuOf0wAyvfh84_Smf_6a6cEeWyRSc,2720
+GAFOC/core/decompression.py,sha256=9rs7ddLEkplJH1jZP7W5zPO4dCNfNXEk4u9KwMYYpRg,1964
+GAFOC/core/huffman.c,sha256=lcJaj4Ys1a2wUab4ioaesZkY6iYZ0QjuZgwfvM_Thh8,649369
+GAFOC/core/huffman.pyx,sha256=I0-TRhAQP9zAc0OWZF-YerfUlbfTtFWTWBayaiqHbMo,5974
+gafoc-2.6.3.dist-info/METADATA,sha256=fVokKCx_P8RaYm5ixx9u4yt82aPaUKlhqPSO7IyQ8Dw,4629
+gafoc-2.6.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gafoc-2.6.3.dist-info/top_level.txt,sha256=m4BxhCAGu4o0tP2PEaGiRbEQA1VKpzTyXRjWA60mSso,6
+gafoc-2.6.3.dist-info/RECORD,,
