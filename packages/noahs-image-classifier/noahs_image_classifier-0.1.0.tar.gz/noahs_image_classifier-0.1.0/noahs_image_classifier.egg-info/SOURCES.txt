@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+noahs_image_classifier/__init__.py
+noahs_image_classifier/classify.py
+noahs_image_classifier.egg-info/PKG-INFO
+noahs_image_classifier.egg-info/SOURCES.txt
+noahs_image_classifier.egg-info/dependency_links.txt
+noahs_image_classifier.egg-info/requires.txt
+noahs_image_classifier.egg-info/top_level.txt

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noahs_image_classifier"  # Must be unique on PyPI!
+version = "0.1.0"
+description = "A very basic and easy to use module for images classification. Works on any Mac OS, Windows and Linux but is intended to be used on Raspberry Pi or similar edge device"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  { name = "Noah Jones", email = "jonesnoah45010@gmail.com" }
+]
+dependencies = [
+  "numpy<=1.24.4",
+  "pillow",
+  "tensorflow; sys_platform == \"darwin\"",
+  "tflite-runtime==2.13.0; sys_platform == \"linux\"",
+  "noahs_camera_controller",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Environment :: Console",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+"GitHub" = "https://github.com/jonesnoah45010/image_classifier"
