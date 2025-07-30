@@ -1,0 +1,4 @@
+include douyin_live_chat/sign.js
+include douyin_live_chat/sign_v0.js
+include douyin_live_chat/protobuf/douyin.proto
+include douyin_live_chat/protobuf/readme.md
