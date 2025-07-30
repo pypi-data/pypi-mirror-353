@@ -1,0 +1,15 @@
+app = "mcp-generate-number"
+
+[build]
+  image = "ghcr.io/twillcocks/mcp-generate-number:latest"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"] 
