@@ -1,0 +1,8 @@
+pyproject.toml
+queensgym/__init__.py
+queensgym.egg-info/PKG-INFO
+queensgym.egg-info/SOURCES.txt
+queensgym.egg-info/dependency_links.txt
+queensgym.egg-info/requires.txt
+queensgym.egg-info/top_level.txt
+tests/test_version.py
