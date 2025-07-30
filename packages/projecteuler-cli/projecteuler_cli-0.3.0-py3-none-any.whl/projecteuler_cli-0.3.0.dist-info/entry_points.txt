@@ -1,0 +1,2 @@
+[console_scripts]
+projecteuler = projecteuler_cli.cli:main
