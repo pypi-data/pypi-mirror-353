@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+generate_scroller/__init__.py
+generate_scroller/cli.py
+generate_scroller.egg-info/PKG-INFO
+generate_scroller.egg-info/SOURCES.txt
+generate_scroller.egg-info/dependency_links.txt
+generate_scroller.egg-info/entry_points.txt
+generate_scroller.egg-info/top_level.txt
