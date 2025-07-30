@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: calc_figure_area
+Version: 0.0.5
+Summary: # Calc figure area Library #
+Home-page: https://github.com/VasilekN/MB_tasks
+Author: VasilekN
+Author-email: 
+License: MIT
+Keywords: calc figure area
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
