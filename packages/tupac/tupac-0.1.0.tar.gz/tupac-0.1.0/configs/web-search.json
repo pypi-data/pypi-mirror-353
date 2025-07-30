@@ -1,0 +1,10 @@
+{
+  "instructions": "Use search to answer questions.",
+  "model": "o3",
+  "mcpServers": {
+    "exa": {
+      "type": "url",
+      "url": "https://mcp.exa.ai/mcp?exaApiKey=${EXA_API_KEY}"
+    }
+  }
+}
