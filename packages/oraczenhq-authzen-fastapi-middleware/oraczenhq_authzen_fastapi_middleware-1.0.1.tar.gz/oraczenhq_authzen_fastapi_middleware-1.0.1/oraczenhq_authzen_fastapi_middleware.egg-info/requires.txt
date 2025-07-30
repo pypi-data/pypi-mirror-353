@@ -1,0 +1,5 @@
+httpx<1.0.0,>=0.28.1
+cryptography<46.0.0,>=45.0.3
+fastapi<1.0.0,>=0.115.0
+python-jose<4.0.0,>=3.5.0
+pydantic<3.0.0,>=2.11.0
