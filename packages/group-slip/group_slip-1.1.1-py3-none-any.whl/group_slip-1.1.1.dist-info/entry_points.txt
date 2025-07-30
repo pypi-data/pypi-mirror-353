@@ -1,0 +1,3 @@
+[console_scripts]
+group-slip=group_slip.main:main
+
