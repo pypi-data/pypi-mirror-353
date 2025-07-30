@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "real-random"
+version = "0.1.0"
+description = "Entropy-based random generator using microphone audio to produce real random floats, integers, strings, and choices."
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+authors = [
+    { name = "Croketillo", email = "croketillo@gmail.com" }
+]
+keywords = [
+    "random",
+    "entropy",
+    "microphone",
+    "audio",
+    "non-deterministic",
+    "real randomness",
+    "true random",
+    "sound-based randomness"
+]
+dependencies = [
+    "numpy>=1.20",
+    "sounddevice>=0.4.5"
+]
+
+[project.urls]
+Homepage = "https://github.com/croketillo/real-random"
+Repository = "https://github.com/croketillo/real-random"
+Issues = "https://github.com/croketillo/real-random/issues"
+
+[tool.setuptools]
+packages = ["real_random"]
