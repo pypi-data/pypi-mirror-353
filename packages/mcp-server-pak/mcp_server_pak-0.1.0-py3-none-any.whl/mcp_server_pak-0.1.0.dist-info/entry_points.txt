@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-server-pak = mcp_server_pak:main
