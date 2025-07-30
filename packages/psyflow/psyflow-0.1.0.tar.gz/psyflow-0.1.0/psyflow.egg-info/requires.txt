@@ -1,0 +1,8 @@
+psychopy
+numpy
+pandas
+click
+cookiecutter
+pyyaml
+pyserial
+edge-tts
