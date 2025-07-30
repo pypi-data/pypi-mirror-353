@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+temp_venv.py
+temp_venv.egg-info/PKG-INFO
+temp_venv.egg-info/SOURCES.txt
+temp_venv.egg-info/dependency_links.txt
+temp_venv.egg-info/requires.txt
+temp_venv.egg-info/top_level.txt
