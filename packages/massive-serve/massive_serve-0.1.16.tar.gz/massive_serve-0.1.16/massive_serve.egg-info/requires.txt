@@ -1,0 +1,13 @@
+click
+faiss-gpu
+faiss
+tqdm
+flask
+flask-cors
+torch
+transformers
+numpy
+sentence-transformers
+
+[st]
+sentence-transformers
