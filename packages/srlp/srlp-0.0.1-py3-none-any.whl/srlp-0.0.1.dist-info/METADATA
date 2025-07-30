@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: srlp
+Version: 0.0.1
+Summary: Software Repos Local Profile
+Author-email: Marc Beninca <git@marc.beninca.link>
+Maintainer-email: Marc Beninca <git@marc.beninca.link>
+License-File: license.md
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Requires-Dist: rwx
+Description-Content-Type: text/markdown
+
+# Software Repos Local Profile
+
+A temporary scripts collection for local software:
+
+* [x] apk
+  * [x] alpine
+* [x] deb
+  * [x] debian
+  * [x] docker-ce
+  * [x] gitlab-runner
+  * [x] incus
+* [ ] msys2
+  * [ ] distrib
+  * [x] mingw64
+  * [x] msys
+* [ ] py
+  * [ ] python
+  * [ ] pypi
+* [x] rpm
+  * [x] alma
+  * [x] epel
