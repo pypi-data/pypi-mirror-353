@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/motalk/__init__.py
+src/motalk.egg-info/PKG-INFO
+src/motalk.egg-info/SOURCES.txt
+src/motalk.egg-info/dependency_links.txt
+src/motalk.egg-info/requires.txt
+src/motalk.egg-info/top_level.txt
+tests/test_motalk.py
