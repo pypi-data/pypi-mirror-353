@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh issue list:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:info.arxiv.org)",
+      "Bash(python:*)",
+      "Bash(uv pip install:*)",
+      "Bash(rm:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run black:*)",
+      "Bash(git add:*)",
+      "Bash(git restore:*)",
+      "Bash(git checkout:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": []
+  }
+}
