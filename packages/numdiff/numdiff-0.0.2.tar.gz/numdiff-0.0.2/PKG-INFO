@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: numdiff
+Version: 0.0.2
+Summary: Numerical backends in Python
+Home-page: https://gitlab.com/benvial/numdiff
+Author: Benjamin Vial
+License: GPL-3.0-or-later
+Project-URL: Code, https://gitlab.com/benvial/numdiff
+Project-URL: Documentation, https://gitlab.com/benvial/numdiff
+Project-URL: Issues, https://gitlab.com/benvial/numdiff/issues
+Keywords: numerical backends,auto-differentiation,linear algebra
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Requires-Dist: importlib_metadata; python_version < "3.8"
+Requires-Dist: numpy>=1.9
+Requires-Dist: scipy>=1.0
+Requires-Dist: autograd>=1.4
+Requires-Dist: colorlog
+Provides-Extra: gpu
+Requires-Dist: jax[cuda]; extra == "gpu"
+Provides-Extra: magma
+Requires-Dist: scikit-cuda; extra == "magma"
+Provides-Extra: jax
+Requires-Dist: jax; extra == "jax"
+Requires-Dist: jaxlib; extra == "jax"
+Provides-Extra: torch
+Requires-Dist: torch; extra == "torch"
+Provides-Extra: all
+Requires-Dist: torch; extra == "all"
+Requires-Dist: jaxlib; extra == "all"
+Requires-Dist: jax[cuda]; extra == "all"
+Requires-Dist: scikit-cuda; extra == "all"
+
+
+
+=================================================================
+numdiff: a package for easily switching Python numerical backends
+=================================================================
+
+
+
+License
+=======
+
+
+
+This software is published under the `GPLv3 license <https://www.gnu.org/licenses/gpl-3.0.en.html>`_.
+
+
