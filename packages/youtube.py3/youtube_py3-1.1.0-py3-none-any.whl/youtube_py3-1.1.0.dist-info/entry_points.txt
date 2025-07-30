@@ -1,0 +1,2 @@
+[console_scripts]
+youtube-py3 = youtube_py3.cli:main
