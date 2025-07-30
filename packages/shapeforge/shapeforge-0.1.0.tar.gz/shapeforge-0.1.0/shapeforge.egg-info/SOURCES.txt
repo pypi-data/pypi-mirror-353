@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+shapeforge/__init__.py
+shapeforge.egg-info/PKG-INFO
+shapeforge.egg-info/SOURCES.txt
+shapeforge.egg-info/dependency_links.txt
+shapeforge.egg-info/requires.txt
+shapeforge.egg-info/top_level.txt
