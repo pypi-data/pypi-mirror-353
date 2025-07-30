@@ -1,0 +1,11 @@
+mp4tolottie/__init__.py,sha256=oAhsaFbGr-sxi6t_alpiz3l1JcFQ9g6xrxqwU1UEVR0,59
+mp4tolottie/cli.py,sha256=chF6ZcTZ3wokz1mbXvZldLTozDYlTzY99OxfRq0JfSM,490
+mp4tolottie/core/extractor.py,sha256=qPBgph_SX-h_MZ4cG070jnq47tEbDRoycCxSffqnuzY,1323
+mp4tolottie/core/lottie_builder.py,sha256=2w0Wen1ORrnYc7wWq1UU3l-Vg9N21K24xgWbWi7zhfs,847
+mp4tolottie/core/pipeline.py,sha256=MWSaavVhgaTFVg8RKw7ot9ok0-GNZ2IEFxEgQxkQ2AI,644
+mp4tolottie/core/vectorizer.py,sha256=5JtXBuvCSrVXq4lmIQs-8pT4wP9W_03wPWBZgI7hwxM,2063
+mp4tolottie-0.1.1.dist-info/METADATA,sha256=RRem9ZT9yIN1lCr-8EYk_ro3Q5rjs20K4A8MbJifmx0,1586
+mp4tolottie-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mp4tolottie-0.1.1.dist-info/entry_points.txt,sha256=H6GhC4AuyDqGYBXkpDxwwXQV5LXxA4Gk73WQr-zt-4M,53
+mp4tolottie-0.1.1.dist-info/top_level.txt,sha256=kC27p6xK9r6CohokfVhA-9aauA9o3ENLma1Co0OI0Fc,12
+mp4tolottie-0.1.1.dist-info/RECORD,,
