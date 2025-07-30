@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/ffwrapy/__init__.py
+src/ffwrapy/ffmedia.py
+src/ffwrapy.egg-info/PKG-INFO
+src/ffwrapy.egg-info/SOURCES.txt
+src/ffwrapy.egg-info/dependency_links.txt
+src/ffwrapy.egg-info/top_level.txt
