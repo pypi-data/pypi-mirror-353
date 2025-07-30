@@ -1,0 +1,13 @@
+.venv/
+.idea/
+
+__pycache__
+.pytest_cache
+.ruff_cache
+
+build
+dist
+pdfwerks.egg-info
+
+*.pdf
+*.jpg
