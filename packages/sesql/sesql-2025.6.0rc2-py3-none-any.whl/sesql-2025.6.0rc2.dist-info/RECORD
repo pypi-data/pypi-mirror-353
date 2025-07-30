@@ -1,0 +1,14 @@
+seSql/__about__.py,sha256=co2IFhwATx5x0jMM48IC1TVUpf5ez9i3wfVi7YJIRdQ,103
+seSql/__init__.py,sha256=pbyNn_pUkyi05R1f9ox0P4ATkonG6DYazyED9HgRVUI,388
+seSql/sql.py,sha256=CD4zwtakBIeKnCANIM8UAqKzzcAXL0_ajE7GGVJFCdY,4791
+seSql/dbc/Exceptions.py,sha256=WUxo8WpwkbkfTQPr7A_YeVc0nZxbArobVB8AVf1U9Xc,3099
+seSql/dbc/JDBC.py,sha256=dnekV2q3dxmr25jEGAxULU3d835_eMpkzBS9Gd6t7mE,8387
+seSql/dbc/ODBC.py,sha256=jNc1b4qjC8qv480di9DLDqGegOjCmcItcCWNe0y47ns,7626
+seSql/dbc/ODBCError.py,sha256=lMnpBdh-y8Ts3S0PiZ0JywTp46kCCyUSbeEAY1X-yR4,6228
+seSql/dbc/Utilities.py,sha256=Tx4Ox4bIG_gykeOZnKgT5798Do2HiRxp8arL2Q5NQ2M,1094
+seSql/dbc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+seSql/dbc/jars/mssql-jdbc-12.4.2.jre8.jar,sha256=JGt6SXg4Ok-czMwGpDk9xdVw_WSkNLeBxqghcM3WmRE,1438398
+sesql-2025.6.0rc2.dist-info/METADATA,sha256=hxGXW1uaaPeBGTGfpA9m7H2C21MbvjYPPHJfbh-78lQ,14992
+sesql-2025.6.0rc2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sesql-2025.6.0rc2.dist-info/top_level.txt,sha256=5CN4u9Nh3lRX9dzQsCi6KroF8gcfVE7di9-6i6cTq1E,6
+sesql-2025.6.0rc2.dist-info/RECORD,,
