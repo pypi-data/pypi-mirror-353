@@ -1,0 +1,2 @@
+[console_scripts]
+vodafone-station-cli = cli:cli

@@ -1,0 +1,10 @@
+LICENSE
+README.md
+cli.py
+pyproject.toml
+vodafone_station_cli.egg-info/PKG-INFO
+vodafone_station_cli.egg-info/SOURCES.txt
+vodafone_station_cli.egg-info/dependency_links.txt
+vodafone_station_cli.egg-info/entry_points.txt
+vodafone_station_cli.egg-info/requires.txt
+vodafone_station_cli.egg-info/top_level.txt

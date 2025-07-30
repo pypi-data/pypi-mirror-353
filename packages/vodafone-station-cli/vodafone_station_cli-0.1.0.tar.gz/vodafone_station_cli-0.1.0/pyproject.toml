@@ -1,0 +1,35 @@
+[project]
+name = "vodafone-station-cli"
+version = "0.1.0"
+description = "CLI for interacting with a Vodafone Station"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Philipp Schmitt", email = "philipp@schmitt.co"},
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+]
+keywords = ["voadafone", "vodafone-station"]
+requires-python = ">=3.13"
+dependencies = [
+    "aiovodafone>=1.1.0",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+vodafone-station-cli = "cli:cli"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+]
+
+[tool.black]
+line-length = 79
+
+[project.urls]
+homepage = "https://github.com/pschmitt/vodafone-station-cli"
+documentation = "https://github.com/pschmitt/vodafone-station-cli/blob/head/readme.md"
+repository = "https://github.com/pschmitt/vodafone-station-cli"
+issues = "https://github.com/pschmitt/vodafone-station-cli/issues"
