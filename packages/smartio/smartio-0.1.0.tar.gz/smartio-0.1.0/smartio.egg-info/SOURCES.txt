@@ -1,0 +1,9 @@
+README.md
+setup.py
+smartio/__init__.py
+smartio/smartio.py
+smartio.egg-info/PKG-INFO
+smartio.egg-info/SOURCES.txt
+smartio.egg-info/dependency_links.txt
+smartio.egg-info/requires.txt
+smartio.egg-info/top_level.txt

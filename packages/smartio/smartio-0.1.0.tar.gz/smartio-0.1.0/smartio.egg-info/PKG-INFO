@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: smartio
+Version: 0.1.0
+Summary: Unified interactive print and input for console, Tkinter, and web.
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: flask
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

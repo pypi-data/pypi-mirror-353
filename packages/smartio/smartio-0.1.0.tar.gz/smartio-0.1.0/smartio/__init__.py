@@ -1,0 +1,1 @@
+from .smartio import print_s, input_s
