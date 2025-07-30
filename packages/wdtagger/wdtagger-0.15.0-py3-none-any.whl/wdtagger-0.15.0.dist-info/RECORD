@@ -1,0 +1,6 @@
+wdtagger/__init__.py,sha256=SqN36ZXWkc6b3j2-dBH67hEXo0RQnG2jhFHqZODglF8,11308
+wdtagger/__main__.py,sha256=M5xiwQ1rzlpQS5T-wUyL3U0XwzxwOh6SAtjNtwaXmj8,1007
+wdtagger/assets/selected_tags.csv,sha256=XjzNvxdt6WNWspH1VjzIzgY06_3jm-eFpkcXKL4D6u4,319328
+wdtagger-0.15.0.dist-info/METADATA,sha256=6SWbKsOwRPWMghVIL9sM42xiR3XYoXa88ER69Qef-tU,3787
+wdtagger-0.15.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+wdtagger-0.15.0.dist-info/RECORD,,
