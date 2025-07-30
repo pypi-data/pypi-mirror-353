@@ -1,0 +1,11 @@
+spyden/__init__.py,sha256=n0H3dFgHgSjq1tJ5KKNf8uOj-RRZIVib3zXfFR8ki8U,242
+spyden/_version.py,sha256=Mmxse1R0ki5tjz9qzU8AQyqUsLt8nTyCAbYQp8R87PU,511
+spyden/cpad.py,sha256=5i8bUMeljyj-7DhFxwrRu076sqc7UbUDW9Qd4pr-tac,463
+spyden/noisestats.py,sha256=t7ilY_g92csCyAO8d_nkNtoLgh9eTNRQjLCqvrhFcXM,3598
+spyden/snr.py,sha256=2uW423q7P2hBCg8UFpUS4wGVHiURkPvWLZTtRknRifw,3962
+spyden/template.py,sha256=r51EPPAIyUFj9GMAoF2vkhCwhGm5njLW1KoqWD4T0SE,10118
+spyden_pulsar-0.1.1.dist-info/licenses/LICENSE,sha256=mE9xo-zpdtsRcJ93qLRmYw0QzO9Bpr-51_1pktskD-o,1058
+spyden_pulsar-0.1.1.dist-info/METADATA,sha256=nis0JQdInvKRiTcAmUReB7UT1WKgU1BEIZ6Zsv2-c2k,5543
+spyden_pulsar-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spyden_pulsar-0.1.1.dist-info/top_level.txt,sha256=CLnWwh5ZWAKzVlwwIkYtDAUaX9I-V0191KDVU6D4ZEQ,7
+spyden_pulsar-0.1.1.dist-info/RECORD,,
