@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: pyrmm
+Version: 0.1.0
+Summary: 用来新建和管理,开发magisk模块的工具集
+Author-email: LIghtJUNction <LIghtJUNction.me@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: click>=8.2.1
+Requires-Dist: pydantic>=2.11.5
+Requires-Dist: pygithub>=2.6.1
+Requires-Dist: toml>=0.10.2
+Provides-Extra: ai
+Requires-Dist: mcp>=1.9.3; extra == 'ai'
+Requires-Dist: openai>=1.84.0; extra == 'ai'
+Description-Content-Type: text/markdown
+
+# RootManage-Module-Model
+
+[![Stars](https://img.shields.io/github/stars/LIghtJUNction/RootManage-Module-Model?label=stars)](https://github.com/LIghtJUNction)
+[![Download](https://img.shields.io/github/downloads/LIghtJUNction/RootManage-Module-Model/total)](https://github.com/LIghtJUNction/RootManage-Module-Model/releases)
+[![Release](https://img.shields.io/github/v/release/LIghtJUNction/RootManage-Module-Model?label=release)](https://github.com/LIghtJUNction/RootManage-Module-Model/releases/latest)
+[![License](https://img.shields.io/github/license/LIghtJUNction/RootManage-Module-Model?label=License)](https://choosealicense.com/licenses/gpl-3.0)
+
+[![Alt](https://repobeats.axiom.co/api/embed/4dbcdf8b2d24156dcf08cef7cc801d9adb317cae.svg "Repobeats analytics image")](https://github.com/LIghtJUNction/RootManage-Module-Model/)
+
+
+# RMM
+更新预告
+将支持prebuild 模式 / postbuild模式
+
+以及更多模块构建功能
+
+
+
+
