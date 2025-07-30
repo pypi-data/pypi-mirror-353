@@ -1,0 +1,10 @@
+knowai/__init__.py,sha256=IIA1T_aDPbff8T3cNeqpKJROJDAGMBijrH0P7CeNrxE,147
+knowai/agent.py,sha256=MhV9RfYZxDt4gPKo4JJQQqurYwhXV5Cs0RwZWegi7Lg,48734
+knowai/cli.py,sha256=hUIN67Qjp15Ale1O5n1c6j8Jf1DU2R_YuprPF8I6rro,6057
+knowai/core.py,sha256=p4jfRLxYYYMh4L2AUXK8B1kZGh0Wyx5SWFOvcIC1iNc,8984
+knowai/query_faiss_parquet.py,sha256=23XfAomg7wuo1DDfHH8Zsw3Sd7jVIR2ieduXYv3BENA,5103
+knowai/vectorstore.py,sha256=pbcxR6cJPk7lCVRH6SZXzlKv8eU_jV05EBOWjxNAuak,2567
+knowai-0.2.0.dist-info/METADATA,sha256=SyCCe992ZX7AQi8kAwdNZuYIkVUO4c9Jarifsj-X0PU,9083
+knowai-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+knowai-0.2.0.dist-info/licenses/LICENSE,sha256=y76hgaO6Kx1aHV6Q8T5QbR8w_c141kYrOb7Pj0tzFNo,1499
+knowai-0.2.0.dist-info/RECORD,,
