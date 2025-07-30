@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: cyberstore
+Version: 0.0.1b1
+Summary: CyberStore: A high-performance, expression-aware data engine for financial time-series with Polars and ClickHouse.
+Project-URL: homepage, https://github.com/link-yundi/cyberstore
+Project-URL: repository, https://github.com/link-yundi/cyberstore
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: clickhouse-df>=0.1.5
+Requires-Dist: connectorx>=0.4.3
+Requires-Dist: dynaconf>=3.2.11
+Requires-Dist: lark>=1.2.2
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: polars>=1.30.0
+Requires-Dist: sqlparse>=0.5.3
+Requires-Dist: xcals>=0.0.4
+Requires-Dist: ygo>=1.1.3
