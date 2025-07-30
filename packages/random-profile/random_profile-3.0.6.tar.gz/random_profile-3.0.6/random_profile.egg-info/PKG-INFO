@@ -1,0 +1,98 @@
+Metadata-Version: 2.4
+Name: random_profile
+Version: 3.0.6
+Summary: Python Module To Generate Random Profile Data
+Home-page: https://github.com/Py-Contributors/RandomProfileGenerator
+Author: Deepak Raj
+Author-email: deepak008@live.com
+Maintainer: Deepak Raj
+Maintainer-email: deepak008@live.com
+Project-URL: Documentation, https://pycontributors.readthedocs.io/projects/randomprofilegenerator/en/latest/
+Project-URL: Source, https://github.com/Py-Contributors/RandomProfileGenerator
+Project-URL: Tracker, https://github.com/Py-Contributors/RandomProfileGenerator/issues
+Project-URL: Funding, https://github.com/sponsors/codePerfectPlus
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Environment :: Plugins
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pytest
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: summary
+
+<p align="center">
+  <a href="https://py-contributors.github.io/audiobook/"><img src="https://capsule-render.vercel.app/api?type=rect&color=009ACD&height=100&section=header&text=RandomProfileGenerator3.0.6&fontSize=40%&fontColor=fffff" alt="website title image"></a>
+  <h2 align="center">👉 Python Module To Generate Random Profile Data 👈</h2>
+</p>
+
+<p align="center">
+    <a href="https://twitter.com/pycontributors"><img src="https://img.shields.io/twitter/follow/pycontributors?style=social" alt="Twitter" /></a>
+    <a href="https://github.com/codeperfectplus?tab=followers"><img src="https://img.shields.io/github/followers/codeperfectplus.svg?style=social&label=Follow&maxAge=2592000"/></a>
+</p>
+</br>
+
+<p align="center">
+<img src="https://img.shields.io/pypi/v/random-profile.svg">
+<img src="https://img.shields.io/pypi/pyversions/random-profile.svg">
+<img src="https://img.shields.io/pypi/l/random-profile.svg">
+
+</p>
+<p align="center">
+<img src="https://img.shields.io/pypi/dd/random-profile.svg">
+<img src="https://img.shields.io/pypi/dw/random-profile.svg">
+<img src="https://img.shields.io/pypi/dm/random-profile.svg">
+</p>
+<p align="center"> 
+
+<img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/Py-Contributors/RandomProfileGenerator">
+
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator"> 
+
+<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator"> 
+
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Py-Contributors/RandomProfileGenerator"> </p>
+
+
+[RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
+
+
+## Documentation
+
+Documentation is available at [ReadTheDocs](https://randomprofilegenerator.readthedocs.io/en/latest/)
+
+## Upcoming Features
+
+- Support for more languages
+
+## Changelog
+
+Check the [Changelog](/CHANGELOG.md) for the latest changes.
+
+## Contributing
+
+Check the [Contributing](/CONTRIBUTING.md) for the contribution guidelines.
+
+## License
+
+The project is licensed under the <a href="/LICENSE">MIT</a> license. 
+
+## Contributors
+
+<a href="https://github.com/codePerfectPlus/awesomeScripts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=codePerfectPlus/randomprofilegenerator" />
+</a>

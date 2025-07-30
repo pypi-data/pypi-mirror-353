@@ -1,0 +1,3 @@
+[console_scripts]
+random_profile = random_profile.cli:main
+rp = random_profile.cli:main
