@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yt-dlp-get-pot-rustypipe"
+dynamic = ["version"]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "MIT"
+classifiers = ["License :: OSI Approved :: MIT License"]
+requires-python = ">=3.9"
+keywords = ["yt-dlp", "yt-dlp-plugin", "yt-dlp-plugins-get-pot"]
+maintainers = [{ name = "ThetaDev", email = "thetadev@magenta.de" }]
+description = "yt-dlp plugin for fetching PO tokens using rustypipe-botguard"
+
+dependencies = ["yt-dlp>=2025.05.22"]
+
+[tool.hatch.env.default]
+installer = "uv"
+path = ".venv"
+
+[tool.hatch.build.targets.wheel]
+packages = ["yt_dlp_plugins"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.version]
+path = "yt_dlp_plugins/extractor/yt_dlp_get_pot_rustypipe.py"
