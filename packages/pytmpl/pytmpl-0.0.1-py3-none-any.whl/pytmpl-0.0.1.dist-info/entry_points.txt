@@ -1,0 +1,4 @@
+[console_scripts]
+ptl=pytmpl.cli:main
+pytmpl=pytmpl.cli:main
+
