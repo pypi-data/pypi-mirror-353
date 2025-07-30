@@ -1,0 +1,23 @@
+[project]
+name = "meshviewer"
+version = "0.1.4"
+description = "A modern OpenGL STL mesh viewer using ModernGL and ImGui"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+authors = [
+  { name="Syed", email="you@example.com" }
+]
+
+dependencies = [
+  "glfw==2.9.0",
+  "moderngl==5.12.0",
+  "numpy<2.0.0",
+  "pyglm==2.8.2",
+  "trimesh==3.23.5"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
