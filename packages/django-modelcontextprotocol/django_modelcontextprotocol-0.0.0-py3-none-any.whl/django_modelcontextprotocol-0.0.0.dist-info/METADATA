@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: django-modelcontextprotocol
+Version: 0.0.0
+Project-URL: Homepage, https://github.com/ppak10/django-modelcontextprotocol
+Project-URL: Repository, https://github.com/ppak10/django-modelcontextprotocol
+Author-email: Peter Pak <ppak10@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# django-modelcontextprotocol
+Bindings for Model Context Protocol (MCP) implemented in Django
+
+You probably don't need this, instead check out this implementation by ![kitespark](https://github.com/kitespark/django-mcp).
