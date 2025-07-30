@@ -1,0 +1,85 @@
+# feedback_ui/utils/constants.py
+from typing import TypedDict
+
+# --- 常量定义 (Constant Definitions) ---
+APP_NAME = "InteractiveFeedbackMCP"
+SETTINGS_GROUP_MAIN = "MainWindow_General"
+SETTINGS_GROUP_CANNED_RESPONSES = "CannedResponses"
+SETTINGS_KEY_GEOMETRY = "geometry"
+SETTINGS_KEY_WINDOW_STATE = "windowState"
+SETTINGS_KEY_WINDOW_PINNED = "windowPinned"
+SETTINGS_KEY_PHRASES = "phrases"
+
+# 分割器设置 (Splitter Settings)
+SETTINGS_KEY_SPLITTER_SIZES = "splitterSizes"
+SETTINGS_KEY_SPLITTER_STATE = "splitterState"
+
+# 字体大小设置 (Font Size Settings)
+SETTINGS_GROUP_FONTS = "FontSettings"
+SETTINGS_KEY_PROMPT_FONT_SIZE = "promptFontSize"
+SETTINGS_KEY_OPTIONS_FONT_SIZE = "optionsFontSize"
+SETTINGS_KEY_INPUT_FONT_SIZE = "inputFontSize"
+
+# 默认字体大小 (Default Font Sizes)
+DEFAULT_PROMPT_FONT_SIZE = 16
+DEFAULT_OPTIONS_FONT_SIZE = 13
+DEFAULT_INPUT_FONT_SIZE = 13
+
+# 默认分割器配置 (Default Splitter Configuration)
+DEFAULT_UPPER_AREA_HEIGHT = 250
+DEFAULT_LOWER_AREA_HEIGHT = 400
+DEFAULT_SPLITTER_RATIO = [250, 400]  # 上:下 = 250:400
+
+# 最小区域高度限制 (Minimum Area Height Limits)
+MIN_UPPER_AREA_HEIGHT = 150
+MIN_LOWER_AREA_HEIGHT = 200
+
+# 布局方向常量 (Layout Direction Constants)
+LAYOUT_VERTICAL = "vertical"  # 上下布局
+LAYOUT_HORIZONTAL = "horizontal"  # 左右布局
+DEFAULT_LAYOUT_DIRECTION = LAYOUT_VERTICAL
+
+# 布局设置键 (Layout Settings Keys)
+SETTINGS_KEY_LAYOUT_DIRECTION = "ui/layout_direction"
+SETTINGS_KEY_HORIZONTAL_SPLITTER_SIZES = "ui/horizontal_splitter_sizes"
+SETTINGS_KEY_HORIZONTAL_SPLITTER_STATE = "ui/horizontal_splitter_state"
+
+# 默认水平分割比例 (Default Horizontal Splitter Configuration)
+# 调整为5:5比例，给左侧更多空间展示长文本和选项
+DEFAULT_HORIZONTAL_SPLITTER_RATIO = [500, 500]  # 左右比例 5:5
+MIN_LEFT_AREA_WIDTH = 350  # 增加左侧最小宽度以容纳更多内容
+MIN_RIGHT_AREA_WIDTH = 400
+
+MAX_IMAGE_WIDTH = 512
+MAX_IMAGE_HEIGHT = 512
+MAX_IMAGE_BYTES = 1048576  # 1MB (1兆字节)
+
+
+# --- 类型定义 (Type Definitions) ---
+class ContentItem(TypedDict):
+    """
+    Represents a single piece of content, which can be text, image, or file reference.
+    Corresponds to MCP message format.
+    表示单个内容项，可以是文本、图像或文件引用。
+    对应 MCP 消息格式。
+    """
+
+    type: str
+    text: str | None  # Used for text type (用于文本类型)
+    data: str | None  # Used for image type (base64 encoded) (用于图像类型，base64编码)
+    mimeType: str | None  # Used for image type (e.g., "image/jpeg") (用于图像类型)
+    display_name: (
+        str | None
+    )  # For file_reference type (e.g., "@filename.txt") (用于文件引用类型)
+    path: (
+        str | None
+    )  # Full path to the file for file_reference type (文件引用的完整路径)
+
+
+class FeedbackResult(TypedDict):
+    """
+    The structured result returned by the feedback UI, containing a list of content items.
+    反馈UI返回的结构化结果，包含内容项列表。
+    """
+
+    content: list[ContentItem]
