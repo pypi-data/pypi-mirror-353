@@ -1,0 +1,3 @@
+django
+djangorestframework
+cryptography>=3.4.0

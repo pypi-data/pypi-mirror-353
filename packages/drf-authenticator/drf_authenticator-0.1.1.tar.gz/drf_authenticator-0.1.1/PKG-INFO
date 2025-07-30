@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: drf-authenticator
+Version: 0.1.1
+Summary: A reusable Django app for Token Authentication.
+Home-page: https://github.com/Abhishek-vamja/drf_authenticator
+Author: Abhishek Vamja
+Author-email: abhishekvamja2518@gmail.com
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: django
+Requires-Dist: djangorestframework
+Requires-Dist: cryptography>=3.4.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
