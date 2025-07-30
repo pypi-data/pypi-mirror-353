@@ -1,0 +1,5 @@
+migrate_to_uv-0.7.3.data/scripts/migrate-to-uv,sha256=DOn2hz4sJqFkOp20xa8dyTlPT0saZjaEToQg8yDHESY,3579752
+migrate_to_uv-0.7.3.dist-info/METADATA,sha256=yGbdi5XoY4RPLr92nzk9664aOSkaWn5pQ5GKn8DX-sU,3812
+migrate_to_uv-0.7.3.dist-info/WHEEL,sha256=H7qS1gXyGQTm41alpr9e2deeaTUygGdI-h7F2LPapjQ,105
+migrate_to_uv-0.7.3.dist-info/licenses/LICENSE,sha256=2_vOF5gHlvJUwbxlKUrXkttj2mVdTkv2aBfKtBSKF0k,1077
+migrate_to_uv-0.7.3.dist-info/RECORD,,
