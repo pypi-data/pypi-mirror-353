@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+ifdo/__init__.py
+ifdo.egg-info/PKG-INFO
+ifdo.egg-info/SOURCES.txt
+ifdo.egg-info/dependency_links.txt
+ifdo.egg-info/requires.txt
+ifdo.egg-info/top_level.txt
+ifdo/models/__init__.py
+ifdo/models/_kebab_case_model.py
+ifdo/models/ifdo.py
+ifdo/models/ifdo_capture.py
+ifdo/models/ifdo_content.py
+ifdo/models/ifdo_core.py
+tests/test_load.py
+tests/test_save.py
