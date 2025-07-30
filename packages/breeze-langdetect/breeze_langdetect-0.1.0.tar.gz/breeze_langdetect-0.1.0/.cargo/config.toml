@@ -1,0 +1,6 @@
+# Configuration for building breeze-langdetect across different architectures
+
+# Set environment variables for all targets
+[env]
+# Use C99 standard for pcre2-sys compilation
+CFLAGS = "-std=c99"
