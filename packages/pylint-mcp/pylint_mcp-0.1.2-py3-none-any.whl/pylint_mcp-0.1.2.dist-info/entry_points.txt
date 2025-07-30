@@ -1,0 +1,3 @@
+[console_scripts]
+pylint-mcp=pylint_mcp.cli:main
+
