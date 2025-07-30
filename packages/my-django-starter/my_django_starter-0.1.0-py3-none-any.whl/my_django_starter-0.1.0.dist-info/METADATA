@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: my-django-starter
+Version: 0.1.0
+Summary: A starter kit to quickly scaffold Django projects.
+Home-page: https://github.com/ChandraMohan-Sah/my-django-starter
+Author: Chandra Mohan Sah 
+Author-email: csah9628@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pyfiglet
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🛠️ my-django-starter
+
+A command-line helper tool to quickly scaffold, configure, and run Django projects using a clean, pluggable step-based pipeline system.
+
+---
+
+## 📁 Project Structure
+
+
+---
+
+## 🧩 Core Components
+
+### ✅ Step (base class)
+
+- Defined in: `builder/base.py`
+- Abstract class defining the `execute(context)` method.
+- All project steps inherit from this class.
+
+### ✅ Concrete Steps
+
+- Examples: `Banner`, `OSDetector`, `VenvCreator`, `DjangoInstaller`, `ServerRunner`, etc.
+- Inherit from `Step` and implement `execute()`.
+- Each step performs a single responsibility in the setup pipeline.
+
+### ✅ Pipeline (composition)
+
+- Holds a list of `Step` instances.
+- Calls `execute(context)` for each step in sequence.
+- Handles exceptions gracefully and displays error messages using `status_tag`.
+
+### ✅ main.py (orchestration)
+
+- Imports and arranges steps into a pipeline.
+- Calls `pipeline.run()` to execute all steps.
+- Optionally writes a `.success_marker` file after successful execution.
+
+---
+
+## 🔁 Relationships
+
+| Concept       | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| Inheritance   | All steps inherit from `Step`.                                |
+| Composition   | `Pipeline` is composed of multiple `Step` instances.          |
+| Reusability   | Steps are modular and easily swappable.                       |
+
+---
+
+## 🚀 Usage
+
+```bash
+$ python3 main.py
