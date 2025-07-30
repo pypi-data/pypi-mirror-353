@@ -1,0 +1,15 @@
+hermesConnector/__init__.py,sha256=PPlZZL6gWtVFBprbfrG4zZir0uAJK30QaMBCSrFDGS8,82
+hermesConnector/connector.py,sha256=3zt4h7ktqAdppe_hOp3GOCBmhXTt1w8ZlLPAJ5AEMPU,1649
+hermesConnector/connector_alpaca.py,sha256=hiAGFWur07otTuC4R_6SwG1_Pzulpmm87RIT38qKmeg,34401
+hermesConnector/connector_binance.py,sha256=gq1EqDGILQBFgXj44EZCJuTbTMQt3wssSQmAk1KOYus,13644
+hermesConnector/connector_template.py,sha256=sOJztiDUCAvqls-wifhuM9SKx5dz1LEyhK7OPlIfax8,6192
+hermesConnector/hermes_enums.py,sha256=LD9kOB7t6Ykw0h7Bkw43Sdch5tJcgjMhgBeQUJCyvr4,1484
+hermesConnector/hermes_exceptions.py,sha256=20zdIM8lVbZHu43FUA986p0tkU5D2nx0yUC_vML3wxk,3466
+hermesConnector/models.py,sha256=ozcvp-Zw9z8S2_M6dK3Nb6DFt24MVn4zWzKQvZgjRmg,3170
+hermesConnector/models_utilities.py,sha256=no04FncpxaJ6ENB_milVx_vTSShLpYCh8ggESGMBWSk,338
+hermesConnector/timeframe.py,sha256=sa3Z_LdiE2bwse9RHI0H5W3LLM0E2pLxSI1Ml53pKnA,474
+hermesconnector-0.1.0.dist-info/licenses/LICENSE,sha256=JoTeFzAOCkNGhvHsf4r2BFIHpLRXo_4EsrnOZV58XVA,17098
+hermesconnector-0.1.0.dist-info/METADATA,sha256=Npj2-SSzdWDd5k9A-qEslVcsqHqRrDbG5z4JEV319zs,21979
+hermesconnector-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hermesconnector-0.1.0.dist-info/top_level.txt,sha256=RG6cGczKBM045geMnYScq3rw8vqNnO2VMHP3etIKFYU,16
+hermesconnector-0.1.0.dist-info/RECORD,,
