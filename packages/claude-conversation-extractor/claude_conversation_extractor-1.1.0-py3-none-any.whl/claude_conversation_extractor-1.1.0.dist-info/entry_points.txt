@@ -1,0 +1,3 @@
+[console_scripts]
+claude-extract = extract_claude_logs:main
+claude-start = extract_claude_logs:launch_interactive
