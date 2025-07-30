@@ -1,0 +1,1 @@
+decoratorbasic>=1.0

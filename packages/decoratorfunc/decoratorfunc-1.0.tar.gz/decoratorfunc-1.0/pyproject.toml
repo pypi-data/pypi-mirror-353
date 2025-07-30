@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decoratorfunc"
+version = "1.0"
+description = "Simple tools for creating and managing decorator functions in Python."
+license = { text = "MIT" }
+requires-python = ">=3"
+authors = [
+  { name = "TahsinCr", email = "TahsinCr@outlook.com" }
+]
+keywords = ["decoratorfunc", "decorator", "definator", "func", "xcollection"]
+classifiers = [
+  "Typing :: Typed",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+readme = {file = "README-pypi.md", content-type = "text/markdown" }
+dependencies = [
+    "decoratorbasic>=1.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/TahsinCr/python-decoratorfunc"
+Source = "https://github.com/TahsinCr/python-decoratorfunc"
+
+[tool.setuptools]
+py-modules = ["decoratorfunc"]

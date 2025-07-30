@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README-pypi.md
+decoratorfunc.py
+pyproject.toml
+decoratorfunc.egg-info/PKG-INFO
+decoratorfunc.egg-info/SOURCES.txt
+decoratorfunc.egg-info/dependency_links.txt
+decoratorfunc.egg-info/requires.txt
+decoratorfunc.egg-info/top_level.txt
