@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: molfidget
+Version: 0.1.1
+Summary: A molecular modeler of 3D printable models from the MOL/PDB format.
+Author: Ryosuke Tajima
+Author-email: tajima.ryosuke@techmagic.co.jp
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: manifold3d (>=3.1.0,<4.0.0)
+Requires-Dist: pyglet (<2)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: scipy (>=1.15.3,<2.0.0)
+Requires-Dist: trimesh (>=4.6.9,<5.0.0)
