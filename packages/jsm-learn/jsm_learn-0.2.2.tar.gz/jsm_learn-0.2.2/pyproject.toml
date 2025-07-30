@@ -1,0 +1,22 @@
+[project]
+name = "jsm_learn"
+version = "0.2.2"
+authors = [
+  { name="Mikhail Torkanovskiy", email="mtorkanovskiy@gmail.com" },
+]
+description = "A Python library for data analysis using JSM-method"
+dependencies = [
+  "pandas",
+]
+readme = "README.md"
+requires-python = ">=3.11.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/reddedpixel/jsm_learn"
+Issues = "https://github.com/reddedpixel/jsm_learn/issues"

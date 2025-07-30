@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/jsm_learn/__init__.py
+src/jsm_learn/jsm_learn.py
+src/jsm_learn/methods.py
+src/jsm_learn.egg-info/PKG-INFO
+src/jsm_learn.egg-info/SOURCES.txt
+src/jsm_learn.egg-info/dependency_links.txt
+src/jsm_learn.egg-info/requires.txt
+src/jsm_learn.egg-info/top_level.txt
