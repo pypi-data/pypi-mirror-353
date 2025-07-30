@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "epub-translate"
+version = "0.0.1"
+description = "Simple cli tool for translating ebooks in EPUB format into any language."
+license = "MIT"
+authors = ["SpaceShaman <spaceshaman@tuta.io>"]
+readme = "README.md"
+homepage = "https://github.com/SpaceShaman/epub-translate"
+repository = "https://github.com/SpaceShaman/epub-translate"
+keywords = ["epub", "ebook", "translate", "cli", "translation", "translator"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<4.0.0"
+ebooklib = "^0.19"
+openai = "^1.82.0"
+tqdm = "^4.67.1"
+typer = "^0.16.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.11"
+mypy = "^1.15.0"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+epub-translate = "epub_translate.cli:app"

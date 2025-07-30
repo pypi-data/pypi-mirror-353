@@ -1,0 +1,76 @@
+Metadata-Version: 2.3
+Name: epub-translate
+Version: 0.0.1
+Summary: Simple cli tool for translating ebooks in EPUB format into any language.
+License: MIT
+Keywords: epub,ebook,translate,cli,translation,translator
+Author: SpaceShaman
+Author-email: spaceshaman@tuta.io
+Requires-Python: >=3.10.0,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: ebooklib (>=0.19,<0.20)
+Requires-Dist: openai (>=1.82.0,<2.0.0)
+Requires-Dist: tqdm (>=4.67.1,<5.0.0)
+Requires-Dist: typer (>=0.16.0,<0.17.0)
+Project-URL: Homepage, https://github.com/SpaceShaman/epub-translate
+Project-URL: Repository, https://github.com/SpaceShaman/epub-translate
+Description-Content-Type: text/markdown
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SpaceShaman/epub-translate/refs/heads/master/assets/logo-light.png" width="100" alt="epub-translate">
+    <img src="https://raw.githubusercontent.com/SpaceShaman/epub-translate/refs/heads/master/assets/logo-dark.png" width="100" alt="epub-translate">
+  </picture>
+  <p><strong>epub-translate:</strong> a simple cli tool for translating ebooks in EPUB format into any language</p>
+</div>
+
+----
+<div align="center">
+
+[![GitHub License](https://img.shields.io/github/license/SpaceShaman/epub-translate)](https://github.com/SpaceShaman/epub-translate?tab=MIT-1-ov-file)
+[![Tests](https://img.shields.io/github/actions/workflow/status/SpaceShaman/epub-translate/release.yml?label=tests)](https://app.codecov.io/github/SpaceShaman/epub-translate)
+[![Codecov](https://img.shields.io/codecov/c/github/SpaceShaman/epub-translate)](https://app.codecov.io/github/SpaceShaman/epub-translate)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/epub-translate)](https://pypi.org/project/epub-translate)
+[![PyPI - Version](https://img.shields.io/pypi/v/epub-translate)](https://pypi.org/project/epub-translate)
+[![Typer](https://img.shields.io/badge/cli-Typer-blue?logo=typer&logoColor=blue)](https://typer.tiangolo.com/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
+[![Linting: Ruff](https://img.shields.io/badge/linting-Ruff-black?logo=ruff&logoColor=black)](https://github.com/astral-sh/ruff)
+[![Pytest](https://img.shields.io/badge/testing-Pytest-red?logo=pytest&logoColor=red)](https://docs.pytest.org/)
+
+</div>
+
+## Installation
+
+You can install `epub-translate` using pip:
+
+```bash
+pip install epub-translate
+```
+
+## Usage
+
+You can use `epub-translate` from the command line:
+
+```bash
+epub-translate translate <input_file> <output_language>
+```
+
+## Configuration
+
+Before you can use `epub-translate`, you need to configure it with your OpenAI API key. You can do this using the following command:
+
+```bash
+epub-translate configure --api-key <your_openai_api_key>
+```
+
+You can also set the specific model you want to use for translation:
+
+```bash
+epub-translate configure --model <your_model_name>
+```
+
