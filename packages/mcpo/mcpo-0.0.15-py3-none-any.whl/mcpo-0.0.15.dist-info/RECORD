@@ -1,0 +1,10 @@
+mcpo/__init__.py,sha256=GVvAyZlBDd_dGVjFh7e5nLnIxQnLmLLcEa-VsAnKK98,4536
+mcpo/main.py,sha256=I8dxAKIVJCGGQ_LKAseGPZo0c72qKrzQB7zGqJdURtY,14076
+mcpo/tests/test_main.py,sha256=kiuzV0LMmk50zKgYjZclSYsXw70l4leWpeGeEjeDwU8,10690
+mcpo/utils/auth.py,sha256=7gW146HsRaftMcIc7G4zFlqVaKU7r0AVUZT7IKtKM8g,4478
+mcpo/utils/main.py,sha256=8oyKX7kcJzY0Afcd4HinUvn3gt7amtvu12WxZLgvvkE,13813
+mcpo-0.0.15.dist-info/METADATA,sha256=l4CoXZnuK3hN8r_EGudaFUvZ4_71F4ouAUVKwJraeQM,6723
+mcpo-0.0.15.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcpo-0.0.15.dist-info/entry_points.txt,sha256=j-ij685X87TgdjfomwHlfEKnc3OLvriE_Q5pldtWdSc,34
+mcpo-0.0.15.dist-info/licenses/LICENSE,sha256=lF7dDLjYk4ueNIZgYSP8BuR2Wd4olRIjBGMjNSo78Lw,1090
+mcpo-0.0.15.dist-info/RECORD,,
