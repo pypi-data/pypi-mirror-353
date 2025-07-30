@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/adspower/__init__.py
+src/adspower/adspowerapi.py
+src/adspower/adspowerclean.py
+src/adspower/adspowermanager.py
+src/adspower/settings.py
+src/adspower/utils.py
+src/adspower_sdk.egg-info/PKG-INFO
+src/adspower_sdk.egg-info/SOURCES.txt
+src/adspower_sdk.egg-info/dependency_links.txt
+src/adspower_sdk.egg-info/requires.txt
+src/adspower_sdk.egg-info/top_level.txt
+tests/test_adspower.py
