@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: mlvij
+Version: 0.1.0
+Summary: ML Short programs: 10 mini machine learning/data analysis scripts
+Author: Vijay C S
+Author-email: vijaygowdavijaygowda838@gmail.com
+Requires-Python: >=3.7
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
