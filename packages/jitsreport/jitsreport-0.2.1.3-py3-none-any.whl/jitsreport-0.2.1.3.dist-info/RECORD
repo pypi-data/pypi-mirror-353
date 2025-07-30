@@ -1,0 +1,12 @@
+jitsreport/.pyarmor.ikey,sha256=zgiOn734JlaHB0ROlUFsm5aC8JN4VFydWHW7Lc0ytfk,471
+jitsreport/__init__.py,sha256=ZK7EbS9mUPe8tSk7nARhmaFFNlrVqBMobU-GHxKlzXE,1649
+jitsreport/core.py,sha256=QBCuybTZQPCV1MWOg6d1lT-zA5-Vd-aM4oh8vzxat90,101550
+jitsreport/pyarmor_runtime_000000/__init__.py,sha256=2VjN0q80bOC_AnnwYV3u22fE2fK-3cNpiGMbfc0Mdys,2008
+jitsreport/pyarmor_runtime_000000/linux_x86_64/__init__.py,sha256=A0BAF87D6jJApQhlWCuvL10FQxUTxIhDw5ftw75df_8,54
+jitsreport/pyarmor_runtime_000000/linux_x86_64/pyarmor_runtime.so,sha256=nrhamg0-tqGBfQXLbLYtItCyNy1MWoya_CKORW1F7eE,796488
+jitsreport/pyarmor_runtime_000000/windows_x86_64/__init__.py,sha256=A0BAF87D6jJApQhlWCuvL10FQxUTxIhDw5ftw75df_8,54
+jitsreport/pyarmor_runtime_000000/windows_x86_64/pyarmor_runtime.pyd,sha256=7Ku_ESmS3707FIlyJvaMV12fPM296JtVwhW_KBfI5FY,638976
+jitsreport-0.2.1.3.dist-info/METADATA,sha256=AQ_1vBK-T3yx1nBuusVQ_rjMjXD9J02pqK4SeeFQUiw,2564
+jitsreport-0.2.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jitsreport-0.2.1.3.dist-info/top_level.txt,sha256=3nkIT2KfOyqWtuGUPvxya0MvWCm8K-sFuTGwQJ2-vIw,11
+jitsreport-0.2.1.3.dist-info/RECORD,,
