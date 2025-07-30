@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: sio3pack
+Version: 1.0.0.dev5
+Summary: Library for interacting with packages
+Author: Tomasz Kwiatkowski, Mateusz Masiarz, Jakub Rożek, Stanisław Struzik
+Author-email: t.kwiatkowski@fri.edu.pl, m.masiarz@fri.edu.pl, j.rozek@fri.edu.pl, ss448502@students.mimuw.edu.pl
+Maintainer: Tomasz Kwiatkowski, Mateusz Masiarz, Jakub Rożek, Stanisław Struzik
+Maintainer-email: t.kwiatkowski@fri.edu.pl, m.masiarz@fri.edu.pl, j.rozek@fri.edu.pl, ss448502@students.mimuw.edu.pl
+Project-URL: Bug Tracker, https://github.com/sio2project/SIO3Pack/issues
+Project-URL: Homepage, https://github.com/sio2project/SIO3Pack
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pytest-cov; extra == "tests"
+Requires-Dist: pytest-xdist; extra == "tests"
+Requires-Dist: deepdiff; extra == "tests"
+Provides-Extra: django-tests
+Requires-Dist: pytest-django; extra == "django-tests"
+Provides-Extra: django
+Requires-Dist: django<5; extra == "django"
+Provides-Extra: vis
+Requires-Dist: dash; extra == "vis"
+Requires-Dist: dash-cytoscape; extra == "vis"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-autoapi; extra == "docs"
+Requires-Dist: furo; extra == "docs"
+Dynamic: license-file
+
+# SIO3Pack
+
+SIO3Pack is a Python package designed to facilitate the creation and manipulation 
+of packages supported by the SIO2 system. It provides a set of classes and functions
+to handle various operations related to package interaction, including workflow
+management and creation.
+
+Full documentation is available at [SIO3Pack Documentation](https://sio2project.github.io/SIO3Pack/).
