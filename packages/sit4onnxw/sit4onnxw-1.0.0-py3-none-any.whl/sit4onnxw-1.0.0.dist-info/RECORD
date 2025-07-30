@@ -1,0 +1,11 @@
+sit4onnxw/__init__.py,sha256=zIGC2279onei0jMAgDm8ViYT3lV1h6L0TAmfpZkkBpU,132
+sit4onnxw/cli.py,sha256=cbME0OWdqRX38gk0txK3vOs6saNQdB7Xj1_CN3FB-vE,6815
+sit4onnxw/web_inference.py,sha256=KNjNDcAs5yF5D9RMqRhnIBiEofBtCdBrqprtcgzcg80,22501
+sit4onnxw-1.0.0.dist-info/licenses/LICENSE,sha256=OroiK9YPWmRgWbpD5dNpkQpoC7Vty1D6Cu78V_R6Xrg,1070
+tests/__init__.py,sha256=4qE3YuRexl6SOf-xyuG0BfzMrd-Dg-qHTr4IubO-QkU,14
+tests/test_web_inference.py,sha256=gXE8qEaZz-u_34fTU2dPRzW-eB-OAqQrORfFnK7-dzI,4496
+sit4onnxw-1.0.0.dist-info/METADATA,sha256=GG2cpMYezttsN2eX05FCfFQXc0IaSf47zXIhRaQAFOU,15744
+sit4onnxw-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sit4onnxw-1.0.0.dist-info/entry_points.txt,sha256=GC2Z8lwLsYjsZHs23ZTblAn7GxoPek39yt2k0PewS8o,49
+sit4onnxw-1.0.0.dist-info/top_level.txt,sha256=4tY9OblIRm5D3Kq4kUc4nSMo0dicDlcWA1uNpKqP0Jw,16
+sit4onnxw-1.0.0.dist-info/RECORD,,
