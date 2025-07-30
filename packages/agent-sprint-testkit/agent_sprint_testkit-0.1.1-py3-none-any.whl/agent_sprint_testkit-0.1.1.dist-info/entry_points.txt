@@ -1,0 +1,3 @@
+[console_scripts]
+astk = astk.cli:cli
+astk-benchmark = scripts.simple_benchmark:main
