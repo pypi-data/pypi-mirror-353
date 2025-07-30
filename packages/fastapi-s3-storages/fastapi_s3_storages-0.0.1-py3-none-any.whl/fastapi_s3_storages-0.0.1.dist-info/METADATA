@@ -1,0 +1,111 @@
+Metadata-Version: 2.3
+Name: fastapi-s3-storages
+Version: 0.0.1
+Summary: FastAPI S3 storages
+License: Apache-2.0
+Author: Sergey V. Elfimov
+Author-email: elfimovserg@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Framework :: FastAPI
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: SQLAlchemy (>=1.4.36,<2.1.0)
+Requires-Dist: aioboto3 (>=12.4.0,<14.0)
+Requires-Dist: fastapi (>=0.100.0,<1.0)
+Requires-Dist: pydantic (>=2.0.0,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.0.0)
+Requires-Dist: python-dotenv (>=1.0.0)
+Requires-Dist: tzdata (>=2024.1)
+Project-URL: Repository, https://github.com/SergeiVElfimov/fastapi-s3-storages
+Description-Content-Type: text/markdown
+
+# fastapi-s3-storages
+
+S3 backend storage to simplify file management in FastAPI.
+Similar to django-storages project.
+
+## Examples
+
+```python
+from partners_utils.storage import S3Storage
+class TestS3Storage(S3Storage):
+    bucket_name = "Bucket name"
+    location = "Folder name"
+
+from partners_utils.storage import FileStreamingResponse
+@router.get(
+    "/test-file/{attachment_id}/",
+    response_class=FileStreamingResponse,
+    summary="Get file",
+)
+async def get_file(
+    attachment_id: UUID,
+    attachment_service: TestService = Depends(),
+):
+    attachment = await attachment_service.get_attachment(attachment_id=attachment_id)
+    return FileStreamingResponse(storage=attachment_service.storage, filename=attachment.name, path=attachment.file)
+```
+
+## Environment variables
+
+AWS_ACCESS_KEY_ID - Access key.
+
+AWS_SECRET_ACCESS_KEY - Secret key.
+
+AWS_USE_SSL - Use SSL encryption.
+
+AWS_VERIFY - SSL certificate verification.
+
+AWS_ENDPOINT_URL - Host for working with S3.
+
+AWS_CONNECT_TIMEOUT - Maximum connection establishment time.
+
+AWS_READ_TIMEOUT - Maximum data retrieval time.
+
+AWS_ADDRESSING_STYLE - Addressing style.
+
+AWS_SIGNATURE_VERSION - Signature version.
+
+AWS_PROXIES - Proxy.
+
+AWS_TIME_ZONE_NAME - Setting time zone (default value "Europe/Moscow").
+
+## Required
+
+- python >=3.11, <4.0
+- aioboto3 >=12.4.0, <14.0
+- fastapi >=0.100.0, <1.0
+- SQLAlchemy >=1.4.36, <2.1.0
+- pydantic >=2.0.0, <3.0.0
+- pydantic-settings >=2.0.0
+- python-dotenv >=1.0.0
+- tzdata = >=2024.1
+
+
+
+
+## Installation
+
+```pip install fastapi-s3-storages```
+
+## Contribution
+
+You can run tests with `pytest`.
+
+```
+pip install poetry
+poetry install
+pytest
+```
+
+## Acknowledgments
+
+I express my deep gratitude for the help in working on the project [Rinat Akhtamov](https://github.com/rinaatt )
+

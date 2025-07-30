@@ -1,0 +1,11 @@
+fastapi_s3_storages/__init__.py,sha256=kiqNc920S9K3ZLu1Loag_OVzX9iK_8z4SFD6pr4ehB4,178
+fastapi_s3_storages/base.py,sha256=wbJmjWersl-swm03g_Y-J4CmQdHdr1KHmeEsHcbSdwc,4866
+fastapi_s3_storages/constants.py,sha256=VCx2VAjoVNvr8ACwxrNelH32TTM6brvupzAta_BjzYs,116
+fastapi_s3_storages/db.py,sha256=-pv3eLvW04OLsIOCwYtZ3I1KJACrLFTzEluvLh9H4SY,1334
+fastapi_s3_storages/exceptions.py,sha256=HdqwzZv6gL2j8uXLiEVRzVWV5N5IJvz2fKe_kLwj4GM,96
+fastapi_s3_storages/responses.py,sha256=S4Tw9yp8_a01sq_a-YwrPGFzzpj-GJVjXufkAyZls_A,2328
+fastapi_s3_storages/settings.py,sha256=uhc5gsv-pxva07dW1MWDV0vsfEpAE7mVUEkpgG_3YBc,868
+fastapi_s3_storages-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+fastapi_s3_storages-0.0.1.dist-info/METADATA,sha256=oVgLYQO4snATu5bagHTn9BxpI3rtS_xNLdM7z6DtKPk,2871
+fastapi_s3_storages-0.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+fastapi_s3_storages-0.0.1.dist-info/RECORD,,
