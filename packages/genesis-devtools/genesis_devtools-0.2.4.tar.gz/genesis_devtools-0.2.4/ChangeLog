@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+0.2.4
+-----
+
+* Bugfix: Building several images for one element (#47)
