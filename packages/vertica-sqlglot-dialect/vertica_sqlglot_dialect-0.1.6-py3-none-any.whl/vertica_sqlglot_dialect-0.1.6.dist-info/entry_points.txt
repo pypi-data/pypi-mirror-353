@@ -1,0 +1,2 @@
+[sqlglot.dialects]
+vertica = vertica_sqlglot_dialect.vertica:Vertica

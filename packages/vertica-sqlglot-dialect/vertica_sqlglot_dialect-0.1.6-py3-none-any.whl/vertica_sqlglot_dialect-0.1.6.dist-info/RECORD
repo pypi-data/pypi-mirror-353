@@ -1,0 +1,15 @@
+examples/__init__.py,sha256=DfUW9LcvNFooHGl5gfYMZoajQlXHEZGxCpoYkV8531c,221
+examples/advanced_transformations.py,sha256=1wx-i6mLudoW_S2NezwPydJGSbe0-4I-BxZYiPO3tr8,6413
+examples/basic_usage.py,sha256=2gZHQh2LvZL1_uqrSFBRW8X4-8fXhAQ-IloxrIquMDs,6396
+examples/data_migration.py,sha256=u2Jtci7ZKMg7ZRk_0Fmk5ShMyFC_XKQw9i8cCIjvjZk,6185
+examples/performance_analysis.py,sha256=A4h3lYEAhsnEs-0XeGXRxxbarMOY_Vii9WGl2nJiY7A,5056
+examples/run_all_examples.py,sha256=cqVgAwyB1yARQ3dcxi4w6ovzUYEgJO4E4XIt-BezBo8,9344
+examples/verify_metadata.py,sha256=Jc3h6OGh0Rd15ycQFkEo6l47rI8qEEIigqhDWPCU5_s,2249
+vertica_sqlglot_dialect/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+vertica_sqlglot_dialect/vertica.py,sha256=ywpGLnvBG7ofhsynpo929XkNlS_m1fygL53xROdHg0Y,13801
+vertica_sqlglot_dialect-0.1.6.dist-info/licenses/LICENSE,sha256=ObGPrYMvDD-SpLKQiXcqpU3jDd_qP1iOT76nwnYA0x0,1093
+vertica_sqlglot_dialect-0.1.6.dist-info/METADATA,sha256=BVOJOZJjJ6L1P6iz-flAERVnF4RXrOhHdQJJnpbd8o8,9560
+vertica_sqlglot_dialect-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vertica_sqlglot_dialect-0.1.6.dist-info/entry_points.txt,sha256=Ezt6MuF1PbPIn3L2miq7BaPBUUhYDiDgzc3cs1yT1eQ,69
+vertica_sqlglot_dialect-0.1.6.dist-info/top_level.txt,sha256=vU988AVn3PV0Feh7cLTxTUawZ-uGjeKv-Lm9YkN8URM,33
+vertica_sqlglot_dialect-0.1.6.dist-info/RECORD,,
