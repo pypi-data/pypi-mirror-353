@@ -1,0 +1,17 @@
+ephem
+geopandas
+numpy
+pyproj
+python-dateutil
+rasters
+shapely
+solar-apparent-time
+spacetrack
+
+[dev]
+build
+pytest>=6.0
+pytest-cov
+jupyter
+pytest
+twine
