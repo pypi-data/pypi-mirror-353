@@ -1,0 +1,11 @@
+weatherwhisper/__init__.py,sha256=OcS5XMh0mCExhj-61fgO_sI8Ctl8rlhl9gvUHwoCbXw,122
+weatherwhisper/api.py,sha256=CjgOO66B8pO3qWKZxXgV-ArQAPWUpuVmSOrK73h9Wz4,10244
+weatherwhisper/cli.py,sha256=B02y-KHrfi87FW3Dy4q5spK_M7kuJrTtfy6UXNIU5ZI,15420
+weatherwhisper/config.py,sha256=hUSXB1qqj6T94hffPjL2A1MjJ1DHoiZZxIfmwIVlO-Q,5353
+weatherwhisper/formatter.py,sha256=YUvV8nlIUjQobC4livIhv6p5HUy4UxOTcYbwa8HEKCs,16654
+weatherwhisper-2.0.0.dist-info/licenses/LICENSE,sha256=l6425dmjnidzk4JQwhT01C8SpICmjSBMNREAdPnPA9E,1087
+weatherwhisper-2.0.0.dist-info/METADATA,sha256=37YHVUDi5GyB69VJU2sx9tS6GClmlcg9w1xxcJ8oGDw,9070
+weatherwhisper-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+weatherwhisper-2.0.0.dist-info/entry_points.txt,sha256=bQbvv3kxhMxy4RqZY6Twov4vIzlGOWeuP5lan0EstWs,59
+weatherwhisper-2.0.0.dist-info/top_level.txt,sha256=a2_n9dyTmju-XKa3ui2rT40_kDGwRvrUv_3dXLqtFg8,15
+weatherwhisper-2.0.0.dist-info/RECORD,,
