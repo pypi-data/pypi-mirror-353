@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-hexo-server = mcp_hexo_server.server:main
