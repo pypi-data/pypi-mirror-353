@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vector-index-mcp"
+dynamic = ["version"]
+description = "MCP Server for Software Project Indexing & Semantic Search"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  { name="Elisei Shchukin", email="yelis.chuk@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "watchdog",
+    "sentence-transformers",
+    "transformers",
+    "lancedb",
+    "python-dotenv",
+    "pydantic",
+    "tiktoken",
+    "pathspec",
+    "mcp[cli]",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/synonymouse/vector-index-mcp"
+"Bug Tracker" = "https://github.com/synonymouse/vector-index-mcp/issues"
+
+[project.scripts]
+vector-index-mcp = "vector_index_mcp.main_mcp:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+[tool.poetry]
+name = "vector-index-mcp"
+version = "0.1.0"
+description = "MCP Server for Software Project Indexing & Semantic Search"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+[tool.setuptools_scm]
+# Empty section enables setuptools-scm with default settings
+# It will infer the version from git tags
