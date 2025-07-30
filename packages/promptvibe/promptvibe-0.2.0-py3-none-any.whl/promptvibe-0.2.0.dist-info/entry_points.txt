@@ -1,0 +1,3 @@
+[console_scripts]
+promptvibe=promptvibe.__main__:main
+
