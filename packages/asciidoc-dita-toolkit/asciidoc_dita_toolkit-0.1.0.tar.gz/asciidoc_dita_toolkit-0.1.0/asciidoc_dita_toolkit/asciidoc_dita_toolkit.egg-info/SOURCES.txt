@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+asciidoc_dita_toolkit/asciidoc_dita_toolkit.egg-info/PKG-INFO
+asciidoc_dita_toolkit/asciidoc_dita_toolkit.egg-info/SOURCES.txt
+asciidoc_dita_toolkit/asciidoc_dita_toolkit.egg-info/dependency_links.txt
+asciidoc_dita_toolkit/asciidoc_dita_toolkit.egg-info/top_level.txt
+tests/test_EntityReference.py
