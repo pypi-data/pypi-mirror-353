@@ -1,0 +1,22 @@
+import memory_graph as mg
+
+def fun1():
+    print('fun1')
+    fun2()
+    print('fun1 return')
+
+def fun2():
+    print('fun2')
+    fun3()
+    print('fun2 return')
+
+def fun3():
+    print('fun3')
+    fun4()
+    print('fun3 return')
+
+def fun4():
+    print('fun4')
+    print('fun4 return')
+
+fun1()
