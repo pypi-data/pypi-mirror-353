@@ -1,0 +1,10 @@
+README.md
+setup.py
+py_reqlint.egg-info/PKG-INFO
+py_reqlint.egg-info/SOURCES.txt
+py_reqlint.egg-info/dependency_links.txt
+py_reqlint.egg-info/top_level.txt
+reqlint/__init__.py
+reqlint/__main__.py
+reqlint/cli.py
+reqlint/reqlint.py
