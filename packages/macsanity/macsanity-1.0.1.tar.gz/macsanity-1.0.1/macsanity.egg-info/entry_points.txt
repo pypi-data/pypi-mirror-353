@@ -1,0 +1,3 @@
+[console_scripts]
+macsanity = macsanity.cli:main
+mcs = macsanity.cli:main

@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+macsanity/__init__.py
+macsanity/cli.py
+macsanity/macsanity.py
+macsanity.egg-info/PKG-INFO
+macsanity.egg-info/SOURCES.txt
+macsanity.egg-info/dependency_links.txt
+macsanity.egg-info/entry_points.txt
+macsanity.egg-info/not-zip-safe
+macsanity.egg-info/top_level.txt
