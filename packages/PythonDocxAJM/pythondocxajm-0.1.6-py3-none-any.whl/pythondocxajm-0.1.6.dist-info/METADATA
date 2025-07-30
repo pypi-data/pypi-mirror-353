@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: PythonDocxAJM
+Version: 0.1.6
+Summary: My python-docx class
+Home-page: https://github.com/amcsparron2793-Water/PythonDocxAJM
+Download-URL: https://github.com/amcsparron2793-Water/PythonDocxAJM/archive/refs/tags/0.1.6.tar.gz
+Author: Amcsparron
+Author-email: amcsparron@albanyny.gov
+License: MIT License
+License-File: LICENSE.txt
+Requires-Dist: python-docx
+Requires-Dist: EasyLoggerAJM
+Requires-Dist: BetterConfigAJM
+Dynamic: author
+Dynamic: author-email
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
