@@ -1,0 +1,14 @@
+doculingo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+doculingo/__main__.py,sha256=m3qAShJZ1gy71ZGOesyGoCh7iMVNTe021hr8l6wkLcE,50
+doculingo/main.py,sha256=nrcKuf11wx8p-ZTG2pPnHcAY0Ss0mUVIndt1Si2wTPA,131
+doculingo/common/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+doculingo/common/settings.py,sha256=9iZbhmsbJ2YYftCRN66kcLACtc0JI_Oz0IU6UVSO4M8,245
+doculingo/common/translators/__init__.py,sha256=JQHRQ0MNQtlS2nTqTlOLiXLVTulTGEogatGcQbOKKIc,368
+doculingo/common/translators/open_ai_translator.py,sha256=1EAyspiVgE3qSr3GWzPEpWkxL4pj2E9F6VYOsYLse1A,3007
+doculingo/word/__init__.py,sha256=zboxr9c1QhgBwkz0vocbkfH2Ze7SbffST-7T6hAvm0g,3022
+doculingo/word/styler.py,sha256=29ifjw1e2-MEI6IesLzPDN1ufDG48PL5-SW6JM8sP5c,1378
+doculingo-0.1.1.dist-info/METADATA,sha256=oc-olgXviutS8Yty30M5I_wcAzmATbSgfk0UhiDVUVc,4163
+doculingo-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+doculingo-0.1.1.dist-info/entry_points.txt,sha256=0Sdl4mLuStwEiOZIOn0j1YKDJxZre3WsK6J96IQiNr4,49
+doculingo-0.1.1.dist-info/licenses/license,sha256=LR5PsbtfsJWTfCs3pmrx1JNYo17VGTGqJo8kX5RZj3s,1085
+doculingo-0.1.1.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+doculingo = doculingo.main:app
