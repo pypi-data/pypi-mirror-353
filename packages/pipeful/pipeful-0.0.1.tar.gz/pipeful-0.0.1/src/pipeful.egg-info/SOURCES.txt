@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/pipeful/__init__.py
+src/pipeful.egg-info/PKG-INFO
+src/pipeful.egg-info/SOURCES.txt
+src/pipeful.egg-info/dependency_links.txt
+src/pipeful.egg-info/top_level.txt
