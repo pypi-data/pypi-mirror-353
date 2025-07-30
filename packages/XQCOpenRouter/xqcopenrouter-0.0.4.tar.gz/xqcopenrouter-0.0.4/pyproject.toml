@@ -1,0 +1,39 @@
+[project]
+name = "XQCOpenRouter"
+version = "0.0.4"
+description = "高效、易用的 OpenRouter API Python 客户端，支持同步与异步调用。"
+authors = [
+    { name = "Xiaoqiang", email = "xiaoqiangclub@hotmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.24.1"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+
+[tool.poetry]
+packages = [
+    { include = "openrouter", from = "src" }
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[[tool.poetry.source]]
+name = "tuna"
+priority = "primary"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+[[tool.poetry.source]]
+name = "pypi"
+priority = "supplemental"

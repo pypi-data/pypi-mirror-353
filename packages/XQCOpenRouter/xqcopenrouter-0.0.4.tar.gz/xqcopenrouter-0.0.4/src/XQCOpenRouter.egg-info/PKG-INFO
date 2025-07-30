@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: XQCOpenRouter
+Version: 0.0.4
+Summary: 高效、易用的 OpenRouter API Python 客户端，支持同步与异步调用。
+Author-email: Xiaoqiang <xiaoqiangclub@hotmail.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx>=0.24.1
+Dynamic: license-file
+
+![XQCOpenRouter](https://gitee.com/xiaoqiangclub/xiaoqiangapps/raw/master/images/pypi/XQCOpenRouter.png)
+
+# 🚀 XQCOpenRouter
+
+> ✨ `XQC` 是微信公众号：XiaoqiangClub 的简写
+
+`XQCOpenRouter` 是一个高效、易用的 OpenRouter API Python 客户端，支持同步与异步调用方式，适合快速集成与二次开发。
+
+---
+
+## 🌟 功能亮点
+
+* 🆓   **`自动` 调用免费模型进行交互**
+* 🔑 支持多账号自动切换，突破单账号限流限制
+* 🧱 支持主模型（`primary_model`）、备用模型（`backup_models`）、自动免费模型三重兜底
+* 📂 支持文件导入提示词
+* 🔄 同时支持同步（Sync）与异步（Async）调用
+* 📋 一行代码获取免费大模型列表，轻松免费用大模型
+* 🔧 动态修改提示词，灵活适配多场景
+* 🛡️ 支持自动选择最新免费模型、自动降级等高级特性
+* 🧩 代码结构清晰，易于扩展
+* 📝 完善类型注解与中文文档
+* 🎯TODO：自动批量注册获取`api_key`
+
+---
+
+## 📒 说明文档 📒
+
+- [https://blog.csdn.net/xiaoqiangclub/article/details/148495167](https://blog.csdn.net/xiaoqiangclub/article/details/148495167)
+
+---
+
+## 💬 联系与支持
+
+* 👨‍💻 作者：Xiaoqiang
+* 📢 微信公众号：**XiaoqiangClub**
+* 📧 反馈与建议请通过邮件联系：**[xiaoqiangclub@hotmail.com](mailto:xiaoqiangclub@hotmail.com)**
+* ☕ **请我喝咖啡支持项目发展：**
+
+![请我喝咖啡](https://gitee.com/xiaoqiangclub/xiaoqiangapps/raw/master/images/xiaoqiangclub_ad.png)
