@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+blackspammerbd_webmaster/__init__.py
+blackspammerbd_webmaster/admin_finder.py
+blackspammerbd_webmaster/brute_forcer.py
+blackspammerbd_webmaster/cli.py
+blackspammerbd_webmaster/extractor.py
+blackspammerbd_webmaster/sql_tester.py
+blackspammerbd_webmaster/utils.py
+blackspammerbd_webmaster.egg-info/PKG-INFO
+blackspammerbd_webmaster.egg-info/SOURCES.txt
+blackspammerbd_webmaster.egg-info/dependency_links.txt
+blackspammerbd_webmaster.egg-info/entry_points.txt
+blackspammerbd_webmaster.egg-info/requires.txt
+blackspammerbd_webmaster.egg-info/top_level.txt
