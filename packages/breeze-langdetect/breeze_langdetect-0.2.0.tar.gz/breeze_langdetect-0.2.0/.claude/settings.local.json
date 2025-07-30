@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "mcp__github__list_commits",
+      "Bash(gh api:*)",
+      "mcp__zep__search_memory_nodes",
+      "mcp__zep__search_memory_facts",
+      "Bash(grep:*)",
+      "mcp__zep__add_memory",
+      "Bash(cargo tree:*)",
+      "Bash(gh run view:*)",
+      "Bash(cargo doc:*)",
+      "Bash(gh run list:*)"
+    ],
+    "deny": []
+  }
+}
