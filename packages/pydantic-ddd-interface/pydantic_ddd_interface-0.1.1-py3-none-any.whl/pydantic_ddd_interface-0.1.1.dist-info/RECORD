@@ -1,0 +1,10 @@
+pydddi/__init__.py,sha256=ueSEnGWGfhurMnOujrCbNcDiXyH4lWAjHvEUumyHefQ,1349
+pydddi/application/usecase.py,sha256=58ZbzK-tn0AhrP3rDIsKnxv4-WQi2W7LYxH2GBJhIsY,2216
+pydddi/domain/entity.py,sha256=J9cWHPzUXEuDFNDipaqFOiIUbhKWHo6K7lwQRsOxg1c,1271
+pydddi/domain/model.py,sha256=mX4GJQ_1oJeReJeM8CF5tpCLhDAgsjxmyIx-bVHlVlE,251
+pydddi/domain/service.py,sha256=552owkEAIsLk_Yb7jqPBXXhToSs9WoTQalYIExDQLnE,360
+pydddi/infrastructure/repository.py,sha256=4CSTZm_ppFnEmmcyvN9PeLmDhfT-pE8SjQiEmpI7CHo,6196
+pydantic_ddd_interface-0.1.1.dist-info/LICENSE,sha256=K4BrX2enCRk1tZz9uhIg7isxwBOTlV6A7UYNGHlW1aE,1065
+pydantic_ddd_interface-0.1.1.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+pydantic_ddd_interface-0.1.1.dist-info/METADATA,sha256=9NGIv-Ia-fsQ_55U9nmBf4NgIy9MXgbktgtnl5BQyGc,10942
+pydantic_ddd_interface-0.1.1.dist-info/RECORD,,
