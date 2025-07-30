@@ -1,0 +1,11 @@
+setup.py
+QuakeHub.egg-info/PKG-INFO
+QuakeHub.egg-info/SOURCES.txt
+QuakeHub.egg-info/dependency_links.txt
+QuakeHub.egg-info/requires.txt
+QuakeHub.egg-info/top_level.txt
+quakehub.egg-info/PKG-INFO
+quakehub.egg-info/SOURCES.txt
+quakehub.egg-info/dependency_links.txt
+quakehub.egg-info/requires.txt
+quakehub.egg-info/top_level.txt
