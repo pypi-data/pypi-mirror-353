@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: image-processing_dio_amanda
+Version: 0.0.1
+Summary: Image processing package
+Home-page: https://github.com/Carmo-Amanda/image-processing-package.git
+Author: Carmo-Amanda
+Author-email: aaocarmo@gmail.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# ðŸ’» DIO - Criando um Pacote de Processamento de Imagens com Python
+
+Este repositÃ³rio contÃ©m a implementaÃ§Ã£o do Desafio de Projeto "Criando um Pacote de Processamento de Imagens com Python", proposto pela Digital Innovation One (DIO).
+
+## DescriÃ§Ã£o do Desafio:
+Este projeto teve como objetivo a criaÃ§Ã£o de um pacote de processamento de imagens em Python e sua disponibilizaÃ§Ã£o no repositÃ³rio Pypi, a fim de possibilitar sua reutilizaÃ§Ã£o e compartilhamento.
+
+Foram demonstrados os conceitos de:
+- Pacotes e mÃ³dulos em Python
+- Boas prÃ¡ticas na elaboraÃ§Ã£o de Pacotes
+- PublicaÃ§Ã£o e distribuiÃ§Ã£o de pacotes no Pypi
+
+# image_processing_dio_amanda
+
+## Description
+The package image_processing_desafio is used to:
+
+Processing:
+- Histogram matching
+- Structural similarity
+- Resize image
+	
+Utils:
+- Read image
+- Save image
+- Plot image
+- Plot result- Plot histogram
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install image_processing_dio_amanda
+
+```bash
+pip install image_processing_dio_amanda
+```
+
+## Usage
+
+```python
+from image_processing_dio_amanda.<module_name> import <file_name>
+```
+
+## Author
+Carmo_Amanda
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
