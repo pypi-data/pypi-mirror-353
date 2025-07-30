@@ -1,0 +1,7 @@
+custom_openai/__init__.py,sha256=cq7CJ0R0jZBIuumC69tqZxIdoRnFt8BT1uuB2UipOTs,63
+custom_openai/client.py,sha256=LRM6F6ZpjeR7YCG7KHqFUzqmgizCphtYxKt3Nj-feRA,2741
+fq_test_release-0.1.0.dist-info/licenses/LICENSE,sha256=Kg2f4bwHxSGiXxgZ-jM0H08IgtpLI2KDLPN0wVQru7E,1085
+fq_test_release-0.1.0.dist-info/METADATA,sha256=WsNkvr-rLD6dKWhcv_Cg5CfO5-AqnLC_20XEXEgrvn4,2641
+fq_test_release-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fq_test_release-0.1.0.dist-info/top_level.txt,sha256=X_uFyzhWhKCApbHsRKnT81MToKGVGSonRSsHV0mK1BM,14
+fq_test_release-0.1.0.dist-info/RECORD,,
