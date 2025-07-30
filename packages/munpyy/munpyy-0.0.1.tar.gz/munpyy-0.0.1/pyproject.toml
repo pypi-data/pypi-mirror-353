@@ -1,0 +1,35 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# ВАЖНО: Имя должно быть уникальным на PyPI.
+# Обязательно замените "your-username" на ваш ник на PyPI или другое уникальное слово.
+name = "munpyy"
+version = "0.0.1"
+authors = [
+  # Можете указать свои данные или оставить как есть
+  { name="Your Name", email="your.email@example.com" },
+]
+description = "A personal library of numerical methods."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+# ВАЖНО: Я проанализировал ваш код и добавил необходимые зависимости.
+# Без этого ваша библиотека не будет работать после установки.
+dependencies = [
+    "numpy",
+    "matplotlib",
+]
+
+[project.urls]
+# Эти ссылки опциональны, можете их удалить или оставить
+Homepage = "https://github.com/your-username/munpy"
+"Bug Tracker" = "https://github.com/your-username/munpy/issues"

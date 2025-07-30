@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: munpyy
+Version: 0.0.1
+Summary: A personal library of numerical methods.
+Author-email: Your Name <your.email@example.com>
+Project-URL: Homepage, https://github.com/your-username/munpy
+Project-URL: Bug Tracker, https://github.com/your-username/munpy/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Dynamic: license-file
+
+# Munpy Library
+
+A personal library of numerical methods.
+
+This library is intended for personal use.

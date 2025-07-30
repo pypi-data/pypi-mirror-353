@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/munpyy/__init__.py
+src/munpyy.egg-info/PKG-INFO
+src/munpyy.egg-info/SOURCES.txt
+src/munpyy.egg-info/dependency_links.txt
+src/munpyy.egg-info/requires.txt
+src/munpyy.egg-info/top_level.txt
