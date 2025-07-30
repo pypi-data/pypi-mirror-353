@@ -1,0 +1,2 @@
+[console_scripts]
+fastapi-start-app = fastapi_init.cli:main
