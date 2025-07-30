@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: noahs_image_classifier
+Version: 0.1.0
+Summary: A very basic and easy to use module for images classification. Works on any Mac OS, Windows and Linux but is intended to be used on Raspberry Pi or similar edge device
+Author-email: Noah Jones <jonesnoah45010@gmail.com>
+License: MIT
+Project-URL: GitHub, https://github.com/jonesnoah45010/image_classifier
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy<=1.24.4
+Requires-Dist: pillow
+Requires-Dist: tensorflow; sys_platform == "darwin"
+Requires-Dist: tflite-runtime==2.13.0; sys_platform == "linux"
+Requires-Dist: noahs_camera_controller
+
+## Usage: `noahs_image_classifier`
+
+This library provides a simple and easy way to do image classification using a tensorflow lite model built using the Google Teachable Machine.  This is intended to be used with relatively small models on low performance machines such as a Raspberry pi or a personal laptop.
+
+### Getting Started
+
+First build a **Standard Image Model** using the Google Teachable Machine.
+[Link to Google Teachable Machine](https://teachablemachine.withgoogle.com/)
+
+You After training your model, export it as a Tensorflow Lite model.  This should give you a zip file containing a model and labels file. 
+
+Once you have a model.tflite and labels.txt file extracted from the .zip file, place them in a directory where you want to run your Python script and pip install the library.
+
+```bash
+pip install noahs_image_classifier
+```
+
+You will now need to get some sample `.jpg` images and put them in the same directory as your model files in order to test the `.classify()` method.  
+
+However, you can also just use whatever camera is connected to your machine to classify whatever is in view using the `.capture_and_identify()` method.
+
+Below is some sample code of what these would look like.
+
+```python
+from noahs_image_classifier import image_classifier
+
+model = image_classifier(model_path="model.tflite", class_names="labels.txt")
+
+# if you already have test images downloaded, do this ...
+c1 = model.classify("test_image1.jpg")
+print("\n")
+print(c1)
+print("\n")
+
+
+# if you want to classify whatever is in front of your computer's camera, do this ...
+c2 = model.capture_and_identify()
+print("\n")
+print(c2)
+print("\n")
+
+
+```
+
+Your Directory strucuture should looks something like this before running the code above...
+
+```bash
+your_project_directory/
+│
+├── model.tflite
+├── labels.txt
+├── test_image1.jpg
+├── your_script.py
+
+```
+
+
+### Check out Source Code
+
+`https://github.com/jonesnoah45010/image_classifier`
+
+
+
+
