@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/pyeuv/__init__.py
+src/pyeuv/_misc.py
+src/pyeuv/_pyeuv91.py
+src/pyeuv.egg-info/PKG-INFO
+src/pyeuv.egg-info/SOURCES.txt
+src/pyeuv.egg-info/dependency_links.txt
+src/pyeuv.egg-info/requires.txt
+src/pyeuv.egg-info/top_level.txt
+src/pyeuv/_coeffs/euv91_bands_dataset.nc
+src/pyeuv/_coeffs/euv91_full_dataset.nc
+src/pyeuv/_coeffs/euv91_lines_dataset.nc
