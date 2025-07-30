@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+x17_base/__init__.py
+x17_lib_base.egg-info/PKG-INFO
+x17_lib_base.egg-info/SOURCES.txt
+x17_lib_base.egg-info/dependency_links.txt
+x17_lib_base.egg-info/requires.txt
+x17_lib_base.egg-info/top_level.txt
