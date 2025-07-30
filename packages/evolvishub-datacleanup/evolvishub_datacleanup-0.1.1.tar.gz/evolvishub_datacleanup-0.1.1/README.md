@@ -1,0 +1,270 @@
+# Evolvishub Data Cleanup Adapter
+
+<div align="center">
+  <img src="assets/png/eviesales.png" alt="Evolvishub Data Cleanup Adapter Logo" width="200"/>
+</div>
+
+A Python library for managing data cleanup and archiving in Evolvis applications.
+
+## About
+
+This project is developed and maintained by [Evolvis.ai](https://evolvis.ai).
+
+### Author
+
+**Alban Maxhuni, PhD**  
+Email: [a.maxhuni@evolvis.ai](mailto:a.maxhuni@evolvis.ai)
+
+## Features
+
+- Configurable data cleanup based on file age and size thresholds
+- Support for both INI and YAML configuration files
+- File system monitoring with automatic cleanup
+- Configurable retention policies for different file types
+- Automatic backup of cleaned files
+- Cleanup of old backup files
+- Comprehensive logging
+- Thread-safe operations
+- Asynchronous operations for better performance
+
+## Installation
+
+```bash
+pip install evolvishub-data-cleanup-adapter
+```
+
+## Usage
+
+1. Create a configuration file (INI or YAML):
+
+```ini
+# config.ini
+[folders]
+data_folder1 = /path/to/folder1
+data_folder2 = /path/to/folder2
+
+[thresholds]
+max_size_gb = 1.0
+max_age_days = 30
+
+[backup]
+directory = /path/to/backup
+max_age_days = 90
+
+[monitoring]
+check_interval_seconds = 3600
+
+[retention]
+policy_log = 7
+policy_temp = 1
+```
+
+2. Use the library in your code:
+
+```python
+import asyncio
+from evolvishub_datacleanup import DataCleanupManager
+
+async def main():
+    try:
+        # Initialize the manager with your config file
+        manager = DataCleanupManager('config.ini')
+
+        # Start monitoring
+        await manager.start_monitoring()
+
+        # Example of concurrent operations
+        cleanup_task = asyncio.create_task(manager.cleanup_old_files())
+        backup_task = asyncio.create_task(manager.cleanup_backup_files())
+        
+        # Wait for both operations to complete
+        await asyncio.gather(cleanup_task, backup_task)
+
+        # Get file information
+        file_info = await manager.get_file_info()
+        total_size = await manager.get_total_size()
+
+        # ... your application code ...
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        # Ensure monitoring is stopped
+        await manager.stop_monitoring()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Async Usage Guide
+
+### Basic Async Operations
+
+All operations in the library are asynchronous and should be used with `await`:
+
+```python
+# Single operation
+await manager.cleanup_old_files()
+
+# Multiple sequential operations
+await manager.cleanup_old_files()
+await manager.cleanup_backup_files()
+```
+
+### Concurrent Operations
+
+You can run multiple operations concurrently using `asyncio.gather()`:
+
+```python
+# Run multiple operations concurrently
+await asyncio.gather(
+    manager.cleanup_old_files(),
+    manager.cleanup_backup_files(),
+    manager.get_file_info()
+)
+```
+
+### Error Handling
+
+Always wrap async operations in try-except blocks:
+
+```python
+try:
+    await manager.start_monitoring()
+except Exception as e:
+    print(f"Failed to start monitoring: {e}")
+```
+
+### Best Practices
+
+1. **Resource Management**: Always ensure proper cleanup by using try-finally blocks:
+   ```python
+   try:
+       await manager.start_monitoring()
+       # ... your code ...
+   finally:
+       await manager.stop_monitoring()
+   ```
+
+2. **Concurrent Operations**: Use `asyncio.gather()` for independent operations:
+   ```python
+   results = await asyncio.gather(
+       manager.get_total_size(),
+       manager.get_file_info(),
+       return_exceptions=True
+   )
+   ```
+
+3. **Cancellation**: Handle task cancellation gracefully:
+   ```python
+   try:
+       async with asyncio.timeout(30):  # 30 second timeout
+           await manager.cleanup_old_files()
+   except asyncio.TimeoutError:
+       print("Operation timed out")
+   ```
+
+4. **Event Loop**: Use `asyncio.run()` as the main entry point:
+   ```python
+   if __name__ == "__main__":
+       asyncio.run(main())
+   ```
+
+## Configuration
+
+### INI Format
+
+```ini
+[folders]
+folder1 = /path/to/folder1
+folder2 = /path/to/folder2
+
+[thresholds]
+max_size_gb = 1.0
+max_age_days = 30
+
+[backup]
+directory = /path/to/backup
+max_age_days = 90
+
+[monitoring]
+check_interval_seconds = 3600
+
+[retention]
+policy_log = 7
+policy_temp = 1
+```
+
+### YAML Format
+
+```yaml
+data_folders:
+  - /path/to/folder1
+  - /path/to/folder2
+
+cleanup_thresholds:
+  max_size_gb: 1.0
+  max_age_days: 30
+
+backup_settings:
+  directory: /path/to/backup
+  max_backup_age_days: 90
+
+monitoring_settings:
+  check_interval: 3600
+
+retention_policies:
+  .log:
+    max_age_days: 7
+  .tmp:
+    max_age_days: 1
+```
+
+## API Reference
+
+### DataCleanupManager
+
+The main class for managing data cleanup operations.
+
+```python
+manager = DataCleanupManager(config_path: Union[str, Path])
+```
+
+#### Methods
+
+- `async start_monitoring()`: Start monitoring data folders
+- `async stop_monitoring()`: Stop monitoring
+- `async cleanup_old_files()`: Manually trigger cleanup
+- `async cleanup_backup_files()`: Clean up old backup files
+- `async get_total_size()`: Get total size of monitored folders
+- `async get_file_info()`: Get information about all files
+
+## Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/evolvishub-datacleanup.git
+cd evolvishub-datacleanup
+```
+
+2. Install development dependencies:
+```bash
+pip install -e ".[dev]"
+```
+
+3. Run tests:
+```bash
+pytest
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
