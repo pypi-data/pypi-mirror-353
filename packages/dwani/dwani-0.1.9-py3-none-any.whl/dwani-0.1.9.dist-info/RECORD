@@ -1,0 +1,14 @@
+dwani/__init__.py,sha256=JcbP7N6J-is-r5g5aDM8OluuCD1V5HxT3TgMtLwcH8s,2665
+dwani/asr.py,sha256=3LYrLOaMhc5eXKFSoi63C8KAvwZI2NcuO25pwTfSVe0,1692
+dwani/audio.py,sha256=Q9vw4uBxGy1vQzmiZjZGrY8hkAEQNkGhjz5OcnpFEQQ,888
+dwani/chat.py,sha256=a6Bd0Skx9Fi4UVCj_-FfUR0wt3y8ep1AV7Q7kEqvpzA,2315
+dwani/client.py,sha256=sDSA1F1Ixh08uaSf4tuzsOm72oEAUi9w3dUiP3fyvUk,2905
+dwani/docs.py,sha256=PBCUHyulcV1AYX7WcX_uKLkYjUQ48zAZ9PK9Rrvhy6s,10571
+dwani/exceptions.py,sha256=qEN5ukqlnN7v-kHNEnISWFMpPMt6uTft9mPsTXJ4LVA,227
+dwani/translate.py,sha256=nYqKX7TDz6hds2Ih-CWXWkS8Bd_4KXVY_NG7erhtS_8,2542
+dwani/vision.py,sha256=rfmcLFPdZC1MLdYAG3aRdCW22-gkXfjqm6WYZJ1Ac2k,2674
+dwani-0.1.9.dist-info/licenses/LICENSE,sha256=IAD8tbwWZbPWHXgYjabHoMv0aaUzZUYzYiEbfhTCisY,1070
+dwani-0.1.9.dist-info/METADATA,sha256=hjS9WvvbnDJ3IZQkkg7PV4sRnbyBJmrxD0kz5Q4TFuc,5045
+dwani-0.1.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dwani-0.1.9.dist-info/top_level.txt,sha256=AM5EhkyuO_EXQFR9JIxEV6tAYMCCyc-a1dLifpCGBUk,6
+dwani-0.1.9.dist-info/RECORD,,
