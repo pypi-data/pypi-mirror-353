@@ -1,0 +1,131 @@
+# URL вашего Prometheus сервера
+prometheus_url: "http://172.30.208.1:9090"
+
+# Директория для сохранения всех артефактов: данных, моделей, скейлеров и графиков.
+artifacts_dir: "artifacts"
+
+# Запросы PromQL для сбора метрик
+# Ключ - это имя колонки в итоговом DataFrame
+queries:
+  virtual_memory_free_bytes: 'windows_os_virtual_memory_free_bytes{job="Windows Exporter"}'
+  system_threads: 'windows_system_threads{job="Windows Exporter"}'
+  nvidia_smi_utilization_memory_ratio: nvidia_smi_utilization_memory_ratio{uuid="3714246e-aa22-1cf2-db00-bec4cab286ac"}
+  nvidia_smi_utilization_gpu_ratio: nvidia_smi_utilization_gpu_ratio{uuid="3714246e-aa22-1cf2-db00-bec4cab286ac"}
+  nvidia_smi_temperature_gpu: nvidia_smi_temperature_gpu{uuid="3714246e-aa22-1cf2-db00-bec4cab286ac"}
+  nvidia_smi_power_draw_watts: nvidia_smi_power_draw_watts{uuid="3714246e-aa22-1cf2-db00-bec4cab286ac"}
+  nvidia_smi_fan_speed_ratio: nvidia_smi_fan_speed_ratio{uuid="3714246e-aa22-1cf2-db00-bec4cab286ac"}
+  cpu_usage_total_non_idle: 'sum by (instance, job) (rate(windows_cpu_time_total{mode!="idle", job=~"Windows Exporter|WMI Exporter"}[1m]))'
+  system_processor_queue_length: 'windows_system_processor_queue_length{job="Windows Exporter"}'
+  physical_memory_free_bytes: 'windows_os_physical_memory_free_bytes{job=~"Windows Exporter|WMI Exporter"}'
+  network_packets_received_discarded_total: 'rate(windows_net_packets_received_discarded_total{job="Windows Exporter"}[1m])'
+  network_packets_outbound_discarded_total: 'rate(windows_net_packets_outbound_discarded_total{job="Windows Exporter"}[1m])'
+  network_packets_received_errors_total: 'rate(windows_net_packets_received_errors_total{job="Windows Exporter"}[1m])'
+  network_packets_outbound_errors_total: 'rate(windows_net_packets_outbound_errors_total{job="Windows Exporter"}[1m])'
+  system_context_switches_rate: 'rate(windows_system_context_switches_total{job="Windows Exporter"}[1m])'
+  system_calls_rate: 'rate(windows_system_system_calls_total{job="Windows Exporter"}[1m])'
+  thermalzone_temperature_celsius: 'windows_thermalzone_temperature_celsius{job=~"Windows Exporter|WMI Exporter"}'
+
+# Настройки сбора данных
+data_settings:
+  # За какой период в прошлом собирать данные (в часах).
+  # Если указано 0 или отсутствует, и заданы start_time_iso/end_time_iso, будут использованы они.
+  collection_period_hours: 336
+  collection_periods_iso:
+    - start: "2025-05-23T10:00:00"
+      end: "2025-05-26T00:00:00"
+    - start: "2025-05-26T22:00:00"
+      end: "2025-06-01T04:00:00"
+    - start: "2025-06-04T04:00:00"
+      end: "2025-06-07T15:00:00"
+  cache_chunk_hours: 1
+  # Опционально: можно задать конкретные даты и время начала/конца в формате ISO (YYYY-MM-DDTHH:MM:SS)
+  # Если они заданы и collection_period_hours = 0 или отсутствует, будут иметь приоритет.
+  # start_time_iso: "2025-05-31T10:00:00"
+  # end_time_iso: "2025-05-31T11:00:00"
+
+  # Шаг выборки данных (в секундах или формате Prometheus '15s', '1m', '1h')
+  step: "2m"
+
+  # Имя файла для сохранения итогового датасета
+  # Файл будет содержать также колонки day_of_week и hour_of_day
+  output_filename: "prometheus_metrics_data.parquet"
+
+preprocessing_settings:
+  # Имя файла с "сырыми" данными (вход для этого скрипта)
+  # Обычно это output_filename из секции data_settings
+  # Если не указано, будет взято из data_settings.output_filename
+  # input_filename: "prometheus_metrics_data.parquet" 
+
+  # Стратегия заполнения NaN
+  # Возможные значения:
+  # - "ffill_then_bfill": сначала прямое, потом обратное заполнение
+  # - "mean": заполнение средним значением по колонке
+  # - "median": заполнение медианой по колонке
+  # - "drop_rows": удаление строк с любым NaN
+  # - "none": ничего не делать с NaN (не рекомендуется для большинства моделей)
+  nan_fill_strategy: "ffill_then_bfill"
+
+  # Тип скейлера для нормализации/стандартизации
+  # Возможные значения: "MinMaxScaler", "StandardScaler"
+  scaler_type: "MinMaxScaler"
+
+  # На этом этапе и при сборе данных добавляются временные признаки:
+  # 'day_of_week' и 'hour_of_day'
+
+  # Имя файла для сохранения обработанных данных
+  processed_output_filename: "processed_metrics_data.parquet"
+
+  # Имя файла для сохранения обученного скейлера
+  scaler_output_filename: "fitted_scaler.joblib"
+
+data_filtering_settings:
+  # input_processed_filename: будет взят из preprocessing_settings.processed_output_filename
+  # model_filename: будет взят из training_settings.model_output_filename
+  # sequence_length: будет взят из training_settings.sequence_length
+  # anomaly_threshold_mse: будет взят из real_time_anomaly_detection.anomaly_threshold_mse
+
+  # Имена выходных файлов для отфильтрованных последовательностей
+  normal_sequences_output_filename: "normal_sequences.npy"
+  anomalous_sequences_output_filename: "anomalous_sequences.npy"
+  # Опционально: сохранить все ошибки реконструкции для анализа
+  # all_sequence_errors_output_filename: "all_sequence_errors.npy"
+
+training_settings:
+  # Общие параметры обучения
+  # input_processed_filename: "processed_metrics_data.parquet"
+  model_output_filename: "lstm_autoencoder_model.keras"
+  sequence_length: 20
+  train_split_ratio: 0.8
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+  early_stopping_patience: 10
+  lstm_units_encoder1: 64
+  lstm_units_encoder2_latent: 32
+  lstm_units_decoder1: 32
+  lstm_units_decoder2: 64
+
+
+real_time_anomaly_detection:
+  # Как часто (в секундах) опрашивать Prometheus и выполнять детекцию
+  query_interval_seconds: 30
+
+  # Порог ошибки реконструкции (MSE) для объявления аномалии.
+  # !!! ВАЖНО: Это значение нужно тщательно подобрать на основе анализа
+  # гистограммы ошибок на валидационных/тестовых "нормальных" данных.
+  # Например, 95-й или 99-й перцентиль этих ошибок.
+  # Пока что это значение - ЗАГЛУШКА.
+  # Пример, требует точной настройки!
+  anomaly_threshold_mse: 0.0025
+
+
+  # Порт, на котором будет работать Prometheus exporter этого модуля
+  exporter_port: 8901 # Убедитесь, что порт не занят
+
+  # Префикс для метрик, которые будет публиковать этот экспортер (опционально)
+  metrics_prefix: "anomaly_detector_"
+
+  # Настройки для запроса данных для одного окна детекции:
+  # Длительность шага данных, как в data_settings (нужно для расчета окна)
+  # Если не указано, будет взято из data_settings.step
+  # data_step_duration: "30s" # например, "30s", "1m"

@@ -1,0 +1,15 @@
+requests
+pandas
+pyyaml
+diskcache
+scikit-learn
+joblib
+tensorflow
+matplotlib
+prometheus-client
+fastparquet>=2024.11.0
+pyarrow>=20.0.0
+
+[dev]
+build
+twine

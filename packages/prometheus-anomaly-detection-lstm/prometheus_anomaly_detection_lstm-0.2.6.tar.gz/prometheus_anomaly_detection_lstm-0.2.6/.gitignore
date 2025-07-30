@@ -1,0 +1,8 @@
+*.joblib
+*.keras
+*.parquet
+*.png
+*.npy
+*.db
+.venv
+*.egg-info/*
