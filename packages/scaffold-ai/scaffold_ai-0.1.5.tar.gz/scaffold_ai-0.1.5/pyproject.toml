@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scaffold-ai"
+version = "0.1.5"
+description = "AI-powered project scaffolding tool"
+authors = [{ name = "Vincent Valero", email = "vjtvalero@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = [
+    "openai>=1.84.0",
+]
+
+[project.scripts]
+scaffold-ai = "scaffoldai.main:main"
+
+[project.urls]
+"Homepage" = "https://github.com/vjtvalero/scaffold-ai"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
