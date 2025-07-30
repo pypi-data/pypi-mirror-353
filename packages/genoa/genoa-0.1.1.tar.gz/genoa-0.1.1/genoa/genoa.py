@@ -1,0 +1,150 @@
+import torch
+from rich.progress import track
+# from alive_progress import alive_bar
+
+
+
+
+class Node:
+    def __init__(self, input_size, output_size, init_type='he', scale=2, device='cpu'):
+        if init_type == 'he':
+            stddev = torch.sqrt(torch.tensor(2 / input_size, device=device))
+        elif init_type == 'xavier':
+            stddev = torch.sqrt(torch.tensor(1 / input_size, device=device))
+        else:
+            stddev = scale
+        self.w = torch.normal(0, stddev, (input_size, output_size), device=device)
+        self.b = torch.zeros(1, output_size, device=device)
+
+
+
+
+class GENOA:
+    def __init__(self, layer_size, device='cpu'):
+        self.device = device
+        self.layer_size = layer_size
+        self.layers = []
+
+        self.loss = self.MSE
+        self.f1 = self.LeakyRelu
+        self.f2 = self.Sigmoid
+
+        for i in range(1, len(layer_size)):
+            self.layers.append(Node(layer_size[i-1], layer_size[i], device=self.device))
+
+    def Sigmoid(self, X):
+        X = (X.float()).to(self.device)
+        return 1 / (1 + torch.exp(-X))
+
+    def ReLU(self, X):
+        X = (X.float()).to(self.device)
+        return torch.maximum(torch.tensor(0.0, device=self.device), X)
+    
+    def LeakyRelu(self, X, alpha=0.01):
+        X = (X.float()).to(self.device)
+        return torch.where(X > 0, X, alpha * X)
+
+    def GELU(self, X):
+        X = (X.float()).to(self.device)
+        return 0.5 * X * (1 + torch.tanh(torch.sqrt(torch.tensor(2 / torch.pi, device=self.device)) * (X + 0.044715 * torch.pow(X, 3))))
+
+    def Swish(self, X):
+        X = (X.float()).to(self.device)
+        return X * (1 / (1 + torch.exp(-X)))
+
+    def Softmax(self, X):
+        X = (X.float()).to(self.device)
+        e_x = torch.exp(X - torch.max(X))
+        return e_x / e_x.sum()
+    
+    def MSE(self, X, Y):
+        X = (X.float()).to(self.device)
+        Y = (Y.float()).to(self.device)
+        return torch.mean((Y - X)**2)
+
+    def MAE(self, X, Y):
+        X = (X.float()).to(self.device)
+        Y = (Y.float()).to(self.device)
+        return torch.mean(torch.abs((Y - X)))
+    
+    def CCE(self, X, Y):
+        X = (X.float()).to(self.device)
+        Y = (Y.float()).to(self.device)
+        return torch.sum(Y*(-torch.log(X)))
+
+    def train(self, X, Y, mr=0.1, dr=0.999, generations=1000, population=50):
+        X = (X.float()).to(self.device)
+        Y = (Y.float()).to(self.device)
+        
+        if population < 2 or generations < 0:
+            print("Error: Training not possible.")
+        else:
+            for generation in track(range(generations), description="Training: "):
+                losses = []
+                
+                for _ in range(population):
+                    weights = []
+                    biases = []
+
+                    for i in range(len(self.layers)):
+                        w = self.layers[i].w + torch.normal(0, mr, self.layers[i].w.shape, device=self.device)
+                        b = self.layers[i].b + torch.normal(0, mr, self.layers[i].b.shape, device=self.device)
+                        weights.append(w)
+                        biases.append(b)
+                    
+                    h = X
+
+                    for i in range(len(self.layers)):
+                        h = self.calc(h, weights[i], biases[i], self.layers[i])
+
+                    losses.append([self.loss(h, Y), weights, biases])
+                
+                p1, p2 = sorted(losses, key=lambda x: x[0])[:2]
+
+                for i in range(len(self.layers)):
+                    self.layers[i].w = ((p1[1])[i] + 0.5*((p2[1])[i]))/1.5
+                    self.layers[i].b = ((p1[2])[i] + 0.5*((p2[2])[i]))/1.5
+
+                loss = self.loss(self.forward(X), Y)
+
+                if loss <= p2[0]:
+                    if loss <= p1[0]:
+                        for i in range(len(self.layers)):
+                            self.layers[i].w = (0.5*((p1[1])[i])+self.layers[i].w)/1.5
+                            self.layers[i].b = (0.5*((p1[2])[i])+self.layers[i].b)/1.5
+                    else:
+                        for i in range(len(self.layers)):
+                            self.layers[i].w = ((p1[1])[i]+(0.5*(self.layers[i].w)))/1.5
+                            self.layers[i].b = ((p1[2])[i]+(0.5*(self.layers[i].b)))/1.5
+                else:
+                    for i in range(len(self.layers)):
+                        self.layers[i].w = ((p1[1])[i]+(0.5*(p2[1])[i]))/1.5
+                        self.layers[i].b = ((p1[2])[i]+(0.5*(p2[2])[i]))/1.5
+
+                mr *= dr
+
+    def calc(self, X, W, B, layer):
+        X = (X.float()).to(self.device)
+        if layer == self.layers[-1]:
+            return self.f2(torch.matmul(X, W) + B)
+        else:
+            return self.f1(torch.matmul(X, W) + B)
+
+    def forward(self, X):
+        X = (X.float()).to(self.device)
+        for i in range(len(self.layers)):
+            X = self.calc(X, self.layers[i].w, self.layers[i].b, self.layers[i])
+        return X
+
+    def save(self, file_name='model'):
+        torch.save({
+            f'w{i}': layer.w.cpu() for i, layer in enumerate(self.layers)
+        } | {
+            f'b{i}': layer.b.cpu() for i, layer in enumerate(self.layers)
+        }, file_name + '.pt')
+
+    def load(self, file_name='model'):
+        data = torch.load(file_name + '.pt', map_location=self.device, weights_only=True)
+        for i, layer in enumerate(self.layers):
+            layer.w = data[f'w{i}'].to(self.device)
+            layer.b = data[f'b{i}'].to(self.device)
