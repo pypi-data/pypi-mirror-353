@@ -1,0 +1,6 @@
+setup.py
+mlvij.egg-info/PKG-INFO
+mlvij.egg-info/SOURCES.txt
+mlvij.egg-info/dependency_links.txt
+mlvij.egg-info/requires.txt
+mlvij.egg-info/top_level.txt
