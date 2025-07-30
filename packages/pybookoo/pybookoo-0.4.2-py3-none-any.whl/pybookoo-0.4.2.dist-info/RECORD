@@ -1,0 +1,12 @@
+pybookoo/__init__.py,sha256=ZYlsJ0khadl4w9oBa8nRMeEns2NnX--ZpT_zncYGZT0,64
+pybookoo/bookooscale.py,sha256=IDstdj4A0XYAI2BWkEZvo9ulC-JrnwfhjzG-1Op5P6k,29048
+pybookoo/const.py,sha256=knI6nfVxfj9PX9VVUJ_xPVTBWHJ6v7-USJ3TruLaeoM,1470
+pybookoo/decode.py,sha256=hRJ7MnlsCLwdK63CcMsS0nus5HRF-we_zwJ5BeQy-5c,5941
+pybookoo/exceptions.py,sha256=w7wWBDWiT2N83BiMXaMfWyc0-QM1R_YUaaHPfAganZM,1171
+pybookoo/helpers.py,sha256=6eqGhy6alVvKMycimsKWY_iVXvAbojvV6bAZ6VQICHc,3800
+pybookoo/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pybookoo-0.4.2.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+pybookoo-0.4.2.dist-info/METADATA,sha256=y-hqf4rdb7k4xwniOfrW4JfVA2upWLkb1zaMydNzbic,6040
+pybookoo-0.4.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pybookoo-0.4.2.dist-info/top_level.txt,sha256=2IjBrF7d1ZGbTLGVYMY9z4UecDxT3uTt34hF0ST9nhw,9
+pybookoo-0.4.2.dist-info/RECORD,,
