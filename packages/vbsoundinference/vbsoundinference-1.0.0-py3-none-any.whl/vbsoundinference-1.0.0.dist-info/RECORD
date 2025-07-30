@@ -1,0 +1,9 @@
+vsi/__init__.py,sha256=hJfguXvRHfLtjVEoeuldPRqa4H392tggTiWAJKNiBRQ,93
+vsi/recorder.py,sha256=Ijw4siCCFnPDRAC4UwDu_4qnFVy3PPKFT19FBch71EY,2733
+vsi/trainer.py,sha256=y364nSkQEmKFvzdvm1rJ5AhO3YCuYNU3S7PhN1dox1E,2340
+vsi/version.py,sha256=gkNBwEugeaHD0Q4Wk8imuue3WIpwJyTpkJylZL-LvGg,17
+vsi/vsi.py,sha256=oGnqpKmZa2ZQjaphHl7sBvGTRbMInUAWjhLzphbgElg,1108
+vbsoundinference-1.0.0.dist-info/METADATA,sha256=-HdyD6BTGYUr8OERUC5fRVAU7Erhr5InCdesAGlYQ80,2191
+vbsoundinference-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vbsoundinference-1.0.0.dist-info/top_level.txt,sha256=zUweeL5gnxHkn8V8AUvEmVDpOKo9vbSoB3NmURApMks,4
+vbsoundinference-1.0.0.dist-info/RECORD,,
