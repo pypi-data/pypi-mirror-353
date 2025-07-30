@@ -1,0 +1,11 @@
+pymapgis/__init__.py,sha256=Ykf9NG0aBlQ1zIOgQYVmRtdxlufGzww-WDMPWEvNjgs,960
+pymapgis/acs.py,sha256=P3ljvUwHqq6BEq_w1URysjjPbAKwHVdcofmDUbTwaUY,1383
+pymapgis/cache.py,sha256=nxsou6Aedro38uVbLjWBfVyZZ26pLg-R6iT5P9C8--w,3990
+pymapgis/io/__init__.py,sha256=lm1aei0CdQyzeKQ_7q-zI1ySo-7KRuRfXuBcdDfDpKo,803
+pymapgis/plotting.py,sha256=yPBR0KKnpr9-yJwNJ7mkP7LLPBFESTztTAKizSDyIXI,479
+pymapgis/settings.py,sha256=KurU2pnDAHbiJq_iPtewjT2Wr5wAjJBJDr-95dYEv40,276
+pymapgis/tiger.py,sha256=iRrTF2hvVK0-JaWN4RzPd0ZPnQyRTacgtZs4nNgxLv0,873
+pymapgis-0.1.0.dist-info/LICENSE,sha256=49vRo8-4R3r6ahl6NxTUtzzvU4KOBvMnfoT0baM1RNA,1065
+pymapgis-0.1.0.dist-info/METADATA,sha256=MWFyTyUFRK4T6zcDChmdaNEJqghkZUTqWNEupFDg-pM,5380
+pymapgis-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pymapgis-0.1.0.dist-info/RECORD,,

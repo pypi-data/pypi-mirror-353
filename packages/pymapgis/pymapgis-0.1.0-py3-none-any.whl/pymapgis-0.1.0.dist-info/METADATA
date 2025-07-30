@@ -1,0 +1,153 @@
+Metadata-Version: 2.3
+Name: pymapgis
+Version: 0.1.0
+Summary: Modern GIS toolkit for Python - Simplifying geospatial workflows with built-in data sources, intelligent caching, and fluent APIs
+License: MIT
+Keywords: gis,geospatial,mapping,census,visualization,geography
+Author: Nicholas Karlson
+Author-email: nicholaskarlson@gmail.com
+Requires-Python: >=3.10,<3.13
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Dist: fsspec (>=2025.5,<2026.0)
+Requires-Dist: geopandas (>=1.1,<2.0)
+Requires-Dist: leafmap (>=0.47.2,<0.48.0)
+Requires-Dist: pandas (>=2.3.0,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.9.1,<3.0.0)
+Requires-Dist: requests-cache (>=1.2.1,<2.0.0)
+Project-URL: Documentation, https://pymapgis.github.io/core/
+Project-URL: Homepage, https://github.com/pymapgis/core
+Project-URL: Repository, https://github.com/pymapgis/core
+Description-Content-Type: text/markdown
+
+# PyMapGIS
+
+[![PyPI version](https://badge.fury.io/py/pymapgis.svg)](https://badge.fury.io/py/pymapgis)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/pymapgis/core/workflows/CI/badge.svg)](https://github.com/pymapgis/core/actions)
+
+**Modern GIS toolkit for Python** - Simplifying geospatial workflows with built-in data sources, intelligent caching, and fluent APIs.
+
+## 🚀 Quick Start
+
+```bash
+pip install pymapgis
+```
+
+```python
+import pymapgis as pmg
+
+# Load Census data with automatic geometry
+acs = pmg.read("census://acs/acs5?year=2022&geography=county&variables=B25070_010E,B25070_001E")
+
+# Calculate housing cost burden (30%+ of income on housing)
+acs["cost_burden_rate"] = acs["B25070_010E"] / acs["B25070_001E"]
+
+# Create interactive map
+acs.plot.choropleth(
+    column="cost_burden_rate",
+    title="Housing Cost Burden by County (2022)",
+    cmap="Reds"
+).show()
+```
+
+## ✨ Key Features
+
+- **🔗 Built-in Data Sources**: Census ACS, TIGER/Line, and more
+- **⚡ Smart Caching**: Automatic HTTP caching with TTL support
+- **🗺️ Interactive Maps**: Beautiful visualizations with Leaflet
+- **🧹 Clean APIs**: Fluent, pandas-like interface
+- **🔧 Extensible**: Plugin architecture for custom data sources
+
+## 📊 Supported Data Sources
+
+| Source | URL Pattern | Description |
+|--------|-------------|-------------|
+| **Census ACS** | `census://acs/acs5?year=2022&geography=county` | American Community Survey data |
+| **TIGER/Line** | `tiger://county?year=2022&state=06` | Census geographic boundaries |
+| **Local Files** | `file://path/to/data.geojson` | Local geospatial files |
+
+## 🎯 Examples
+
+### Labor Force Participation Analysis
+```python
+# Traditional approach: 20+ lines of boilerplate
+# PyMapGIS approach: 3 lines
+
+acs = pmg.read("census://acs/acs5?year=2022&geography=county&variables=B23025_004E,B23025_003E")
+acs["lfp_rate"] = acs["B23025_004E"] / acs["B23025_003E"]
+acs.plot.choropleth(column="lfp_rate", title="Labor Force Participation").show()
+```
+
+### Housing Cost Burden Explorer
+```python
+# Load housing cost data with automatic county boundaries
+housing = pmg.read("census://acs/acs5?year=2022&geography=county&variables=B25070_010E,B25070_001E")
+
+# Calculate and visualize cost burden
+housing["burden_30plus"] = housing["B25070_010E"] / housing["B25070_001E"]
+housing.plot.choropleth(
+    column="burden_30plus",
+    title="% Households Spending 30%+ on Housing",
+    cmap="OrRd",
+    legend=True
+).show()
+```
+
+## 🛠️ Installation
+
+### From PyPI (Recommended)
+```bash
+pip install pymapgis
+```
+
+### From Source
+```bash
+git clone https://github.com/pymapgis/core.git
+cd core
+poetry install
+```
+
+## 📚 Documentation
+
+- **[API Reference](https://pymapgis.github.io/core/)**
+- **[Examples Repository](https://github.com/pymapgis/examples)**
+- **[Contributing Guide](CONTRIBUTING.md)**
+
+## 🤝 Contributing
+
+We welcome contributions! PyMapGIS is an open-source project under the MIT license.
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built on top of [GeoPandas](https://geopandas.org/), [Leafmap](https://leafmap.org/), and [Requests-Cache](https://requests-cache.readthedocs.io/)
+- Inspired by the need for simpler geospatial workflows in Python
+- Thanks to all [contributors](https://github.com/pymapgis/core/graphs/contributors)
+
+---
+
+**Made with ❤️ by the PyMapGIS community**
+
