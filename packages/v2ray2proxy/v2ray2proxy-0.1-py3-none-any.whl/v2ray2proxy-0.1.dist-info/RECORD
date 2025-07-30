@@ -1,0 +1,14 @@
+tests/async_test.py,sha256=3XpefsfsdrkYhRmKn0DUhP6LcPeBzC4llV196vqxq2I,1499
+tests/misc_test.py,sha256=WLE-rEz0ma6v8dgXuO6jIm15miP9nQeJxoPO2a1Ades,6942
+tests/sync_test.py,sha256=hGTQWagUfFPzKmEQ10vwPrM4jb2TnbE8hvAmuP7cZ_0,1256
+tests/test_links.py,sha256=lti465JBeHErrzcDRMiPrjBj69mVZPoZMI8huV5hRzw,4382
+v2ray2proxy/__init__.py,sha256=8m2mzatu6YV5weoKry2QSDQMEMqjcWWVtKROQ0MeHJc,228
+v2ray2proxy/__main__.py,sha256=pZY_Ylb_l7c3pMCP452dN0W5bg5kwl8rujpebfcVkYw,3432
+v2ray2proxy/async_proxy.py,sha256=5e0XHeChc9ShKcAuozioPXo6j55UBdVAx9SxhgCNW34,3605
+v2ray2proxy/base_proxy.py,sha256=ZRp3dloUwMBKyAYyZ13zNzA9MB0ZlXLnwreLuU3IYRk,14214
+v2ray2proxy/sync_proxy.py,sha256=wkJtvhIgsiMUcGYYKSWDmlGWm5sc83fhMcMFoZVmN_k,2591
+v2ray2proxy-0.1.dist-info/licenses/LICENSE,sha256=cVNY0m1zzgP84HHcnuBmdU1Wfps5XJ9nMcq9T3o6nbI,1064
+v2ray2proxy-0.1.dist-info/METADATA,sha256=pAuf4t4H5x2eHzYDed5TciF1rG2s7X8PDv4DcWuGpvk,2887
+v2ray2proxy-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+v2ray2proxy-0.1.dist-info/top_level.txt,sha256=5dsBMtjmj6fKhVU8QdYu5v3a7blyABebcpcsJU2gJlc,18
+v2ray2proxy-0.1.dist-info/RECORD,,
