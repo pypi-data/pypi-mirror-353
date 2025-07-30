@@ -1,0 +1,118 @@
+Metadata-Version: 2.3
+Name: inceptor
+Version: 0.1.0
+Summary: Multi-Level Solution Architecture Generator powered by Ollama Mistral:7b
+License: Apache-2.0
+Keywords: ai,architecture,llm,ollama,solution-generator,mistral
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: System :: Systems Administration
+Provides-Extra: cli
+Provides-Extra: cloud
+Provides-Extra: export
+Provides-Extra: visualization
+Requires-Dist: click (>=8.1.7,<9.0.0) ; extra == "cli"
+Requires-Dist: dataclasses-json (>=0.6.3,<0.7.0)
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0) ; extra == "export"
+Requires-Dist: pathlib (>=1.0.1,<2.0.0)
+Requires-Dist: pydantic (>=2.5.0,<3.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: rich (>=13.7.0,<14.0.0) ; extra == "cli"
+Requires-Dist: tabulate (>=0.9.0,<0.10.0) ; extra == "cli"
+Requires-Dist: typing-extensions (>=4.8.0,<5.0.0)
+Project-URL: Bug Tracker, https://github.com/wronai/inceptor/issues
+Project-URL: Changelog, https://github.com/wronai/inceptor/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://inceptor.readthedocs.io
+Project-URL: Discussions, https://github.com/wronai/inceptor/discussions
+Project-URL: Homepage, https://github.com/wronai/inceptor
+Project-URL: Repository, https://github.com/wronai/inceptor
+Description-Content-Type: text/markdown
+
+# inceptor
+"We need to go deeper"
+
+**DreamArchitect** - do wielopoziomowego generowania architektur rozwiązań z Ollama Mistral:7b!
+
+## 🚀 **Kluczowe możliwości:**
+
+### **1. Automatyczna analiza kontekstu** 
+```python
+architect = DreamArchitect()
+solution = architect.inception("Potrzebuję monitoring dla microservices")
+```
+
+**Biblioteka automatycznie wyciąga:**
+- 🔧 **Technologie**: Python, React, Docker, AWS...
+- 🎯 **Typ problemu**: logging, security, performance...  
+- 📊 **Skala**: small/medium/enterprise
+- ⚡ **Urgency**: urgent/normal/nice-to-have
+- 🚧 **Constraints**: budget, timeline, compliance...
+
+### **2. Wielopoziomowa architektura (3-5 levels):**
+
+- **LIMBO** (Meta): Problem → Komponenty architektury
+- **DREAM** (Design): Komponenty → Technical specs  
+- **REALITY** (Code): Specs → Gotowy kod
+- **DEEPER** (Integration): Code → Deployment/Monitoring
+- **DEEPEST** (Evolution): System → Optimization/Scaling
+
+### **3. Inteligentne prompty dla Mistral:7b:**
+
+Każdy level ma zoptymalizowane prompty z:
+- **Context injection** 
+- **JSON structured output**
+- **Dependency tracking**
+- **Progressive refinement**
+
+## 🎯 **Przykłady użycia:**
+
+### **Proste:** 
+```python
+# Jedna linijka
+solution = quick_solution("System logowania fullstack", levels=3)
+```
+
+### **Zaawansowane:**
+```python
+solution = architect.inception(
+    "CI/CD z AI code review dla team 10 osób", 
+    max_levels=4,
+    additional_context={
+        "budget": "high",
+        "security": "enterprise", 
+        "timeline": "1 month"
+    }
+)
+```
+
+### **Analiza kontekstu:**
+```python
+context = analyze_context("Potrzebuję urgent security audit dla GDPR compliance")
+# Wynik: {'urgency': ['urgent'], 'constraints': ['security', 'gdpr']}
+```
+
+## 🔥 **Mocne strony:**
+
+1. **Zero-setup** - działa od razu z lokalnym Ollama
+2. **Context-aware** - rozumie twoje potrzeby z jednego zdania
+3. **Scalable** - od simple (3 levels) do complex (5 levels)
+4. **Structured output** - wszystko w JSON, łatwe do parsowania
+5. **Error handling** - graceful fallbacks jeśli Mistral nie generuje poprawnego JSON
+
+
