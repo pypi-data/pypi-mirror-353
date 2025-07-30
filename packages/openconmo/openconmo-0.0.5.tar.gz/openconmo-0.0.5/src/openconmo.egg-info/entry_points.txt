@@ -1,0 +1,2 @@
+[console_scripts]
+openconmo-ui = openconmo.ui.app:main

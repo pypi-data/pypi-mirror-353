@@ -1,0 +1,9 @@
+dash<3.0.0,>=2.18.2
+dash-mantine-components==0.12.1
+numpy<3.0.0,>=2.2.3
+pandas<3.0.0,>=2.2.3
+plotly<7.0.0,>=6.0.0
+scipy<2.0.0,>=1.15.2
+matplotlib<4.0.0,>=3.10.0
+tqdm<5.0.0,>=4.67.1
+pyarrow==19.0.0
