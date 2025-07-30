@@ -1,0 +1,8 @@
+README.md
+setup.py
+tosca_reporter/__init__.py
+tosca_reporter/main.py
+tosca_reporter.egg-info/PKG-INFO
+tosca_reporter.egg-info/SOURCES.txt
+tosca_reporter.egg-info/dependency_links.txt
+tosca_reporter.egg-info/top_level.txt
