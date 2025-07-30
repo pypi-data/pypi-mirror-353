@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+evolvishub_datacleanup/__init__.py
+evolvishub_datacleanup/config.py
+evolvishub_datacleanup/manager.py
+evolvishub_datacleanup/utils.py
+evolvishub_datacleanup.egg-info/PKG-INFO
+evolvishub_datacleanup.egg-info/SOURCES.txt
+evolvishub_datacleanup.egg-info/dependency_links.txt
+evolvishub_datacleanup.egg-info/requires.txt
+evolvishub_datacleanup.egg-info/top_level.txt
+tests/test_config.py
+tests/test_manager.py
+tests/test_utils.py
