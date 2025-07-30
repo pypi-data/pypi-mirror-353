@@ -1,0 +1,3 @@
+release:
+    uv build
+    uv publish --token=$(op read op://personal/pypi-token/credential)
