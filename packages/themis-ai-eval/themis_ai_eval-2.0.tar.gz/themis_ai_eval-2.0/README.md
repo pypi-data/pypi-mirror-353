@@ -1,0 +1,435 @@
+# Themis - AI Evaluation & Testing Framework
+
+🏛️ **Themis** is a comprehensive Python library for evaluating and testing AI systems, with a focus on LLM outputs, bias detection, hallucination measurement, and differential privacy.
+
+[![PyPI version](https://badge.fury.io/py/themis-ai-eval.svg)](https://badge.fury.io/py/themis-ai-eval)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> Named after Themis, the Greek goddess of justice and divine order, this library aims to bring fairness, transparency, and rigorous evaluation to AI systems.
+
+## Installation
+
+```bash
+# Basic installation
+pip install themis-ai-eval
+
+# From Test PyPI (latest development version)
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ themis-ai-eval
+
+# Development installation
+git clone https://github.com/ejigsonpeter/themis.git
+cd themis
+pip install -e .
+```
+
+## Quick Start
+
+### Command Line Interface (CLI)
+
+#### 1. Run the Interactive Demo
+```bash
+themis demo
+```
+This will run a comprehensive demonstration showing bias detection, hallucination detection, and toxicity analysis with example texts.
+
+#### 2. Quick Individual Evaluations
+
+**Bias Detection:**
+```bash
+themis bias --input "All women are naturally bad at mathematics"
+# Output: Shows bias score and analysis
+```
+
+**Hallucination Detection:**
+```bash
+themis hallucination --input "The Earth is flat" --ground-truth "The Earth is round"
+# Output: Shows factual accuracy and consistency scores
+```
+
+**Toxicity Detection:**
+```bash
+themis toxicity --input "I hate everyone and want to hurt people"
+# Output: Shows toxicity score and safety rating
+```
+
+#### 3. Comprehensive Evaluation
+
+**Single Text:**
+```bash
+themis evaluate --input "Women are naturally worse at programming than men" --evaluators hallucination,bias,toxicity
+```
+
+**Multiple Texts from Dataset:**
+```bash
+themis evaluate --dataset your_data.json --evaluators hallucination,bias,toxicity --output results.json
+```
+
+**Example Dataset Format (your_data.json):**
+```json
+{
+  "outputs": [
+    "The sky is blue and beautiful today.",
+    "All women are bad at mathematics.",
+    "I hate everyone and want to destroy everything."
+  ],
+  "ground_truth": [
+    "The sky is blue and beautiful today.",
+    "Mathematical ability varies among individuals.",
+    "Everyone deserves respect and kindness."
+  ],
+  "contexts": [
+    "Question about weather",
+    "Question about gender and abilities", 
+    "Question about social attitudes"
+  ]
+}
+```
+
+#### 4. Advanced Features
+
+**Save Results:**
+```bash
+themis evaluate --input "Your text here" --evaluators bias,toxicity --output analysis.json --format json
+```
+
+**Limit Samples:**
+```bash
+themis evaluate --dataset large_dataset.json --max-samples 100 --evaluators hallucination,bias
+```
+
+**Verbose Output for Debugging:**
+```bash
+themis --verbose evaluate --input "Your text" --evaluators bias
+```
+
+### Python API
+
+#### Basic Usage
+
+```python
+from themis import ThemisEvaluator, HallucinationDetector, BiasDetector, ToxicityDetector
+
+# Initialize evaluator
+evaluator = ThemisEvaluator()
+
+# Add evaluators
+evaluator.add_evaluator(HallucinationDetector())
+evaluator.add_evaluator(BiasDetector())
+evaluator.add_evaluator(ToxicityDetector())
+
+# Single evaluation
+results = evaluator.evaluate(
+    model_outputs=["All women are bad drivers"],
+    ground_truth=["Driving ability varies by individual"]
+)
+
+# Print summary
+print(results.summary())
+
+# Detailed results
+for result in results.results:
+    print(f"\n{result.evaluator_name}:")
+    for metric, value in result.metrics.items():
+        if isinstance(value, float):
+            print(f"  {metric}: {value:.3f}")
+        else:
+            print(f"  {metric}: {value}")
+```
+
+#### Batch Evaluation
+
+```python
+from themis import ThemisEvaluator, HallucinationDetector, BiasDetector
+
+# Multiple texts
+model_outputs = [
+    "The sky is green and the grass is blue.",
+    "All programmers are male and antisocial.",
+    "Python is a programming language for data science."
+]
+
+ground_truth = [
+    "The sky is blue and the grass is green.",
+    "Programmers come from all backgrounds and personalities.",
+    "Python is a programming language used for data science."
+]
+
+evaluator = ThemisEvaluator()
+evaluator.add_evaluator(HallucinationDetector())
+evaluator.add_evaluator(BiasDetector())
+
+results = evaluator.evaluate(
+    model_outputs=model_outputs,
+    ground_truth=ground_truth
+)
+
+# Analyze results
+summary = results.summary()
+print(f"Overall success rate: {summary['success_rate']:.1%}")
+
+# Check each evaluation
+for i, result in enumerate(results.results):
+    print(f"\nEvaluator: {result.evaluator_name}")
+    print(f"Execution time: {result.execution_time:.3f}s")
+    
+    if result.success:
+        for metric, value in result.metrics.items():
+            print(f"  {metric}: {value}")
+```
+
+#### Individual Evaluators
+
+```python
+# Bias Detection Only
+from themis import ThemisEvaluator, BiasDetector
+
+evaluator = ThemisEvaluator()
+evaluator.add_evaluator(BiasDetector())
+
+results = evaluator.evaluate(["All Asians are good at math"])
+bias_result = results.results[0]
+
+print("Bias Analysis:")
+print(f"Overall bias score: {bias_result.metrics['overall_bias_score']:.3f}")
+print(f"High bias instances: {bias_result.metrics['high_bias_instances']}")
+
+# Hallucination Detection Only
+from themis import ThemisEvaluator, HallucinationDetector
+
+evaluator = ThemisEvaluator()
+evaluator.add_evaluator(HallucinationDetector())
+
+results = evaluator.evaluate(
+    model_outputs=["The Earth is flat"],
+    ground_truth=["The Earth is round"]
+)
+
+hallucination_result = results.results[0]
+print("Hallucination Analysis:")
+print(f"Accuracy: {hallucination_result.metrics['accuracy']:.3f}")
+print(f"Hallucination rate: {hallucination_result.metrics['hallucination_rate']:.3f}")
+```
+
+#### Differential Privacy
+
+```python
+from themis.core.differential_privacy import LaplaceMechanism, GaussianMechanism
+
+# Laplace Mechanism
+laplace = LaplaceMechanism(epsilon=1.0)
+sensitive_data = [85.5, 90.2, 78.9, 92.1, 88.7]  # e.g., test scores
+private_data = laplace.apply(sensitive_data, sensitivity=1.0)
+
+print("Original data:", sensitive_data)
+print("Private data:", [round(x, 2) for x in private_data])
+
+# Gaussian Mechanism  
+gaussian = GaussianMechanism(epsilon=1.0, delta=1e-5)
+private_mean = gaussian.apply(sum(sensitive_data)/len(sensitive_data), sensitivity=0.1)
+
+print(f"Original mean: {sum(sensitive_data)/len(sensitive_data):.2f}")
+print(f"Private mean: {private_mean:.2f}")
+```
+
+#### Model Comparison
+
+```python
+from themis.testing import ModelComparison
+
+# Compare models (placeholder implementation)
+comparison = ModelComparison()
+
+# In practice, you'd load actual models here
+models = {
+    'model_a': 'gpt-3.5-turbo',  
+    'model_b': 'claude-3-sonnet'
+}
+
+test_cases = [
+    "Explain quantum computing",
+    "What are the benefits of renewable energy?",
+    "Describe the causes of climate change"
+]
+
+results = comparison.compare_models(
+    models=models,
+    test_cases=test_cases,
+    evaluators=['hallucination', 'bias'],
+    baseline_model='model_a'
+)
+
+print("Comparison Results:", results)
+```
+
+## CLI Reference
+
+### Available Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `themis demo` | Run interactive demonstration | `themis demo` |
+| `themis evaluate` | Full evaluation with multiple evaluators | `themis evaluate --input "text" --evaluators bias,toxicity` |
+| `themis bias` | Quick bias detection | `themis bias --input "All men are stronger"` |
+| `themis hallucination` | Quick hallucination detection | `themis hallucination --input "Earth is flat" --ground-truth "Earth is round"` |
+| `themis toxicity` | Quick toxicity detection | `themis toxicity --input "I hate everyone"` |
+| `themis version` | Show version and system info | `themis version` |
+
+### Evaluation Options
+
+| Option | Short | Description | Example |
+|--------|-------|-------------|---------|
+| `--input` | `-i` | Single text to evaluate | `--input "Your text here"` |
+| `--dataset` | `-d` | JSON dataset file | `--dataset data.json` |
+| `--output` | `-o` | Save results to file | `--output results.json` |
+| `--evaluators` | `-e` | Comma-separated evaluators | `--evaluators bias,toxicity,hallucination` |
+| `--ground-truth` | `-g` | Ground truth for comparison | `--ground-truth "Correct statement"` |
+| `--format` | | Output format | `--format json` |
+| `--max-samples` | | Limit number of samples | `--max-samples 100` |
+| `--verbose` | `-v` | Enable verbose output | `--verbose` |
+
+## Features
+
+### 🔍 Core Evaluators
+- **Hallucination Detection**: Measure factual accuracy and consistency
+- **Semantic Similarity**: Compare meaning across model outputs  
+- **Performance Metrics**: Latency, throughput, and resource usage
+- **Robustness Testing**: Adversarial and edge case evaluation
+
+### 🧠 Advanced Evaluators  
+- **Bias Detection**: Identify and measure various forms of bias
+- **Toxicity Detection**: Content safety and harmful output detection
+- **Factual Accuracy**: Cross-reference with knowledge bases
+- **Coherence Analysis**: Logical consistency and flow evaluation
+
+### 🔒 Differential Privacy
+- **Privacy Mechanisms**: Laplace, Gaussian, and exponential mechanisms
+- **Privacy Metrics**: Epsilon-delta privacy analysis
+- **Utility-Privacy Tradeoffs**: Measure privacy cost vs. model utility
+
+### 🧪 A/B Testing Framework
+- **Model Comparison**: Statistical significance testing
+- **Performance Benchmarking**: Standardized evaluation protocols
+- **Regression Detection**: Identify performance degradations
+
+## Real-World Usage Examples
+
+### Content Moderation
+```bash
+# Analyze user-generated content for toxicity and bias
+themis evaluate --dataset user_posts.json --evaluators toxicity,bias --output moderation_results.json
+
+# Quick toxicity check
+themis toxicity --input "This comment from a user"
+```
+
+### AI Model Testing
+```bash
+# Evaluate LLM outputs for hallucinations
+themis hallucination --input "Model generated text" --ground-truth "Known factual information"
+
+# Comprehensive model evaluation
+themis evaluate --dataset model_outputs.json --evaluators hallucination,bias,toxicity --output evaluation_report.json
+```
+
+### Research and Analysis
+```bash
+# Analyze bias in AI-generated content
+themis bias --input "AI generated response about hiring practices"
+
+# Run full evaluation suite with detailed output
+themis --verbose evaluate --dataset research_data.json --evaluators hallucination,bias,toxicity,semantic
+```
+
+### Educational Assessment
+```python
+# Evaluate AI tutoring system responses
+from themis import ThemisEvaluator, BiasDetector, HallucinationDetector
+
+evaluator = ThemisEvaluator()
+evaluator.add_evaluator(BiasDetector())
+evaluator.add_evaluator(HallucinationDetector())
+
+tutor_responses = [
+    "Boys are naturally better at math than girls",
+    "The mitochondria is the powerhouse of the cell",
+    "Climate change is a hoax perpetrated by scientists"
+]
+
+ground_truth = [
+    "Mathematical ability is not determined by gender",
+    "The mitochondria is the powerhouse of the cell", 
+    "Climate change is supported by scientific consensus"
+]
+
+results = evaluator.evaluate(tutor_responses, ground_truth)
+
+# Analyze for educational suitability
+for result in results.results:
+    if result.evaluator_name == "BiasDetector":
+        bias_score = result.metrics['overall_bias_score']
+        if bias_score > 0.5:
+            print(f"⚠️ High bias detected: {bias_score:.3f}")
+    
+    elif result.evaluator_name == "HallucinationDetector":
+        accuracy = result.metrics['accuracy']
+        if accuracy < 0.7:
+            print(f"⚠️ Low factual accuracy: {accuracy:.3f}")
+```
+
+## Architecture
+
+Themis follows a modular architecture with these key components:
+
+- **Core Engine**: Orchestrates evaluation workflows
+- **Evaluator Framework**: Pluggable evaluation modules
+- **CLI Interface**: Command-line tools for easy usage
+- **Privacy Module**: Differential privacy mechanisms
+- **Testing Framework**: A/B testing and model comparison
+
+## Contributing
+
+We welcome contributions! To get started:
+
+```bash
+# Development setup
+git clone https://github.com/ejigsonpeter/themis.git
+cd themis
+pip install -e .[dev]
+
+# Run tests
+python minimal_test.py
+
+# Test CLI
+themis demo
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Citation
+
+If you use Themis in your research, please cite:
+
+```bibtex
+@software{themis2024,
+  title={Themis: AI Evaluation and Testing Framework},
+  author={Themis Team},
+  year={2024},
+  url={https://github.com/ejigsonpeter/themis}
+}
+```
+
+## Support
+
+- [GitHub Issues](https://github.com/ejigsonpeter/themis/issues)
+
+
+---
+
+**Get Started Today:**
+```bash
+pip install themis-ai-eval
+themis demo
+```
