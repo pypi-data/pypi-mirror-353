@@ -1,0 +1,9 @@
+openai
+rich
+aiolimiter
+
+[test]
+pytest
+pytest-asyncio
+fastapi
+uvicorn
