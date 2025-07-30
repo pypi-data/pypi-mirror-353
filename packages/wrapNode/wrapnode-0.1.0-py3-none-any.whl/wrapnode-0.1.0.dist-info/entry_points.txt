@@ -1,0 +1,2 @@
+[console_scripts]
+awrapNode = wrapNode.cli:main
