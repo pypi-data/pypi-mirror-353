@@ -1,0 +1,14 @@
+PyMuPDF
+Pillow
+typing-extensions
+google-generativeai
+tesseract
+pytesseract
+python-docx
+pandas
+python-pptx
+html2text
+beautifulsoup4
+comtypes
+langchain-openai
+docx2pdf
