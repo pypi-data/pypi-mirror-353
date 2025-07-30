@@ -1,0 +1,43 @@
+Metadata-Version: 2.3
+Name: py_overinspect
+Version: 0.1.0
+Summary: A Python library over standard inspect module
+License: MIT
+Author: Arnaud Valmary
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Repository, https://github.com/ArnaudValmary/py_dictflat
+Description-Content-Type: text/markdown
+
+# py_overinspect
+
+A Python library to provide some functions over standard "`inspect`" module
+
+## Installation
+
+```bash
+poetry add py_overinspect
+# or
+pip install py_overinspect
+# or
+pipenv install py_overinspect
+```
+
+## Functions
+
+```python
+def get_fct_name(fct: Callable, full_qual: bool = NOT_FULL_QUAL) -> str
+def get_fct_filename(fct: Callable) -> str
+def get_full_fct_path_and_name(fct: Callable, full_qual: bool = NOT_FULL_QUAL, sep=DEFAULT_PATH_AND_NAME_SEP) -> str
+def get_fct_parameter_names(fct: Callable) -> List[str]
+def get_current_fct_filename(level: int = 1) -> str
+def get_current_fct_line(level: int = 1) -> int
+def get_current_fct_name(level: int = 1) -> str
+```
+
