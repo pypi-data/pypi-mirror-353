@@ -1,0 +1,8 @@
+drf_authenticator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+drf_authenticator/authentication.py,sha256=pLui5TA7Gqdqq9BijdlLIhpdt0h1h06qa5QGvpQoyM8,2403
+drf_authenticator/exceptions.py,sha256=5mJrJIQ1jc75ueDeB38gOBZbeNi2h0zwaNw2kwZU0tk,1273
+drf_authenticator/token.py,sha256=_it7sqIY9ZbqMl78V6aIexNTcWaLiYFJskq0nHZj5EU,9999
+drf_authenticator-0.1.3.dist-info/METADATA,sha256=a4QfiAtUTUAaGppFab3Fn6V6qyGeQ_cd85tmwGX03hs,838
+drf_authenticator-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+drf_authenticator-0.1.3.dist-info/top_level.txt,sha256=VRiBwPboSxDqRoVnR6q76FiBJqdvKP2ec4uZPz1PJCA,18
+drf_authenticator-0.1.3.dist-info/RECORD,,
