@@ -1,0 +1,14 @@
+orm_bitrix24/entity/__init__.py,sha256=_G3SXCgENzOilfJ4n7jc2SHoSF7zLhK9PkKpYqw5cxU,779
+orm_bitrix24/entity/activity.py,sha256=YswhrC_S4rfGyp86zqXaNS7OjevMTtmatP9DoyE4wvo,19482
+orm_bitrix24/entity/base.py,sha256=qBUTt0gGm6h-uMR-iCKfYBoORZu_sxT2FJxQwBze0JA,12012
+orm_bitrix24/entity/base.pyi,sha256=gWQJNdw37Ef5m1rMgxiqlIU0SFIHlc-w1g08LMu4Pd0,3494
+orm_bitrix24/entity/company.py,sha256=Yy2JUFxyNT5JoZKwpZsE9DAs0Uq2jmZlvR5unoNrhJ0,886
+orm_bitrix24/entity/contact.py,sha256=avXi0TaWZtJwI0-iJULV6mZ1p_iLbe9tEOZp7i1tets,1125
+orm_bitrix24/entity/deal.py,sha256=e3DeyI3nYFoMNh2AJpccl0LAkMGXDewxeruowHh91rQ,10880
+orm_bitrix24/entity/deal2.pyi,sha256=g6SsRfLzs7Ah_55atyr4iKrMeL16pM0iyO7avu11B1Q,4829
+orm_bitrix24/entity/lead.py,sha256=4O3aL_GzBfjg26FqWAOSL18tIiJXAuf6SyvDebGoXME,5342
+orm_bitrix24/entity/note.py,sha256=QXYVJapFXkLFPjTQjELzVNOcnZQYVqT4jNXHgj3LMtU,718
+orm_bitrix24-0.1.2.dist-info/METADATA,sha256=44eLNV-C5T_o7Eo_0xFDsXhZakBFq4Ty3kvWaArLLCQ,7365
+orm_bitrix24-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+orm_bitrix24-0.1.2.dist-info/top_level.txt,sha256=LnqZg1KqaBwKJ-CWzwVdwMaGUgmwrE_IpPtQS-sDMcg,13
+orm_bitrix24-0.1.2.dist-info/RECORD,,
