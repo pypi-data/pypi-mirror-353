@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: ccb-essentials
+Version: 1.1.0
+Summary: Essential tools for Python 3.
+Home-page: https://github.com/clydecbrown/ccb-essentials
+License: MIT
+Keywords: utilities,file,path,subprocess,argparse,sqlite3,logging
+Author: Clyde C Brown
+Author-email: clyde.c.brown@pm.me
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Project-URL: Repository, https://github.com/clydecbrown/ccb-essentials
+Description-Content-Type: text/markdown
+
+# Python Essentials
+
+Essential general-purpose tools for Python 3.
+
+## Overview
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/clydecbrown/ccb-essentials)
+
+### Argparse Types Helper
+
+Type checking for boolean command line inputs to `argparse`. [Details](docs/argparse.md)
+
+### Filesystem
+
+Utilities for filesystem paths. Save lots of time on ensuring that your paths exist. [Details](docs/filesystem.md)
+
+### Logging
+
+Forward `print()` calls into a logger. Monitor the output of headless scripts. [Details](docs/logger.md)
+
+### Signal Handling
+
+Postpone `KeyboardInterrupt` signals. [Details](docs/signal.md)
+
+### Sqlite3
+
+SQLite3 database wrapper with features for database creation, schema evolution, and sanity checking. [Details](docs/sqlite3.md)
+
+### Subprocess
+
+Easily run a subprocess and capture the result. [Details](docs/subprocess.md)
+
+## Development Environment
+
+[Maintaining this package](docs/dev.md)
+
