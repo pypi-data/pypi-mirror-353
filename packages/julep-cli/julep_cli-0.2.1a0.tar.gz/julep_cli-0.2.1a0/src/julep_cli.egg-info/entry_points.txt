@@ -1,0 +1,3 @@
+[console_scripts]
+julep = julep_cli:app
+julep-cli = julep_cli:app
