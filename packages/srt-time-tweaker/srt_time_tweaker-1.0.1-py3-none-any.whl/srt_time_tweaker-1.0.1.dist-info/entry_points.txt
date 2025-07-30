@@ -1,0 +1,2 @@
+[console_scripts]
+srt-time-tweaker = srt_time_tweaker.__main__:main
