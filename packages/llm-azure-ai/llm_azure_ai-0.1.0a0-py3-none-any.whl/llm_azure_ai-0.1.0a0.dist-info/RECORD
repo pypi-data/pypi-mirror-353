@@ -1,0 +1,8 @@
+llm_azure_ai/__init__.py,sha256=dFiwhV4lLyPI5zQ4KgfvzvEVzH7Tq7XYRyLiAR14Q7U,5031
+llm_azure_ai/ai_inference.py,sha256=zlHWAjCi1AJVfWQuHRx--mBeocgJReCWD7oeM-UEJmI,1950
+llm_azure_ai/openai.py,sha256=7hWU0wy4O5sMakHsBGFX70X0iCP0rB536Cmv0YgPbzE,6934
+llm_azure_ai/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+llm_azure_ai-0.1.0a0.dist-info/METADATA,sha256=0-LRetGjGw8N-RuFgD7zNtQAhKOSm4BXJX02iR955U0,296
+llm_azure_ai-0.1.0a0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+llm_azure_ai-0.1.0a0.dist-info/entry_points.txt,sha256=QdlheCu9Clyus65hUXtcEENNGVWvi6igYE9R8Q3EuHc,28
+llm_azure_ai-0.1.0a0.dist-info/RECORD,,
