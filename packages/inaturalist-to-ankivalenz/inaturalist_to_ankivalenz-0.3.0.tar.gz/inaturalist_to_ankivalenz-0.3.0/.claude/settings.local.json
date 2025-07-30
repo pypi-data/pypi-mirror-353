@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/test_api.py -v)",
+      "Bash(python -m pytest)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git tag:*)"
+    ],
+    "deny": []
+  }
+}
