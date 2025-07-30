@@ -1,0 +1,7 @@
+id=test
+name=test
+version=v1.0.21-0b299337
+versionCode=2025060827
+author=LIghtJUNction
+description=RMM项目 test
+updateJson=https://raw.githubusercontent.com/LIghtJUNction/test/main/update.json
