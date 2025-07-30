@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+easyfont/__init__.py
+easyfont/_core.py
+easyfont/_types.py
+easyfont.egg-info/PKG-INFO
+easyfont.egg-info/SOURCES.txt
+easyfont.egg-info/dependency_links.txt
+easyfont.egg-info/requires.txt
+easyfont.egg-info/top_level.txt
+easyfont/fonts/NotoSans-Regular.ttf
+easyfont/fonts/NotoSansSC-Regular.ttf
+easyfont/fonts/NotoSansTC-Regular.ttf
