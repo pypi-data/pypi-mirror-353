@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+StaticCodeAnalysisHelper/FileScan.py
+StaticCodeAnalysisHelper/LanguagesFunctions.py
+StaticCodeAnalysisHelper/__init__.py
+StaticCodeAnalysisHelper/functions.py
+StaticCodeAnalysisHelper/log.py
+StaticCodeAnalysisHelper.egg-info/PKG-INFO
+StaticCodeAnalysisHelper.egg-info/SOURCES.txt
+StaticCodeAnalysisHelper.egg-info/dependency_links.txt
+StaticCodeAnalysisHelper.egg-info/top_level.txt
