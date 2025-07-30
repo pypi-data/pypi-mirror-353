@@ -1,0 +1,1 @@
+from .editor import inject_self_editor
