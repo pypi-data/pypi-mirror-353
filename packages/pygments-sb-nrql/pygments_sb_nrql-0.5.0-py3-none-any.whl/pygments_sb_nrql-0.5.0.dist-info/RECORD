@@ -1,0 +1,10 @@
+pygments_sb_nrql/__init__.py,sha256=gx0dR7DCGOj8d13tyKpaL6Px3c30U2Ep90Ivj3ib4cs,84
+pygments_sb_nrql/_modidx.py,sha256=F_mZHTMZsimSPk-Ax47kRicaxnqAA0iCpuNXEgxyDvE,602
+pygments_sb_nrql/builtins.py,sha256=Vi_p-SVwFWjR-8ck0GyZwlDKP57AwymPGbCU3UUu95M,3086
+pygments_sb_nrql/lexer.py,sha256=ru1102HoswH1bWAZV15qU5QwO7EvErcewPeNapNKqWk,2393
+pygments_sb_nrql/version.py,sha256=cRIwZZzHgJ2fXQRrNMH5Y7MZCJcZ6yl8ZqA2KQMkMCs,26
+pygments_sb_nrql-0.5.0.dist-info/LICENSE.txt,sha256=V8uVj3FFTmjejVkGkkoLLvLYwaFkSdK3n1HvcCkvaIs,1070
+pygments_sb_nrql-0.5.0.dist-info/METADATA,sha256=ne1gCtqwQgqZY5jPSMU9j82GLd6xd8qjE3EdhtCH9tk,4933
+pygments_sb_nrql-0.5.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pygments_sb_nrql-0.5.0.dist-info/entry_points.txt,sha256=M61ksGNAGt6gHHD0HLCogCBqAMBBfcfCESiyGJkU8Z0,51
+pygments_sb_nrql-0.5.0.dist-info/RECORD,,
