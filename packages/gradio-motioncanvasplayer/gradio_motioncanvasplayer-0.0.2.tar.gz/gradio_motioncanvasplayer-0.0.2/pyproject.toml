@@ -1,0 +1,51 @@
+[build-system]
+requires = [
+  "hatchling",
+  "hatch-requirements-txt",
+  "hatch-fancy-pypi-readme>=22.5.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "gradio_motioncanvasplayer"
+version = "0.0.2"
+description = "This custom component for Gradio displays Motion Canvas projects in the browser. Motion Canvas is a library for generating animations, videos, or presentations via the Canvas API. All animations are defined by code - an excellent playground for AI agents. An exemplary demo for this component is available in this Huggingface Space: https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer. The source code for the included project can be found at: https://github.com/prathje/gradio-motion-canvas-example."
+readme = "README.md"
+license = "mit"
+requires-python = ">=3.10"
+authors = [{ name = "Patrick Rathje", email = "info@patrickrathje.de" }]
+keywords = ["gradio-custom-component", "gradio-template-HTML", "Motion Canvas", "Animation", "Player"]
+# Add dependencies here
+dependencies = ["gradio>=4.0,<6.0"]
+classifiers = [
+  'Development Status :: 3 - Alpha',
+  'Operating System :: OS Independent',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Topic :: Scientific/Engineering',
+  'Topic :: Scientific/Engineering :: Artificial Intelligence',
+  'Topic :: Scientific/Engineering :: Visualization',
+]
+
+# The repository and space URLs are optional, but recommended.
+# Adding a repository URL will create a badge in the auto-generated README that links to the repository.
+# Adding a space URL will create a badge in the auto-generated README that links to the space.
+# This will make it easy for people to find your deployed demo or source code when they
+# encounter your project in the wild.
+
+[project.urls]
+repository = "https://github.com/prathje/gradio-motioncanvasplayer"
+space = "https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer"
+
+[project.optional-dependencies]
+dev = ["build", "twine"]
+
+[tool.hatch.build]
+artifacts = ["/backend/gradio_motioncanvasplayer/templates", "*.pyi"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["/backend/gradio_motioncanvasplayer"]
