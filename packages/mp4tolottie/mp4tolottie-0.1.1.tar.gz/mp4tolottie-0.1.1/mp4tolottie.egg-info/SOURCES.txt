@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+mp4tolottie/__init__.py
+mp4tolottie/cli.py
+mp4tolottie.egg-info/PKG-INFO
+mp4tolottie.egg-info/SOURCES.txt
+mp4tolottie.egg-info/dependency_links.txt
+mp4tolottie.egg-info/entry_points.txt
+mp4tolottie.egg-info/requires.txt
+mp4tolottie.egg-info/top_level.txt
+mp4tolottie/core/extractor.py
+mp4tolottie/core/lottie_builder.py
+mp4tolottie/core/pipeline.py
+mp4tolottie/core/vectorizer.py

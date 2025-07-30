@@ -1,0 +1,17 @@
+[project]
+name = "mp4tolottie"
+version = "0.1.1"
+description = "Convert MP4 videos to vector-based Lottie JSON animations"
+authors = [{name = "Muhammad Thabsheer N P", email = "thabsheeron@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pillow",
+]
+
+[project.scripts]
+mp4tolottie = "mp4tolottie.cli:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
