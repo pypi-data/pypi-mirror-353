@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: azt
+Version: 0.0.1rc1
+Summary: azt – Collection of tools, functions, and scripts for
+Author-email: "Azat (@azataiot)" <8280770+azataiot@users.noreply.github.com>
+Description-Content-Type: text/markdown
+License-Expression: GPL-3.0-or-later
+License-File: LICENSE
+Requires-Dist: pandas>=2.3.0 ; extra == "pandas"
+Project-URL: Home, https://azgh.cc/azt/
+Provides-Extra: pandas
+
+# azt 
+
+Collection of tools, functions, and scripts for data analysis, visualization, machine learning, and more.
+
+**Life is short, I use Python.**
+
+
+
+
