@@ -1,0 +1,5 @@
+[console_scripts]
+dream=inceptor.cli:cli
+dream-shell=inceptor.cli:shell
+inceptor=inceptor.cli:cli
+
