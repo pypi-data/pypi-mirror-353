@@ -1,0 +1,3 @@
+[console_scripts]
+testjump = testjump:main
+tj = testjump:main
