@@ -1,0 +1,12 @@
+cloudkv/__init__.py,sha256=oBN5ww6VjXyYztctvzptmDnFx8XBHwewyIW-MJX7Kvg,236
+cloudkv/__main__.py,sha256=jZutWfznsTKEuUjuxOb_1lLto3w4FIHLbh4qrqkamkM,1231
+cloudkv/_utils.py,sha256=A2HeRQmYlAo90Sqxo6GON7pNBMT5M9gZOxQLVnPw1e4,2253
+cloudkv/async_client.py,sha256=UH90u2Z6nzRF0iqPaz2Cbz1pdodzAN9HoiTWOOo4YS8,9075
+cloudkv/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudkv/shared.py,sha256=yD-Vz8YFAsi6u7QHm9u5IPni3CA-NXT61wCvkMlKx24,1836
+cloudkv/sync_client.py,sha256=ka-9_yk_9WHejsejp64iYaYeh1t6n0CGGyepWUGg8RA,8812
+cloudkv-0.2.0.dist-info/METADATA,sha256=3prxhjDQGXeGbAE8S0D5kq0C1LdFz_4t7UXaScIduI8,10759
+cloudkv-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cloudkv-0.2.0.dist-info/entry_points.txt,sha256=kwJkWSt61BR_XI0hBoinzFkmLyrLtaWJdohHn3MjZ8c,49
+cloudkv-0.2.0.dist-info/licenses/LICENSE,sha256=l1hgBjmp1bQY7sCO24WuKFYRE8V-MBKYDfw2Zf12kdM,1091
+cloudkv-0.2.0.dist-info/RECORD,,
