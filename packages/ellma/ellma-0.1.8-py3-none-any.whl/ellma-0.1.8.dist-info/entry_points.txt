@@ -1,0 +1,5 @@
+[console_scripts]
+ellma=ellma.cli.main:cli
+ellma-evolve=ellma.core.evolution:evolve_cli
+ellma-shell=ellma.cli.shell:interactive_shell
+
