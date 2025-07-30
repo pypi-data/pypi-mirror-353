@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyfost.adminui"
+dynamic = ["version"]
+description = 'Admin / CRUD frontend for pyfost webapps'
+readme = "README.md"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+keywords = []
+authors = [
+  { name = "Dee", email = "dee.somethech@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "nicegui",
+  "pydantic",
+]
+
+[project.urls]
+Documentation = "https://github.com/fost-studio/pyfost.adminui#readme"
+Issues = "https://github.com/fost-studio/pyfost.adminui/issues"
+Source = "https://github.com/fost-studio/pyfost.adminui"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0+dev1"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "./src/pyfost/adminui/_version.py"
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+only-include = ["src/pyfost/adminui"]
