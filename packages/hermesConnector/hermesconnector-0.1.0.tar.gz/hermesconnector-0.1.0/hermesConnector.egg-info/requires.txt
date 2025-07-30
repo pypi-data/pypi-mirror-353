@@ -1,0 +1,6 @@
+numpy
+pandas
+dataclasses
+binance-connector
+alpaca-py
+pydantic
