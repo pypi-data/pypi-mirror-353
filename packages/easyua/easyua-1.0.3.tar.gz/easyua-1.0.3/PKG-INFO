@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: easyua
+Version: 1.0.3
+Summary: random ua for python
+Home-page: https://github.com/GerkeyBen/easyua.git
+Author: GerkeyBen
+Author-email: 1206963955@qq.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+random ua for python
