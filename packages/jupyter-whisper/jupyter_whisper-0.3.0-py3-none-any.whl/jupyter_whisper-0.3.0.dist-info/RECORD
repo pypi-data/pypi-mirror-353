@@ -1,0 +1,14 @@
+jupyter_whisper/__init__.py,sha256=Pm2JuHHI614b5K_p7HDsCk_3n_cwIcXsdNwEwUTSaU8,44114
+jupyter_whisper/__version__.py,sha256=DKRoYcgQpGflVjaeC9UFhSBDF6-ZZE9eayZtPW9WdCM,160
+jupyter_whisper/cell_outputs copy.py,sha256=sxHYHHC0x7CB1a02SNP9cF3a39YKBt3P5A5RsHE8Viw,17695
+jupyter_whisper/cell_outputs.py,sha256=DmT9KTq4-e38LFwkb6237Cz9efMuhHaywSZuZiuvEmE,14683
+jupyter_whisper/config.py,sha256=5wLlAzEBM7ZcOrACpWuJSG0H9lmeoW6pJwGrY42ILRo,49463
+jupyter_whisper/search.py,sha256=gc6lL0Rm30a2NJ4jUeCdzVW3kiXP-DYehEv2gskQy4Y,1389
+jupyter_whisper/server.py,sha256=4KgXT-q0g76CFEYxtRlGvJNyzWE_GW_WndyhopXFGAs,18097
+jupyter_whisper/static/main.js,sha256=mUx4ILE96hpyoHvVWBVPFJpBxkRW38pUd9ab6FqOs5I,6087
+jupyter_whisper/static/voicerecorder.js,sha256=bQEWq6vMXGxkyv9QeE0lhJj4jZ53Gnsvw6H8ocEEjb4,6087
+jupyter_whisper-0.3.0.dist-info/licenses/LICENSE,sha256=YXFH5brwHzQ-Wgl_T4Q40xV4W2S6kTALjWhPn-sNJm4,1063
+jupyter_whisper-0.3.0.dist-info/METADATA,sha256=k9YxtHlClTFt03S6dq2zyH91pYu3Lm0mA7jXfQKp52A,7347
+jupyter_whisper-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jupyter_whisper-0.3.0.dist-info/top_level.txt,sha256=vo8XNY8COQfK3FZ7oR19lMvxWwXGx97pvcsFtJ5zuFM,16
+jupyter_whisper-0.3.0.dist-info/RECORD,,
