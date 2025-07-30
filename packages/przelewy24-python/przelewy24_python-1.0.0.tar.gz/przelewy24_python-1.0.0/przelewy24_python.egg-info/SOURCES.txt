@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+przelewy24/__init__.py
+przelewy24/client.py
+przelewy24/exceptions.py
+przelewy24/models.py
+przelewy24_python.egg-info/PKG-INFO
+przelewy24_python.egg-info/SOURCES.txt
+przelewy24_python.egg-info/dependency_links.txt
+przelewy24_python.egg-info/requires.txt
+przelewy24_python.egg-info/top_level.txt
