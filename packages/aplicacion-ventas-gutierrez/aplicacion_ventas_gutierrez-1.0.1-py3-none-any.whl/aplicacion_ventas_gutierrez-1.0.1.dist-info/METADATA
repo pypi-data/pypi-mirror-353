@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: aplicacion_ventas_gutierrez
+Version: 1.0.1
+Summary: Paquete para gestionar ventas
+Home-page: https://aulavirtual.camaracomercioexterior.org/courses/python-de-cero-a-experto/lectures/58981551
+Author: Emilio Gutierrez P.
+Author-email: emilio6927@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+#Aplicacion de ventas
+
+Este paquee proporcioan funcionalidades para gestionar 
+ventas, incluyendo calculos, precios, impuiestos y descuentos.
+
+##Instalacion
+Puedes instalar el paquete usando
+
+Bash
+
+
+pip install
