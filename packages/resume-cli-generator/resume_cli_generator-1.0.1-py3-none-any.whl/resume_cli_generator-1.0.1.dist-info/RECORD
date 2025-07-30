@@ -1,0 +1,9 @@
+resume_cli_generator-1.0.1.dist-info/licenses/LICENSE,sha256=S7Hf5ecMyPMgu4uCo3-X26wKFdJSNZ9xBtRVyevt3GI,1072
+resume_generator/__init__.py,sha256=-atyXk4Mp6bjfYs5YU7_dbSk94OUXs9fDh08tLPVr6c,240
+resume_generator/cli.py,sha256=HLa6haV52qy-69Rf4mDVD42glGo3dQXy2Skfnuf9uT4,16824
+resume_generator/templates/resume_template.html,sha256=fa28r5rHn4_z5MWn3ebfsVY9L7SvyfepQNc6CLVG3kk,8949
+resume_cli_generator-1.0.1.dist-info/METADATA,sha256=BFVEDvyonzeeyyZ9TmiWsl9WEqOKIbhhla2SDKxPSko,7060
+resume_cli_generator-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+resume_cli_generator-1.0.1.dist-info/entry_points.txt,sha256=gSOAT7OyW5yPrBu3-rVAruV20S5DGZ0WW2VR1mapVC0,63
+resume_cli_generator-1.0.1.dist-info/top_level.txt,sha256=mm39VY-8TPQ3OndxC6hUJDqZMoNICvn5joTWiGhzZRE,17
+resume_cli_generator-1.0.1.dist-info/RECORD,,
