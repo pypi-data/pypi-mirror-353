@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: lampseek
+Version: 0.0.1
+Summary: Simple lightweight error tracking with configurable diagnostics
+License: MIT
+Author: Adam Garza
+Author-email: adriftible@gmail.com
+Requires-Python: >=3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# lampseek
+
+Simple lightweight error tracking with configurable diagnostics
+
