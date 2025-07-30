@@ -1,0 +1,104 @@
+[tool.poetry]
+name = "pyoutlineapi"
+version = "0.3.0"
+description = "A modern, async-first Python client for the Outline VPN Server API with comprehensive data validation through Pydantic models."
+authors = ["Denis Rozhnovskiy <pytelemonbot@mail.ru>"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "pyoutlineapi" }]
+keywords = ["outline", "vpn", "api", "manager", "wrapper", "asyncio"]
+documentation = "https://orenlab.github.io/pyoutlineapi/"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Security",
+    "Topic :: Internet :: Proxy Servers",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: AsyncIO",
+    "Framework :: aiohttp",
+    "Framework :: Pydantic",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+pydantic = "^2.11.5"
+aiohttp = "^3.12.11"
+
+[tool.poetry.group.dev.dependencies]
+aioresponses = "^0.7.8"
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.2"
+pytest-cov = "^5.0.0"
+black = "^24.10.0"
+mypy = "^1.0.0"
+ruff = "^0.8.0"
+pdoc = "^15.0.1"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=pyoutlineapi --cov-report=html --cov-report=xml --cov-report=term-missing"
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312", "py313"]
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+show_error_codes = true
+pretty = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "PTH", # flake8-use-pathlib
+    "ASYNC", # flake8-async
+]
+ignore = [
+    "E501", # line too long, handled by black
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG", "S101"]  # Allow unused arguments and assert statements in tests
+
+[tool.ruff.lint.isort]
+known-first-party = ["pyoutlineapi"]
+
+[tool.poetry.urls]
+homepage = "https://github.com/orenlab/pyoutlineapi"
+repository = "https://github.com/orenlab/pyoutlineapi"
+documentation = "https://orenlab.github.io/pyoutlineapi/"
+changelog = "https://github.com/orenlab/pyoutlineapi/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/orenlab/pyoutlineapi/issues"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
