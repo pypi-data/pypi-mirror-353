@@ -1,0 +1,10 @@
+temporals/__init__.py,sha256=PLyJjDeUsvMWLSZ5OTyWubBD2aedQubCJ00dt8JPnqs,990
+temporals/exceptions.py,sha256=TggCPp57NEtsjj1x4e0xmdgLoctD1cOFSmzigKGtkDY,48
+temporals/interfaces.py,sha256=oDe81jf145HGIdlMlY8r5owHSz0ne49I_i4RQmGUF1o,12114
+temporals/periods.py,sha256=K1hLE4nIRl2ARciL9O8zj91MrA29Lj1ZSBT8v1if5bA,67594
+temporals/utils.py,sha256=CZaQTPepr_XNAK8orzX7-6WFXPzTiw-ixlY3lWdBZuI,8313
+temporals-0.1.6.dist-info/licenses/LICENSE,sha256=_M4MUF57Rcx_C0gZhpizkdWNBVELwR0p3mB6Jqju_AI,1071
+temporals-0.1.6.dist-info/METADATA,sha256=2VlXohLMok-fb-5g6D8wpktYJDP8QVh4SQiHCRjwuTw,4642
+temporals-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+temporals-0.1.6.dist-info/top_level.txt,sha256=Ri_quljHOyLNhi4_Wjj5kz6z03X2Tz53FySt6HR0VnY,10
+temporals-0.1.6.dist-info/RECORD,,
