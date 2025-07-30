@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+drf_authenticator/__init__.py
+drf_authenticator/authentication.py
+drf_authenticator/exceptions.py
+drf_authenticator/token.py
+drf_authenticator.egg-info/PKG-INFO
+drf_authenticator.egg-info/SOURCES.txt
+drf_authenticator.egg-info/dependency_links.txt
+drf_authenticator.egg-info/requires.txt
+drf_authenticator.egg-info/top_level.txt
