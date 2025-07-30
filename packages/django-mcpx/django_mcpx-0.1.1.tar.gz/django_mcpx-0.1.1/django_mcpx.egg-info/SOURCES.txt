@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+django_mcpx.egg-info/PKG-INFO
+django_mcpx.egg-info/SOURCES.txt
+django_mcpx.egg-info/dependency_links.txt
+django_mcpx.egg-info/requires.txt
+django_mcpx.egg-info/top_level.txt
+mcpx/__init__.py
+mcpx/auth.py
+mcpx/management/commands/__init__.py
+mcpx/management/commands/runmcp.py
+tests/test_auth.py
+tests/test_settings.py
