@@ -1,0 +1,11 @@
+eppink_utilities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+eppink_utilities/dimless_utils.py,sha256=n7ZJFetOGJgz7yxMg18PMJeP2BRLlx3IDuntMPhxVY4,87372
+eppink_utilities/file_utils.py,sha256=a1QT689gCQMUDrcbYw0h3Mjcv6oUn-ajHVUOaP5Ohz8,10496
+eppink_utilities/general_utils.py,sha256=89DzSqPszWkDl5WsdXQ6c2pS0xw2Nan0rj0DF6F_Lkw,3268
+eppink_utilities/math_utils.py,sha256=Dff9ecJwBKEnXLa-OpO0arPldtuloyeeRjBT3GIBX4Q,2140
+eppink_utilities/plot_utils.py,sha256=EGP5zgy01xwVyMKuyYWMhMC-rQ7jlzYFsBAipml5ZXw,6973
+eppink_utilities-0.4.0.dist-info/licenses/LICENSE,sha256=q7793gA8KixN-qkMfn6Gkc-42sLhhzhcdyZ7yPM4OEQ,1096
+eppink_utilities-0.4.0.dist-info/METADATA,sha256=WtEnlpWiEoUmcsJZlzRG5r161bHLwQ58GZDVL7NThVo,1394
+eppink_utilities-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+eppink_utilities-0.4.0.dist-info/top_level.txt,sha256=XvImi0PtULDoTbakeL0YKBKeDEbHWld8Srjc_ejh6i4,17
+eppink_utilities-0.4.0.dist-info/RECORD,,
