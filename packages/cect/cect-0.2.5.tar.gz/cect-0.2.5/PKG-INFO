@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: cect
+Version: 0.2.5
+Summary: C. elegans Connectome Toolbox
+Home-page: https://github.com/openworm/ConnectomeToolbox
+Author: OpenWorm contributors
+Author-email: p.gleeson@gmail.com
+Maintainer: Padraig Gleeson
+Maintainer-email: p.gleeson@gmail.com
+License: LGPLv3
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: docs
+Provides-Extra: dev
+Provides-Extra: all
+
+# _C. elegans_ Connectome Toolbox
+
+**Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work.**
+
+Information on published connectomics data related to _C. elegans_.
+
+See live site at: https://openworm.org/ConnectomeToolbox
+
+
+
+
