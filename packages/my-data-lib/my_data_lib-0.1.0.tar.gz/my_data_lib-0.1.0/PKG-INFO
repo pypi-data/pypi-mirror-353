@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: my_data_lib
+Version: 0.1.0
+Summary: Uma biblioteca para manipulação de dados em diferentes fontes
+Author-email: Gugpo <poliveiragpo@gmail.com>
+Requires-Python: >=3.13.3
+Description-Content-Type: text/markdown
+Requires-Dist: pandas==2.2.3
+Requires-Dist: sqlalchemy==2.0.41
+Requires-Dist: psycopg2==2.9.10
+Requires-Dist: pymongo==4.13.0
+Requires-Dist: pytest==8.4.0
+
+![CI](https://github.com/your-username/your-repo/actions/workflows/ci.yml/badge.svg)
+
+# My Data Lib
+
+Uma biblioteca Python para leitura e gravação de dados em múltiplas fontes de dados.
+
+## Fontes suportadas
+
+- Arquivos CSV
+- Banco de dados PostgreSQL
+- Banco de dados MongoDB
+
+## Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/Gugpo/my_data_lib.git
+cd my_data_lib
+pip install -r requirements.txt
+```
+
+## Rodando os testes
+python -m pytest
+
+
+
+
