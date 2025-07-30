@@ -1,0 +1,7 @@
+mortal_ssh/__init__.py,sha256=46n-URKq6IRpqM9K9ANBnaMSrWKdina4Dvs0d4vmRC4,928
+mortal_ssh/ssh_main.cp38-win_amd64.pyd,sha256=3oJbSGOOBN6Zkxb0lZb_ZmOSagaMagjDqQZBbFG99nc,104448
+mortal_ssh/sshtunnel.cp38-win_amd64.pyd,sha256=LwjUTO1S9fn2Z9SYQm1k77z3ssFBZh1fD1mFXNIvLdY,506880
+mortal_ssh-4.3.0.dist-info/METADATA,sha256=EtqICHIGVx5ofOWnNLs5_lsfFSIAaZzn3bv1qzGVX3U,606
+mortal_ssh-4.3.0.dist-info/WHEEL,sha256=lyj1Pws2MqAaWrmh2QWAJ_oTxptgheMPcTCgFfEuS1U,98
+mortal_ssh-4.3.0.dist-info/top_level.txt,sha256=_aPLDXJbxULwMZSxAcG98hv2GhO3jckxCAxPpFYMdMI,11
+mortal_ssh-4.3.0.dist-info/RECORD,,
