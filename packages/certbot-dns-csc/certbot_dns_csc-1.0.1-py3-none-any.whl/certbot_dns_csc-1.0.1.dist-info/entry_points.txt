@@ -1,0 +1,2 @@
+[certbot.plugins]
+dns-csc = certbot_dns_csc.dns_csc:Authenticator
