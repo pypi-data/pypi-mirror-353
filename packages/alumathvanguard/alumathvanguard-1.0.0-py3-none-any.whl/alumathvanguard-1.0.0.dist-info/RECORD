@@ -1,0 +1,8 @@
+alumathvanguard/__init__.py,sha256=LFWKJA57XL--d2oEeQTZQ6xBlFIEAFt3Qml9SBcchTY,578
+alumathvanguard/matrix_ops.py,sha256=XKPezv-Xgcsbq1_HJ1yH_QuSLugfDpgpgRGx3ORpv9Q,8393
+tests/__init__.py,sha256=araSeaZLGpTcB-b7qfbsWewgrZCWgu08sP8agQrJ1FQ,48
+tests/test_matrix_ops.py,sha256=-Bzrvwc9Za0S4apbNjnnjjpKuYXAXjfdfxpxUC2YeVs,4181
+alumathvanguard-1.0.0.dist-info/METADATA,sha256=qRnQ7qGNFJ99kHJpT2qDPCE4SDkt17qpoakgeZNMRAE,7544
+alumathvanguard-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+alumathvanguard-1.0.0.dist-info/top_level.txt,sha256=mJwi8rt32swGmBYzS2jKj1DH9lrAjgkcWlrMyxHnEL0,22
+alumathvanguard-1.0.0.dist-info/RECORD,,
