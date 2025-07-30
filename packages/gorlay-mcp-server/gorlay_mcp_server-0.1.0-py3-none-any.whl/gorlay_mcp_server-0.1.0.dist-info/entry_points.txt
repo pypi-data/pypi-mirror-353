@@ -1,0 +1,2 @@
+[console_scripts]
+gorlay-mcp-server = gorlay_mcp_server:main
