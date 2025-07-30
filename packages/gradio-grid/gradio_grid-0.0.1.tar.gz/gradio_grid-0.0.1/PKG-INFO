@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: gradio_grid
+Version: 0.0.1
+Summary: Audio Grid - Gradio component for drag and drop audio file management and merging workflows
+Author-email: YOUR NAME <YOUREMAIL@domain.com>
+License-Expression: Apache-2.0
+Keywords: audio-merger,audio-processing,gradio-custom-component,gradio-template-AudioMerger
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.8
+Requires-Dist: gradio<6.0,>=4.0
+Requires-Dist: soundfile>=0.13.1
+Provides-Extra: dev
+Requires-Dist: build; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Description-Content-Type: text/markdown
+
+---
+tags: [gradio-custom-component, AudioGrid, audio-processing]
+title: gradio_audiogrid
+short_description: Audio Grid - Drag and drop component for audio file management
+colorFrom: blue
+colorTo: yellow
+sdk: gradio
+pinned: false
+app_file: space.py
+---
+
+# gradio_audiogrid
+
+**AudioGrid** is a custom Gradio component that provides an intuitive drag-and-drop interface for managing audio files. Perfect for audio processing workflows, music production, and any application that needs to handle multiple audio files.
+
+## Features
+
+- 🎵 **Drag & Drop Audio Upload** - Intuitive file upload with visual feedback
+- 🎯 **Smart Reordering** - Drag files anywhere to reorder them intelligently
+- 📱 **Mobile Responsive** - Works great on desktop, tablet, and mobile
+- 🎨 **Beautiful UI** - Clean, modern interface with proper spacing
+- 🔄 **Flexible Positioning** - Drop files anywhere, not just on exact squares
+- ❌ **Easy Removal** - One-click file removal
+- 📁 **Multiple Formats** - Supports MP3, WAV, OGG, FLAC, AAC, M4A
+
+You can auto-generate documentation for your custom component with the `gradio cc docs` command.
