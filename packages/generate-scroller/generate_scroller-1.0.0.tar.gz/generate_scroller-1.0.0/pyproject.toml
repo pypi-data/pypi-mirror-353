@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generate_scroller"
+version = "1.0.0"
+description = "Un outil CLI pour générer un fichier scroller.md avec tous les fichiers texte d'un répertoire."
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [{ name = "Ton Nom", email = "danielguedebe10027@gmail.com" }]
+license = { text = "MIT" }
+keywords = ["cli", "markdown", "files", "scanner", "dev-tools"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+generate_scroller = "generate_scroller.cli:run"
