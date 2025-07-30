@@ -1,0 +1,55 @@
+[project]
+name = "playtrak-sentinel"
+version = "0.0.3.dev0"
+description = "Sentinel: OSV-based vulnerability scanner for Python projects"
+authors = [{ name = "Eder Ramos Rosales", email = "eder.ramos.developer@gmail.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+  "requests",
+  "pyfiglet"
+]
+
+keywords = [
+  "security", "vulnerability", "scanner", "python", "osv",
+  "dependency", "audit", "cli", "open source", "pip"
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "Natural Language :: English",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security"
+]
+
+[project.urls]
+Homepage = "https://gitlab.com/eder2597/sentinel"
+Documentation = "https://gitlab.com/eder2597/sentinel/-/blob/main/README.md"
+Changelog = "https://gitlab.com/eder2597/sentinel/-/commits/main"
+Issues = "https://gitlab.com/eder2597/sentinel/-/issues"
+Source = "https://gitlab.com/eder2597/sentinel"
+
+[project.scripts]
+sentinel = "sentinel_simplecli.cli:cli"
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["pyfiglet"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+playtrak_sentinel.egg-info/PKG-INFO
+playtrak_sentinel.egg-info/SOURCES.txt
+playtrak_sentinel.egg-info/dependency_links.txt
+playtrak_sentinel.egg-info/entry_points.txt
+playtrak_sentinel.egg-info/requires.txt
+playtrak_sentinel.egg-info/top_level.txt
+sentinel_simplecli/__init__.py
+sentinel_simplecli/cli.py
+tests/test_core.py
