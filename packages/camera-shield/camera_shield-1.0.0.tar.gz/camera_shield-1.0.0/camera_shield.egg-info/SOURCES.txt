@@ -1,0 +1,8 @@
+README.md
+setup.py
+camera_shield.egg-info/PKG-INFO
+camera_shield.egg-info/SOURCES.txt
+camera_shield.egg-info/dependency_links.txt
+camera_shield.egg-info/entry_points.txt
+camera_shield.egg-info/requires.txt
+camera_shield.egg-info/top_level.txt
