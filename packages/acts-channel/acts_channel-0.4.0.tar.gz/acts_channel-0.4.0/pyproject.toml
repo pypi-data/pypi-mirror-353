@@ -1,0 +1,32 @@
+[project]
+name = "acts-channel"
+version = "0.4.0"
+description = "acts channel client"
+authors = [
+    { name = "yaojianping", email = "yaojianpin@sohu.com" },
+]
+dependencies = [
+    "nanoid>=2.0.0",
+    "result>=0.17.0",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+keywords = [
+    "workflow",
+    "acts-channel",
+]
+
+[project.license]
+text = "MIT"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.scripts]
+example = "python example.py"
