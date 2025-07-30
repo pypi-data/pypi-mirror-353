@@ -1,0 +1,132 @@
+Metadata-Version: 2.1
+Name: reqreq
+Version: 0.0.0
+Summary: A tool that can make GET and POST requests in parallel
+Home-page: https://github.co.jp/
+Author: bib_inf
+Author-email: contact.bibinf@gmail.com
+License: CC0 v1.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Description-Content-Type: text/markdown
+Requires-Dist: ezpip
+Requires-Dist: relpath (>=3.0.5)
+Requires-Dist: mulmap
+Requires-Dist: requests
+
+English description follows Japanese.
+
+## 概要
+`reqreq` は、非常に簡潔な記述で複数の HTTP リクエスト（GET/POST）を並列に送信できる Python ライブラリです。サーバーとの通信を高速化したい場面で特に有効です。個人開発やスクリプト用途に適した設計で、直感的な構文が特徴です。
+
+## 主な特徴
+* 複数の HTTP リクエストを並列実行
+* GET/POST を簡潔な記法で指定可能
+* レスポンスの形式やエラー時の挙動を柔軟に制御可能
+* `requests` モジュールとの互換性あり
+
+## 主な用途
+* Web サービスとの通信を高速化したいとき
+* 複数個の API へ一括アクセスを行いたいとき
+
+## 使い方
+
+### 基本的な使い方（GET）
+```python
+import reqreq
+
+resp = reqreq(["https://example.com", "https://example-2.com"])
+print(resp) # -> ['1つめのレスポンスの文字列', '2つめのレスポンスの文字列']
+```
+
+### 詳細な指定（GET/POST切り替え）
+```python
+resp = reqreq([
+  {"url": "https://example.com", "method": "GET"},
+  {"url": "https://example.com", "method": "POST", "data": {"test": "test"}},
+])
+```
+
+### 省略・簡易記法
+```python
+resp = reqreq([
+  "https://example.com",  # GET はURLだけでOK
+  ["https://example.com", "POST", {"test": "test3"}],  # リスト形式でも指定できる
+  ("https://example.com", "POST", {"test": "test2"}),  # タプル形式でも指定できる
+  ["https://example.com", "post", {"test": "test3"}],  # method名は小文字でもOK
+])
+```
+
+### オプション引数
+```python
+resp = reqreq(
+  ["https://example.com"],
+  resp_format = "raw",  # "text" (デフォルト), または "raw" で requests.Response を取得
+  error = None,     # 例外時に None を返す（デフォルト）
+  # error = "raw" にすると、例外オブジェクトをそのまま返す
+)
+```
+
+## 注意点
+
+* 非同期ライブラリではありません（内部ではスレッドベースの並列処理を行います）
+* エラーハンドリングは簡易的で、例外を捕捉する場合は `error="raw"` を明示してください
+* POST の `data` は `requests` と同様の形式で渡します
+
+---
+
+## Overview
+`reqreq` is a minimalistic Python library for sending multiple HTTP requests (GET/POST) in parallel with concise syntax. It’s designed for use cases where communication with web services needs to be fast, such as in personal projects or data scripts.
+
+## Features
+* Parallel execution of multiple HTTP requests
+* Extremely concise syntax for both GET and POST
+* Customizable response format and error handling
+* Compatible with `requests` response objects
+
+## Typical Use Cases
+* Speeding up communication with your backend service
+* Sending multiple API calls at once
+
+## Usage
+
+### Basic (GET requests)
+```python
+import reqreq
+
+resp = reqreq(["https://example.com", "https://example-2.com"])
+print(resp) # -> ['Response from the first URL', 'Response from the second URL']
+```
+
+### Detailed request specification
+```python
+resp = reqreq([
+  {"url": "https://example.com", "method": "GET"},
+  {"url": "https://example.com", "method": "POST", "data": {"test": "test"}},
+])
+```
+
+### Compact notation
+```python
+resp = reqreq([
+  "https://example.com",  # Shorthand for GET
+  ("https://example.com", "post", {"test": "test2"}),  # Tuple style
+  ["https://example.com", "POST", {"test": "test3"}],  # List style also accepted
+])
+```
+
+### Additional options
+```python
+resp = reqreq(
+  ["https://example.com"],
+  resp_format = "raw",  # "text" (default) or "raw" to get requests.Response objects
+  error = None,     # Return None on error (default)
+  # error = "raw" returns the actual exception object
+)
+```
+
+## Notes
+* This is not an async library; parallelism is thread-based.
+* Error handling is simple; use `error="raw"` if you want to inspect exceptions directly.
+* For POST data, use the same structure as the `requests` library.
