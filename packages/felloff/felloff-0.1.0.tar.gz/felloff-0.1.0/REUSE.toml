@@ -1,0 +1,18 @@
+version = 1
+
+# Generated files.
+[[annotations]]
+path = [
+	"uv.lock",
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "MIT"
+
+# Test fixtures.
+[[annotations]]
+path = [
+	"tests/no-front-matter.md",
+	"tests/yaml.md",
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "MIT"
