@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+tera_tera/__init__.py
+tera_tera/__main__.py
+tera_tera/cli.py
+tera_tera.egg-info/PKG-INFO
+tera_tera.egg-info/SOURCES.txt
+tera_tera.egg-info/dependency_links.txt
+tera_tera.egg-info/entry_points.txt
+tera_tera.egg-info/requires.txt
+tera_tera.egg-info/top_level.txt
+tests/test_tera_tera.py
