@@ -1,0 +1,39 @@
+2025-06-08 00:58:18 - ERROR - Query error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL:  INSERT INTO users (email , name , token , password, active) VALUES (? , ? , ? , ?, ?)]
+[parameters: ('example@example.com', 'stringstringstringstringstringstringstringstringstringstringstring', 'e9ec7bed8e28513256e3e140da81dd9415f014172490a4380699be17a30ce49e', '$argon2id$v=19$m=65536,t=3,p=4$F2735SuiM4PXJadzFwEMJA$uBIF3r5K5TDsP1d0ifYkZ5qer0VxXlvhI6+IX5zaNs0', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+
+2025-06-08 00:58:31 - ERROR - Query error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL:  INSERT INTO users (email , name , token , password, active) VALUES (? , ? , ? , ?, ?)]
+[parameters: ('example@example.com', 'stringstringstringstringstringstrings', 'f486d8192ab5dc7a2c4a30fc08df85697e8645b3bede5b932bc5a729b4f7619e', '$argon2id$v=19$m=65536,t=3,p=4$4RBVpw9UGFE/3dhanGajJQ$WZTMwuynC6iRZF+xf7poNU1ZvRithK3bcNRzyYmEXXs', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+
+2025-06-08 01:00:26 - ERROR - Error loading system/security/blocked_ips.json: [Errno 2] No such file or directory: 'system/security/blocked_ips.json'
+
+
+2025-06-08 01:00:26 - ERROR - Error loading system/security/blocked_urls.json: [Errno 2] No such file or directory: 'system/security/blocked_urls.json'
+
+
+2025-06-08 01:00:26 - ERROR - Error loading system/security/sensitive_paths.json: [Errno 2] No such file or directory: 'system/security/sensitive_paths.json'
+
+
+2025-06-08 01:00:50 - ERROR - Error loading app/security/blocked_ips.json: [Errno 2] No such file or directory: 'app/security/blocked_ips.json'
+
+
+2025-06-08 01:00:50 - ERROR - Error loading app/security/blocked_urls.json: [Errno 2] No such file or directory: 'app/security/blocked_urls.json'
+
+
+2025-06-08 01:00:50 - ERROR - Error loading app/security/sensitive_paths.json: [Errno 2] No such file or directory: 'app/security/sensitive_paths.json'
+
+
+2025-06-08 01:01:14 - ERROR - Error loading app/security/blocked_ips.json: [Errno 2] No such file or directory: 'app/security/blocked_ips.json'
+
+
+2025-06-08 01:01:14 - ERROR - Error loading app/security/blocked_urls.json: [Errno 2] No such file or directory: 'app/security/blocked_urls.json'
+
+
+2025-06-08 01:01:14 - ERROR - Error loading app/security/sensitive_paths.json: [Errno 2] No such file or directory: 'app/security/sensitive_paths.json'
+
+
