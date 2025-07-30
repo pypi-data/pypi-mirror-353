@@ -1,0 +1,16 @@
+llamaball/README.md,sha256=LVRoI_yDhGCqBk8Ky47AzAFz8KiekGS4Ehgnl6quQTU,13510
+llamaball/__init__.py,sha256=Elq1c4qMzfNxn6131Seu0arLN2t1aPhPPb-wflmtCho,949
+llamaball/__main__.py,sha256=R9BqOYWE5IVAkMj8Bi9yLIpyixHg8lrxIVclIgME4oA,281
+llamaball/cli.py,sha256=qUq5ZhvmOcve6l7Pe_5ILIRrY0VYA-eaipIAWQbVwDQ,50822
+llamaball/core.py,sha256=e4z2m5ASEHPP0bl5JJEU1cbCwnP3CUJwZWqT517eigQ,25893
+llamaball/parsers.py,sha256=akdeGAZgXaqK0MgzhTa3OEpxBqHT6M1JU5SPatWn9co,36898
+llamaball/utils.py,sha256=1e4usVIAN6YeYV_xjrd51yiH8nF96TUUAeq6SKWrlYs,783
+llamaball/web_server.py,sha256=FCK-R4EcRIQ6DydGWuuiAp_a7h--OQ63070qXPjmEuU,17577
+llamaball/templates/base.html,sha256=y4D2iXRUO2cyPMFhYbJuKRZtW5RnGYDhZ4DrO76cP9M,13332
+llamaball/templates/chat.html,sha256=onA3lCFGE6CbdpH2TSj1L0uIu1e0SXSKoUE57cAdfrA,16092
+llamaball/templates/index.html,sha256=XEmnUSszTSIjaZXxMsrla61Yl9ES-h8A2Bm7GVHAQJc,12325
+llamaball-1.1.1.dist-info/METADATA,sha256=7Imd_gKSV8ph4MGVeRJHmONDnJpxTZBgUBlk9wT6PI8,8313
+llamaball-1.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+llamaball-1.1.1.dist-info/entry_points.txt,sha256=_cpCyvF108DNOFJXvaaK9WsRawF4fhtgUXewzj6Pn8w,49
+llamaball-1.1.1.dist-info/licenses/LICENSE,sha256=L7EqRNMkAWsA9aD5Q85-hBJ_nJnUhIs8Cwb8OX-oLxw,1074
+llamaball-1.1.1.dist-info/RECORD,,
