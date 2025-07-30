@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cesaret"
+version = "0.1.2"
+description = "CeSaReT Toolkit"
+authors = [{name = "Codex"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "requests",
+    "redis",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["echonexus*", "FractalLibrary*"]
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[project.scripts]
+cesaret = "main:main"
