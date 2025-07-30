@@ -1,0 +1,4 @@
+[console_scripts]
+mysql_mcp_server_pro = mysql_mcp_server_pro.cli:stdio_entry
+mysql_mcp_server_sse = mysql_mcp_server_pro.cli:sse_entry
+mysql_mcp_server_streamable_http = mysql_mcp_server_pro.cli:streamable_http_entry
