@@ -1,0 +1,7 @@
+lockss/warcread/__init__.py,sha256=h24U2kCelb9uyuuiCm65xGp3eh1QOedy72uq8uvjaO8,1645
+lockss/warcread/cli.py,sha256=LkVURYZ9lzcywRzbuXp4-vfJewZv6ItnO90yOivfdCI,8279
+lockss/warcread/warcutil.py,sha256=c7hxU87xsy1EydXxBozCtu4wyLRj_FTLOSmuGGdWIRY,40504
+lockss_warcread-0.4.0.dev2.dist-info/LICENSE,sha256=O9ONND4uDxY_jucI4jZDf2liAk05ScEJaYu-Al7EOdQ,1506
+lockss_warcread-0.4.0.dev2.dist-info/METADATA,sha256=Er_DpSTPkxihNL99ZVBn-nhj-3Q2AslgLqO71Rrtj3Y,844
+lockss_warcread-0.4.0.dev2.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+lockss_warcread-0.4.0.dev2.dist-info/RECORD,,
