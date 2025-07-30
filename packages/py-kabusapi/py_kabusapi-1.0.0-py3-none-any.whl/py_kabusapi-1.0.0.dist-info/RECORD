@@ -1,0 +1,13 @@
+py_kabusapi/__init__.py,sha256=9tj7XyrqN1hWKWcLlPxZ3kFr1NSOz0zG6vVtLxw_c2o,62
+py_kabusapi/api.py,sha256=-Ydzj-CqlNp9R_kK7srw7akFp9ps89k2-I9Lut8K06c,31191
+py_kabusapi/const.py,sha256=i1cmGzrcALqwmT9wR7-YbV2vRw5dSUgJI3ijgkB9bww,263
+py_kabusapi/error.py,sha256=4DjZyCcLmVukgob6uGtTrXBHd6hqH9ieGX7uaix29PE,44167
+py_kabusapi/response_model.py,sha256=5bZoOWSX3WjuPCVb2xltgoGyj8kONjf-hDDt01SAlyw,23601
+py_kabusapi-1.0.0.dist-info/licenses/LICENSE,sha256=8Ua-GRuvzue8sXRxsKk--Qxh-mWjPYAFl1Ze2QgnEQE,1081
+tests/__init__.py,sha256=HymLr0vvB92O69-ydUzuQ4GtS1pp9e81xY9HO3y9bHI,37
+tests/test_api.py,sha256=5f8KrGHw5OWgxfYHJS5qvmjSaWjjnxv4xke-_kahpIM,27590
+tests/test_import.py,sha256=v4FLJtsdy72mVLWXKhmrORm_bJeH2FxcEVXQFwOozUg,911
+py_kabusapi-1.0.0.dist-info/METADATA,sha256=FGOWWl60FeCoX2rbIyMycav9gHx3HJpgWK2FCIXAjFE,3301
+py_kabusapi-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+py_kabusapi-1.0.0.dist-info/top_level.txt,sha256=RjUWG_FLTzBTxF0YYimnMBURrOOVyiQpnzLMk7WL2c8,18
+py_kabusapi-1.0.0.dist-info/RECORD,,
