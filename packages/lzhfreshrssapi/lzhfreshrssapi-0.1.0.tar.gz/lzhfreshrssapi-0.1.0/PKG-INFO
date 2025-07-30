@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: lzhfreshrssapi
+Version: 0.1.0
+Summary: 操作 FreshRSS API
+Author-email: lzh <zhhtdm@hotmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/zhhtdm/freshrss-api
+Project-URL: Repository, https://github.com/zhhtdm/freshrss-api
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+
+# freshrss api
+操作 FreshRSS API
+
+目前只有一个函数
+- `get_guids_by_site_url` : 获取库中对应`url`的订阅源中已有的`guid`的集合

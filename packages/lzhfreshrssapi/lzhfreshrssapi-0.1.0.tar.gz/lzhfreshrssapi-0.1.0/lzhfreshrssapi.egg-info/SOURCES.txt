@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+lzhfreshrssapi/__init__.py
+lzhfreshrssapi.egg-info/PKG-INFO
+lzhfreshrssapi.egg-info/SOURCES.txt
+lzhfreshrssapi.egg-info/dependency_links.txt
+lzhfreshrssapi.egg-info/requires.txt
+lzhfreshrssapi.egg-info/top_level.txt

@@ -1,0 +1,24 @@
+[project]
+name = "lzhfreshrssapi"
+version = "0.1.0"
+description = "操作 FreshRSS API"
+authors = [
+    { name = "lzh", email = "zhhtdm@hotmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "aiohttp"
+]
+
+[project.urls]
+Homepage = "https://github.com/zhhtdm/freshrss-api"
+Repository = "https://github.com/zhhtdm/freshrss-api"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
