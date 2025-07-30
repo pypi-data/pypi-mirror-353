@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: llm-stack-watch
+Version: 0.1.0
+Summary: A comprehensive LLM tracing and monitoring library
+Home-page: https://github.com/001AM/llmstackwatch-python
+Author: Soham Panchal
+Author-email: Soham Panchal <sohampanchal1469@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/001AM/llmstackwatch-python
+Project-URL: Bug Reports, https://github.com/001AM/llmstackwatch-python/issues
+Project-URL: Source, https://github.com/001AM/llmstackwatch-python
+Keywords: llm,ai,tracing,monitoring,openai,anthropic
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.28.0
+Requires-Dist: python-dotenv>=0.19.0
+Requires-Dist: typing-extensions>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Provides-Extra: openai
+Requires-Dist: openai>=1.0.0; extra == "openai"
+Provides-Extra: anthropic
+Requires-Dist: anthropic>=0.3.0; extra == "anthropic"
+Provides-Extra: google
+Requires-Dist: google-generativeai>=0.1.0; extra == "google"
+Provides-Extra: all
+Requires-Dist: openai>=1.0.0; extra == "all"
+Requires-Dist: anthropic>=0.3.0; extra == "all"
+Requires-Dist: google-generativeai>=0.1.0; extra == "all"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# LLMStackWatch-SDK
