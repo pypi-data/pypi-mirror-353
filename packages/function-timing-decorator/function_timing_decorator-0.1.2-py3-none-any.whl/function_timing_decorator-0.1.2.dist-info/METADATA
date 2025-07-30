@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: function-timing-decorator
+Version: 0.1.2
+Summary: A professional-grade Python decorator to measure function execution time
+Author-email: Gurnoor Singh Saini <sainigurnoor511@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Sainigurnoor511/function-timing-decorator
+Project-URL: Repository, https://github.com/Sainigurnoor511/function-timing-decorator
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich>=13.0.0
+Dynamic: license-file
+
+# timing-decorator
+
+Measure the execution time of any Python function—sync or async—with styled output and logging support.
+
+## Author
+
+Gurnoor Singh Saini  
+📧 sainigurnoor511@gmail.com  
+🔗 [GitHub](https://github.com/Sainigurnoor511)  
+🔗 [LinkedIn](https://www.linkedin.com/in/sainigurnoor511/)
+
+## Features
+
+- ✅ Supports sync and async functions
+- ✅ Rich terminal output
+- ✅ Configurable logging
+- ✅ Pythonic & production-ready
+
+## Installation
+
+```bash
+pip install function-timing-decorator
