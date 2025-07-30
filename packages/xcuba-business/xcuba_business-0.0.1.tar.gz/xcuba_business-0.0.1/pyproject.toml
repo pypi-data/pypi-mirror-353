@@ -1,0 +1,25 @@
+[project]
+name = "xcuba-business"
+version = "0.0.1"
+description = "Utilitario para cubanos donde les facilita la vida a los desarrolladores en mypimes y negocios privados."
+authors = [
+  { name="KeimaSenpai", email="KeimaSenpai@proton.me" }
+]
+readme = "README.md"
+license = { file="LICENSE" }
+dependencies = [
+  "pymongo",
+  "motor",
+  
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/KeimaSenpai"
+Documentation = "https://github.com/KeimaSenpai"
+Source = "https://github.com/KeimaSenpai"
+Issues = "https://github.com/KeimaSenpai"
+Community = "https://t.me/KeimaSenpai"
