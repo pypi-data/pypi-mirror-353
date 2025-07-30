@@ -1,0 +1,4 @@
+torch>=1.10
+
+[bnb]
+bitsandbytes>=0.41.0
