@@ -1,0 +1,12 @@
+ecalic/__init__.py,sha256=8-LUJlTY2ZoJtLbqcqeigim4J9ns8jtIspyHACt3f1I,872
+ecalic/cmsStyle.py,sha256=cVOYZDOQzM5k_YFHtmC-69-5qb7Go4RmHN7UBIvINPA,1135
+ecalic/ic.py,sha256=Zy3vwcIfHbpJ7dwVN8QN1UaS_Qfaxu_sGUwf5khv8xs,24704
+ecalic/iov.py,sha256=lViez6AV_JSMPedYY_n-ZK6QHWCwlivlRVWUfS0hr8g,4440
+ecalic/data/ecalMapping.txt,sha256=VGECsKc8yuxErXmF8dQseXG62YL_gQsTPqTCxGEt0Us,6000597
+ecalic/data/ecalMapping.v1.0.0.txt,sha256=zlA9U5CFVMXlP4itGT0URUYd1OdNLz1t6YvV4ixohVk,6760669
+ecalic/data/fStyle.mplstyle,sha256=SPVErxBZQ9LZ378NbpITk-LZ79e1VVklWiwRW2koaIk,33419
+ecalic-1.0.5.dist-info/licenses/LICENSE,sha256=VXapH-nuSz68DG5ScURElxHkl1lKk4MOK9cgZCSRDXs,34502
+ecalic-1.0.5.dist-info/METADATA,sha256=Bi_loYrSCbiQSpW_hNiauUa_dRWsBAyHefrSr9yoqoE,5114
+ecalic-1.0.5.dist-info/WHEEL,sha256=zaaOINJESkSfm_4HQVc5ssNzHCPXhJm0kEUakpsEHaU,91
+ecalic-1.0.5.dist-info/top_level.txt,sha256=j7Yd42XJc9Qze02NBJ71qKvil04ng5CLkTtR4eQJtws,7
+ecalic-1.0.5.dist-info/RECORD,,
