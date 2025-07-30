@@ -1,0 +1,10 @@
+spider/__init__.py,sha256=hVS0B6UMpJWfxqIBnxDii7xCPM8dEVX1MtZx9k76GaI,65
+spider/async_spider.py,sha256=xRA4dnC8M_5mbnva4gtWsttJfLk5KK-3a8cSg3PusK4,16937
+spider/spider.py,sha256=z1T7oYM23nprDypqvjFw33twXbWZ-dcC-d2adroESds,16778
+spider/spider.pyi,sha256=DTTENDZ75gCWdD1Q07ItCIyrSVmz-7QxAHQ1N3Moa78,3682
+spider/spider_types.py,sha256=D3Cl66h5kGiwIoWauygI5VTBxnmwhU6E2XbeOVn4w0Y,9393
+spider_client-0.1.37.dist-info/LICENSE,sha256=Wgx4fFqjj5neFvsDTEzXghMqgdcTg7IZ0HmWG9WG9uM,1097
+spider_client-0.1.37.dist-info/METADATA,sha256=u_U7y9HcUhr81EqytCMm94I0N4WH4djqdyJHimLAhaQ,6600
+spider_client-0.1.37.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+spider_client-0.1.37.dist-info/top_level.txt,sha256=-omgKN_8Zv_sz8Nh9RKvMeKEgG6ssFAFraIRpgIn8zA,7
+spider_client-0.1.37.dist-info/RECORD,,
