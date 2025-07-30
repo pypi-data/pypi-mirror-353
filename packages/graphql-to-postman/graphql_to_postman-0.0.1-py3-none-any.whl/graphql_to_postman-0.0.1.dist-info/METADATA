@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: graphql-to-postman
+Version: 0.0.1
+Summary: A Python package which converts a given graphql schema/URL to a postman collection
+Project-URL: Documentation, https://github.com/DeepakSan/graphql-to-postman/blob/main/README.md
+Project-URL: Issues, https://github.com/DeepakSan/graphql-to-postman/issues
+Project-URL: Source, https://github.com/DeepakSan/graphql-to-postman
+Author-email: Deepak Sanjay S J <deepaksanjaysj@gmail.com>
+Maintainer-email: Deepak Sanjay S J <deepaksanjaysj@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Keywords: graphql,graphql_to_postman,postman
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Hatch
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Requires-Dist: argparse
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# graphql-to-postman
+
+[![PyPI - Version](https://img.shields.io/pypi/v/graphql-to-postman.svg)](https://pypi.org/project/graphql-to-postman)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/graphql-to-postman.svg)](https://pypi.org/project/graphql-to-postman)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install graphql-to-postman
+```
+
+## License
+
+`graphql-to-postman` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
