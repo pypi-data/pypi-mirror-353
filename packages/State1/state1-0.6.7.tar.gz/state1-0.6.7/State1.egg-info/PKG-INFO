@@ -1,0 +1,185 @@
+Metadata-Version: 2.4
+Name: State1
+Version: 0.6.7
+Summary: A unified framework for building AI agents with low-code.
+Author-email: Udit Akhouri <researchudit@gmail.com>, Exthalpy Technologies <udit@exthalpy.com>
+Project-URL: Homepage, https://github.com/Exthalpy/state1
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai
+Requires-Dist: requests
+Requires-Dist: duckduckgo-search
+Requires-Dist: sentence-transformers
+Requires-Dist: chromadb
+Requires-Dist: PyPDF2
+Requires-Dist: python-docx
+Requires-Dist: termcolor
+Requires-Dist: bcrypt
+Dynamic: license-file
+
+# State-1: Unified AI Agent Framework
+
+State-1 is an open-source Python framework for building powerful AI agents with a unified, low-code experience. It abstracts away the complexity of LLMs, web search, RAG, CoT, UI, actions, authentication, memory, and multi-agent orchestration—so you can build, extend, and run agents with a single package and simple commands.
+
+---
+
+## Features
+- **Unified Agent API**: One class, many capabilities—LLM, RAG, web search, CoT, actions, UI, and more.
+- **LLM Integration**: OpenAI and OpenRouter support, with function calling and model selection.
+- **Web Search & RAG**: DuckDuckGo search and document ingestion (txt, PDF, DOCX) with vector search.
+- **Chain-of-Thought (CoT)**: Step-by-step reasoning for more robust answers.
+- **Actions**: Real-world actions (send email, fetch API) with OpenAI function calling.
+- **Authentication & Memory**: User login/signup, session management, and persistent chat memory.
+- **Multi-Agent Orchestration**: Parallel, sequential, voting, and manager/worker workflows.
+- **Extensible**: Add your own actions, agents, and workflows easily.
+
+---
+
+## Installation
+
+```bash
+
+$ pip install state1 .
+```
+
+---
+
+## Quick Start: Terminal Chat
+
+Run the terminal chat interface:
+
+```bash
+$ terminal-chat
+```
+
+On first run, the following demo agents are auto-created and ready to use:
+
+### 1. ActionDemo Agent
+- **Description**: Can send emails and fetch data from APIs using natural language.
+- **Actions**: `SendEmailAction`, `FetchAPIAction` (pre-registered)
+- **Example**: "Send an email to alice@email.com with subject Hello and body Hi Alice" or "What is the weather in London?"
+- **Setup**: Edit the SMTP and API config in `state1/terminal_chat.py` or via the agent file in `agents/`.
+
+### 2. RAG Agent
+- **Description**: Retrieval-Augmented Generation agent. Ingests documents (txt, PDF, DOCX) and answers questions using them.
+- **Usage**: Add documents with `agent.add_document('path/to/file')` in Python, or extend the agent in code.
+- **Example**: "What does the example.pdf say about climate change?"
+
+### 3. AuthTest Agent
+- **Description**: Requires user login/signup (email & password). Remembers chat history per user.
+- **Usage**: On first chat, you'll be prompted to log in or sign up.
+
+### 4. Orchestrator Demo
+- **Description**: Multi-agent orchestration (manager/worker workflow). Collaborates with Researcher, Summarizer, FactChecker, Analyser, and Manager agents.
+- **Usage**: Switch to this agent and ask any question to see multi-agent collaboration.
+
+---
+
+## First Run Experience
+
+When you run `terminal-chat` for the first time after installation, the following showcase agents are automatically created:
+
+- **Default Agent**: Minimal, just LLM chat.
+- **Web Search Agent**: Only web search enabled.
+- **RAG Agent**: Only RAG enabled (add documents via Python or code).
+- **CoT Agent**: Only Chain-of-Thought enabled.
+- **Actions Agent**: Only actions enabled, with example SMTP/API config and actions registered.
+- **Auth Demo Agent**: Only auth and memory enabled.
+
+Switch between agents with `/list` and `/switch <agent_id>`. Each agent demonstrates a single feature for easy testing and learning.
+
+---
+
+## Test Checklist: All Features
+
+After installing and running `terminal-chat`, test the following:
+
+1. **Default Agent**
+   - Chat with the agent. It should behave as a basic LLM assistant.
+
+2. **Web Search Agent**
+   - Switch to the Web Search Agent.
+   - Ask a question that requires web search (e.g., "What's the latest news?").
+   - Confirm the answer includes web search results.
+
+3. **RAG Agent**
+   - Switch to the RAG Agent.
+   - In Python, use `agent.add_document('path/to/file')` to add a document.
+   - Ask a question about the document and confirm the answer uses document content.
+
+4. **CoT Agent**
+   - Switch to the CoT Agent.
+   - Ask a complex question and confirm the agent reasons step by step.
+
+5. **Actions Agent**
+   - Switch to the Actions Agent.
+   - Ask to send an email or fetch API data (edit SMTP/API config as needed).
+   - Confirm the agent performs the action and returns a result.
+
+6. **Auth Demo Agent**
+   - Switch to the Auth Demo Agent.
+   - You should be prompted to log in or sign up.
+   - Confirm chat history is saved per user.
+
+7. **Create a Custom Agent**
+   - Use `/new` and enable any combination of features.
+   - Confirm the new agent works as expected.
+
+8. **Orchestrator Demo**
+   - Use `/orchestrator` to launch the multi-agent orchestrator.
+   - Try different workflow modes (parallel, sequential, voting, manager).
+
+---
+
+If any feature does not work as expected, check your API keys, SMTP config, and document paths. See the agent's description for its enabled features.
+
+---
+
+## Switching Between Agents
+
+- List all agents:
+  ```
+  /list
+  ```
+- Switch to an agent:
+  ```
+  /switch <agent_id>
+  ```
+  (You can use the first few characters of the agent ID.)
+
+---
+
+## Creating & Extending Agents
+
+- Create a new agent interactively:
+  ```
+  /new
+  ```
+- Extend agents in Python:
+  - Add actions: `agent.register_action(MyCustomAction())`
+  - Ingest documents: `agent.add_document('myfile.pdf')`
+  - Add new workflows or orchestration: see `state1/orchestrator.py`
+
+---
+
+## Configuration
+- **API Keys**: Replace `YOUR_OPENAI_API_KEY` in the agent configs or set the `OPENAI_API_KEY` environment variable.
+- **SMTP/Email**: Use an app password and correct SMTP server/port for email actions.
+- **APIs**: Add or edit API configs in the agent's `apis` dictionary.
+
+---
+
+## Advanced: Multi-Agent Orchestration
+- The Orchestrator agent supports `parallel`, `sequential`, `voting`, and `manager` workflows.
+- To try different workflows, edit the orchestrator agent config in `agents/orchestrator-demo.json` or in code.
+
+---
+
+## Contributing
+Pull requests, issues, and feature suggestions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) (if available) or open an issue on GitHub.
+
+---
+
+## License
+MIT License. See [LICENSE](LICENSE). 
