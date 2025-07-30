@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/mass_archive/__main__.py
+src/mass_archive.egg-info/PKG-INFO
+src/mass_archive.egg-info/SOURCES.txt
+src/mass_archive.egg-info/dependency_links.txt
+src/mass_archive.egg-info/entry_points.txt
+src/mass_archive.egg-info/requires.txt
+src/mass_archive.egg-info/top_level.txt

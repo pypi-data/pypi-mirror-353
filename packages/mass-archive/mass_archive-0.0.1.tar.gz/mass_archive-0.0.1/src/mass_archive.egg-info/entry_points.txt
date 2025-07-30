@@ -1,0 +1,2 @@
+[console_scripts]
+mass_archive = mass_archive.__main__:main

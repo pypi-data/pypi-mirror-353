@@ -1,0 +1,6 @@
+requests
+archiveis
+
+[dev]
+build
+twine

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mass_archive"
+version = "0.0.1"
+
+readme = "README.md"
+license = "GPL-3.0-only"
+
+maintainers = [
+    { email = "christian.heinrich@cmlh.id.au", name = "Christian Heinrich" }
+]
+
+keywords = [
+    "archive",
+    "archiveis",
+    "wayback"
+]
+
+dependencies = [
+    "requests",
+    "archiveis"
+]
+
+[project.optional-dependencies]
+dev = ["build", "twine"]
+
+[project.scripts]
+mass_archive = "mass_archive.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
