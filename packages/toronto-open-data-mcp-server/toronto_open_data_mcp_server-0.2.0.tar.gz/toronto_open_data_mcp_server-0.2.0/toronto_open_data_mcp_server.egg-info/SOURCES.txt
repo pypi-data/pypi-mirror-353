@@ -1,0 +1,10 @@
+LICENSE
+README.md
+main.py
+pyproject.toml
+toronto_open_data_mcp_server.egg-info/PKG-INFO
+toronto_open_data_mcp_server.egg-info/SOURCES.txt
+toronto_open_data_mcp_server.egg-info/dependency_links.txt
+toronto_open_data_mcp_server.egg-info/entry_points.txt
+toronto_open_data_mcp_server.egg-info/requires.txt
+toronto_open_data_mcp_server.egg-info/top_level.txt
