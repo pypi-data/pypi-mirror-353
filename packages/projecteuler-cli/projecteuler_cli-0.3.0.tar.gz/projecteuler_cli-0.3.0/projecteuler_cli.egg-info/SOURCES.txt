@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+projecteuler_cli/__init__.py
+projecteuler_cli/cli.py
+projecteuler_cli/fetch.py
+projecteuler_cli/storage.py
+projecteuler_cli.egg-info/PKG-INFO
+projecteuler_cli.egg-info/SOURCES.txt
+projecteuler_cli.egg-info/dependency_links.txt
+projecteuler_cli.egg-info/entry_points.txt
+projecteuler_cli.egg-info/requires.txt
+projecteuler_cli.egg-info/top_level.txt

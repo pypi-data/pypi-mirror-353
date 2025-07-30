@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projecteuler-cli"
+version = "0.3.0"
+description = "A tiny helper to fetch Project Euler problems, create boiler-plates, and track progress."
+readme = "README.md"
+authors = [{name="Arnav Kalekar", email="akalekar@purdue.edu"}]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = ["requests", "beautifulsoup4"]
+
+[project.scripts]
+projecteuler = "projecteuler_cli.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["projecteuler_cli*"]
