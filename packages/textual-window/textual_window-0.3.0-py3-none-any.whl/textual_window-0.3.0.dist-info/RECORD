@@ -1,0 +1,13 @@
+textual_window/__init__.py,sha256=KFy4gw-HGGY4PO3wGBSSiuZuWXTFa28Z47nby-ZGPm8,279
+textual_window/button_bases.py,sha256=xuxbky0X0Byc7mo6isVMpseGKEG6Kw6hpo92iGNaEfY,1900
+textual_window/demo.py,sha256=MLgm2lHVph3qBHRdHM-WoWMmjwzwgZL66QMeoLw_GRQ,10131
+textual_window/demostyles.tcss,sha256=jOkp0DzoT5VC7ioRbxyqhj-3MXeB4p-ODjFUE3ZW1M4,1364
+textual_window/manager.py,sha256=pQzy8YIxrm5Wlv-zHdHCRDdUSGkWTbLAkig25yd7ZMk,8091
+textual_window/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+textual_window/switcher.py,sha256=L1yXyBj5U-CCCRJ5uxnR-BaDmwMS4h32Ure_38rZbVc,5161
+textual_window/window.py,sha256=8x1HO_ivkMhDx7Be48Th7F6q5DFfGdKD7p4stFN21EU,42869
+textual_window/windowbar.py,sha256=dLg6eQsJx5fYlkIwY7XknfYNGr7M0PccW3IkHF2FjWg,14017
+textual_window-0.3.0.dist-info/METADATA,sha256=CKmD8x9tbSU_BS2LP0KvSODvLyvFPrvB99IpCvyCD-s,4214
+textual_window-0.3.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+textual_window-0.3.0.dist-info/entry_points.txt,sha256=Cqap3BFcRKBVDlrIo37FTu5PIdw-2kOaWWwZFx8WrK4,64
+textual_window-0.3.0.dist-info/RECORD,,
