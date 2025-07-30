@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: mcfp
+Version: 0.1.1
+Summary: A py -> mcfunction transformer
+License: MIT
+Keywords: minecraft,minecraft-commands,mcfunction
+Author: Yuyi2439
+Author-email: yuyi2439@qq.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Documentation, https://github.com/yuyi2439/mcfp
+Project-URL: Homepage, https://github.com/yuyi2439/mcfp
+Project-URL: Repository, https://github.com/yuyi2439/mcfp
+Description-Content-Type: text/markdown
+
+# Minecraft Function by Python
+
+A py -> mcfunction transformer
+
