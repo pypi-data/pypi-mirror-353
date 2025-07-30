@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+bbox_align/__init__.py
+bbox_align/bounding_box.py
+bbox_align/geometry.py
+bbox_align/main.py
+bbox_align/relationships.py
+bbox_align/utils.py
+bbox_align/vector.py
+bbox_align.egg-info/PKG-INFO
+bbox_align.egg-info/SOURCES.txt
+bbox_align.egg-info/dependency_links.txt
+bbox_align.egg-info/top_level.txt
+tests/test_bounding_box.py
+tests/test_geometry.py
