@@ -1,0 +1,3 @@
+[console_scripts]
+snake=auto_release_snake:cli.snake
+
