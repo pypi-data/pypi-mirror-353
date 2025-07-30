@@ -1,0 +1,3 @@
+[console_scripts]
+readeckbot=readeckbot.__main__:main
+
