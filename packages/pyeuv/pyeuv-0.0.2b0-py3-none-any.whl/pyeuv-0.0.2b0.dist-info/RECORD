@@ -1,0 +1,11 @@
+pyeuv/__init__.py,sha256=oQzTIcwkUkauvo25T6Lw3yTMbEjefVUtMoo8KyzULgs,34
+pyeuv/_misc.py,sha256=R4S8EdqFJqUBZ6vClUgiURYYMVWLS77LoIz08z20JoQ,387
+pyeuv/_pyeuv91.py,sha256=E06vWV4GMEmBsHzheuLHVFd9d0MU1JkhITSPuWgaKAo,10670
+pyeuv/_coeffs/euv91_bands_dataset.nc,sha256=nCTsi3GNKIl_48Q2ijBh-Lkphso4RaLnFh442WJfBuk,16969
+pyeuv/_coeffs/euv91_full_dataset.nc,sha256=QCqsn89Id6nzLyZfWqNyrL0FbPUjY5j5EdsnA5Nsn9E,19339
+pyeuv/_coeffs/euv91_lines_dataset.nc,sha256=L7KoCg7uMa8T1-TYaNiTSLXt9Limug5bHmFT_3nt29o,14214
+pyeuv-0.0.2b0.dist-info/licenses/LICENSE.txt,sha256=8NSL9BX6N9XhXlKpvQ40o-UqVLYyOr63_EfYicwEZNE,603
+pyeuv-0.0.2b0.dist-info/METADATA,sha256=ywsLBRb7Wfwr9Y7pKIR9sbo_J_r1k3ixhKXFWvkdSIs,751
+pyeuv-0.0.2b0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyeuv-0.0.2b0.dist-info/top_level.txt,sha256=Mk1uyu7ypKOmaliN5wAQM-qT68WlouOXO3XqsXZe0Wo,6
+pyeuv-0.0.2b0.dist-info/RECORD,,
