@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: abhicsbsml
+Version: 0.1
+Summary: All-in-one ML and data viz library
+Author-email: Abhishek Hiremath <warrnerjhon@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file

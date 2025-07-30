@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abhicsbsml"
+version = "0.1"
+description = "All-in-one ML and data viz library"
+authors = [{name = "Abhishek Hiremath", email = "warrnerjhon@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.7"
+
+[tool.setuptools]
+packages = ["abhicsbsml"]
