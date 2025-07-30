@@ -1,0 +1,11 @@
+array_api/__init__.py,sha256=ShXQBVjyiSOHxoQJS2BvNG395W4KZfqMxZWBAR0MZrE,22
+array_api/__main__.py,sha256=q7ioEaSRPLfP-_LCmwEZHb70urpE3zrzyBlaASxilLA,105
+array_api/cli.py,sha256=RSDcFm6oNar9J0hDAeWlFrqgXcGPsQ6tpzsNQkcVVZA,206
+array_api/main.py,sha256=j2h8YoaIyvMAosyxXlV3rlWEQ7x1yvnZWhdjVG4vXdU,82
+array_api/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+array_api-0.0.0.dist-info/licenses/LICENSE,sha256=DYN8V90MgNkoUDQWAhdh_oRFG4gX2GDK6-WOeQF2DoQ,11334
+array_api-0.0.0.dist-info/METADATA,sha256=AeLppozDsK9Swb2Y9yq4evxyMGbomn5AdkX1Il3a4ks,4153
+array_api-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+array_api-0.0.0.dist-info/entry_points.txt,sha256=Rcvv129V4IrNy91LIi6MOxOLT8k-_HRXzqiyc35nvs4,48
+array_api-0.0.0.dist-info/top_level.txt,sha256=roc0XqLC_hSfMrAd7za8bzt0IO71uLZlEGw3-YsOsfk,10
+array_api-0.0.0.dist-info/RECORD,,
