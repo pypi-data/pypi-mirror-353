@@ -1,0 +1,2 @@
+[console_scripts]
+mydjango = my_django_starter.main:main
