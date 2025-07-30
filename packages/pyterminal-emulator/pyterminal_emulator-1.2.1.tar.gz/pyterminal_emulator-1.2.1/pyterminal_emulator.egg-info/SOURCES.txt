@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.py
+pyterminal_emulator.egg-info/PKG-INFO
+pyterminal_emulator.egg-info/SOURCES.txt
+pyterminal_emulator.egg-info/dependency_links.txt
+pyterminal_emulator.egg-info/requires.txt
+pyterminal_emulator.egg-info/top_level.txt
