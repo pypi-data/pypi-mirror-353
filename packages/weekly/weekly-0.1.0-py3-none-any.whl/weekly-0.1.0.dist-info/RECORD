@@ -1,0 +1,11 @@
+weekly/__init__.py,sha256=1-XZb0ls7SsOZlOUioOVsKVIa0nHcSnTtjpETm21g4k,283
+weekly/analyzer.py,sha256=sA0ObaXJduMcKhmtdybtwFot5wcn7ZstdELjQAPaALE,7884
+weekly/cli.py,sha256=iEsXcbNDoaAFpj1JgUXzm1poRA4g1alCun0coDnR8Q8,3046
+weekly/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+weekly/reporter.py,sha256=0PkP8Zsum1r6fI0-LZEgFYVGNITFJIjlczD2UPV5OaQ,4787
+weekly-0.1.0.dist-info/licenses/LICENSE,sha256=PjF9MlCRUIQdP0gWlRImsstB64VLpN8T_DOCZcRurxA,1063
+weekly-0.1.0.dist-info/METADATA,sha256=phUoppHeibWN91VuOwQIYWrnJjNmqn2FQanBox1X128,4914
+weekly-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+weekly-0.1.0.dist-info/entry_points.txt,sha256=BYQIB5yxZv3u5NR3M3cAQNEMTUhh26W2ose1Q_DefpI,42
+weekly-0.1.0.dist-info/top_level.txt,sha256=ZsJy5ilboBlzcMfCZ4owp-BeYMQplHY1PRmleUyfsmY,7
+weekly-0.1.0.dist-info/RECORD,,
