@@ -1,0 +1,16 @@
+embedkit/__init__.py,sha256=PpajWxm8ewsQea60b8zC9x04R12xCHa9ocUc7maMLsM,7964
+embedkit/base.py,sha256=KsZ726LUCkXVuCKCSbTCbPYVCnRp_Ev7sUifFuI7mSc,4946
+embedkit/classes.py,sha256=uPEzfWKYhJFsK2pTXEb2IdRdCP5yuK-b8PMbtNTQsyI,656
+embedkit/config.py,sha256=EVGODSKxQAr46bU8dyORFunsfRuj6dnvtSqa4MxUZCo,138
+embedkit/models.py,sha256=kEqo9RDvY3fvFroy6K1GslALX56G2WplZ1cA3v9yNLk,995
+embedkit/utils.py,sha256=xqIjwkWDgDr1mCtbb5UbZo_Ci50griubxYJq3pSBv34,4560
+embedkit/providers/__init__.py,sha256=bYClXrSuiuU3Cu7psPUAazk8gtclBod8Te9TtD9t7fs,380
+embedkit/providers/cohere.py,sha256=5SOZka3IOvzjDCJvHIlHJZ0MQdqZIUH2AxEILR3mbMo,5656
+embedkit/providers/colpali.py,sha256=CFcwP36suHFLV_rzuhQ4ioAv8OujEeyY9dhT0vo06TA,6264
+embedkit/providers/jina.py,sha256=E74Mj4JsNqwsvhbMHPMsuV0obNmNKjUNnnSSMQRj6CI,4492
+embedkit/providers/qwen.py,sha256=yCyLp8EUX92h0kQsQx3saFZb5kYk2EsMBp9uKjVQXXY,4128
+embedkit/providers/snowflake.py,sha256=luUhRYI9Tr33p_VbMiFWHFOhRZAqX-0C9XY5C0qPQyg,4263
+embedkit-0.1.10.dist-info/METADATA,sha256=qEYNoM0lIgG5b2GjCcmL3Nb8relr4jNCLujKxGLOcZ8,4856
+embedkit-0.1.10.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+embedkit-0.1.10.dist-info/licenses/LICENSE,sha256=-g2Rad7b3rb2oVwOTwfMOIpscHT1zuaJoguamLRCBJs,1072
+embedkit-0.1.10.dist-info/RECORD,,
