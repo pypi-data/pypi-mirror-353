@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "overlink"
+version = "0.1.0"
+description = "Bridge between local PC and cloud GPU processing"
+authors = [
+    {name = "KhanhRomVN", email = "khanhromvn@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/KhanhRomVN/overlink"
+"Bug Tracker" = "https://github.com/KhanhRomVN/overlink/issues"
