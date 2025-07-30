@@ -1,0 +1,9 @@
+[project]
+name = "torch-archs"
+version = "0.1.2"
+description = "PyTorch vision and language architectures."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.4",
+]

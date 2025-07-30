@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+torch_archs.egg-info/PKG-INFO
+torch_archs.egg-info/SOURCES.txt
+torch_archs.egg-info/dependency_links.txt
+torch_archs.egg-info/requires.txt
+torch_archs.egg-info/top_level.txt
+torch_archs/base/patches.py
+torch_archs/base/attention/gqa.py
+torch_archs/language/moe.py
+torch_archs/tests/test_base/test_patches.py
+torch_archs/vision/vit.py
