@@ -1,0 +1,15 @@
+gdevtools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gdevtools/cli.py,sha256=bMToOsfNDFHOcAfjCm2xptQvMMGAsjdAvUD8Y3LD0Y8,152
+gdevtools/apis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gdevtools/apis/gitlab/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gdevtools/apis/gitlab/client.py,sha256=5ZCVLKHrf_3aOGlQAuiYMMXnMuTGb3VIHQC9Zmeo684,1285
+gdevtools/apis/gitlab/groups.py,sha256=h-liU1rthR4sEhzXuSnpUEycWiJVf7JMWbsXeTvsAnY,5246
+gdevtools/apis/gitlab/projects.py,sha256=-OXfZlQgv4EGXBMlLH5UkShft3jM42s-gPrsTpiiB6A,5017
+gdevtools/apis/gitlab/types.py,sha256=SjIdLrwu8vYTLvXkdtfoD4Kp7aj2JJIONmK03NkIKm0,1169
+gdevtools/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gdevtools/commands/gitlab/__init__.py,sha256=o5P0PQGefs8BzByH0ayMNf0jYEITK2XW-pXO6ejbaKU,130
+gdevtools/commands/gitlab/variables.py,sha256=pb5mbRZiE7kX-ucl0KmNjrtgcahr9mkD4qw80v3A_tw,2699
+gdevtools-0.1.0.dist-info/METADATA,sha256=9wUHRgCyU-syHFH5XX7ej2CjlT08Y8NmBYVsipAUA-k,1152
+gdevtools-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gdevtools-0.1.0.dist-info/entry_points.txt,sha256=b6yo33wZPxdTGI67KDHh_gulYHdqNo1dJgxdr0Tp1o8,48
+gdevtools-0.1.0.dist-info/RECORD,,
