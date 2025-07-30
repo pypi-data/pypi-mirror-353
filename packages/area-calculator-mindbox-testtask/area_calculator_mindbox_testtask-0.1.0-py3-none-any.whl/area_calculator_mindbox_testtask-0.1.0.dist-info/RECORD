@@ -1,0 +1,10 @@
+area_calculator/__init__.py,sha256=4OtjLyTP7HtVD30Ic37Rwga74A3zyc3tzGGcC6advb4,75
+area_calculator/validators.py,sha256=pk_ajfIrxFeDpAAoXcKPb5RJTkci9oLciaWom0lUsIM,564
+area_calculator/shapes/__init__.py,sha256=qvBmpQvQiaEylCT8trlkURilIXYVksa2TtJdi8DrOIs,61
+area_calculator/shapes/base.py,sha256=dCxXTbEHOFGOmerLr4DStFCV6N5SLz73RxtkDCVj19Y,105
+area_calculator/shapes/circle.py,sha256=pE0HM1iAKY4UFWEYyluF15eIZEkqc-wf3gI0tMKAZv8,277
+area_calculator/shapes/triangle.py,sha256=LmxlQ70ub_x618g6ReqJYIhaKjHDLzSh26jejBrFeME,925
+area_calculator_mindbox_testtask-0.1.0.dist-info/METADATA,sha256=JVHQIKkuWkNt4mz4x-xjCeWH-uxpFikj-GwnbCCgrMs,124
+area_calculator_mindbox_testtask-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+area_calculator_mindbox_testtask-0.1.0.dist-info/top_level.txt,sha256=iAXwnUGJ-4oPb7T8bplGA9wSZ7PTA45JysEVRUMejx0,16
+area_calculator_mindbox_testtask-0.1.0.dist-info/RECORD,,
