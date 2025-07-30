@@ -1,0 +1,9 @@
+README.md
+setup.py
+crgwordcounter.egg-info/PKG-INFO
+crgwordcounter.egg-info/SOURCES.txt
+crgwordcounter.egg-info/dependency_links.txt
+crgwordcounter.egg-info/entry_points.txt
+crgwordcounter.egg-info/top_level.txt
+wordcounter_cli/__init__.py
+wordcounter_cli/cli.py
