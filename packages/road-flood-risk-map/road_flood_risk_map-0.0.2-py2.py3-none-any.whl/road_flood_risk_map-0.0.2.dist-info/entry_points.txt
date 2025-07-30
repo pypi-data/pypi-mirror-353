@@ -1,0 +1,2 @@
+[console_scripts]
+road_flood_risk_map = road_flood_risk_map.cli:main
