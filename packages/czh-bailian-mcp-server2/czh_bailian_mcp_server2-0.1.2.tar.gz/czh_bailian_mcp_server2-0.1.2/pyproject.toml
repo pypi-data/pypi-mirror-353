@@ -1,0 +1,23 @@
+[project]
+name = "czh-bailian-mcp-server2"
+version = "0.1.2"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ecnuh", email = "1677792942@qq.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "bs4>=0.0.2",
+    "dashscope>=1.23.4",
+    "dotenv>=0.9.9",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.9.3",
+]
+
+[project.scripts]
+czh-bailian-mcp-server2 = "czh_bailian_mcp_server2:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
