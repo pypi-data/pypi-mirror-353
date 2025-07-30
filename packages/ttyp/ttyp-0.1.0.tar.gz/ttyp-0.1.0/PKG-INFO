@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: ttyp
+Version: 0.1.0
+Summary: CLI typing test
+License-Expression: MIT
+Requires-Dist: prompt-toolkit>=3.0.51
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# ttyp
+Typing test in your terminal.
+## Default Options
+```
+ttyp --language english --count 25
+```
