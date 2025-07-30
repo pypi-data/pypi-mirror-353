@@ -1,0 +1,2 @@
+[console_scripts]
+inclupp = inclupp.__main__:main
