@@ -1,0 +1,458 @@
+# places
+places:
+  outdoor:
+    community:
+      city:
+        - city_street
+        - alley
+        - buildings:
+      village:
+        - remote_village
+      buildings:
+        - ruins
+    misc:
+      - public_park
+      - porch
+      - public_baths
+      - outdoor_swimming_pool
+      - school
+      - penthouse
+      - construction_site
+    nature:
+      - canyon_edge
+      - beach_shore
+      - cherry_blossom_grove
+      - desert_dune
+      - forest_clearing
+      - frozen_lake
+      - glacier_crevasse
+      - meadow_field
+      - mangrove_swamp
+      - rice_terrace
+      - salt_flats
+      - volcanic_crater
+      - waterfall_edge
+      - zen_garden
+      - open_field
+      
+
+  indoor:
+    architecture:
+      - balcony
+      - rooftop
+      - stairway
+    room:
+      - basement
+      - attic
+      - kitchen
+      - bedroom
+      - bathroom
+      - home_office
+      - living_room
+      - laundry_room
+      - conference_room
+    gathering:
+      - anime_convention
+    public_places:
+      general:
+        - vip_lounge
+        - hospital
+        - library
+        - massage_parlor
+        - sauna
+        - hotel
+        - school
+        - strip_club
+        - club
+        - university
+        - asylum
+        - opera_box
+        - brothel
+        - temple
+        - mall
+        - indoor_swimming_pool
+        - barbershop
+        - anti-cafe
+        - arcade
+        - art_gallery
+        - movie_theater
+        - theater_stage
+        - dance_floor
+        - skate_park
+        - aquapark
+        - bowling
+      eatery:
+        - restaurant
+        - coffee_shop
+        - cafe
+        - dinner
+        - food_court
+        - bistro
+        - pizzeria
+        - tavern
+      shops:
+        - storefront
+        - anime_figure_shop
+        - toy_store
+        - geek_shop
+        - cake_shop
+        - candy_shop
+        - small_store
+        - manga_cafe
+    work:
+      - studio
+      - bank_vault
+      - office
+      - workshop
+      - laboratory
+      - warehouse
+    specific:
+      - cave
+      - bdsm_dungeon
+      - hikikomori_hideout
+      - loner_room
+      - space_capsule
+      - zero-gravity_pod
+      - mansion
+      - circus_tent
+  transport:
+    car:
+      - car_interior
+    train:
+      - train_cabin
+    misc:
+      - helicopter_seat
+      - horse_carriage
+      - gondola_boat
+      - ship
+      - luxury_yacht
+      - private_jet
+      - car_backseat
+
+
+  abstract/immersive:
+    - floating 
+    - virtual_reality
+    - hologram 
+    - cyberpunk_alley
+    - neon_rooftop
+    - liminal_spaces
+    - uncanny_valley
+
+objects:
+  placed_on:
+  in_building:
+    general:
+      - window_seal
+    living:
+      - hammock
+      - bed
+      - mattress
+      - futon
+      - couch
+    kitchen:
+      - stove
+      - counter
+    office:
+      - desk
+      - table
+      - chair
+  outside:
+    - hammock
+    - swing
+    - window_seal
+  leaned_on:
+    inside:
+      - wall
+      - door
+      - doorframe
+      - glass_wall
+    outside:
+      - wall
+      - tree
+      - door
+      - doorframe
+      - fence
+      - metal_fence
+
+  placed_in:
+    inside:
+      general:
+        - closet
+        - vault
+        - locker
+        - trunk
+        - drawer
+      sterile:
+        - bathtub
+        - shower_stall
+      bathroom:
+    outside:
+      - cellar
+
+general:
+  - on_the_floor
+  - leaned_against_a_wall
+  - behind
+
+surrounded_by:
+  - curious_children
+  - curious_toddlers
+  - curious_teens
+  - curious_school_kids
+
+# objects
+
+  
+
+  
+  
+  
+
+places_for_sex_complete:
+ - abandoned_warehouse
+ - agains_a_glass_wall
+ - against_a_metal_fence
+ - against_a_tree
+ - against_a_wall
+ - against_fence
+ - against_the_door
+ - against_the_doorframe
+ - alleyway_wall
+ - anime_convention
+ - anime_figure_shop
+ - anti-cafe
+ - aquapark
+ - arcade_booth
+ - art_gallery
+ - attic_mattress
+ - balcony
+ - bank_vault
+ - bar
+ - barbershop
+ - basement_couch
+ - bathroom_floor
+ - bathtub
+ - bdsm_dungeon
+ - beach_shore
+ - bedroom
+ - behind_storefront
+ - behind_the_tree
+ - beside_the_bed
+ - black_leather_couch
+ - bowling_alley
+ - cake_shop
+ - candyshop
+ - canyon_edge
+ - car_backseat
+ - car_interior
+ - castle_tower
+ - cave_interior
+ - champagne_cellar
+ - cherry_blossom_grove
+ - christian_church
+ - circus_tent
+ - closet_space
+ - coffee_shop
+ - computer_club
+ - on_a_computer_desk
+ - conference_room
+ - construction_site
+ - crystal_cave
+ - cyber_brothel
+ - cyberpunk_alley
+ - dance_floor
+ - derelict_asylum
+ - desert_dune
+ - dining_table
+ - dirty_room
+ - disco_roller_rink
+ - dressing_room
+ - dressroom
+ - dungeon_chamber
+ - elevator
+ - ferris_wheel
+ - fire_escape
+ - floating_city
+ - floating_on_a_space_station
+ - floral_garden
+ - food_court
+ - forest_clearing
+ - frozen_lake
+ - futuristic_clean_white_laboratory
+ - garage
+ - garden
+ - geek_shop
+ - ghost_town
+ - glacier_crevasse
+ - glass_bridge
+ - glass_table
+ - gondola_boat
+ - gothic_bedroom
+ - guestroom_couch
+ - gym_dressroom
+ - gym_locker
+ - gym_shover
+ - hammock_swing
+ - hanging_from_a_swing
+ - hanging_from_a_tree
+ - helicopter_seat
+ - hiding
+ - hikikomori_hideout
+ - hologram_club
+ - home_office
+ - horse_carriage
+ - hospital
+ - hospital_bed
+ - hot_air_balloon
+ - hotel_balcony
+ - ice_hotel
+ - in_a_kindergarten
+ - in_a_sandbox
+ - in_a_tight_place
+ - in_the_closet
+ - in_the_locker
+ - in_the_open
+ - in_the_public_in_a_kindergarten
+ - japanese_onsen
+ - japanese_temple
+ - kitchen_counter
+ - kitchen_floor
+ - kitchen_table
+ - laboratory
+ - lakeside_dock
+ - laundry_room
+ - lawn, on_the_grass
+ - library_shelves
+ - library_stacks
+ - library_table
+ - living_room
+ - loner_hideout
+ - loner_room
+ - luxury_penthouse
+ - luxury_yacht
+ - manga_cafe
+ - mangrove_swamp
+ - mansion
+ - mansion_staircase
+ - massage_parlor
+ - massage_table
+ - meadow_field
+ - medieval_tavern
+ - moorish_palace
+ - movie_theater
+ - near_a_metal_fence
+ - near_window
+ - neon_arcade
+ - neon_rooftop
+ - night_bar
+ - nightclub_bathroom
+ - oasis_pool
+ - office
+ - office_desk
+ - on_a_bed_in_a_kindergarten
+ - on_a_chair
+ - on_a_computer_chair
+ - on_a_desk_inside_of_kindergarten
+ - on_a_swing
+ - on_a_tree
+ - on_an_office_chair
+ - on_the_fence
+ - on_the_floor
+ - on_the_stove
+ - on_the_window_frame
+ - on_the_window_seal
+ - opera_box
+ - overgrown_mall
+ - parking_garage
+ - pastel_bedroom
+ - pastel_lolita_bed
+ - photography_studio
+ - pirate_ship
+ - pirate_tavern
+ - post_apocalyptic_interior
+ - post_apocalyptic_open_field
+ - post_apocalyptic_ruins
+ - post_apocalyptic_steet
+ - private_jet
+ - public_mall
+ - public_park
+ - restaurant_table
+ - rice_terrace
+ - roman_baths
+ - roman_orgy
+ - rooftop_garden
+ - rooftop_terrace
+ - salt_flats
+ - sauna
+ - school
+ - school_changeroom
+ - school_desk
+ - school_gym
+ - school_hallway
+ - school_rooftop
+ - school_room
+ - school_storeroom
+ - school_swimming_pool
+ - school_window
+ - sewer_tunnel
+ - shower_stall
+ - skate_park
+ - skyscraper_window
+ - small_store
+ - snowy_cabin
+ - soviet_porch_of_the_building
+ - soviet_street
+ - space_capsule
+ - stair_hall
+ - steam_train
+ - strip_club
+ - subway_station
+ - supermarket
+ - surrounded_by_curious_boys_teenagers
+ - surrounded_by_curious_children
+ - surrounded_by_curious_children_girls 
+ - surrounded_by_curious_girls
+ - surrounded_by_curious_girls_teenagers
+ - surrounded_by_curious_preschoolers
+ - surrounded_by_curious_school_kids
+ - surrounded_by_curious_teens
+ - surrounded_by_curious_toddler_girls 
+ - surrounded_by_curious_toddlers
+ - swimming_pool
+ - swingers_club
+ - tanning_bed
+ - teaching_children_girls 
+ - teaching_children_girls_preschoolers
+ - teaching_children_girls_teenagers
+ - teaching_toddler_girls 
+ - temple_ruins
+ - theater_stage
+ - throne_room
+ - toilet
+ - toy_store
+ - train_cabin
+ - train_interior
+ - training_hall
+ - trampoline_bounce
+ - trapped_in_a_tight_place
+ - treehouse_loft
+ - under_a_waterfall
+ - under_computer_desk
+ - under_the_bed
+ - under_the_table
+ - underwater_hotel
+ - university
+ - vegetable_garden
+ - velvet_lounge
+ - viking_longship
+ - vip_lounge
+ - virtual_reality
+ - volcanic_crater
+ - waterfall_edge
+ - wine_cellar
+ - workshop
+ - yacht_cabin
+ - zen_garden
+ - zero-gravity_pod
+ 

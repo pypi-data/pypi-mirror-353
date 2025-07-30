@@ -1,0 +1,129 @@
+# activities:
+#   teaching:
+#     - Teaching children
+#     - Teaching preschoolers
+#   sex:
+#     position:
+#       - piledriver
+#       - reverse suspended congress
+#       - full nelson
+#       - mating press
+#       - missionary
+#       - anvil position
+#       - folded
+#       - top-down bottom-up
+#       - suspended in the air
+    
+#     types:
+#       - rough sex
+#       - sex
+#       - oral
+#       - vaginal penetration
+#       - vaginal insertion
+#       - anal
+#       - object insertion
+#       - futanari masturbation
+#       - masturbation
+#   penis:
+#     - cumming, shooting cum
+#   action:
+#     - motion lines,  movement lines, (impact lines), 
+
+# bouncing breasts
+
+# Biting own tail
+# tail wrap
+# tailjob
+# tail masturbation
+
+# { twitching penis
+# bouncing penis},
+
+# hands on butt
+# masturbation
+#  ass smack| spreading
+# leg grab
+# arm grab},
+
+# cum in ass
+# cum on ass},
+
+
+# emotion:
+#   angry
+#   annoyed
+#   happy
+#   scared
+#   surprised
+#   bored
+#   orgasm
+#   sleeping
+#   disgust
+#   excited
+#   hypnosis
+#   hate
+#   naughty face 
+#   embarrassed, face blush
+#   grin
+#   smug
+#   licking lips
+#   confused
+#   despair
+#   disappointed
+#   exhausted
+#   envy
+#   flustered
+#   frustrated
+#   furrowed brow
+#   guilt
+#   nervous
+#   nosebleed
+#   pain
+#   rape face
+
+#   small_sweatdrop
+
+# bouncing belly
+
+# {on back | on side | standing | leaning forward, leaning to the side | On stomach},  
+
+# {(scared|angry|hate)::{0.3::tears, crying}},
+# {(angry|hate)::clenched teeth, scowl},
+# {(embarrassed|face blush)::puffy cheeks},
+# {(disgust)::disdain},
+# {(surprised)::{0.5::panicking}},
+
+# self masturbating, futanari masturbation, masturbation
+# <lora:Autofellatio_v3.0(NAI_ROUWEI):0.6>, autofellatio
+
+# penis_state:
+#       - erect
+#       - half-erect
+#       - limp penis
+#       - flaccid
+#       - tucked penis
+#       - girthy penis
+
+# eyes_position:
+#         - eyes open
+#         - rolling eyes
+#         - crazy eyes
+
+#  mouth:
+#     closed mouth
+#     open mouth
+
+# 0.2::cuffs | 0.2::handcuffs, hands cuffed | 0.1::(pillory:1.4) | 0.1::(stocks:1.4), ({metal stocks|plastic stocks}:1.9) | 0.1::spreader bar
+
+#       position:
+#         - "{
+#             tongue out
+#             | licking lips
+#             | licking tip
+#           }"
+#   {[_\\s]?tail[s]?:: {0.2::{Biting_own_tail | tail_wrap | tailjob | tail_masturbation}}},
+# {piledriver | reverse_suspended_congress | full_nelson | mating_press | missionary | anvil_position | folded | top-down_bottom-up | suspended_in_the_air}
+#  { {0-1$$hands_in_the_air | hands_above_head | hands_reaching_towards_viewer, outstretched_arms | outstretched_arm | hands_up | dangling_arms | spread_arms| arm_at_side | arms_at_sides | reaching | shrugging}, {curled_fingers | spread_fingers | hand_piece_sign |  holding_condom | holding_sextoy | holding_smartphone | holding_gamepad | holding_underwear } | hands_on_breasts | hands_on_feet | hands_spreading_anus, spread_anus | self_masturbating, futanari_masturbation, masturbation | {1::<lora:Autofellatio_v3.0(NAI_ROUWEI):0.6>}, autofellatio | licking_tip | hands_on_own_hips | hands_on_own_face | hands_on_own_chest | hands_on_own_knees  | hands_on_own_cheeks | hands_on_own_crotch  | hands_on_own_shoulders | hands_on_own_thighs  | belly_grab | holding_hands | hands_behind_back},
+# { legs_together,  spread_legs | legs_over_head  | crossed_legs | legs_behind_head | bend_knees | knees_to_chest | knees_together_feet_apart | knees_apart_feet_together | leg_hold | crossed_ankles | leg_lift | split | knees_up | pigeon-toed | <lora:legdangle:0.2>, dangling_legs, leg_dangle}, {toes_up| toes | wiggling_toes |  toe_scrunch, curled_toes | dorsiflexion | plantar_flexion} , {0-2$$long_toenails | sharp_toenails}, {0-1$$toenail_polish },
+
+# bandages | oxygen_mask | arm_cast

@@ -1,0 +1,498 @@
+person:
+  age:
+    - "{
+        toddler
+        | young
+        | teen
+        | milf
+      }"
+  head:
+    horns:
+      types:
+        - "{
+            horns
+            | curved_horns
+            | single_horn
+            | small_horns
+          }"
+    hair:
+      size:
+        - "{
+            very_short_hair
+            | short_hair
+            | long_hair
+            | absurdly_long_hair
+          }"
+      appearance:
+        - "{
+            pixie_cut
+            | bob_cut
+            | inverted_bob
+            | bowl_cut
+            | undercut
+            | flipped_hair
+            | wolf_cut| buzz_cut
+            | side_shaved
+            | hair_over_eyes
+            | twintails
+            | pony_tail
+            | braid
+            | bob_cut
+            | bangs
+            | topknot
+            | braided_hair_rings
+          }"
+      color:
+        - "{
+            multicolored_hair
+            | colored_inner_hair
+            | colored_tips 
+            | gradient_hair
+            | colored_hair
+            | streaked_hair
+          }"
+    makeup:
+      types:
+        - "{
+            heavy_makeup
+            | makeup
+            | eye_shadow
+            | eyeliner
+            | lipstick
+            | face_paint
+          }"
+      size:
+      appearance:
+      color:
+    face_features:
+      - "{
+          face_blush
+          | slightly_long_nose
+          | wide_face
+          | long_face
+          | small_eyes
+          | big_eyes
+          | small_nose
+          | forehead
+          | very_big_eyes
+          | huge_eyes
+          | slanted_eyes
+          | downturned_eyes 
+          | upturned_eyes
+          | bags_under_eyes
+          | beauty_mark
+          | freckles
+        }"
+    brows:
+      types:
+        - "{
+            thick_eyebrows
+            | thick_eyebrows
+            | thin_eyebrows
+            | v-shaped_eyebrows
+          }"
+      size:
+      appearance:
+      color:
+    pupil:
+      types:
+        - "{
+            symbol-shaped_pupils
+            | heart-shaped_pupils
+            | bright_pupils
+            | slit_pupils
+            | star_shaped_pupils
+            | cross_shaped_pupils
+            | horizontal_pupils
+            | x-shaped_pupils
+          }"
+      size:
+      appearance:
+      color:
+    eyelashes:
+      size:
+        - "{
+            eyelashes
+            | long_eyelashes
+          }"
+      appearance:
+        - "{
+            thick_eyelashes
+            | white_eyelashes
+            | colored_eyelashes
+          }"
+        
+      sclera:
+        - "{
+            colored_sclera
+            | black_sclera
+            | glowing_eyes
+            | blind
+          }"
+    ears:
+      types:
+        - "{
+            animal_ears, no_human_ears
+            | pointy_ears
+            | very_long_ears
+          }"
+
+    tongue:
+      size:
+        - "{
+            medium_tongue
+            | small_tongue
+            | fat_tongue
+            | long_tongue
+            | very_long_tongue
+          }"
+
+      position:
+        - "{
+            tongue_out
+            | licking_lips
+            | licking_tip
+          }"
+      appearance:
+        - "{forked_tongue
+            | tongue_piercing
+            | colored_tongue
+          }"
+    teeth:
+      - "{
+          sharp_teeth
+          | teeth
+          | fangs
+          | long_fangs
+        }"
+  body:
+    size:
+      - "{
+          midget
+          | very_short
+          | short
+          | tall
+          | very_tall
+          | giantess
+        }"
+    appearance:
+      - "{
+          emaciated
+          | skinny
+          | petite
+          | muscular
+          | chubby
+          | plump
+        }"
+    skin:
+      color:
+        - "{
+            very_light_skin
+            | dark_colored_skin
+            | brown_skin
+            | black_skin
+            | colored_skin
+            | pure_white_skin
+          }"
+      features:
+        - "{
+            body_blush
+            | body_freckles
+            | body_markings
+            | tattoo
+            | sweat
+            | wet_skin
+            | oily_skin
+            | shiny_skin
+          }"
+      appearance:
+        - "{
+            tanned_skin, {0-1$$tanned_lines}
+            | colored_scales
+            | scales
+            | furry_female, fur
+            | doll_joints, plastic_skin, rubbery_skin
+          }"
+
+    wings:
+      types:
+        - "{
+            bat_wings
+            | moth_wings
+            | angel_wings
+            | demon_wings
+            | feathered_wings
+            | bird_wings
+            | insect_wings
+            | dragon_wings
+            | fake_wings
+            | metal_wings 
+          }"
+
+      color:
+        - "{
+            multicolored_wings
+            | gradient_wings
+          }"
+
+      appearance:
+        - "{
+            mini_wings
+            | oversized_wings
+            | transparent_wings
+            | torn_wings
+            | spiked_wings
+          }"
+
+    shoulders:
+    arms:
+      appearance:
+        - "{
+            0.05::arm_wings}
+            | gradient_arms
+           },
+            {0.1::armpits} 
+          " # INTRUSIVE
+    hands:
+      size:
+        - "{small_hands}"
+      appearance:
+        - "{
+            gradient_hands
+          }"
+    nails:
+      size:
+        - "{long_fingernails}"
+      appearance:
+        - "{
+            sharp_fingernails
+          }"
+      color:
+        - "{
+            multicolored_nails
+            | nail_polish
+          }"
+    tits:
+      size:
+        - "{
+            flat_chest
+            | small_breasts
+            | medium_breasts
+            | big_breasts
+          }"
+      appearance:
+      
+    nipples:
+      appearance:
+        - "{
+            puffy_nipples 
+            | perky_nipples
+            | perky_breasts
+            | pointy_breasts
+            | inverted_nipples
+          }"
+
+    butt:
+      size:
+        - "{
+            flat_ass
+            | big_butt
+            | narrow_hips
+            | bubble_butt
+            | thick_thighs
+          }"
+      appearance:
+    legs:
+      size:
+        - "{
+            very_short_legs
+            | short_legs
+            | long_legs
+            | very_long_legs
+          }"
+      appearance:
+        - "{
+            skinny_legs
+            | thin_legs
+            | slim_legs
+          },
+          {0.1::gradient_legs}
+          "
+    feet:
+      size:
+        - "{
+            tiny_feet
+            | small_feet
+            | long_feet
+          }"
+
+      appearance:
+        - "{
+            gradient_feet
+          }"
+    toes:
+      size:
+        - "{
+            long_toenails
+          }"
+      color:
+      appearance:
+        - "{
+            toenail_polish
+            | sharp_toenails
+          }"
+
+    tail:
+      types:
+        - "{
+            tail
+            | cat_tail
+            | fox_tail
+            | wolf_tail
+            | fake_tail
+            | dog_tail
+            | shark_tail
+            | bird_tail
+            | squirrel_tail
+            | mechanical_tail
+            | racoon_tail
+            | animal_tail
+            | lizard_tail
+            | dragon_tail
+            | mouse_tail
+            | demon_tail
+            | fish_tail
+          }"
+        
+      appearance:
+        - "{
+            multiple_tails
+            | two_tails
+            | multicolored_tail
+            | gradient_tail
+          }"
+
+      size:
+          - "{
+              Short_tail
+              | long_tail
+            }"
+
+      color:
+    penis:
+      size:
+        - "{
+            small_penis
+            | big_penis
+            | huge_penis
+            | large_penis
+            | gigantic_penis
+          }"
+
+      types:
+        - "
+            curved_penis
+            | fat_penis
+          "
+        
+      appearance:
+        - "{
+            veiny_penis
+            |swollen_penis
+            |spiked_penis
+          }"
+    pubic_hair:
+      - "{
+          0.4::{{1.2::little|thin|1.5::trimmed|medium|0.8::sparse|0.2::bushy} female_pubic_hair}
+        }"
+  mandatory:
+    - "{
+        {animal::strong_animal_features}:{animal::furry}|{animal::subtle_animal_features}},
+        {(chubby|plump)::belly}, {muscular:{0.3::abs},{0.5::narrow_waist}}, {(emaciated|skinny)::{0.8::ribs}, hip_bones, narrow_waist}, {petite::{0.3::ribs}{0.4::narrow_waist}}
+        {0.4::groin_tendon},
+        {animal_ears::{0.6::animal_ears_fluff},
+        {gradient (arms|legs|hands|feet)::<lora:Gradient_Skin_V3:0.2>},
+      }"
+
+  piercing:
+    - "{{piercing | 0.6::multiple_piercings}}"
+  piercing_helpers:
+    - "__person/piercing_types__,
+        __person/piercing_face__,
+        __person/piercing_ears__,
+        __person/piercing_body__,
+        __person/piercing_nipples__,
+        {0.4::{animal_ears::animal_ear_piercing}},
+        {0.4::{tail::tail_piercing}},
+        {0.4::{[_\\s]?horn[s]?::horn_piercing}}
+      "
+
+  piercing_types:
+    - "{piercing::
+        {
+          face_piercing,
+          | ear_piercing
+          | (body_piercings:0.1),
+          | nipple_piercing
+          | pussy_piercing, {0.5::clitoris_piercing}
+          | penis_piercing, {0.5::frenulum_piercing}
+        },
+        {multiple_piercings::
+          {
+            2-6$$face_piercing,
+            | ear_piercing
+            | (body_piercings:0.1)
+            | nipple_piercing
+            | pussy_piercing, {0.5::clitoris_piercing}
+            | penis_piercing, {0.5::frenulum_piercing}
+          }
+        }
+      }"
+  piercing_face:
+    - "{piercing::
+        {
+          nose_piercing, {0-2$$bridge_piercing | nose_ring}
+          | mouth_piercing
+          | cheek_piercing
+          | lip_piercing, {0.3::labret_piercing}
+          | chin_piercing
+          | eyebrow_piercing
+        },
+        {multiple_piercings::
+          {
+            2-6$$nose_piercing, {0-2$$bridge_piercing | nose_ring}
+            | mouth_piercing
+            | cheek_piercing
+            | lip_piercing, {0.3::labret_piercing}
+            | chin_piercing
+            | eyebrow_piercing
+          }
+        }
+      }"
+  piercing_ears:
+    - "{ear_piercing::{
+        0-6$$helix_piercing
+        | conch_piercing
+        | rook_piercing
+        | industrial_piercing
+        | spiked_ear_piercing
+        | barbell_ear_piercing
+      }}
+      {ear_piercing::{
+        2-6$$helix_piercing
+        | conch_piercing
+        | rook_piercing
+        | industrial_piercing
+        | spiked_ear_piercing
+        | barbell_ear_piercing
+      }}"
+  piercing_body:
+    - "{body_piercings::{
+          collarbone_piercing
+          | navel_piercing
+      }}"
+
+  piercing_nipples:
+    - barbell_nipple_piercing, nipple_bar
+    - nipple_piercing
+    - nipple_jewelry

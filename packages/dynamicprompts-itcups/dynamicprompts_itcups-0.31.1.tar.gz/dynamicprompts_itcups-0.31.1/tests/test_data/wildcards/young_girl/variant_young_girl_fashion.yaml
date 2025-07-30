@@ -1,0 +1,83 @@
+# use - " {fully_naked | partialy_naked, {bottomless | topless_female}| clothed_sex}
+template_fashion:
+  first_girl:
+    - "
+        {(clothed_sex|partialy_naked)::
+          {
+            {0.5::__**/young_girl_clothing_1/style__},
+            {{0.3::__**/young_girl_clothing_1/arms__} | 0.5::{0.3::__**/young_girl_clothing_1/rings_only__}},
+            {0.1::__**/young_girl_clothing_1/gloves__},
+            {0.1::__**/young_girl_clothing_1/head__},
+
+            {0.1::see-through_clothes},
+            {0.5::see-through_cleavage},
+            {0.05::{bare_shoulders|bare_hips|bare_back|bare_legs}},
+            {0.5::barefoot | 0.4::one_shoe_off | 0.1::shoe_dangle }
+            {^((?!barefoot).)*$::
+              
+              {__**/young_girl_clothing_1/feet/footwear/**__}
+            }
+            {barefoot::
+              {0.1::__**/young_girl_clothing_1/feet/toes__}
+            }
+            {
+              {
+                0.6::__**/young_girl_clothing_1/clothes_sexy_light__
+                | __**/young_girl_clothing_1/dress_light__
+              },
+              |
+              {
+                {clothed_sex::
+                  {
+                    0.1::__**/young_girl_clothing_1/clothes_sexy_heavy__
+                    |
+                      {0.5::__**/young_girl_clothing_1/legs_underwear__},
+                      {0.5::__**/young_girl_clothing_1/legs_under__},
+                      {0.5::__**/young_girl_clothing_1/legs_over__},
+                      {0.5::__**/young_girl_clothing_1/legs_over_cover__},
+                      {{0.2::__**/young_girl_clothing_1/coat__} | __**/young_girl_clothing_1/torso_over__},
+                      {0.5::__**/young_girl_clothing_1/torso__},
+                      {0.4::__**/young_girl_clothing_1/torso_underwear__},
+                  }
+                }
+                {partialy_naked::
+                  {^((?!bottomless).)*$::
+                    {0.5::__**/young_girl_clothing_1/legs_underwear__},
+                    {0.5::__**/young_girl_clothing_1/legs_under__},
+                    {0.2::__**/young_girl_clothing_1/legs_over__},
+                    {0.1::__**/young_girl_clothing_1/legs_over_cover__},
+                  },
+                  {^((?!topless_female).)*$::
+                    {{0.2::__**/young_girl_clothing_1/coat__} | {0.4::__**/young_girl_clothing_1/torso_over__}},
+                    {0.5::__**/young_girl_clothing_1/torso__},
+                    {0.6::__**/young_girl_clothing_1/torso_underwear__},
+                  }
+                  {0.15::{1-2$$__**/young_girl_clothing_1/naked_accessories__}}
+                }
+              }
+            }
+          | (__girl_sexual_themes/professions__:1.4) attire,
+          }
+          
+        }
+        {fully_naked::
+          {0.3::__**/young_girl_clothing_1/rings_only__},
+          {0.15::{1-4$$__**/young_girl_clothing_1/naked_accessories__}}
+        }
+
+
+        {0.2::__**/young_girl_clothing_1/neck__},
+        {0.4::__**/young_girl_clothing_1/earwear__},
+        {0.4::__**/young_girl_clothing_1/hair__},
+        {0.2::__**/young_girl_clothing_1/eyewear__},
+
+        {[_\\s]?horn[s]?::__**/young_girl_clothing_1/horn_specific__},
+        {[_\\s]?tail[s]?::__**/young_girl_clothing_1/tail_specific__},
+
+        
+        
+
+        
+
+      "
+

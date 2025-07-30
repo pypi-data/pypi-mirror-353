@@ -1,0 +1,37 @@
+root_negative_prompts:
+  sex_1:
+    - "
+      SimpleNegativeV3, score_6, score_5, score_4,
+      worst_quality, low_quality, bad_quality, jpeg_artifacts, scan_artifacts, lossy-lossless, lowres, overexposed,
+      poorly_drawn, worst_aesthetic, unfinished, mismatched_lighting,  worst_detail, anatomical_nonsense, artistic_error,
+      greyscale, outline, sketch, watermark, signature, extra_digits, text, patreon_username,
+      disfigured, deformed, mutated, bad_anatomy, extra_limbs, extra_fingers, extra_arms, extra_legs, floating_limbs, disembodied_hands, detached_body_parts, mutated_hands, bad_hands, deformities, crooked, ugly, three_legs, misplaced_anatomy, anatomical_error, incorrect_genitalia, unnatural_posture, twisted_torso, limbs_without_body, hands_coming_out_of_screen, amputated_limbs, severed_arms, severed_legs, limbs_growing_from_edges, impossible_limb_placement, unnatural_limb_perspective, flying_fingers, phantom_limbs, distorted_limbs, malformed_joints, asymmetrical_eyes, cloned_face, malformed_face, poorly_drawn_face, lack_of_detail, bad_eyes, disembodied_penis, deformed_penis, deformed_faces, badly_drawn_eyes, gross_proportions, malformed_hands, missing_fingers, cross-eyed, disconnected_limbs, distorted_fingers, fused_body_parts, nipples_over_clothing, upside-down_face, penis_coming_out_of_anus, penis_from_vagina, unnatural_stomach_bulge, not_proportional_stomach_bulge, duplicate_artifacts,
+      crooked_teeth, misaligned_teeth, yellow_teeth, uneven_teeth, rotten_teeth, missing_teeth, blurry_teeth, distorted_mouth, unnatural_smile, bad_dental_hygiene, (floating_penis:1.2),
+      front_tail, artificial_vagina_blends_with_penis, penis_grows_out_of_vagina, tail_grows_out_of_vagina, tail_grows_out_of_anus, (vaginal_tail:1.4), (anal_tail:1.4), tail_insertion, tail_masturbation, butt_plug_tail,
+      censored, mosaic_censoring, bar_censor, convenient_censoring, heart_censor, censor, lipstick_mark_on_penis, 
+
+      deep_negative_pony, wavy_hair, source_3D,
+      tunnel_vision, fisheye_effect, warped_perspective, claustrophobic, 360 view, wide-angle_distortion,
+      guro, blood,scat,
+      simple_background, blurry_foreground, blurry, out_of_focus,
+      wooden_stocks, wooden_pillory, pipes, machinery,
+      1boy, male, man, man_hands,  
+      standing_nude, just_naked, posing, no_sex, just_nude, 
+      safe, SFW, no_sex, no_penetration, no_intercourse, no_masturbation, just_showing, no_action,
+      (floating_objects:1.2),
+      missing_limbs, flat_horns, pasted-on,  
+      floating_horns, floating_tail, (horn_hairband:1.4), 
+      missing_skin_details, smooth_horn_base , missing_tail_details, smooth_tail_base,
+      condom_on_penis, 
+      belly_tit, x-ray,  fully_clothed,
+      rec_frame, recording_frame, extreme_close-up, macro_shot, face_only,
+      lipstick_mark_on_penis ,
+      colored_fluids_on_penis, unnatural_penis_liquids, melted_condom_effect, neon_penis_discharge,
+      penis_with_unnatural_wetness, glossy_penis_liquids, surreal_penis_liquids, glowing_cum, exaggerated_fluids,
+      (bowl:1.9),
+      eggs
+      BREAK
+      masculine, manly,man, 1boy,
+      BREAK
+      man,1boy, manly, pubic_hair, 
+      "
