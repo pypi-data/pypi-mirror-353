@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "git2wp"
+version = "0.1.0"
+description = "A command-line tool for publishing Git repository changes to WordPress."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "git2wp"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.1.7"
+python-dotenv = "^1.0.0"
+requests = "^2.31.0"
+rich = "^13.7.0"
+
+[tool.poetry.scripts]
+git2wp = "git2wp.__main__:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
