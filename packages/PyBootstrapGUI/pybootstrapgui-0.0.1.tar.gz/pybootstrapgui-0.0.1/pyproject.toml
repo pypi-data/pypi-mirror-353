@@ -1,0 +1,29 @@
+[build-system]
+requires = [
+  "setuptools",
+  "setuptools-scm",
+] # setuptools-scm works with git adds all tracked files to the package
+# requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PyBootstrapGUI"
+version = "0.0.1"
+authors = [{ name = "Roman Smolnyk", email = "poma23324@gmail.com" }]
+description = "Package to build bootstrap html"
+readme = "README.md"
+requires-python = ">=3.8" # Optional
+keywords = ["bootstrap", "html", "builder", "gui"] # Optional
+classifiers = [ # Optional
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+# [tool.setuptools.package-data]
+# pybootstrap_builder = ["static/*"]
+
+dependencies = []
+
+[project.urls] # Optional
+Homepage = "https://github.com/roman-smolnyk/python-pybootstrapgui"

@@ -1,0 +1,10 @@
+PyBootstrapGUI
+pywebview
+pyquery
+jinja2
+aiohttp
+
+sourcetypes
+
+build
+twine
