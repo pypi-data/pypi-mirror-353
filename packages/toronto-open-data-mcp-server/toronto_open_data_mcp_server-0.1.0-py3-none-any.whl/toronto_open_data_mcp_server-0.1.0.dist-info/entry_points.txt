@@ -1,0 +1,2 @@
+[console_scripts]
+toronto-open-data-mcp-server = main:main
