@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: junLib
+Version: 0.1.1
+Summary: 파이썬 유틸리티 라이브러리
+Home-page: https://github.com/jslee7518/junLib
+Author: jslee7518
+Author-email: jslee7518 <jslee7518@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 spaceAnt(dev-jsLee)
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE. 
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# junLib
+
+나만의 파이썬 유틸리티 라이브러리
+
+## 설치
+
+```bash
+pip install .
+```
+
+## 사용 예시
+
+```python
+from library import junLib
+print(junLib.convert_to_korean_numbers(123))
+```
+
+## 라이선스
+
+MIT License
