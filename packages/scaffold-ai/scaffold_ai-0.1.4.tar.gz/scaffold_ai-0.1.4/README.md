@@ -1,0 +1,84 @@
+# Scaffold-AI
+
+Scaffold-AI is a powerful CLI tool that leverages AI to generate new project scaffolds quickly and efficiently. Powered by the OpenAI API, it allows you to create projects with customizable templates, supporting both Vite and vanilla setups.
+
+## Features
+
+- **AI-powered scaffolding**: Generate project structures using advanced AI models.
+- **Flexible model selection**: Choose your preferred OpenAI model for generation.
+- **Multiple templates**: Scaffold projects with Vite or vanilla code.
+- **Standalone operation**: Functions independently through the command line without requiring specific editors or plugins.
+
+## Getting Started
+
+### Prerequisites
+
+- Python installed on your system
+- An OpenAI API key
+
+### Installation & Usage
+
+#### Option 1: Install as a package (recommended)
+
+Install Scaffold-AI globally using pip:
+
+```bash
+pip install scaffold-ai
+```
+
+Set your OpenAI API key and run the CLI:
+
+```bash
+export OPENAI_API_KEY=<api_key> && scaffold-ai
+```
+
+Follow the prompts to scaffold your new project.
+
+#### Option 2: Build and run from source
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/vjtvalero/scaffold-ai.git
+cd scaffold-ai
+```
+
+It is recommended to use a virtual environment for dependency management. You can use either `uv` or Python's built-in `venv`:
+
+Using `uv`:
+
+```bash
+uv venv
+source .venv/bin/activate
+```
+
+Or using `venv`:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+or if you used uv:
+
+```bash
+uv add -r requirements.txt
+```
+
+Set your OpenAI API key and run the CLI:
+
+```bash
+export OPENAI_API_KEY=<api_key> && py main.py
+```
+
+Follow the prompts to scaffold your new project.
+
+## License
+
+MIT License
