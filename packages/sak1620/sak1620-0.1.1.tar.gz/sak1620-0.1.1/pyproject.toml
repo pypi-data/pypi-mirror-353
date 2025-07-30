@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"] # Or other build backends like 'hatchling', 'flit', 'poetry'
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sak1620" # Must be unique on PyPI
+version = "0.1.1"
+authors = [
+  { name="Shreya Alok", email="alok.shreya1620@gmail.com" },
+]
+description = "A short description of your amazing package."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests", # Example dependency
+    "numpy>=1.20", # Example dependency with version constraint
+]
+
+[project.urls]
+Homepage = "https://github.com/sak1620/sak1620"
+"Bug Tracker" = "https://github.com/sak1620/sak1620/issues"
