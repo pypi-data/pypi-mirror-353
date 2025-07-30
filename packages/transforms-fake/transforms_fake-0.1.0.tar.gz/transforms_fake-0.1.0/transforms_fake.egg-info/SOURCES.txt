@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+transforms_fake/__init__.py
+transforms_fake/main.py
+transforms_fake/process_images.py
+transforms_fake/rotate_image_and_mask.py
+transforms_fake.egg-info/PKG-INFO
+transforms_fake.egg-info/SOURCES.txt
+transforms_fake.egg-info/dependency_links.txt
+transforms_fake.egg-info/requires.txt
+transforms_fake.egg-info/top_level.txt
