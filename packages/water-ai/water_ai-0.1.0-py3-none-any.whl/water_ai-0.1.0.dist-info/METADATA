@@ -1,0 +1,108 @@
+Metadata-Version: 2.4
+Name: water-ai
+Version: 0.1.0
+Summary: A multi-agent orchestration framework that works with any agent framework
+Author-email: Manthan Gupta <manthangupta109@gmail.com>
+Project-URL: Homepage, https://github.com/manthanguptaa/water
+Project-URL: Repository, https://github.com/manthanguptaa/water
+Keywords: water-ai,multi-agent,orchestration,llm,large-language-model,framework,agents,ai-agents,workflow,pipeline,langchain,crewai,agno,autogen,distributed,async,coordination,agent-framework,multi-agent-systems
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Framework :: FastAPI
+Classifier: Framework :: AsyncIO
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn[standard]>=0.24.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Dynamic: license-file
+
+# Water
+**A multi-agent orchestration framework that works with any agent framework.**
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+## Overview
+Water is a production ready orchestration framework that enables developers to build complex multi-agent systems without being locked into specific agent framework. Whether you are using LangChain, CrewAI, Agno, or custom agents, Water provides the orchestration layer to coordinate and scale your multi-agent workflows.
+
+### Key Features
+
+- **Framework Agnostic** - Integrate any agent framework or custom implementation
+- **Flexible Workflows** - Orchestrate complex multi-agent interactions with simple Python
+- **Playground** - Run lightweight FastAPI server with all the flows you define
+
+## Quick Start
+### Installation
+
+```bash
+pip install water-ai
+```
+
+### Basic Usage
+
+```python
+import asyncio
+from water import Flow, create_task
+from pydantic import BaseModel
+
+class NumberInput(BaseModel):
+    value: int
+
+class NumberOutput(BaseModel):
+    result: int
+
+def add_five(params, context):
+    return {"result": params["input_data"]["value"] + 5}
+
+math_task = create_task(
+    id="math_task",
+    description="Math task",
+    input_schema=NumberInput,
+    output_schema=NumberOutput,
+    execute=add_five
+)
+
+flow = Flow(id="my_flow", description="My flow").then(math_task).register()
+
+async def main():
+    result = await flow.run({"value": 10})
+    print(result)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Contributing
+
+We welcome contributions from the community!
+
+- Bug reports and feature requests
+- Code contributions
+- Documentation improvements
+- Testing and quality assurance
+
+## Roadmap
+
+- Storage layer to store flow sessions and task runs
+- Human in the loop support
+- Retry mechanism for individual tasks
+
+## License
+
+Water is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
