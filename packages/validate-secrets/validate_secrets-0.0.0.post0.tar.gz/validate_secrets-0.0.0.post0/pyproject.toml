@@ -1,0 +1,7 @@
+[project]
+name = "validate-secrets"
+version = "0.0.0-r"
+description = "Coming soon!"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []

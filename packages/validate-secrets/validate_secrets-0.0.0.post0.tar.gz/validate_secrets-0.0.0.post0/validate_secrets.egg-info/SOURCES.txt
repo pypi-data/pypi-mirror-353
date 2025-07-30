@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+validate_secrets.egg-info/PKG-INFO
+validate_secrets.egg-info/SOURCES.txt
+validate_secrets.egg-info/dependency_links.txt
+validate_secrets.egg-info/top_level.txt
