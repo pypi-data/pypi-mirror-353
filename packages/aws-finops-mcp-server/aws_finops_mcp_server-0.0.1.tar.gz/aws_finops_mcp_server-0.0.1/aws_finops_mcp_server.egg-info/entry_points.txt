@@ -1,0 +1,2 @@
+[console_scripts]
+aws-finops-mcp-server = main:run_server
