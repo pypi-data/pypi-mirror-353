@@ -1,0 +1,7 @@
+[tool.cibuildwheel]
+
+[build-system]
+requires = [
+    "numpy",
+    "setuptools"
+]
