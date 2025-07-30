@@ -1,0 +1,6 @@
+requests~=2.32
+aiohttp~=3.10
+backoff~=2.2
+
+[ai]
+litellm>=1.62.1
