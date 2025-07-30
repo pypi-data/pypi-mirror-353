@@ -1,0 +1,12 @@
+pygame>=2.5
+
+[deploy]
+build
+pip
+setuptools>=75.0
+wheel
+
+[test]
+black
+isort
+pylint
