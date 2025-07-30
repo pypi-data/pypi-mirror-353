@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: odoo-addons-oca-shift-planning
+Version: 15.0.20250605.1
+Summary: Meta package for oca-shift-planning Odoo addons
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 15.0
+Requires-Dist: odoo-addon-hr-shift<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-hr-shift-holidays-public<15.1dev,>=15.0dev
+
+UNKNOWN
