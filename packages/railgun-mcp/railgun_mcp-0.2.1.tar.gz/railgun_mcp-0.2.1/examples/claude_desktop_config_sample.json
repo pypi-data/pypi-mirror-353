@@ -1,0 +1,19 @@
+{
+    "mcpServers": {
+        "railgun-mcp": {
+            "command": "python",
+            "args": [
+                "-m",
+                "railgun_mcp"
+            ],
+            "env": {
+                "RAILGUN_PRIVATE_KEY": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+                "RAILGUN_WALLET_PASSWORD": "your-secure-wallet-password",
+                "ETHEREUM_RPC_URL": "https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",
+                "POLYGON_RPC_URL": "https://polygon-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",
+                "ARBITRUM_RPC_URL": "https://arb-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY",
+                "BSC_RPC_URL": "https://bsc-dataseed.binance.org/"
+            }
+        }
+    }
+}

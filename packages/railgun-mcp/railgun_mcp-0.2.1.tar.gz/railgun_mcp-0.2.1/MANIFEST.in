@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+recursive-include railgun_mcp *.py
+recursive-include examples *.py *.json *.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co] 
