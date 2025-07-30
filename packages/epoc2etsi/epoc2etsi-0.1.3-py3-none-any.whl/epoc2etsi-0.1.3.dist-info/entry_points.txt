@@ -1,0 +1,4 @@
+[console_scripts]
+epoc2etsi = epoc2etsi:main
+gci2uuid = epoc2etsi.forms.globalcaseid:gci2uuid
+uuid2gci = epoc2etsi.forms.globalcaseid:uuid2gci
