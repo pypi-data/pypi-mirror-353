@@ -1,0 +1,8 @@
+concurrent_log_handler/__init__.py,sha256=nC8hXdhAj5cPMfl-d1AXX2dSnkDEwuFdibyFPSV7B0Q,57419
+concurrent_log_handler/__version__.py,sha256=XX8PRQaK5KpUiy8-NPceyol059GfxR9Jo8_6U5c0DsA,23
+concurrent_log_handler/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+concurrent_log_handler/queue.py,sha256=9eepIIyglShkXAyr_58wrxOeU2QYRRRCXwCUYsniFjg,6942
+concurrent_log_handler-0.9.27.dist-info/METADATA,sha256=0zScBaEJYnbUzqnUVlmEU4ofrz5FaLg96PLo-aElfdo,22717
+concurrent_log_handler-0.9.27.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+concurrent_log_handler-0.9.27.dist-info/licenses/LICENSE,sha256=rP141RtXaOSQdzAoiVtCDgSIQlHHS6BMu_lY_20JXMg,9215
+concurrent_log_handler-0.9.27.dist-info/RECORD,,
