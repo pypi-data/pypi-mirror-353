@@ -1,0 +1,10 @@
+fmcardgen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fmcardgen/cli.py,sha256=Rd1XhGKZC4pon_4yHDeOwi4qGIWURFMlzi9OXdUH3dY,2398
+fmcardgen/config.py,sha256=d_FtsgS2huyi_jIPtFGcPR__tYsfbq4qWeeybdF4Qis,7265
+fmcardgen/draw.py,sha256=Ref6lMpCLsIn9nWkd1tnB3wF-LCww3JZDqOukgodVyk,9037
+fmcardgen/frontmatter.py,sha256=IRmcDplXtTgDoCDqlnzUyct5vw9zRaB49liM4Z_A0Jo,1673
+fmcardgen/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fmcardgen-1.0.dist-info/METADATA,sha256=S9RZ-21dlLr-HTMP9LhwhRQttGT_2WsFiJ6j-pdO7Lc,5889
+fmcardgen-1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fmcardgen-1.0.dist-info/entry_points.txt,sha256=B8w-qaCFl1E8zJ3vlX7AQqrDMvC2yzi0W9hRuNnDTuM,48
+fmcardgen-1.0.dist-info/RECORD,,
