@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+PyWorkShift.egg-info/PKG-INFO
+PyWorkShift.egg-info/SOURCES.txt
+PyWorkShift.egg-info/dependency_links.txt
+PyWorkShift.egg-info/top_level.txt
+test/__init__.py
+test/base_test.py
+test/test_snap_schedule.py
+test/test_snippet.py
+test/test_work_schedule.py
