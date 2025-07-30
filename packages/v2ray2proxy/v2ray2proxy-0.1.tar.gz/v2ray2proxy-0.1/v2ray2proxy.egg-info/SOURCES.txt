@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+tests/async_test.py
+tests/misc_test.py
+tests/sync_test.py
+tests/test_links.py
+v2ray2proxy/__init__.py
+v2ray2proxy/__main__.py
+v2ray2proxy/async_proxy.py
+v2ray2proxy/base_proxy.py
+v2ray2proxy/sync_proxy.py
+v2ray2proxy.egg-info/PKG-INFO
+v2ray2proxy.egg-info/SOURCES.txt
+v2ray2proxy.egg-info/dependency_links.txt
+v2ray2proxy.egg-info/requires.txt
+v2ray2proxy.egg-info/top_level.txt
