@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/python_hotkeys/__init__.py
+src/python_hotkeys.egg-info/PKG-INFO
+src/python_hotkeys.egg-info/SOURCES.txt
+src/python_hotkeys.egg-info/dependency_links.txt
+src/python_hotkeys.egg-info/entry_points.txt
+src/python_hotkeys.egg-info/top_level.txt
