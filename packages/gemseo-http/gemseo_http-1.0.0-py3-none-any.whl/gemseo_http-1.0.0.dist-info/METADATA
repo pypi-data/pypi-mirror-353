@@ -1,0 +1,92 @@
+Metadata-Version: 2.4
+Name: gemseo-http
+Version: 1.0.0
+Summary: HTTP Discipline and Server for GEMSEO
+Author-email: Jean-Christophe Giret <contact@gemseo.org>
+License-Expression: LGPL-3.0
+Project-URL: Homepage, https://gemseo.org
+Project-URL: Source, https://gitlab.com/gemseo/dev/gemseo-http
+Project-URL: Issues, https://gitlab.com/gemseo/dev/gemseo-http/-/issues
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: <3.12,>=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: gemseo[all]<6,>=5.2
+Requires-Dist: httpx<0.28.2,>=0.26
+Requires-Dist: numpy
+Requires-Dist: pydantic
+Requires-Dist: typer<0.16.0,>=0.15.0
+Requires-Dist: sqlmodel<0.0.25,>=0.0.20
+Requires-Dist: strenum
+Requires-Dist: eval-type-backport==0.2.2; python_version < "3.10"
+Provides-Extra: server
+Requires-Dist: alembic<1.16.0,>=1.14; extra == "server"
+Requires-Dist: fastapi<0.116.0,>=0.114.0; extra == "server"
+Requires-Dist: huey<2.5.4,>=2.5.0; extra == "server"
+Requires-Dist: passlib[bcrypt]<1.8.0,>=1.7; extra == "server"
+Requires-Dist: pydantic-settings<2.9.2,>=2.0; extra == "server"
+Requires-Dist: python-jose<4,>=3.0.0; extra == "server"
+Requires-Dist: python-multipart<0.0.21,>=0.0.10; extra == "server"
+Requires-Dist: trio<0.31.0,>=0.29.0; extra == "server"
+Requires-Dist: uvicorn<0.34.2,>=0.30.0; extra == "server"
+Dynamic: license-file
+
+<!--
+Copyright 2021 IRT Saint Exupéry, https://www.irt-saintexupery.com
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative
+Commons, PO Box 1866, Mountain View, CA 94042, USA.
+-->
+
+# gemseo-http
+
+[![PyPI - License](https://img.shields.io/pypi/l/gemseo-http)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gemseo-http)](https://pypi.org/project/gemseo-http/)
+[![PyPI](https://img.shields.io/pypi/v/gemseo-http)](https://pypi.org/project/gemseo-http/)
+[![Codecov branch](https://img.shields.io/codecov/c/gitlab/gemseo:dev/gemseo-http/develop)](https://app.codecov.io/gl/gemseo:dev/gemseo-http)
+
+## Overview
+
+`gemseo-http` is a [GEMSEO](https://gemseo.readthedocs.io/en/stable/) plugin designed to expose GEMSEO disciplines as web services.
+
+It allows you to:
+
+1.  **Expose GEMSEO Disciplines as Web Services:**
+    *   Make your existing GEMSEO disciplines accessible over HTTP.
+    *   Execute and linearize these disciplines remotely, either synchronously or asynchronously.
+2.  **Utilize Remote Disciplines Locally:**
+    *   Provides an `HTTPDiscipline` class that is a proxy to remote disciplines.
+    *   Automatically configures this proxy to interact with a remote discipline service.
+
+## Key Features
+
+*   **Authentication:** Secure access using standard OAuth2/JWT.
+*   **API Documentation:** Integrated Swagger UI available at the `/docs` endpoint for easy API exploration.
+*   **File Handling:** Manages necessary file transfers for discipline execution between client and server.
+*   **Asynchronous Execution:** Leverage [Huey](https://huey.readthedocs.io/en/latest/) for running discipline jobs asynchronously, potentially across multiple distributed nodes.
+*   **Asynchronous Data Retrieval:** Fetch results from discipline executions asynchronously using long-polling.
+
+
+## Bugs and questions
+
+Please use the [gitlab issue tracker](https://gitlab.com/gemseo/dev/gemseo-http/-/issues)
+to submit bugs or questions.
+
+## Contributing
+
+See the [contributing section of GEMSEO](https://gemseo.readthedocs.io/en/stable/software/developing.html#dev).
+
+## Contributors
+
+- Jean-Christophe Giret
+- Antoine Dechaume
