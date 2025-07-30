@@ -1,0 +1,16 @@
+Pyrogram
+TgCrypto
+python-dotenv
+jsonschema
+cattrs
+
+[dev]
+isort
+black
+flake8-pyproject
+mypy
+pre-commit
+
+[pypi]
+build
+twine
