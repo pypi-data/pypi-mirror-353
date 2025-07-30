@@ -1,0 +1,4 @@
+[console_scripts]
+interactive-feedback-mcp = mcp_feedback_enhanced.__main__:main
+mcp-feedback-enhanced = mcp_feedback_enhanced.__main__:main
+mcp-feedback-enhanced-lixd = mcp_feedback_enhanced.__main__:main
