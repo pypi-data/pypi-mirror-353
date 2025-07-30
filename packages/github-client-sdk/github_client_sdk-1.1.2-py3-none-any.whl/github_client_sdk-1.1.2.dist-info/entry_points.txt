@@ -1,0 +1,3 @@
+[console_scripts]
+gcs=gcs_cli.main:main
+
