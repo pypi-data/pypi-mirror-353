@@ -1,0 +1,26 @@
+[project]
+name = "pylint-mcp"
+version = "0.1.2"
+description = "MCP server providing pylint functionality"
+authors = [
+    {name = "Opti",email = "opti@will.respond.to.your.mom"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pylint (>=3.3.7,<4.0.0)",
+    "mcp[cli] (>=1.9.2,<2.0.0)"
+]
+license = "MIT"
+license-files = ["COPYING"]
+
+[project.urls]
+Homepage = "https://codeberg.org/optimism/pylint-mcp"
+Issues = "https://codeberg.org/optimism/pylint-mcp/issues"
+
+[project.scripts]
+pylint-mcp = "pylint_mcp.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
