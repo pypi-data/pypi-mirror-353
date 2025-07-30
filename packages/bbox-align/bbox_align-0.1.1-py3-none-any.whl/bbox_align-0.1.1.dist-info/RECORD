@@ -1,0 +1,11 @@
+bbox_align/__init__.py,sha256=UKnXO2SMWOLHfUVWttolY4JfxGml9AeFDvMeNojFwGY,26
+bbox_align/bounding_box.py,sha256=rUYcPo1cnXKGJTiVW9Aq5QcKccv5W8B_QqIj9Qt7Qr0,3052
+bbox_align/geometry.py,sha256=EDzPA8-eC4IBdeh6pjEisz6egjwlLW8fz7K2q2oJCjU,4706
+bbox_align/main.py,sha256=34HtkRdSeB_L5neoU9g5ohVkK01gc58wzW53PLJO3sg,4649
+bbox_align/relationships.py,sha256=16wCbg7Ek02HmQFh0zTpUo8mfUH4b7PF65Jr5C8Nr1M,5834
+bbox_align/utils.py,sha256=KM2oojRT_Wx5I0fy7Y-djJM8Ts7QRhdw4tKWhT2Z_oI,421
+bbox_align/vector.py,sha256=N-N_IE5bwJ83myBNvA5P9KR9ZDl3Cx6Z7DEYxZLSxDE,1951
+bbox_align-0.1.1.dist-info/METADATA,sha256=1XqvG3NJZcApq75RyI2OWl0Zax0_W74nlWb23OdgipY,1438
+bbox_align-0.1.1.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+bbox_align-0.1.1.dist-info/top_level.txt,sha256=Z9gJ8HbsCJXkLHYEaSXfK5PeaNpEk7egzMUAtrAv55Y,11
+bbox_align-0.1.1.dist-info/RECORD,,
