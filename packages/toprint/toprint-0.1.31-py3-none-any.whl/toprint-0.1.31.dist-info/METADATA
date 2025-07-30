@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: toprint
+Version: 0.1.31
+Summary: 2print/toprint: Python library for printing and converting between HTML, PDF, ZPL, and image formats with printer support. Also known as 2print or to-print.
+Home-page: https://github.com/text2doc/toPrint
+Author: Tom Softreck
+Author-email: info@softreck.dev
+Project-URL: Bug Reports, https://github.com/text2doc/toPrint/issues
+Project-URL: Source, https://github.com/text2doc/toPrint
+Project-URL: Documentation, https://github.com/text2doc/toPrint#readme
+Project-URL: Changelog, https://github.com/text2doc/toPrint/releases
+Keywords: printing,pdf,html,zpl,label,printer,conversion,2print,2-print,print2,print-2,html2pdf,pdf2print,zpl2print,image2print,html-to-pdf,pdf-to-print,zpl-to-print,image-to-print,document,report,label-printing,barcode,qrcode,thermal-printing,document-generation,report-generation,zebra,zpl-printer,weasyprint,pdf-generation,print-to-pdf,thermal-print,label-maker,document-conversion
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Printing
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Multimedia :: Graphics :: Graphics Conversion
+Classifier: Topic :: Office/Business :: Office Suites
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.txt
+Requires-Dist: weasyprint>=53.0
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: reportlab>=3.6.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# toPrint
+python package for html, pdf, zpl printing
