@@ -1,0 +1,11 @@
+requests>=2.32.3
+
+[dev]
+pytest>=7.0
+ruff
+black
+mypy
+build
+twine
+python-dotenv
+docutils!=0.21.post1,>=0.21
