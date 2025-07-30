@@ -1,0 +1,7 @@
+setup.py
+alumathpeergroup25.egg-info/PKG-INFO
+alumathpeergroup25.egg-info/SOURCES.txt
+alumathpeergroup25.egg-info/dependency_links.txt
+alumathpeergroup25.egg-info/top_level.txt
+src/__init__.py
+src/main.py
