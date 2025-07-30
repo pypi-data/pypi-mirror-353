@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "calc_figure_area"
+version = "0.0.1"
+packages=['calc_figure_area']
+authors = [
+ { name="NataliaVasilek", email="" },
+]
+description = "This is test library"
+readme = "README.md"
+requires-python = ">=3.10.0"
+classifiers = [
+   "Programming Language :: Python :: 3.10",
+   "License :: OSI Approved :: MIT License",
+   "Operating System :: OS Independent",
+]
+
+[project.urls]
+GitHub = "https://github.com/VasilekN/MB_tasks"
+
+[tool.hatch.build.targets.wheel]
+ignore-vcs = true
+include = [
+  "src/**"
+]
