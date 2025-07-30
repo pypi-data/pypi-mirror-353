@@ -1,0 +1,8 @@
+README.md
+setup.py
+pygjx/__init__.py
+pygjx.egg-info/PKG-INFO
+pygjx.egg-info/SOURCES.txt
+pygjx.egg-info/dependency_links.txt
+pygjx.egg-info/requires.txt
+pygjx.egg-info/top_level.txt

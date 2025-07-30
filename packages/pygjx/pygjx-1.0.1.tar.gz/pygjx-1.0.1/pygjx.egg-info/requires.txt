@@ -1,0 +1,9 @@
+speedtest-cli
+tqdm
+requests
+opencv-python
+pygame
+pyautogui
+pyinstaller
+pip
+pywin32
