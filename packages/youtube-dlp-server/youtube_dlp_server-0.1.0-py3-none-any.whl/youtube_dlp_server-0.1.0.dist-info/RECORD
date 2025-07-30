@@ -1,0 +1,9 @@
+youtube_dlp_server/__init__.py,sha256=KNZ1bD9ZGfyZwlv91Ueeega_1lsRDLs2fYQDgNbBdtc,212
+youtube_dlp_server/__main__.py,sha256=b7xMTBbgK4GQedIJKTqmBnCI_at9zkPourxojj6VnDE,205
+youtube_dlp_server/helper.py,sha256=wheSQ8TVu116GXT_lLr4C3U_NX_v6RTgRU2DzYwj1Cg,32223
+youtube_dlp_server/server.py,sha256=9xccj3j1yar4x2FHlA99WJCBoumib6DOgPtDddwuShQ,14739
+youtube_dlp_server-0.1.0.dist-info/METADATA,sha256=OMGAsP_Lv21JvGwSX-PJmQP9U2hmvxOQWeBDBMUBQGo,4155
+youtube_dlp_server-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+youtube_dlp_server-0.1.0.dist-info/entry_points.txt,sha256=fv3IXLWS5S_qBc71c73IwwJIlexk5mFG2ceBnJxoPuc,63
+youtube_dlp_server-0.1.0.dist-info/licenses/LICENSE,sha256=i9ZSY6vVyVzmzmZ7rgpuiK3USZH5yJ2Q_FjbIFVa68w,1062
+youtube_dlp_server-0.1.0.dist-info/RECORD,,

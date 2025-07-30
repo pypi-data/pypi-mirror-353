@@ -1,0 +1,2 @@
+[console_scripts]
+youtube-dlp-server = youtube_dlp_server:main
