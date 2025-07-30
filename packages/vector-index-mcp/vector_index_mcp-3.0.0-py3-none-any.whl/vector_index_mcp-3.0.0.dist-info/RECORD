@@ -1,0 +1,13 @@
+vector_index_mcp/__init__.py,sha256=cLHGSvu5R7GevQ8vk0fWzWtLXyEn6yMmu0E5q-8_6SA,67
+vector_index_mcp/config.py,sha256=A_HfZcDKhK1aDDHyhOh-s3VVRMu_Z8erZElMtEP4RG8,2622
+vector_index_mcp/content_extractor.py,sha256=_-mvFRlQzd5VqgBlJetoOr3qcW1QfHDC3wYV5DlkXZ8,3173
+vector_index_mcp/file_watcher.py,sha256=HeAv4FrdUTMJhmzrDTnBWORJ2Izl4SwoWNy9H6ujdmk,21236
+vector_index_mcp/indexer.py,sha256=8wX3d1RVnHeF4cLopQckezk5xj7eabG2649-6c1E2Ao,24108
+vector_index_mcp/main_mcp.py,sha256=GZhmoBn4rrou8HrbebG1YUiKKO_jyW3652pTtE-HDPY,5905
+vector_index_mcp/mcp_server.py,sha256=ag1wpkAcF3s75UjnhfH6Rf5EqnamOClWoH_e3fjaXw4,13287
+vector_index_mcp/models.py,sha256=2uHcN5j9nJt7oj7DZ_fcs5RgCT-eWQdcMaVq7QgfzYM,6223
+vector_index_mcp-3.0.0.dist-info/METADATA,sha256=9KCxYFrrDhcgb4GkF0CWvhSfThoFO-okEFAsY1cevdM,9163
+vector_index_mcp-3.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vector_index_mcp-3.0.0.dist-info/entry_points.txt,sha256=iDbS679LG3xRVRaqvUwWOWQv70bxk6q7qI1a3Ym6OGI,68
+vector_index_mcp-3.0.0.dist-info/top_level.txt,sha256=U3Y9UIWuIFbPzn8zHmlj6OSOkF15L0qrjNjly2oHtsE,17
+vector_index_mcp-3.0.0.dist-info/RECORD,,
