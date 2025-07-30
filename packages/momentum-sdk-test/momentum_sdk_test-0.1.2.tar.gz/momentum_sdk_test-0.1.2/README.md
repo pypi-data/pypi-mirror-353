@@ -1,0 +1,184 @@
+# Momentum SDK
+
+Local Python SDK for Momentum's prompt compression engine.
+
+## Installation
+
+```bash
+pip install momentum-sdk
+```
+
+## Quick Start
+
+```python
+from momentum_sdk import compress, stats
+
+# Compress a prompt
+test = "Imagine you are an experienced Ethereum developer tasked with creating a smart contract for a blockchain messenger. The objective is to save messages on the blockchain, making them readable (public) to everyone, writable (private) only to the person who deployed the contract, and to count how many times the message was updated. Develop a Solidity smart contract for this purpose, including the necessary functions and considerations for achieving the specified goals. Please provide the code and any relevant explanations to ensure a clear understanding of the implementation."
+compressed = compress(test, context="gpt-4o")
+
+# Feed to your model
+import openai
+response = openai.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": compressed}]
+)
+
+# Get compression stats
+meta = stats(compressed)
+print(f"Original: {meta['original_tokens']} tokens")
+print(f"Compressed: {meta['compressed_tokens']} tokens")
+print(f"Saved: {meta['bytes_saved']} bytes ({meta['compression_ratio']:.1%} compression)")
+```
+
+## Configuration
+
+### Environment Variables
+
+```bash
+# Optional: Specify custom engine library path
+export MOMENTUM_ENGINE_LIB_PATH="/path/to/libmomentum_engine.so"
+
+# Cache settings
+export MOMENTUM_CACHE_ENABLED="true"
+export MOMENTUM_CACHE_TTL_SECONDS="3600"
+```
+
+### Configuration Files
+
+The SDK looks for configuration in these locations (in order):
+1. `~/.momentum/config.json` or `~/.momentum/config.yaml`
+2. `.momentum.json` or `.momentum.yaml` in current directory
+3. Environment variables
+
+Example config file (`~/.momentum/config.json`):
+```json
+{
+  "engine_lib_path": "/usr/local/lib/libmomentum_engine.so",
+  "cache_enabled": true,
+  "cache_ttl_seconds": 3600
+}
+```
+
+## API Reference
+
+### compress(prompt, context="gpt-4o", binary=False)
+
+Compress a prompt for efficient token usage.
+
+**Arguments:**
+- `prompt` (str): Text to compress
+- `context` (str): Target model context (e.g., "gpt-4o", "claude-3")
+- `binary` (bool): If True, return raw bytes; if False, return text-safe string
+
+**Returns:** Compressed prompt ready to feed to the model
+
+**Raises:**
+- `CompressionError`: If compression fails
+- `ConfigurationError`: If engine library cannot be loaded
+
+### stats(compressed)
+
+Get detailed compression metrics.
+
+**Arguments:**
+- `compressed` (str): Compressed text from compress()
+
+**Returns:** Dictionary with:
+- `original_tokens`: Token count before compression
+- `compressed_tokens`: Token count after compression
+- `compression_ratio`: Ratio of compression achieved
+- `bytes_saved`: Difference in UTF-8 byte length
+- `estimated_cost_usd`: Approximate cost savings
+- `model`: Context argument used
+- `mode`: Always "local" 
+- `timestamp`: ISO-8601 UTC timestamp
+
+## Engine Requirements
+
+The SDK requires the Momentum compression engine library to be available. The library is automatically searched for in these locations:
+
+1. Path specified by `MOMENTUM_ENGINE_LIB_PATH` environment variable
+2. Next to the SDK package files
+3. System library paths (`/usr/local/lib`, `/usr/lib`)
+4. Development build path (`../core_engine/target/release/`)
+
+### Building the Engine
+
+If you're building from source:
+
+```bash
+cd core_engine
+cargo build --release
+```
+
+The compiled library will be at `core_engine/target/release/libmomentum_engine.{so,dylib,dll}`.
+
+## Error Handling
+
+```python
+from momentum_sdk import compress, MomentumError, CompressionError, ConfigurationError
+
+try:
+    compressed = compress(prompt)
+except ConfigurationError as e:
+    print(f"Engine setup error: {e}")
+except CompressionError as e:
+    print(f"Compression failed: {e}")
+except MomentumError as e:
+    print(f"General error: {e}")
+```
+
+Common errors:
+- `ConfigurationError`: Engine library not found or invalid
+- `CompressionError`: Text compression failed
+
+## Examples
+
+### Basic Usage
+```python
+from momentum_sdk import compress
+
+compressed = compress("Your long prompt here", context="gpt-4o")
+print(compressed)
+```
+
+### With Different Models
+```python
+# For different AI models
+compressed_gpt = compress(prompt, context="gpt-4o")
+compressed_claude = compress(prompt, context="claude-3")
+compressed_llama = compress(prompt, context="llama-2")
+```
+
+### Getting Compression Stats
+```python
+compressed = compress("A very long prompt that needs compression...")
+stats_data = stats(compressed)
+
+print(f"Compression ratio: {stats_data['compression_ratio']:.1%}")
+print(f"Tokens saved: {stats_data['original_tokens'] - stats_data['compressed_tokens']}")
+print(f"Estimated cost savings: ${stats_data['estimated_cost_usd']:.4f}")
+```
+
+## Development
+
+```bash
+# Clone the repo
+git clone https://github.com/momentum-ai/momentum-core
+cd momentum-core/sdk
+
+# Install dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black momentum_sdk tests
+ruff momentum_sdk tests
+```
+
+## License
+
+MIT 
