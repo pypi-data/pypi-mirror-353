@@ -1,0 +1,9 @@
+mrsal/amqp/subclass.py,sha256=MSpf6ghtkknpfsi8tghadQdNqthdpwElC-wP8pZyKOA,25239
+mrsal/basemodels.py,sha256=9_ijeNWWu7FJZsHB-43OYcc2lQlk9aGLHovlFS59y_A,177
+mrsal/config.py,sha256=L_i0h3-z-O-O1SqADWbrxh3lRrm11R1iFbFAg3r0bdA,361
+mrsal/exceptions.py,sha256=GGew6yK3ngS-DIBCBGKDDKWNHHqnmu7DmhirpIZsGoE,240
+mrsal/superclass.py,sha256=02YoE-Et6jcOt0AVUvey0vJPuOC-6JkKjugS6q9scn0,17309
+mrsal-1.1.1.dist-info/LICENSE.txt,sha256=u-Mc8zCecwyo4YoP8UulmzCiZZ_MmCLROd_NBtOcRj0,35148
+mrsal-1.1.1.dist-info/METADATA,sha256=oXbUeaVJ5JLaOQyA5IUI3BXJN-togGHx6V8afr9vz8Y,12922
+mrsal-1.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+mrsal-1.1.1.dist-info/RECORD,,
