@@ -1,0 +1,15 @@
+pygobject
+markdown-it-py
+python-ulid
+llm
+llm-gemini
+llm-groq
+llm-grok
+llm-deepseek
+llm-perplexity
+llm-anthropic
+llm-openrouter
+pystray
+watchdog
+pillow
+pyxdg; sys_platform == "linux"
