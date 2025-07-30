@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quantum Computing Inc. - Entanglement Temperature Controller</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='favicon.ico') }}?v=temp_controller"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="/"><img src="../static/logo.svg" alt="logo" /></a>
+      <a href="/contact" class="button-contact" style="font-weight: 400"
+        >Contact us</a
+      >
+    </header>
+
+    <h1 style="margin-left: 5%; margin-top: 24px; margin-bottom: 24px">
+      Temperature controller
+    </h1>
+
+    <!-- SELECTOR -->
+    <section>
+      <div class="selector">
+        <div
+          role="button"
+          class="selector-button button-active"
+          onclick="changeContent('content1', this)"
+        >
+          Settings
+        </div>
+        <div
+          role="button"
+          class="selector-button"
+          onclick="changeContent('content2', this)"
+        >
+          About
+        </div>
+      </div>
+    </section>
+
+    <!-- Entanglement Temp Controller -->
+    <section class="card-content active" id="content1">
+      <div class="card" style="margin-top: 0px; border-radius: 0px 8px 8px 8px">
+        <div id="live_demo_left">
+          <!-- OPTION: Set Temp -->
+          <div class="options">
+            <label class="options" for="set_temp">
+              <span style="font-weight: 600">1.</span> Target temperature (<span
+                style="color: blue"
+                >°C</span
+              >)
+            </label>
+            <div class="input-with-icon">
+              <span class="material-icons">thermostat</span>
+              <input
+                type="number"
+                max="75.0"
+                value="33.3"
+                step="0.1"
+                id="set_temp"
+              />
+            </div>
+          </div>
+
+          <!-- OPTION: Proportional BW -->
+          <div class="options">
+            <label class="options" for="set_proportional_bw">
+              <span style="font-weight: 600">3.</span> P (Proportional BW)
+            </label>
+            <div class="input-with-icon">
+              <span class="material-icons">swap_vert</span>
+              <input
+                type="number"
+                value="5.00"
+                step="0.01"
+                min="0.05"
+                max="100.00"
+                id="set_proportional_bw"
+              />
+            </div>
+          </div>
+
+          <!-- OPTION: Internal gain -->
+          <div class="options">
+            <label class="options" for="set_internal_gain">
+              <span style="font-weight: 600">2.</span> I (Integral gain)
+            </label>
+            <div class="input-with-icon">
+              <span class="material-icons">arrow_circle_up</span>
+              <input
+                type="number"
+                value="1.00"
+                step="0.01"
+                min="0.00"
+                max="10.00"
+                id="set_internal_gain"
+              />
+            </div>
+          </div>
+
+          <!-- OPTION: Derivative gain -->
+          <div class="options">
+            <label class="options" for="set_derivative_gain">
+              <span style="font-weight: 600">4.</span> D (Derivative gain)
+            </label>
+            <div class="input-with-icon">
+              <span class="material-icons">rotate_right</span>
+              <input
+                type="number"
+                value="0.00"
+                step="0.01"
+                min="0.00"
+                max="10.00"
+                id="set_derivative_gain"
+              />
+            </div>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <div style="margin-bottom: 8px">
+            <button
+              style="width: 100%"
+              class="button"
+              role="button"
+              onclick="submit(this)"
+            >
+              <span style="margin-right: 12px">></span> Submit
+            </button>
+          </div>
+          <!-- RESET BUTTON -->
+          <div style="margin-bottom: 8px">
+            <button
+              style="width: 100%"
+              class="button2"
+              role="button"
+              id="resetBtn"
+            >
+              <span style="margin-right: 12px">></span> Reset
+            </button>
+          </div>
+        </div>
+
+        <div id="live_demo_right">
+          <div
+            class="card"
+            style="
+              display: flex;
+              flex-direction: column;
+              background-color: #e8ecf2;
+              margin: 0;
+            "
+          >
+            <h2>Status</h2>
+            <h5 style="font-weight: 400; margin-top: -16px" id="last_updated">
+              -
+            </h5>
+            <div>
+              <span style="font-weight: 600">Sensor temperature: </span
+              ><span id="current_temp">-</span><br />
+              <span style="font-weight: 600">Target temperature: </span
+              ><span id="target_temp">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DELAY SCAN PLOT -->
+    <section class="card-content" id="content2">
+      <div
+        class="card"
+        style="margin-top: 0px; border-radius: 0px 8px 8px 8px; display: block"
+      >
+        <h2>Description</h2>
+        <div style="margin-top: 4px; margin-bottom: 4px">
+          <span style="font-weight: 600">Temperature sensor: </span>information
+          about the entanglement temperature sensor.
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 4px">
+          <span style="font-weight: 600">Integral gain: </span>information about
+          internal gain.
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 4px">
+          <span style="font-weight: 600">Proportional BW: </span>information
+          about proportional BW.
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 4px">
+          <span style="font-weight: 600">Derivative gain: </span>information
+          about derivative gain.
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>
+        © Copyright 2018-2025 Quantum Computing Inc. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script>
+      // Fetch status immediately, then every 15 seconds
+      fetchFirstStatus();
+      fetchCurrentStatus();
+      setInterval(fetchCurrentStatus, 15000);
+
+      function fetchFirstStatus() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString();
+        $("#last_updated").text(`(last updated: ${timeStr})`);
+        $.get("/api/current_status", function (data) {
+          $("#current_temp").text(
+            parseFloat(data.current_temp).toFixed(1) + " °C"
+          );
+          $("#target_temp").text(parseFloat(data.set_temp).toFixed(1) + " °C");
+          // Fill inputs with values from backend on load
+          $("#set_temp").val(parseFloat(data.set_temp).toFixed(1));
+          $("#set_internal_gain").val(
+            parseFloat(data.internal_gain).toFixed(2)
+          );
+          $("#set_proportional_bw").val(
+            parseFloat(data.proportional_bw).toFixed(2)
+          );
+          $("#set_derivative_gain").val(
+            parseFloat(data.derivative_gain).toFixed(2)
+          );
+        });
+      }
+
+      function fetchCurrentStatus() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString();
+        $("#last_updated").text(`(last updated: ${timeStr})`);
+        $.get("/api/current_status", function (data) {
+          $("#current_temp").text(
+            parseFloat(data.current_temp).toFixed(1) + " °C"
+          );
+          $("#target_temp").text(parseFloat(data.set_temp).toFixed(1) + " °C");
+        });
+      }
+
+      function submit() {
+        const setTemp = parseFloat(document.getElementById("set_temp").value);
+        const internalGain = parseFloat(
+          document.getElementById("set_internal_gain").value
+        );
+        const proportionalBW = parseFloat(
+          document.getElementById("set_proportional_bw").value
+        );
+        const derivativeGain = parseFloat(
+          document.getElementById("set_derivative_gain").value
+        );
+
+        if (setTemp > 75 || setTemp < 0) {
+          alert("Temperature must be between 0 and 75 °C.");
+          return;
+        }
+        if (internalGain < 0 || internalGain > 10) {
+          alert("Internal gain must be between 0.00 and 10.00.");
+          return;
+        }
+        if (proportionalBW < 0.05 || proportionalBW > 100) {
+          alert("Proportional BW must be between 0.05 and 100.00 °C.");
+          return;
+        }
+        if (derivativeGain < 0 || derivativeGain > 10) {
+          alert("Derivative gain must be between 0.00 and 10.00.");
+          return;
+        }
+
+        console.log("Submitting values:", {
+          set_temp: setTemp,
+          internal_gain: internalGain,
+          proportional_bw: proportionalBW,
+          derivative_gain: derivativeGain,
+        });
+
+        fetch("/api/submit_values", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            set_temp: setTemp,
+            internal_gain: internalGain,
+            proportional_bw: proportionalBW,
+            derivative_gain: derivativeGain,
+          }),
+        })
+          .then((response) => {
+            console.log("Raw response:", response);
+            if (!response.ok) throw new Error("Failed to submit");
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Success:", data);
+            fetchCurrentStatus();
+          })
+          .catch((error) => {
+            console.error("Error submitting values:", error);
+            alert("Failed to submit values");
+          });
+      }
+
+      // RESET BUTTON
+      document
+        .getElementById("resetBtn")
+        .addEventListener("click", async () => {
+          const confirmReset = confirm(
+            "Are you sure you want to reset to default values?"
+          );
+          if (!confirmReset) return;
+
+          try {
+            const response = await fetch("/api/reset_values", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            const result = await response.json();
+            if (result.status === "success") {
+              $.get("/api/current_status", function (data) {
+                $("#current_temp").text(
+                  parseFloat(data.current_temp).toFixed(1) + " °C"
+                );
+                $("#target_temp").text(
+                  parseFloat(data.set_temp).toFixed(1) + " °C"
+                );
+                $("#set_temp").val(parseFloat(data.set_temp).toFixed(1));
+                $("#set_internal_gain").val(
+                  parseFloat(data.internal_gain).toFixed(2)
+                );
+                $("#set_proportional_bw").val(
+                  parseFloat(data.proportional_bw).toFixed(2)
+                );
+                $("#set_derivative_gain").val(
+                  parseFloat(data.derivative_gain).toFixed(2)
+                );
+              });
+            }
+          } catch (err) {
+            console.error("Reset failed: ", err);
+          }
+        });
+
+      // Change Content
+      async function changeContent(contentId, div) {
+        const contents = document.querySelectorAll(".card-content");
+        contents.forEach((content) => {
+          if (content.id === contentId) {
+            content.classList.add("active");
+          } else {
+            content.classList.remove("active");
+          }
+        });
+
+        // Remove 'button-active' class from all selector divs
+        const divs = document.querySelectorAll(".selector-button");
+        divs.forEach((divElement) =>
+          divElement.classList.remove("button-active")
+        );
+
+        // Add 'button-active' class to the clicked div
+        div.classList.add("button-active");
+      }
+    </script>
+  </body>
+</html>
