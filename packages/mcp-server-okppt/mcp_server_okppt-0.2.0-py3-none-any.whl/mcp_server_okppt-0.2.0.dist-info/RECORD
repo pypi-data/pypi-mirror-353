@@ -1,0 +1,12 @@
+mcp_server_okppt/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcp_server_okppt/__main__.py,sha256=xyPti8seEY7kXzCueM7uBZlzaG2E-6EZVKRfYQmsrQM,134
+mcp_server_okppt/cli.py,sha256=4QB5VzreJhcHojTmVb_3BRarn1hxx-BvbqklMW2vavc,671
+mcp_server_okppt/ppt_operations.py,sha256=SMLdFBXmtEocBKE6JkPW20HaNnbtxa_An_AZKyn9NMA,25435
+mcp_server_okppt/server.py,sha256=6PjnzViriKmvDN1mVWGyLT-awfIO6sBSnn8d8aZ38gE,82701
+mcp_server_okppt/svg_module.py,sha256=U13nElxrG-Zr9S_k8bKzwPqpArcDitXJqUACtEszgDo,40864
+mcp_server_okppt-0.2.0.dist-info/licenses/LICENSE,sha256=FuG6h4urUynKcxpaoinarXxCA6b-PO959uPlVW2U9CI,1085
+mcp_server_okppt-0.2.0.dist-info/METADATA,sha256=IvcIVVhWRypYaz0pKliNUOYzCNTY6kLqv5y6UAieiSE,10908
+mcp_server_okppt-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_server_okppt-0.2.0.dist-info/entry_points.txt,sha256=c1GjYAm7U2CWlWPfoSE95XsruGAsQcU0kefaNAlk8uo,63
+mcp_server_okppt-0.2.0.dist-info/top_level.txt,sha256=GikBUfBEoRjxyZB6oH2EW34kQTsx8r5J9t5cPI5wX7c,17
+mcp_server_okppt-0.2.0.dist-info/RECORD,,
