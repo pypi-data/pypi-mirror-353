@@ -1,0 +1,6 @@
+numpy
+pandas
+scikit-learn
+shap>=0.40.0
+scipy>=1.7.0
+tqdm

@@ -1,0 +1,55 @@
+# =================================================================
+# pyproject.toml for BorutaShapV2
+# =================================================================
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "borutashap-v2"
+version = "0.1.0"
+authors = [
+  { name="Zhiyuan", email="ambiyuan@gmail.com" },
+]
+description = "An efficient, refactored, and modernized implementation of the Boruta-Shap feature selection algorithm. Scikit-learn compatible and performance-optimized."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+
+keywords = ["feature selection", "boruta", "shap", "xgboost", "lightgbm", "machine learning"]
+
+classifiers = [
+
+    "Development Status :: 4 - Beta",
+    
+    "License :: OSI Approved :: MIT License",
+    
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "shap>=0.40.0",
+    "scipy>=1.7.0",
+    "tqdm"
+]
+
+[project.urls]
+Homepage = "https://github.com/Zhiyuan-Fan/BorutaShapV2"
+"Bug Tracker" = "https://github.com/Zhiyuan-Fan/BorutaShapV2/issues"
