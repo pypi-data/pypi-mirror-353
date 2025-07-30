@@ -1,0 +1,6 @@
+polars_gps_hilbert-0.1.1.dist-info/METADATA,sha256=PyCNtxixoUQM-VHLec3khOlUUSwsO4Vd3I6iFwvD0Go,7437
+polars_gps_hilbert-0.1.1.dist-info/WHEEL,sha256=2OnzeD-Mt7eNjmrtchSJO1LUSaCwNHKze1SLnzTwXU8,94
+polars_gps_hilbert-0.1.1.dist-info/licenses/LICENSE,sha256=we6E17nG3DLx-mqsCs6OVlgl7fyL_5RD4Q4qAuPCbO0,1080
+polars_gps_hilbert/__init__.py,sha256=4K9osvTA7fH07g2KXGxCzucwZkZU6HXMuOIwIFhosqo,6919
+polars_gps_hilbert/_polars_gps_hilbert.pyd,sha256=5B4WY8QA1EfzbZSffr5aa3ejS9FwrJiz-spxgwsvd64,20710400
+polars_gps_hilbert-0.1.1.dist-info/RECORD,,
