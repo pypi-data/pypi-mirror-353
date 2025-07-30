@@ -1,0 +1,15 @@
+viur/assistant/__init__.py,sha256=j96dxOjrdypvuVJ8DpQswTJrfefDUtGqMfeaRLgdmYE,419
+viur/assistant/config.py,sha256=w3ZCDiPB4o-x6G2onz65wtwcm0UaUtaEyl6P7vKkQPk,3647
+viur/assistant/version.py,sha256=aWLYLjD1i5phtg6Tb_TtALZ3ZuzQFmlshH87vy_KYKw,387
+viur/assistant/bones/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+viur/assistant/bones/actions.py,sha256=aU2AfnM03-yx1N9BX56r8wi4j9V3LTQAvHjpBGdYmgY,816
+viur/assistant/bones/image.py,sha256=OOcDfGBGK7wrrySqPtoPnE8U28d4hy0VGzHxOtY5kPE,2397
+viur/assistant/modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+viur/assistant/modules/assistant.py,sha256=KM8qzMeYzdQf9-F70ZrMoN85y8-QniAyY55SAvqIdYA,20343
+viur/assistant/skeletons/__init__.py,sha256=Q9Hx6Nenai5KJG3Ax_Ccf-CbBKJHC7Pwc1E13TePEBI,495
+viur/assistant/skeletons/assistant.py,sha256=lnJt5VKqsLsWrDMJ9dUVf0sMRtd2vPyis51PRxPffxs,1337
+viur_assistant-1.2.0.dist-info/licenses/LICENSE,sha256=wfNeONGdPc7D04ACQw_3Ys2DCqKoiYyVMU8K81Tywfc,1061
+viur_assistant-1.2.0.dist-info/METADATA,sha256=UxZWPsP4UIN4ik-KifYqocMGfLghwke5AksZtR-9N6A,5061
+viur_assistant-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+viur_assistant-1.2.0.dist-info/top_level.txt,sha256=UpXSoS_clIJYncMZKAppy3WNRScHSjarTabKBOa8OeI,5
+viur_assistant-1.2.0.dist-info/RECORD,,
