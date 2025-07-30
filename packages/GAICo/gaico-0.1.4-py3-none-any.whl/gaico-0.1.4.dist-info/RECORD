@@ -1,0 +1,14 @@
+gaico/__init__.py,sha256=v8w1d_cKoFVizmc-a0PBsY5zmDh_pZNiuA6uXg2FexA,629
+gaico/experiment.py,sha256=9RZ4uJDkfnO7G4UIWzb82Xq0CBI-CpLr5ozpd-7dynU,20891
+gaico/thresholds.py,sha256=rYUHmim6aSsUPMfTz4Gg1a-indCd4duMXdJ5IRYuH20,5405
+gaico/utils.py,sha256=fd2Pid26PqNlqeRXo9JsfnsR-jEgXsxfkHw09zdGa-I,8214
+gaico/visualize.py,sha256=JaT6rXhODbWzlfHdvfzPItKECC9MGpCptI9IsuCaqeM,12905
+gaico/metrics/__init__.py,sha256=YMKiEifOP3AJtWygygklAOuIZBn38qMRLXgpsWyohMo,432
+gaico/metrics/base.py,sha256=es2EBk_Xe3Par5YGRQ3C-qVbSLt0kKeGAzEblFY7-Rs,5342
+gaico/metrics/ngram_metrics.py,sha256=eNNihXMQRGxffhBUVOGpmHY05TuF2vecPHWPprlZ8hI,15267
+gaico/metrics/semantic_similarity_metrics.py,sha256=fZb_-Mq_YnAkJXuxdfJOO_bq_g7IGb4F5_4TBZes2lU,7499
+gaico/metrics/text_similarity_metrics.py,sha256=rCVajUSPTVcd18vU2Y1Bhgwy0E1yzistvqGi9u0hViI,14898
+gaico-0.1.4.dist-info/METADATA,sha256=Df0k5sp4jupufmm_KiDjF5Dhd-lBbQ6r_6A535Hh_Wc,8800
+gaico-0.1.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gaico-0.1.4.dist-info/licenses/LICENSE,sha256=HBhBs0a-3FgEhvrp86C6QFpuzisKOFgqKE1oQ7ixMN8,1086
+gaico-0.1.4.dist-info/RECORD,,
