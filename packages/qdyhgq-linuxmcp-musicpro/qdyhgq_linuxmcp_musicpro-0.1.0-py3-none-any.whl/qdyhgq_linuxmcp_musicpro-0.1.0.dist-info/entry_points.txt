@@ -1,0 +1,2 @@
+[console_scripts]
+qdyhgq-linuxmcp-musicpro = qdyhgq_linuxmcp_musicpro:main
