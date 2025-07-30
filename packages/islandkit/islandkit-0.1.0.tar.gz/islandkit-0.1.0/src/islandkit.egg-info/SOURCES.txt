@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/islandkit/__init__.py
+src/islandkit/config.py
+src/islandkit/tqdm.py
+src/islandkit.egg-info/PKG-INFO
+src/islandkit.egg-info/SOURCES.txt
+src/islandkit.egg-info/dependency_links.txt
+src/islandkit.egg-info/requires.txt
+src/islandkit.egg-info/top_level.txt
+tests/test_tqdm_supabase_connection.py
