@@ -1,0 +1,15 @@
+openai>=1.0.0
+
+[:python_version < "3.7"]
+dataclasses
+
+[dev]
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+isort>=5.0.0
+flake8>=5.0.0
+mypy>=1.0.0
+
+[examples]
+python-dotenv>=1.0.0
