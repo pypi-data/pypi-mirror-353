@@ -1,0 +1,1 @@
+"""Formatter property tests."""

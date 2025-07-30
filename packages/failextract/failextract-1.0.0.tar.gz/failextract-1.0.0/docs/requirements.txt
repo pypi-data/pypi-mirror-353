@@ -1,0 +1,29 @@
+# Documentation build requirements for FailExtract
+# This file contains the minimum dependencies needed to build the documentation
+# 
+# Install with: pip install -r docs/requirements.txt
+# Or use the docs extra: pip install .[docs]
+
+# Core Sphinx documentation system
+sphinx>=5.0
+
+# Read the Docs theme for consistent styling
+sphinx-rtd-theme>=1.0
+
+# Automatic type hint documentation
+sphinx-autodoc-typehints>=1.20
+
+# MyST parser for Markdown support in Sphinx
+myst-parser>=1.0
+
+# Auto-rebuild for development
+sphinx-autobuild>=2021.1
+
+# Optional: Spell checking (uncomment if needed)
+# sphinxcontrib-spelling>=7.0
+
+# Optional: Coverage checking (uncomment if needed)  
+# sphinxcontrib-coverage>=1.0
+
+# Optional: PlantUML diagrams (uncomment if needed)
+# sphinxcontrib-plantuml>=0.24

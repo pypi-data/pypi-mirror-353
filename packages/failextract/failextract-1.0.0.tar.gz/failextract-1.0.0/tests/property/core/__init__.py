@@ -1,0 +1,1 @@
+"""Core property tests."""
