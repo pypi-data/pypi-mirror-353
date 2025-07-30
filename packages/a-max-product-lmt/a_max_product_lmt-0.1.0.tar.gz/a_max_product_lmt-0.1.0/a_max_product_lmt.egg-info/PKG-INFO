@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: a_max_product_lmt
+Version: 0.1.0
+Summary: A package containing company information and 10 products.
+Home-page: https://github.com/Avinash8055/
+Author: Avinash S
+Author-email: Avinash S <avinash.s@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Avinash S
+        
+        
+Project-URL: Homepage, https://github.com/yourusername/companyname
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Company
+
+This package provides information about the Adrenalin Company and 10 products.
