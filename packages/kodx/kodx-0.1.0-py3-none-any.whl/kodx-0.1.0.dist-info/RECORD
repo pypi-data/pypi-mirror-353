@@ -1,0 +1,11 @@
+kodx/__init__.py,sha256=UXoeAyRJuo6i4IFi7tDJkMTHoSBUh5fTOCu_fKGNucY,167
+kodx/cli.py,sha256=PWSSsYQU1hDjlXrtG9Eu6OrWqY_A189aTeUIHEaaAfk,12394
+kodx/codex_shell.py,sha256=iIx1PSxQub4k42hgfxA89GZ1h0ztUF6NR1hNYZj7jZ4,11868
+kodx/defaults.py,sha256=10GNgKDzTLdOUCq1ZwZllMhDjNGKWyQYpa23GiEoobM,1115
+kodx/models.py,sha256=1k0pHLoHugLheo__Qi1_dQq9Cfw2ns6_PNVfHPruXwE,1260
+kodx/tools.py,sha256=HWG3ZIHQl0nZCLcJlGvVk7LfHkEmEl2vEnsPUm5BuKk,8710
+kodx-0.1.0.dist-info/METADATA,sha256=zI15pXt5cR3lJnHZsHEFY3pshMhJbldDyPhE4u9a8RM,14183
+kodx-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+kodx-0.1.0.dist-info/entry_points.txt,sha256=_UzRX-be43CX9z5xqM57nPDpsrnaHZubs0ebTvR09aU,39
+kodx-0.1.0.dist-info/licenses/LICENSE,sha256=BYYFu7d0CvI2Pm23YAw__CQBJrd-jRKVb8iWKnBz0D4,10725
+kodx-0.1.0.dist-info/RECORD,,
