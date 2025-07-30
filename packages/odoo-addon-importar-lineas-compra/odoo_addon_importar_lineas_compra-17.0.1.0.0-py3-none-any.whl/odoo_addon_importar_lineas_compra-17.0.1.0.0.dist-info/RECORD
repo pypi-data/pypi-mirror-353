@@ -1,0 +1,17 @@
+odoo/addons/importar_lineas_compra/.gitignore,sha256=FpBoSO_druyWR6IL0r7lET_w55pPR51A48a9NoPVlTk,20
+odoo/addons/importar_lineas_compra/LICENSE,sha256=6d9MTk5kuBaKccPGdmjc_6u-j8oR1KxKfVSCVizRZ5w,34524
+odoo/addons/importar_lineas_compra/Readme.md,sha256=Z3oc7EHXLmVOQlqaTqs9UP_3UaxxEFCXt4ltY_YopxE,141
+odoo/addons/importar_lineas_compra/__init__.py,sha256=-R6sDcuR9T1QHi17DhtADNRQu9rrpzgLeM8_Ze6hPm8,176
+odoo/addons/importar_lineas_compra/__manifest__.py,sha256=o5cZSVUEtxKFakbHSge5FAjiHU3hcpZ9EtBAsf6lQ3E,1387
+odoo/addons/importar_lineas_compra/importar_lineas_compra.py,sha256=X1SRvGzPLMGDdx_ojm5kyU1TLRQ8OMvl2p4CK-GAYnw,11273
+odoo/addons/importar_lineas_compra/importar_lineas_compra_view.xml,sha256=eYGaDwhwKSy1GXy21EZHcTU9C-5WMGgxj_p9z5aoO4M,2229
+odoo/addons/importar_lineas_compra/Sample Files/purchase_order_line.csv,sha256=hnBiqAsazxU7RcT8s3vweU0exo2L4dAtzqTNHqULWe0,349
+odoo/addons/importar_lineas_compra/Sample Files/purchase_order_line.xls,sha256=fFWVmni_K4ZVqfBeJi-3p5iF1e1hMuCScTIotyFRB84,6144
+odoo/addons/importar_lineas_compra/controllers/__init__.py,sha256=bnJht68yH2OT0v4dB8QopaJrQeY_lygLpJGChahJhnk,141
+odoo/addons/importar_lineas_compra/controllers/download_xls.py,sha256=bw9vAF_nEwqy1nkduWJkc84vvGh1xpq1LESJhOJMEzI,1320
+odoo/addons/importar_lineas_compra/data/attachment_sample.xml,sha256=IHuorenlhoTvppr05SYTmX9zjXjoMwdK9PCpPVUIk4E,776
+odoo/addons/importar_lineas_compra/i18n/es.po,sha256=bFA3phnC30bZrNkbBKaMOVS69vXF4dKIZkP4Tqrm_nE,7044
+odoo_addon_importar_lineas_compra-17.0.1.0.0.dist-info/METADATA,sha256=cQmBvfFWTZwzIab_KyJdf9PjbAlN0iXMiOJoXClxmaU,1188
+odoo_addon_importar_lineas_compra-17.0.1.0.0.dist-info/WHEEL,sha256=9fEMia4zL7ZuZbnCOrcYogUhmn4XFIVaJ8G4YGI31xc,81
+odoo_addon_importar_lineas_compra-17.0.1.0.0.dist-info/top_level.txt,sha256=QE6RBQ0QX5f4eFuUcGgU5Kbq1A_qJcDs-e_vpr6pmfU,4
+odoo_addon_importar_lineas_compra-17.0.1.0.0.dist-info/RECORD,,
