@@ -1,0 +1,87 @@
+[build-system]
+# setuptools v64 was first to support `pip install -e` for packages defined using
+# pyproject.toml (older versions support this, but only for setup.py projects)
+requires = ["setuptools>=64", "wheel"]
+
+[project]
+description = "JSON API 1.0 (https://jsonapi.org) formatting with marshmallow"
+name = "marshmallow-jsonapi-minfork"
+version = "0.25.0"
+readme = "README.rst"
+authors = [{ name = "Steven Loria", email = "sloria1@gmail.com" }]
+maintainers = [
+    { name = "Tomislav Adamic", email = "tomislav.adamic@gmail.com" },
+]
+keywords = [
+    "marshmallow-jsonapi",
+    "marshmallow",
+    "marshalling",
+    "serialization",
+    "jsonapi",
+    "deserialization",
+    "validation",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+]
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = ["marshmallow < 4", "flask>=2.2.0"]
+[project.urls]
+Source = "https://github.com/tadams42/marshmallow-jsonapi"
+Funding = "https://opencollective.com/marshmallow"
+Documentation = "https://marshmallow-jsonapi.readthedocs.io/en/latest/"
+
+
+# Private, local dependencies
+[dependency-groups]
+dev = [
+    "black",
+    "bump2version",
+    "ipython",
+    "rich",
+    "pre-commit",
+    "check-manifest",
+    "pytest",
+    "mock",
+    "faker",
+]
+
+
+[project.optional-dependencies]
+docs = [
+    "sphinx==3.5.3",
+    "sphinx-rtd-theme==0.5.0",
+    "sphinx-issues>=0.2.0",
+    # "furo",
+    # "myst-parser",
+    # "sphinx-copybutton",
+]
+
+
+[tool.setuptools]
+zip-safe = false
+platforms = ["any"]
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests"]
+
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
