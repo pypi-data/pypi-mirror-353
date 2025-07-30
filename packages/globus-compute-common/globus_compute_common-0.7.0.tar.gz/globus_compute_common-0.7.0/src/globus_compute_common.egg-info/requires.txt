@@ -1,0 +1,10 @@
+pydantic<3,>=1
+
+[boto3]
+boto3>=1.37
+
+[moto]
+moto[s3]<6,>=5
+
+[redis]
+redis<7,>=5.3
