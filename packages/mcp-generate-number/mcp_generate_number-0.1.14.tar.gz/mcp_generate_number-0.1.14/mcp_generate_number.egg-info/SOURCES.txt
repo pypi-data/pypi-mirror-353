@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+mcp_generate_number/__init__.py
+mcp_generate_number/server.py
+mcp_generate_number.egg-info/PKG-INFO
+mcp_generate_number.egg-info/SOURCES.txt
+mcp_generate_number.egg-info/dependency_links.txt
+mcp_generate_number.egg-info/entry_points.txt
+mcp_generate_number.egg-info/requires.txt
+mcp_generate_number.egg-info/top_level.txt

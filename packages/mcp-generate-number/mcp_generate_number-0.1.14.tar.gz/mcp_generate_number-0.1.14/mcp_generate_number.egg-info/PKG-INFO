@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: mcp-generate-number
+Version: 0.1.14
+Summary: An MCP server to generate random numbers and strings.
+Author-email: Toby Willcocks <toby@cursor.dev>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastmcp
+
+# MCP Generate Number Server
+
+This is a simple MCP server that provides tools to generate random numbers and strings.
+
+## Installation
+
+```bash
+pip install .
+```
+
+## Usage
+
+You can run this server using its entry point:
+
+```bash
+mcp-generate-number
+``` 
