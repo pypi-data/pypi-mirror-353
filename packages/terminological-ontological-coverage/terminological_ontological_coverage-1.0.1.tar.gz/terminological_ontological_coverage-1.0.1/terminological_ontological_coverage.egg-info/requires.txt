@@ -1,0 +1,7 @@
+PyMuPDF
+rdflib
+rake-nltk
+keybert
+pandas
+argparse
+transformers

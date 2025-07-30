@@ -1,0 +1,2 @@
+[console_scripts]
+keyword-comparison = terminological_ontological_coverage.keyword_comparison:main

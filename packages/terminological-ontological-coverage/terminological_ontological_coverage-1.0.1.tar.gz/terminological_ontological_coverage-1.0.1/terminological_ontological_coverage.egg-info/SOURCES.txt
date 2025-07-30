@@ -1,0 +1,14 @@
+README.md
+setup.py
+terminological_ontological_coverage/SmartStoplist.txt
+terminological_ontological_coverage/__init__.py
+terminological_ontological_coverage/keyword_comparison.py
+terminological_ontological_coverage.egg-info/PKG-INFO
+terminological_ontological_coverage.egg-info/SOURCES.txt
+terminological_ontological_coverage.egg-info/dependency_links.txt
+terminological_ontological_coverage.egg-info/entry_points.txt
+terminological_ontological_coverage.egg-info/requires.txt
+terminological_ontological_coverage.egg-info/top_level.txt
+tests/__init__.py
+tests/test-cli.py
+tests/test-package.py
