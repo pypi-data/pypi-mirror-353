@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "python-oeis"
+version = "1.1.1"
+description = "A basic API wrapper for OEIS."
+authors = ["Ombucha <omkaar.nerurkar@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/Ombucha/python-oeis/"
+documentation = "https://oeis.readthedocs.io/"
+keywords = ["python", "oeis", "sequences", "math", "database"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+packages = ["oeis"]
+
+[tool.poetry.dependencies]
+requests = "*"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Ombucha/python-oeis/issues"
