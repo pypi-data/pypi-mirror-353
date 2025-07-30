@@ -1,0 +1,207 @@
+Metadata-Version: 2.3
+Name: vulpai
+Version: 1.0.0
+Summary: Sistema de Validação de Modelos de IA com integração Claude API
+License: MIT
+Keywords: ai,machine-learning,validation,model-validation,claude-api
+Author: VulpAI Team
+Author-email: contato@vulpai.com
+Requires-Python: >=3.10,<3.13
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Portuguese (Brazilian)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Provides-Extra: all
+Provides-Extra: onnx
+Provides-Extra: pytorch
+Provides-Extra: sklearn
+Provides-Extra: tensorflow
+Provides-Extra: xgboost
+Requires-Dist: joblib (>=1.4.2,<2.0.0)
+Requires-Dist: numpy (>=2.2.3,<3.0.0)
+Requires-Dist: onnx (>=1.15.0,<2.0.0) ; extra == "onnx" or extra == "all"
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: pyarrow (>=19.0.1,<20.0.0)
+Requires-Dist: pydantic (>=2.5.0,<3.0.0)
+Requires-Dist: python-magic (>=0.4.27,<0.5.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: requests-toolbelt (>=1.0.0,<2.0.0)
+Requires-Dist: rich (>=13.9.4,<14.0.0)
+Requires-Dist: scikit-learn (>=1.6.1,<2.0.0) ; extra == "sklearn" or extra == "all"
+Requires-Dist: tensorflow (>=2.15.0,<3.0.0) ; extra == "tensorflow" or extra == "all"
+Requires-Dist: torch (>=2.0.0,<3.0.0) ; extra == "pytorch" or extra == "all"
+Requires-Dist: typer[all] (>=0.15.1,<0.16.0)
+Requires-Dist: xgboost (>=2.1.4,<3.0.0) ; extra == "xgboost" or extra == "all"
+Project-URL: Bug Tracker, https://github.com/vulpai/vulpai-python/issues
+Project-URL: Changelog, https://github.com/vulpai/vulpai-python/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://docs.vulpai.com
+Project-URL: Homepage, https://vulpai.com
+Project-URL: Repository, https://github.com/vulpai/vulpai-python
+Description-Content-Type: text/markdown
+
+# VulpAI Python Client
+
+Cliente Python oficial para o sistema VulpAI de validação automatizada de modelos de IA.
+
+## Instalação
+
+```bash
+pip install vulpai
+```
+
+Para instalar com suporte a frameworks específicos:
+
+```bash
+# Scikit-learn
+pip install vulpai[sklearn]
+
+# PyTorch
+pip install vulpai[pytorch]
+
+# TensorFlow
+pip install vulpai[tensorflow]
+
+# Todos os frameworks
+pip install vulpai[all]
+```
+
+## Início Rápido
+
+```python
+from vulpai import VulpAIClient
+
+# Criar cliente
+client = VulpAIClient(api_token="seu-token-aqui")
+
+# Upload de modelo
+artifact = client.upload_model(
+    model_path="modelo.pkl",
+    name="Meu Modelo",
+    description="Modelo de classificação",
+    tags=["producao", "v1.0"]
+)
+
+# Iniciar validação
+validation_id = client.start_validation(artifact_id=artifact.id)
+
+# Verificar resultados
+result = client.get_validation_result(validation_id)
+print(f"Acurácia: {result.metrics['accuracy']}")
+```
+
+## Funcionalidades Principais
+
+### 💰 Gestão de Créditos
+- Consultar saldo e uso de créditos
+- Estimar custos antes do upload
+- Histórico detalhado de consumo
+
+### 📤 Upload de Artefatos
+- Suporte para modelos e datasets
+- Versionamento automático
+- Validação local antes do envio
+- Progress tracking para arquivos grandes
+
+### ✅ Validação de Modelos
+- Validação automatizada com Claude API
+- Múltiplos níveis: Basic, Standard, Advanced
+- Métricas customizáveis
+- Geração de relatórios e visualizações
+
+### =à Frameworks Suportados
+- Scikit-learn (.pkl, .joblib)
+- PyTorch (.pt, .pth)
+- TensorFlow/Keras (.h5, .pb)
+- XGBoost (.xgb)
+- ONNX (.onnx)
+- Formatos customizados
+
+## Exemplos
+
+### Upload com Progresso
+
+```python
+from vulpai.utils.progress import ConsoleProgress
+
+progress = ConsoleProgress("Enviando modelo")
+artifact = client.upload_model(
+    model_path="modelo_grande.pkl",
+    name="Modelo Grande",
+    progress_callback=progress
+)
+```
+
+### Validação Avançada
+
+```python
+from vulpai import ValidationConfig, ValidationLevel
+
+config = ValidationConfig(
+    validation_level=ValidationLevel.ADVANCED,
+    cross_validation_folds=5,
+    metrics=["accuracy", "precision", "recall", "f1", "roc_auc"],
+    generate_visualizations=True
+)
+
+validation_id = client.start_validation(
+    artifact_id=artifact.id,
+    validation_config=config
+)
+```
+
+### Versionamento de Modelos
+
+```python
+# Criar nova versão
+new_version = client.create_model_version(
+    original_artifact_id=artifact.id,
+    model_path="modelo_v2.pkl",
+    version_notes="Melhorias de performance"
+)
+
+# Listar versões
+versions = client.get_artifact_versions(artifact.id)
+```
+
+## Configuração
+
+### Variáveis de Ambiente
+
+```bash
+export VULPAI_API_TOKEN="seu-token"
+export VULPAI_BASE_URL="https://api.vulpai.com"  # Opcional
+```
+
+### Configuração Programática
+
+```python
+from vulpai.config import VulpAIConfig
+
+config = VulpAIConfig(
+    api_token="seu-token",
+    base_url="https://api.vulpai.com",
+    timeout=300,
+    max_retries=3
+)
+
+client = VulpAIClient.from_config(config)
+```
+
+## Documentação Completa
+
+Para documentação detalhada, visite: [https://docs.vulpai.com](https://docs.vulpai.com)
+
+## Contribuindo
+
+Contribuições são bem-vindas! Por favor, veja nosso [guia de contribuição](CONTRIBUTING.md).
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
