@@ -1,0 +1,4 @@
+[console_scripts]
+taskprov = taskprovision.cli:main
+taskprovision = taskprovision.cli:main
+tprov = taskprovision.cli:main
