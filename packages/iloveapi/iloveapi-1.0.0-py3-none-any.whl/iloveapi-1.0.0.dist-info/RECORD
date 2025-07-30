@@ -1,0 +1,12 @@
+iloveapi-1.0.0.dist-info/METADATA,sha256=SzvMRjKrTHi2To7Sv_h2OW7LrmVC57dYdvhXxPoO9cA,2113
+iloveapi-1.0.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+iloveapi-1.0.0.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+iloveapi-1.0.0.dist-info/licenses/LICENSE,sha256=aO8tPT7it_emHL_xQiSJg3iBzXxniJjYrZFqhT6PoKE,1064
+iloveapi/__init__.py,sha256=RkqQt6mcyFocYDFoIv05udSWZ9b-QqnxzpmGfOe4H7U,43
+iloveapi/auth.py,sha256=cCflGE4AEHXMugfQk-qVQRup1ppyLjvPsuOBu4Tm52Y,1339
+iloveapi/iloveapi.py,sha256=sTOwOgwI4jdAHT4h2cHvdtWSwX079l7GkLENQ4fUOag,4725
+iloveapi/rest.py,sha256=-luZ3ps4h80Ys3uSs96qvx3Kygr2EuqbTveokJba01Y,6092
+iloveapi/task.py,sha256=0Bqp-tJ9jAyMZzTEA-WMb5LJ-zP11pTM70tdq6ogLcg,13333
+iloveapi/typing.py,sha256=I8YN7xfqA2Mgp-mXudktGl5WlAgoXOoAyv_HOdnfoco,521
+iloveapi/utils.py,sha256=KU7Yb9f1NwYRxa_EhMquc0KiumgdM6lDEbkHk1cRefk,773
+iloveapi-1.0.0.dist-info/RECORD,,
