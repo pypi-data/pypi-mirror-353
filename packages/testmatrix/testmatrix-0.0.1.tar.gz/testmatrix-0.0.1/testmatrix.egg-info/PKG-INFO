@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: testmatrix
+Version: 0.0.1
+Summary: A matrix server sanity tester
+License-Expression: AGPL-3.0-or-later
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: license-file

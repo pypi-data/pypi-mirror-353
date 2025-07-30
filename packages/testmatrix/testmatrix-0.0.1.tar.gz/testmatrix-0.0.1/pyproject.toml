@@ -1,0 +1,22 @@
+[project]
+name = "testmatrix"
+version = "0.0.1"
+description='A matrix server sanity tester'
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+]
+
+[tool.setuptools]
+py-modules = ["testmatrix"]
+
+[project.scripts]
+testmatrix = "testmatrix:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+#author='Sebastian Spaeth & contributors'
+#author_email='Sebastian@SSpaeth.de'
+#url='https://codeberg.org/spaetz/testmatrix'
