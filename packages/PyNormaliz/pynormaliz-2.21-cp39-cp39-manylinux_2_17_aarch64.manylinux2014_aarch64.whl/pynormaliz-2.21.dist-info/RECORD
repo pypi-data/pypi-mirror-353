@@ -1,0 +1,15 @@
+PyNormaliz_cpp.cpython-39-aarch64-linux-gnu.so,sha256=l6m-T1-gSbRbOx5xvmQV1bb_xQ2tyNu4FernEaGow5I,8447593
+PyNormaliz.py,sha256=P_8gw1iaCYIhLQx9VeMn6kgmJqrJjluJNCImWCCbBrQ,13894
+pynormaliz-2.21.dist-info/RECORD,,
+pynormaliz-2.21.dist-info/WHEEL,sha256=E40XJ3Kqr2LLs8cXTJwKscwWQko6dRKCfXO_6R_FbDI,149
+pynormaliz-2.21.dist-info/METADATA,sha256=iZ5oJfX44d6mRK7p78_3qqLJnOYEChfhMAK8NEvMvVE,5126
+pynormaliz-2.21.dist-info/top_level.txt,sha256=tif8zLkZEtG6LKWF4sr6AZZqjQLe-y1b6EHyhaYmuBQ,26
+pynormaliz-2.21.dist-info/licenses/COPYING,sha256=WBVp5mhcvjL8zVp4fS7FULdJbNG7ltuRRvVHXhzjRd4,744
+pynormaliz.libs/libgomp-d22c30c5.so.1.0.0,sha256=BTGH6is2VDtn03gF_z6BiPXVdnSzH2mP6Hz-IiGkPtk,274665
+pynormaliz.libs/libnormaliz-e2fbb282.so.3.10.5,sha256=ZQ62Y_-ELGTnud2nJdvyd6zPc8fQP3sbkb0USBiOPy0,174458729
+pynormaliz.libs/libgmpxx-ed2e3437.so.4.7.0,sha256=_BZNbX1KVEjekjp87eMeTmip8FqbxGS03dSaaux_32k,269817
+pynormaliz.libs/libeanticxx-08240807.so.3.0.2,sha256=N7K_6akTvDhX2QOrRCRzEAY9880ZzdJfCuWoo6v40JA,1609985
+pynormaliz.libs/libgmp-d76a4877.so.10.5.0,sha256=M6PyWatxmkHO-bQJNWZFhSUbJ8-q7-_cGfYqB2fDa-Y,3222593
+pynormaliz.libs/libeantic-38638984.so.3.0.2,sha256=wLOqskCBhQI49a4l9DpG2y3eqgkhWNHrG3aIKnAuUvw,725985
+pynormaliz.libs/libmpfr-a9b036b7.so.6.2.1,sha256=xHTBBRN6Q5NrMtPOEVfDYiSBPE_3RfDX_m6TnTcxHyQ,2959433
+pynormaliz.libs/libflint-629c547c.so.19.0.0,sha256=zNWfRRlpgtAWNM6wYd7p_ctaICmnlV4nVDra7jGPvO0,80041905
