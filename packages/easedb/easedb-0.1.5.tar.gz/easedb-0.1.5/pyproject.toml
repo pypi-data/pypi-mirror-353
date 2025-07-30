@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "easedb"
+version = "0.1.5"
+authors = [
+    {name = "Boylair <boylair@tuta.io>"}
+]
+description = "Fast, simple, reliable — Database management made easy"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiomysql==0.2.0", 
+    "mysql-connector-python>=9.1.0", 
+    "aiosqlite>=0.19.0",
+    "asyncio>=3.4.3", 
+    "typing-extensions>=4.0.0",
+    "loguru>=0.7.3"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Boylair/easedb"
+"Bug Tracker" = "https://github.com/Boylair/easedb/issues"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
+markers = [
+    "asyncio: mark a test as an asyncio coroutine",
+]
+
+[tool.coverage.run]
+source = ["src/easedb"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "pass"
+]
+
+[project.optional-dependencies]
+mysql = [
+    "aiomysql==0.2.0", 
+    "mysql-connector-python>=9.1.0", 
+    "asyncio>=3.4.3", 
+    "typing-extensions>=4.0.0"
+]
+sqlite = [
+    "aiosqlite>=0.19.0", 
+    "asyncio>=3.4.3", 
+    "typing-extensions>=4.0.0"
+]
+dev = ["pytest==7.4.3", "pytest-asyncio==0.21.1", "pytest-cov>=3.0.0", "coverage>=6.0.0"]
+all = [
+    "aiomysql==0.2.0", 
+    "mysql-connector-python>=9.1.0", 
+    "aiosqlite>=0.19.0", 
+    "asyncio>=3.4.3", 
+    "typing-extensions>=4.0.0", 
+    "coverage>=6.0.0"
+]
+
+[project.scripts]
+easedb = "easedb.cli.main:main"
