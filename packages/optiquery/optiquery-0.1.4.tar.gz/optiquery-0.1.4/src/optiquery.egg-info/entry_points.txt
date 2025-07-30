@@ -1,0 +1,2 @@
+[console_scripts]
+optiquery = opti_query.cli:main

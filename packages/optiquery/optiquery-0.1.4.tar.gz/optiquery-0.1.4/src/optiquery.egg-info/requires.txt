@@ -1,0 +1,12 @@
+pydantic
+google-generativeai
+neo4j
+questionary
+openai
+
+[dev]
+pre-commit
+pylint
+ruff
+mypy
+pytest

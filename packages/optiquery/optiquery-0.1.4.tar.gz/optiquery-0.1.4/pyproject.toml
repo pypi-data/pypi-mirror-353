@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optiquery"
+version = "0.1.4"
+description = "AI-powered database query optimization CLI"
+authors = [
+  { name = "Michael Gurevitz", email = "gurevitz15@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+
+dependencies = [
+  "pydantic",
+  "google-generativeai",
+  "neo4j",
+  "questionary",
+  "openai"
+]
+
+keywords = ["query", "optimization", "neo4j", "ai", "llm"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit",
+  "pylint",
+  "ruff",
+  "mypy",
+  "pytest"
+]
+
+[project.scripts]
+optiquery = "opti_query.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mich-gurevitz/opti-query"
+Repository = "https://github.com/mich-gurevitz/opti-query"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.black]
+line-length = 170
+
+[tool.ruff]
+line-length = 170
