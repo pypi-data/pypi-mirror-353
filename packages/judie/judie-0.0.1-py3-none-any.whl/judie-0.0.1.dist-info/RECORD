@@ -1,0 +1,10 @@
+judie/__init__.py,sha256=WyhycOYaclUfGC3E0xZiOv8wMmyN2vdzMe46T6ZBl3Q,198
+judie/generator.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+judie/types.py,sha256=ynPxCkH6Nlp-y1sckpPBu1TjGWumb58orF6UxBQeO2A,24
+judie/evaluators/__init__.py,sha256=i9qj_FNYMqXeEccp4t1N78ZmzTTMpUi9dTtANaEzbTU,95
+judie/evaluators/base.py,sha256=1CQS11LBOeB7bg2XWP4qrbjLhuOCrVFT1yYdJL1hOAI,255
+judie-0.0.1.dist-info/licenses/LICENSE,sha256=oZaWWU-6YrHbQ5Cvc-TiD3VSgqueT7EvfotL-J_oQdY,11343
+judie-0.0.1.dist-info/METADATA,sha256=77_OxjBFXzN9q91IftfcVMLN0plNG4xdu2Q25biDJ68,3506
+judie-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+judie-0.0.1.dist-info/top_level.txt,sha256=6rdangtsZgzbMnQ_tpVCs_7LW3VdgbJluAqfl_z0F7E,6
+judie-0.0.1.dist-info/RECORD,,
