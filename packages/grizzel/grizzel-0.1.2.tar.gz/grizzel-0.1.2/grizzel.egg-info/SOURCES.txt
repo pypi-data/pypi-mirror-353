@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+grizzel/__init__.py
+grizzel/cleaner.py
+grizzel.egg-info/PKG-INFO
+grizzel.egg-info/SOURCES.txt
+grizzel.egg-info/dependency_links.txt
+grizzel.egg-info/requires.txt
+grizzel.egg-info/top_level.txt
