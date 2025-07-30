@@ -1,0 +1,4 @@
+[console_scripts]
+saturation-analyze = saturation.main:main
+saturation-flow = saturation.flow:main
+saturation-predict = saturation.pre.预测模型:main

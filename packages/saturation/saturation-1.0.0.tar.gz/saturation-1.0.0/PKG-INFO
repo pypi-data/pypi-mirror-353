@@ -1,0 +1,222 @@
+Metadata-Version: 2.4
+Name: saturation
+Version: 1.0.0
+Summary: 服务区饱和度分析系统
+Home-page: 
+Author: 应用团队
+Keywords: traffic analysis,saturation,prediction,machine learning
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.0.0
+Requires-Dist: numpy>=1.18.0
+Requires-Dist: scikit-learn>=0.22.0
+Requires-Dist: matplotlib>=3.1.0
+Requires-Dist: tensorflow>=2.0.0
+Requires-Dist: keras>=2.3.0
+Requires-Dist: scipy>=1.4.0
+Requires-Dist: scikit-fuzzy>=0.4.2
+Requires-Dist: packaging>=20.0
+Requires-Dist: scikit-opt>=0.6.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 服务区饱和度分析系统
+
+本系统用于高速公路服务区饱和度分析，包含数据处理、聚类分析、分类判别、流量分析、饱和度分析和预测模型六个主要功能模块。
+
+## 安装
+
+### 从源码安装
+
+```bash
+git clone <项目仓库URL>
+cd 服务区饱和度分析
+pip install -e .
+```
+
+### 使用pip安装
+
+```bash
+pip install saturation
+```
+
+## 数据要求
+
+系统需要在`result`目录下存放以下格式的数据文件：
+- G006550002000620010.csv：下行车辆原始数据
+- G006550002000520010.csv：中间服务区车辆数据
+- G006550002000420010.csv：上行服务区车辆数据
+- G006550002000320010.csv：上游服务区车辆数据
+- current_up.csv：当前服务区上行数据
+- current_down.csv：当前服务区下行数据
+- 其他中间文件会在处理过程中自动生成
+
+## 使用方法
+
+### 命令行使用
+
+```bash
+# 执行完整流程
+python -m saturation.main --all
+
+# 单独执行数据处理
+python -m saturation.main --process
+
+# 单独执行聚类分析
+python -m saturation.main --cluster
+
+# 单独执行分类判别分析
+python -m saturation.main --classify
+
+# 单独执行流量分析
+python -m saturation.main --flow
+
+# 单独执行饱和度分析
+python -m saturation.main --analyze
+
+# 单独执行预测模型
+python -m saturation.main --predict
+```
+
+### Python代码中使用
+
+```python
+# 数据处理
+from saturation.enJud import data_process
+data_process.complete_data_processing_pipeline()
+
+# 聚类分析
+from saturation.enJud import julei
+julei.main()
+
+# 分类判别
+from saturation.enJud import fenleipanbie
+fenleipanbie.main()
+
+# 流量分析
+from saturation import flow
+flow.main()
+
+# 饱和度分析
+from saturation.satAna import saturation
+saturation.main()
+
+# 预测模型
+from saturation.pre import 预测模型 as prediction_model
+prediction_model.main()
+
+# 或者使用主程序执行完整流程
+from saturation.main import full_pipeline
+results = full_pipeline()
+```
+
+## 程序流程
+
+### 1. 数据处理模块 (saturation.enJud.data_process)
+处理原始ETC数据，包括：
+- 数据去重
+- 匹配车辆
+- 计算速度
+- 按车型分组
+- 计算P1和P2值等
+
+### 2. 聚类分析模块 (saturation.enJud.julei)
+对处理后的数据进行聚类分析，确定不同饱和度级别的特征。
+
+### 3. 分类判别模块 (saturation.enJud.fenleipanbie)
+基于聚类结果和速度数据进行分类判别。
+
+### 4. 流量分析模块 (saturation.flow)
+分析车流量特征，包括：
+- 计算时间值
+- 调整流量
+- 分析客车、货车流量
+- 分析内部和外部流量
+
+### 5. 饱和度分析模块 (saturation.satAna.saturation)
+基于流量分析结果，对服务区的饱和度进行分析和评估。
+
+### 6. 预测模块 (saturation.pre)
+基于历史数据和机器学习模型，对服务区未来的饱和度进行预测。
+
+## 开发说明
+
+### 目录结构
+
+```
+服务区饱和度分析/
+├── result/              # 数据存储目录
+├── saturation/          # 主程序包
+│   ├── __init__.py      # 包初始化
+│   ├── main.py          # 主程序入口
+│   ├── flow.py          # 流量分析模块
+│   ├── enJud/           # 入口判断模块
+│   │   ├── __init__.py
+│   │   ├── data_process.py  # 数据处理
+│   │   ├── julei.py     # 聚类分析
+│   │   ├── fenleipanbie.py  # 分类判别
+│   │   └── ...
+│   ├── satAna/          # 饱和度分析模块
+│   │   ├── __init__.py
+│   │   └── saturation.py  # 饱和度分析
+│   └── pre/             # 预测模块
+│       ├── __init__.py
+│       ├── 预测模型.py   # 预测模型
+│       └── *.h5         # 模型文件
+└── setup.py             # 安装配置
+```
+
+### 输入输出文件
+
+#### 原始输入文件
+- G006550002000620010.csv - 下行车辆数据
+- G006550002000520010.csv - 中间服务区车辆数据
+- G006550002000420010.csv - 上行服务区车辆数据
+- G006550002000320010.csv - 上游服务区车辆数据
+- current_up.csv - 当前服务区上行数据
+- current_down.csv - 当前服务区下行数据
+
+#### 中间处理文件
+- down.csv - 去重后的下行数据
+- matched_vehicle_*.csv - 匹配车辆数据
+- speed_*.csv - 速度数据
+- total.csv - 合并的速度数据
+- 聚类结果.csv - 聚类分析结果
+- 分类判别.csv - 分类判别结果
+
+#### 最终输出文件
+- merged_flow_saturation_PCA.csv - 饱和度分析结果
+- saturation_clusters.csv - 饱和度聚类结果
+- etc_flow.csv - 流量分析结果
+
+### 开发环境
+
+- Python 3.7+
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- tensorflow
+- keras
+- scikit-fuzzy
+
+## 许可证
+
+本项目遵循 MIT 许可证
+
