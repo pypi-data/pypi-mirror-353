@@ -1,0 +1,9 @@
+setup.py
+easy_ua/Brand.py
+easy_ua/device_ua.pkl
+easy_ua/easy_ua.py
+project_easy_ua.egg-info/PKG-INFO
+project_easy_ua.egg-info/SOURCES.txt
+project_easy_ua.egg-info/dependency_links.txt
+project_easy_ua.egg-info/requires.txt
+project_easy_ua.egg-info/top_level.txt
