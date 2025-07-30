@@ -1,0 +1,9 @@
+actix/__init__.py,sha256=WeJMvAIKZH1kiEoGPQR8FE-LX3lux1eZhLuZB02L3X8,10289
+actix/activations_tf.py,sha256=P06WL2mZMai7jyDeJgRbfe2WDTvv7_n5FiFdSk_j8Ek,28631
+actix/activations_torch.py,sha256=g8VFpUKWw2QsFI3G-3styAu84FapFJkGXju1W4VOU1s,18975
+actix/utils.py,sha256=hA1y9ZxnD7rIcBpD2r0vqtRFP-PjGkcW2FqAkFP2OZo,4168
+actix-0.1.4.dist-info/licenses/LICENSE,sha256=07nO-ZFpy_s_msfks8VsONyV2cBBggqsEQD2h5sdVRo,1069
+actix-0.1.4.dist-info/METADATA,sha256=BvsgJ9XI3QnRywJozqq1DDP44KMgyMxy0l19p0w62fg,12368
+actix-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+actix-0.1.4.dist-info/top_level.txt,sha256=gwtgKwuNomDlM5Bght1Lds-eimvkSKZfA3Xlqcb1qcg,6
+actix-0.1.4.dist-info/RECORD,,
