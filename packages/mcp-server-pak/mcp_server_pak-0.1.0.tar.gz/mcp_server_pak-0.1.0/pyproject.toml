@@ -1,0 +1,19 @@
+[project]
+name = "mcp-server-pak"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "wangfeng", email = "wangfeng@makalu.cc" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.9.3",
+]
+
+[project.scripts]
+mcp-server-pak = "mcp_server_pak:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
