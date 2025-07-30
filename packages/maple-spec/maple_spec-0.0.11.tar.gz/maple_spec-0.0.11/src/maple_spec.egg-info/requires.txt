@@ -1,0 +1,4 @@
+specklepy==2.21.4
+importlib-metadata
+jinja2
+python-dotenv
