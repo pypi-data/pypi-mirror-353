@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+lstm_anomaly_tool/__init__.py
+lstm_anomaly_tool/model.h5
+lstm_anomaly_tool/predict.py
+lstm_anomaly_tool/predict_anomalies.py
+lstm_anomaly_tool/scaler.pkl
+lstm_anomaly_tool/threshold.json
+lstm_anomaly_tool.egg-info/PKG-INFO
+lstm_anomaly_tool.egg-info/SOURCES.txt
+lstm_anomaly_tool.egg-info/dependency_links.txt
+lstm_anomaly_tool.egg-info/requires.txt
+lstm_anomaly_tool.egg-info/top_level.txt
