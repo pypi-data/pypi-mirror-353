@@ -1,0 +1,7 @@
+click
+tqdm
+func_timeout
+
+[dev]
+coverage
+pytest
