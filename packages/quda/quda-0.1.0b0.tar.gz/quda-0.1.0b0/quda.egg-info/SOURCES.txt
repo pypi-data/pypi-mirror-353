@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+quda.egg-info/PKG-INFO
+quda.egg-info/SOURCES.txt
+quda.egg-info/dependency_links.txt
+quda.egg-info/requires.txt
+quda.egg-info/top_level.txt
