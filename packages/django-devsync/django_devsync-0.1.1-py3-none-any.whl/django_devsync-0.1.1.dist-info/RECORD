@@ -1,0 +1,17 @@
+django_devsync/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_devsync/__main__.py,sha256=FB7YK_pFJ8jkVISwzx9l1AzT_ajbViYXu4evv8qga1U,66
+django_devsync/main.py,sha256=uyBAkBOXPG2IXQQlNU7QSQvkZzrJipayWCvlffyn5Zk,1553
+django_devsync/args/__init__.py,sha256=PVFrNVLK2pNfRRSxJuUemnwgFa4Rw4Li42AxBOUPQsI,103
+django_devsync/args/utils.py,sha256=oDE4Oacttub3UazUQLKQPiaQvJxjYivruQfUNqJNwKk,1715
+django_devsync/core/__init__.py,sha256=xl3Z5l4T_yP1xN1VMYSjBOVD2QEIBV6SyqsANcDKd1I,284
+django_devsync/core/database.py,sha256=vH22NRPSxspK23zx3XOUec_eZnqShR1b7JpiFo92UWk,2618
+django_devsync/core/django_setup.py,sha256=7QZWMid_9ZCGnQhq1tojA0kbgV8sPTk4zYtdfYCtD58,1616
+django_devsync/core/migrations.py,sha256=JqFsFhZMuraPctUXYmb7Q_jVjNc22DSpNiERFUDjut4,1786
+django_devsync/core/sync_schema.py,sha256=iihAmSPLeAL16wh_uKjItRTuy8ppxq_T77tawH6Hx_k,594
+django_devsync/core/utils.py,sha256=bJM5m6gU3n2YRledW7ufyEKeTY0SNKVpEe4j8HMpGDo,533
+django_devsync-0.1.1.dist-info/licenses/LICENSE,sha256=KB_38r7D_uLaGk6CCEhiI4XBN-x3cjbldZHUH4fyDuA,1094
+django_devsync-0.1.1.dist-info/METADATA,sha256=DKEfA5TcM2PkRlHl8FBSE1Pw_JV-mF8pR8d7wgOZXcI,2575
+django_devsync-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_devsync-0.1.1.dist-info/entry_points.txt,sha256=UyDhg1xDBlPAik2MHBuQ9osMKCuw1eGPzcRWGYu1BIA,53
+django_devsync-0.1.1.dist-info/top_level.txt,sha256=RO_CW62j2R_rPrUeq0EHSM_niumLSffCdCng7GqLQHY,15
+django_devsync-0.1.1.dist-info/RECORD,,
