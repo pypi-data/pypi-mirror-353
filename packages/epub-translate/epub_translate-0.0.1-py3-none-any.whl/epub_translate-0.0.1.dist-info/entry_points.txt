@@ -1,0 +1,3 @@
+[console_scripts]
+epub-translate=epub_translate.cli:app
+

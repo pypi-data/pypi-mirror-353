@@ -1,0 +1,9 @@
+epub_translate/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+epub_translate/cli.py,sha256=jqXnwq8OANcYpMmuW6nRNoMb9IBZTGFn2h7-clmajSA,1008
+epub_translate/config.py,sha256=_LJdVKljb26MX-scFIyrtCo6e1EekyR-qh3l4lvWUuE,1185
+epub_translate/translator.py,sha256=FDrkAoh-E-g8JC_ubf_JAzG1hjxOgOBqD1uUrd1bKN0,4110
+epub_translate-0.0.1.dist-info/LICENSE,sha256=0H9QjFCipQiEeUnx0inaaLTYFX3n80B3p5obZBiwhZ4,1068
+epub_translate-0.0.1.dist-info/METADATA,sha256=OPvyg5Y-SZkWWHu93y0PboO_n39n8fCul1S_qQWx_Do,3233
+epub_translate-0.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+epub_translate-0.0.1.dist-info/entry_points.txt,sha256=MknWoBe0LwYnCmanMitTGkDPUqHoB5KEUNrkP3fDnwo,57
+epub_translate-0.0.1.dist-info/RECORD,,
