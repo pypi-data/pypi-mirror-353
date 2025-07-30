@@ -1,0 +1,2 @@
+[console_scripts]
+asimov-jq-runner = asimov_jq_module.runner:main
