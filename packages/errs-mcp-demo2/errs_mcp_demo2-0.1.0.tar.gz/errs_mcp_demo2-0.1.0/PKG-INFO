@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: errs-mcp-demo2
+Version: 0.1.0
+Summary: Add your description here
+Author-email: exid <exid310l@outlook.com>
+Requires-Python: >=3.12
+Requires-Dist: mcp[cli]>=1.9.3
