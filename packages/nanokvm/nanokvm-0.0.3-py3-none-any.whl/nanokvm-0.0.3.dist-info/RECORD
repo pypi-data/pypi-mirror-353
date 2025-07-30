@@ -1,0 +1,10 @@
+nanokvm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nanokvm/client.py,sha256=-jbfJu51SsTY2JcTY_ccnPTv18DotDU3S2of61Q2d9M,19853
+nanokvm/models.py,sha256=hgnwk4rxcpRQHUXoCbPKaf0HAKrXgiZ5Gt79r5xFmgQ,4898
+nanokvm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nanokvm/utils.py,sha256=U0afoVb_yFQJow6JO13TvFtVTFbonqzRCX0eupSIo4M,1683
+nanokvm-0.0.3.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+nanokvm-0.0.3.dist-info/METADATA,sha256=5BKMC62jkfIp7FJ447xH0ogg6BOoi-KN-yhKiDeTzoA,1521
+nanokvm-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nanokvm-0.0.3.dist-info/top_level.txt,sha256=VZ6VrAt-BTsc0KkQLGyUbc_E3lv2bWn09kZFztli37k,8
+nanokvm-0.0.3.dist-info/RECORD,,
