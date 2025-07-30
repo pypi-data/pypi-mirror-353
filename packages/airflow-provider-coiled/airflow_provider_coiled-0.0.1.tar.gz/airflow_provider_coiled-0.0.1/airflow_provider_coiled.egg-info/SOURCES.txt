@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+airflow/__init__.py
+airflow/providers/__init__.py
+airflow/providers/coiled/get_provider_info.py
+airflow/providers/coiled/coiled/operators/__init__.py
+airflow/providers/coiled/coiled/operators/coiled.py
+airflow_provider_coiled.egg-info/PKG-INFO
+airflow_provider_coiled.egg-info/SOURCES.txt
+airflow_provider_coiled.egg-info/dependency_links.txt
+airflow_provider_coiled.egg-info/entry_points.txt
+airflow_provider_coiled.egg-info/requires.txt
+airflow_provider_coiled.egg-info/top_level.txt
