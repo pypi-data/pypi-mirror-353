@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyplot_xg"
+version = "0.1.1"
+description = "Python package for plotting"
+authors = [{ name="Xavier Gonzalez", email="haroldxaviergonzalez@gmail.com" }]
+readme = "README.md"  
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib",
+]

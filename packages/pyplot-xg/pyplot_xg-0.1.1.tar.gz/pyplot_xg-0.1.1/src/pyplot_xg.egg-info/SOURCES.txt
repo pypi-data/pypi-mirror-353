@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/pyplot_xg/__init__.py
+src/pyplot_xg/helpers.py
+src/pyplot_xg.egg-info/PKG-INFO
+src/pyplot_xg.egg-info/SOURCES.txt
+src/pyplot_xg.egg-info/dependency_links.txt
+src/pyplot_xg.egg-info/requires.txt
+src/pyplot_xg.egg-info/top_level.txt
