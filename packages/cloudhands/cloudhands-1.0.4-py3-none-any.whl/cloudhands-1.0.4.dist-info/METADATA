@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: cloudhands
+Version: 1.0.4
+Summary: Python SDK for CloudHands API
+Author: Cloudhands, Inc.
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.32.3
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CloudHands SDK
+
+CloudHands SDK is a Python library for interacting with the CloudHands API. It provides tools for authentication, charging events, and retrieving transaction details.
+
+## Installation
+
+```bash
+pip install cloudhands
+```
+
+## Usage
+
+```python
+# initialize with your API key
+ch = Cloudhands(api_key=YOUR_API_KEY)
+
+# Can now make calls to the Cloudhands SDK to interact with and query the site
+ch.get_posts(some_user_id) # Get posts for a user
+ch.text_post(title=some_title, content=some_content)
+```
+
+## Publish on pypi
+pip install setuptools wheel twine
+python setup.py sdist bdist_wheel
+twine upload dist/*
