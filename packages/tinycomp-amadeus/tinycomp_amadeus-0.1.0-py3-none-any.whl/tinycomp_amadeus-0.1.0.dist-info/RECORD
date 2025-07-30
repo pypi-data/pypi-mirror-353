@@ -1,0 +1,12 @@
+tinycomp/__init__.py,sha256=MjUKtfHQOsRGdafieVxiU1Jeowa0PWXZdYpvlcDgzV0,238
+tinycomp/api_manager.py,sha256=BhvFur6Lv9tr0r0yIPa4PJmmPCa_3Ty_PP-JzVGCmA4,12607
+tinycomp/cli.py,sha256=nv0BoRP0Hzuu-xpbfCPQgX1hSQUB5AmQjl51p3Lz330,4528
+tinycomp/compressor.py,sha256=5ip_NUGvM3--BQclek9cv1ylWDx6fRdTC2jNsQesb9o,7812
+tinycomp/tests/__init__.py,sha256=hwAcNKmXdi8WLf4ivFKHr_luLm6CyVeBafyk3l2Hc0w,36
+tinycomp/tests/test_compressor.py,sha256=ctCem-79GV5L9LM1-jaYLgvwLa4ReWEmr8n4PAgNmMg,3370
+tinycomp_amadeus-0.1.0.dist-info/LICENSE,sha256=CNBY4aff6mvf0SKjfr5mJFb9T5zEqs7woP0ZKPHf2a0,1085
+tinycomp_amadeus-0.1.0.dist-info/METADATA,sha256=nj6194mnq7I0cnxjkjiWpVJDLgHf7mXL9E4eVeeISLg,4108
+tinycomp_amadeus-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+tinycomp_amadeus-0.1.0.dist-info/entry_points.txt,sha256=XzMMP4mptoCxeNuGPIP1rJMrdbxQOZD5XscgbKymCng,47
+tinycomp_amadeus-0.1.0.dist-info/top_level.txt,sha256=J83gslKdo58C8pQw2qZzgdpp7OVrOSbJ-_I3rF75tzs,9
+tinycomp_amadeus-0.1.0.dist-info/RECORD,,
