@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bluezoo"
+version = "1.0.0"
+description = "A mock for the BlueZ D-Bus API"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Mocking",
+]
+dependencies = ["pyparsing>=3.0.0", "sdbus>=0.14.0"]
+
+[project.urls]
+Homepage = "https://github.com/Samsung/BlueZoo"
+
+[project.scripts]
+bluezoo = "bluezoo:main"
+
+[tool.setuptools.packages.find]
+exclude = ["scripts*", "tests*"]
+
+[tool.autopep8]
+max-line-length = 99
+
+[tool.isort]
+line_length = 99
