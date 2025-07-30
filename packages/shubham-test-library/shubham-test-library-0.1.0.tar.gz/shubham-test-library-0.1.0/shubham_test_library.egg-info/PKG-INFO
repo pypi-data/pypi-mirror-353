@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: shubham-test-library
+Version: 0.1.0
+Summary: A brief description of your library
+Home-page: https://github.com/shubham-yadav/shubham-test-library
+Author: Shubham Yadav
+Author-email: yb.shubham@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# shubham_test_library
+
+[![PyPI version](https://badge.fury.io/py/shubham-test-library.svg)](https://badge.fury.io/py/shubham-test-library)
+[![Python versions](https://img.shields.io/pypi/pyversions/shubham-test-library.svg)](https://pypi.org/project/shubham-test-library/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A powerful and easy-to-use Python library for data processing and utility functions.
+
+## Features
+
+- **Data Processing**: Efficient data manipulation and processing functions  
+- **Utility Functions**: Common helper functions for everyday programming tasks  
+- **Email Validation**: Built-in email address validation  
+- **JSON Handling**: Safe JSON file operations with error handling  
+- **Dictionary Operations**: Advanced dictionary manipulation including flattening and safe access  
+- **List Processing**: Chunking and other list utilities  
+- **Timestamp Formatting**: Flexible timestamp formatting and parsing  
+
+## Installation
+
+### From PyPI (recommended)
+
+```bash
+pip install shubham-test-library
+
+
