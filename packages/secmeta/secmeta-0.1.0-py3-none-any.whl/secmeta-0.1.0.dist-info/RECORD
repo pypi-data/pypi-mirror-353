@@ -1,0 +1,10 @@
+secmeta/__init__.py,sha256=SbLAnpIb6GcDg1NAqWPD4rnl6Y5W2Pf8CpiR38ZfDv0,52
+secmeta/api.py,sha256=JSzOoT9qnyjSKjabdXSIjnI-7bJefLajhKTP_nRLK-M,2856
+secmeta/cli.py,sha256=U8VOspLVRy-pcOIRciEl-Lop0Uc3uBPR9zd_-b8BWLs,4045
+secmeta/fetch.py,sha256=7EP7psjZ8xvOY5DUxuaQx-_Amja-lwweTWvYUcFIsSo,2918
+secmeta/mapping.py,sha256=d_WWqeTkhvUzpglqyKVE4n4t_qr77rSbYOQznfdOhao,1182
+secmeta-0.1.0.dist-info/METADATA,sha256=OlRSAHh3oLDximRfj3GPXIKGkBzsEMFv5d659lU5oDc,1748
+secmeta-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+secmeta-0.1.0.dist-info/entry_points.txt,sha256=z0SLF4VxDXsbq5_OVOQUQbimdYt9-hEp5OGe5oQuSP0,49
+secmeta-0.1.0.dist-info/top_level.txt,sha256=io7mSD5aDOSMlnOYqGMtqomr2P3uoBmOE7QUp0mlqBA,8
+secmeta-0.1.0.dist-info/RECORD,,
