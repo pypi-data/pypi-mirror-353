@@ -1,0 +1,7 @@
+guidance>=0.2.0
+loguru>=0.7.2
+tqdm>=4.65.0
+polars>=0.20.15
+wonderwords>=2.2.0
+scikit-learn>=1.4.2
+numpy==1.26.4

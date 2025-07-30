@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/stance_llm/__init__.py
+src/stance_llm/base.py
+src/stance_llm/process.py
+src/stance_llm.egg-info/PKG-INFO
+src/stance_llm.egg-info/SOURCES.txt
+src/stance_llm.egg-info/dependency_links.txt
+src/stance_llm.egg-info/requires.txt
+src/stance_llm.egg-info/top_level.txt
+tests/test_detect_stance.py
+tests/test_process.py
+tests/test_stanceclassification_object.py
