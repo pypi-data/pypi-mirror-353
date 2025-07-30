@@ -1,0 +1,13 @@
+click
+pandas
+polars
+xarray
+aiohttp
+aiofiles
+numba
+pyarrow
+netcdf4
+dask
+
+[develop]
+pytest
