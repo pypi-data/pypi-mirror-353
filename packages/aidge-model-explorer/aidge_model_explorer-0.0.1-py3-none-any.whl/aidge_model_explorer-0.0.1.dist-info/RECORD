@@ -1,0 +1,12 @@
+aidge_model_explorer/__init__.py,sha256=8lQF5Q91NzI-KZ0kA_qo2VdfqcycwkKi4GwMsASO2Qk,175
+aidge_model_explorer/config.py,sha256=TSiZBi3oJ8F0ArSxF-ef0w6KcmUegXz5IntHMUEcjqw,1611
+aidge_model_explorer/consts.py,sha256=hV65stLs9kaoUAnCI_FJORWODx41uXob-N-4oJNn2q8,207
+aidge_model_explorer/main.py,sha256=HwHHobieIUwiyDqoDVO9ytOu4AJLidrHu1vEElHHTIs,1713
+aidge_model_explorer/visualize.py,sha256=F3ZPHEUDy4tKavJ7lRPf0G6XIxGQUoU_mPGqWWgB1Rw,3779
+aidge_model_explorer/converters/__init__.py,sha256=wNC5OVuiKPBRVWu7rawjEYQ3Q-EtmM-lDhc8pdspZ-U,335
+aidge_model_explorer/converters/onnx_converter.py,sha256=ADdP3az4q1GgQA9TNCNoyDpi-Q7NZTa3oSKfRU3Iths,324
+aidge_model_explorer/converters/runtime_converter.py,sha256=sNz7VFDVevSSQBEoMEOshJuU7OsiDpcFfDBeSbA-Xok,7936
+aidge_model_explorer-0.0.1.dist-info/METADATA,sha256=H4xHWwJ9M_htzOhFUy0YEZgADIMdqzNORwYOxg_ePas,1821
+aidge_model_explorer-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aidge_model_explorer-0.0.1.dist-info/top_level.txt,sha256=qSEOpISaTvkcOkqUYxIGbETAHNeEDFAvlQ4I-f7zRK0,21
+aidge_model_explorer-0.0.1.dist-info/RECORD,,
