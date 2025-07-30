@@ -1,0 +1,16 @@
+include README.md
+
+# Recursively include only necessary template files (including TypeScript files)
+recursive-include templates *.js *.ts *.tsx *.json *.html *.css *.py *.md *.sh *.txt
+recursive-include ebix/templates/frontend *.js *.ts *.tsx *.json *.html *.css *.md
+recursive-include ebix/templates/backend *.py *.txt *.md *.json
+recursive-include ebix/templates/full_stack *.js *.ts *.tsx *.json *.html *.css *.py *.md
+
+# Prune ALL node_modules folders recursively
+global-prune **/node_modules
+
+# General cleanup
+exclude *.log
+exclude *.zip
+exclude *.tar.gz
+prune __pycache__
