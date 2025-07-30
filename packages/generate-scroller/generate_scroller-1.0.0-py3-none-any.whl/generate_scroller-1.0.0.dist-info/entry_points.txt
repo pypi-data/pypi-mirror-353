@@ -1,0 +1,2 @@
+[console_scripts]
+generate_scroller = generate_scroller.cli:run
