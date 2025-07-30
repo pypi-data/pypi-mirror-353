@@ -1,0 +1,10 @@
+chunk_metadata_adapter/__init__.py,sha256=zHJoyyxaakTp8UJHXiJVCWe7U14ZlITBBE1vsT--x2Q,744
+chunk_metadata_adapter/examples.py,sha256=0S8rmBnqhtOCFgezS3Du2Vh1xqZWWi9YpZ2nEpdky3M,10049
+chunk_metadata_adapter/flat_chunk.py,sha256=r8jogo7UUzOboQqMtPRMqpMuRFf1UIkyMRrnWhPUPbA,22231
+chunk_metadata_adapter/metadata_builder.py,sha256=iv0U5gbONO36TsBUhvNql3B2mNUD1DBUJ0AIyAWfBrE,16723
+chunk_metadata_adapter/models.py,sha256=zfn6e5zbJw0fTEU91WphDYzeifl3jJP63sH66fwkvR4,28380
+chunk_metadata_adapter/utils.py,sha256=9SmwsGERtePxYPVDfP8pc2wuTSfq5Qz5nXUcOuTAQIo,13967
+chunk_metadata_adapter-1.5.0.dist-info/METADATA,sha256=u8Yr7vBtYCCyACw7sveqqpVhndudqiJC1pQEfDhWjpY,13344
+chunk_metadata_adapter-1.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+chunk_metadata_adapter-1.5.0.dist-info/top_level.txt,sha256=HKjlcPxdFwCG406zu8eysl3hd2x3cGY6N2JlNJ8y704,23
+chunk_metadata_adapter-1.5.0.dist-info/RECORD,,
