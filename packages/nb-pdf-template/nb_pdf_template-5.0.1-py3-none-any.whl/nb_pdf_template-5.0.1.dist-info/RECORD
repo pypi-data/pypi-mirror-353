@@ -1,0 +1,14 @@
+LICENSE,sha256=ViDMH9r_zu4ehVn-bRQhCI-Qz7M0oOIJRVZWyZWGH-s,1069
+README.md,sha256=ba24A5TEuhjBO-7_JBS9AS-T7Vt4i62cvbgtlAQZKVE,3874
+nb_pdf_template/__init__.py,sha256=kidnUfxMWd21Dy3aBsPVlEm5qKt0m7aspWUbNcwjeEc,47
+nb_pdf_template/jupyter_python.py,sha256=6V2sefkHD6bQRUGGao78EqZ5dpuQvLU7itWG6eKUemE,2602
+nb_pdf_template-5.0.1.data/data/share/jupyter/nbconvert/templates/latex_authentic/conf.json,sha256=En-hXDf04MBhOp_vWnH_sSlQVPqQo5--3T64QHMKr9w,151
+nb_pdf_template-5.0.1.data/data/share/jupyter/nbconvert/templates/latex_authentic/index.tex.j2,sha256=2Or5tBcvT5HYlDR38j92xMkLfX6tMAAcxdYmP8f8Nlw,2984
+nb_pdf_template-5.0.1.data/data/share/jupyter/nbconvert/templates/latex_authentic/index_A4.tex.j2,sha256=prlntuztKOTVHmnXB6pKbLqScc3FgH68OxaeU4qnhv4,147
+nb_pdf_template-5.0.1.data/data/share/jupyter/nbconvert/templates/latex_authentic/m.tex.j2,sha256=GzVhoudlFGFobOVqc1So88QEW79fdHe1p3zxFdlkRXE,1061
+nb_pdf_template-5.0.1.data/data/share/jupyter/nbconvert/templates/latex_authentic/m_A4.tex.j2,sha256=iZ5NayVEFg2nOj37pH8AuEhNnOE3EluA7Ugo4cpAre8,56
+nb_pdf_template-5.0.1.dist-info/METADATA,sha256=_H-_3Amb4ZsV1SMaDHmXIQ9DZ-wMZ96oYXPrdQUwaVQ,4395
+nb_pdf_template-5.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+nb_pdf_template-5.0.1.dist-info/entry_points.txt,sha256=6tltdXNtbGTqDf2y8BzCBOWqY8O7YPl9SGDrVauYmTM,71
+nb_pdf_template-5.0.1.dist-info/licenses/LICENSE,sha256=ViDMH9r_zu4ehVn-bRQhCI-Qz7M0oOIJRVZWyZWGH-s,1069
+nb_pdf_template-5.0.1.dist-info/RECORD,,
