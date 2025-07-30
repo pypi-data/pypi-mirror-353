@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: sf_convert
+Version: 2.1.13
+Summary: Package for sf_convert
+Author-email: Vivek Reddy Chithari <vivek.chithari@rcsb.org>, Ezra Peisach <ezra.peisach@rcsb.org>
+License: apache-2.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mmcif~=0.87
+Requires-Dist: gemmi
+Requires-Dist: numpy
+Dynamic: license-file
+
+# sfconvert structure factor conversion
+
+This software allows for the conversion of MX structure factor formatted files.
+
+## Installation
+
+You need Python 3.6 or later to run this script. The `py-mmcif` library can be installed via pip:
+
+```bash
+pip install sf_convert
+```
+
+## Usage
+
+Run the command `sf_convert` with the `-h` or `--help` option to view the help message:
+
+```bash
+sf_convert -h
+```
+
+Here are the available command line arguments:
+
+- `-sf`: specify the input structure factor file.
+- `-pdb`: Coordinate file to copy over cell, wavelnegth, etc if not specified.
+- `-o`: Output format.
