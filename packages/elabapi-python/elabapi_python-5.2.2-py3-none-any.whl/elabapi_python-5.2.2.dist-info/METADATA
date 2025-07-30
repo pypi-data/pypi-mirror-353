@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: elabapi-python
+Version: 5.2.2
+Summary: eLabFTW REST API v2 Documentation
+Home-page: https://github.com/elabftw/elabapi-python
+Author: OpenAPI Generator community
+Author-email: team@openapitools.org
+Keywords: OpenAPI,OpenAPI-Generator,eLabFTW REST API v2 Documentation
+Description-Content-Type: text/markdown
+Requires-Dist: urllib3<3.0.0,>=2.1.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
+
+    This document describes all available endpoints and methods for eLabFTW&#39;s API version 2. 
+    
