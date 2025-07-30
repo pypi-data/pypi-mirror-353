@@ -1,0 +1,16 @@
+fabric/dataagent/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabric/dataagent/client/__init__.py,sha256=qJ2auLeQwZpqvP6XS-Oaz_vdGiVmzZaqhw9LIXptzsI,618
+fabric/dataagent/client/_create_delete.py,sha256=N0xt5VbiwkU27sYpl5gixL8WsIvzPkIcg7Kun56cvq4,2855
+fabric/dataagent/client/_datasource.py,sha256=RGBmtV2TtMXyBNLB8BdaPzixfkutKatghsd_MZZHBLY,12223
+fabric/dataagent/client/_fabric_data_agent_api.py,sha256=W-azdTSHztsj9KKjjGf-Qn6-M_OUFJnuXCIMSArHuuo,12057
+fabric/dataagent/client/_fabric_data_agent_mgmt.py,sha256=UG7jlfOqKiY5sMb9hEh01p5RCdnob0H8xWjP5HZh0gU,6674
+fabric/dataagent/client/_fabric_openai.py,sha256=zCUdk3uq-jIx-yt1wN7trDBbVGMNWmLJucdluiLzSUo,8212
+fabric/dataagent/client/_tagged_value.py,sha256=v-VeJ8vHuBtyA0eJwbRW5G5MzHtn0YfWs272zt5-GkI,2049
+fabric/dataagent/client/_util.py,sha256=SzCKeTuhWcCUaC7lZ7zzj4PkPBadC7eZsE8Nwwkw3vY,4109
+fabric/dataagent/evaluation/__init__.py,sha256=hlikbGByYqrgRSiqMcu-WMiU5cU999pQbrKWHf6gaDg,330
+fabric/dataagent/evaluation/evaluator_api.py,sha256=b2iivCaJP6JSx7I5Jop9H_A_hMNkyzhu8hdkQu8WHcc,21814
+fabric_data_agent_sdk-0.1.6a0.dist-info/licenses/LICENSE,sha256=b19Tr2-ATjhmJHiyu9lp_SlVhd85hzrAxFN5tz-YFlU,12693
+fabric_data_agent_sdk-0.1.6a0.dist-info/METADATA,sha256=J3_76LkJMUXzaSSd4_ngi-x6XwGYeN4UZ2xT3bAx1jc,4082
+fabric_data_agent_sdk-0.1.6a0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fabric_data_agent_sdk-0.1.6a0.dist-info/top_level.txt,sha256=thYVtHqxtidDsGQhNcBi6HDNM13leiLr6ISHkR66xO8,7
+fabric_data_agent_sdk-0.1.6a0.dist-info/RECORD,,
