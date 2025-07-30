@@ -1,0 +1,3 @@
+[console_scripts]
+gpx-player = main:main
+gpx-validate = validator:main
