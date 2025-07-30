@@ -1,0 +1,57 @@
+[project]
+name = "tk3u8"
+version = "0.3.0"
+description = "A TikTok live downloader, written in Python."
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "bs4>=0.0.2",
+    "platformdirs>=4.3.8",
+    "requests>=2.32.3",
+    "rich>=12.6.0",
+    "rich-argparse>=1.7.0",
+    "toml>=0.10.2",
+    "yt-dlp>=2025.3.31",
+]
+authors = [
+  {name = "Scoofszlo", email = "scoofszlo@gmail.com"},
+]
+keywords = [
+    "live",
+    "recording",
+    "tiktok",
+    "tiktok-downloader",
+    "tiktok-live",
+    "tiktok-tool",
+    "tiktok-live-downloader",
+    "tiktok-recorder",
+    "tiktok-live-stream"
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pip>=25.0.1",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "twine>=6.1.0",
+    "types-requests>=2.32.0.20250328",
+    "types-toml>=0.10.8.20240310",
+    "yt-dlp-types>=0.0.15",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tk3u8*"]
+namespaces = false
+
+[project.scripts]
+tk3u8 = "tk3u8.cli:start_cli"
+
+[tool.uv]
+default-groups = []
