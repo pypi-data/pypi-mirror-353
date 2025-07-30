@@ -1,0 +1,5 @@
+[console_scripts]
+server = synergy_age_mcp.server:cli_app
+sse = synergy_age_mcp.server:cli_app_sse
+stdio = synergy_age_mcp.server:cli_app_stdio
+synergy-age-mcp = synergy_age_mcp.server:cli_app_stdio
