@@ -1,0 +1,7 @@
+ontoenv.libs/libgcc_s-2d945d6c.so.1,sha256=dn-5kQf6XkEWhBOx7tnXMZHJQSbDdSYmPhrx8fiYeI8,201673
+ontoenv.libs/libstdc++-85f2cd6d.so.6,sha256=TYjNGeRNPif9fNbid5mVIrzklZaYQF6SzuNUtqPl_Ew,3650089
+ontoenv/__init__.py,sha256=xnKY5fEpUpR1uqEDB5dY9xnb7oaYPuhtR54IgduxSoc,111
+ontoenv/ontoenv.cpython-310-aarch64-linux-gnu.so,sha256=nUOTlmaZ63BoUHbGIMSIjg1YI2iNu9_fmvcIno8ULRk,19279489
+pyontoenv-0.2.1.dist-info/METADATA,sha256=flTjv9ypeK5yK4zn9zgvcPY2Vn98IjVe0fvOXBa0_J8,1382
+pyontoenv-0.2.1.dist-info/WHEEL,sha256=uRJ-CvahRmYoh93Vk8bjAlQe2Efq6pkWnXHZVi-TE-E,108
+pyontoenv-0.2.1.dist-info/RECORD,,
