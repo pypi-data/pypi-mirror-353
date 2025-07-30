@@ -1,0 +1,17 @@
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+QuantumScope/__init__.py
+QuantumScope/main.py
+QuantumScope.egg-info/PKG-INFO
+QuantumScope.egg-info/SOURCES.txt
+QuantumScope.egg-info/dependency_links.txt
+QuantumScope.egg-info/entry_points.txt
+QuantumScope.egg-info/not-zip-safe
+QuantumScope.egg-info/requires.txt
+QuantumScope.egg-info/top_level.txt
