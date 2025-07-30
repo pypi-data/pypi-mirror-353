@@ -1,0 +1,2 @@
+[console_scripts]
+haconiwa = haconiwa.cli:app

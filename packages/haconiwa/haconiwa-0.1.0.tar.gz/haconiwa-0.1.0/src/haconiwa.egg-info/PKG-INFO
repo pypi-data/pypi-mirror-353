@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: haconiwa
+Version: 0.1.0
+Summary: AI協調開発支援Python CLIツール - 箱庭での開発を支援
+Home-page: https://github.com/haconiwa/haconiwa
+Author: Daisuke Motoki
+Author-email: Daisuke Motoki <kanri@kandaquantum.co.jp>
+License: MIT
+Project-URL: Homepage, https://github.com/haconiwa/haconiwa
+Project-URL: Documentation, https://haconiwa.readthedocs.io
+Project-URL: Repository, https://github.com/haconiwa/haconiwa.git
+Project-URL: Issues, https://github.com/haconiwa/haconiwa/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: docker
+Provides-Extra: dev
+License-File: LICENSE
+
+pip install haconiwa
+
+haconiwa core init
+
+haconiwa world create local-dev
+
+haconiwa agent spawn boss
+haconiwa agent spawn worker-a
+
+# タスク作成
+haconiwa task new feature-login
+
+# エージェントにタスク割り当て
+haconiwa task assign feature-login worker-a
+
+# 進捗監視
+haconiwa watch tail worker-a
+
+git clone https://github.com/yourusername/haconiwa.git
+cd haconiwa
+python -m venv venv
+source venv/bin/activate
+pip install -e .[dev];
