@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "loadpup"
+version = "1.0.0"
+description = "专业的API性能压测工具，专门设计用于对大语言模型(LLM)API进行全面的性能测试和分析"
+authors = ["LoadPup Team <anon2010@163.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/anonNo2/LoadPup"
+repository = "https://github.com/anonNo2/LoadPup"
+documentation = "https://github.com/anonNo2/LoadPup#readme"
+keywords = ["api", "benchmark", "performance", "load-testing", "llm", "openai", "dify"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: System :: Benchmark",
+]
+packages = [{include = "loadpup"}]
+
+
+[[tool.poetry.source]]
+name = "tencent"
+url = "https://mirrors.cloud.tencent.com/pypi/simple/"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# AI和压测核心
+evalscope = "0.16.1"
+transformers = "4.48.3"
+# 数据处理
+pandas = "^2.0.0"
+numpy = "^1.20.0"
+# HTTP请求
+requests = "^2.25.0"
+# Excel文件处理
+openpyxl = "^3.1.5"
+# Web框架 (可选，用于未来的Web界面)
+fastapi = "0.115.12"
+uvicorn = "^0.34.0"
+sse_starlette = "^2.2.1"
+# UI美化
+rich = "^13.9.4"
+# 异步支持 (未来可能使用)
+aiohttp = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 
