@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: groupedpaneldatamodels
+Version: 0.0.1
+Summary: A Simple Python library that implements the most commonly used Grouped Panel Data Models
+Author-email: Micha den Heijer <micha@michadenheijer.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+License-File: LICENSE
+Requires-Dist: numpy~=2.0.0
+Requires-Dist: pandas~=2.0.0
+Requires-Dist: scipy~=1.15.2
+Requires-Dist: scikit-learn~=1.6.1
+Requires-Dist: skglm~=0.4
+Requires-Dist: numba~=0.61.0
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pytest ; extra == "dev"
+Requires-Dist: coverage ; extra == "dev"
+Requires-Dist: mypy ; extra == "dev"
+Project-URL: Documentation, https://groupedpaneldatamodels.michadenheijer.com
+Project-URL: Source, https://github.com/michadenheijer/groupedpaneldatamodels
+Project-URL: Tracker, https://github.com/michadenheijer/groupedpaneldatamodels/issues
+Provides-Extra: dev
+
+# ```groupedpaneldatamodels```: A Python Package that implements Grouped Panel Data Models
+
+A Python Package that implements multiple Grouped Panel Data Models.
