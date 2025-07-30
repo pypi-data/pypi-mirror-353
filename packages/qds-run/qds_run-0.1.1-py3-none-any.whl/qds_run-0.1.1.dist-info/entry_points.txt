@@ -1,0 +1,3 @@
+[console_scripts]
+qds=qds_run.cli:main
+
