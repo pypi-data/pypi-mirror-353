@@ -1,0 +1,2 @@
+[console_scripts]
+terminal-chat = state1.terminal_chat:main
