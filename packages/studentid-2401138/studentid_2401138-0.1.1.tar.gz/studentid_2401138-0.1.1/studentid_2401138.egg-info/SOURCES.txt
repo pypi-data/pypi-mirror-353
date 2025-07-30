@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+studentid_2401138/__init__.py
+studentid_2401138/main.py
+studentid_2401138.egg-info/PKG-INFO
+studentid_2401138.egg-info/SOURCES.txt
+studentid_2401138.egg-info/dependency_links.txt
+studentid_2401138.egg-info/top_level.txt
