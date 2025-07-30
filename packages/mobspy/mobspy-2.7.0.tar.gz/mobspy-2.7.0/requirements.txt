@@ -1,0 +1,10 @@
+matplotlib
+numpy
+python-copasi<=4.44.295
+python-libsbml
+scipy
+pandas
+joblib
+tqdm
+copasi-basico
+pint
