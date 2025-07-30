@@ -1,0 +1,217 @@
+Metadata-Version: 2.3
+Name: requests-oauthlib-dags
+Version: 0.1.0
+Summary: Device Authorization Grant (Flow) support for requests-oauthlib
+License: MIT
+Keywords: requests,oauthlib,oauth2,device authorization grant,device authorization flow,RFC8628
+Author: Dave Sutherland
+Author-email: dave@daveography.ca
+Requires-Python: >=3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: requests-oauthlib (>=2.0.0)
+Requires-Dist: tenacity (>=9.0.0)
+Requires-Dist: typing-extensions (>=4.12.2)
+Project-URL: Repository, https://github.com/Daveography/requests-oauthlib-dags
+Description-Content-Type: text/markdown
+
+# Device Authorization Grant Session (DAGS) for Requests-OAuthlib
+
+> "Good dags. D'ya like dags?" - Mickey O'Neil, Snatch (2000) 
+
+Provides OAuth2 Sessions that support Device Authorization Grant flows as defined in [RFC 8628](https://datatracker.ietf.org/doc/html/rfc8628).
+
+The `DeviceAuthorizationGrantSession` class extends [`requests_oauthlib.OAuth2Session`](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html) and leverages [`oauthlib.oauth2.rfc8628.clients.DeviceClient`](https://oauthlib.readthedocs.io/en/latest/oauth2/clients/deviceclient.html) to initiate a Device Authorization Grant flow.
+
+Calling the session's `authorize()` method will prompt the user to authorize the device and block the thread until a response is received from the authorizing server, or until the server-issued device code expires.
+
+Right now, the library prints a message to `stdout` with the authorization URL. Future enhancements may include automatic browser launch, and perhaps additional options that don't require blocking the thread.
+
+**NOTE:** This project is not affiliated with [Requests-OAuthlib](https://github.com/requests/requests-oauthlib) or any of its dependent libraries.
+
+
+## Install
+```bash
+pip install requests-oauthlib-dags
+```
+
+
+## Examples
+
+### Easy Flow
+
+This example initiates the Device Authorization Grant flow, outputs the authorization URL and user code with which the user needs to respond to `stdout`, and then blocks the thread until either the Authorization Server reports that the authorization has been approved by the user by providing an access token, the provided device code expires, or the Authorization Server otherwise reports that the grant has been denied.
+
+```python
+from requests_oauthlib_dags import DeviceAuthorizationGrantSession
+
+client_id = "your_client_id"
+device_endpoint = "https://your_auth_server_device_grant_endpoint"
+token_endpoint = "https://your_auth_server_token_endpoint"
+
+session = DeviceAuthorizationGrantSession(client_id)
+token = session.start_flow(
+    device_auth_url=device_authorization_endpoint,
+    token_url=token_endpoint,
+)
+
+# Prompt with auth url is output to `stdout`; execution resumes when the auth server accepts the user device grant.
+
+print(token)
+
+# Attempt to access a protected resource:
+response = session.get("https://somesite.com/secure/resource")
+```
+
+### Automatically Open Browser to Authorization URL
+
+To have the flow process also attempt to open a browser tab to the Authorization URL, simply add the `try_open_browser` parameter:
+
+```python
+token = session.start_flow(
+    device_auth_url=device_authorization_endpoint,
+    token_url=token_endpoint,
+    try_open_browser=True,
+)
+```
+
+### Manual Flow
+
+This example provides a bit more control over the grant flow; it is essentially what `start_flow` does but you can interject any additional logic between the steps if needed:
+
+```python
+from requests_oauthlib_dags import DeviceAuthorizationGrantSession
+
+client_id = "your_client_id"
+device_endpoint = "https://your_auth_server_device_grant_endpoint"
+token_endpoint = "https://your_auth_server_token_endpoint"
+
+session = DeviceAuthorizationGrantSession(client_id)
+
+# Get the url and user code needed to authorize the device
+authorization_url, user_code = session.authorization_url(device_endpoint)
+
+# Prompt the user / attempt to open a browser window
+session.authorize(
+    authorization_url=authorization_url,
+    user_code=user_code,
+    try_open_browser=True,  # Omit or set to False to skip
+)
+
+# Block the thread until the authorization succeeds or fails
+token = session.wait_for_authorization(token_endpoint)
+```
+
+### Alternatives to Blocking with `wait_for_authorization`
+
+If you want to implement your own logic to periodically check the Authorization Server, use the `check_authorization` method.
+
+```python
+from requests_oauthlib_dags import DeviceAuthorizationGrantSession, exception
+
+client_id = "your_client_id"
+device_endpoint = "https://your_auth_server_device_grant_endpoint"
+token_endpoint = "https://your_auth_server_token_endpoint"
+
+session = DeviceAuthorizationGrantSession(client_id)
+
+# Get the url and user code needed to authorize the device
+authorization_url, user_code = session.authorization_url(device_endpoint)
+
+# Prompt the user / attempt to open a browser window
+session.authorize(
+    authorization_url=authorization_url,
+    user_code=user_code,
+    try_open_browser=True,  # Omit or set to False to skip
+)
+
+# Wrap the following in your custom loop:
+try:
+    authorized = session.check_authorization(token_endpoint)
+except exception.SlowDownError:
+    # When this occurs, you should slow down your polling by at minimum 5 seconds,
+    # or apply an exponential backoff;
+    # See: https://datatracker.ietf.org/doc/html/rfc8628#section-3.5
+    ...
+
+if authorized:
+    print(session.token)
+    break
+
+```
+
+### Automatic Token Refresh
+
+To avoid requiring clients to re-authorize whenever the access token expires, the `DeviceAuthorizationGrantSession` supports refreshing tokens via the same mechanism as OAuth2Session; see [Refreshing tokens](https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html#refreshing-tokens) for more details.
+
+The following example uses [`keyring`](https://pypi.org/project/keyring/) to securely store the offline refresh token and use it to obtain a current access token:
+
+```python
+import keyring
+from requests_oauthlib_dags import DeviceAuthorizationGrantSession
+
+client_id = "your_client_id"
+device_endpoint = "https://your_auth_server_device_grant_endpoint"
+token_endpoint = "https://your_auth_server_token_endpoint"
+keyring_service = "my_service"
+keyring_username = "my_username"
+
+def update_token(token):
+    keyring.set_password(keyring_service, keyring_username, token["refresh_token"])
+
+session = DeviceAuthorizationGrantSession(
+    client_id,
+    auto_refresh_url=token_endpoint,  # Enable auto refresh
+    token_updater=update_token,
+    scope=["offline_access"], # See: https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess
+)
+
+refresh_token = keyring.get_password(keyring_service, keyring_username)  # Try to get a stored refresh token
+
+if refresh_token is not None:
+    # Use the refresh token
+    token = session.refresh_token(token_url=token_endpoint, refresh_token=refresh_token)
+else:
+    # No existing refresh token, start the grant flow
+    token = session.authorize(
+        device_auth_url=device_endpoint,
+        token_url=token_endpoint,
+    )
+    update_token(token)
+    # Prompt with auth url is output to `stdout`; execution resumes when the auth server accepts the user device grant.
+
+print(token)
+
+# Attempt to access a protected resource:
+response = session.get("https://somesite.com/secure/resource")
+```
+
+### Default Headers
+
+You can also configure the Session to always provide a set of default headers that will be provided with all requests:
+
+```python
+session = DeviceAuthorizationGrantSession(
+    client_id,
+    headers={"Content-Type": "application/json"},
+)
+```
+
+
+## Contributing
+
+This package utilizes [Poetry](https://python-poetry.org) for dependency management and [pre-commit](https://pre-commit.com/) for ensuring code formatting is automatically done and code style checks are performed.
+
+```bash
+git clone https://github.com/Daveography/requests-oauthlib-dags.git requests-oauthlib-dags
+cd requests-oauthlib-dags
+pip install poetry
+poetry install
+poetry run pre-commit install
+poetry run pre-commit autoupdate
+```
+
