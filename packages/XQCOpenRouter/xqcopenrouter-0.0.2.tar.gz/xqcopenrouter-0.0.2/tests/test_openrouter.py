@@ -1,0 +1,105 @@
+import os
+import asyncio
+from openrouter import OpenRouter, OpenRouterSync, OpenRouterAsync, read_str_or_file
+
+
+def test_read_str_or_file():
+    # 测试字符串
+    assert read_str_or_file("hello") == "hello"
+    # 测试文件
+    with open("test_prompt.txt", "w", encoding="utf-8") as f:
+        f.write("文件内容测试")
+    assert read_str_or_file("test_prompt.txt") == "文件内容测试"
+    os.remove("test_prompt.txt")
+
+
+def test_sync_chat_and_prompt():
+    client = OpenRouterSync(api_key="sk-xxx",
+                            primary_model="model-main", backup_models=["model-bak1", "model-bak2"],
+                            system_prompt="你是AI", assistant_prompt="你好")
+    # 动态修改prompt
+    client.set_system_prompt("新系统提示")
+    client.set_assistant_prompt("新助手提示")
+    assert client.system_prompt == "新系统提示"
+    assert client.assistant_prompt == "新助手提示"
+    # 测试文件参数
+    with open("user_input.txt", "w", encoding="utf-8") as f:
+        f.write("文件输入内容")
+    try:
+        client.chat("user_input.txt")
+    except Exception:
+        pass
+    os.remove("user_input.txt")
+    # 测试备用模型设置
+    client.set_backup_models(["bak3", "bak4"])
+    assert client._backup_models == ["bak3", "bak4"]
+    # 测试自动免费模型兜底
+    client2 = OpenRouterSync(api_key="sk-xxx")
+    try:
+        client2.chat("测试自动免费模型")
+    except Exception:
+        pass
+
+
+def test_async_chat_and_prompt():
+    async def run():
+        client = OpenRouterAsync(api_key="sk-xxx",
+                                 primary_model="model-main", backup_models=["model-bak1"],
+                                 system_prompt="你是AI", assistant_prompt="你好")
+        await client.set_system_prompt("异步系统提示")
+        await client.set_assistant_prompt("异步助手提示")
+        assert client.system_prompt == "异步系统提示"
+        assert client.assistant_prompt == "异步助手提示"
+        with open("user_input_async.txt", "w", encoding="utf-8") as f:
+            f.write("异步文件输入")
+        try:
+            await client.chat("user_input_async.txt")
+        except Exception:
+            pass
+        os.remove("user_input_async.txt")
+        # 测试备用模型设置
+        client.set_backup_models(["bak5"])
+        assert client._backup_models == ["bak5"]
+        # 测试自动免费模型兜底
+        client2 = OpenRouterAsync(api_key="sk-xxx")
+        try:
+            await client2.chat("测试自动免费模型")
+        except Exception:
+            pass
+
+    asyncio.run(run())
+
+
+def test_openrouter_entry():
+    # 测试统一入口
+    sync_client = OpenRouter(api_key="sk-xxx",
+                             primary_model="main", backup_models=["bak1"])
+    assert isinstance(sync_client._impl, OpenRouterSync)
+    async_client = OpenRouter(api_key="sk-xxx",
+                              primary_model="main", backup_models=["bak1"], async_mode=True)
+    assert isinstance(async_client._impl, OpenRouterAsync)
+    # 测试自动免费模型兜底
+    sync_client2 = OpenRouter(api_key="sk-xxx")
+    try:
+        sync_client2.chat("测试自动免费模型")
+    except Exception:
+        pass
+
+    async def run2():
+        async_client2 = OpenRouter(api_key="sk-xxx",
+                                   async_mode=True)
+        try:
+            await async_client2.chat("测试自动免费模型")
+        except Exception:
+            pass
+
+    asyncio.run(run2())
+
+
+def test_search_models():
+    client = OpenRouterSync(api_key="sk-xxx",
+                            primary_model="main")
+    try:
+        client.search_models(keyword="llama", only_free=True)
+    except Exception:
+        pass

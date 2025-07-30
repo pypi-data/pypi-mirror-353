@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/XQCOpenRouter.egg-info/PKG-INFO
+src/XQCOpenRouter.egg-info/SOURCES.txt
+src/XQCOpenRouter.egg-info/dependency_links.txt
+src/XQCOpenRouter.egg-info/requires.txt
+src/XQCOpenRouter.egg-info/top_level.txt
+src/openrouter/__init__.py
+src/openrouter/openrouter.py
+src/openrouter/utils.py
+tests/test001.py
+tests/test_openrouter.py
