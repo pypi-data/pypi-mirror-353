@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+Indentytool.egg-info/PKG-INFO
+Indentytool.egg-info/SOURCES.txt
+Indentytool.egg-info/dependency_links.txt
+Indentytool.egg-info/top_level.txt
+indentytool/__init__.py
+indentytool/indentytool.py
