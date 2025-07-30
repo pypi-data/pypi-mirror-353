@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: librapidsmpf-cu12
+Version: 25.6.0
+Summary: Multi-GPU and distributed-memory algorithms
+Author: NVIDIA Corporation
+License: Apache 2.0
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: C++
+Project-URL: Homepage, https://github.com/rapidsai/rapidsmpf
+Requires-Python: >=3.10
+Provides-Extra: test
+Description-Content-Type: text/markdown
+
+# librapidsmpf
+
+`rapidsmpf` C++ wheel
