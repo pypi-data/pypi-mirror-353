@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: lstm_anomaly_tool
+Version: 0.1.4
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tensorflow
+Requires-Dist: joblib
+Requires-Dist: scikit-learn
+
