@@ -1,0 +1,2 @@
+[console_scripts]
+wudz-crypto = wuddz_crypto.main:menu
