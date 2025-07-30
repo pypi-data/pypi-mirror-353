@@ -1,0 +1,11 @@
+include dash_force_graph/dash_force_graph.min.js
+include dash_force_graph/dash_force_graph.min.js.map
+include dash_force_graph/async-*.js
+include dash_force_graph/async-*.js.map
+include dash_force_graph/*-shared.js
+include dash_force_graph/*-shared.js.map
+include dash_force_graph/metadata.json
+include dash_force_graph/package-info.json
+include README.md
+include LICENSE
+include package.json
