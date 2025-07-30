@@ -1,0 +1,9 @@
+acp_plugin_gamesdk/acp_client.py,sha256=fsSByXElEJuzFdhJTphHmtRv8Tqhs5eXuCGRm2l2JtM,10167
+acp_plugin_gamesdk/acp_plugin.py,sha256=kJ0S_0Fzx0IHdKnAEHA08ZmLIIyv4URgEBRjdCyFx0I,27022
+acp_plugin_gamesdk/acp_token.py,sha256=zjW-W7_4JO31K8eLBBw5dn5tb4FrCSag6qGYQi7xkaA,11804
+acp_plugin_gamesdk/acp_token_abi.py,sha256=nllh9xOuDXxFFdhLklTTdtZxWZd2LcUTBoOP2d9xDTA,22319
+acp_plugin_gamesdk/configs.py,sha256=4rLOOMbRPqf2RM-Lz5Az7mbUI_a5kgmySZlBiMkB3Mo,1406
+acp_plugin_gamesdk/interface.py,sha256=WkeI0YLaMOGt5vYJzwuq5SuviaZKfwePQGhPE8HaU8w,4561
+acp_plugin_gamesdk-0.1.21.dist-info/METADATA,sha256=PzI39ny2YjUrwZgUQ89v37kfClx-_GaAw6bLIhKwNdI,12791
+acp_plugin_gamesdk-0.1.21.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+acp_plugin_gamesdk-0.1.21.dist-info/RECORD,,
