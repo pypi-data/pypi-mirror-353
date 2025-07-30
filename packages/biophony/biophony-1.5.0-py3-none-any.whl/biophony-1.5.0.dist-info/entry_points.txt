@@ -1,0 +1,8 @@
+[console_scripts]
+biophony=biophony.main:main_cli
+gen-cov=biophony.main:gen_cov_cli
+gen-fasta=biophony.main:gen_fasta_cli
+gen-fastavar=biophony.main:gen_fastavar_cli
+gen-fastq=biophony.main:gen_fastq_cli
+gen-vcf=biophony.main:gen_vcf_cli
+
