@@ -1,0 +1,5 @@
+test_package_2/__init__.py,sha256=GT8Ghpy2LWYDyklu0-FAQtga_7ux_r8QKMSeAuo0uqg,69
+test_package_2/module_dummy.py,sha256=1hBGcc-EueiEDcKGi4mYRZvYXMzC9ZFW7nDyRFdX-4Q,96
+alfredo_test_package_2-0.1.0.dist-info/METADATA,sha256=uKwhVyOa-JCcY-oHdafjpllFAA6liiXOmNFoYg1g9cU,647
+alfredo_test_package_2-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+alfredo_test_package_2-0.1.0.dist-info/RECORD,,
