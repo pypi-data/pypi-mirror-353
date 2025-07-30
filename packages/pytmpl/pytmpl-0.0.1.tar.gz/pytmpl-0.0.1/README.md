@@ -1,0 +1,95 @@
+# 🚀 pytmpl - Python项目模板生成器
+
+## 📦 项目简介
+
+`pytmpl` 是一个交互式的Python项目模板生成工具，支持多种应用场景，帮助你快速搭建标准化的Python项目结构。
+
+## 🛠️ 安装方法
+
+```bash
+# 推荐使用poetry安装
+poetry add pytmpl
+# 或者通过pip
+pip install pytmpl
+```
+
+## ✨ 使用示例
+
+```bash
+# 终端交互式创建项目
+pytmpl
+# 或使用简写
+pt
+```
+
+## ⚙️ 支持的参数与功能
+
+- 🏷️ 语言选择（中文/English，默认中文）
+- 📁 项目名（必填）
+- 📂 项目创建路径（默认当前目录）
+- 🏗️ 场景选择（后端库、Web、命令行、数据分析、机器学习、爬虫、桌面应用、API SDK等）
+- 🧩 丰富度选择（最小/标准/完整，默认标准）
+- 📜 LICENSE类型（MIT、Apache2.0、GPLv3等，默认MIT）
+- 🐍 Python版本（默认3.8）
+- 🔧 是否自动安装依赖（默认否）
+- 🪞 是否添加国内镜像源（默认是）
+- 🌐 是否自动初始化git仓库（默认否）
+
+## 📝 参数详细说明
+
+| 参数         | 说明                         | 是否必填 | 默认值   |
+|--------------|------------------------------|----------|----------|
+| 语言         | 交互界面语言                 | 否       | 中文     |
+| 项目名       | 新项目的名称                 | 是       | -        |
+| 项目路径     | 新项目的创建路径             | 否       | 当前目录 |
+| 场景         | 选择项目类型                 | 否       | 后端库   |
+| 丰富度       | 模板内容丰富程度             | 否       | 标准     |
+| LICENSE      | 许可证类型                   | 否       | MIT      |
+| Python版本   | 生成项目的Python版本         | 否       | 3.8      |
+| 安装依赖     | 是否自动安装依赖             | 否       | 否       |
+| 添加镜像源   | 是否添加国内镜像源           | 否       | 是       |
+| 初始化git    | 是否自动初始化git仓库        | 否       | 否       |
+| 远程仓库地址 | Git远程仓库地址              | 否       | -        |
+
+## 🪞 镜像源说明
+
+默认会在 `pyproject.toml` 中添加清华PyPI镜像源，加速依赖安装。
+
+## 📝 pyproject.toml 关键配置
+
+- `packages = [{{ include = "项目名", from = "src" }}]` 保证源码目录规范
+- 镜像源配置如下：
+
+```toml
+[[tool.poetry.source]]
+name = "tuna"
+priority = "primary"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+[[tool.poetry.source]]
+name = "pypi"
+priority = "supplemental"
+```
+
+## 🪵 日志工具
+
+项目内可直接使用如下日志工具：
+
+```python
+from 项目名.utils.tools import get_logger
+logger = get_logger()
+logger.info("日志内容")
+```
+
+## 🧑‍💻 贡献指南
+
+欢迎提交PR和建议！请先fork本仓库，提交前请确保通过所有测试。
+
+## 📬 联系方式
+
+- 邮箱：your_email@example.com
+- Issues：https://github.com/yourname/pytmpl/issues
+
+---
+
+> 📝 本项目由 pytmpl 自动生成，助你高效开启Python开发之旅！ 

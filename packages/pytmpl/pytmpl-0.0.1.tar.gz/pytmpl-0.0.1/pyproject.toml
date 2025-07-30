@@ -1,0 +1,16 @@
+[project]
+name = "pytmpl"
+version = "0.0.1"
+description = "交互式Python项目模板生成器"
+authors = [ { name = "Xiaoqiang", email = "xiaoqiangclub@hotmail.com" } ]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.scripts]
+pytmpl = "pytmpl.cli:main"
+ptl = "pytmpl.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
