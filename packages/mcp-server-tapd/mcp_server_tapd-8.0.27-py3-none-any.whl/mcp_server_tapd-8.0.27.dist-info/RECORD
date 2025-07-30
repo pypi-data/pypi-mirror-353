@@ -1,0 +1,9 @@
+mcp_server_tapd/__init__.py,sha256=X81DlBDP_fB5UnGd4dTirfNp9_tzy-mbQQvc37XMGd0,222
+mcp_server_tapd/app_config.py,sha256=3KwMFYSdoJ7c-KQyarWVvkL_eIhnT5EzYRKDuLHgMZ4,4560
+mcp_server_tapd/server.py,sha256=wtSruS2v__bChd99neFPqJ7cWtUVVO09pSy3SKCA4x4,47133
+mcp_server_tapd/tapd.py,sha256=9VBHqszle4N2AKI6F_aJWRnCpj57m9KnFH0MXLWjtmQ,13171
+mcp_server_tapd-8.0.27.dist-info/METADATA,sha256=MDPY7vF8zTy6XXMoQsdGaBWf1e7MMsZgONEHuGx8inc,3565
+mcp_server_tapd-8.0.27.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_server_tapd-8.0.27.dist-info/entry_points.txt,sha256=6S98b0WG8-CSV5BiCjRk4etA8jWdZ1r6QnH82mmqPfc,64
+mcp_server_tapd-8.0.27.dist-info/top_level.txt,sha256=rE8nOnA-RxS-VstvWwTQzu0jjYbsWouoRZysKz6Knh4,16
+mcp_server_tapd-8.0.27.dist-info/RECORD,,
