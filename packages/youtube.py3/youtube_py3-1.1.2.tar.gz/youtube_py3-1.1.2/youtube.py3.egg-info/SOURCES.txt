@@ -1,0 +1,11 @@
+README.md
+setup.py
+youtube.py3.egg-info/PKG-INFO
+youtube.py3.egg-info/SOURCES.txt
+youtube.py3.egg-info/dependency_links.txt
+youtube.py3.egg-info/entry_points.txt
+youtube.py3.egg-info/not-zip-safe
+youtube.py3.egg-info/requires.txt
+youtube.py3.egg-info/top_level.txt
+youtube_py3/__init__.py
+youtube_py3/youtube_py3.py
