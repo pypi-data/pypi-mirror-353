@@ -1,0 +1,562 @@
+# 服务区饱和度分析系统
+
+服务区饱和度分析系统是一个基于Python开发的工具，用于分析高速公路服务区的车辆流量和服务区饱和度情况。该系统通过分析车辆通行数据、车辆类型和行驶速度等信息，计算服务区的实时饱和度，并可预测未来一段时间内的饱和度变化趋势。
+
+## 系统特点
+
+- 模块化设计，便于功能扩展和维护
+- **完全支持自定义所有输入输出文件名**，提高灵活性
+- 提供完整的API接口，方便调用各个功能模块
+- 支持流量分析、饱和度计算和预测功能
+- 支持通过命令行或API方式使用
+- 以Python包形式封装，易于分发和安装
+
+## 安装方法
+
+### 从源码安装
+
+```bash
+# 克隆代码库
+git clone <仓库地址>
+cd 服务区饱和度分析
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 以开发模式安装包
+pip install -e .
+```
+
+### 使用pip安装（发布后）
+
+```bash
+# 从PyPI安装
+pip install saturation-analysis
+
+# 或者从本地wheel文件安装
+pip install dist/saturation_analysis-1.0.0-py3-none-any.whl
+```
+
+## 系统目录结构
+
+```
+服务区饱和度分析/
+├── saturation/          # 主要代码目录
+│   ├── __init__.py      # 包初始化文件
+│   ├── api.py           # API接口模块
+│   ├── main.py          # 主程序入口
+│   ├── flow.py          # 流量分析模块
+│   ├── enJud/           # 入口判别模块
+│   │   ├── data_process.py  # 数据处理模块
+│   │   ├── julei.py     # 聚类分析模块
+│   │   ├── fenleipanbie.py  # 分类判别模块
+│   │   ├── panbie.py    # 速度判别模块
+│   │   ├── yuzhi.py     # 阈值分析模块
+│   │   └── huo_canshu.py  # 货车参数分析模块
+│   ├── satAna/          # 饱和度分析模块
+│   │   └── saturation.py  # 饱和度计算模块
+│   └── pre/             # 预测模块
+│       └── 预测模型.py     # 饱和度预测模块
+├── examples/            # 示例代码目录
+│   └── api_usage.py     # API使用示例
+├── data/                # 数据目录
+├── result/              # 结果目录
+├── setup.py             # 安装配置文件
+└── README.md            # 说明文档
+```
+
+## 使用方法
+
+### 通过API使用
+
+服务区饱和度分析系统提供了统一的API接口，您可以通过导入`saturation.api`模块来使用所有功能：
+
+```python
+from saturation import api
+
+# 设置数据目录
+api.set_data_dir("path/to/your/data")
+
+# 数据处理（自定义输入输出文件名）
+api.process_data(
+    input_file="input.csv", 
+    output_file="processed.csv"
+)
+
+# 聚类分析（自定义参数和文件名）
+api.cluster_analysis(
+    input_file="total.csv",
+    output_file="cluster_results.csv",
+    n_components=3,  # 使用3个聚类
+    plot=True  # 生成图表
+)
+
+# 阈值分析（自定义参数和图表文件名）
+api.analyze_threshold(
+    mu1=70.0,  # 自定义均值
+    mu2=15.0,
+    sigma1=10.0,  # 自定义标准差
+    sigma2=9.0,
+    w1=0.65,  # 自定义权重
+    w2=0.35,
+    save_plot=True,
+    output_plot="custom_threshold_plot.png"  # 自定义输出图表文件名
+)
+
+# 流量分析（使用自定义文件名）
+api.analyze_flow(
+    input_file="speed_current1.csv",
+    output_files={
+        'flow_adjust': "custom_flow_adjust.csv",
+        'etc_flow': "custom_etc_flow.csv",
+        'inner_flow': "custom_inner.csv",
+        'outer_flow': "custom_outer.csv",
+        'ke_inner_flow': "custom_ke_inner.csv",
+        'ke_outer_flow': "custom_ke_outer.csv",
+        'huo_inner_flow': "custom_huo_inner.csv",
+        'huo_outer_flow': "custom_huo_outer.csv",
+        'merged_flow': "custom_flow_kehuo_adjusted.xlsx"
+    }
+)
+
+# 单独使用流量分析子功能
+# 计算时间值
+t0, t1 = api.calculate_time_values_api(
+    input_file="speed_current1.csv",
+    distance=4.0
+)
+
+# 计算内部和外部流量
+inner_path, outer_path = api.calculate_inner_outer_flow_api(
+    input_file="speed_current1.csv",
+    inner_file="custom_inner_flow.csv",
+    outer_file="custom_outer_flow.csv"
+)
+
+# 饱和度分析（自定义输入输出文件名）
+api.analyze_saturation_data(
+    ke_flow_file="ke_flow1.csv",  # 自定义输入文件名
+    huo_flow_file="huo_flow1.csv",  # 自定义输入文件名
+    output_file="custom_saturation_results.csv"  # 自定义输出文件名
+)
+
+# 对饱和度结果进行聚类（自定义文件名）
+api.cluster_saturation_data(
+    input_file="custom_saturation_results.csv",  # 使用前面饱和度分析的输出文件
+    output_file="custom_saturation_clusters.csv",  # 自定义输出文件名
+    num_clusters=4,  # 使用4个聚类
+    save_plot=True,
+    plot_file="custom_saturation_plot.png"  # 自定义输出图表文件名
+)
+
+# 饱和度预测（自定义所有输入输出文件名）
+api.predict(
+    input_file="flow-kehuo-adjusted.xlsx",  # 自定义输入文件名
+    output_model="example_model.h5",  # 自定义模型输出文件名
+    output_results="custom_prediction_results.csv",  # 自定义预测结果输出文件名
+    output_plot="custom_prediction_plot.png",  # 自定义图表输出文件名
+    train_size=500,  # 训练集大小
+    epochs=20  # 训练轮数
+)
+
+# 执行完整流程（支持自定义所有输出文件名）
+output_files = {
+    'cluster_result': "custom_cluster_result.csv",
+    'truck_plot': "custom_truck_plot.png",
+    'threshold_plot': "custom_threshold_plot.png",
+    'speed_result': "custom_speed_result.csv",
+    'classification_result': "custom_classification_result.csv",
+    'flow_adjust': "custom_flow_adjust.csv",
+    'etc_flow': "custom_etc_flow.csv",
+    'inner_flow': "custom_inner_flow.csv",
+    'outer_flow': "custom_outer_flow.csv",
+    'ke_inner_flow': "custom_ke_inner_flow.csv",
+    'ke_outer_flow': "custom_ke_outer_flow.csv",
+    'huo_inner_flow': "custom_huo_inner_flow.csv",
+    'huo_outer_flow': "custom_huo_outer_flow.csv",
+    'merged_flow': "custom_merged_flow.xlsx",
+    'saturation_result': "custom_saturation_result.csv",
+    'saturation_clusters': "custom_saturation_clusters.csv",
+    'saturation_plot': "custom_saturation_plot.png",
+    'prediction_model': "custom_prediction_model.h5",
+    'prediction_results': "custom_prediction_results.csv",
+    'prediction_plot': "custom_prediction_plot.png"
+}
+api.run_full_pipeline(output_files=output_files)
+```
+
+### 通过命令行使用
+
+```bash
+# 执行完整分析流程
+python -m saturation.main --all
+
+# 仅执行数据处理
+python -m saturation.main --process
+
+# 仅执行流量分析
+python -m saturation.main --flow
+
+# 仅执行饱和度分析
+python -m saturation.main --analyze
+
+# 仅执行预测
+python -m saturation.main --predict
+
+# 指定数据目录
+python -m saturation.main --all --data-dir="path/to/your/data"
+
+# 指定输出目录
+python -m saturation.main --all --output-dir="path/to/output/dir"
+```
+
+## 模块详细说明及输入输出
+
+### 1. 数据处理模块 (`saturation.enJud.data_process`)
+
+该模块负责处理原始ETC数据，进行去重、匹配和速度计算等操作。
+
+**主要功能**：
+- 原始数据处理和去重
+- 上下行车辆匹配
+- 速度计算
+- 按车辆类型分割数据
+
+**API接口**：
+```python
+api.process_data(input_file, output_file, data_dir)
+```
+
+**输入文件**：
+- `input_file`: 原始ETC数据文件，默认为"G006550002000620010.csv"
+
+**输出文件**：
+- `output_file`: 处理后的数据文件，默认为"down.csv"
+
+### 2. 聚类分析模块 (`saturation.enJud.julei`)
+
+该模块使用贝叶斯高斯混合模型对车辆行为数据进行聚类分析。
+
+**主要功能**：
+- 对车辆行为特征进行聚类分析
+- 将车辆分为不同的行为模式组
+
+**API接口**：
+```python
+api.cluster_analysis(input_file, output_file, n_components, test_size, plot, data_dir)
+```
+
+**输入文件**：
+- `input_file`: 输入数据文件，默认为"total.csv"
+
+**输出文件**：
+- `output_file`: 聚类结果文件，默认为"聚类结果.csv"
+
+### 3. 速度判别模块 (`saturation.enJud.panbie`)
+
+该模块根据车辆速度阈值进行判别分析。
+
+**主要功能**：
+- 根据车辆类型和速度进行分类判别
+- 生成速度判别结果
+
+**API接口**：
+```python
+api.classify_speed_data(input_file, output_file, speed_threshold_0, speed_threshold_1, data_dir)
+```
+
+**输入文件**：
+- `input_file`: 速度数据文件，默认为"speed_current1.csv"
+
+**输出文件**：
+- `output_file`: 速度判别结果文件，默认为"速度判别数据.csv"
+
+**参数**：
+- `speed_threshold_0`: 客车速度阈值，默认为66.268
+- `speed_threshold_1`: 货车速度阈值，默认为39.582
+
+### 4. 分类判别模块 (`saturation.enJud.fenleipanbie`)
+
+该模块根据聚类结果和速度判别结果进行综合分类判别。
+
+**主要功能**：
+- 将聚类结果和速度判别结果进行合并
+- 生成最终的分类判别结果
+
+**API接口**：
+```python
+api.classify_data_by_cluster(cluster_file, speed_file, output_file, data_dir)
+```
+
+**输入文件**：
+- `cluster_file`: 聚类结果文件，默认为"聚类结果.csv"
+- `speed_file`: 速度判别文件，默认为"速度判别数据.csv"
+
+**输出文件**：
+- `output_file`: 分类判别结果文件，默认为"分类判别.csv"
+
+### 5. 阈值分析模块 (`saturation.enJud.yuzhi`)
+
+该模块通过模拟退火算法计算最优速度阈值。
+
+**主要功能**：
+- 分析车辆速度分布特征
+- 计算最优速度阈值
+
+**API接口**：
+```python
+api.analyze_threshold(mu1, mu2, sigma1, sigma2, w1, w2, save_plot, output_plot, data_dir)
+```
+
+**参数**：
+- `mu1`, `mu2`: 两个分布的均值，默认为69.24和15.42
+- `sigma1`, `sigma2`: 两个分布的标准差，默认为10.22和9.47
+- `w1`, `w2`: 两个分布的权重，默认为0.7和0.3
+- `save_plot`: 是否保存图表，默认为True
+- `output_plot`: 输出图表文件名，默认为"threshold_plot.png"
+
+**输出文件**：
+- 阈值分析图表文件（可自定义文件名）
+
+### 6. 货车参数分析模块 (`saturation.enJud.huo_canshu`)
+
+该模块专门分析货车的速度分布特征。
+
+**主要功能**：
+- 对货车速度数据进行K-means聚类
+- 使用EM算法拟合混合高斯模型
+- 分析货车速度分布参数
+
+**API接口**：
+```python
+api.analyze_truck_params(input_file, plot, output_plot, data_dir)
+```
+
+**输入文件**：
+- `input_file`: 速度数据文件，默认为"speed_current.csv"
+
+**输出文件**：
+- `output_plot`: 货车速度分布图表文件，默认为"truck_speed_distribution.png"（可自定义文件名）
+
+### 7. 流量分析模块 (`saturation.flow`)
+
+该模块负责计算和分析车辆流量数据。
+
+**主要功能**：
+- 计算时间值
+- 调整流量数据
+- 计算内部和外部流量
+- 计算不同车型的流量
+- **支持完全自定义所有输入输出文件名**
+
+**API接口**：
+```python
+api.analyze_flow(input_file, data_dir, output_dir, custom_flow_files, output_files)
+```
+
+**输入文件**：
+- `input_file`: 速度数据文件，默认为"speed_current1.csv"
+- `custom_flow_files`: 自定义流量文件列表，用于合并流量文件
+
+**输出文件**：
+以下文件名均可通过`output_files`字典自定义：
+- `flow_adjust`: 流量调整文件，默认为"flow_adjust.csv"
+- `etc_flow`: ETC流量文件，默认为"etc_flow.csv"
+- `inner_flow`: 内部流量文件，默认为"inner.csv"
+- `outer_flow`: 外部流量文件，默认为"outer.csv"
+- `ke_inner_flow`: 客车内部流量文件，默认为"etc_ke_inner.csv"
+- `ke_outer_flow`: 客车外部流量文件，默认为"etc_ke_outer.csv"
+- `huo_inner_flow`: 货车内部流量文件，默认为"etc_huo_inner.csv"
+- `huo_outer_flow`: 货车外部流量文件，默认为"etc_huo_outer.csv"
+- `merged_flow`: 合并流量文件，默认为"flow-kehuo-adjusted.xlsx"
+
+**单独的流量分析API**：
+```python
+# 计算时间值
+api.calculate_time_values_api(input_file, distance, data_dir)
+
+# 调整流量
+api.adjust_flow_api(input_file, output_file, data_dir)
+
+# 计算流量
+api.calculate_flow_api(input_file, output_file, data_dir)
+
+# 计算内部和外部流量
+api.calculate_inner_outer_flow_api(input_file, inner_file, outer_file, data_dir)
+
+# 计算不同车型的内外流量
+api.calculate_vehicle_type_flow_api(input_file, ke_inner_file, ke_outer_file, huo_inner_file, huo_outer_file, data_dir)
+
+# 创建合并流量文件
+api.create_flow_file(output_file, data_dir, input_files)
+```
+
+### 8. 饱和度分析模块 (`saturation.satAna.saturation`)
+
+该模块负责计算服务区饱和度并进行聚类分析。
+
+**主要功能**：
+- 使用PCA计算客车和货车流量的权重
+- 计算加权后的饱和度
+- 对饱和度数据进行聚类分析
+- **支持自定义输入输出文件名和图表文件名**
+
+**API接口**：
+```python
+api.analyze_saturation_data(ke_flow_file, huo_flow_file, output_file, data_dir)
+api.cluster_saturation_data(input_file, output_file, num_clusters, save_plot, plot_file, data_dir)
+```
+
+**输入文件**：
+- `ke_flow_file`: 客车流量文件，默认为"ke_flow1.csv"
+- `huo_flow_file`: 货车流量文件，默认为"huo_flow1.csv"
+- `input_file`: 饱和度数据文件，默认为"merged_flow_saturation_PCA.csv"
+
+**输出文件**：
+- `output_file`: 饱和度分析结果文件，默认为"merged_flow_saturation_PCA.csv"或"saturation_clusters.csv"（可自定义）
+- `plot_file`: 聚类图表文件，默认为"saturation_clusters.png"（可自定义）
+
+### 9. 预测模块 (`saturation.pre.预测模型`)
+
+该模块使用深度学习模型预测未来饱和度。
+
+**主要功能**：
+- 使用LSTM网络建立时间序列预测模型
+- 预测未来一段时间内的饱和度变化
+- 评估预测结果
+- **支持自定义所有输入输出文件名**
+
+**API接口**：
+```python
+api.predict(input_file, output_model, output_results, output_plot, train_size, time_steps, input_dims, lstm_units, epochs, batch_size, save_plot, data_dir)
+```
+
+**输入文件**：
+- `input_file`: 输入流量文件，默认为"flow-kehuo-adjusted.xlsx"（可自定义）
+
+**输出文件**：
+- `output_model`: 模型输出文件，默认为"saturation_model.h5"（可自定义）
+- `output_results`: 预测结果文件，默认为"prediction_results.csv"（可自定义）
+- `output_plot`: 预测图表文件，默认为"saturation_prediction.png"（可自定义）
+
+**参数**：
+- `train_size`: 训练集大小，默认为200
+- `time_steps`: 时间步长，默认为5
+- `input_dims`: 输入维度，默认为6
+- `lstm_units`: LSTM单元数，默认为64
+- `epochs`: 训练轮数，默认为100
+- `batch_size`: 批处理大小，默认为64
+- `save_plot`: 是否保存图表，默认为True
+
+### 10. 完整流程 (`saturation.main`)
+
+系统提供一键执行完整分析流程的功能，并且**支持自定义所有输出文件名**。
+
+**API接口**：
+```python
+api.run_full_pipeline(data_dir, output_dir, output_files)
+```
+
+**参数**：
+- `data_dir`: 数据目录
+- `output_dir`: 输出目录
+- `output_files`: 自定义输出文件名字典，可以自定义系统产生的所有输出文件的名称
+
+## 自定义文件名功能
+
+本系统的一个重要特点是**完全支持自定义所有输入输出文件名**。这意味着您可以：
+
+1. 使用已有的数据文件，无需重命名来适应系统
+2. 自定义所有输出文件的命名，方便管理和整理结果
+3. 在不同的分析任务中使用不同的文件命名方案
+4. 集成到现有的数据处理流程中，无缝衔接上下游系统
+
+使用示例：
+
+```python
+# 定义自定义输出文件名
+custom_output_files = {
+    'flow_adjust': "my_flow_adjust.csv",
+    'etc_flow': "my_etc_flow.csv",
+    'inner_flow': "my_inner.csv",
+    'outer_flow': "my_outer.csv",
+    'ke_inner_flow': "my_ke_inner.csv",
+    'ke_outer_flow': "my_ke_outer.csv",
+    'huo_inner_flow': "my_huo_inner.csv",
+    'huo_outer_flow': "my_huo_outer.csv",
+    'merged_flow': "my_flow_kehuo_adjusted.xlsx",
+    'saturation_result': "my_saturation_results.csv",
+    'saturation_clusters': "my_saturation_clusters.csv",
+    'saturation_plot': "my_saturation_plot.png",
+    'prediction_model': "my_model.h5",
+    'prediction_results': "my_prediction_results.csv",
+    'prediction_plot': "my_prediction_plot.png"
+}
+
+# 执行完整流程，使用自定义文件名
+api.run_full_pipeline(output_files=custom_output_files)
+```
+
+## Python包封装说明
+
+本项目已封装为Python包，命名为`saturation`，提供以下方式安装和使用：
+
+### 安装方式
+
+1. **开发模式安装**：适用于需要修改源码的情况
+   ```bash
+   pip install -e .
+   ```
+
+2. **从构建的分发包安装**：
+   ```bash
+   # 构建分发包
+   python setup.py sdist bdist_wheel
+   
+   # 安装构建的wheel包
+   pip install dist/saturation-0.1.0-py3-none-any.whl
+   ```
+
+3. **从PyPI安装**（如已发布）：
+   ```bash
+   pip install saturation
+   ```
+
+### 包结构
+
+安装后，可以通过以下方式导入和使用包：
+
+```python
+# 导入整个包
+import saturation
+
+# 导入API模块
+from saturation import api
+
+# 使用API功能
+api.set_data_dir("path/to/data")
+api.run_full_pipeline()
+```
+
+### 依赖管理
+
+包的依赖项在`setup.py`中定义，安装时会自动安装所需的依赖库。主要依赖包括：
+
+- pandas
+- numpy
+- matplotlib
+- scikit-learn
+- tensorflow/keras
+- scikit-fuzzy
+
+## 示例代码
+
+请参考`examples/api_usage.py`文件，该文件展示了如何使用各个API功能，包括如何自定义所有输入输出文件名。
+
+## 版权和许可
+
+版权所有 © 2023 服务区饱和度分析系统开发团队。保留所有权利。
+
+## 贡献
+
+欢迎提交问题报告和改进建议。 
